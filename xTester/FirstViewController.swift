@@ -12,16 +12,6 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
-    @IBOutlet var cityLabel: UILabel!
-    
-    
-    @IBAction func changeCityLabel(_ sender: AnyObject) {
-        self.cityLabel.text = "Hello world"
-        
-        print("chnageLabel")
-    
-    }
-    
     
     // ....JP
     
@@ -29,10 +19,14 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
-        
+
     }
+    
+    
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,5 +34,5 @@ class FirstViewController: UIViewController {
     }
     
     
-}
+}  // end class
 

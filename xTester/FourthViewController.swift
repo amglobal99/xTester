@@ -9,42 +9,14 @@
 import Foundation
 import UIKit
 
-
-
 class FourthViewController: UIViewController {
     
-    
-    
+
     @IBOutlet var cityLabel: UILabel!
     
-    
-    
-    
     @IBAction func processThis( _ sender:AnyObject) {
-        self.cityLabel.text = "SangliFromFourthController"
+        self.cityLabel.text = "SangliFourthController"
     }
-    
-    
-    
-    
-    
-    // *****************************************
-    //  Let's figure out thr order of events
-    //
-    // *****************************************
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 }  // end class

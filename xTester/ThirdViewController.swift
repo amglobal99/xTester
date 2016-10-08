@@ -13,39 +13,20 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     
-    @IBAction func dismissVC(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil )
-    
-    }
-    
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
-        
-        var queue = OperationQueue()
-        
-        
-        
-        
-        print("loaded third controler " )
-        
-        
-        print("line 2")
-        
-        
-        print("line 3")
-        
-        
-        
-        
-        
-        
     }
+    
+    
+    
+    
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
