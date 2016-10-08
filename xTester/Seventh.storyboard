@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,24 +19,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihm-iS-MEC" userLabel="Image View1">
-                                <frame key="frameInset" minX="16" minY="99" width="170" height="220"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ihm-iS-MEC" userLabel="Image View1">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="189" id="WUV-mc-7LT"/>
+                                    <constraint firstAttribute="width" constant="151" id="gWz-ea-OEn"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M33-hJ-LjE" userLabel="Image View2">
-                                <frame key="frameInset" minX="194" minY="99" width="165" height="220"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H3y-ot-5NR" userLabel="Image View3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="9fm-U6-NeN"/>
+                                    <constraint firstAttribute="height" constant="187" id="KVS-6g-qeZ"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-qB-dZu" userLabel="Image View4">
-                                <frame key="frameInset" minX="204" minY="349" width="155" height="255"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-qB-dZu" userLabel="Image View4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="1Kz-qs-cih"/>
+                                    <constraint firstAttribute="width" constant="139" id="CoJ-7J-4BB"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H3y-ot-5NR" userLabel="Image View3">
-                                <frame key="frameInset" minX="16" minY="349" width="180" height="255"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zqT-zd-j7s">
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="sZs-9x-Nou" eventType="valueChanged" id="uWu-RQ-aWL"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmA-f6-Sk6">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKe-Cp-2EJ">
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="didClickOnCancel:" destination="sZs-9x-Nou" eventType="touchUpInside" id="On3-s2-zpC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3R-l4-jb7">
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="didClickOnStartWithSender:" destination="sZs-9x-Nou" eventType="touchUpInside" id="vzP-3B-t5L"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M33-hJ-LjE" userLabel="Image View2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="11Q-6I-lV2"/>
+                                    <constraint firstAttribute="height" constant="189" id="LYG-Tx-W9f"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92173510803749248" blue="0.88854218748226854" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="M33-hJ-LjE" firstAttribute="top" secondItem="l3R-l4-jb7" secondAttribute="bottom" constant="21" id="0i6-zv-IoG"/>
+                            <constraint firstItem="H3y-ot-5NR" firstAttribute="top" secondItem="GVl-qB-dZu" secondAttribute="top" id="17c-fF-5Eg"/>
+                            <constraint firstItem="M33-hJ-LjE" firstAttribute="trailing" secondItem="GVl-qB-dZu" secondAttribute="trailing" id="2oC-Iy-hbL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M33-hJ-LjE" secondAttribute="trailing" constant="16" id="9Gp-ZY-iAm"/>
+                            <constraint firstItem="l3R-l4-jb7" firstAttribute="top" secondItem="87n-vC-dSi" secondAttribute="bottom" constant="24" id="AKj-FH-EOt"/>
+                            <constraint firstItem="zqX-A8-xh1" firstAttribute="top" secondItem="DmA-f6-Sk6" secondAttribute="bottom" constant="22" id="EPH-7w-nB2"/>
+                            <constraint firstItem="ihm-iS-MEC" firstAttribute="leading" secondItem="QAG-kb-6Fd" secondAttribute="leadingMargin" constant="19" id="Pfg-ya-dhb"/>
+                            <constraint firstItem="ihm-iS-MEC" firstAttribute="centerX" secondItem="bKe-Cp-2EJ" secondAttribute="centerX" id="Q3W-Tp-rsc"/>
+                            <constraint firstItem="bKe-Cp-2EJ" firstAttribute="leading" secondItem="QAG-kb-6Fd" secondAttribute="leadingMargin" constant="70" id="RMn-LK-D2o"/>
+                            <constraint firstItem="zqT-zd-j7s" firstAttribute="centerX" secondItem="QAG-kb-6Fd" secondAttribute="centerX" id="SPK-Gz-hhn"/>
+                            <constraint firstItem="H3y-ot-5NR" firstAttribute="top" secondItem="ihm-iS-MEC" secondAttribute="bottom" constant="46" id="Usn-ju-pxv"/>
+                            <constraint firstItem="ihm-iS-MEC" firstAttribute="top" secondItem="bKe-Cp-2EJ" secondAttribute="bottom" constant="21" id="W98-bK-NYN"/>
+                            <constraint firstItem="GVl-qB-dZu" firstAttribute="top" secondItem="M33-hJ-LjE" secondAttribute="bottom" constant="46" id="dMG-QS-ILO"/>
+                            <constraint firstItem="zqT-zd-j7s" firstAttribute="leading" secondItem="QAG-kb-6Fd" secondAttribute="leadingMargin" constant="46" id="dlf-cf-BfH"/>
+                            <constraint firstItem="DmA-f6-Sk6" firstAttribute="centerX" secondItem="QAG-kb-6Fd" secondAttribute="centerX" id="heF-12-217"/>
+                            <constraint firstItem="GVl-qB-dZu" firstAttribute="leading" secondItem="H3y-ot-5NR" secondAttribute="trailing" constant="18" id="jWc-ba-4vH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l3R-l4-jb7" secondAttribute="trailing" constant="69" id="mG7-sx-TO4"/>
+                            <constraint firstItem="zqT-zd-j7s" firstAttribute="top" secondItem="H3y-ot-5NR" secondAttribute="bottom" constant="25" id="o4E-be-UQU"/>
+                            <constraint firstItem="H3y-ot-5NR" firstAttribute="leading" secondItem="QAG-kb-6Fd" secondAttribute="leadingMargin" constant="19" id="otb-Ec-QZY"/>
+                            <constraint firstItem="M33-hJ-LjE" firstAttribute="leading" secondItem="ihm-iS-MEC" secondAttribute="trailing" constant="18" id="rip-et-UjK"/>
+                            <constraint firstItem="zqT-zd-j7s" firstAttribute="top" secondItem="GVl-qB-dZu" secondAttribute="bottom" constant="25" id="vBO-U6-tDE"/>
+                            <constraint firstItem="DmA-f6-Sk6" firstAttribute="top" secondItem="zqT-zd-j7s" secondAttribute="bottom" constant="8" id="wrv-8Z-KCF"/>
+                            <constraint firstItem="bKe-Cp-2EJ" firstAttribute="top" secondItem="87n-vC-dSi" secondAttribute="bottom" constant="24" id="wzO-Yv-L53"/>
+                            <constraint firstItem="M33-hJ-LjE" firstAttribute="leading" secondItem="GVl-qB-dZu" secondAttribute="leading" id="xxm-M3-WbG"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -43,6 +100,7 @@
                         <outlet property="imageView2" destination="M33-hJ-LjE" id="dJa-Ft-T3d"/>
                         <outlet property="imageView3" destination="H3y-ot-5NR" id="Evl-73-MGA"/>
                         <outlet property="imageView4" destination="GVl-qB-dZu" id="4sE-7B-AV4"/>
+                        <outlet property="sliderValueLabel" destination="DmA-f6-Sk6" id="FGv-U6-90X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZk-Bd-mNc" userLabel="First Responder" sceneMemberID="firstResponder"/>

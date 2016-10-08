@@ -80,7 +80,7 @@ class SeventhViewController: UIViewController {
         //queue.maxConcurrentOperationCount = 1
         
         
-        
+        print("executing didClickOnstart method ...")
         
         
         
@@ -165,6 +165,7 @@ class SeventhViewController: UIViewController {
     
     
     @IBAction func didClickOnCancel(_ sender: AnyObject) {
+        print("Executing didClcikOnCancel method ...")
         self.queue.cancelAllOperations()
     }
     
