@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d0T-hi-k2d">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sixth View Controller-->
+        <scene sceneID="8Um-Mt-qOF">
+            <objects>
+                <viewController id="d0T-hi-k2d" customClass="SixthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qe2-4B-8ed"/>
+                        <viewControllerLayoutGuide type="bottom" id="pSu-zW-NLx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jFp-Dj-ar8" customClass="SixthVCView" customModule="xTester" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sixth VIew Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fE-Er-S8A">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller / View Lifecycle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYx-7z-I4U">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check Console Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srk-y3-CfU">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ViewController A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH4-cS-oEg">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-pY-H0Z" customClass="ButtonView" customModule="xTester" customModuleProvider="target">
+                                <frame key="frameInset" minX="133" minY="492" width="95" height="30"/>
+                                <state key="normal" title="Open View B"/>
+                                <connections>
+                                    <segue destination="SeY-CD-LKC" kind="show" id="7PW-zn-d9X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99035301099999995" blue="0.71162162839999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PH4-cS-oEg" firstAttribute="top" secondItem="srk-y3-CfU" secondAttribute="bottom" constant="40" id="2sL-9U-9Be"/>
+                            <constraint firstItem="4fE-Er-S8A" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="9xd-SO-hTJ"/>
+                            <constraint firstItem="GLc-pY-H0Z" firstAttribute="top" secondItem="PH4-cS-oEg" secondAttribute="bottom" constant="47" id="D6C-Aw-QFj"/>
+                            <constraint firstItem="XYx-7z-I4U" firstAttribute="top" secondItem="4fE-Er-S8A" secondAttribute="bottom" constant="46" id="GTQ-8v-YM0"/>
+                            <constraint firstItem="PH4-cS-oEg" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="NfI-mw-RMd"/>
+                            <constraint firstItem="4fE-Er-S8A" firstAttribute="top" secondItem="Qe2-4B-8ed" secondAttribute="bottom" constant="51" id="OOV-Sz-pFc"/>
+                            <constraint firstItem="srk-y3-CfU" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="YZM-h3-lKI"/>
+                            <constraint firstItem="XYx-7z-I4U" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="eFN-ES-8pX"/>
+                            <constraint firstItem="PH4-cS-oEg" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="f7D-a7-EMl"/>
+                            <constraint firstItem="GLc-pY-H0Z" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="gQh-3F-ckh"/>
+                            <constraint firstItem="srk-y3-CfU" firstAttribute="top" secondItem="XYx-7z-I4U" secondAttribute="bottom" constant="158" id="wMT-gv-XUg"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="83r-Wi-T0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343.19999999999999" y="-278.41079460269867"/>
+        </scene>
+        <!--Sixth Detail View Controller-->
+        <scene sceneID="qke-1F-SHr">
+            <objects>
+                <viewController id="SeY-CD-LKC" customClass="SixthDetailViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hb5-T5-5Dr"/>
+                        <viewControllerLayoutGuide type="bottom" id="7eh-40-AHP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ozl-OY-Gmk" customClass="SixthDetailVCView" customModule="xTester" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixx-P7-mpt">
+                                <frame key="frameInset" minX="107" minY="108" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99035301099999995" blue="0.71162162839999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7nz-rl-ZgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="-278"/>
+        </scene>
+    </scenes>
+</document>

@@ -13,6 +13,8 @@ import UIKit
 
 class FourthView: UIView {
     
+    
+    /*
     override func willMove(toSuperview newSuperview: UIView?) {
         print("willMoveToSuperview" )
     }
@@ -33,6 +35,6 @@ class FourthView: UIView {
         print("didMoveToWindow")
     }
     
-    
+    */
     
 }   // end class
