@@ -1,5 +1,5 @@
 //
-//  EighthCollectionViewFlowLayout.swift
+//  NinthCollectionViewCell.swift
 //  xTester
 //
 //  Created by Dad on 10/8/16.
@@ -10,11 +10,9 @@ import Foundation
 import UIKit
 
 
-class EighthCollectionViewFlowLayout: UICollectionViewFlowLayout {
+class NinthCollectionViewCell: UICollectionViewCell {
     
     
-    
-    
-    
+    @IBOutlet weak var testLabel: UILabel!
     
 }
