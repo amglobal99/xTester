@@ -55,6 +55,7 @@ class PublisherCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func deleteButtonClicked() {
+        print("Deleting this publisher ...")
         delegate?.deletePublisher(publisher!)
     }
     
