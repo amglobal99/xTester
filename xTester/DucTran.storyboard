@@ -14,23 +14,24 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="RWH-Xb-a4o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.92173510800000003" blue="0.88854218750000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XmH-Op-ZEJ" customClass="PublishersCollectionViewFlowLayout" customModule="xTester" customModuleProvider="target">
                             <size key="itemSize" width="320" height="319"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="15" maxX="0.0" maxY="15"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PublisherCell" id="2Ai-wI-nkQ" customClass="PublisherCollectionViewCell" customModule="xTester" customModuleProvider="target">
-                                <rect key="frame" x="28" y="50" width="320" height="320"/>
+                                <rect key="frame" x="30" y="65" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunset" translatesAutoresizingMaskIntoConstraints="NO" id="Vbd-Cl-ufQ"/>
-                                        <visualEffectView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zsk-kt-XF1">
+                                        <visualEffectView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zsk-kt-XF1">
+                                            <frame key="frameInset" minX="8" minY="270" width="296" height="40"/>
                                             <view key="contentView" opaque="NO" contentMode="scaleToFill" id="c4p-Pd-Nj4">
                                                 <frame key="frameInset"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,13 +56,14 @@
                                             <blurEffect style="extraLight"/>
                                         </visualEffectView>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nul-cu-dY5">
-                                            <frame key="frameInset" minX="5" minY="5" width="20" height="20"/>
+                                            <frame key="frameInset" minX="5" minY="5" width="50" height="50"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="yQ9-hB-ZQN">
                                                 <frame key="frameInset"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-RN-CXf">
-                                                        <state key="normal" title="Button" image="Close"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-RN-CXf">
+                                                        <frame key="frameInset" minX="6" minY="6" width="15" height="15"/>
+                                                        <state key="normal" image="Close"/>
                                                         <connections>
                                                             <action selector="deleteButtonClicked" destination="2Ai-wI-nkQ" eventType="touchUpInside" id="FAm-za-O6z"/>
                                                         </connections>
@@ -70,7 +72,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="gdD-RN-CXf" secondAttribute="trailing" constant="6" id="KIm-Mr-h26"/>
                                                     <constraint firstItem="gdD-RN-CXf" firstAttribute="top" secondItem="yQ9-hB-ZQN" secondAttribute="top" constant="6" id="W0K-bX-KE4"/>
-                                                    <constraint firstAttribute="bottom" secondItem="gdD-RN-CXf" secondAttribute="bottom" constant="-21" id="fQ8-aZ-YbC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gdD-RN-CXf" secondAttribute="bottom" constant="6" id="fQ8-aZ-YbC"/>
                                                     <constraint firstItem="gdD-RN-CXf" firstAttribute="leading" secondItem="yQ9-hB-ZQN" secondAttribute="leading" constant="6" id="vg2-MU-ANh"/>
                                                 </constraints>
                                             </view>
@@ -87,6 +89,7 @@
                                     <constraint firstAttribute="leadingMargin" secondItem="zsk-kt-XF1" secondAttribute="leading" id="LSB-2i-62t"/>
                                     <constraint firstItem="nul-cu-dY5" firstAttribute="leading" secondItem="2Ai-wI-nkQ" secondAttribute="leadingMargin" constant="7" id="Sbf-Vt-dVO"/>
                                     <constraint firstItem="Vbd-Cl-ufQ" firstAttribute="top" secondItem="2Ai-wI-nkQ" secondAttribute="topMargin" id="TFN-oP-m5D"/>
+                                    <constraint firstItem="zsk-kt-XF1" firstAttribute="top" secondItem="Vbd-Cl-ufQ" secondAttribute="bottom" constant="8" id="VBB-mn-gOB"/>
                                     <constraint firstItem="nul-cu-dY5" firstAttribute="leading" secondItem="2Ai-wI-nkQ" secondAttribute="leadingMargin" constant="22" id="Vl5-Kf-sMA"/>
                                     <constraint firstItem="nul-cu-dY5" firstAttribute="leading" secondItem="2Ai-wI-nkQ" secondAttribute="leadingMargin" constant="22" id="W0F-HT-J3J"/>
                                     <constraint firstAttribute="leadingMargin" secondItem="zsk-kt-XF1" secondAttribute="leading" id="WGS-lS-xgf"/>
