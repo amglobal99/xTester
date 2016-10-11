@@ -3,8 +3,20 @@
 //  News
 //
 //  Created by Duc Tran on 7/25/15.
-//  Copyright © 2015 Developer Inspirus. All rights reserved.
+// Copyright © 2015 Developer Inspirus. All rights reserved.
 //
+
+
+
+
+
+
+
+
+
+
+
+
 
 import UIKit
 
@@ -28,6 +40,7 @@ class PublisherCollectionViewCell: UICollectionViewCell {
     
     var publisher: Publisher? {
         didSet {
+            //print("Publishre Cell .. someone is setting cell publisher value ..")
             updateUI()
         }
     }
@@ -48,11 +61,15 @@ class PublisherCollectionViewCell: UICollectionViewCell {
     
     
     func updateUI() {
+        
+       // print("updateUI .... \(publisher?.title)  ")
+        
+        
+        
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 3.0
         publisherImageView.image = publisher?.image
         publisherTitleLabel.text = publisher?.title
-        
         closeButtonView.layer.masksToBounds = true
         closeButtonView.layer.cornerRadius = closeButtonView.bounds.width / 2
     }

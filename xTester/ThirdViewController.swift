@@ -11,7 +11,9 @@
 import Foundation
 import UIKit
 
-class ThirdViewController: UIViewController {
+
+// Make the class confirm to Utils protocol
+class ThirdViewController: UIViewController, Utils {
     
     
     
@@ -19,7 +21,14 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-    }
+        
+        // Use method from protocol
+        self.climb()
+        
+        
+        
+        
+    }  // end method
     
     
     

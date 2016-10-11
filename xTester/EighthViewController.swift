@@ -5,8 +5,6 @@
 //  Created by Dad on 10/8/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
-
-
     
     import Foundation
     import UIKit
@@ -36,8 +34,6 @@
         override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EighthCollectionViewCell
-            //cell.jackLabel.text = self.items[indexPath.item]
-            
             cell.testLabel.text = self.items[(indexPath as NSIndexPath).item]
             
             cell.backgroundColor = UIColor.yellow
@@ -58,11 +54,7 @@
          header.headerLabel.text = "YOUR_HEADER_TEXT"
          
          return header
-         
-         
-         
-         
-         
+    
          
          }
          */

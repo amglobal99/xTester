@@ -34,6 +34,7 @@
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IML-5j-r6F">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <color key="backgroundColor" red="0.80487156559999995" green="0.92403095960000003" blue="0.89732714719999995" alpha="1" colorSpace="calibratedRGB"/>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="gYT-rF-oQo" id="gNy-xI-ibK"/>

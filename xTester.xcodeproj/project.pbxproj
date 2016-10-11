@@ -55,6 +55,9 @@
 		0F3052E81DAAE44600F79778 /* DucTran.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3052E71DAAE44600F79778 /* DucTran.storyboard */; };
 		0F3052E91DAAE44600F79778 /* DucTran.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3052E71DAAE44600F79778 /* DucTran.storyboard */; };
 		0F3052EA1DAAE44600F79778 /* DucTran.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3052E71DAAE44600F79778 /* DucTran.storyboard */; };
+		0F3052ED1DABF1EF00F79778 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* Utils.swift */; };
+		0F3052EE1DABF1EF00F79778 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* Utils.swift */; };
+		0F3052EF1DABF1EF00F79778 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* Utils.swift */; };
 		0F38F4E21DA7F8AF0086BAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */; };
 		0F38F4EA1DA7F8AF0086BAA8 /* xTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E81DA7F8AF0086BAA8 /* xTester.xcdatamodeld */; };
 		0F38F4EC1DA7F8AF0086BAA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */; };
@@ -130,6 +133,7 @@
 		0F3052DF1DAAD5CF00F79778 /* Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		0F3052E01DAAD5CF00F79778 /* Publishers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
 		0F3052E71DAAE44600F79778 /* DucTran.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DucTran.storyboard; sourceTree = "<group>"; };
+		0F3052EC1DABF1EF00F79778 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		0F38F4DE1DA7F8AF0086BAA8 /* xTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F38F4E91DA7F8AF0086BAA8 /* xTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xTester.xcdatamodel; sourceTree = "<group>"; };
@@ -215,6 +219,14 @@
 			name = CollectionView_Wenderlich_Custom;
 			sourceTree = "<group>";
 		};
+		0F3052EB1DABF1C900F79778 /* ProtocolExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F3052EC1DABF1EF00F79778 /* Utils.swift */,
+			);
+			name = ProtocolExtensions;
+			sourceTree = "<group>";
+		};
 		0F38F4D51DA7F8AF0086BAA8 = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +250,7 @@
 		0F38F4E01DA7F8AF0086BAA8 /* xTester */ = {
 			isa = PBXGroup;
 			children = (
+				0F3052EB1DABF1C900F79778 /* ProtocolExtensions */,
 				0F3052CA1DAAD4C500F79778 /* CollectionView_Wenderlich_Custom */,
 				0F3052C91DAAD49700F79778 /* CollectionView_DucTran */,
 				0F8328CE1DA996F4009804C2 /* CollectionViewRelated */,
@@ -492,6 +505,7 @@
 			files = (
 				0F3F99021DA8267D002FBB8C /* FifthViewController.swift in Sources */,
 				0FD9707E1DA802480099BE54 /* FourthViewController.swift in Sources */,
+				0F3052ED1DABF1EF00F79778 /* Utils.swift in Sources */,
 				0F1923421DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
 				0F38F4EA1DA7F8AF0086BAA8 /* xTester.xcdatamodeld in Sources */,
 				0F3052E11DAAD5CF00F79778 /* Publisher.swift in Sources */,
@@ -538,6 +552,7 @@
 				0F3052DD1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
 				0F1923431DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
 				0F24FD9E1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
+				0F3052EE1DABF1EF00F79778 /* Utils.swift in Sources */,
 				0F3052D11DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F3052D71DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F19233F1DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,
@@ -564,6 +579,7 @@
 				0F3052DE1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
 				0F1923441DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
 				0F24FD9F1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
+				0F3052EF1DABF1EF00F79778 /* Utils.swift in Sources */,
 				0F3052D21DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F3052D81DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F1923401DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,

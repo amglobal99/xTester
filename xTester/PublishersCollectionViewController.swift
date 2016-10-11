@@ -6,7 +6,30 @@
 //  Copyright © 2015 Developer Inspirus. All rights reserved.
 //
 
+
+// ****************************************************************************
+//  This is the entry point for this section.
+//  The storyBoard View Controller is asscoaited with this class.
+//
+//   First, we create the class called Publishers.
+//   Refer to 'let publishers = Publishers()
+//   This creates a collecton of Images that we will use later
+//
+//
+//
+// *******************************************************************************
+
+
+
+
+
+
+
+
+
 import UIKit
+
+
 
 class PublishersCollectionViewController: UICollectionViewController, PublisherCollectionViewCellDelegate
 {
@@ -15,6 +38,10 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
     
     // data source
     let publishers = Publishers()
+    
+    
+    
+    
     
     fileprivate let leftAndRightPaddings: CGFloat = 32.0
     fileprivate let numberOfItemsPerRow: CGFloat = 3.0
@@ -38,6 +65,16 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPress:")
         collectionView?.addGestureRecognizer(longPressGestureRecognizer)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -114,7 +151,12 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! PublisherCollectionViewCell
         
+        //print("setting cell publisher var ..")
         cell.publisher = publishers.publisherForItemAtIndexPath(indexPath)
+        //print("cell publisher value has bene set ...")
+        
+        
+        
         cell.editing = isEditing
         cell.delegate = self
         
@@ -214,7 +256,9 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
     }
     
     
-}
+    
+    
+}  // end class
 
 
 

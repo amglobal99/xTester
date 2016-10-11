@@ -14,7 +14,10 @@ import UIKit
 
 class EighthCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var testLabel: UILabel!
+    
+    //@IBOutlet weak var testLabel: UILabel!
+    
+    
     
 }
