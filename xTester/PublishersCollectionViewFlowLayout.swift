@@ -62,7 +62,11 @@ class PublishersCollectionViewFlowLayout: UICollectionViewFlowLayout
         return attributes
     }
     
-}
+    
+    
+    
+    
+}  // end class
 
 
 

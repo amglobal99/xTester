@@ -24,12 +24,15 @@ protocol Utils {
 // Implement functionality here
 extension Utils {
     
-    
+    // This is a simple test method
     func climb() -> Void {
         print("I am climbing .....")
     }
     
     
+    
+    
+    //  ******************  JSON Section   **************************************
     
     // THis function creates a Dictionary from a JSON object
     // For example, let's say you have a JSON object with many attributes
@@ -79,8 +82,6 @@ extension Utils {
     
     
     
-    
-    
     func getKeyArrayFromJSON(rootElement:String, key:String, jsonObject: [String: AnyObject]) -> [String]? {
         
         var tempArray = [String]()   // create empty array
@@ -107,6 +108,22 @@ extension Utils {
     
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //  ********************** Date / Time Section **********************************
+    
+    
+    
+    
+    
     
     
     

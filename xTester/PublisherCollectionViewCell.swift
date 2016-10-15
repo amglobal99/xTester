@@ -98,6 +98,13 @@ class PublisherCollectionViewCell: UICollectionViewCell {
     }
     
 
+    
+    
+    deinit {
+        print("PublishersCollectionViewCell: Object being DEINITIALIZED")
+    }
+    
+    
 
 
 }  // end class

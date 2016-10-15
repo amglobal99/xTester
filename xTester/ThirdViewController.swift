@@ -26,6 +26,8 @@ class ThirdViewController: UIViewController, Utils {
         self.climb()
         
         
+        printCompanyName()
+        
         
         
     }  // end method

@@ -48,10 +48,6 @@ class WebViewController: UIViewController, UIWebViewDelegate  {
         }
     }
     
-    deinit {
-        webView.stopLoading()
-        webView.delegate = nil
-    }
     
     
     
@@ -85,5 +81,20 @@ class WebViewController: UIViewController, UIWebViewDelegate  {
         }
     }
 
+    
+    
+    
+    deinit {
+        webView.stopLoading()
+        webView.delegate = nil
+        print("WebViewController: Object being DEINITIALIZED")
+    }
+
+    
+    
+    
+    
+    
+    
 
 }  //end class

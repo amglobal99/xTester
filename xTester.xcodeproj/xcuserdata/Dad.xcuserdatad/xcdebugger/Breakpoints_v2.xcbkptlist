@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xTester/PublishersCollectionViewController.swift"
-            timestampString = "497890080.794781"
+            timestampString = "498156347.112617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "PublishersCollectionViewController"
             landmarkType = "3">
             <Locations>

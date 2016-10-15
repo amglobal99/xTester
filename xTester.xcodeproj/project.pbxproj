@@ -31,6 +31,15 @@
 		0F24FD9D1DA968D900DF8A29 /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */; };
 		0F24FD9E1DA968D900DF8A29 /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */; };
 		0F24FD9F1DA968D900DF8A29 /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */; };
+		0F2D7EC81DB13CB9007A6F4A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F2D7EC71DB13CB9007A6F4A /* data.json */; };
+		0F2D7EC91DB13CB9007A6F4A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F2D7EC71DB13CB9007A6F4A /* data.json */; };
+		0F2D7ECA1DB13CB9007A6F4A /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F2D7EC71DB13CB9007A6F4A /* data.json */; };
+		0F2D7ECC1DB1A244007A6F4A /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */; };
+		0F2D7ECD1DB1A244007A6F4A /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */; };
+		0F2D7ECE1DB1A244007A6F4A /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */; };
+		0F2D7ED01DB1A283007A6F4A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */; };
+		0F2D7ED11DB1A283007A6F4A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */; };
+		0F2D7ED21DB1A283007A6F4A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */; };
 		0F3052CC1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
 		0F3052CD1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
 		0F3052CE1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
@@ -125,6 +134,9 @@
 		0F1923521DA8903D00FF9E4D /* Fifth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fifth.storyboard; sourceTree = "<group>"; };
 		0F24FD981DA9689E00DF8A29 /* Eighth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eighth.storyboard; sourceTree = "<group>"; };
 		0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EighthViewController.swift; sourceTree = "<group>"; };
+		0F2D7EC71DB13CB9007A6F4A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishersCollectionViewController.swift; sourceTree = "<group>"; };
 		0F3052CF1DAAD5AF00F79778 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0F3052D31DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishersCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -198,6 +210,14 @@
 			name = Delegates;
 			sourceTree = "<group>";
 		};
+		0F2D7EC61DB13BFD007A6F4A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F2D7EC71DB13CB9007A6F4A /* data.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		0F3052C91DAAD49700F79778 /* CollectionView_DucTran */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,12 +239,14 @@
 			name = CollectionView_Wenderlich_Custom;
 			sourceTree = "<group>";
 		};
-		0F3052EB1DABF1C900F79778 /* ProtocolExtensions */ = {
+		0F3052EB1DABF1C900F79778 /* Global_Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				0F3052EC1DABF1EF00F79778 /* Utils.swift */,
+				0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */,
+				0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */,
 			);
-			name = ProtocolExtensions;
+			name = Global_Utilities;
 			sourceTree = "<group>";
 		};
 		0F38F4D51DA7F8AF0086BAA8 = {
@@ -250,7 +272,7 @@
 		0F38F4E01DA7F8AF0086BAA8 /* xTester */ = {
 			isa = PBXGroup;
 			children = (
-				0F3052EB1DABF1C900F79778 /* ProtocolExtensions */,
+				0F3052EB1DABF1C900F79778 /* Global_Utilities */,
 				0F3052CA1DAAD4C500F79778 /* CollectionView_Wenderlich_Custom */,
 				0F3052C91DAAD49700F79778 /* CollectionView_DucTran */,
 				0F8328CE1DA996F4009804C2 /* CollectionViewRelated */,
@@ -259,6 +281,7 @@
 				0F3F98FC1DA81D62002FBB8C /* Controllers */,
 				0F3F98FB1DA81D47002FBB8C /* Storyboards */,
 				0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */,
+				0F2D7EC61DB13BFD007A6F4A /* Resources */,
 				0F3F98FE1DA81DC2002FBB8C /* Model */,
 			);
 			path = xTester;
@@ -463,6 +486,7 @@
 				0F3F99001DA81E74002FBB8C /* CityView.xib in Resources */,
 				0F24FD991DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F19234F1DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
+				0F2D7EC81DB13CB9007A6F4A /* data.json in Resources */,
 				0F8328D81DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F19233A1DA87A9100FF9E4D /* Sixth.storyboard in Resources */,
 				0FD9707C1DA802480099BE54 /* Fourth.storyboard in Resources */,
@@ -475,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F1923541DA8903D00FF9E4D /* Fifth.storyboard in Resources */,
+				0F2D7EC91DB13CB9007A6F4A /* data.json in Resources */,
 				0F8328D91DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9A1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F1923501DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
@@ -488,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F1923551DA8903D00FF9E4D /* Fifth.storyboard in Resources */,
+				0F2D7ECA1DB13CB9007A6F4A /* data.json in Resources */,
 				0F8328DA1DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9B1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F1923511DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
@@ -521,11 +547,13 @@
 				0F3052D61DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F3052D91DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
 				0FD970811DA802480099BE54 /* SecondViewController.swift in Sources */,
+				0F2D7ECC1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0FD9707B1DA802480099BE54 /* FirstViewController.swift in Sources */,
 				0FD970821DA802480099BE54 /* ThirdViewController.swift in Sources */,
 				0F3052CC1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
 				0F3052E41DAAD5CF00F79778 /* Publishers.swift in Sources */,
 				0F3052DC1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
+				0F2D7ED01DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F3F990A1DA826CA002FBB8C /* SeventhViewController.swift in Sources */,
 				0FD9707D1DA802480099BE54 /* FourthView.swift in Sources */,
 				0F3F99061DA826A2002FBB8C /* SixthViewController.swift in Sources */,
@@ -537,10 +565,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2D7ED11DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F3052E21DAAD5CF00F79778 /* Publisher.swift in Sources */,
 				0F8328DD1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */,
 				0F8328D51DA9CF0B009804C2 /* NinthCollectionViewLayout.swift in Sources */,
 				0F8328CC1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
+				0F2D7ECD1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F3052DA1DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
 				0F3F99031DA8267D002FBB8C /* FifthViewController.swift in Sources */,
 				0F3052E51DAAD5CF00F79778 /* Publishers.swift in Sources */,
@@ -564,10 +594,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2D7ED21DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F3052E31DAAD5CF00F79778 /* Publisher.swift in Sources */,
 				0F8328DE1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */,
 				0F8328D61DA9CF0B009804C2 /* NinthCollectionViewLayout.swift in Sources */,
 				0F8328CD1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
+				0F2D7ECE1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F3052DB1DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
 				0F3F99041DA8267D002FBB8C /* FifthViewController.swift in Sources */,
 				0F3052E61DAAD5CF00F79778 /* Publishers.swift in Sources */,

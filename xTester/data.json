@@ -1,0 +1,41 @@
+{
+    "users": [
+              {
+              "name": "John",
+              "section":"Photos",
+              "age": 25
+              },
+              {
+              "name": "Molly",
+              "section":"Tech",
+              "age": 29
+              },
+              {
+              "name": "Doug",
+              "section":"Photos",
+              "age": 39
+              },
+              {
+              "name": "Pam",
+              "section":"Tech",
+              "age": 49
+              },
+              {
+              "name": "Jerome",
+              "section":"Photos",
+              "age": 69
+              },
+              {
+              "name": "Karla",
+              "section":"Tech",
+              "age": 89
+              },
+              {
+              "name": "Tom",
+              "section":"Photos",
+              "age": 22
+              }
+              ],
+    "dataTitle": "JSON Tutorial!",
+    "swiftVersion": 2.1
+}

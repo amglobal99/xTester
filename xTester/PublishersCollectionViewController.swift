@@ -36,6 +36,21 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     
+    /*
+    @IBAction func dismissVC(_ sender: AnyObject) {
+        print("dismissing.....")
+        self.dismiss(animated: true, completion: nil )
+      
+        
+    }
+    
+    */
+    
+    
+    
+    
+    
+    
     // data source
     let publishers = Publishers()
     
@@ -62,7 +77,11 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
         navigationItem.leftBarButtonItem = editButtonItem
         
         // add a long press gesture to move the cell around
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPress:")
+       // let longPressGestureRecognizer = UILongPressGestureRecognizer(target:  self, action: "longPress:")
+        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target:  self, action: #selector(longPress)  )
+        
+        
         collectionView?.addGestureRecognizer(longPressGestureRecognizer)
     }
     
@@ -253,6 +272,20 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
             
             
         }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     deinit {
+        print("PublishersCollectionViewController: Object being DEINITIALIZED")
     }
     
     
