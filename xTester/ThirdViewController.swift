@@ -13,7 +13,7 @@ import UIKit
 
 
 // Make the class confirm to Utils protocol
-class ThirdViewController: UIViewController, Utils {
+class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
     
     
     @IBOutlet weak var idLabel: UITextField!
@@ -33,12 +33,20 @@ class ThirdViewController: UIViewController, Utils {
         // Use method from protocol
         self.climb()
         
-        
+        // Call method from GlobalFunctions.swift
         printCompanyName()
         
         
         
     }  // end method
+    
+    
+    
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("I just began editing ..")
+    }
     
     
     
@@ -53,5 +61,6 @@ class ThirdViewController: UIViewController, Utils {
     }
     
     
-}
+    
+}  // end class
 
