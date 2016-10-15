@@ -42,10 +42,16 @@ extension Utils {
     // I want a Dictionary with key as say "Science" and value array as ["MAry","Bob","Kelly.....]
     
     
-    func getDictionaryFromJson(rootElement:String, categoryElement: String, valueElement :String, jsonObject: [String: AnyObject]) -> [String:[String]]?  {
+    func getDictionaryFromJson(rootElement:String,
+                               categoryElement:String,
+                               valueElement:String,
+                               jsonObject: [String: AnyObject]) -> [String:[String]]?  {
         
         var finalDictionary = [String:[String]]()
+        
+        // get array of keys
         let keyArray:[String] = getKeyArrayFromJSON(rootElement: rootElement, key: categoryElement, jsonObject: jsonObject)!
+        
         //print(keyArray)
         //print ("key1: \(categoryElement) \n key2: \(valueElement)")
         
@@ -53,19 +59,20 @@ extension Utils {
         
         for item in keyArray {  // Process each section
             guard
-                let users = jsonObject[rootElement] as? [[String: AnyObject]]
+                let jsObject = jsonObject[rootElement] as? [[String: AnyObject]]
                 else {
                     return nil
             }
             
             // process all items and check for items that match item
-            for user in users {
-                let  val1 = user[categoryElement] as? String
-                let  val2 = user[valueElement] as? String
+            for obj in jsObject  {
+                let  val1 = obj[categoryElement] as? String
+                let  val2 = obj[valueElement] as? String
                 if val1 == item {
                     tempArr.append(val2!)
                 }
-            }
+            }  // for obj
+            
             
             // Now add an entry to our final Dictonary
             finalDictionary.updateValue(tempArr, forKey: item)
@@ -82,24 +89,30 @@ extension Utils {
     
     
     
-    func getKeyArrayFromJSON(rootElement:String, key:String, jsonObject: [String: AnyObject]) -> [String]? {
+    
+    // This is a helper function. 
+    
+    func getKeyArrayFromJSON(rootElement:String,
+                             key:String,
+                             jsonObject: [String: AnyObject]) -> [String]? {
         
         var tempArray = [String]()   // create empty array
         guard
-            let users = jsonObject[rootElement] as? [[String: AnyObject]]
-            else {
+            let jsObject = jsonObject[rootElement] as? [[String: AnyObject]]
+        else {
                 //print("is nil...")
                 return nil
         }
         
-        for user in users {
+        for obj in jsObject {
             guard
-                let key = user[key] as? String
-                else {
-                    break
+                let key = obj[key] as? String
+            else {
+                break
             }
             tempArray.append(key)
-        }  // for users
+        }  // for obj
+        
         
         // return array
         return Array(Set(tempArray)  )
@@ -109,7 +122,7 @@ extension Utils {
     
 
     
-    
+    // **************************** end JSON section ************************************************************
     
     
     
@@ -119,6 +132,18 @@ extension Utils {
     
     
     //  ********************** Date / Time Section **********************************
+    
+    
+    // ***********************************************
+    // Function computes difference between two Dates
+    //
+    // ************************************************
+    
+    func timeDiff(date1: Date) -> Double {
+        let  date2: Date = Date()
+        return date2.timeIntervalSince(date1)
+        
+    }
     
     
     

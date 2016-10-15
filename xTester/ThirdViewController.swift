@@ -16,6 +16,14 @@ import UIKit
 class ThirdViewController: UIViewController, Utils {
     
     
+    @IBOutlet weak var idLabel: UITextField!
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var cityLabel: UITextField!
+    @IBOutlet weak var zipLabel: UITextField!
+    @IBOutlet weak var salesLabel: UITextField!
+    
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

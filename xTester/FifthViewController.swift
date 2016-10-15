@@ -11,10 +11,10 @@
 import Foundation
 import UIKit
 
-class FifthViewController: UIViewController {
+class FifthViewController: UIViewController, Utils {
 
 
-    
+    /*
     // ***********************************************
     // Function computes difference between two Dates
     //
@@ -26,6 +26,9 @@ class FifthViewController: UIViewController {
         
     }
     
+    */
+    
+    
     
     
     
@@ -35,7 +38,8 @@ class FifthViewController: UIViewController {
         // Thos is where we will play with our Asynchronous Requests
         
         // Set up the URL request
-        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+        //let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
         
         guard let url = URL(string: todoEndpoint)  else {
             print("Error: cannot create URL")
@@ -73,8 +77,11 @@ class FifthViewController: UIViewController {
                 
                 // let's print the time it took to get this ASYNCHRONOUS data
                 let  date2: Date = Date()
-                //var seconds: Double = timeDiff(date1: self.start as Date)
-                let  seconds  = date2.timeIntervalSince(start)
+                // let  seconds  = date2.timeIntervalSince(start)
+                let  seconds: Double = self.timeDiff(date1: start)
+                
+                
+                
                 
                 NSLog("It took \(seconds) seconds to process this request")
                 
@@ -98,6 +105,20 @@ class FifthViewController: UIViewController {
                         do {
                             let jsonObject:Any = try JSONSerialization.jsonObject(with: jsonData, options: [])
                             print(jsonObject)
+                            
+                            /*
+                            // Let's create s Dictonary from JSOn object
+                            var dict:[String:[String]] =  self.getDictionaryFromJson(rootElement:"users",categoryElement: "section", valueElement: "name", jsonObject: dictionary)!
+                            print(dict)
+
+                            */
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         } catch let error {
                             print("Error ceating JOSN object \(error)")
                         }  // end do

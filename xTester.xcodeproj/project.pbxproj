@@ -97,6 +97,12 @@
 		0F8328DC1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */; };
 		0F8328DD1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */; };
 		0F8328DE1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */; };
+		0F8D22CF1DB28C9E00227D6A /* Third.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22CE1DB28C9E00227D6A /* Third.storyboard */; };
+		0F8D22D01DB28C9E00227D6A /* Third.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22CE1DB28C9E00227D6A /* Third.storyboard */; };
+		0F8D22D11DB28C9E00227D6A /* Third.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22CE1DB28C9E00227D6A /* Third.storyboard */; };
+		0F8D22D31DB28CBA00227D6A /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D21DB28CBA00227D6A /* Second.storyboard */; };
+		0F8D22D41DB28CBA00227D6A /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D21DB28CBA00227D6A /* Second.storyboard */; };
+		0F8D22D51DB28CBA00227D6A /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D21DB28CBA00227D6A /* Second.storyboard */; };
 		0FD9707A1DA802480099BE54 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970711DA802480099BE54 /* ButtonView.swift */; };
 		0FD9707B1DA802480099BE54 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970721DA802480099BE54 /* FirstViewController.swift */; };
 		0FD9707C1DA802480099BE54 /* Fourth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD970731DA802480099BE54 /* Fourth.storyboard */; };
@@ -166,6 +172,8 @@
 		0F8328D31DA9CF0B009804C2 /* NinthCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthCollectionViewLayout.swift; sourceTree = "<group>"; };
 		0F8328D71DA9D158009804C2 /* Ninth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ninth.storyboard; sourceTree = "<group>"; };
 		0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthCollectionViewCell.swift; sourceTree = "<group>"; };
+		0F8D22CE1DB28C9E00227D6A /* Third.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Third.storyboard; sourceTree = "<group>"; };
+		0F8D22D21DB28CBA00227D6A /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 		0FD970711DA802480099BE54 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0FD970721DA802480099BE54 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0FD970731DA802480099BE54 /* Fourth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fourth.storyboard; sourceTree = "<group>"; };
@@ -310,6 +318,8 @@
 			children = (
 				0FD970761DA802480099BE54 /* LaunchScreen.storyboard */,
 				0FD970771DA802480099BE54 /* Main.storyboard */,
+				0F8D22D21DB28CBA00227D6A /* Second.storyboard */,
+				0F8D22CE1DB28C9E00227D6A /* Third.storyboard */,
 				0FD970731DA802480099BE54 /* Fourth.storyboard */,
 				0F1923521DA8903D00FF9E4D /* Fifth.storyboard */,
 				0F1923391DA87A9100FF9E4D /* Sixth.storyboard */,
@@ -485,7 +495,9 @@
 				0FD9707F1DA802480099BE54 /* LaunchScreen.storyboard in Resources */,
 				0F3F99001DA81E74002FBB8C /* CityView.xib in Resources */,
 				0F24FD991DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
+				0F8D22D31DB28CBA00227D6A /* Second.storyboard in Resources */,
 				0F19234F1DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
+				0F8D22CF1DB28C9E00227D6A /* Third.storyboard in Resources */,
 				0F2D7EC81DB13CB9007A6F4A /* data.json in Resources */,
 				0F8328D81DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F19233A1DA87A9100FF9E4D /* Sixth.storyboard in Resources */,
@@ -500,6 +512,8 @@
 			files = (
 				0F1923541DA8903D00FF9E4D /* Fifth.storyboard in Resources */,
 				0F2D7EC91DB13CB9007A6F4A /* data.json in Resources */,
+				0F8D22D01DB28C9E00227D6A /* Third.storyboard in Resources */,
+				0F8D22D41DB28CBA00227D6A /* Second.storyboard in Resources */,
 				0F8328D91DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9A1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F1923501DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
@@ -514,6 +528,8 @@
 			files = (
 				0F1923551DA8903D00FF9E4D /* Fifth.storyboard in Resources */,
 				0F2D7ECA1DB13CB9007A6F4A /* data.json in Resources */,
+				0F8D22D11DB28C9E00227D6A /* Third.storyboard in Resources */,
+				0F8D22D51DB28CBA00227D6A /* Second.storyboard in Resources */,
 				0F8328DA1DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9B1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F1923511DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
