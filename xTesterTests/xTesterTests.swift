@@ -33,4 +33,63 @@ class xTesterTests: XCTestCase {
         }
     }
     
-}
+    
+    
+    
+    // Lets's write our tests in this section
+    
+
+    // ==================  Tests for Test Class =======================
+    func testAge() {
+        let tst = Test()
+        let theAge: Int  = tst.showAge(80)
+        XCTAssert( theAge > 35 )
+    }
+    
+    func testAge2() {
+        let tst = Test()
+        let theAge2: Int  = tst.showAge(40)
+        XCTAssert( theAge2 > 35 )
+        
+    }
+    
+
+    
+    
+    
+    
+    
+    
+    func testDoSomething()  {
+        let tst = Test()
+        let  check: Bool = tst.doSomething("Pune")
+        XCTAssert(check, "Sorty failed")
+    }
+
+    
+    func testDoSomething2()  {
+        let tst = Test()
+        let check2: Bool = tst.doSomething("Sangli")
+         XCTAssert(check2, "Second check failed")
+    }
+
+    
+    
+    
+    
+    
+    
+    //  ==================  end Test Class section ======================
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}  // end class

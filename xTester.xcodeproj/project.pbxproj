@@ -118,6 +118,9 @@
 		0FD970801DA802480099BE54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD970771DA802480099BE54 /* Main.storyboard */; };
 		0FD970811DA802480099BE54 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970781DA802480099BE54 /* SecondViewController.swift */; };
 		0FD970821DA802480099BE54 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970791DA802480099BE54 /* ThirdViewController.swift */; };
+		0FECD9D01DB462BE00DDDCFE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECD9CF1DB462BE00DDDCFE /* Test.swift */; };
+		0FECD9D11DB462BE00DDDCFE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECD9CF1DB462BE00DDDCFE /* Test.swift */; };
+		0FECD9D21DB462BE00DDDCFE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECD9CF1DB462BE00DDDCFE /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +194,7 @@
 		0FD970771DA802480099BE54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0FD970781DA802480099BE54 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		0FD970791DA802480099BE54 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		0FECD9CF1DB462BE00DDDCFE /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +305,7 @@
 				0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */,
 				0F2D7EC61DB13BFD007A6F4A /* Resources */,
 				0F3F98FE1DA81DC2002FBB8C /* Model */,
+				0FECD9D31DB462E100DDDCFE /* TestClass */,
 			);
 			path = xTester;
 			sourceTree = "<group>";
@@ -387,6 +392,14 @@
 				0F8328D31DA9CF0B009804C2 /* NinthCollectionViewLayout.swift */,
 			);
 			name = CollectionViewRelated;
+			sourceTree = "<group>";
+		};
+		0FECD9D31DB462E100DDDCFE /* TestClass */ = {
+			isa = PBXGroup;
+			children = (
+				0FECD9CF1DB462BE00DDDCFE /* Test.swift */,
+			);
+			name = TestClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +591,7 @@
 				0FD9707A1DA802480099BE54 /* ButtonView.swift in Sources */,
 				0F3052D61DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F3052D91DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
+				0FECD9D01DB462BE00DDDCFE /* Test.swift in Sources */,
 				0FD970811DA802480099BE54 /* SecondViewController.swift in Sources */,
 				0F2D7ECC1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0FD9707B1DA802480099BE54 /* FirstViewController.swift in Sources */,
@@ -612,6 +626,7 @@
 				0F8328C81DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F3052CD1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
 				0F3052DD1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
+				0FECD9D11DB462BE00DDDCFE /* Test.swift in Sources */,
 				0F1923431DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
 				0F24FD9E1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
 				0F3052EE1DABF1EF00F79778 /* Utils.swift in Sources */,
@@ -641,6 +656,7 @@
 				0F8328C91DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F3052CE1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
 				0F3052DE1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
+				0FECD9D21DB462BE00DDDCFE /* Test.swift in Sources */,
 				0F1923441DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
 				0F24FD9F1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
 				0F3052EF1DABF1EF00F79778 /* Utils.swift in Sources */,
