@@ -18,32 +18,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asynchronous Calls Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJo-8J-Xyq">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="This page shows an example of sending a URL request and getting JSON back." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Wc-DL-wWZ">
+                                <frame key="frameInset" minX="83" minY="370" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Mcm-7I-4PT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check console Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOB-zU-Dbo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fifth Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plz-n6-GfI">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Asynchronous Calls Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJo-8J-Xyq">
-                                <frame key="frameInset" minX="103" minY="151" width="201" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Check console Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOB-zU-Dbo">
-                                <frame key="frameInset" minX="106" minY="239" width="194" height="66"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90616988369999996" green="0.90616988369999996" blue="0.90616988369999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="plz-n6-GfI" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="0og-ss-hlI"/>
-                            <constraint firstItem="rOB-zU-Dbo" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="W8q-2M-RXM"/>
-                            <constraint firstItem="rOB-zU-Dbo" firstAttribute="top" secondItem="mJo-8J-Xyq" secondAttribute="bottom" constant="67" id="fRL-PR-wZe"/>
-                            <constraint firstItem="plz-n6-GfI" firstAttribute="top" secondItem="jJQ-yL-RoA" secondAttribute="bottom" constant="70" id="fcO-rJ-lgR"/>
-                            <constraint firstItem="mJo-8J-Xyq" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="lIe-qc-Mo5"/>
-                            <constraint firstItem="mJo-8J-Xyq" firstAttribute="top" secondItem="plz-n6-GfI" secondAttribute="bottom" constant="40" id="n2V-pl-Cgo"/>
+                            <constraint firstItem="3Wc-DL-wWZ" firstAttribute="top" secondItem="rOB-zU-Dbo" secondAttribute="bottom" constant="22" id="L6k-z1-M28"/>
+                            <constraint firstItem="mJo-8J-Xyq" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="U4A-SA-Tba"/>
+                            <constraint firstItem="mJo-8J-Xyq" firstAttribute="top" secondItem="plz-n6-GfI" secondAttribute="bottom" constant="35" id="Zmj-Rd-KPP"/>
+                            <constraint firstItem="rOB-zU-Dbo" firstAttribute="top" secondItem="mJo-8J-Xyq" secondAttribute="bottom" constant="132" id="jQt-LM-1kc"/>
+                            <constraint firstItem="3Wc-DL-wWZ" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="jnr-Je-1wu"/>
+                            <constraint firstItem="plz-n6-GfI" firstAttribute="top" secondItem="jJQ-yL-RoA" secondAttribute="bottom" constant="27" id="qll-uO-jin"/>
+                            <constraint firstItem="rOB-zU-Dbo" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="v6f-wg-nDe"/>
+                            <constraint firstItem="plz-n6-GfI" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="vec-Bv-NNk"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

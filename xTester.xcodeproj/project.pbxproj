@@ -103,6 +103,12 @@
 		0F8D22D31DB28CBA00227D6A /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D21DB28CBA00227D6A /* Second.storyboard */; };
 		0F8D22D41DB28CBA00227D6A /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D21DB28CBA00227D6A /* Second.storyboard */; };
 		0F8D22D51DB28CBA00227D6A /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D21DB28CBA00227D6A /* Second.storyboard */; };
+		0F8D22D71DB2D08500227D6A /* names2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D61DB2D08500227D6A /* names2.json */; };
+		0F8D22D81DB2D08500227D6A /* names2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D61DB2D08500227D6A /* names2.json */; };
+		0F8D22D91DB2D08500227D6A /* names2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D61DB2D08500227D6A /* names2.json */; };
+		0F8D22DB1DB2D28000227D6A /* names3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* names3.json */; };
+		0F8D22DC1DB2D28000227D6A /* names3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* names3.json */; };
+		0F8D22DD1DB2D28000227D6A /* names3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* names3.json */; };
 		0FD9707A1DA802480099BE54 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970711DA802480099BE54 /* ButtonView.swift */; };
 		0FD9707B1DA802480099BE54 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970721DA802480099BE54 /* FirstViewController.swift */; };
 		0FD9707C1DA802480099BE54 /* Fourth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD970731DA802480099BE54 /* Fourth.storyboard */; };
@@ -174,6 +180,8 @@
 		0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F8D22CE1DB28C9E00227D6A /* Third.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Third.storyboard; sourceTree = "<group>"; };
 		0F8D22D21DB28CBA00227D6A /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
+		0F8D22D61DB2D08500227D6A /* names2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names2.json; sourceTree = "<group>"; };
+		0F8D22DA1DB2D28000227D6A /* names3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names3.json; sourceTree = "<group>"; };
 		0FD970711DA802480099BE54 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0FD970721DA802480099BE54 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0FD970731DA802480099BE54 /* Fourth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fourth.storyboard; sourceTree = "<group>"; };
@@ -221,6 +229,8 @@
 		0F2D7EC61DB13BFD007A6F4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0F8D22D61DB2D08500227D6A /* names2.json */,
+				0F8D22DA1DB2D28000227D6A /* names3.json */,
 				0F2D7EC71DB13CB9007A6F4A /* data.json */,
 			);
 			name = Resources;
@@ -499,9 +509,11 @@
 				0F19234F1DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
 				0F8D22CF1DB28C9E00227D6A /* Third.storyboard in Resources */,
 				0F2D7EC81DB13CB9007A6F4A /* data.json in Resources */,
+				0F8D22DB1DB2D28000227D6A /* names3.json in Resources */,
 				0F8328D81DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F19233A1DA87A9100FF9E4D /* Sixth.storyboard in Resources */,
 				0FD9707C1DA802480099BE54 /* Fourth.storyboard in Resources */,
+				0F8D22D71DB2D08500227D6A /* names2.json in Resources */,
 				0F38F4EC1DA7F8AF0086BAA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,10 +525,12 @@
 				0F1923541DA8903D00FF9E4D /* Fifth.storyboard in Resources */,
 				0F2D7EC91DB13CB9007A6F4A /* data.json in Resources */,
 				0F8D22D01DB28C9E00227D6A /* Third.storyboard in Resources */,
+				0F8D22D81DB2D08500227D6A /* names2.json in Resources */,
 				0F8D22D41DB28CBA00227D6A /* Second.storyboard in Resources */,
 				0F8328D91DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9A1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F1923501DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
+				0F8D22DC1DB2D28000227D6A /* names3.json in Resources */,
 				0F3052E91DAAE44600F79778 /* DucTran.storyboard in Resources */,
 				0F19233B1DA87A9100FF9E4D /* Sixth.storyboard in Resources */,
 			);
@@ -529,10 +543,12 @@
 				0F1923551DA8903D00FF9E4D /* Fifth.storyboard in Resources */,
 				0F2D7ECA1DB13CB9007A6F4A /* data.json in Resources */,
 				0F8D22D11DB28C9E00227D6A /* Third.storyboard in Resources */,
+				0F8D22D91DB2D08500227D6A /* names2.json in Resources */,
 				0F8D22D51DB28CBA00227D6A /* Second.storyboard in Resources */,
 				0F8328DA1DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9B1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F1923511DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
+				0F8D22DD1DB2D28000227D6A /* names3.json in Resources */,
 				0F3052EA1DAAE44600F79778 /* DucTran.storyboard in Resources */,
 				0F19233C1DA87A9100FF9E4D /* Sixth.storyboard in Resources */,
 			);

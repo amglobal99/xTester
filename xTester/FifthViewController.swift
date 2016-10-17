@@ -14,23 +14,6 @@ import UIKit
 class FifthViewController: UIViewController, Utils {
 
 
-    /*
-    // ***********************************************
-    // Function computes difference between two Dates
-    //
-    // ************************************************
-    
-    func timeDiff(date1: Date) -> Double {
-        let  date2: Date = Date()
-        return date2.timeIntervalSince(date1)
-        
-    }
-    
-    */
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +22,10 @@ class FifthViewController: UIViewController, Utils {
         
         // Set up the URL request
         //let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
-        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+       let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+        //let todoEndpoint :String = "https://api.github.com/users/amglobal99/repos"
+        
+        
         
         guard let url = URL(string: todoEndpoint)  else {
             print("Error: cannot create URL")
@@ -50,6 +36,7 @@ class FifthViewController: UIViewController, Utils {
         let urlRequest = URLRequest(url: url)
         
         // set up the session. There are two ways of doing this
+        // Option 1
         //let config = URLSessionConfiguration.default
         //let session = URLSession(configuration: config)
         
@@ -64,7 +51,7 @@ class FifthViewController: UIViewController, Utils {
         // make the request
         let task = session.dataTask(with: urlRequest, completionHandler:
             
-            // Response is the headres info returned by server
+            // Response is the header info returned by server
             // data is the actual JSON data
             
             { (data, response, error) in
@@ -76,13 +63,7 @@ class FifthViewController: UIViewController, Utils {
                 
                 
                 // let's print the time it took to get this ASYNCHRONOUS data
-                let  date2: Date = Date()
-                // let  seconds  = date2.timeIntervalSince(start)
                 let  seconds: Double = self.timeDiff(date1: start)
-                
-                
-                
-                
                 NSLog("It took \(seconds) seconds to process this request")
                 
                 // First, let's print the raw Response
@@ -90,47 +71,67 @@ class FifthViewController: UIViewController, Utils {
                 
                 
                 // Now let's parse the JSON for data that was returned
-                if let jsonData  = data {
+                
+                if data != nil {
                     print("Yes ... we do have JSON data")
                     
-                    /*
-                     // This code will print the pure String for JSON data
-                     if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
-                     print("JSON Data: \n \(jsonString)")
-                     }
-                     */
-                    
-                    // Let's parse our JSOn
-                    if let jsonData =  data {
-                        do {
-                            let jsonObject:Any = try JSONSerialization.jsonObject(with: jsonData, options: [])
-                            print(jsonObject)
-                            
                             /*
-                            // Let's create s Dictonary from JSOn object
-                            var dict:[String:[String]] =  self.getDictionaryFromJson(rootElement:"users",categoryElement: "section", valueElement: "name", jsonObject: dictionary)!
-                            print(dict)
+                             // This code will print the pure String for JSON data
+                             if let jsonString = String(data: data!, encoding: String.Encoding.utf8) {
+                                print("JSON Data: \n \(jsonString)")
+                             }
+                        */
+                    
+                    
+                            // Let's parse our JSON
+                            if let jsonData =  data {
+                                
+                                    do {
+                                        let object = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                                       // let object = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
+                                        
+                                        print(object)
+                                
+                                        
+                                        
+                                        // This is where we will parse json into a Dictionary .. TO BE WORKED ON  10/17/2016
+                                        /*
+                                        if let dictionary = object as? [String: AnyObject] {
+                                            print("in the lop ..")
+                                            
+                                            // Let's create s Dictonary from JSOn object
+                                            var dict =  self.getDictionaryFromJson(rootElement:"users",
+                                                                                                     categoryElement: "section",
+                                                                                                     valueElement: "name",
+                                                                                                     jsonObject: dictionary  )!
+                                            print(dict)
+                                        } // let dictionary =
+                                      */
+                                        
+                                        
+                                        
+                                        
+                                       
+                                    } catch let error {
+                                        print("Error ceating JOSN object \(error)")
+                                    }  // end do-catch
+                                
+                            }// jsonData =  data
+                    
+                    
+                    } // data != nil
+                
+                
+            }  // end closure
+            
+        )  // task = session.dataTask
 
-                            */
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        } catch let error {
-                            print("Error ceating JOSN object \(error)")
-                        }  // end do
-                    }// end if
-                    
-                    
-                } // end if jsonData =  data
-                
-                
-            }
-        )
-        
+
+
+
+
+
+
         
         // We will now send the actual request.
         // Remember : At this point the tAsk is in a suspended state ( Tasks are initially in Suspended state)

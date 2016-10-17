@@ -154,7 +154,6 @@
                                     <constraint firstItem="nRr-cL-jWt" firstAttribute="width" secondItem="ZoR-XZ-JOo" secondAttribute="width" id="cqG-u0-lhG"/>
                                     <constraint firstItem="oJa-dQ-m7C" firstAttribute="height" secondItem="BVd-zv-2Si" secondAttribute="height" id="ekk-CW-eon"/>
                                     <constraint firstItem="UoA-ZW-Xbi" firstAttribute="width" secondItem="ZoR-XZ-JOo" secondAttribute="width" id="ht8-Wq-Lce"/>
-                                    <constraint firstItem="dEc-Fp-MON" firstAttribute="top" secondItem="gdw-gq-4l5" secondAttribute="bottom" constant="8" symbolic="YES" id="nP6-gi-AvR"/>
                                     <constraint firstItem="gdw-gq-4l5" firstAttribute="height" secondItem="BVd-zv-2Si" secondAttribute="height" id="ocQ-ec-paY"/>
                                     <constraint firstItem="Cjy-Gt-5g9" firstAttribute="width" secondItem="ZoR-XZ-JOo" secondAttribute="width" id="phQ-Go-zbJ"/>
                                     <constraint firstItem="76M-za-IAG" firstAttribute="height" secondItem="BVd-zv-2Si" secondAttribute="height" id="tzO-pT-a82"/>
@@ -169,6 +168,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pO-0T-jF5">
                                         <state key="normal" title="Validate"/>
+                                        <connections>
+                                            <action selector="validateForm:" destination="ISI-4M-8EU" eventType="touchUpInside" id="7kN-3L-Q0p"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxR-9i-tSP">
                                         <state key="normal" title="Submit"/>

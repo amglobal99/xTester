@@ -10,7 +10,7 @@
         <scene sceneID="2Kh-QQ-dfe">
             <objects>
                 <collectionViewController id="gYT-rF-oQo" customClass="NinthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="rMG-rL-r0n">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rMG-rL-r0n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99501991270000001" green="0.97463142270000003" blue="0.82343513769999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,7 +31,7 @@
                                 <color key="backgroundColor" red="0.99501991270000001" green="0.87115594880000002" blue="0.515517161" alpha="1" colorSpace="calibratedRGB"/>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IML-5j-r6F">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="IML-5j-r6F" customClass="SectionHeaderView" customModule="xTester" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <color key="backgroundColor" red="0.80487156559999995" green="0.92403095960000003" blue="0.89732714719999995" alpha="1" colorSpace="calibratedRGB"/>

@@ -25,6 +25,32 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
    
     
     
+    
+    @IBAction func validateForm(_ sender: AnyObject) {
+        
+        print("I am validating .....")
+        
+        if idLabel.text == "" {
+            print("id is empty")
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -42,6 +68,22 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
     
     
     
+   
+    
+    
+    
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    
+    
+    // Form Related Functions .... Validation etc
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -55,10 +97,9 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
     
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    
+    
     
     
     

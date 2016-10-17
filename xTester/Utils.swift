@@ -41,7 +41,7 @@ extension Utils {
     // My JSon object has name field with values say John, MAry, Carla etc
     // I want a Dictionary with key as say "Science" and value array as ["MAry","Bob","Kelly.....]
     
-    
+    /*
     func getDictionaryFromJson(rootElement:String,
                                categoryElement:String,
                                valueElement:String,
@@ -86,6 +86,67 @@ extension Utils {
         return finalDictionary
         
     }  // end funtion
+    
+    */
+    
+    
+    
+    
+    
+    func getDictionaryFromJson(rootElement:String,
+                               categoryElement:String,
+                               valueElement:String,
+                               jsonObject: [String: AnyObject]) -> [String:[String]]?  {
+        
+        var finalDictionary = [String:[String]]()
+        
+        // get array of keys
+        let keyArray:[String] = getKeyArrayFromJSON(rootElement: rootElement, key: categoryElement, jsonObject: jsonObject)!
+        
+        //print(keyArray)
+        //print ("key1: \(categoryElement) \n key2: \(valueElement)")
+        
+        var tempArr = [String]()   // temporary storage
+        
+        for item in keyArray {  // Process each section
+            
+            guard
+                let jsObject = jsonObject[rootElement] as? [[String: AnyObject]]
+                else {
+                    return nil
+            }
+            
+            // process all items and check for items that match item
+            for obj in jsObject  {
+                let  val1 = obj[categoryElement] as? String
+                let  val2 = obj[valueElement] as? String
+                if val1 == item {
+                    tempArr.append(val2!)
+                }
+            }  // for obj
+            
+            
+            // Now add an entry to our final Dictonary
+            finalDictionary.updateValue(tempArr, forKey: item)
+            
+            // clear array
+            tempArr.removeAll()
+            
+        }// item in keyArray
+        
+        // Return the final Dictionary
+        return finalDictionary
+        
+    }  // end funtion
+    
+
+    
+    
+    
+    
+    
+    
+    
     
     
     
