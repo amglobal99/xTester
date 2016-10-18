@@ -1,0 +1,35 @@
+PODS:
+  - Alamofire (4.0.0)
+  - AlamofireImage (3.0.0):
+    - Alamofire (~> 4.0)
+  - BRYXBanner (0.7.0)
+  - FLAnimatedImage (1.0.12)
+  - Locksmith (3.0.0)
+  - PINCache (2.3)
+  - PINRemoteImage (2.1.4):
+    - PINRemoteImage/FLAnimatedImage (= 2.1.4)
+  - PINRemoteImage/Core (2.1.4):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1.4):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireImage
+  - BRYXBanner
+  - Locksmith
+  - PINRemoteImage
+
+SPEC CHECKSUMS:
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  AlamofireImage: 6594aa1139a67dcd36cde6da79ea4e5b318e60fb
+  BRYXBanner: 732f576bf9cc1f3f6138d81e8a048666af1c49db
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
+
+PODFILE CHECKSUM: f457d33cba95c80619088238e1d73f8f67c1740c
+
+COCOAPODS: 1.1.0.rc.2
