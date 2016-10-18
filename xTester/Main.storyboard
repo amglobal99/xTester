@@ -62,10 +62,9 @@
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-BO-TWl">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-nd-Hc1">
-                                        <frame key="frameInset" width="250" height="4"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-nd-Hc1">
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="Second VC ( Popover Segue &amp; Dismiss)">
+                                        <state key="normal" title="VC2: Popover Segue &amp; Dismiss">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -74,18 +73,16 @@
                                             </segue>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-2d-Yku">
-                                        <frame key="frameInset" minY="4" width="250" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-2d-Yku">
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="Third VC (Form Validation)"/>
+                                        <state key="normal" title="VC3: Form Validation"/>
                                         <connections>
                                             <segue destination="I7K-GK-RgC" kind="show" id="gBG-9F-AbY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-9q-Py3">
-                                        <frame key="frameInset" minY="32" width="250" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-9q-Py3">
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="Fourth VC ( Button Action &amp; show Segue)"/>
+                                        <state key="normal" title="VC4: Button Action &amp; show Segue"/>
                                         <connections>
                                             <segue destination="G4C-fA-lAV" kind="show" id="JF2-kZ-QTC"/>
                                         </connections>
@@ -96,35 +93,35 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee9-sD-a1x">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Asynchronous Calls"/>
+                                        <state key="normal" title="VC5: Async Calls"/>
                                         <connections>
                                             <segue destination="E1L-pX-LEb" kind="show" id="aRx-Br-SMd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5v-VO-3Q6">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="View Lifecycle"/>
+                                        <state key="normal" title="VC6: ViewLifecycle"/>
                                         <connections>
                                             <segue destination="B4Y-Vc-WQM" kind="show" id="O3i-8c-X9s"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-JG-b2v">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Concurrency Demo"/>
+                                        <state key="normal" title="VC7: Concurrency"/>
                                         <connections>
                                             <segue destination="qMH-AZ-9aY" kind="show" id="hJf-1q-RQm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpa-Sa-hHq">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Coll Views (Basic)"/>
+                                        <state key="normal" title="VC8: Coll View(Basic)"/>
                                         <connections>
                                             <segue destination="MUC-a6-A7B" kind="show" id="IdB-dy-K1Q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-ao-rgt">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Coll Views"/>
+                                        <state key="normal" title="VC9: Coll Views"/>
                                         <connections>
                                             <segue destination="hUN-e6-q7H" kind="show" id="HXT-yP-8Et"/>
                                         </connections>
@@ -152,7 +149,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-dp-2OD">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Alerts"/>
+                                        <state key="normal" title="VC10: Alerts"/>
                                         <connections>
                                             <segue destination="U4C-tk-WeJ" kind="show" id="dVM-XD-FAk"/>
                                         </connections>
@@ -171,10 +168,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuA-Na-Tfz">
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-oK-aLn">
+                                <frame key="frameInset" minX="74" minY="541" width="241" height="2"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Right Resreved.  @c 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omo-ZS-UqP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="All Right Resreved.  @c 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omo-ZS-UqP">
+                                <frame key="frameInset" minX="113" minY="552" width="163" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IxJ-Ko-C9j"/>
                                 </constraints>
@@ -182,38 +181,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-oK-aLn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men’s Journal" translatesAutoresizingMaskIntoConstraints="NO" id="Vak-bA-ctB"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuA-Na-Tfz">
+                                <frame key="frameInset" minX="74" minY="588" width="241" height="2"/>
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men’s Journal" translatesAutoresizingMaskIntoConstraints="NO" id="Vak-bA-ctB"/>
                         </subviews>
                         <color key="backgroundColor" red="0.99501991271972656" green="0.91817084371410651" blue="0.5674052081504225" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SuA-Na-Tfz" secondAttribute="bottom" constant="48" id="7xf-fo-wmr"/>
-                            <constraint firstItem="omo-ZS-UqP" firstAttribute="centerX" secondItem="SuA-Na-Tfz" secondAttribute="centerX" id="9KC-hh-cku"/>
-                            <constraint firstItem="wfX-oK-aLn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="AuP-Gw-poa"/>
+                            <constraint firstItem="wfX-oK-aLn" firstAttribute="top" secondItem="TzC-KT-8Q9" secondAttribute="bottom" constant="43" id="00A-Ko-TTb"/>
+                            <constraint firstItem="wfX-oK-aLn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="22l-pu-IQp"/>
+                            <constraint firstItem="SuA-Na-Tfz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3ej-pD-7U0"/>
+                            <constraint firstItem="wfX-oK-aLn" firstAttribute="top" secondItem="sV7-3I-NdO" secondAttribute="bottom" constant="43" id="7rk-K0-dd2"/>
+                            <constraint firstItem="SuA-Na-Tfz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="588" id="B67-BI-Oa2"/>
+                            <constraint firstItem="SuA-Na-Tfz" firstAttribute="top" secondItem="omo-ZS-UqP" secondAttribute="bottom" constant="15" id="BAo-xq-LpJ"/>
                             <constraint firstItem="06z-7R-g87" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="Bn3-Mj-tZK"/>
                             <constraint firstItem="AI4-Zf-HV4" firstAttribute="leading" secondItem="jVv-BO-TWl" secondAttribute="leading" id="I5H-fC-qAL"/>
-                            <constraint firstItem="omo-ZS-UqP" firstAttribute="top" secondItem="wfX-oK-aLn" secondAttribute="bottom" constant="8" id="MgK-DS-Up4"/>
+                            <constraint firstItem="omo-ZS-UqP" firstAttribute="top" secondItem="wfX-oK-aLn" secondAttribute="bottom" constant="9" id="O8p-Ns-3e0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vak-bA-ctB" secondAttribute="trailing" constant="27" id="PAL-5L-GL1"/>
                             <constraint firstItem="Vak-bA-ctB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="Qjt-qM-3fM"/>
                             <constraint firstItem="Vak-bA-ctB" firstAttribute="leading" secondItem="lwM-f1-byy" secondAttribute="trailing" constant="73" id="RGz-3G-Enl"/>
                             <constraint firstItem="omo-ZS-UqP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="97" id="Rnq-gc-sf7"/>
+                            <constraint firstItem="wfX-oK-aLn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sdv-Oj-YoR"/>
                             <constraint firstItem="jVv-BO-TWl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U3G-Ch-DkI"/>
                             <constraint firstItem="b0Y-nd-Hc1" firstAttribute="top" secondItem="Vak-bA-ctB" secondAttribute="bottom" constant="8" id="UtW-tQ-5gV"/>
                             <constraint firstItem="TzC-KT-8Q9" firstAttribute="top" secondItem="Vpa-cG-QBj" secondAttribute="bottom" constant="29" id="Vmc-F3-kgG"/>
                             <constraint firstItem="wfX-oK-aLn" firstAttribute="trailing" secondItem="SuA-Na-Tfz" secondAttribute="trailing" id="Zvh-LB-uuF"/>
                             <constraint firstItem="wfX-oK-aLn" firstAttribute="leading" secondItem="SuA-Na-Tfz" secondAttribute="leading" id="aT7-Y5-9Z9"/>
-                            <constraint firstItem="wfX-oK-aLn" firstAttribute="top" secondItem="TzC-KT-8Q9" secondAttribute="bottom" constant="59" id="caX-Xj-FtX"/>
-                            <constraint firstItem="SuA-Na-Tfz" firstAttribute="top" secondItem="omo-ZS-UqP" secondAttribute="bottom" constant="8" id="ccS-5d-nkx"/>
-                            <constraint firstItem="wfX-oK-aLn" firstAttribute="top" secondItem="sV7-3I-NdO" secondAttribute="bottom" constant="59" id="iPl-CH-Y2t"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SuA-Na-Tfz" secondAttribute="bottom" constant="28" id="hxF-vr-r8A"/>
                             <constraint firstItem="sV7-3I-NdO" firstAttribute="leading" secondItem="TzC-KT-8Q9" secondAttribute="trailing" constant="23" id="jC1-y1-5df"/>
                             <constraint firstItem="5YW-3h-ut5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="kee-3f-Jaj"/>
-                            <constraint firstItem="SuA-Na-Tfz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="617" id="lca-cY-Ei0"/>
                             <constraint firstItem="sV7-3I-NdO" firstAttribute="top" secondItem="AI4-Zf-HV4" secondAttribute="bottom" constant="29" id="qAY-bh-3gu"/>
                             <constraint firstItem="AI4-Zf-HV4" firstAttribute="top" secondItem="GLY-9q-Py3" secondAttribute="bottom" constant="28" id="qxQ-iF-Rdw"/>
                             <constraint firstItem="TzC-KT-8Q9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="r4T-Nr-dlH"/>
                             <constraint firstItem="b0Y-nd-Hc1" firstAttribute="top" secondItem="5YW-3h-ut5" secondAttribute="bottom" constant="49" id="tCI-35-fcn"/>
+                            <constraint firstItem="omo-ZS-UqP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tWB-zi-jtD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tSC-sm-BbK"/>
