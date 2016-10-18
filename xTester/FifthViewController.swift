@@ -21,8 +21,8 @@ class FifthViewController: UIViewController, Utils {
         // Thos is where we will play with our Asynchronous Requests
         
         // Set up the URL request
-        //let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
-       let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+       //let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
         //let todoEndpoint :String = "https://api.github.com/users/amglobal99/repos"
         
         

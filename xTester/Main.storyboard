@@ -124,7 +124,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-dp-2OD">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Placeholder 2"/>
+                                        <state key="normal" title="Alerts"/>
+                                        <connections>
+                                            <segue destination="U4C-tk-WeJ" kind="show" id="dVM-XD-FAk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pd-xn-wDE">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -305,6 +308,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAD-MP-skr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1075" y="-959"/>
+        </scene>
+        <!--Tenth-->
+        <scene sceneID="1iT-Jp-hZH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tenth" id="U4C-tk-WeJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rG-qz-xUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="-1056"/>
         </scene>
     </scenes>
     <resources>

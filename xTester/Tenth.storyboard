@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kAe-tL-uCR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tenth View Controller-->
+        <scene sceneID="aA0-12-4m6">
+            <objects>
+                <viewController id="kAe-tL-uCR" customClass="TenthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ZZ-rx-vVr"/>
+                        <viewControllerLayoutGuide type="bottom" id="jQb-u6-TxL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dp7-k5-DEz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tenth View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8s-od-Alr">
+                                <frame key="frameInset" minX="111" minY="116" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-x4-4N9">
+                                <state key="normal" title="Simple Alert 1"/>
+                                <connections>
+                                    <action selector="showGenericAlert:" destination="kAe-tL-uCR" eventType="touchUpInside" id="YH2-CD-F7v"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="demo for Alerts " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfC-yn-gJV">
+                                <frame key="frameInset" minX="134" minY="174" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VON-n3-bWA">
+                                <state key="normal" title="Show Action Sheet 1"/>
+                                <connections>
+                                    <action selector="displayActionSheet:" destination="kAe-tL-uCR" eventType="touchUpInside" id="MJq-iC-qQY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99501991270000001" green="0.9356433515" blue="0.68604215700000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="z8s-od-Alr" firstAttribute="centerX" secondItem="Dp7-k5-DEz" secondAttribute="centerX" id="MDl-mJ-eZm"/>
+                            <constraint firstItem="YfC-yn-gJV" firstAttribute="top" secondItem="z8s-od-Alr" secondAttribute="bottom" constant="37" id="aGH-iF-mPJ"/>
+                            <constraint firstItem="YfC-yn-gJV" firstAttribute="centerX" secondItem="Dp7-k5-DEz" secondAttribute="centerX" id="bqp-8u-KzA"/>
+                            <constraint firstItem="VON-n3-bWA" firstAttribute="centerX" secondItem="Dp7-k5-DEz" secondAttribute="centerX" id="gaf-eu-vSU"/>
+                            <constraint firstItem="z8s-od-Alr" firstAttribute="top" secondItem="7ZZ-rx-vVr" secondAttribute="bottom" constant="52" id="iRs-HY-rP4"/>
+                            <constraint firstItem="yeU-x4-4N9" firstAttribute="centerX" secondItem="Dp7-k5-DEz" secondAttribute="centerX" id="w2Q-Bu-Au6"/>
+                            <constraint firstItem="VON-n3-bWA" firstAttribute="top" secondItem="yeU-x4-4N9" secondAttribute="bottom" constant="24" id="wfd-k7-HoV"/>
+                            <constraint firstItem="yeU-x4-4N9" firstAttribute="top" secondItem="YfC-yn-gJV" secondAttribute="bottom" constant="50" id="x6g-Kf-xgJ"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUa-dH-yOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="-1036"/>
+        </scene>
+    </scenes>
+</document>

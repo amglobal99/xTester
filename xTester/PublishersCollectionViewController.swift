@@ -170,6 +170,8 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! PublisherCollectionViewCell
         
+        
+        
         //print("setting cell publisher var ..")
         cell.publisher = publishers.publisherForItemAtIndexPath(indexPath)
         //print("cell publisher value has bene set ...")
