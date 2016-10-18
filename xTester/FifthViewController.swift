@@ -113,6 +113,44 @@ class FifthViewController: UIViewController, Utils {
                                         
                                         
                                         
+                                        /*
+                                        guard let
+                                            jsonDictionary = jsonObject as? [AnyHashable: Any],
+                                            //items = jsonDictionary["items"] as? [String:AnyObject],
+                                            let items = jsonDictionary["photos"] as? [String:AnyObject],
+                                            //itemsArray = items["item"] as? [ [String:AnyObject]]
+                                            let itemsArray = items["photo"] as? [ [String:AnyObject]]
+                                            
+                                            else {
+                                                print("        itemsFromJSONData: An error found in guard block")
+                                         
+                                        }
+ 
+                                        
+                                        */
+                                        
+                                        
+                                    guard
+                                            let  jsonDictionary = object as? [AnyHashable:Any]
+                                             // ...... Complete this section
+                                            // ......................
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                     else {
+                                         print("error in getting json")
+                                          return
+                                    }
+                                
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
                                         
                                        
                                     } catch let error {
