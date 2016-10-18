@@ -156,7 +156,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pd-xn-wDE">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Placeholder 3"/>
+                                        <state key="normal" title="VC13: Delegates"/>
+                                        <connections>
+                                            <segue destination="wfU-Oo-JPk" kind="show" id="v0w-mY-nbM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URZ-oV-Jio">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -168,12 +171,10 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-oK-aLn">
-                                <frame key="frameInset" minX="74" minY="541" width="241" height="2"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-oK-aLn">
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="All Right Resreved.  @c 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omo-ZS-UqP">
-                                <frame key="frameInset" minX="113" minY="552" width="163" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Right Resreved.  @c 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omo-ZS-UqP">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IxJ-Ko-C9j"/>
                                 </constraints>
@@ -182,8 +183,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men’s Journal" translatesAutoresizingMaskIntoConstraints="NO" id="Vak-bA-ctB"/>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SuA-Na-Tfz">
-                                <frame key="frameInset" minX="74" minY="588" width="241" height="2"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuA-Na-Tfz">
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -361,6 +361,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Do-Iv-6w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-459" y="-529"/>
+        </scene>
+        <!--Thirteenth-->
+        <scene sceneID="eaQ-UP-Abi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Thirteenth" id="wfU-Oo-JPk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yki-0B-sPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2113" y="-538"/>
         </scene>
     </scenes>
     <resources>

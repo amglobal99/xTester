@@ -186,15 +186,14 @@
                         <constraints>
                             <constraint firstItem="QM7-lH-7gZ" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="6Kz-eW-4d1"/>
                             <constraint firstItem="QM7-lH-7gZ" firstAttribute="top" secondItem="ilB-ZR-DhL" secondAttribute="bottom" constant="57" id="6L5-H0-0hn"/>
+                            <constraint firstItem="5pO-0T-jF5" firstAttribute="leading" secondItem="rXt-Ak-Mlf" secondAttribute="leadingMargin" constant="72" id="82X-gS-l9P"/>
                             <constraint firstItem="4Ih-Ul-gP2" firstAttribute="top" secondItem="Ced-Vf-tms" secondAttribute="bottom" constant="76" id="8gP-Ob-RfD"/>
                             <constraint firstItem="BVd-zv-2Si" firstAttribute="top" secondItem="QJ0-05-7qE" secondAttribute="bottom" constant="26.5" id="Bz6-k8-fGS"/>
                             <constraint firstItem="Ced-Vf-tms" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="F8R-sA-fiU"/>
                             <constraint firstItem="QJ0-05-7qE" firstAttribute="top" secondItem="QM7-lH-7gZ" secondAttribute="bottom" constant="22" id="I9F-gX-aIs"/>
                             <constraint firstItem="QJ0-05-7qE" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="NpH-VA-aaK"/>
                             <constraint firstItem="Ced-Vf-tms" firstAttribute="top" secondItem="e5T-fT-dOz" secondAttribute="bottom" constant="66" id="a9I-8T-flt"/>
-                            <constraint firstItem="QJ0-05-7qE" firstAttribute="top" secondItem="QM7-lH-7gZ" secondAttribute="bottom" constant="26.5" id="hcd-Au-Nd3"/>
                             <constraint firstItem="JFa-q8-3QB" firstAttribute="leading" secondItem="rXt-Ak-Mlf" secondAttribute="leadingMargin" constant="30" id="kiH-Pc-ibc"/>
-                            <constraint firstItem="5pO-0T-jF5" firstAttribute="leading" secondItem="rXt-Ak-Mlf" secondAttribute="leadingMargin" constant="72" id="wBX-vJ-fGK"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
