@@ -29,6 +29,8 @@ class ThirteenthViewController: UIViewController, DestinationViewDelegate {
         
         if ( segue.identifier == "pickColorSegue" ) {
             let destination = segue.destination   as!  ThirteenthViewControllerDestination
+            
+            // Now set the delegate for that other Controller to this class (ThitreenthViewController )
             destination.delegate = self
             
             if (colorView.backgroundColor!.isEqual(UIColor.red)) {

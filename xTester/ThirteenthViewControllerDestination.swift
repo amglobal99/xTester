@@ -22,9 +22,14 @@ class ThirteenthViewControllerDestination: UIViewController {
     
     @IBOutlet weak var destinationOutletLabel: UILabel!
     
-    
+    // Now we want a property which tells us "Who is the delegate for this Controller ?"
+    // We will call our property 'delegate' and it conforms to DestinationViewDelegate protocol
+    // This 'delegate' property will be set from the other View Controller during segue ( prepareForSegue method )
     var delegate: DestinationViewDelegate! = nil
+    
+    
     var colorLabelText: String! = nil
+    
     
     
     @IBAction func touchUpInsideSelectedColor(_ sender: UIButton) {
@@ -32,13 +37,13 @@ class ThirteenthViewControllerDestination: UIViewController {
         if let title = sender.currentTitle {
             delegate.setColor(title)
            // self.navigationController?.popToRootViewController(animated: true)
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)   // Remove from Navigation array
             
         } else {
             print("title is nil")
         }
         
-    }
+    }  // end func
     
     
     
@@ -63,4 +68,5 @@ class ThirteenthViewControllerDestination: UIViewController {
 
     
     
-}
+}   // end class
+ 

@@ -24,35 +24,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here, we show you how two View Controllers pass data between each other.  This uses the Delegation pattern." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8al-Gg-XTi">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8al-Gg-XTi">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="q2y-AB-Ax8"/>
+                                </constraints>
+                                <string key="text">Here, we show you how two View Controllers pass data between each other.    NOTE: To pass data from your main View A to another View B, use the 'PrepareForSegue' method.   To pass data from ViewB to main view, use a Delegate.  </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhy-aw-Igb">
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gx-oE-Ndg">
                                 <state key="normal" title="Pick a Color"/>
                                 <connections>
                                     <segue destination="qbJ-66-qBS" kind="show" identifier="pickColorSegue" id="Eyr-vV-aiK"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhy-aw-Igb">
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95714756677073509" blue="0.76222806564972689" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="qhy-aw-Igb" firstAttribute="top" secondItem="8al-Gg-XTi" secondAttribute="bottom" constant="34" id="6Lj-zz-ich"/>
                             <constraint firstItem="qhy-aw-Igb" firstAttribute="centerX" secondItem="3SZ-ch-1Sf" secondAttribute="centerX" id="6dr-Hn-WrD"/>
-                            <constraint firstItem="8al-Gg-XTi" firstAttribute="leading" secondItem="3SZ-ch-1Sf" secondAttribute="leadingMargin" constant="62" id="HUp-AT-y0u"/>
+                            <constraint firstItem="4gx-oE-Ndg" firstAttribute="top" secondItem="qhy-aw-Igb" secondAttribute="bottom" constant="17" id="ELa-2O-gew"/>
                             <constraint firstItem="8al-Gg-XTi" firstAttribute="centerX" secondItem="3SZ-ch-1Sf" secondAttribute="centerX" id="K5F-AP-Ie0"/>
                             <constraint firstItem="ULA-yZ-zIw" firstAttribute="top" secondItem="d8v-0f-ONK" secondAttribute="bottom" constant="56" id="Ou4-0F-itI"/>
                             <constraint firstItem="qhy-aw-Igb" firstAttribute="leading" secondItem="3SZ-ch-1Sf" secondAttribute="leadingMargin" constant="77" id="Ubv-gQ-EWB"/>
-                            <constraint firstItem="4gx-oE-Ndg" firstAttribute="top" secondItem="qhy-aw-Igb" secondAttribute="bottom" constant="25" id="jrg-f2-qze"/>
+                            <constraint firstItem="qGV-hs-PkD" firstAttribute="top" secondItem="4gx-oE-Ndg" secondAttribute="bottom" constant="63" id="Vi9-Yi-QSU"/>
+                            <constraint firstItem="8al-Gg-XTi" firstAttribute="leading" secondItem="3SZ-ch-1Sf" secondAttribute="leadingMargin" constant="18" id="f2v-Bs-Ij8"/>
                             <constraint firstItem="8al-Gg-XTi" firstAttribute="top" secondItem="ULA-yZ-zIw" secondAttribute="bottom" constant="28" id="ldh-1i-zU5"/>
                             <constraint firstItem="4gx-oE-Ndg" firstAttribute="centerX" secondItem="3SZ-ch-1Sf" secondAttribute="centerX" id="m37-Pu-hO2"/>
-                            <constraint firstItem="qhy-aw-Igb" firstAttribute="top" secondItem="8al-Gg-XTi" secondAttribute="bottom" constant="24" id="mET-zi-yS7"/>
                             <constraint firstItem="ULA-yZ-zIw" firstAttribute="centerX" secondItem="3SZ-ch-1Sf" secondAttribute="centerX" id="o7a-sk-uvK"/>
-                            <constraint firstItem="qGV-hs-PkD" firstAttribute="top" secondItem="4gx-oE-Ndg" secondAttribute="bottom" constant="154" id="qW1-l9-tjZ"/>
-                            <constraint firstItem="qGV-hs-PkD" firstAttribute="top" secondItem="8al-Gg-XTi" secondAttribute="bottom" constant="321" id="xTS-cs-nvV"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

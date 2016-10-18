@@ -255,8 +255,11 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
             case .changed:
                 self.snapshot?.center = location
                 if let indexPath = indexPath {
+                    
                     // change the order of the publisher in the datasource
                     publishers.movePublisherFromIndexPath(sourceIndexPath!, toIndexPath: indexPath)
+                    
+                    
                     collectionView?.moveItem(at: sourceIndexPath!, to: indexPath)
                     sourceIndexPath = indexPath
                 }
