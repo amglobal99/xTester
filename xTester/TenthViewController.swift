@@ -16,7 +16,7 @@ class TenthViewController: UIViewController {
     
     @IBAction func showGenericAlert(_ sender: AnyObject) {
        // print("will print ..")
-        displayAlert(title: "Warning..", error: "Some error", buttonText: "OK")
+        displayAlert( "Tittl", error: "Some error", buttonText: "OK")
         
     }
     

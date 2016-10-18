@@ -14,7 +14,7 @@ extension UIViewController {
     
     
         // Generic function to display an alert from any ViewControlller
-        func displayAlert(title:String, error:String, buttonText: String) {
+        func displayAlert(_ title:String, error:String, buttonText: String) {
             
                // print("start printing function ...")
                 

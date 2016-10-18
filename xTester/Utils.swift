@@ -93,7 +93,7 @@ extension Utils {
     
     
     
-    func getDictionaryFromJson(rootElement:String,
+    func getDictionaryFromJson(_ rootElement:String,
                                categoryElement:String,
                                valueElement:String,
                                jsonObject: [String: AnyObject]) -> [String:[String]]?  {
@@ -101,7 +101,7 @@ extension Utils {
         var finalDictionary = [String:[String]]()
         
         // get array of keys
-        let keyArray:[String] = getKeyArrayFromJSON(rootElement: rootElement, key: categoryElement, jsonObject: jsonObject)!
+        let keyArray:[String] = getKeyArrayFromJSON(rootElement, key: categoryElement, jsonObject: jsonObject)!
         
         //print(keyArray)
         //print ("key1: \(categoryElement) \n key2: \(valueElement)")
@@ -153,7 +153,7 @@ extension Utils {
     
     // This is a helper function. 
     
-    func getKeyArrayFromJSON(rootElement:String,
+    func getKeyArrayFromJSON(_ rootElement:String,
                              key:String,
                              jsonObject: [String: AnyObject]) -> [String]? {
         
@@ -200,7 +200,7 @@ extension Utils {
     //
     // ************************************************
     
-    func timeDiff(date1: Date) -> Double {
+    func timeDiff(_ date1: Date) -> Double {
         let  date2: Date = Date()
         return date2.timeIntervalSince(date1)
         

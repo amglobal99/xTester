@@ -73,7 +73,7 @@ class SeventhViewController: UIViewController {
     //
     
     
-    @IBAction func didClickOnStart(sender: AnyObject) {
+    @IBAction func didClickOnStart(_ sender: AnyObject) {
         
         
         // To make this a serial queue, enable line below

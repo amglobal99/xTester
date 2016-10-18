@@ -63,7 +63,10 @@ class FifthViewController: UIViewController, Utils {
                 
                 
                 // let's print the time it took to get this ASYNCHRONOUS data
-                let  seconds: Double = self.timeDiff(date1: start)
+                let  seconds: Double = self.timeDiff(start)
+                
+                
+                
                 NSLog("It took \(seconds) seconds to process this request")
                 
                 // First, let's print the raw Response
