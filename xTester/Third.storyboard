@@ -19,9 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-lH-7gZ">
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ0-05-7qE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="JFa-q8-3QB">
@@ -159,11 +159,6 @@
                                     <constraint firstItem="76M-za-IAG" firstAttribute="height" secondItem="BVd-zv-2Si" secondAttribute="height" id="tzO-pT-a82"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ0-05-7qE">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ced-Vf-tms">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pO-0T-jF5">
@@ -181,18 +176,24 @@
                                     <constraint firstItem="BxR-9i-tSP" firstAttribute="width" secondItem="5pO-0T-jF5" secondAttribute="width" id="ze4-Mi-Kxj"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM7-lH-7gZ">
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9952840586543531" green="1" blue="0.94962795683137269" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QM7-lH-7gZ" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="6Kz-eW-4d1"/>
+                            <constraint firstItem="QM7-lH-7gZ" firstAttribute="top" secondItem="ilB-ZR-DhL" secondAttribute="bottom" constant="57" id="6L5-H0-0hn"/>
+                            <constraint firstItem="4Ih-Ul-gP2" firstAttribute="top" secondItem="Ced-Vf-tms" secondAttribute="bottom" constant="76" id="8gP-Ob-RfD"/>
+                            <constraint firstItem="BVd-zv-2Si" firstAttribute="top" secondItem="QJ0-05-7qE" secondAttribute="bottom" constant="26.5" id="Bz6-k8-fGS"/>
                             <constraint firstItem="Ced-Vf-tms" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="F8R-sA-fiU"/>
                             <constraint firstItem="QJ0-05-7qE" firstAttribute="top" secondItem="QM7-lH-7gZ" secondAttribute="bottom" constant="22" id="I9F-gX-aIs"/>
-                            <constraint firstItem="4Ih-Ul-gP2" firstAttribute="top" secondItem="Ced-Vf-tms" secondAttribute="bottom" constant="185" id="Iut-4U-zqm"/>
                             <constraint firstItem="QJ0-05-7qE" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="NpH-VA-aaK"/>
                             <constraint firstItem="Ced-Vf-tms" firstAttribute="top" secondItem="e5T-fT-dOz" secondAttribute="bottom" constant="66" id="a9I-8T-flt"/>
-                            <constraint firstItem="QM7-lH-7gZ" firstAttribute="top" secondItem="ilB-ZR-DhL" secondAttribute="bottom" constant="31" id="bs9-YZ-RHp"/>
+                            <constraint firstItem="QJ0-05-7qE" firstAttribute="top" secondItem="QM7-lH-7gZ" secondAttribute="bottom" constant="26.5" id="hcd-Au-Nd3"/>
                             <constraint firstItem="JFa-q8-3QB" firstAttribute="leading" secondItem="rXt-Ak-Mlf" secondAttribute="leadingMargin" constant="30" id="kiH-Pc-ibc"/>
-                            <constraint firstItem="JFa-q8-3QB" firstAttribute="top" secondItem="QJ0-05-7qE" secondAttribute="bottom" constant="33" id="vo6-xp-pOH"/>
                             <constraint firstItem="5pO-0T-jF5" firstAttribute="leading" secondItem="rXt-Ak-Mlf" secondAttribute="leadingMargin" constant="72" id="wBX-vJ-fGK"/>
                         </constraints>
                     </view>

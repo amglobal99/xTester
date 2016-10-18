@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xDQ-Wr-VkL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOD-pe-3vy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -19,6 +19,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="06z-7R-g87">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20J-z3-H8W">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="gvF-EO-pU5"/>
+                                            <constraint firstAttribute="height" constant="30" id="iAk-d3-7l3"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="cardCircle"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YW-3h-ut5">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="6Cv-Rp-CEs"/>
+                                            <constraint firstAttribute="width" constant="30" id="JKz-eD-0je"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="cardStar"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwM-f1-byy">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4G8-i2-ViU"/>
+                                            <constraint firstAttribute="width" constant="30" id="yDw-Sc-gg8"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="cardCross"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="AI4-Zf-HV4">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-App-60x60" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-cG-QBj">
@@ -37,7 +62,8 @@
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-BO-TWl">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-nd-Hc1">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-nd-Hc1">
+                                        <frame key="frameInset" width="250" height="4"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Second VC ( Popover Segue &amp; Dismiss)">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,14 +74,16 @@
                                             </segue>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-2d-Yku">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-2d-Yku">
+                                        <frame key="frameInset" minY="4" width="250" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Third VC (Form Validation)"/>
                                         <connections>
                                             <segue destination="I7K-GK-RgC" kind="show" id="gBG-9F-AbY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-9q-Py3">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-9q-Py3">
+                                        <frame key="frameInset" minY="32" width="250" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Fourth VC ( Button Action &amp; show Segue)"/>
                                         <connections>
@@ -157,31 +185,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-oK-aLn">
                                 <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="06z-7R-g87">
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20J-z3-H8W">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="gvF-EO-pU5"/>
-                                            <constraint firstAttribute="height" constant="30" id="iAk-d3-7l3"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="cardCircle"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5YW-3h-ut5">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="6Cv-Rp-CEs"/>
-                                            <constraint firstAttribute="width" constant="30" id="JKz-eD-0je"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="cardStar"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwM-f1-byy">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="4G8-i2-ViU"/>
-                                            <constraint firstAttribute="width" constant="30" id="yDw-Sc-gg8"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="cardCross"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men’s Journal" translatesAutoresizingMaskIntoConstraints="NO" id="Vak-bA-ctB"/>
                         </subviews>
                         <color key="backgroundColor" red="0.99501991271972656" green="0.91817084371410651" blue="0.5674052081504225" alpha="1" colorSpace="calibratedRGB"/>
@@ -217,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="-981.85907046476768"/>
+            <point key="canvasLocation" x="1431.2" y="-981.85907046476768"/>
         </scene>
         <!--Fourth-->
         <scene sceneID="kwb-D4-hVh">
@@ -227,10 +230,11 @@
             </objects>
             <point key="canvasLocation" x="-23" y="-452"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Natsys-->
         <scene sceneID="v9J-m7-bsc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xDQ-Wr-VkL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Natsys" id="u0K-z2-6cP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgZ-4B-b5x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -243,7 +247,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flE-aI-LWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-447.19999999999999" y="-981.85907046476768"/>
+            <point key="canvasLocation" x="492" y="-981.85907046476768"/>
         </scene>
         <!--Sixth-->
         <scene sceneID="Zyv-En-Q90">
@@ -299,7 +303,7 @@
                 <viewControllerPlaceholder storyboardName="Third" id="I7K-GK-RgC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jl7-ce-c6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="-1006"/>
+            <point key="canvasLocation" x="2003.2" y="-1006.5967016491755"/>
         </scene>
         <!--Second-->
         <scene sceneID="Ceg-xh-fBX">
@@ -307,7 +311,7 @@
                 <viewControllerPlaceholder storyboardName="Second" id="RhN-eg-WW6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAD-MP-skr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="-959"/>
+            <point key="canvasLocation" x="2012.8" y="-959.82008995502258"/>
         </scene>
         <!--Tenth-->
         <scene sceneID="1iT-Jp-hZH">
@@ -315,7 +319,46 @@
                 <viewControllerPlaceholder storyboardName="Tenth" id="U4C-tk-WeJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rG-qz-xUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="-1056"/>
+            <point key="canvasLocation" x="2004" y="-1056.0719640179911"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="9QZ-72-Mkb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="LOD-pe-3vy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="fCV-dU-FrM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="faO-D1-I0F" kind="relationship" relationship="viewControllers" id="wqF-WH-kIw"/>
+                        <segue destination="xDQ-Wr-VkL" kind="relationship" relationship="viewControllers" id="bmB-Ok-Yfv"/>
+                        <segue destination="6o9-H1-nf8" kind="relationship" relationship="viewControllers" id="Ao3-XB-MiC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IgX-OA-wol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447.19999999999999" y="-981.85907046476768"/>
+        </scene>
+        <!--Eleventh-->
+        <scene sceneID="bO1-1h-HNv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Eleventh" id="faO-D1-I0F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="oOV-Ee-Tnx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dz-tT-ag4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-655" y="-529"/>
+        </scene>
+        <!--Twelfth-->
+        <scene sceneID="6fw-gp-1OD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Twelfth" id="6o9-H1-nf8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yYc-En-EJF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Do-Iv-6w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459" y="-529"/>
         </scene>
     </scenes>
     <resources>
