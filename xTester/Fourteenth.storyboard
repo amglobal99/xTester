@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mYb-mc-cwN">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fourteenth View Controller-->
+        <scene sceneID="MyI-6i-GyD">
+            <objects>
+                <viewController id="mYb-mc-cwN" customClass="FourteenthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LNN-wm-XC3"/>
+                        <viewControllerLayoutGuide type="bottom" id="rYi-wH-OOT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="76t-1g-PCW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fourteenth View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjV-hd-BPd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please check the console log to see what is happening with these requests." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-Om-rOs">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-42-Gs6">
+                                <state key="normal" title="Get from Typicode"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-JY-Cke">
+                                <state key="normal" title="Get from xxx"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-Ek-Aa8">
+                                <state key="normal" title="POST Request"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhE-lL-TGb">
+                                <state key="normal" title="Download Request"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr9-pZ-Jxh">
+                                <state key="normal" title="Upload Request"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Tr9-pZ-Jxh" firstAttribute="top" secondItem="WhE-lL-TGb" secondAttribute="bottom" constant="18" id="1rS-8F-aiQ"/>
+                            <constraint firstItem="0qp-42-Gs6" firstAttribute="top" secondItem="8wq-Om-rOs" secondAttribute="bottom" constant="25" id="4Xn-qR-Fg3"/>
+                            <constraint firstItem="cjV-hd-BPd" firstAttribute="top" secondItem="LNN-wm-XC3" secondAttribute="bottom" constant="54" id="Ep9-3j-yuk"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="top" secondItem="cjV-hd-BPd" secondAttribute="bottom" constant="32" id="Fas-UV-pl0"/>
+                            <constraint firstItem="rYi-wH-OOT" firstAttribute="top" secondItem="Tr9-pZ-Jxh" secondAttribute="bottom" constant="59" id="FtJ-Vg-oMA"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="leading" secondItem="76t-1g-PCW" secondAttribute="leadingMargin" constant="63" id="LIP-qb-PK9"/>
+                            <constraint firstItem="dPp-JY-Cke" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="WyQ-AB-wf8"/>
+                            <constraint firstItem="0qp-42-Gs6" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="X0A-gy-nRO"/>
+                            <constraint firstItem="Tr9-pZ-Jxh" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="kDR-vI-xFH"/>
+                            <constraint firstItem="dPp-JY-Cke" firstAttribute="top" secondItem="0qp-42-Gs6" secondAttribute="bottom" constant="24" id="l3t-oP-nnk"/>
+                            <constraint firstItem="WhE-lL-TGb" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="p4T-HY-w0E"/>
+                            <constraint firstItem="Uaf-Ek-Aa8" firstAttribute="top" secondItem="dPp-JY-Cke" secondAttribute="bottom" constant="24" id="s8S-2z-PMi"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="ub8-52-PGQ"/>
+                            <constraint firstItem="cjV-hd-BPd" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="uvi-yr-dpj"/>
+                            <constraint firstItem="WhE-lL-TGb" firstAttribute="top" secondItem="Uaf-Ek-Aa8" secondAttribute="bottom" constant="19" id="x7C-dE-lPg"/>
+                            <constraint firstItem="Uaf-Ek-Aa8" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="zeT-Ml-mC2"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9o-4B-jVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431" y="-933"/>
+        </scene>
+    </scenes>
+</document>

@@ -37,7 +37,7 @@ class ThirteenthViewControllerDestination: UIViewController {
         if let title = sender.currentTitle {
             delegate.setColor(title)
            // self.navigationController?.popToRootViewController(animated: true)
-            self.navigationController?.popViewController(animated: true)   // Remove from Navigation array
+            _ = self.navigationController?.popViewController(animated: true)   // Remove from Navigation array
             
         } else {
             print("title is nil")
