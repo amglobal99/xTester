@@ -81,6 +81,7 @@
 		0F38F4EC1DA7F8AF0086BAA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */; };
 		0F38F4FA1DA7F8AF0086BAA8 /* xTesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4F91DA7F8AF0086BAA8 /* xTesterTests.swift */; };
 		0F38F5051DA7F8AF0086BAA8 /* xTesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F5041DA7F8AF0086BAA8 /* xTesterUITests.swift */; };
+		0F3ABB711DB9AF4F0024BA89 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3ABB701DB9AF4F0024BA89 /* SafariServices.framework */; };
 		0F3F99001DA81E74002FBB8C /* CityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F98FF1DA81E74002FBB8C /* CityView.xib */; };
 		0F3F99021DA8267D002FBB8C /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F99011DA8267D002FBB8C /* FifthViewController.swift */; };
 		0F3F99031DA8267D002FBB8C /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F99011DA8267D002FBB8C /* FifthViewController.swift */; };
@@ -223,6 +224,7 @@
 		0F38F5001DA7F8AF0086BAA8 /* xTesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xTesterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F38F5041DA7F8AF0086BAA8 /* xTesterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xTesterUITests.swift; sourceTree = "<group>"; };
 		0F38F5061DA7F8AF0086BAA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F3ABB701DB9AF4F0024BA89 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		0F3F98FF1DA81E74002FBB8C /* CityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityView.xib; sourceTree = "<group>"; };
 		0F3F99011DA8267D002FBB8C /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		0F3F99051DA826A2002FBB8C /* SixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3ABB711DB9AF4F0024BA89 /* SafariServices.framework in Frameworks */,
 				AE25101AA7E303C1A69975B9 /* Pods_xTester.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +529,7 @@
 		C2ED8C28F07F25AD3F795727 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F3ABB701DB9AF4F0024BA89 /* SafariServices.framework */,
 				911CA3B283D7F348CA1D7298 /* Pods_xTester.framework */,
 				8D7EC20A4117E604BDC3D466 /* Pods_xTesterTests.framework */,
 				7386B32D69572B35C23E4F55 /* Pods_xTesterUITests.framework */,
