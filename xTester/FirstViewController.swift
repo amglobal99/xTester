@@ -13,7 +13,29 @@ import UIKit
 class FirstViewController: UIViewController {
     
     
-    // ....JP
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    
+    
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            NSLog("Popular selected")
+        //show popular view
+        case 1:
+            NSLog("History selected")
+        //show history view
+        case 2:
+            NSLog("Third View")
+        default:
+            break;
+        }
+    }
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +43,6 @@ class FirstViewController: UIViewController {
         
 
     }
-    
-    
-    
-    
     
     
     
