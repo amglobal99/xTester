@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,14 +18,80 @@
                     <view key="view" contentMode="scaleToFill" id="0GP-nQ-lLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80487156559999995" green="0.92403095960000003" blue="0.89732714719999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73o-iq-gIm" userLabel="Container View A">
+                                <frame key="frameInset" minX="23" height="542" maxX="16" maxY="57"/>
+                                <connections>
+                                    <segue destination="nrq-Mp-ygO" kind="embed" id="ptT-xo-rxj"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zri-47-gpt" userLabel="Container View B">
+                                <connections>
+                                    <segue destination="vMZ-qV-dTu" kind="embed" id="uFR-Ro-1G0"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vKO-2K-7nV">
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="indexChangedWithSender:" destination="AUS-Tr-e3L" eventType="valueChanged" id="4lg-0R-deQ"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99501991270000001" green="0.97463142270000003" blue="0.82343513769999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zri-47-gpt" secondAttribute="trailing" id="ARB-ah-z4w"/>
+                            <constraint firstItem="Zri-47-gpt" firstAttribute="top" secondItem="vKO-2K-7nV" secondAttribute="bottom" constant="8" id="EFs-px-gfO"/>
+                            <constraint firstItem="Zri-47-gpt" firstAttribute="leading" secondItem="0GP-nQ-lLa" secondAttribute="leadingMargin" id="IsY-9b-3IB"/>
+                            <constraint firstItem="MwP-tg-1Ho" firstAttribute="top" secondItem="73o-iq-gIm" secondAttribute="bottom" constant="8" symbolic="YES" id="JXl-Wg-SPA"/>
+                            <constraint firstItem="vKO-2K-7nV" firstAttribute="top" secondItem="rpE-xb-WCu" secondAttribute="bottom" constant="12" id="M6s-7m-Tsm"/>
+                            <constraint firstItem="vKO-2K-7nV" firstAttribute="centerX" secondItem="0GP-nQ-lLa" secondAttribute="centerX" id="SVm-fx-jVr"/>
+                            <constraint firstItem="MwP-tg-1Ho" firstAttribute="top" secondItem="Zri-47-gpt" secondAttribute="bottom" constant="8" id="UtD-sl-glR"/>
+                            <constraint firstItem="73o-iq-gIm" firstAttribute="top" secondItem="vKO-2K-7nV" secondAttribute="bottom" constant="8" id="XeO-Gi-yz2"/>
+                            <constraint firstItem="73o-iq-gIm" firstAttribute="leading" secondItem="0GP-nQ-lLa" secondAttribute="leadingMargin" constant="1" id="XzY-OQ-seb"/>
+                            <constraint firstItem="MwP-tg-1Ho" firstAttribute="top" secondItem="Zri-47-gpt" secondAttribute="bottom" constant="8" id="iyp-w5-HqJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="73o-iq-gIm" secondAttribute="trailing" id="nev-04-sqe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="7Lv-on-QAo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="vKO-2K-7nV" id="Wle-sM-99C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6p-aS-Qn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="-819"/>
+            <point key="canvasLocation" x="-138.40000000000001" y="-819.04047976011998"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ag6-fh-YDJ">
+            <objects>
+                <viewController id="nrq-Mp-ygO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8iE-rV-yl3">
+                        <rect key="frame" x="0.0" y="0.0" width="336" height="542"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BY9-72-7Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673" y="-366"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vQk-L9-4I9">
+            <objects>
+                <viewController id="vMZ-qV-dTu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tw2-LB-GhW">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="542"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3O-r0-1w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-936"/>
         </scene>
     </scenes>
 </document>
