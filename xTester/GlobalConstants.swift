@@ -7,5 +7,33 @@
 //
 
 
-var companyName = "Natsys International"
-var companyAddress = "1808 Mountain Lake Dr GA 30339"
+
+struct Constants {
+
+    
+    
+    struct FlickrApi {
+        
+        
+        
+    }
+    
+    
+    
+    struct Configuration {
+        var companyName = "Natsys International"
+        var companyAddress = "1808 Mountain Lake Dr GA 30339"
+
+    }
+    
+  
+    struct GistApi  {
+        
+        
+    }
+
+
+
+
+
+}  // end struct

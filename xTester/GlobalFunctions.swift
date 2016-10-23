@@ -21,5 +21,5 @@ import UIKit
 
 
 func printCompanyName() {
-    print("Company Name is  \(companyName)")
+    print("Company Name is  ")
 }

@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73o-iq-gIm" userLabel="Container View A">
-                                <frame key="frameInset" minX="23" height="542" maxX="16" maxY="57"/>
+                                <frame key="frameInset" minX="23" height="542"/>
                                 <connections>
                                     <segue destination="nrq-Mp-ygO" kind="embed" id="ptT-xo-rxj"/>
                                 </connections>
@@ -69,11 +69,16 @@
         <scene sceneID="ag6-fh-YDJ">
             <objects>
                 <viewController id="nrq-Mp-ygO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Str-cW-TEp"/>
+                        <viewControllerLayoutGuide type="bottom" id="iFH-GN-4uj"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8iE-rV-yl3">
-                        <rect key="frame" x="0.0" y="0.0" width="336" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="343" height="542"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BY9-72-7Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,10 +88,14 @@
         <scene sceneID="vQk-L9-4I9">
             <objects>
                 <viewController id="vMZ-qV-dTu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oGB-Sz-cIe"/>
+                        <viewControllerLayoutGuide type="bottom" id="urJ-FI-Ybd"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tw2-LB-GhW">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.72915523770000001" green="0.074380834679999994" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3O-r0-1w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
