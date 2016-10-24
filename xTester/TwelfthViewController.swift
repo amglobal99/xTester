@@ -18,16 +18,27 @@ class TwelfthViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     
+    @IBOutlet weak var containerViewA: UIView!
+    @IBOutlet weak var containerViewB: UIView!
+    
+    
+    
+    
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
             NSLog("First selected")
-        //show popular view
+            //firstView.isHidden = false
+            //secondView.isHidden = true
+            containerViewA.isHidden = false
+            containerViewB.isHidden = true
         case 1:
             NSLog("Second selected")
-        //show history view
+            containerViewA.isHidden = true
+            containerViewB.isHidden = false
+            
         default:
             break;
         }
@@ -36,28 +47,19 @@ class TwelfthViewController: UIViewController {
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+       // firstView.isHidden = false
+       // secondView.isHidden = true
+        
+        
+        
+        
+        
+        
+        
         
     }
     

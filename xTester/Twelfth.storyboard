@@ -58,6 +58,8 @@
                     <tabBarItem key="tabBarItem" title="Item" id="7Lv-on-QAo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="containerViewA" destination="73o-iq-gIm" id="GJY-My-gM8"/>
+                        <outlet property="containerViewB" destination="Zri-47-gpt" id="qDB-ee-T80"/>
                         <outlet property="segmentedControl" destination="vKO-2K-7nV" id="Wle-sM-99C"/>
                     </connections>
                 </viewController>
@@ -74,11 +76,12 @@
                         <viewControllerLayoutGuide type="bottom" id="iFH-GN-4uj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8iE-rV-yl3">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="343" height="542"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="343" height="542"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BY9-72-7Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

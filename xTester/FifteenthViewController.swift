@@ -47,13 +47,13 @@ class FifteenthViewController: UIViewController {
     
    //  func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutableRawPointer) {
    
-    @objc override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
        // print("executing observer ...")
         if keyPath == currentBalanceKeyPath {
             if (account.currentBalance < 0) {
                 currentBalanceLabel.textColor = UIColor.red
             } else {
-                currentBalanceLabel.textColor = UIColor.green 
+                currentBalanceLabel.textColor = UIColor.green
             }
             currentBalanceLabel.text = "Current balance: \(account.currentBalance)"
         }
