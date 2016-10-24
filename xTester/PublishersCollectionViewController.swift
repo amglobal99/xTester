@@ -36,15 +36,16 @@ class PublishersCollectionViewController: UICollectionViewController, PublisherC
     
     @IBOutlet weak var addButton: UIBarButtonItem!
     
-    /*
+    
     @IBAction func dismissVC(_ sender: AnyObject) {
         print("dismissing.....")
-        self.dismiss(animated: true, completion: nil )
+       // self.dismiss(animated: true, completion: nil )
+        _ = self.navigationController?.popViewController(animated: true)
       
         
     }
     
-    */
+    
     
     
     
