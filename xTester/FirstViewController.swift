@@ -42,9 +42,6 @@ class FirstViewController: UIViewController, Utils {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
-       showBanner(title: "Gist Manager", subtitle: "Welcome to our app", image: nil, bkColor: UIColor.brown)
-        
         
     }
     

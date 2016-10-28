@@ -11,13 +11,13 @@ import UIKit
 
 
 
-class TenthViewController: UIViewController {
+class TenthViewController: UIViewController, Utils {
     
     
     @IBAction func showGenericAlert(_ sender: AnyObject) {
        // print("will print ..")
         
-        displayAlert( "Tittl", error: "Some error", buttonText: "OK")
+        displayAlert( "Action Required", error: "No Internet Connetion. \nClick home button to quit app.", buttonText: "OK")
         
     }
     
@@ -27,15 +27,15 @@ class TenthViewController: UIViewController {
     
     @IBAction func displayActionSheet(_ sender: AnyObject  ) {
         
-        let optionMenu = UIAlertController(title: nil, message: "Tittle ", preferredStyle: .actionSheet)
+        let optionMenu = UIAlertController(title: nil, message: "Action Required for Error", preferredStyle: .actionSheet)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
-            print("File Deleted")
+            print("File will be Deleted")
         })
         let saveAction = UIAlertAction(title: "Save", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
-            print("File Saved")
+            print("File will be Saved")
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
@@ -48,7 +48,7 @@ class TenthViewController: UIViewController {
         optionMenu.addAction(cancelAction)
         
         self.present(optionMenu, animated: true, completion: {
-            print("completed .....")
+            print("completed presenting alert.....")
             }
         )
     }
@@ -65,7 +65,11 @@ class TenthViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print("  ViewController 10  - viewDidLoad")
+        
+        showBanner(title: "Simple BAnnner", subtitle: "Please correct this error \n and try again", image: nil, bkColor: UIColor.red)
+        
+        
+        
         
     }
     
