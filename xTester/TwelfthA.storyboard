@@ -1,51 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NHQ-Vc-eY2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vMZ-qV-dTu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TwelfthA1 View Controller-->
-        <scene sceneID="PhD-xu-pn4">
+        <!--TwelfthA View Controller-->
+        <scene sceneID="vQk-L9-4I9">
             <objects>
-                <viewController id="NHQ-Vc-eY2" customClass="TwelfthA1ViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vMZ-qV-dTu" customClass="TwelfthAViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="s1K-WA-hEJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="xvb-KW-5J4"/>
+                        <viewControllerLayoutGuide type="top" id="oGB-Sz-cIe"/>
+                        <viewControllerLayoutGuide type="bottom" id="urJ-FI-Ybd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2Yo-zJ-Ldy">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="542"/>
+                    <view key="view" contentMode="scaleToFill" id="tw2-LB-GhW">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twelfth A Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUt-q8-sXv">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-ea-nHp">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyV-7O-Wyk">
+                                        <state key="normal" title="VC16: Banners"/>
+                                        <connections>
+                                            <segue destination="MTO-8s-MEq" kind="show" id="ExQ-uG-ASv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYy-gS-DGp">
+                                        <state key="normal" title="VC17: Placeholder"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-Tn-GTT">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-TW-ws6">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbP-RY-ZY0">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snW-zx-uKg">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ie-Yw-AIe">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OO-IF-cN1">
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92886529848115373" green="0.82366192875266786" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kxq-ea-nHp" firstAttribute="leading" secondItem="tw2-LB-GhW" secondAttribute="leadingMargin" constant="27" id="XhC-UA-Ehv"/>
+                            <constraint firstItem="Kxq-ea-nHp" firstAttribute="top" secondItem="oGB-Sz-cIe" secondAttribute="bottom" constant="73" id="qvx-A8-rO1"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
+                        <size key="portraitSize" width="343" height="498"/>
+                        <size key="landscapeSize" width="498" height="343"/>
+                    </fixedSimulatedSizeMetrics>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3O-r0-1w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-732" y="-1194"/>
+        </scene>
+        <!--TwelfthA1 View Controller-->
+        <scene sceneID="hYG-l1-5Ht">
+            <objects>
+                <viewController id="MTO-8s-MEq" customClass="TwelfthA1ViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U6d-ey-jYX"/>
+                        <viewControllerLayoutGuide type="bottom" id="5de-Le-FoH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3uW-C7-WNh">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twelfth A Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xog-4E-Pid">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banners Page " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMK-lF-x43">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz6-Cr-gvJ">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="QMK-lF-x43" firstAttribute="centerX" secondItem="2Yo-zJ-Ldy" secondAttribute="centerX" id="1K1-0e-bgh"/>
-                            <constraint firstItem="QMK-lF-x43" firstAttribute="top" secondItem="pUt-q8-sXv" secondAttribute="bottom" constant="42" id="ArR-7d-YZh"/>
-                            <constraint firstItem="pUt-q8-sXv" firstAttribute="top" secondItem="s1K-WA-hEJ" secondAttribute="bottom" constant="77" id="PaA-Na-Rol"/>
-                            <constraint firstItem="pUt-q8-sXv" firstAttribute="centerX" secondItem="2Yo-zJ-Ldy" secondAttribute="centerX" id="nwt-s7-mUu"/>
+                            <constraint firstItem="Xog-4E-Pid" firstAttribute="centerX" secondItem="3uW-C7-WNh" secondAttribute="centerX" id="M2R-MV-LM9"/>
+                            <constraint firstItem="Yz6-Cr-gvJ" firstAttribute="centerX" secondItem="3uW-C7-WNh" secondAttribute="centerX" id="aOY-6h-us1"/>
+                            <constraint firstItem="Xog-4E-Pid" firstAttribute="top" secondItem="U6d-ey-jYX" secondAttribute="bottom" constant="86" id="qfm-kr-Kj5"/>
+                            <constraint firstItem="Yz6-Cr-gvJ" firstAttribute="top" secondItem="Xog-4E-Pid" secondAttribute="bottom" constant="69" id="w16-dH-JiT"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
-                        <size key="portraitSize" width="343" height="542"/>
-                        <size key="landscapeSize" width="542" height="343"/>
-                    </fixedSimulatedSizeMetrics>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F8e-fC-DeV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wwf-bW-R4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="-3674"/>
+            <point key="canvasLocation" x="22" y="-1437"/>
         </scene>
     </scenes>
 </document>
