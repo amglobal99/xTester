@@ -19,15 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zri-47-gpt" userLabel="Container View B">
+                                <connections>
+                                    <segue destination="49e-tR-EIe" kind="embed" id="uFR-Ro-1G0"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="73o-iq-gIm" userLabel="Container View A">
                                 <frame key="frameInset" minX="23" height="542"/>
                                 <connections>
                                     <segue destination="YNk-rx-6hu" kind="embed" id="ptT-xo-rxj"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zri-47-gpt" userLabel="Container View B">
-                                <connections>
-                                    <segue destination="49e-tR-EIe" kind="embed" id="uFR-Ro-1G0"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vKO-2K-7nV">
