@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AUS-Tr-e3L">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l9d-7c-RVa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Twelfth View Controller-->
         <scene sceneID="E03-yW-VjJ">
             <objects>
                 <viewController id="AUS-Tr-e3L" customClass="TwelfthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="73o-iq-gIm" secondAttribute="trailing" id="nev-04-sqe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7Lv-on-QAo"/>
+                    <navigationItem key="navigationItem" id="Mfx-7a-yzi"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="containerViewA" destination="73o-iq-gIm" id="GJY-My-gM8"/>
@@ -65,12 +65,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6p-aS-Qn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-138.40000000000001" y="-819.04047976011998"/>
+            <point key="canvasLocation" x="800.79999999999995" y="-819.04047976011998"/>
         </scene>
-        <!--View Controller-->
+        <!--TwelfthB View Controller-->
         <scene sceneID="ag6-fh-YDJ">
             <objects>
-                <viewController id="nrq-Mp-ygO" sceneMemberID="viewController">
+                <viewController id="nrq-Mp-ygO" customClass="TwelfthBViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Str-cW-TEp"/>
                         <viewControllerLayoutGuide type="bottom" id="iFH-GN-4uj"/>
@@ -85,24 +85,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BY9-72-7Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="-366"/>
+            <point key="canvasLocation" x="1612" y="-366.11694152923542"/>
         </scene>
-        <!--View Controller-->
+        <!--TwelfthA View Controller-->
         <scene sceneID="vQk-L9-4I9">
             <objects>
-                <viewController id="vMZ-qV-dTu" sceneMemberID="viewController">
+                <viewController id="vMZ-qV-dTu" customClass="TwelfthAViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oGB-Sz-cIe"/>
                         <viewControllerLayoutGuide type="bottom" id="urJ-FI-Ybd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tw2-LB-GhW">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="542"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-ea-nHp">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyV-7O-Wyk">
-                                        <state key="normal" title="VC16: Placeholder"/>
+                                        <state key="normal" title="VC16: Banners"/>
+                                        <connections>
+                                            <segue destination="NWw-O4-lt7" kind="show" id="7e5-gq-jWm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYy-gS-DGp">
                                         <state key="normal" title="VC17: Placeholder"/>
@@ -137,7 +140,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3O-r0-1w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-936"/>
+            <point key="canvasLocation" x="1600.8" y="-936.4317841079461"/>
+        </scene>
+        <!--TwelfthA-->
+        <scene sceneID="l8h-Vl-QBu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TwelfthA" id="NWw-O4-lt7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cA7-7n-usi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349.5999999999999" y="-897.75112443778119"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Dzz-nf-cZN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l9d-7c-RVa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="7Lv-on-QAo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PqN-0E-T9V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AUS-Tr-e3L" kind="relationship" relationship="rootViewController" id="p2X-EW-6u0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7H-XL-2k3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138.40000000000001" y="-819.04047976011998"/>
         </scene>
     </scenes>
 </document>

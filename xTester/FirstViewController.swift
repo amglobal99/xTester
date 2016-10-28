@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import BRYXBanner
 
 
 class FirstViewController: UIViewController, Utils {
@@ -28,7 +29,7 @@ class FirstViewController: UIViewController, Utils {
         //show history view
         case 2:
             NSLog("Third View")
-        default:
+                   default:
             break;
         }
     }
