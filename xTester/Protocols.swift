@@ -12,16 +12,29 @@
 
 import Foundation
 import UIKit
+import BRYXBanner
 
 
 
-// create empty protocol
-protocol Utils {
+// MARK: Protocols
 
-}
+protocol Utils {}   // This protocol contains common utility functions
+protocol Shakeable { }   // allows elemenst to shake
+protocol Dimmable { }   // allows elements to dim
 
 
-// Implement functionality here
+
+
+
+
+
+
+
+
+// MARK: - Extensions
+
+
+// MARK: - Extensions Utils
 extension Utils {
     
     // This is a simple test method
@@ -213,4 +226,116 @@ extension Utils {
     
     
     
+    
+    //MARK: - Banner Related
+    func showBanner(title:String, subtitle:String, image: UIImage?, bkColor: UIColor) {
+        let banner: Banner? = Banner(title: title, subtitle: subtitle, image: image, backgroundColor: bkColor)
+        banner?.dismissesOnSwipe = true
+        banner?.show(duration: nil)
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
 }  // end extension
+
+
+
+
+
+
+
+// MARK: - Extension Shakeable
+
+ extension Shakeable where Self:UIView {
+    
+//extension Shakeable   {
+    
+    /*
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+    
+    */
+    
+    
+    
+    // Usage for this function
+    //You can call this function on any UIView, button, label textview etc. This way
+    //yourView.shake()
+    //Or this way if you want to add some custom parameters :
+    //yourView.shake(count: 5, for: 1.5, withTanslation: 10)
+    
+    //
+    func shake(count : Float? = nil,for duration : TimeInterval? = nil,withTanslation translation : Float? = nil) {
+        let animation : CABasicAnimation = CABasicAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.repeatCount = count ?? 2
+        animation.duration = (duration ?? 0.5)/TimeInterval(animation.repeatCount)
+        animation.autoreverses = true
+        animation.byValue = translation ?? -5
+        layer.add(animation, forKey: "shake")
+    }
+    
+   
+    
+}
+
+
+
+
+
+// MARK: - Extension Dimmable
+
+    enum Direction { case In, Out }
+
+
+    extension Dimmable where Self: UIViewController {
+        
+                func dim(direction: Direction, color: UIColor = UIColor.black, alpha: CGFloat = 0.0, speed: Double = 0.0) {
+                    
+                        switch direction {
+                            
+                        case .In:
+                            // Create and add a dim view
+                            let dimView = UIView(frame: view.frame)
+                            dimView.backgroundColor = color
+                            dimView.alpha = 0.0
+                            view.addSubview(dimView)
+                            // Deal with Auto Layout
+                            dimView.translatesAutoresizingMaskIntoConstraints = false
+                            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+                            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+                            // Animate alpha (the actual "dimming" effect)
+                            UIView.animate(withDuration: speed) { () -> Void in
+                                dimView.alpha = alpha
+                            }
+                        case .Out:
+                            UIView.animate(withDuration: speed, animations: { () -> Void in
+                                self.view.subviews.last?.alpha = alpha ?? 0
+                                }, completion: { (complete) -> Void in
+                                    self.view.subviews.last?.removeFromSuperview()
+                            })
+                    }
+            }  // end func
+        
+    } // end extension
+    
+
+
+
+
+
+
+

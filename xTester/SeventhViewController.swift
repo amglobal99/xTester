@@ -22,7 +22,6 @@ let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-t
 class Downloader {
     
     class func downloadImageWithURL(_ url:String) -> UIImage! {
-        
         let data = try? Data(contentsOf: URL(string: url)!)
         return UIImage(data: data!)
     }
@@ -33,15 +32,10 @@ class Downloader {
 class SeventhViewController: UIViewController {
     
     
-    
     @IBOutlet weak var imageView1: UIImageView!
-    
     @IBOutlet weak var imageView2: UIImageView!
-    
     @IBOutlet weak var imageView3: UIImageView!
-    
     @IBOutlet weak var imageView4: UIImageView!
-    
     @IBOutlet weak var sliderValueLabel: UILabel!
     
     
@@ -56,14 +50,10 @@ class SeventhViewController: UIViewController {
     }
     
     
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     
     
@@ -131,9 +121,7 @@ class SeventhViewController: UIViewController {
         }
         queue.addOperation(operation3)
         
-        
-        
-        
+    
         
         let operation4 = BlockOperation(block: {
             let img4 = Downloader.downloadImageWithURL(imageURLs[3])
@@ -148,8 +136,6 @@ class SeventhViewController: UIViewController {
         queue.addOperation(operation4)
         
         
-        
-        
     }  // end function
     
     
@@ -158,7 +144,6 @@ class SeventhViewController: UIViewController {
     
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        
         self.sliderValueLabel.text = "\(sender.value * 100.0)"
     }
     
@@ -168,20 +153,6 @@ class SeventhViewController: UIViewController {
         print("Executing didClcikOnCancel method ...")
         self.queue.cancelAllOperations()
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

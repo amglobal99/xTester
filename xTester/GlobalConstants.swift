@@ -13,23 +13,19 @@ struct Constants {
     
     
     struct FlickrApi {
-        
-        
-        
+        static let baseUrl = "https://flickrapi.com"
     }
     
     
     
     struct Configuration {
-        var companyName = "Natsys International"
-        var companyAddress = "1808 Mountain Lake Dr GA 30339"
-
+        static let companyName = "Natsys International"
+        static let companyAddress = "1808 Mountain Lake Dr GA 30339"
     }
     
   
     struct GistApi  {
-        
-        
+        static let baseUrl = "https://github.com"
     }
 
 

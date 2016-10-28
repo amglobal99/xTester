@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOD-pe-3vy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOD-pe-3vy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -84,7 +84,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-nd-Hc1">
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="VC2: Popover Segue &amp; Dismiss">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <segue destination="RhN-eg-WW6" kind="popoverPresentation" popoverAnchorView="b0Y-nd-Hc1" id="FhV-fN-Zn0">
@@ -94,14 +94,18 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-2d-Yku">
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="VC3: Form Validation"/>
+                                        <state key="normal" title="VC3: Form Validation">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <segue destination="I7K-GK-RgC" kind="show" id="gBG-9F-AbY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-9q-Py3">
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="VC4: Button Action &amp; show Segue"/>
+                                        <state key="normal" title="VC4: Button Action &amp; show Segue">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <segue destination="G4C-fA-lAV" kind="show" id="JF2-kZ-QTC"/>
                                         </connections>
@@ -126,7 +130,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-JG-b2v">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC7: Concurrency"/>
+                                        <state key="normal" title="VC7: Concurrent Ops"/>
                                         <connections>
                                             <segue destination="qMH-AZ-9aY" kind="show" id="hJf-1q-RQm"/>
                                         </connections>
@@ -201,7 +205,7 @@
                                     <constraint firstAttribute="width" constant="91" id="ZtF-qQ-Ss8"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Rights  @c 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omo-ZS-UqP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Rights Reserved 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omo-ZS-UqP">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IxJ-Ko-C9j"/>
                                 </constraints>
@@ -216,7 +220,7 @@
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.99501991271972656" green="0.91817084371410651" blue="0.5674052081504225" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99501991270000001" green="0.99187234369999999" blue="0.88803640819999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vak-bA-ctB" firstAttribute="top" secondItem="13F-5h-HI5" secondAttribute="bottom" constant="7" id="0gJ-3R-4u7"/>
                             <constraint firstItem="SuA-Na-Tfz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="601" id="2Za-tW-UB3"/>
@@ -225,10 +229,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Vak-bA-ctB" secondAttribute="trailing" constant="18" id="502-HN-fQh"/>
                             <constraint firstItem="13F-5h-HI5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7SX-Pc-KOz"/>
                             <constraint firstItem="AI4-Zf-HV4" firstAttribute="top" secondItem="jVv-BO-TWl" secondAttribute="bottom" constant="15" id="GSj-nC-d0J"/>
+                            <constraint firstItem="omo-ZS-UqP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GTh-an-I4l"/>
                             <constraint firstItem="13F-5h-HI5" firstAttribute="centerX" secondItem="wfX-oK-aLn" secondAttribute="centerX" id="JgM-ME-mta"/>
                             <constraint firstItem="06z-7R-g87" firstAttribute="top" secondItem="13F-5h-HI5" secondAttribute="bottom" constant="84" id="Jxg-Q3-ZXF"/>
                             <constraint firstItem="jVv-BO-TWl" firstAttribute="top" secondItem="06z-7R-g87" secondAttribute="bottom" constant="8" id="Lyy-fY-o0U"/>
-                            <constraint firstItem="omo-ZS-UqP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="92" id="Nhy-zM-JGx"/>
                             <constraint firstItem="wfX-oK-aLn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="RHl-wA-Zsa"/>
                             <constraint firstItem="TzC-KT-8Q9" firstAttribute="top" secondItem="Vpa-cG-QBj" secondAttribute="bottom" constant="15" id="Ty9-Ne-D94"/>
                             <constraint firstItem="wfX-oK-aLn" firstAttribute="leading" secondItem="SuA-Na-Tfz" secondAttribute="leading" id="UyO-nD-vEc"/>

@@ -60,7 +60,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
         self.climb()
         
         // Call method from GlobalFunctions.swift
-        printCompanyName()
+        GlobalFunctions.printCompanyName()
         
         
         

@@ -23,9 +23,20 @@ import AlamofireImage
 class NinthViewController: UICollectionViewController {
     
     
+    var notConnectedBanner: Banner?
+    
+    
+        
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+                
+        
+        
+        
+        
         
     }
     

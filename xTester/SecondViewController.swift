@@ -15,6 +15,7 @@ class SecondViewController: UIViewController {
 
     
     @IBAction func dismissVC(_ sender: AnyObject) {
+        
         self.dismiss(animated: true, completion: nil )
         
     }
@@ -26,9 +27,11 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+              
                
         
-    }
+    }  // end func
     
     
     
