@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TwelfthA1 View Controller-->
         <scene sceneID="PhD-xu-pn4">
             <objects>
-                <viewController id="NHQ-Vc-eY2" sceneMemberID="viewController">
+                <viewController id="NHQ-Vc-eY2" customClass="TwelfthA1ViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s1K-WA-hEJ"/>
                         <viewControllerLayoutGuide type="bottom" id="xvb-KW-5J4"/>
@@ -17,7 +17,25 @@
                     <view key="view" contentMode="scaleToFill" id="2Yo-zJ-Ldy">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="542"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twelfth A Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUt-q8-sXv">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banners Page " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMK-lF-x43">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QMK-lF-x43" firstAttribute="centerX" secondItem="2Yo-zJ-Ldy" secondAttribute="centerX" id="1K1-0e-bgh"/>
+                            <constraint firstItem="QMK-lF-x43" firstAttribute="top" secondItem="pUt-q8-sXv" secondAttribute="bottom" constant="42" id="ArR-7d-YZh"/>
+                            <constraint firstItem="pUt-q8-sXv" firstAttribute="top" secondItem="s1K-WA-hEJ" secondAttribute="bottom" constant="77" id="PaA-Na-Rol"/>
+                            <constraint firstItem="pUt-q8-sXv" firstAttribute="centerX" secondItem="2Yo-zJ-Ldy" secondAttribute="centerX" id="nwt-s7-mUu"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">

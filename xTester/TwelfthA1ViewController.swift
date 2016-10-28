@@ -1,15 +1,16 @@
 //
-//  SixteenthViewController.swift
+//  TwelfthA1ViewController.swift
 //  xTester
 //
 //  Created by Dad on 10/28/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
+
 import Foundation
 import UIKit
 
-class TwelfthAViewController: UIViewController, Utils{
+class TwelfthA1ViewController: UIViewController, Utils{
     
     
     
@@ -18,7 +19,9 @@ class TwelfthAViewController: UIViewController, Utils{
         // Do any additional setup after loading the view, typically from a nib.
         
         
-                
+        showBanner(title: "Banner Page", subtitle: "Welcome to Banner Page \n Plesase try later", image: nil, bkColor: UIColor.green)
+        
+        
     }
     
     
