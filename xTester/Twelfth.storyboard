@@ -67,11 +67,11 @@
             </objects>
             <point key="canvasLocation" x="800.79999999999995" y="-819.04047976011998"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="Dzz-nf-cZN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l9d-7c-RVa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7Lv-on-QAo"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="7Lv-on-QAo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PqN-0E-T9V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

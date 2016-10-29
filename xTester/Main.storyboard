@@ -268,11 +268,11 @@
             </objects>
             <point key="canvasLocation" x="-23" y="-452"/>
         </scene>
-        <!--Natsys-->
+        <!--Navigation Controller-->
         <scene sceneID="v9J-m7-bsc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xDQ-Wr-VkL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Natsys" id="u0K-z2-6cP"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="u0K-z2-6cP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgZ-4B-b5x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -383,7 +383,7 @@
         <scene sceneID="bO1-1h-HNv">
             <objects>
                 <viewControllerPlaceholder storyboardName="Eleventh" id="faO-D1-I0F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oOV-Ee-Tnx"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="oOV-Ee-Tnx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dz-tT-ag4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,7 +393,7 @@
         <scene sceneID="6fw-gp-1OD">
             <objects>
                 <viewControllerPlaceholder storyboardName="Twelfth" id="6o9-H1-nf8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yYc-En-EJF"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="yYc-En-EJF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Do-Iv-6w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
