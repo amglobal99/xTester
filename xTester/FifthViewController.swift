@@ -18,14 +18,25 @@ class FifthViewController: UIViewController, Utils {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
+       
+        
+        
         // Thos is where we will play with our Asynchronous Requests
         
         // Set up the URL request
-        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
-       //let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+       // let  todoEndpoint   : String = "https://jsonplaceholder.typicode.com/todos/1"
+       let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
         //let todoEndpoint :String = "https://api.github.com/users/amglobal99/repos"
         
         
+        
+        
+        
+        
+        /*
         
         guard let url = URL(string: todoEndpoint)  else {
             print("Error: cannot create URL")
@@ -187,12 +198,29 @@ class FifthViewController: UIViewController, Utils {
         // While TASk is running in background on different THread, control will come here
         NSLog("My task is still running in the background")
         
-    
+    */
+         
+         
+         
+       
+         let jsObject = getJSONObject(for: todoEndpoint) 
+           // print(jsObject)
+        
+        
+        
+         
+         
         
     }  // end method
     
     
-
+        
+        
+        
+        
+        
+        
+        
     
 
 }  // end class

@@ -22,20 +22,23 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13F-5h-HI5">
                                 <items>
                                     <barButtonItem title="Charts" id="FIV-fb-eVf"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="HNn-Jf-A1W"/>
                                     <barButtonItem style="plain" id="eLU-Ff-nrA">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="plj-3r-bDC">
-                                            <rect key="frame" x="78" y="7" width="150" height="30"/>
+                                            <rect key="frame" x="120" y="7" width="150" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
-                                                <segment title="Main"/>
+                                                <segment title="Home"/>
                                                 <segment title="More"/>
-                                                <segment title="xxxx"/>
+                                                <segment title="Photos"/>
                                             </segments>
                                             <connections>
                                                 <action selector="indexChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="XFI-7u-R0t"/>
                                             </connections>
                                         </segmentedControl>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xFK-Vj-MtQ"/>
+                                    <barButtonItem systemItem="bookmarks" id="2tp-VA-bs2"/>
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="06z-7R-g87">
@@ -214,7 +217,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuA-Na-Tfz">
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-oK-aLn">
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

@@ -45,6 +45,9 @@ extension Utils {
     
     
     
+    
+    
+    
     //  ******************  JSON Section   **************************************
     
     // THis function creates a Dictionary from a JSON object
@@ -100,7 +103,7 @@ extension Utils {
         
     }  // end funtion
     
-    */
+ 
     
     
     
@@ -197,6 +200,48 @@ extension Utils {
 
     
     // **************************** end JSON section ************************************************************
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -332,6 +377,252 @@ extension Utils {
         
     } // end extension
     
+
+
+
+
+
+
+
+/// *******************************************  NEW JSON xection ********************************
+//
+//
+//
+
+
+/*
+func getDictionaryFromJson(rootElement:String,
+                           categoryElement:String,
+                           valueElement:String,
+                           jsonObject: [String: AnyObject]) -> [String:[String]]?  {
+    
+    var finalDictionary = [String:[String]]()
+    
+    // get array of keys
+    let keyArray:[String] = getKeyArrayFromJSON(rootElement: rootElement, key: categoryElement, jsonObject: jsonObject)!
+    
+    //print(keyArray)
+    //print ("key1: \(categoryElement) \n key2: \(valueElement)")
+    
+    var tempArr = [String]()   // temporary storage
+    
+    for item in keyArray {  // Process each section
+        guard
+            let jsObject = jsonObject[rootElement] as? [[String: AnyObject]]
+            else {
+                return nil
+        }
+        
+        // process all items and check for items that match item
+        for obj in jsObject  {
+            let  val1 = obj[categoryElement] as? String
+            let  val2 = obj[valueElement] as? String
+            if val1 == item {
+                tempArr.append(val2!)
+            }
+        }  // for obj
+        
+        
+        // Now add an entry to our final Dictonary
+        finalDictionary.updateValue(tempArr, forKey: item)
+        
+        // clear array
+        tempArr.removeAll()
+        
+    }// item in keyArray
+    
+    // Return the final Dictionary
+    return finalDictionary
+    
+}  // end funtion
+
+
+*/
+
+
+
+
+func getDictionaryFromJson(_ rootElement:String,
+                           categoryElement:String,
+                           valueElement:String,
+                           jsonObject: [String: AnyObject]) -> [String:[String]]?  {
+    
+    var finalDictionary = [String:[String]]()
+    
+    // get array of keys
+    let keyArray:[String] = getKeyArrayFromJSON(rootElement, key: categoryElement, jsonObject: jsonObject)!
+    
+    //print(keyArray)
+    //print ("key1: \(categoryElement) \n key2: \(valueElement)")
+    
+    var tempArr = [String]()   // temporary storage
+    
+    for item in keyArray {  // Process each section
+        
+        guard
+            let jsObject = jsonObject[rootElement] as? [[String: AnyObject]]
+            else {
+                return nil
+        }
+        
+        // process all items and check for items that match item
+        for obj in jsObject  {
+            let  val1 = obj[categoryElement] as? String
+            let  val2 = obj[valueElement] as? String
+            if val1 == item {
+                tempArr.append(val2!)
+            }
+        }  // for obj
+        
+        
+        // Now add an entry to our final Dictonary
+        finalDictionary.updateValue(tempArr, forKey: item)
+        
+        // clear array
+        tempArr.removeAll()
+        
+    }// item in keyArray
+    
+    // Return the final Dictionary
+    return finalDictionary
+    
+}  // end funtion
+
+
+
+
+
+
+
+
+
+
+
+
+
+// This is a helper function. Given some JSON object, we specify a key , say for example "name".
+// this function retrievs an aray of all name attributes
+
+func getKeyArrayFromJSON(_ rootElement:String,   key:String, jsonObject: [String: AnyObject]) -> [String]? {
+    
+        var tempArray = [String]()   // create empty array
+    
+        guard  let jsObject = jsonObject[rootElement] as? [[String: AnyObject]]
+        else {
+                print("getKeyArrayFromJOSN : got a nil...")
+                return nil
+        }
+        
+        for obj in jsObject {
+            guard  let key = obj[key] as? String
+            else {
+                break
+            }
+            tempArray.append(key)
+        }
+    
+        return Array(Set(tempArray)  )    // return array
+    
+}  // end function
+
+
+
+
+
+
+func getJSONObject (for url:String) -> Any? {
+    print("getJSONObject ... starting ")
+    var object:Any?
+    guard let url = URL(string: url)  else {
+        return nil
+    }
+    let urlRequest = URLRequest(url: url)
+    let session = URLSession.shared
+    
+    // make the request
+    let task = session.dataTask(with: urlRequest, completionHandler:
+        { (data, response, error) in
+            if (error != nil) {
+                print("This is an error: \(error) " )
+                return
+            }
+            //NSLog("Full Response From Server: \n \(response!)  " )
+            
+                if data != nil {
+                   // print("Yes ... we do have JSON data")
+                    if let jsonData =  data {      // Let's parse our JSON
+                        do {
+                            object = try? JSONSerialization.jsonObject(with: jsonData, options: [])
+                            // let object = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments)
+                            if object != nil {
+                               print(object!)
+                            }
+                        } catch let error {
+                            print("Error ceating JOSN object \(error)")
+                            return
+                        }
+                    }// jsonData =  data
+                } // data != nil
+        }  // end closure
+        
+    )  // task = session.dataTask
+    
+
+    // Task is created in Suspended state
+    task.resume()
+    
+    return object
+    
+    
+}  // end func
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//***********************************  end new JSON section ******************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
