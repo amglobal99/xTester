@@ -14,56 +14,40 @@ import SwiftyJSON
 import Alamofire
 
 
-class FifthViewController: UIViewController, JsonConvertible {
+class FifthViewController: UIViewController, JsonConvertible, Utils {
 
     var jsonResultObject:JSON?
-    
-    
     
     
     @IBAction func getKeyArray(_ sender: AnyObject) {
         
         print("***** getKeyArray... starting *******")
         if let obj = self.jsonResultObject {
-            //print(temp)
             
             //if let  myKeyArray =  getKeyArray(from: obj, for: nil, and: "id")  {
-           // if let  myKeyArray =  getKeyArray(from: obj, for: nil, and: "")  {
             //if let  myKeyArray =  getKeyArray(from: obj, for: "stationBeanList", and: "totalDocks")  {
-            if let  myKeyArray =  getKeyArray(from: obj, for: "stationBeanList", and: "statusValue")  {
-             // if let  myKeyArray =  getKeyArray(from: obj, for: "geonames", and: "countrycode")  {
-            
-                // convert array to unique elements only
-                // print(myKeyArray)
+            if let  myKeyArray =  getKeyArray(from: obj, for: "stationBeanList", and: "statusValue")  {   // This is for CityBikesNYC
+                            /*
                 print("************ Separator *********")
                 for i in myKeyArray {
                     print(i)
                 }
-                
+                */
                 
                 // let's get a Dictionary
-                if let myDict = getDictionary(from: obj, root: "stationBeanList", for: "statusValue", keyArray: myKeyArray, dataKey:"availableBikes") {
+               // if let myDict = getDictionary(from: obj, root: "stationBeanList", for: "statusValue", keyArray: myKeyArray, dataKey:"stationName") {
+                    if let myDict = getDictionary(from: obj, root: "stationBeanList", for: "statusValue", keyArray: myKeyArray, dataKey:"availableDocks") {
+                        
                     print(myDict)
                 } else {
                     print("Dictionary not ok")
                 }
-                
-                
-                print("last step")
-                
-                
-                
             } else {
                 print("Oops !! -- A nil array was returned.")
             }
         } else {
             print("Ooops .... A nil JSON object was returned.")
         }
-        
-        
-        
-        
-        
         
     } // end action
     
@@ -81,17 +65,20 @@ class FifthViewController: UIViewController, JsonConvertible {
         // let todoEndpoint :String = "https://api.github.com/users/amglobal99/repos"
         let todoEndpoint :String = "http://citibikenyc.com/stations/json"
        // let todoEndpoint :String = "http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=de&username=demo"
-       
+       //let todoEndpoint = "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss"
+        
         
         
         // ********  This is where the action happens **********************************
         let completionHandler: (Result<JSON>) -> Void  =
             { result in
                 self.jsonResultObject = result.value!
-                //print("========= Items ist++++++++ ")
-                //if let jsObj = self.jsonResultObject {
-                  //  print(jsObj)
-               // }
+                
+                print("========= Items List ++++++++ ")
+                if let jsObj = self.jsonResultObject {
+                   print(jsObj)
+                }
+        
             } // end closure
             
         

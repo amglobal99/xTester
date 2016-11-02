@@ -64,6 +64,21 @@ extension Utils {
     
     
     
+    
+    
+    
+    
+    
+    // MARK: Array related
+    
+    func convertArray(toString arr:[String]) -> String? {
+        return arr.joined(separator: ",")
+    }
+    
+    
+    
+    
+    
 }  // end extension
 
 
