@@ -76,9 +76,9 @@
 		0F3052E81DAAE44600F79778 /* DucTran.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3052E71DAAE44600F79778 /* DucTran.storyboard */; };
 		0F3052E91DAAE44600F79778 /* DucTran.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3052E71DAAE44600F79778 /* DucTran.storyboard */; };
 		0F3052EA1DAAE44600F79778 /* DucTran.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3052E71DAAE44600F79778 /* DucTran.storyboard */; };
-		0F3052ED1DABF1EF00F79778 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* Protocols.swift */; };
-		0F3052EE1DABF1EF00F79778 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* Protocols.swift */; };
-		0F3052EF1DABF1EF00F79778 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* Protocols.swift */; };
+		0F3052ED1DABF1EF00F79778 /* ProtocolsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* ProtocolsUtils.swift */; };
+		0F3052EE1DABF1EF00F79778 /* ProtocolsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* ProtocolsUtils.swift */; };
+		0F3052EF1DABF1EF00F79778 /* ProtocolsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052EC1DABF1EF00F79778 /* ProtocolsUtils.swift */; };
 		0F38F4E21DA7F8AF0086BAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */; };
 		0F38F4EA1DA7F8AF0086BAA8 /* xTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E81DA7F8AF0086BAA8 /* xTester.xcdatamodeld */; };
 		0F38F4EC1DA7F8AF0086BAA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */; };
@@ -137,15 +137,24 @@
 		0F8D22D71DB2D08500227D6A /* names2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D61DB2D08500227D6A /* names2.json */; };
 		0F8D22D81DB2D08500227D6A /* names2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D61DB2D08500227D6A /* names2.json */; };
 		0F8D22D91DB2D08500227D6A /* names2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22D61DB2D08500227D6A /* names2.json */; };
-		0F8D22DB1DB2D28000227D6A /* names3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* names3.json */; };
-		0F8D22DC1DB2D28000227D6A /* names3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* names3.json */; };
-		0F8D22DD1DB2D28000227D6A /* names3.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* names3.json */; };
+		0F8D22DB1DB2D28000227D6A /* NestedNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* NestedNames.json */; };
+		0F8D22DC1DB2D28000227D6A /* NestedNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* NestedNames.json */; };
+		0F8D22DD1DB2D28000227D6A /* NestedNames.json in Resources */ = {isa = PBXBuildFile; fileRef = 0F8D22DA1DB2D28000227D6A /* NestedNames.json */; };
 		0F945FD01DB59AB700FB4045 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F945FCF1DB59AB700FB4045 /* ExtensionViewController.swift */; };
 		0F945FD11DB59AB700FB4045 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F945FCF1DB59AB700FB4045 /* ExtensionViewController.swift */; };
 		0F945FD21DB59AB700FB4045 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F945FCF1DB59AB700FB4045 /* ExtensionViewController.swift */; };
 		0F945FD41DB59BDC00FB4045 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */; };
 		0F945FD51DB59BDC00FB4045 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */; };
 		0F945FD61DB59BDC00FB4045 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */; };
+		0F9887DD1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */; };
+		0F9887DE1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */; };
+		0F9887DF1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */; };
+		0F9887E11DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */; };
+		0F9887E21DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */; };
+		0F9887E31DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */; };
+		0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
+		0F9887E61DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
+		0F9887E71DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
 		0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
 		0FCE1C691DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
 		0FCE1C6A1DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
@@ -231,7 +240,7 @@
 		0F3052DF1DAAD5CF00F79778 /* Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		0F3052E01DAAD5CF00F79778 /* Publishers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
 		0F3052E71DAAE44600F79778 /* DucTran.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DucTran.storyboard; sourceTree = "<group>"; };
-		0F3052EC1DABF1EF00F79778 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		0F3052EC1DABF1EF00F79778 /* ProtocolsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolsUtils.swift; sourceTree = "<group>"; };
 		0F38F4DE1DA7F8AF0086BAA8 /* xTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F38F4E91DA7F8AF0086BAA8 /* xTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xTester.xcdatamodel; sourceTree = "<group>"; };
@@ -262,9 +271,12 @@
 		0F8D22CE1DB28C9E00227D6A /* Third.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Third.storyboard; sourceTree = "<group>"; };
 		0F8D22D21DB28CBA00227D6A /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 		0F8D22D61DB2D08500227D6A /* names2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names2.json; sourceTree = "<group>"; };
-		0F8D22DA1DB2D28000227D6A /* names3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names3.json; sourceTree = "<group>"; };
+		0F8D22DA1DB2D28000227D6A /* NestedNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NestedNames.json; sourceTree = "<group>"; };
 		0F945FCF1DB59AB700FB4045 /* ExtensionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
 		0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
+		0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolShakeable.swift; sourceTree = "<group>"; };
+		0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolDimmable.swift; sourceTree = "<group>"; };
+		0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolJsonConvertible.swift; sourceTree = "<group>"; };
 		0FCE1C671DB6983700242E09 /* EleventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleventhViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eleventh.storyboard; sourceTree = "<group>"; };
@@ -336,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				0F8D22D61DB2D08500227D6A /* names2.json */,
-				0F8D22DA1DB2D28000227D6A /* names3.json */,
+				0F8D22DA1DB2D28000227D6A /* NestedNames.json */,
 				0F2D7EC71DB13CB9007A6F4A /* data.json */,
 			);
 			name = Resources;
@@ -363,17 +375,20 @@
 			name = CollectionView_Wenderlich_Custom;
 			sourceTree = "<group>";
 		};
-		0F3052EB1DABF1C900F79778 /* Global_Utilities_Extensions */ = {
+		0F3052EB1DABF1C900F79778 /* Globals_and_Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0F3052EC1DABF1EF00F79778 /* Protocols.swift */,
+				0F3052EC1DABF1EF00F79778 /* ProtocolsUtils.swift */,
+				0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */,
+				0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */,
+				0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */,
 				0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */,
 				0F945FCF1DB59AB700FB4045 /* ExtensionViewController.swift */,
 				0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */,
 				0F2C0CF71DB5B0C600ECBA67 /* ExtensionArray.swift */,
 				0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */,
 			);
-			name = Global_Utilities_Extensions;
+			name = Globals_and_Protocols;
 			sourceTree = "<group>";
 		};
 		0F38F4D51DA7F8AF0086BAA8 = {
@@ -403,7 +418,7 @@
 			children = (
 				0F905F911DB6CE54002FBD30 /* Operations */,
 				0F945FD71DB59C3500FB4045 /* API_Routers */,
-				0F3052EB1DABF1C900F79778 /* Global_Utilities_Extensions */,
+				0F3052EB1DABF1C900F79778 /* Globals_and_Protocols */,
 				0F3052CA1DAAD4C500F79778 /* CollectionView_Wenderlich_Custom */,
 				0F3052C91DAAD49700F79778 /* CollectionView_DucTran */,
 				0F8328CE1DA996F4009804C2 /* CollectionViewRelated */,
@@ -703,7 +718,7 @@
 				0FCE1C841DB6AD9900242E09 /* Thirteenth.storyboard in Resources */,
 				0F2D7EC81DB13CB9007A6F4A /* data.json in Resources */,
 				0F8A85531DC4185400C405AC /* TwelfthA.storyboard in Resources */,
-				0F8D22DB1DB2D28000227D6A /* names3.json in Resources */,
+				0F8D22DB1DB2D28000227D6A /* NestedNames.json in Resources */,
 				0F8328D81DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F8A85571DC4187900C405AC /* TwelfthB.storyboard in Resources */,
 				0FCE1C741DB699A400242E09 /* Twelfth.storyboard in Resources */,
@@ -734,7 +749,7 @@
 				0F24FD9A1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F8A85541DC4185400C405AC /* TwelfthA.storyboard in Resources */,
 				0F1923501DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
-				0F8D22DC1DB2D28000227D6A /* names3.json in Resources */,
+				0F8D22DC1DB2D28000227D6A /* NestedNames.json in Resources */,
 				0F3052E91DAAE44600F79778 /* DucTran.storyboard in Resources */,
 				0F19233B1DA87A9100FF9E4D /* Sixth.storyboard in Resources */,
 			);
@@ -760,7 +775,7 @@
 				0F24FD9B1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
 				0F8A85551DC4185400C405AC /* TwelfthA.storyboard in Resources */,
 				0F1923511DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
-				0F8D22DD1DB2D28000227D6A /* names3.json in Resources */,
+				0F8D22DD1DB2D28000227D6A /* NestedNames.json in Resources */,
 				0F3052EA1DAAE44600F79778 /* DucTran.storyboard in Resources */,
 				0F19233C1DA87A9100FF9E4D /* Sixth.storyboard in Resources */,
 			);
@@ -913,7 +928,7 @@
 			files = (
 				0F3F99021DA8267D002FBB8C /* FifthViewController.swift in Sources */,
 				0FD9707E1DA802480099BE54 /* FourthViewController.swift in Sources */,
-				0F3052ED1DABF1EF00F79778 /* Protocols.swift in Sources */,
+				0F3052ED1DABF1EF00F79778 /* ProtocolsUtils.swift in Sources */,
 				0F1923421DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
 				0F38F4EA1DA7F8AF0086BAA8 /* xTester.xcdatamodeld in Sources */,
 				0F3052E11DAAD5CF00F79778 /* Publisher.swift in Sources */,
@@ -931,8 +946,10 @@
 				0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */,
 				0F24FD9D1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
 				0F19233E1DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,
+				0F9887DD1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */,
 				0FD9707A1DA802480099BE54 /* ButtonView.swift in Sources */,
 				0F3052D61DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
+				0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F3052D91DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
 				0FECD9D01DB462BE00DDDCFE /* Test.swift in Sources */,
 				0FD970811DA802480099BE54 /* SecondViewController.swift in Sources */,
@@ -953,6 +970,7 @@
 				0FD9707D1DA802480099BE54 /* FourthView.swift in Sources */,
 				0F3F99061DA826A2002FBB8C /* SixthViewController.swift in Sources */,
 				0F1923461DA8826A00FF9E4D /* SixthDetailVCView.swift in Sources */,
+				0F9887E11DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */,
 				0F2C0CF81DB5B0C600ECBA67 /* ExtensionArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -969,6 +987,7 @@
 				0FCE1C891DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */,
 				0F8328CC1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
 				0F2C0CF91DB5B0C600ECBA67 /* ExtensionArray.swift in Sources */,
+				0F9887E21DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */,
 				0F2D7ECD1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F945FD51DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F3052DA1DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
@@ -977,6 +996,7 @@
 				0F3F99071DA826A2002FBB8C /* SixthViewController.swift in Sources */,
 				0F3F990B1DA826CA002FBB8C /* SeventhViewController.swift in Sources */,
 				0FCE1C691DB6983700242E09 /* EleventhViewController.swift in Sources */,
+				0F9887E61DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F38F4FA1DA7F8AF0086BAA8 /* xTesterTests.swift in Sources */,
 				0F8328C81DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F3052CD1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
@@ -984,10 +1004,11 @@
 				0F3052DD1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
 				0FECD9D11DB462BE00DDDCFE /* Test.swift in Sources */,
 				0F1923431DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
+				0F9887DE1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */,
 				0FCE1C811DB6AC8400242E09 /* FifteenthViewController.swift in Sources */,
 				0F24FD9E1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
 				0FCE1C6D1DB6988200242E09 /* TwelfthViewController.swift in Sources */,
-				0F3052EE1DABF1EF00F79778 /* Protocols.swift in Sources */,
+				0F3052EE1DABF1EF00F79778 /* ProtocolsUtils.swift in Sources */,
 				0F8A85441DC3C72900C405AC /* TwelfthAViewController.swift in Sources */,
 				0F3052D11DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F945FD11DB59AB700FB4045 /* ExtensionViewController.swift in Sources */,
@@ -1012,6 +1033,7 @@
 				0FCE1C8A1DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */,
 				0F8328CD1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
 				0F2C0CFA1DB5B0C600ECBA67 /* ExtensionArray.swift in Sources */,
+				0F9887E31DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */,
 				0F2D7ECE1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F945FD61DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F3052DB1DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
@@ -1020,6 +1042,7 @@
 				0F3F99081DA826A2002FBB8C /* SixthViewController.swift in Sources */,
 				0F3F990C1DA826CA002FBB8C /* SeventhViewController.swift in Sources */,
 				0FCE1C6A1DB6983700242E09 /* EleventhViewController.swift in Sources */,
+				0F9887E71DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F38F5051DA7F8AF0086BAA8 /* xTesterUITests.swift in Sources */,
 				0F8328C91DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F3052CE1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
@@ -1027,10 +1050,11 @@
 				0F3052DE1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
 				0FECD9D21DB462BE00DDDCFE /* Test.swift in Sources */,
 				0F1923441DA8822F00FF9E4D /* SixthVCView.swift in Sources */,
+				0F9887DF1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */,
 				0FCE1C821DB6AC8400242E09 /* FifteenthViewController.swift in Sources */,
 				0F24FD9F1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
 				0FCE1C6E1DB6988200242E09 /* TwelfthViewController.swift in Sources */,
-				0F3052EF1DABF1EF00F79778 /* Protocols.swift in Sources */,
+				0F3052EF1DABF1EF00F79778 /* ProtocolsUtils.swift in Sources */,
 				0F8A85451DC3C72900C405AC /* TwelfthAViewController.swift in Sources */,
 				0F3052D21DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F945FD21DB59AB700FB4045 /* ExtensionViewController.swift in Sources */,
