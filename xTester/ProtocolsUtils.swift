@@ -31,6 +31,9 @@ protocol Utils {}   // This protocol contains common utility functions
 
 extension Utils {
     
+    
+    
+    
     // This is a simple test method
     func climb() -> Void {
         print("I am climbing .....")
@@ -74,6 +77,52 @@ extension Utils {
     func convertArray(toString arr:[String]) -> String? {
         return arr.joined(separator: ",")
     }
+    
+    
+    
+    
+    
+    
+    
+    // MARK:  URL Related
+    
+     func getSiteURL(baseURLString:String, method: String, parameters: [String:String]?, apiKey:String? ) -> URL {
+        
+        var components = URLComponents(string: baseURLString )!
+        var queryItems = [URLQueryItem]()
+        
+        let baseParams  = [
+            "method": method,
+            "format": "json",
+            "nojsoncallback": "1",
+            "api_key": apiKey
+        ]
+        
+        
+        for(key,value) in baseParams {
+            let item = URLQueryItem(name: key, value: value)
+            queryItems.append(item)
+        }
+        
+        
+        if let additionalParams = parameters{
+            for (key, value) in additionalParams {
+                let item = URLQueryItem(name: key, value: value )
+                queryItems.append(item)
+            } //end for loop
+        } //end if
+        
+        components.queryItems = queryItems
+        return components.url!
+        
+    } //end method
+    
+    
+    
+    
+    
+    
+    
     
     
     

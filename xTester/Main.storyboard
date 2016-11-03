@@ -147,7 +147,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-ao-rgt">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC9: Coll Views"/>
+                                        <state key="normal" title="VC9: Coll Views(JSON)"/>
                                         <connections>
                                             <segue destination="hUN-e6-q7H" kind="show" id="HXT-yP-8Et"/>
                                         </connections>

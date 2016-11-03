@@ -37,12 +37,11 @@ extension JsonConvertible  {
     // **************************************************************
     
 
-    func getJSONObject(for url:String, completionHandler:  @escaping (Result<JSON>) -> Void ) {
-            print("getJSONObject...  starting ")
-            guard let url = URL(string: url)  else {
-                return
-            }
+    //func getJSONObject(for url:String, completionHandler:  @escaping (Result<JSON>) ->
+    func getJSONObject(for url:URL, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
         
+            print("getJSONObject...  starting ")
+     
             let urlRequest = URLRequest(url: url)
             
                 Alamofire.request(urlRequest).responseJSON
@@ -75,11 +74,17 @@ extension JsonConvertible  {
     // ****************************************************************************************
     
     func getKeyArray(from jsonObject:JSON, for key1:String?, and key2:String) -> [String]? {
+        
         print("getKeyArray from Protool.... started")
         var arrayNames:[String] = []
         
         if let myKey1 = key1 {
-            for object in  jsonObject[myKey1].array! {
+            //for object in  jsonObject[myKey1].array! {
+                
+                for object in  jsonObject["photos","photo"].array! {
+                
+                
+                
             //for object in  jsonObject[myKey1].arrayValue {
                 let name = object[key2].stringValue
                 //let name = object[key2].rawValue
@@ -92,7 +97,14 @@ extension JsonConvertible  {
                 }
         } // end if
         
-             return Array(Set(arrayNames)).sorted()
+        
+            // remove duplicates
+            let  result  = Array(Set(arrayNames)).sorted()
+            print(" +++++++++ Key Array +++++++++++")
+            print(result)
+            print("++++++++++++ end key array +++++++++++++++")
+            return result
+        
         
     } // end func
     
@@ -113,7 +125,11 @@ extension JsonConvertible  {
     func getDictionary(from obj:JSON, root rootAttribute:String, for key:String,  keyArray:[String], dataKey:String ) -> [String:[String]]? {
         
         print("getDictionary... Starting ******")
-        let  arrayToProcess = obj[rootAttribute].arrayValue
+       // let  arrayToProcess = obj[rootAttribute].arrayValue
+        
+        let  arrayToProcess = obj["photos","photo"].arrayValue
+        
+        
         print(arrayToProcess.count)
         print(arrayToProcess)
         var keyItems:[String] = []
