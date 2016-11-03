@@ -271,11 +271,11 @@
             </objects>
             <point key="canvasLocation" x="-23" y="-452"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Demos-->
         <scene sceneID="v9J-m7-bsc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xDQ-Wr-VkL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="u0K-z2-6cP"/>
+                    <tabBarItem key="tabBarItem" title="Demos" image="Close" id="u0K-z2-6cP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgZ-4B-b5x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -373,9 +373,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="faO-D1-I0F" kind="relationship" relationship="viewControllers" id="wqF-WH-kIw"/>
-                        <segue destination="xDQ-Wr-VkL" kind="relationship" relationship="viewControllers" id="bmB-Ok-Yfv"/>
                         <segue destination="6o9-H1-nf8" kind="relationship" relationship="viewControllers" id="Ao3-XB-MiC"/>
+                        <segue destination="xDQ-Wr-VkL" kind="relationship" relationship="viewControllers" id="bmB-Ok-Yfv"/>
+                        <segue destination="faO-D1-I0F" kind="relationship" relationship="viewControllers" id="wqF-WH-kIw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgX-OA-wol" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,7 +396,7 @@
         <scene sceneID="6fw-gp-1OD">
             <objects>
                 <viewControllerPlaceholder storyboardName="Twelfth" id="6o9-H1-nf8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="yYc-En-EJF"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="yYc-En-EJF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Do-Iv-6w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -428,6 +428,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close" width="26" height="26"/>
         <image name="Icon-App-60x60" width="60" height="60"/>
         <image name="Men’s Journal" width="1290" height="1753"/>
         <image name="cardCircle" width="100" height="140"/>

@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
     </dependencies>
     <scenes>
-        <!--Eleventh View Controller-->
+        <!--Locations-->
         <scene sceneID="h61-5o-bU4">
             <objects>
                 <viewController id="9bB-cm-QKA" customClass="EleventhViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="KLB-05-89j"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="Close" id="KLB-05-89j"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxB-D8-VZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -17,4 +17,7 @@
             <point key="canvasLocation" x="-318" y="-260"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Close" width="26" height="26"/>
+    </resources>
 </document>

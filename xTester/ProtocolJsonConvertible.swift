@@ -32,18 +32,21 @@ extension JsonConvertible  {
    
     // **************************************************************
     //  This function gives as a SwifyJSON  'JSON' object
-    //  You juts have to pass in a Url string
+    //  You just have to pass in a Url string
+    //  param - rootPath: specify the levels as an array
+    //  For example, if my data is under 'employees' rooot attribute
+    //  and within that, it is under the 'users' attribute
+    //  Then your array will contain ["employees","users"]
     //
     // **************************************************************
     
 
     //func getJSONObject(for url:String, completionHandler:  @escaping (Result<JSON>) ->
-    func getJSONObject(for url:URL, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
+    func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
         
             print("getJSONObject...  starting ")
-     
             let urlRequest = URLRequest(url: url)
-            
+        
                 Alamofire.request(urlRequest).responseJSON
                     { (response) -> Void  in
                             guard response.result.error == nil else {   // got an error
@@ -53,8 +56,35 @@ extension JsonConvertible  {
                             guard response.result.value != nil else {
                                 return
                             }
-                            let jsonObject:JSON  = JSON(response.result.value!)  // convert Respons eto JSON
+                    
+                        let jsonObject:JSON  = JSON(response.result.value!)  // convert Response to JSON
+                   
+                        if rootPath == nil {
                             completionHandler(Result.success(jsonObject))
+                        } else {
+                                if let pathCount  = rootPath?.count  {
+                                        switch pathCount  {
+                                            case 1:
+                                                let result = jsonObject[ (rootPath?[0])! ]
+                                                completionHandler(Result.success(result))
+                                            case 2:
+                                                let result = jsonObject[ (rootPath?[0])!,(rootPath?[1])! ]
+                                                completionHandler(Result.success(result))
+                                            case 3:
+                                                let result =  jsonObject[ (rootPath?[0])!,(rootPath?[1])!,(rootPath?[2])!    ]
+                                                completionHandler(Result.success(result))
+                                            case 4:
+                                                let result =  jsonObject[ (rootPath?[0])!,(rootPath?[1])!,(rootPath?[2])!, (rootPath?[3])!    ]
+                                                completionHandler(Result.success(result))
+                                            default:
+                                                completionHandler(Result.success(jsonObject))
+                                        }
+                                    
+                                } else { // must be nil
+                                    completionHandler(Result.success(jsonObject))
+                                }
+                        } // if rootPath =  nil
+                        
                     }  // end Alamofire request
     } // end function
     
@@ -73,38 +103,27 @@ extension JsonConvertible  {
     //  for object in  jsonObject["responseData","feed","entries"].array!
     // ****************************************************************************************
     
-    func getKeyArray(from jsonObject:JSON, for key1:String?, and key2:String) -> [String]? {
+    func getKeyArray(from jsonObject:JSON?,  key:String?) -> [String]? {
         
         print("getKeyArray from Protool.... started")
+        guard let jsonObject = jsonObject, let key = key  else {
+            return nil
+        }
+    
         var arrayNames:[String] = []
         
-        if let myKey1 = key1 {
-            //for object in  jsonObject[myKey1].array! {
-                
-                for object in  jsonObject["photos","photo"].array! {
-                
-                
-                
-            //for object in  jsonObject[myKey1].arrayValue {
-                let name = object[key2].stringValue
+            for (_, object) in  jsonObject {
+                let name = object[key].stringValue
                 //let name = object[key2].rawValue
                 arrayNames.append(name)
             }
-        } else {
-                for (_, object) in jsonObject {
-                    let name = object[key2].stringValue
-                    arrayNames.append(name)
-                }
-        } // end if
-        
-        
+            
             // remove duplicates
             let  result  = Array(Set(arrayNames)).sorted()
-            print(" +++++++++ Key Array +++++++++++")
+            print(" +++++++++ Key Array +++++++++++++++++++++")
             print(result)
             print("++++++++++++ end key array +++++++++++++++")
             return result
-        
         
     } // end func
     
@@ -122,29 +141,25 @@ extension JsonConvertible  {
     // param  key:  This is the key we want to categorize on
     // param rootAtribute:  Thisis the root element
     
-    func getDictionary(from obj:JSON, root rootAttribute:String, for key:String,  keyArray:[String], dataKey:String ) -> [String:[String]]? {
+    func getDictionary(from obj:JSON?,  for key:String?,  keyArray:[String]?, dataKey:String? ) -> [String:[String]]? {
         
         print("getDictionary... Starting ******")
-       // let  arrayToProcess = obj[rootAttribute].arrayValue
-        
-        let  arrayToProcess = obj["photos","photo"].arrayValue
-        
-        
-        print(arrayToProcess.count)
-        print(arrayToProcess)
+        guard let obj = obj, let key = key, let keyArray = keyArray, let dataKey = dataKey else {
+            return nil
+        }
+        print(obj.count)
+        print(obj)
         var keyItems:[String] = []
         var myDict:[String:[String]] = [:]   // Create a Dictionary to hold our data
         
-        // Now, for each key in keyArray, 
-        //we need to get all elements and create a Dictinary item
+        // Now, for each key in keyArray, we need to get all elements and create a Dictinary item
         
         for i in keyArray {
-            for things in arrayToProcess {
+            for (_, things) in obj {
                 if things[key].string == i {
-                    //print("Match found here ...")
                     keyItems.append(things[dataKey].stringValue)
                 }
-            }
+            } // end for loop
             
             // Let's remove Duplicates .... may not be necessary
             keyItems = Array(Set(keyItems)).sorted()
@@ -159,13 +174,30 @@ extension JsonConvertible  {
     } // end func
     
     
+
     
     
     
     
     
+    // Thid function will give us the array of values associated with a key
+    //  For example, my Tableview needs all values for a particular section, say "teams"
+    //  we just lookup the key "teams" in our dict and retrieve values for that key
+    //  An array is returned
+    //
     
-    
+    func getDictionaryValues(fromDictionary dict:[String:[String]]?, for key:String?) -> [String]? {
+        
+        guard let dict = dict, let key = key else{
+            return nil
+        }
+        
+        guard let result:[String] =  dict[key] else {
+            return nil
+        }
+        
+        return result
+    }
     
     
     

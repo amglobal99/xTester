@@ -86,33 +86,41 @@ extension Utils {
     
     // MARK:  URL Related
     
-     func getSiteURL(baseURLString:String, method: String, parameters: [String:String]?, apiKey:String? ) -> URL {
+     func getSiteURL(baseURLString:String, method: String?, parameters: [String:String]?, apiKey:String? ) -> URL {
         
         var components = URLComponents(string: baseURLString )!
-        var queryItems = [URLQueryItem]()
-        
-        let baseParams  = [
-            "method": method,
-            "format": "json",
-            "nojsoncallback": "1",
-            "api_key": apiKey
-        ]
         
         
-        for(key,value) in baseParams {
-            let item = URLQueryItem(name: key, value: value)
-            queryItems.append(item)
+        if method != nil && apiKey != nil {
+            
+            var queryItems = [URLQueryItem]()
+
+            
+                let baseParams  = [
+                    "method": method,
+                    "format": "json",
+                    "nojsoncallback": "1",
+                    "api_key": apiKey
+                ]
+            
+                for(key,value) in baseParams {
+                    let item = URLQueryItem(name: key, value: value)
+                    queryItems.append(item)
+                }
+                
+                
+                if let additionalParams = parameters {   // make sure parameters is not nil
+                    for (key, value) in additionalParams {
+                        let item = URLQueryItem(name: key, value: value )
+                        queryItems.append(item)
+                    } //end for loop
+                } //end if
+            
+            components.queryItems = queryItems
+          
         }
         
         
-        if let additionalParams = parameters{
-            for (key, value) in additionalParams {
-                let item = URLQueryItem(name: key, value: value )
-                queryItems.append(item)
-            } //end for loop
-        } //end if
-        
-        components.queryItems = queryItems
         return components.url!
         
     } //end method
@@ -120,11 +128,7 @@ extension Utils {
     
     
     
-    
-    
-    
-    
-    
+
     
     
     
