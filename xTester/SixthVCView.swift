@@ -7,10 +7,8 @@
 //
 
 
-
 import Foundation
 import UIKit
-
 
 
 class SixthVCView: UIView {
@@ -40,6 +38,7 @@ class SixthVCView: UIView {
     override func didMoveToWindow() {
         print("     View A    - didMoveToWindow.  Window has been chnaged.")
     }
+    
     
     
     

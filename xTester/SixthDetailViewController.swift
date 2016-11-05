@@ -27,7 +27,11 @@ class SixthDetailViewController: UIViewController {
         print("  ViewController B  (Second) - viewWillAppear ")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("  ViewController B   (Second) - viewDidAppear.    \n  **************************************** \n ")
+    }
     
+
     override func viewWillLayoutSubviews() {
         print("  ViewController B   (Second) - viewWillLayoutSubviews")
     }
@@ -37,10 +41,6 @@ class SixthDetailViewController: UIViewController {
         //  print("ViewController A    - viewDidLayoutSubviews")
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("  ViewController B   (Second) - viewDidAppear.    \n  **************************************** \n ")
-    }
     
     
     

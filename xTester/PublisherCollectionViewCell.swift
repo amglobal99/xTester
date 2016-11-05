@@ -7,17 +7,6 @@
 //
 
 
-
-
-
-
-
-
-
-
-
-
-
 import UIKit
 
 protocol PublisherCollectionViewCellDelegate

@@ -19,10 +19,7 @@ class SixthViewController: UIViewController {
     
 
     override func viewDidLoad() {
-        
-        
-        
-        super.viewDidLoad()
+          super.viewDidLoad()
         print("ViewController A    - viewDidLoad. Main View has been loaded into memory.")
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -36,7 +33,15 @@ class SixthViewController: UIViewController {
     }
     
     
-    override func viewWillLayoutSubviews() {
+    override func viewWillDisappear(_ animated: Bool) {
+        print("ViewController A    - viewWillDisAppear \n  **************************************** \n ")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("ViewController A    - viewDidDisappear \n  **************************************** \n ")
+    }
+    
+        override func viewWillLayoutSubviews() {
         // print("ViewController A    - viewWillLayoutSubviews")
     }
     

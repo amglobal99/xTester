@@ -14,7 +14,14 @@ struct Constants {
     
     struct FlickrApi {
         static let baseUrl = "https://flickrapi.com"
-    }
+
+        enum Method: String {
+            case RecentPhotos = "flickr.photos.getRecent"
+        }
+        
+              
+        
+    }  // end struct
     
     
     

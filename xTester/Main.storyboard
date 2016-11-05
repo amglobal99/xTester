@@ -126,7 +126,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5v-VO-3Q6">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC6: ViewLifecycle"/>
+                                        <state key="normal" title="VC6: VC &amp; View Lifecycle"/>
                                         <connections>
                                             <segue destination="B4Y-Vc-WQM" kind="show" id="O3i-8c-X9s"/>
                                         </connections>
@@ -325,7 +325,7 @@
         <!--Ninth-->
         <scene sceneID="LU0-XP-V0K">
             <objects>
-                <viewControllerPlaceholder storyboardName="Ninth" id="hUN-e6-q7H" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Ninth" storyboardName="Ninth" id="hUN-e6-q7H" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikt-Ja-ddc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="772" y="-458"/>

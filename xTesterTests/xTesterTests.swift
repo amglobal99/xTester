@@ -9,7 +9,7 @@
 import XCTest
 @testable import xTester
 
-class xTesterTests: XCTestCase {
+class xTesterTests: XCTestCase, JsonConvertible {
     
     override func setUp() {
         super.setUp()
@@ -53,12 +53,6 @@ class xTesterTests: XCTestCase {
         
     }
     
-
-    
-    
-    
-    
-    
     
     func testDoSomething()  {
         let tst = Test()
@@ -85,10 +79,27 @@ class xTesterTests: XCTestCase {
     
     
     
+    // ++++++++++++++++++++  Tests for FifthViewController +++++++++++++++++++
+    
+    /*
+    func testGetJsonObject() {
+        let urlString =   "https://api.flickr.com/services/rest"
+        let url = URL(string: urlString)
+        
+        
+        let fifthVC = FifthViewController()
+        let jsonObject = getJSONObject(for: url!, rootPath: ["photos","photo"], completionHandler: )  //
+    
+    
+    
+        
+    }
+    */
     
     
     
     
+    // ++++++++++++++++++++   end Tests for FifthViewController ++++++++++++++++
     
     
     

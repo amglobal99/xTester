@@ -1,19 +1,16 @@
 //
-//  Photo.swift
+//  NinthPhoto.swift
 //  xTester
 //
 //  Created by Dad on 11/4/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
-
-//
-
 import Foundation
 import UIKit
 
 
-class Photo {
+class NinthPhoto {
     
     let title: String
     let remoteURL: URL
@@ -33,9 +30,14 @@ class Photo {
 }  //end class
 
 
-extension Photo: Equatable {}
+
+extension NinthPhoto: Equatable {}
 
 
-func == (lhs:Photo, rhs: Photo) -> Bool  {
+func == (lhs:NinthPhoto, rhs: NinthPhoto) -> Bool  {
     return lhs.photoID == rhs.photoID
 }
+
+
+
+

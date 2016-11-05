@@ -43,17 +43,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-Kv-XQT">
-                                <state key="normal" title="getJSONKeyArray"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-Kv-XQT">
+                                <frame key="frameInset" minX="43" minY="537.5" width="270" height="69"/>
+                                <color key="backgroundColor" red="0.99501991270000001" green="0.87115594880000002" blue="0.515517161" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="getJSONKeyArray&amp;Dictionary">
+                                    <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.2485045521" blue="0.1052087513" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="getKeyArray:" destination="fDj-0L-Ed4" eventType="touchUpInside" id="Kkx-pg-6Ro"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjA-rM-Hnl">
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-OK-A0o">
-                                <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using Alamofire &amp; SwiftyJSON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enh-vH-xFn">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -63,11 +63,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90616988369999996" green="0.90616988369999996" blue="0.90616988369999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rjA-rM-Hnl" firstAttribute="top" secondItem="3Wc-DL-wWZ" secondAttribute="bottom" constant="68" id="0hr-hg-4ri"/>
                             <constraint firstItem="5ge-Kv-XQT" firstAttribute="top" secondItem="3Wc-DL-wWZ" secondAttribute="bottom" constant="68" id="3hb-hp-Aub"/>
-                            <constraint firstItem="rjA-rM-Hnl" firstAttribute="leading" secondItem="5ge-Kv-XQT" secondAttribute="trailing" constant="38" id="5dG-Qp-KG9"/>
                             <constraint firstItem="3Wc-DL-wWZ" firstAttribute="top" secondItem="rOB-zU-Dbo" secondAttribute="bottom" constant="22" id="L6k-z1-M28"/>
-                            <constraint firstItem="p7c-OK-A0o" firstAttribute="top" secondItem="3Wc-DL-wWZ" secondAttribute="bottom" constant="68" id="Qbw-LL-ypu"/>
                             <constraint firstItem="mJo-8J-Xyq" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="U4A-SA-Tba"/>
                             <constraint firstItem="mJo-8J-Xyq" firstAttribute="top" secondItem="plz-n6-GfI" secondAttribute="bottom" constant="35" id="Zmj-Rd-KPP"/>
                             <constraint firstItem="3Wc-DL-wWZ" firstAttribute="leading" secondItem="0e6-6I-c9s" secondAttribute="leadingMargin" constant="67" id="cX3-8D-b9E"/>
@@ -79,7 +76,6 @@
                             <constraint firstItem="5ge-Kv-XQT" firstAttribute="leading" secondItem="0e6-6I-c9s" secondAttribute="leadingMargin" constant="27" id="sQW-wm-w2a"/>
                             <constraint firstItem="rOB-zU-Dbo" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="v6f-wg-nDe"/>
                             <constraint firstItem="plz-n6-GfI" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="vec-Bv-NNk"/>
-                            <constraint firstItem="p7c-OK-A0o" firstAttribute="leading" secondItem="rjA-rM-Hnl" secondAttribute="trailing" constant="48" id="wuB-pB-GmQ"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

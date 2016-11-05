@@ -1,34 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gYT-rF-oQo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gYT-rF-oQo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Ninth View Controller-->
         <scene sceneID="2Kh-QQ-dfe">
             <objects>
-                <collectionViewController id="gYT-rF-oQo" customClass="NinthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="rMG-rL-r0n">
+                <collectionViewController storyboardIdentifier="NinthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gYT-rF-oQo" customClass="NinthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="rMG-rL-r0n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.99501991270000001" green="0.97463142270000003" blue="0.82343513769999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.98628121614456177" green="0.96797353029251099" blue="0.99206238985061646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VhR-mw-jxf">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NinthCell" id="YfJ-Yh-0vf" customClass="NinthCollectionViewCell" customModule="xTester" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="50" height="50"/>
+                                <rect key="frame" x="27.5" y="58" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-z3-jLd">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="266" id="gzG-K4-43n"/>
+                                                <constraint firstAttribute="height" constant="209" id="j5t-RB-5PO"/>
+                                            </constraints>
+                                        </imageView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHF-T4-eMO">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="i4q-pr-VAa">
+                                                <frame key="frameInset"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="279" id="6rg-rg-qph"/>
+                                                <constraint firstAttribute="height" constant="64" id="v7E-UV-wQF"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twh-9j-MSt">
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QkY-OH-pec">
+                                                <frame key="frameInset"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="62" id="Zep-Z1-1Ha"/>
+                                                <constraint firstAttribute="width" constant="61" id="n8j-M8-FbS"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                    </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.99501991270000001" green="0.87115594880000002" blue="0.515517161" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99501991270000001" green="0.99187234369999999" blue="0.88803640819999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QS6-z3-jLd" firstAttribute="top" secondItem="Twh-9j-MSt" secondAttribute="bottom" constant="-75" id="WGI-uL-izE"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="BHF-T4-eMO" secondAttribute="bottom" constant="7" id="WPj-2z-MNR"/>
+                                    <constraint firstItem="QS6-z3-jLd" firstAttribute="top" secondItem="YfJ-Yh-0vf" secondAttribute="topMargin" constant="16" id="br4-O4-NhW"/>
+                                    <constraint firstItem="QS6-z3-jLd" firstAttribute="leading" secondItem="Twh-9j-MSt" secondAttribute="trailing" constant="-80" id="o7K-61-bzg"/>
+                                    <constraint firstItem="BHF-T4-eMO" firstAttribute="top" secondItem="QS6-z3-jLd" secondAttribute="bottom" constant="8" id="qkj-pf-MIa"/>
+                                    <constraint firstItem="QS6-z3-jLd" firstAttribute="centerX" secondItem="YfJ-Yh-0vf" secondAttribute="centerX" id="qvh-9f-ckv"/>
+                                    <constraint firstItem="BHF-T4-eMO" firstAttribute="centerX" secondItem="YfJ-Yh-0vf" secondAttribute="centerX" id="vni-7x-F02"/>
+                                </constraints>
+                                <size key="customSize" width="320" height="320"/>
+                                <connections>
+                                    <segue destination="wnN-Tm-AWH" kind="show" id="CsN-B7-XGh"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="IML-5j-r6F" customClass="SectionHeaderView" customModule="xTester" customModuleProvider="target">
@@ -45,7 +89,34 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujv-eD-Z4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="-885"/>
+            <point key="canvasLocation" x="-402.39999999999998" y="-3777.6611694152925"/>
+        </scene>
+        <!--Ninth Detail View Controller-->
+        <scene sceneID="B8u-dh-Yul">
+            <objects>
+                <viewController storyboardIdentifier="NinthDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wnN-Tm-AWH" customClass="NinthDetailViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yIE-yE-vPl"/>
+                        <viewControllerLayoutGuide type="bottom" id="9j3-aQ-kOC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hry-5f-Int">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pIq-qp-S9a"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pIq-qp-S9a" firstAttribute="centerX" secondItem="Hry-5f-Int" secondAttribute="centerX" id="53z-jJ-FAk"/>
+                            <constraint firstItem="pIq-qp-S9a" firstAttribute="leading" secondItem="Hry-5f-Int" secondAttribute="leadingMargin" constant="23" id="InC-Rr-6gA"/>
+                            <constraint firstItem="pIq-qp-S9a" firstAttribute="top" secondItem="yIE-yE-vPl" secondAttribute="bottom" constant="47" id="qxl-4J-8hf"/>
+                            <constraint firstItem="9j3-aQ-kOC" firstAttribute="top" secondItem="pIq-qp-S9a" secondAttribute="bottom" constant="51" id="sCB-Th-4TP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Px1-w2-xtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349.60000000000002" y="-3778.5607196401802"/>
         </scene>
     </scenes>
 </document>

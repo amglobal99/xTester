@@ -2,10 +2,12 @@
 //  FlickrAPI.swift
 //  xTester
 //
-//  Created by Dad on 11/2/16.
+//  Created by Dad on 11/4/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
+//
+//  FlickrAPI.swift
 
 import Foundation
 
@@ -156,6 +158,5 @@ struct FlickrAPI {
     
     
 }  //end struct
-
 
 
