@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F11D35C1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */; };
+		0F11D35D1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */; };
+		0F11D35E1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */; };
 		0F19233A1DA87A9100FF9E4D /* Sixth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1923391DA87A9100FF9E4D /* Sixth.storyboard */; };
 		0F19233B1DA87A9100FF9E4D /* Sixth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1923391DA87A9100FF9E4D /* Sixth.storyboard */; };
 		0F19233C1DA87A9100FF9E4D /* Sixth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1923391DA87A9100FF9E4D /* Sixth.storyboard */; };
@@ -122,15 +125,15 @@
 		0F8328CB1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */; };
 		0F8328CC1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */; };
 		0F8328CD1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */; };
-		0F8328D41DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328D31DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift */; };
-		0F8328D51DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328D31DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift */; };
-		0F8328D61DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328D31DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift */; };
+		0F8328D41DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */; };
+		0F8328D51DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */; };
+		0F8328D61DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */; };
 		0F8328D81DA9D158009804C2 /* Ninth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8328D71DA9D158009804C2 /* Ninth.storyboard */; };
 		0F8328D91DA9D158009804C2 /* Ninth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8328D71DA9D158009804C2 /* Ninth.storyboard */; };
 		0F8328DA1DA9D158009804C2 /* Ninth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8328D71DA9D158009804C2 /* Ninth.storyboard */; };
-		0F8328DC1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */; };
-		0F8328DD1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */; };
-		0F8328DE1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */; };
+		0F8328DC1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift */; };
+		0F8328DD1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift */; };
+		0F8328DE1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328DB1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift */; };
 		0F8A85431DC3C72900C405AC /* TwelfthAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8A85421DC3C72900C405AC /* TwelfthAViewController.swift */; };
 		0F8A85441DC3C72900C405AC /* TwelfthAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8A85421DC3C72900C405AC /* TwelfthAViewController.swift */; };
 		0F8A85451DC3C72900C405AC /* TwelfthAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8A85421DC3C72900C405AC /* TwelfthAViewController.swift */; };
@@ -235,6 +238,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		0F1923391DA87A9100FF9E4D /* Sixth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sixth.storyboard; sourceTree = "<group>"; };
 		0F19233D1DA87FF400FF9E4D /* SixthDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthDetailViewController.swift; sourceTree = "<group>"; };
 		0F1923411DA8822F00FF9E4D /* SixthVCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthVCView.swift; sourceTree = "<group>"; };
@@ -284,9 +288,9 @@
 		0F54BBD91DB8ECF200FE1714 /* Fourteenth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fourteenth.storyboard; sourceTree = "<group>"; };
 		0F8328C61DA99484009804C2 /* NinthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthViewController.swift; sourceTree = "<group>"; };
 		0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EighthCollectionViewCell.swift; sourceTree = "<group>"; };
-		0F8328D31DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		0F8328D71DA9D158009804C2 /* Ninth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ninth.storyboard; sourceTree = "<group>"; };
-		0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthCollectionViewCell.swift; sourceTree = "<group>"; };
+		0F8328DB1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F8A85421DC3C72900C405AC /* TwelfthAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthAViewController.swift; sourceTree = "<group>"; };
 		0F8A85461DC3C89700C405AC /* TwelfthBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthBViewController.swift; sourceTree = "<group>"; };
 		0F8A854E1DC3D5B200C405AC /* TwelfthA1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA1ViewController.swift; sourceTree = "<group>"; };
@@ -574,8 +578,9 @@
 			isa = PBXGroup;
 			children = (
 				0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */,
-				0F8328DB1DA9D1EF009804C2 /* NinthCollectionViewCell.swift */,
-				0F8328D31DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift */,
+				0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */,
+				0F8328DB1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift */,
+				0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */,
 				0F22D8081DCD1E770015C9F1 /* NinthPhoto.swift */,
 				0F22D8191DCD6C0F0015C9F1 /* NinthPhotoStore.swift */,
 			);
@@ -985,14 +990,14 @@
 				0F3052D01DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F8328C71DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F22D8161DCD6BD10015C9F1 /* PhotoStore.swift in Sources */,
-				0F8328D41DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift in Sources */,
+				0F8328D41DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift in Sources */,
 				0FCE1C7C1DB6AC5800242E09 /* FourteenthViewController.swift in Sources */,
 				0F38F4E21DA7F8AF0086BAA8 /* AppDelegate.swift in Sources */,
 				0FCE1C881DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */,
 				0FCE1C6C1DB6988200242E09 /* TwelfthViewController.swift in Sources */,
 				0F8328CB1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
 				0FCE1C781DB6AC1F00242E09 /* ThirteenthViewController.swift in Sources */,
-				0F8328DC1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */,
+				0F8328DC1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift in Sources */,
 				0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */,
 				0F24FD9D1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
 				0F19233E1DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,
@@ -1008,6 +1013,7 @@
 				0F2D7ECC1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F2C0CF01DB5ACE000ECBA67 /* TenthViewController.swift in Sources */,
 				0FD9707B1DA802480099BE54 /* FirstViewController.swift in Sources */,
+				0F11D35C1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */,
 				0FD970821DA802480099BE54 /* ThirdViewController.swift in Sources */,
 				0F945FD01DB59AB700FB4045 /* ExtensionViewController.swift in Sources */,
 				0FCE1C801DB6AC8400242E09 /* FifteenthViewController.swift in Sources */,
@@ -1034,13 +1040,14 @@
 				0F22D8121DCD6B1E0015C9F1 /* Photo.swift in Sources */,
 				0F2D7ED11DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F3052E21DAAD5CF00F79778 /* Publisher.swift in Sources */,
-				0F8328DD1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */,
+				0F8328DD1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift in Sources */,
 				0F8A85501DC3D5B200C405AC /* TwelfthA1ViewController.swift in Sources */,
-				0F8328D51DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift in Sources */,
+				0F8328D51DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift in Sources */,
 				0FCE1C891DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */,
 				0F8328CC1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
 				0F2C0CF91DB5B0C600ECBA67 /* ExtensionArray.swift in Sources */,
 				0F9887E21DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */,
+				0F11D35D1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */,
 				0F2D7ECD1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F945FD51DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F3052DA1DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
@@ -1086,13 +1093,14 @@
 				0F22D8131DCD6B1E0015C9F1 /* Photo.swift in Sources */,
 				0F2D7ED21DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F3052E31DAAD5CF00F79778 /* Publisher.swift in Sources */,
-				0F8328DE1DA9D1EF009804C2 /* NinthCollectionViewCell.swift in Sources */,
+				0F8328DE1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift in Sources */,
 				0F8A85511DC3D5B200C405AC /* TwelfthA1ViewController.swift in Sources */,
-				0F8328D61DA9CF0B009804C2 /* NinthCollectionViewFlowLayout.swift in Sources */,
+				0F8328D61DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift in Sources */,
 				0FCE1C8A1DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */,
 				0F8328CD1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
 				0F2C0CFA1DB5B0C600ECBA67 /* ExtensionArray.swift in Sources */,
 				0F9887E31DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */,
+				0F11D35E1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */,
 				0F2D7ECE1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F945FD61DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F3052DB1DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,

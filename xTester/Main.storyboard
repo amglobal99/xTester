@@ -90,7 +90,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="RhN-eg-WW6" kind="popoverPresentation" popoverAnchorView="b0Y-nd-Hc1" id="FhV-fN-Zn0">
+                                            <segue destination="RhN-eg-WW6" kind="popoverPresentation" identifier="SecondSegue" popoverAnchorView="b0Y-nd-Hc1" id="FhV-fN-Zn0">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -101,7 +101,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="I7K-GK-RgC" kind="show" id="gBG-9F-AbY"/>
+                                            <segue destination="I7K-GK-RgC" kind="show" identifier="ThirdSegue" id="gBG-9F-AbY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-9q-Py3">
@@ -110,7 +110,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="G4C-fA-lAV" kind="show" id="JF2-kZ-QTC"/>
+                                            <segue destination="G4C-fA-lAV" kind="show" identifier="FourthSegue" id="JF2-kZ-QTC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -121,35 +121,35 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC5: Alamofire Calls"/>
                                         <connections>
-                                            <segue destination="E1L-pX-LEb" kind="show" id="aRx-Br-SMd"/>
+                                            <segue destination="E1L-pX-LEb" kind="show" identifier="FifthSegue" id="aRx-Br-SMd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5v-VO-3Q6">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC6: VC &amp; View Lifecycle"/>
                                         <connections>
-                                            <segue destination="B4Y-Vc-WQM" kind="show" id="O3i-8c-X9s"/>
+                                            <segue destination="B4Y-Vc-WQM" kind="show" identifier="SixthSegue" id="O3i-8c-X9s"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-JG-b2v">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC7: Concurrent Ops"/>
                                         <connections>
-                                            <segue destination="qMH-AZ-9aY" kind="show" id="hJf-1q-RQm"/>
+                                            <segue destination="qMH-AZ-9aY" kind="show" identifier="SeventhSegue" id="hJf-1q-RQm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpa-Sa-hHq">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC8: Coll View(Basic)"/>
                                         <connections>
-                                            <segue destination="MUC-a6-A7B" kind="show" id="IdB-dy-K1Q"/>
+                                            <segue destination="MUC-a6-A7B" kind="show" identifier="EighthSegue" id="IdB-dy-K1Q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-ao-rgt">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC9: Coll Views(JSON)"/>
                                         <connections>
-                                            <segue destination="hUN-e6-q7H" kind="show" id="HXT-yP-8Et"/>
+                                            <segue destination="hUN-e6-q7H" kind="show" identifier="NinthSegue" id="HXT-yP-8Et"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -177,28 +177,28 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC10: Alerts"/>
                                         <connections>
-                                            <segue destination="U4C-tk-WeJ" kind="show" id="dVM-XD-FAk"/>
+                                            <segue destination="U4C-tk-WeJ" kind="show" identifier="TenthSegue" id="dVM-XD-FAk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pd-xn-wDE">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC13: Delegates"/>
                                         <connections>
-                                            <segue destination="wfU-Oo-JPk" kind="show" id="v0w-mY-nbM"/>
+                                            <segue destination="wfU-Oo-JPk" kind="show" identifier="ThirteenthSegue" id="v0w-mY-nbM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URZ-oV-Jio">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC14: Alamofire Calls"/>
                                         <connections>
-                                            <segue destination="Tm4-kc-zA8" kind="show" id="OsS-8Q-nGE"/>
+                                            <segue destination="Tm4-kc-zA8" kind="show" identifier="FourteenthSegue" id="OsS-8Q-nGE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cud-PY-r3Q">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="VC15: KVO/Notification"/>
                                         <connections>
-                                            <segue destination="TpU-Df-wXn" kind="show" id="P8d-Vg-Ccr"/>
+                                            <segue destination="TpU-Df-wXn" kind="show" identifier="FifteenthSegue" id="P8d-Vg-Ccr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -266,7 +266,7 @@
         <!--Fourth-->
         <scene sceneID="kwb-D4-hVh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Fourth" id="G4C-fA-lAV" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Fourth" storyboardName="Fourth" id="G4C-fA-lAV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hm2-BV-mPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23" y="-452"/>
@@ -293,7 +293,7 @@
         <!--Sixth-->
         <scene sceneID="Zyv-En-Q90">
             <objects>
-                <viewControllerPlaceholder storyboardName="Sixth" id="B4Y-Vc-WQM" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Sixth" storyboardName="Sixth" id="B4Y-Vc-WQM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crS-Oo-96W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="157" y="-452"/>
@@ -301,7 +301,7 @@
         <!--Seventh-->
         <scene sceneID="XD7-0m-Nfh">
             <objects>
-                <viewControllerPlaceholder storyboardName="Seventh" id="qMH-AZ-9aY" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Seventh" storyboardName="Seventh" id="qMH-AZ-9aY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhc-Ei-Rao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="317" y="-452"/>
@@ -309,7 +309,7 @@
         <!--Fifth-->
         <scene sceneID="n8i-Hg-OMW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Fifth" id="E1L-pX-LEb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Fifth" storyboardName="Fifth" id="E1L-pX-LEb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAY-h4-w0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="458" y="-452"/>
@@ -317,7 +317,7 @@
         <!--Eighth-->
         <scene sceneID="gqT-UO-0Hd">
             <objects>
-                <viewControllerPlaceholder storyboardName="Eighth" id="MUC-a6-A7B" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Eighth" storyboardName="Eighth" id="MUC-a6-A7B" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cU-a7-zBz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="607" y="-458"/>
@@ -325,7 +325,7 @@
         <!--Ninth-->
         <scene sceneID="LU0-XP-V0K">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Ninth" storyboardName="Ninth" id="hUN-e6-q7H" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Ninth" storyboardName="Ninth" referencedIdentifier="Ninth" id="hUN-e6-q7H" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikt-Ja-ddc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="772" y="-458"/>
@@ -333,7 +333,7 @@
         <!--DucTran-->
         <scene sceneID="cNh-5K-fS8">
             <objects>
-                <viewControllerPlaceholder storyboardName="DucTran" id="iKR-F8-Iyw" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="DucTran" storyboardName="DucTran" id="iKR-F8-Iyw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llE-eX-aEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939" y="-458"/>
@@ -341,7 +341,7 @@
         <!--Third-->
         <scene sceneID="w7o-hk-ptj">
             <objects>
-                <viewControllerPlaceholder storyboardName="Third" id="I7K-GK-RgC" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Third" storyboardName="Third" id="I7K-GK-RgC" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jl7-ce-c6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2003.2" y="-1006.5967016491755"/>
@@ -349,7 +349,7 @@
         <!--Second-->
         <scene sceneID="Ceg-xh-fBX">
             <objects>
-                <viewControllerPlaceholder storyboardName="Second" id="RhN-eg-WW6" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Second" storyboardName="Second" id="RhN-eg-WW6" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uAD-MP-skr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2012.8" y="-959.82008995502258"/>
@@ -357,7 +357,7 @@
         <!--Tenth-->
         <scene sceneID="1iT-Jp-hZH">
             <objects>
-                <viewControllerPlaceholder storyboardName="Tenth" id="U4C-tk-WeJ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Tenth" storyboardName="Tenth" id="U4C-tk-WeJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rG-qz-xUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2004" y="-1056.0719640179911"/>
@@ -385,7 +385,7 @@
         <!--Eleventh-->
         <scene sceneID="bO1-1h-HNv">
             <objects>
-                <viewControllerPlaceholder storyboardName="Eleventh" id="faO-D1-I0F" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Eleventh" storyboardName="Eleventh" id="faO-D1-I0F" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="oOV-Ee-Tnx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dz-tT-ag4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,7 +395,7 @@
         <!--Twelfth-->
         <scene sceneID="6fw-gp-1OD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Twelfth" id="6o9-H1-nf8" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Twelfth" storyboardName="Twelfth" id="6o9-H1-nf8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="yYc-En-EJF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Do-Iv-6w4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -405,7 +405,7 @@
         <!--Thirteenth-->
         <scene sceneID="eaQ-UP-Abi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Thirteenth" id="wfU-Oo-JPk" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Thirteenth" storyboardName="Thirteenth" id="wfU-Oo-JPk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yki-0B-sPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1634" y="-517"/>
@@ -413,7 +413,7 @@
         <!--Fourteenth-->
         <scene sceneID="cEE-zL-7Pv">
             <objects>
-                <viewControllerPlaceholder storyboardName="Fourteenth" id="Tm4-kc-zA8" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Fourteenth" storyboardName="Fourteenth" id="Tm4-kc-zA8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnP-JR-5XW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1822" y="-517"/>
@@ -421,7 +421,7 @@
         <!--Fifteenth-->
         <scene sceneID="VaH-pw-4O6">
             <objects>
-                <viewControllerPlaceholder storyboardName="Fifteenth" id="TpU-Df-wXn" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Fifteenth" storyboardName="Fifteenth" id="TpU-Df-wXn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cy2-f0-4uj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2022" y="-517"/>

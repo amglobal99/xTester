@@ -10,25 +10,31 @@
         <!--Ninth View Controller-->
         <scene sceneID="2Kh-QQ-dfe">
             <objects>
-                <collectionViewController storyboardIdentifier="NinthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gYT-rF-oQo" customClass="NinthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Ninth" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gYT-rF-oQo" customClass="NinthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="rMG-rL-r0n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98628121614456177" green="0.96797353029251099" blue="0.99206238985061646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VhR-mw-jxf">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VhR-mw-jxf" customClass="NinthPhotoCollectionViewFlowLayout" customModule="xTester" customModuleProvider="target">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NinthCell" id="YfJ-Yh-0vf" customClass="NinthCollectionViewCell" customModule="xTester" customModuleProvider="target">
-                                <rect key="frame" x="27.5" y="58" width="320" height="320"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NinthPhotoCollectionViewCell" id="YfJ-Yh-0vf" customClass="NinthPhotoCollectionViewCell" customModule="xTester" customModuleProvider="target">
+                                <rect key="frame" x="28" y="58" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HTL-mc-8sP">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="1xQ-5T-1NN"/>
+                                                <constraint firstAttribute="width" constant="100" id="Zrc-yq-ISO"/>
+                                            </constraints>
+                                        </activityIndicatorView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-z3-jLd">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="266" id="gzG-K4-43n"/>
@@ -61,6 +67,8 @@
                                 </view>
                                 <color key="backgroundColor" red="0.99501991270000001" green="0.99187234369999999" blue="0.88803640819999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="HTL-mc-8sP" firstAttribute="centerX" secondItem="BHF-T4-eMO" secondAttribute="centerX" id="62A-oK-XDu"/>
+                                    <constraint firstItem="HTL-mc-8sP" firstAttribute="top" secondItem="YfJ-Yh-0vf" secondAttribute="topMargin" constant="98" id="CHE-Zs-01K"/>
                                     <constraint firstItem="QS6-z3-jLd" firstAttribute="top" secondItem="Twh-9j-MSt" secondAttribute="bottom" constant="-75" id="WGI-uL-izE"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="BHF-T4-eMO" secondAttribute="bottom" constant="7" id="WPj-2z-MNR"/>
                                     <constraint firstItem="QS6-z3-jLd" firstAttribute="top" secondItem="YfJ-Yh-0vf" secondAttribute="topMargin" constant="16" id="br4-O4-NhW"/>
@@ -71,6 +79,8 @@
                                 </constraints>
                                 <size key="customSize" width="320" height="320"/>
                                 <connections>
+                                    <outlet property="imageView" destination="QS6-z3-jLd" id="ah7-6e-kPH"/>
+                                    <outlet property="spinner" destination="HTL-mc-8sP" id="7eL-by-ASj"/>
                                     <segue destination="wnN-Tm-AWH" kind="show" id="CsN-B7-XGh"/>
                                 </connections>
                             </collectionViewCell>
@@ -80,16 +90,15 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <color key="backgroundColor" red="0.80487156559999995" green="0.92403095960000003" blue="0.89732714719999995" alpha="1" colorSpace="calibratedRGB"/>
                         </collectionReusableView>
-                        <connections>
-                            <outlet property="dataSource" destination="gYT-rF-oQo" id="gNy-xI-ibK"/>
-                            <outlet property="delegate" destination="gYT-rF-oQo" id="lIe-WL-FfP"/>
-                        </connections>
                     </collectionView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="photoCollectionView" destination="rMG-rL-r0n" id="Gmi-xG-Aa6"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujv-eD-Z4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-402.39999999999998" y="-3777.6611694152925"/>
+            <point key="canvasLocation" x="-1087" y="-4126"/>
         </scene>
         <!--Ninth Detail View Controller-->
         <scene sceneID="B8u-dh-Yul">

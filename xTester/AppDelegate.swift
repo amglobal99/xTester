@@ -18,9 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-       let ninthVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Ninth") as? NinthViewController
-        ninthVC?.store = NinthPhotoStore()
+        
+        /*
+       let ninthVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Ninth") as! NinthViewController
+        
+        ninthVC.city = "Jack City"
+        
+        let aStore:NinthPhotoStore = NinthPhotoStore()
+        ninthVC.store = aStore
      
+ 
+        
+        print("ttt....")
+        
+        */
+        
+        
+        
+        
         return true
     }
 

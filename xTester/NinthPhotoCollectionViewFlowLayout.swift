@@ -1,5 +1,5 @@
 //
-//  NinthCollectionViewLayout.swift
+//  NinthC`ollectionViewLayout.swift
 //  xTester
 //
 //  Created by Dad on 10/8/16.
@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 
-class NinthCollectionViewFlowLayout: UICollectionViewFlowLayout {
+class NinthPhotoCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     
     // hold the index path of the item being inserted

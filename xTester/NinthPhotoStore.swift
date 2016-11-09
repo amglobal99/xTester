@@ -62,119 +62,71 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     
     
-    
-    /*
-    
-    func fetchRecentPhotos( completion: @escaping (PhotosResult) -> Void )    {
-        /*
-        // NOTE: I wondered how we were referencing PhotosResult here
-        //     because it is declared in FlickrAPI.swift
-        // I guess since Closures capture context, it has access to that var ???
-        
-        
-        let url = FlickrAPI.recentPhotosURL()
-        let request = URLRequest(url: url as URL)
-        print("  PhotoStore.swift: fetchRecentPhotos: sending request for JSON data")
-        
-        // what folows is an instance of NSURLSessionTask ... it has  a closure
-        let task = session.dataTask(with: request, completionHandler: {  (data, response, error) -> Void in    // this is a closure
-            print("  PhotoStore.swift:fetchRecentPhotos: calling processRecentPhotoRequests method (in same file)")
-            let result: PhotosResult = self.processRecentPhotoRequests(data: data, error: error as NSError?)
-            print("  PhotoStore.swift: fetchRecentPhotos: completed processRecentPhotoRequests. Now running handler")
-            completion(result)
-            print("  PhotoStore.swift: fetchRecentPhotos: completed executon of handler")
-        })
-        
-        //end closure
-        
-        task.resume()
-        
- 
-        */
- 
- 
- 
- 
-    } //end method
+    // Starter function that retrievs all your Items
+    //
     
     
     
     
-    func processRecentPhotoRequests(data: Data?, error: NSError? ) -> PhotosResult {
-        
-        
-        /*
-        
-        print("      PhotoStore.swift: processRecentPhotoRequests:  Started")
-        guard let jsonData = data else {
-            print("      PhotoStore.swift: processRecebtPhotoRequests: returning failuer")
-            return .failure(error!)
-        }
-        print ("      PhotoStore.swift:processRecentPhotoRequests : calling flickrapi.photosFromJSONData (FlickrAPI.swift)")
-        return FlickrAPI.photosFromJSONData(jsonData)
- 
- 
- */
- 
- 
-    } //end method
     
-    
-    
-    
-    func fetchImageForPhoto(_ photo: Photo, completion: @escaping (ImageResult) -> Void ) {
+    func fetchRecentItems( baseURLString:String, method:String, parameters:[String:String], apiKey:String, completion: @escaping (NinthPhotosResult) -> Void )    {
         
-        //print("          PhotoStore.swift: fetchImageForPhoto: Started execution of method")
-        if let image = photo.image {
-            completion(.success(image) )
-            return
-        }
         
-        let photoURL = photo.remoteURL
-        let request = URLRequest(url: photoURL as URL)
+        let params = ["extras":"url_h,date_taken"]
+        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)
         
-        let task = session.dataTask(with: request, completionHandler:
-            {
-                (data, response, error ) -> Void in
-                //print("          PhotoStore.swift: fetchImageForPhoto: calling processImageRequest")
-                let result: ImageResult = self.processImageRequest(data: data, error: error as NSError?)
-                //print("          PhotoStore.swift: fetchImageForPhoto: Finished execution of processImageRequest")
+        
+        let completionHandler: (Result<JSON>) -> Void  =
+            { result in
                 
-                if case let ImageResult.success(image) = result {
-                    photo.image = image
-                    print("          PhotoStore.swift: fetchImageForPhoto: image obtained successfully" )
+                let jsonObj = result.value!
+                let itemsResult  = self.photosFromJsonObject(jsonObj)
+                
+                OperationQueue.main.addOperation() {
+                    
+                    switch itemsResult {
+                        
+                    case let NinthPhotosResult.success(photos):
+                        print("vvv")
+                        
+                    case NinthPhotosResult.failure(let error):
+                        
+                        print("lll")
+                        
+                        
+                        
+                    }
+                    
                 }
                 
-                //print("              PhotoStore.swift: fetchImageForPhoto: executing handler" )
-                completion(result)
-                //print("              PhotoStore.swift: fetchImageForPhoto: completed handler")
-        } )
+                
+                
+                
+        } // end closure
         
-        task.resume()
+        
+        //  Call the generic method to get a SwiftyJSON object
+        getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)
+    
+
+        
+        
+        
         
     } //end method
     
     
+
     
     
-    func processImageRequest(data: Data?, error: NSError?) -> ImageResult {
-        
-        //print("              PhotoStore.swift: processImageRequest: Starting method" )
-        guard let  imageData = data,  let image = UIImage(data: imageData) else {
-            
-            //could not get image
-            if data == nil {
-                return ImageResult.failure(error!)
-            } else {
-                return ImageResult.failure(PhotoError.imageCreationError)
-            }
-        }
-        
-        //print("              PhotoStore.swift: processImageRequest: returning sucess" )
-        return .success(image )
-    } //end method
     
-    */
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -201,27 +153,67 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
    
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Function to retrieve array of NinthPhoto objects
+    //
+    //
     func photosFromJsonObject(_ json:JSON) -> NinthPhotosResult {
+        
+                print("      photosFromJSonObject:   starting ......")
                 var finalPhotos:[NinthPhoto] = []
+                print("      json object count is : \(json.count)   ")
+        
+                var addCount = 0
+            
                 for ( _, jsonItem) in json {
                     if let photo: NinthPhoto  = photoFromJSONObject(jsonItem) {
                             finalPhotos.append(photo)
+                        addCount += 1
                     }
                 }
-            
+        
+                print("      Created new photos: \(addCount) ")
+        
+        
                 if finalPhotos.count == 0 && json.count > 0 {
                     print("Sorry buddy...went wrong")
-                    return      NinthPhotosResult.failure(FlickrError.invalidJSONData)
+                    return  NinthPhotosResult.failure(FlickrError.invalidJSONData)
                 }
         
-                return NinthPhotosResult.success(finalPhotos)
+                print("       ++++++++++++  Final Photos @@@@@@@@@@@@@")
+        
+        
+                print("      Array contains \(finalPhotos.count)  photos" )
+        
+                /*
+                print(" +++++++++++++++++++++++++++++++++")
+        
+                for j in finalPhotos{
+                    print("*******\n \(j.photoID) - \(j.title) \n*********\n ")
+                    
+                }
+        
+            */
+        
+        
+                        return NinthPhotosResult.success(finalPhotos)
     }  // end func
     
     
     
     
     // Function to get indiviaul Photo object
+    // If any of the fields is unavailable, it returns a nil
+    //  Many entries do nit have a URL, so that Photo wil not be returned
+    //
     func photoFromJSONObject(_ json: JSON ) -> NinthPhoto? {
         guard
             let photoID = json["id"].string,
@@ -241,21 +233,64 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
 
     
+    func fetchImageForPhoto(_ photo: NinthPhoto, completion: @escaping (ImageResult) -> Void ) {
+        
+        print("          PhotoStore.swift: fetchImageForPhoto: Started execution of method")
+        if let image = photo.image {
+            completion(.success(image) )
+            return
+        }
+        
+        let photoURL = photo.remoteURL
+        let request = URLRequest(url: photoURL as URL)
+        
+        let task = session.dataTask(with: request, completionHandler:
+            {
+                (data, response, error ) -> Void in
+                print("          PhotoStore.swift: fetchImageForPhoto: calling processImageRequest")
+                let result: ImageResult = self.processImageRequest(data: data, error: error as NSError?)
+                print("          PhotoStore.swift: fetchImageForPhoto: Finished execution of processImageRequest")
+                
+                if case let ImageResult.success(image) = result {
+                    photo.image = image
+                    print("          PhotoStore.swift: fetchImageForPhoto: image obtained successfully" )
+                }
+                
+                print("              PhotoStore.swift: fetchImageForPhoto: executing handler" )
+                completion(result)
+                print("              PhotoStore.swift: fetchImageForPhoto: completed handler")
+        } )
+        
+        task.resume()
+        
+    } //end method
     
     
     
-    func processRecentPhotoRequests() { }
-    
-    
-    func fetchImageForPhoto () {  }
-    
-    
-    func processImageRequest() {  }
     
     
     
     
+    func processImageRequest(data: Data?, error: NSError?) -> ImageResult {
+        
+        print("              PhotoStore.swift: processImageRequest: Starting method" )
+        guard let  imageData = data,  let image = UIImage(data: imageData) else {
+            //could not get image
+            if data == nil {
+                return ImageResult.failure(error!)
+            } else {
+                return ImageResult.failure(PhotoError.imageCreationError)
+            }
+        }
+        print("              PhotoStore.swift: processImageRequest: returning sucess" )
+        return .success(image )
+    } //end method
 
+    
+    
+    
+    
+    
     
     
     
