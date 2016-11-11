@@ -15,6 +15,9 @@ import UIKit
 class NinthPhotoCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     
+    
+    /*
+    
     // hold the index path of the item being inserted
     var appearingIndexPath: IndexPath?
     
@@ -69,6 +72,12 @@ class NinthPhotoCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         return attributes
     }
+    
+    
+    */
+    
+    
+    
     
     
     

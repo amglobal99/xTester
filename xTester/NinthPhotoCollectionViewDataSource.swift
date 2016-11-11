@@ -18,41 +18,26 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     // How many Items in each section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("        NinthPhotoCollectionViewDataSource: collectonView count is: \(photos.count) ")
+        print("        DataSource: collectonView count is: \(photos.count) \n *********************************")
         return photos.count
         
     }
     
    
-    
     // Cell for Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        print("      NinthPhotoCollectionViewCell : cell at index ...")
-        
-        
-        
+        //print("           1. cellForItemAtIndex ...Starting")
         let identifier = "NinthPhotoCollectionViewCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! NinthPhotoCollectionViewCell
         let photo  = photos[(indexPath as NSIndexPath).row]
-       cell.updateWithImage(photo.image)
+        //print("              2. cellForItemAtIndex : Calling updateWithImage ")
+        cell.updateWithImage(photo.image)
         
+         //print("      NinthPhotoCollectionViewCell : cellForItemAtIndex ...RETURNING a Cell")
         return cell
-        
     } //end method
     
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     
 } //end class

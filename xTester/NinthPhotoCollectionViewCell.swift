@@ -25,35 +25,36 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     
-    
-    
-    
-    
     func updateWithImage(_ image: UIImage?) {
         
-        print("      NinthPhotoCollectionViewCell: updateWithImage starting")
+        //print("       updateWithImage starting")
         
         if let imageToDisplay = image {
+           //print("       updateWithImage .... image is present")
             spinner .stopAnimating()
             imageView.image = imageToDisplay
         } else {
+            //print("       updateWithImage ..... no Image")
             spinner .startAnimating()
             imageView.image = nil
+            
+            
+            /*
+            let imageName = "Sunset.jpg"
+            //let img = UIImage(named: imageName)
+            imageView.image = UIImage(named: imageName)
+            */
+            
+            
+            
+           // print("***************************************")
+            
         }
     }  //end method
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    // called when cell is first created
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         updateWithImage(nil )
@@ -62,7 +63,10 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     
     // called when cell is being reused
     override func prepareForReuse() {
+        //print("             super.prepareforReuse")
         super.prepareForReuse()
+        
+        //print( "         Calling updateWithImage from prepareForREuse ")
         updateWithImage(nil )
     }
 

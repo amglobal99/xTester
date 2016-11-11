@@ -15,67 +15,35 @@ class NinthDetailViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     // when photo loads show a title
-    var ninthPhoto: NinthPhoto! {
+    var photo: NinthPhoto! {
         didSet {
-            navigationItem.title = ninthPhoto.title
+            navigationItem.title = photo.title
         }
     }
     
-    var store: PhotoStore!
+    var store: NinthPhotoStore!
     
     
     
     override func viewDidLoad()  {
-        
         super.viewDidLoad()
-        print("NinthDetailViewControler.swift: Calling fetchImageForPhoto (PhotoStore.swift) ")
+        // print("NinthDetailViewControler.swift: Calling fetchImageForPhoto (PhotoStore.swift) ")
         
-        
-        /*
-        store.fetchImageForPhoto(photo) {  // begin closure
-            (result) -> Void in
-            switch result {
-            case let .success(image):
-                OperationQueue.main.addOperation() {
-                    self.imageView.image = image
-                }
-            case let .failure(error):
-                print("Error fetching image for photo : \(error) " )
-            } //end swith
-            
-        } //end closure
-        */
-        
-        
-        
-        
-        
-        
-        
-        
-    }  //end method
-    
-    
-
+            store.fetchImageForPhoto(photo)
+            { (result) -> Void in
+                switch result {
+                case let .success(image):
+                    OperationQueue.main.addOperation() {
+                        self.imageView.image = image
+                    }
+                case let .failure(error):
+                    print("Error fetching image for photo : \(error) " )
+                } //end swith
+                
+            } //end closure
+      
+    }  //end viewDidLoad
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}
+}  // end class
