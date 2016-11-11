@@ -47,20 +47,77 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         photoCollectionView.delegate = self
         
         let completionHandler: (Result<JSON>) -> Void  =
-            {  result in
+            {  [weak self] result in
                 print("NinthViewController: Executing completeon handler after getJSONObject" )
                 let jsonObj = result.value!
-                let itemsResult: NinthPhotoStore.NinthPhotosResult   = self.store.photosFromJsonObject(jsonObj)
+                let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
+                
+                
+                
+                // ======= lets' get some arrays and Dictionaryies from our JSON  ==========
+                
+                // get key array
+                guard let myKeyArray =  self?.getKeyArray(from: jsonObj, key: "server")   else {
+                    print("keyArray was null ...")
+                    return
+                }
+                
+               
+                print("+++++++++++++++++  Key Array ---> key is \"server\" +++++++++++++++++++++++")
+                print(myKeyArray)
+                print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
+                
+                
+                
+                // get Dictionary
+                guard let myDict = self?.getDictionary(from: jsonObj,  for: "server", keyArray: myKeyArray, dataKey:"id") else {
+                    //    guard let myDict = getDictionary(from: obj,  for: "server", keyArray: myKeyArray, dataKey:"id") else {
+                    print("myDict was null..")
+                    return
+                }
+                
+                
+                print("+++++++++++++++++  Dictonary +++++++++++++++++++++++")
+                print(myDict)
+                print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
+                
+                
+                
+ 
+ 
+                
+                guard let dictValues = self?.getDictionaryValues(fromDictionary: myDict, for: "5672") else {
+                    print("dictValues ws null....")
+                    return
+                }
+ 
+                
+                
+                print(" ########  Values from Dict for item 5522 ##########")
+                print(dictValues)
+                print("####################  end Dict values ############")
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
                         case let .success(photos):
-                            self.photoDataSource.photos = photos
+                            self?.photoDataSource.photos = photos
                         case .failure(let error):
-                            self.photoDataSource.photos.removeAll()
+                            self?.photoDataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
                     }  // end switch
                     
-                    self.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
+                    self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
                 
                 }  // end operation
         } // end closure

@@ -52,6 +52,9 @@
 		0F24FD9D1DA968D900DF8A29 /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */; };
 		0F24FD9E1DA968D900DF8A29 /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */; };
 		0F24FD9F1DA968D900DF8A29 /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */; };
+		0F2664011DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2664001DD570B40012051F /* TwelfthA2DetailViewController.swift */; };
+		0F2664021DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2664001DD570B40012051F /* TwelfthA2DetailViewController.swift */; };
+		0F2664031DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2664001DD570B40012051F /* TwelfthA2DetailViewController.swift */; };
 		0F2C0CF01DB5ACE000ECBA67 /* TenthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C0CEF1DB5ACE000ECBA67 /* TenthViewController.swift */; };
 		0F2C0CF11DB5ACE000ECBA67 /* TenthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C0CEF1DB5ACE000ECBA67 /* TenthViewController.swift */; };
 		0F2C0CF21DB5ACE000ECBA67 /* TenthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C0CEF1DB5ACE000ECBA67 /* TenthViewController.swift */; };
@@ -73,6 +76,9 @@
 		0F2D7ED01DB1A283007A6F4A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */; };
 		0F2D7ED11DB1A283007A6F4A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */; };
 		0F2D7ED21DB1A283007A6F4A /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */; };
+		0F2E0DC01DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */; };
+		0F2E0DC11DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */; };
+		0F2E0DC21DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */; };
 		0F3052CC1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
 		0F3052CD1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
 		0F3052CE1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
@@ -176,6 +182,9 @@
 		0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
 		0F9887E61DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
 		0F9887E71DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
+		0FC797A31DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */; };
+		0FC797A41DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */; };
+		0FC797A51DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */; };
 		0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
 		0FCE1C691DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
 		0FCE1C6A1DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
@@ -253,6 +262,7 @@
 		0F22D8211DCD6EEB0015C9F1 /* NinthDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthDetailViewController.swift; sourceTree = "<group>"; };
 		0F24FD981DA9689E00DF8A29 /* Eighth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eighth.storyboard; sourceTree = "<group>"; };
 		0F24FD9C1DA968D900DF8A29 /* EighthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EighthViewController.swift; sourceTree = "<group>"; };
+		0F2664001DD570B40012051F /* TwelfthA2DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2DetailViewController.swift; sourceTree = "<group>"; };
 		0F2C0CEF1DB5ACE000ECBA67 /* TenthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenthViewController.swift; sourceTree = "<group>"; };
 		0F2C0CF31DB5AD2E00ECBA67 /* Tenth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tenth.storyboard; sourceTree = "<group>"; };
 		0F2C0CF71DB5B0C600ECBA67 /* ExtensionArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionArray.swift; sourceTree = "<group>"; };
@@ -260,6 +270,7 @@
 		0F2D7EC71DB13CB9007A6F4A /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoSectionHeaderView.swift; sourceTree = "<group>"; };
 		0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishersCollectionViewController.swift; sourceTree = "<group>"; };
 		0F3052CF1DAAD5AF00F79778 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0F3052D31DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishersCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -305,6 +316,7 @@
 		0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolShakeable.swift; sourceTree = "<group>"; };
 		0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolDimmable.swift; sourceTree = "<group>"; };
 		0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolJsonConvertible.swift; sourceTree = "<group>"; };
+		0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2ViewController.swift; sourceTree = "<group>"; };
 		0FCE1C671DB6983700242E09 /* EleventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleventhViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eleventh.storyboard; sourceTree = "<group>"; };
@@ -534,6 +546,8 @@
 				0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */,
 				0F8A85421DC3C72900C405AC /* TwelfthAViewController.swift */,
 				0F8A854E1DC3D5B200C405AC /* TwelfthA1ViewController.swift */,
+				0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */,
+				0F2664001DD570B40012051F /* TwelfthA2DetailViewController.swift */,
 				0F8A85461DC3C89700C405AC /* TwelfthBViewController.swift */,
 				0FCE1C771DB6AC1F00242E09 /* ThirteenthViewController.swift */,
 				0FCE1C871DB6B04300242E09 /* ThirteenthViewControllerDestination.swift */,
@@ -583,6 +597,7 @@
 				0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */,
 				0F22D8081DCD1E770015C9F1 /* NinthPhoto.swift */,
 				0F22D8191DCD6C0F0015C9F1 /* NinthPhotoStore.swift */,
+				0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */,
 			);
 			name = CollectionViewRelated;
 			sourceTree = "<group>";
@@ -985,6 +1000,7 @@
 				0F38F4EA1DA7F8AF0086BAA8 /* xTester.xcdatamodeld in Sources */,
 				0F3052E11DAAD5CF00F79778 /* Publisher.swift in Sources */,
 				0F22D81E1DCD6D520015C9F1 /* FlickrAPI.swift in Sources */,
+				0F2E0DC01DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */,
 				0F945FD41DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F22D81A1DCD6C0F0015C9F1 /* NinthPhotoStore.swift in Sources */,
 				0F3052D01DAAD5AF00F79778 /* WebViewController.swift in Sources */,
@@ -1007,6 +1023,7 @@
 				0F3052D61DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F3052D91DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
+				0FC797A31DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */,
 				0FECD9D01DB462BE00DDDCFE /* Test.swift in Sources */,
 				0FD970811DA802480099BE54 /* SecondViewController.swift in Sources */,
 				0F22D8221DCD6EEB0015C9F1 /* NinthDetailViewController.swift in Sources */,
@@ -1019,6 +1036,7 @@
 				0FCE1C801DB6AC8400242E09 /* FifteenthViewController.swift in Sources */,
 				0F8A854F1DC3D5B200C405AC /* TwelfthA1ViewController.swift in Sources */,
 				0F3052CC1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
+				0F2664011DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */,
 				0F8A85471DC3C89700C405AC /* TwelfthBViewController.swift in Sources */,
 				0F3052E41DAAD5CF00F79778 /* Publishers.swift in Sources */,
 				0F8A85431DC3C72900C405AC /* TwelfthAViewController.swift in Sources */,
@@ -1059,8 +1077,10 @@
 				0FCE1C691DB6983700242E09 /* EleventhViewController.swift in Sources */,
 				0F9887E61DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F38F4FA1DA7F8AF0086BAA8 /* xTesterTests.swift in Sources */,
+				0FC797A41DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */,
 				0F8328C81DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F3052CD1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
+				0F2664021DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */,
 				0F8A85481DC3C89700C405AC /* TwelfthBViewController.swift in Sources */,
 				0F3052DD1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
 				0FECD9D11DB462BE00DDDCFE /* Test.swift in Sources */,
@@ -1078,6 +1098,7 @@
 				0FCE1C7D1DB6AC5800242E09 /* FourteenthViewController.swift in Sources */,
 				0F22D8171DCD6BD10015C9F1 /* PhotoStore.swift in Sources */,
 				0F22D81F1DCD6D520015C9F1 /* FlickrAPI.swift in Sources */,
+				0F2E0DC11DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */,
 				0FCE1C791DB6AC1F00242E09 /* ThirteenthViewController.swift in Sources */,
 				0F3052D71DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F19233F1DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,
@@ -1112,8 +1133,10 @@
 				0FCE1C6A1DB6983700242E09 /* EleventhViewController.swift in Sources */,
 				0F9887E71DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F38F5051DA7F8AF0086BAA8 /* xTesterUITests.swift in Sources */,
+				0FC797A51DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */,
 				0F8328C91DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F3052CE1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
+				0F2664031DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */,
 				0F8A85491DC3C89700C405AC /* TwelfthBViewController.swift in Sources */,
 				0F3052DE1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
 				0FECD9D21DB462BE00DDDCFE /* Test.swift in Sources */,
@@ -1131,6 +1154,7 @@
 				0FCE1C7E1DB6AC5800242E09 /* FourteenthViewController.swift in Sources */,
 				0F22D8181DCD6BD10015C9F1 /* PhotoStore.swift in Sources */,
 				0F22D8201DCD6D520015C9F1 /* FlickrAPI.swift in Sources */,
+				0F2E0DC21DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */,
 				0FCE1C7A1DB6AC1F00242E09 /* ThirteenthViewController.swift in Sources */,
 				0F3052D81DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F1923401DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,

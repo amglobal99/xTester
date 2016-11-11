@@ -29,6 +29,7 @@ class FirstViewController: UIViewController, Utils {
         case ThirteenthSegue
         case FourteenthSegue
         case FifteenthSegue
+        case DucTranSegue
     }
     
     
@@ -116,8 +117,9 @@ class FirstViewController: UIViewController, Utils {
             print("14😈")
         case .FifteenthSegue:
             print("15😈")
-        
-        }
+        case .DucTranSegue:
+            print("duc")
+        }  // end switch
                
         
     } // end func
