@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.98628121614456177" green="0.96797353029251099" blue="0.99206238985061646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="VhR-mw-jxf">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="VhR-mw-jxf" customClass="NinthPhotoCollectionViewFlowLayout" customModule="xTester" customModuleProvider="target">
                             <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -45,12 +45,12 @@
                                 </view>
                                 <color key="backgroundColor" red="0.99501991270000001" green="0.99187234369999999" blue="0.88803640819999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottomMargin" secondItem="QS6-z3-jLd" secondAttribute="bottom" constant="-96" id="6Vn-FI-LpC"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="QS6-z3-jLd" secondAttribute="bottom" constant="-30" id="6Vn-FI-LpC"/>
                                     <constraint firstItem="QS6-z3-jLd" firstAttribute="top" secondItem="YfJ-Yh-0vf" secondAttribute="topMargin" constant="-12" id="6fp-Je-IjJ"/>
                                     <constraint firstItem="HTL-mc-8sP" firstAttribute="top" secondItem="YfJ-Yh-0vf" secondAttribute="topMargin" constant="27" id="Aed-Bj-Njh"/>
                                     <constraint firstItem="HTL-mc-8sP" firstAttribute="leading" secondItem="YfJ-Yh-0vf" secondAttribute="leadingMargin" constant="8" id="Pmx-tn-yaD"/>
                                     <constraint firstItem="QS6-z3-jLd" firstAttribute="leading" secondItem="YfJ-Yh-0vf" secondAttribute="leadingMargin" constant="-15" id="l3g-aH-6L1"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="QS6-z3-jLd" secondAttribute="trailing" constant="-60" id="lCx-lT-ivo"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="QS6-z3-jLd" secondAttribute="trailing" constant="-30" id="lCx-lT-ivo"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="QS6-z3-jLd" id="ah7-6e-kPH"/>

@@ -214,6 +214,9 @@ class NinthPhotoStore: Utils, JsonConvertible {
         }
         let photoURL = photo.remoteURL
         let request = URLRequest(url: photoURL as URL)
+        
+        /*
+         // ============ OLD way of MAking Calls ===================================
         let task = session.dataTask(with: request, completionHandler:
             {   (data, response, error ) -> Void in
                 print("          fetchImageForPhoto: Starting completion HAndler")
@@ -228,37 +231,34 @@ class NinthPhotoStore: Utils, JsonConvertible {
         
          //print("               fetchImageForPhoto: start Task")
         task.resume()
+       */
+        
        
         
         
+        // ==================== Alamofire Way of MAking Calls ==========================
         
-        /*
-        Alamofire.request(request).response
+            Alamofire.request(request).response
             { (response) -> Void  in
-                guard response.error  == nil else {   // got an error
-                    print(response.error!)
-                    return
-                }
-                guard response.data != nil else {
-                    return
-                }
+                    guard response.error  == nil else {   // got an error
+                        print(response.error!)
+                        return
+                    }
+                    guard response.data != nil else {
+                        return
+                    }
 
-                
-                let result: ImageResult = (self.processImageRequest(data: response.data, error: response.error as NSError?))
-                
-                if case let ImageResult.success(image) = result {
-                    photo.image = image
-                    print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
-                }
-                completion(result)
+                    let result: ImageResult = (self.processImageRequest(data: response.data, error: response.error as NSError?))
+                    
+                    if case let ImageResult.success(image) = result {
+                        photo.image = image
+                        print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
+                    }
+                    completion(result)
+            }  // end closure
         
         
         
-        
-        }
-        
-        
-        */
         
         
         
