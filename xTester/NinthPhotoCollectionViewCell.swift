@@ -24,6 +24,10 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var spinner: UIActivityIndicatorView!
     
+
+    @IBOutlet weak var photoIDLabel: UILabel!
+    @IBOutlet weak var photoServerLabel: UILabel!
+    
     
     func updateWithImage(_ image: UIImage?) {
         if let imageToDisplay = image {

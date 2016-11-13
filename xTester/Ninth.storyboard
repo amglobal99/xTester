@@ -45,7 +45,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-z3-jLd">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="KnO-LE-clW"/>
-                                                <constraint firstAttribute="width" constant="208" id="Ogx-Ir-RNw"/>
+                                                <constraint firstAttribute="width" constant="100" id="Ogx-Ir-RNw"/>
                                             </constraints>
                                         </imageView>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WX8-tb-IK3">
@@ -54,12 +54,12 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyp-hZ-QAc">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzi-ex-HSu">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -94,6 +94,8 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="QS6-z3-jLd" id="ah7-6e-kPH"/>
+                                    <outlet property="photoIDLabel" destination="Xyp-hZ-QAc" id="pVh-On-N69"/>
+                                    <outlet property="photoServerLabel" destination="xzi-ex-HSu" id="aXf-c3-wMf"/>
                                     <outlet property="spinner" destination="HTL-mc-8sP" id="7eL-by-ASj"/>
                                     <segue destination="wnN-Tm-AWH" kind="show" identifier="ShowNinthPhotoDetail" id="CsN-B7-XGh"/>
                                 </connections>

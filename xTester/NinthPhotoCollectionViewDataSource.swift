@@ -117,15 +117,8 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        cell.photoIDLabel.text = photo.photoID
+        cell.photoServerLabel.text = photo.photoID
         cell.updateWithImage(photo.image)
         
         return cell
