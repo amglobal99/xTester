@@ -17,15 +17,18 @@ import AlamofireImage
 import SwiftyJSON
 
 
+// This class serves as the Data Source
 
 class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, Utils, JsonConvertible {
+    
     
     // ======== Data related variables =========
     var photos = [NinthPhoto]()
     var itemsDictionary: [String:[String]] = [:]
     var itemsKeyArray:[String] = []
     
-    
+    fileprivate var sections:[String] = []
+
     
     
     
@@ -53,99 +56,16 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     }
     
     
-    /*
-    
-    
-    // ========== Initilizer ===================================
-    override init()    {
-        super.init()
-        
-        print("DS: .....INIT ")
-        
-        
-        
-        
-        let completionHandler: (Result<JSON>) -> Void  =
-            
-            {    result in
-                // print("NinthViewController: Executing completeon handler after getJSONObject" )
-                let jsonObj = result.value!
-                
-                // ======= lets' get some arrays and Dictionaryies from our JSON  ==========
-                
-                // get key array
-                guard let photoKeyArray =  self.getKeyArray(from: jsonObj, key: "server")   else {
-                    print("keyArray was null ...")
-                    return
-                }
-                
-                
-                /*
-                print("+++++++++++++++++  Key Array ---> key is \"server\" +++++++++++++++++++++++")
-                print(photoKeyArray)
-                print("+++++++++++++++++  end keyArray +++++++++++++++++++++")
-                */
-                
-                
-                // get Dictionary
-                guard let photoItemsDictionary = self.getDictionary(from: jsonObj,  for: "server", keyArray: photoKeyArray, dataKey:"id") else {
-                    //    guard let myDict = getDictionary(from: obj,  for: "server", keyArray: myKeyArray, dataKey:"id") else {
-                    print("myDict was null..")
-                    return
-                }
-                
-                /*
-                print("+++++++++++++++++  Dictonary +++++++++++++++++++++++")
-                print(photoItemsDictionary)
-                print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
-                */
-                
-                
-               OperationQueue.main.addOperation() {
-                        self.itemsDictionary  = photoItemsDictionary  // populate the Items Dictionary
-                        self.itemsKeyArray = photoKeyArray   // populate key array
-                        print(" DS:  Variables have been set" )
-                    
-                }  // end operation
-             
-        } // end closure
-        
-        
-        
-        
-        // Make a Async call to get our data
-        let params = ["extras":"url_h,date_taken"]
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)
-        getJSONObject(for: url, rootPath: ["photos","photo"],  completionHandler: completionHandler)  // get a SwiftyJSON object
-      
-        
-        
-        
-        
-        
-        
-    }  // end init
-    
-    
-    
-    */
-    
-    
-    
     
     
     
     
     // ======= How many Sections do we have ?  ==========
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        print("DS -> NumberOfSections:  \(self.itemsKeyArray.count)   ")
         //return 1
-        print("Number of sections: \(self.itemsKeyArray.count)  ")
-        //return self.itemsKeyArray.count
-        
-        return ( (self.itemsKeyArray.count)/10  )
-        
+        //print("Number of sections: \(self.itemsKeyArray.count)  ")
+        return self.itemsKeyArray.count
+        //return ( (self.itemsKeyArray.count)/10  )
     }
 
     
@@ -157,30 +77,25 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
   
     // ===== How many Items in each section ?  ==============
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       
         
-        // print("DS: numberOfItemsInsection -->: \() ")
+        print("Current section: \(section)")
+        
+        //return 7
         
         
-       // return photos.count
-        
-        
-        
-        return 7
-        
-        /*
         // Figure out how many Items in each section
-        let sectionKey = itemsKeyArray[section-1]
+        let sectionKey = itemsKeyArray[section]
         let sectionItemsArray = itemsDictionary[sectionKey]
         let sectionItemsCount = sectionItemsArray?.count
         print("Items for this section \(section) : \(sectionItemsCount)")
         
-        
         return sectionItemsCount!
-        */
+       
         
         
         
-    }
+    }  // end func
     
     
     
@@ -190,25 +105,43 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
    
     // ======= get a Cell for our Collection View  ===========================
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-          //print("           1. cellForItemAtIndex ...Starting")
-        
+        //print("           1. cellForItemAtIndex ...Starting")
         
         
-        //let identifier = "NinthPhotoCollectionViewCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
+        
+        
+        
         let photo  = photos[(indexPath as NSIndexPath).row]
         //print("              2. cellForItemAtIndex : Calling updateWithImage ")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         cell.updateWithImage(photo.image)
         
-         //print("      NinthPhotoCollectionViewCell : cellForItemAtIndex ...RETURNING a Cell")
         return cell
     } //end method
     
  
     
     
-    // ========= get Section Header View ============================
+    
+    
+    
+    
+    
+    
+    
+    // ==================== get Section Header View ============================================================
     
      func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
         
@@ -221,14 +154,57 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         
         */
         
-        //if let ninthPhoto = photos
         
         
+        
+        
+        let index  = indexPath.row
+        let  title  = itemsKeyArray[index]
+        headerView.sectionLabel.text =  title
         return headerView
-    }
+        
+    }  // end method
     
     
 
+    
+    
+    /*
+    
+    // Let's figure out which  photos get listed in which section
+    
+    
+    func photoForItemAtIndexPath(_ indexPath: IndexPath) -> NinthPhoto? {
+        if (indexPath as NSIndexPath).section > 0 {
+            let photos = photosForSection((indexPath as NSIndexPath).section)
+            return photos[(indexPath as NSIndexPath).item]
+        } else {
+            return photos[(indexPath as NSIndexPath).item]
+        }
+    }
+    
+    
+    
+    func titleForSectionAtIndexPath(_ indexPath: IndexPath) -> String? {
+        if (indexPath as NSIndexPath).section < sections.count {
+            return sections[(indexPath as NSIndexPath).section]
+        }
+        return nil
+    }
+    
+    
+    
+
+    
+    fileprivate func photosForSection(_ index: Int) -> [Publisher] {
+        let section = sections[index]
+        let publishersInSection = publishers.filter {
+            (publisher: Publisher) -> Bool in return publisher.section == section
+        }
+        return publishersInSection
+    }
+
+    */
     
     
     

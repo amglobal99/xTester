@@ -13,15 +13,25 @@ struct Constants {
     
     
     struct FlickrApi {
-        static let baseUrl = "https://flickrapi.com"
-
+        
+        //static let baseUrl = "https://flickrapi.com"
+        static let APIKey = "a6d819499131071f158fd740860a5a88"
+        static let method = "flickr.photos.getRecent"
+        static let key = "datetakenunknown"
+        static let dataKey = "id"
+        static let rootPath = ["photos","photo"]
+        static let params = ["extras":"url_h,date_taken"]
+        
         enum Method: String {
             case RecentPhotos = "flickr.photos.getRecent"
         }
         
-              
         
     }  // end struct
+    
+    
+    
+    
     
     
     
@@ -37,13 +47,14 @@ struct Constants {
             case jsonPlaceholder2 = "https://jsonplaceholder.typicode.com/todos"
             case gitHub = "https://api.github.com/users/amglobal99/repos"
         }
-        
-
-        
-        
+      
     } // end struct
     
   
+    
+    
+    
+    
     struct GistApi  {
         static let baseUrl = "https://github.com"
     }

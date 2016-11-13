@@ -35,5 +35,5 @@ class NinthPhotoSectionHeaderView: UICollectionReusableView  {
     
     
     
-}
+} // end class
 

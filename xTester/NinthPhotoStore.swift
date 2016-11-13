@@ -62,19 +62,18 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     // This function will retrieve JSON object and place it
     // in the 'jsonResultObject' variable
-    
     func fetchJsonObject() {
         let params = ["extras":"url_h,date_taken"]
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)  // Flickr
         
-            let completionHandler: (Result<JSON>) -> Void  =
-                { result in
-                    self.jsonResultObject = result.value!
-                    print("========= Items List ++++++++ ")
-                    if let jsObj = self.jsonResultObject {
-                        // print(jsObj)
-                    }
-            } // end closure
+                let completionHandler: (Result<JSON>) -> Void  =
+                    { result in
+                        self.jsonResultObject = result.value!
+                        print("========= Items List ++++++++ ")
+                        if let jsObj = self.jsonResultObject {
+                            // print(jsObj)
+                        }
+                } // end closure
         
         //  Call the generic method to get a SwiftyJSON object
         getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
@@ -93,8 +92,6 @@ class NinthPhotoStore: Utils, JsonConvertible {
                 var finalPhotos:[NinthPhoto] = []
                 // print("      json object count is : \(json.count)   ")
         
-        
-        
         /*
                 print("***************** JSON Object *********************")
                 print(json)
@@ -102,32 +99,22 @@ class NinthPhotoStore: Utils, JsonConvertible {
         
         */
         
-        
-        
-        
                 var addCount = 0
-            
                 for ( _, jsonItem) in json {
                     if let photo: NinthPhoto  = photoFromJSONObject(jsonItem) {
                             finalPhotos.append(photo)
                         addCount += 1
                     }
                 }
-        
                 if finalPhotos.count == 0 && json.count > 0 {
-                    print("Sorry buddy...No photos")
+                    print("Sorry...No photos were retrieved")
                     return  NinthPhotosResult.failure(FlickrError.invalidJSONData)
                 }
-        
-        
         
         /*
                 print("       ++++++++++++  Final Photos +++++++++++++++++")
                 print("      Array contains \(finalPhotos.count)  photos" )
         */
-        
-        
-        
         
                 return NinthPhotosResult.success(finalPhotos)
     }  // end func
@@ -191,46 +178,37 @@ class NinthPhotoStore: Utils, JsonConvertible {
          //print("               fetchImageForPhoto: start Task")
         task.resume()
        */
-        
-       
-        
-        
+             
         // ==================== Alamofire Way of MAking Calls ==========================
-        
             Alamofire.request(request).response
-            { (response) -> Void  in
-                    guard response.error  == nil else {   // got an error
-                        print(response.error!)
-                        return
-                    }
-                    guard response.data != nil else {
-                        return
-                    }
-
-                    let result: ImageResult = (self.processImageRequest(data: response.data, error: response.error as NSError?))
-                    
-                    if case let ImageResult.success(image) = result {
-                        photo.image = image
-                        // print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
-                    }
-                    completion(result)
-            }  // end closure
-        
-        
-        
-        
-        
-        
+                { (response) -> Void  in
+                        guard response.error  == nil else {   // got an error
+                            print(response.error!)
+                            return
+                        }
+                        guard response.data != nil else {
+                            return
+                        }
+                        let result: ImageResult = (self.processImageRequest(data: response.data, error: response.error as NSError?))
+    
+                        if case let ImageResult.success(image) = result {
+                            photo.image = image
+                            // print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
+                        }
+                        completion(result)
+                }  // end closure
+            
         
     } //end method
     
 
     
     
-        
+    // Function to retrieve a single Photo image
+    //  parameter:  data 
+    //  parameter:  error
     
     func processImageRequest(data: Data?, error: NSError?) -> ImageResult {
-        
       //  print("              PhotoStore.swift: processImageRequest: Starting method" )
         guard let  imageData = data,  let image = UIImage(data: imageData) else {
             //could not get image

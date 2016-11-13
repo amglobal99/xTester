@@ -27,8 +27,7 @@ class NinthDetailViewController: UIViewController {
     
     override func viewDidLoad()  {
         super.viewDidLoad()
-        // print("NinthDetailViewControler.swift: Calling fetchImageForPhoto (PhotoStore.swift) ")
-        
+     
             store.fetchImageForPhoto(photo)
             { (result) -> Void in
                 switch result {

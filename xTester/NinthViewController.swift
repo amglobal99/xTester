@@ -19,19 +19,24 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     @IBOutlet var photoCollectionView: UICollectionView!
     
     
-        var jsonResultObject:JSON?
+    var jsonResultObject:JSON?
     var city:String!
+    
+    //  Get global constants values
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let APIKey = "a6d819499131071f158fd740860a5a88"
-    let method = "flickr.photos.getRecent"
+    let APIKey = Constants.FlickrApi.APIKey
+    let method = Constants.FlickrApi.method
+    let key  = Constants.FlickrApi.key
+    let rootPath = Constants.FlickrApi.rootPath
+    let dataKey = Constants.FlickrApi.dataKey
+    let params = Constants.FlickrApi.params
+    
     
     
     // ****** Data variables *********************
     var store: NinthPhotoStore!
     var photoDataSource: NinthPhotoCollectionViewDataSource!
 
-    
-    
     
     fileprivate static let dateFormatter: DateFormatter = {
         let formatter  = DateFormatter()
@@ -46,36 +51,34 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
 
     
     
-    
-    
-    
-    
-    
-    
     // Note how we populate Data variables in this section
     
     override func viewDidLoad() {
         
-        
         print(" viewDidLoad.....Start")
-        
         super.viewDidLoad()
         photoCollectionView.dataSource = photoDataSource
         photoCollectionView.delegate = self
-        
-        
-        
+      
+        // ********************** This is our Completion Handler **********************************
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
                 //  print("NinthViewController: Executing completeon handler after getJSONObject" )
                 let jsonObj = result.value!
                 let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
                 
+                /*
+                 print("********************** JSON Object *********************")
+                print (jsonObj)
+                print("********************************************************")
+                
+                */
                 
                 // ======= lets' get some arrays and Dictionaryies from our JSON  ==========
                 
                 // get key array
-                guard let photoKeyArray =  self?.getKeyArray(from: jsonObj, key: "server")   else {
+                //guard let photoKeyArray =  self?.getKeyArray(from: jsonObj, key: "server")   else {
+                    guard let photoKeyArray =  self?.getKeyArray(from: jsonObj, key: self?.key)   else {
                     print("keyArray was null ...")
                     return
                 }
@@ -85,12 +88,11 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
                 // get Dictionary
-                guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: "server", keyArray: photoKeyArray, dataKey:"id") else {
-                    //    guard let myDict = getDictionary(from: obj,  for: "server", keyArray: myKeyArray, dataKey:"id") else {
+                //guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: "server", keyArray: photoKeyArray, dataKey:"id") else {
+                guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: self?.key, keyArray: photoKeyArray, dataKey:self?.dataKey) else {
                     print("myDict was null..")
                     return
                 }
-                
                 
                 print("+++++++++++++++++  Dictonary +++++++++++++++++++++++")
                 print(photoItemsDictionary)
@@ -99,24 +101,19 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 
                 
                 
-                /*
+                /*   ================= Retrieve values for a particular data key =================================
                 var srvId = photoKeyArray[2]
  
                 
                // guard let dictValues = self?.getDictionaryValues(fromDictionary: myDict, for: "5672") else {
                     guard let dictValues = self?.getDictionaryValues(fromDictionary: photoItemsDictionary, for: srvId) else {
-                        
-                        
                     print("dictValues ws null....")
                     return
                 }
  
-                
-                
                 print(" ########  Values from Dict for item 5522 ##########")
                 print(dictValues)
                 print("####################  end Dict values ############")
-                
                 
                 */
                 
@@ -136,11 +133,12 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                     }  // end switch
                     
                     
+                    
+                    
                     // ************* RELOAD *************************************************
                     
                     //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
-                    print("Let's see if data is present ")
-                    self?.photoCollectionView?.reloadData()
+                     self?.photoCollectionView?.reloadData()
                     
                     // *********************************************************************
                     
@@ -152,10 +150,15 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         } // end closure
         
   
-        // This is where we will play with our Asynchronous Requests
-        let params = ["extras":"url_h,date_taken"]
+        // ************************************* end Clsoure  ***********************************************
+        
+        
+        // ====== Create a Async request to get jSON data =============================================================
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)
-        getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // get a SwiftyJSON object
+        getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+        
+        
+        
         
     }  // end viewDidLoad
     
@@ -174,9 +177,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         
         store.fetchImageForPhoto(photo)
             {    (result) -> Void in
-                   // print("                fetchImageForPhoto -  starting closure")
                     OperationQueue.main.addOperation() {
-                        //print("      Operation starting....")
                         let photoIndex = self.photoDataSource.photos.index(of: photo)!
                         let photoIndexPath = IndexPath(row: photoIndex, section: 0)
                         if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as? NinthPhotoCollectionViewCell {

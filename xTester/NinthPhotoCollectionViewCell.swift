@@ -26,33 +26,16 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     
     
     func updateWithImage(_ image: UIImage?) {
-        
-        //print("       updateWithImage starting")
-        
-        
-        
         if let imageToDisplay = image {
            //print("       updateWithImage .... image is present")
-            //spinner .stopAnimating()
+            spinner .stopAnimating()
             imageView.image = imageToDisplay
         } else {
            // print("       updateWithImage ..... no Image")
-            //spinner .startAnimating()
+            spinner .startAnimating()
             imageView.image = nil
-            
-            
-            /*
-            let imageName = "Sunset.jpg"
-            //let img = UIImage(named: imageName)
-            imageView.image = UIImage(named: imageName)
-            */
         }
-        
-        
-        
-        
-        
-        
+    
     }  //end method
     
     
@@ -69,12 +52,13 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     }
     
     
+    
+    
+    
     // called when cell is being reused
     override func prepareForReuse() {
         //print("             super.prepareforReuse")
         super.prepareForReuse()
-        
-        //print( "         Calling updateWithImage from prepareForREuse ")
         updateWithImage(nil )
     }
 
