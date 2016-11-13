@@ -26,6 +26,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="cfZ-94-z4Z"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="16: Banners">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -38,6 +39,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="uqe-px-huX"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="17: CollView Custom">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -47,6 +49,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Sjc-Bj-mBa"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -56,6 +59,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="4Ue-0Q-gDe"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -65,6 +69,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="7rN-yv-Cza"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -74,6 +79,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="vZc-Af-U3w"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -83,6 +89,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="hzD-q1-f2U"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -92,6 +99,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Q7v-c7-Q09"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -99,7 +107,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97520893812179565" green="0.94632977247238159" blue="0.98423296213150024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.99633461236953735" blue="0.94305843114852905" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kxq-ea-nHp" firstAttribute="leading" secondItem="tw2-LB-GhW" secondAttribute="leadingMargin" constant="27" id="XhC-UA-Ehv"/>
                             <constraint firstItem="Kxq-ea-nHp" firstAttribute="top" secondItem="oGB-Sz-cIe" secondAttribute="bottom" constant="73" id="qvx-A8-rO1"/>
