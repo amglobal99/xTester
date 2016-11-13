@@ -44,7 +44,10 @@ extension JsonConvertible  {
     //func getJSONObject(for url:String, completionHandler:  @escaping (Result<JSON>) ->
     func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
         
-            print("getJSONObject...  starting ")
+            //print("getJSONObject...  starting ")
+        
+        
+        
             let urlRequest = URLRequest(url: url)
         
                 Alamofire.request(urlRequest).responseJSON
@@ -105,7 +108,9 @@ extension JsonConvertible  {
     
     func getKeyArray(from jsonObject:JSON?,  key:String?) -> [String]? {
         
-        print("getKeyArray from Protool.... started")
+        // print("getKeyArray from Protool.... started")
+        
+        
         guard let jsonObject = jsonObject, let key = key  else {
             return nil
         }
@@ -120,9 +125,14 @@ extension JsonConvertible  {
             
             // remove duplicates
             let  result  = Array(Set(arrayNames)).sorted()
+        
+        /*
             print(" +++++++++ Key Array +++++++++++++++++++++")
             print(result)
             print("++++++++++++ end key array +++++++++++++++")
+        
+        */
+        
             return result
         
     } // end func
@@ -143,12 +153,12 @@ extension JsonConvertible  {
     
     func getDictionary(from obj:JSON?,  for key:String?,  keyArray:[String]?, dataKey:String? ) -> [String:[String]]? {
         
-        print("getDictionary... Starting ******")
+        //  print("getDictionary... Starting ******")
         guard let obj = obj, let key = key, let keyArray = keyArray, let dataKey = dataKey else {
             return nil
         }
         print(obj.count)
-        print(obj)
+        // print(obj)
         var keyItems:[String] = []
         var myDict:[String:[String]] = [:]   // Create a Dictionary to hold our data
         

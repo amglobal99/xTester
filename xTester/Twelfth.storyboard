@@ -32,8 +32,8 @@
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vKO-2K-7nV">
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Demo Page 1"/>
+                                    <segment title="Demo Page 2"/>
                                 </segments>
                                 <connections>
                                     <action selector="indexChangedWithSender:" destination="AUS-Tr-e3L" eventType="valueChanged" id="4lg-0R-deQ"/>

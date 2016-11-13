@@ -28,15 +28,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="raiee_1" translatesAutoresizingMaskIntoConstraints="NO" id="Q7m-vJ-LTp"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JH7-Mb-wtV">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@c 2016 Rights Reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cB-9k-X5Q">
+                                        <frame key="frameInset" minX="-9" minY="15" width="258" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5e-Ik-ghC">
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5F-Kh-tjH">
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.95036038830188729" green="1" blue="0.77571119656404808" alpha="0.92265624999999996" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.95714756680000002" blue="0.7622280656" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="u5F-Kh-tjH" firstAttribute="top" secondItem="Q7m-vJ-LTp" secondAttribute="bottom" constant="193" id="4fZ-TH-jgi"/>
                             <constraint firstItem="ZmP-Dk-EJ3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="50" id="96y-rq-Vh6"/>
+                            <constraint firstItem="JH7-Mb-wtV" firstAttribute="leading" secondItem="t5e-Ik-ghC" secondAttribute="leading" id="9vW-F5-owY"/>
                             <constraint firstItem="Q7m-vJ-LTp" firstAttribute="top" secondItem="ZmP-Dk-EJ3" secondAttribute="bottom" constant="38.5" id="ACh-KJ-nZQ"/>
+                            <constraint firstItem="JH7-Mb-wtV" firstAttribute="width" secondItem="u5F-Kh-tjH" secondAttribute="width" id="Aty-ZD-AX0"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Q7m-vJ-LTp" secondAttribute="bottom" constant="320" id="By2-OO-OOd"/>
+                            <constraint firstItem="t5e-Ik-ghC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="623" id="Hu9-B4-r4s"/>
+                            <constraint firstItem="t5e-Ik-ghC" firstAttribute="width" secondItem="u5F-Kh-tjH" secondAttribute="width" id="MiM-rX-4G3"/>
                             <constraint firstItem="Q7m-vJ-LTp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="59" id="TwA-6z-QOr"/>
+                            <constraint firstItem="JH7-Mb-wtV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="558" id="ZCi-r4-SVE"/>
+                            <constraint firstItem="u5F-Kh-tjH" firstAttribute="top" secondItem="Q7m-vJ-LTp" secondAttribute="bottom" constant="193" id="bhe-IC-sbN"/>
                             <constraint firstItem="Q7m-vJ-LTp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eeM-XA-ZQC"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="t5e-Ik-ghC" secondAttribute="bottom" constant="40" id="fAe-c6-Xpr"/>
+                            <constraint firstItem="JH7-Mb-wtV" firstAttribute="top" secondItem="u5F-Kh-tjH" secondAttribute="bottom" constant="16" id="fOX-Dv-MeQ"/>
+                            <constraint firstItem="u5F-Kh-tjH" firstAttribute="leading" secondItem="JH7-Mb-wtV" secondAttribute="leading" id="i0u-nW-a5Z"/>
                             <constraint firstItem="ZmP-Dk-EJ3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="s5d-WE-RdU"/>
+                            <constraint firstItem="u5F-Kh-tjH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="sSh-Gk-Hgd"/>
+                            <constraint firstItem="u5F-Kh-tjH" firstAttribute="centerX" secondItem="Q7m-vJ-LTp" secondAttribute="centerX" id="wpE-Qk-LmU"/>
+                            <constraint firstItem="t5e-Ik-ghC" firstAttribute="top" secondItem="JH7-Mb-wtV" secondAttribute="bottom" constant="15" id="yVV-Uo-Kcn"/>
                         </constraints>
                     </view>
                 </viewController>

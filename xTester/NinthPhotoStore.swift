@@ -59,6 +59,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
     var jsonResultObject:JSON?
     
     
+    
     // This function will retrieve JSON object and place it
     // in the 'jsonResultObject' variable
     
@@ -66,14 +67,14 @@ class NinthPhotoStore: Utils, JsonConvertible {
         let params = ["extras":"url_h,date_taken"]
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)  // Flickr
         
-        let completionHandler: (Result<JSON>) -> Void  =
-            { result in
-                self.jsonResultObject = result.value!
-                print("========= Items List ++++++++ ")
-                if let jsObj = self.jsonResultObject {
-                    print(jsObj)
-                }
-        } // end closure
+            let completionHandler: (Result<JSON>) -> Void  =
+                { result in
+                    self.jsonResultObject = result.value!
+                    print("========= Items List ++++++++ ")
+                    if let jsObj = self.jsonResultObject {
+                        // print(jsObj)
+                    }
+            } // end closure
         
         //  Call the generic method to get a SwiftyJSON object
         getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
@@ -88,13 +89,19 @@ class NinthPhotoStore: Utils, JsonConvertible {
     //
     //
     func photosFromJsonObject(_ json:JSON) -> NinthPhotosResult {
-                print("      photosFromJSonObject:   starting ......")
+                // print("      photosFromJSonObject:   starting ......")
                 var finalPhotos:[NinthPhoto] = []
-                print("      json object count is : \(json.count)   ")
+                // print("      json object count is : \(json.count)   ")
         
+        
+        
+        /*
                 print("***************** JSON Object *********************")
                 print(json)
                 print("***************** end JSOn object *****************")
+        
+        */
+        
         
         
         
@@ -114,13 +121,21 @@ class NinthPhotoStore: Utils, JsonConvertible {
         
         
         
-        
+        /*
                 print("       ++++++++++++  Final Photos +++++++++++++++++")
                 print("      Array contains \(finalPhotos.count)  photos" )
+        */
+        
+        
         
         
                 return NinthPhotosResult.success(finalPhotos)
     }  // end func
+    
+    
+    
+    
+    
     
     
     
@@ -196,7 +211,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
                     
                     if case let ImageResult.success(image) = result {
                         photo.image = image
-                        print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
+                        // print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
                     }
                     completion(result)
             }  // end closure

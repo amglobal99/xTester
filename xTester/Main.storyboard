@@ -19,28 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13F-5h-HI5">
-                                <items>
-                                    <barButtonItem title="Charts" id="FIV-fb-eVf"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="HNn-Jf-A1W"/>
-                                    <barButtonItem style="plain" id="eLU-Ff-nrA">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="plj-3r-bDC">
-                                            <rect key="frame" x="120" y="7" width="150" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Home"/>
-                                                <segment title="More"/>
-                                                <segment title="Photos"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="indexChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="XFI-7u-R0t"/>
-                                            </connections>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xFK-Vj-MtQ"/>
-                                    <barButtonItem systemItem="bookmarks" id="2tp-VA-bs2"/>
-                                </items>
-                            </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="06z-7R-g87">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20J-z3-H8W">
@@ -82,11 +60,12 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-BO-TWl">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-BO-TWl">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0Y-nd-Hc1">
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="VC2: Popover Segue &amp; Dismiss">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="2: Popover Segue &amp; Dismiss">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -96,8 +75,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-2d-Yku">
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="VC3: Form Validation">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="3: Form Validation">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -105,8 +85,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-9q-Py3">
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="VC4: Button Action &amp; show Segue">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="4: Button Action &amp; show Segue">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
@@ -115,39 +96,54 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TzC-KT-8Q9">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TzC-KT-8Q9">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee9-sD-a1x">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC5: JSON Parsing"/>
+                                        <state key="normal" title="5: JSON Parsing">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="E1L-pX-LEb" kind="show" identifier="FifthSegue" id="aRx-Br-SMd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5v-VO-3Q6">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC6: VC &amp; View Lifecycle"/>
+                                        <state key="normal" title="6: VC/View Lifecycle">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="B4Y-Vc-WQM" kind="show" identifier="SixthSegue" id="O3i-8c-X9s"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-JG-b2v">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC7: Concurrent Ops"/>
+                                        <state key="normal" title="7: Concurrent Ops">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="qMH-AZ-9aY" kind="show" identifier="SeventhSegue" id="hJf-1q-RQm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpa-Sa-hHq">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC8: Coll View(Basic)"/>
+                                        <state key="normal" title="8: CollView-Basic">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="MUC-a6-A7B" kind="show" identifier="EighthSegue" id="IdB-dy-K1Q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-ao-rgt">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC9: Coll Views(JSON)"/>
+                                        <state key="normal" title="9: CollView-JSON">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="hUN-e6-q7H" kind="show" identifier="NinthSegue" id="HXT-yP-8Et"/>
                                         </connections>
@@ -164,100 +160,84 @@
                                     <constraint firstItem="TR5-JG-b2v" firstAttribute="leading" secondItem="Ee9-sD-a1x" secondAttribute="leading" id="zuF-oe-chg"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sV7-3I-NdO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men’s Journal" translatesAutoresizingMaskIntoConstraints="NO" id="Vak-bA-ctB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="ZtF-qQ-Ss8"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sV7-3I-NdO">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHC-Mi-acI">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Coll Views - Duc Tran"/>
+                                        <state key="normal" title="CollView-Duc Tran">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="iKR-F8-Iyw" kind="show" identifier="DucTranSegue" id="ByQ-jM-b4I"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtH-dp-2OD">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC10: Alerts"/>
+                                        <state key="normal" title="10: Alerts">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="U4C-tk-WeJ" kind="show" identifier="TenthSegue" id="dVM-XD-FAk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pd-xn-wDE">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC13: Delegates"/>
+                                        <state key="normal" title="13: Delegates">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="wfU-Oo-JPk" kind="show" identifier="ThirteenthSegue" id="v0w-mY-nbM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URZ-oV-Jio">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC14: Alamofire Calls"/>
+                                        <state key="normal" title="14: Alamofire Calls">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="Tm4-kc-zA8" kind="show" identifier="FourteenthSegue" id="OsS-8Q-nGE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cud-PY-r3Q">
+                                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="VC15: KVO/Notification"/>
+                                        <state key="normal" title="15: KVO/Notification">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <segue destination="TpU-Df-wXn" kind="show" identifier="FifteenthSegue" id="P8d-Vg-Ccr"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Men’s Journal" translatesAutoresizingMaskIntoConstraints="NO" id="Vak-bA-ctB">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="ZtF-qQ-Ss8"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Rights Reserved 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omo-ZS-UqP">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="IxJ-Ko-C9j"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuA-Na-Tfz">
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfX-oK-aLn">
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.99501991270000001" green="0.99187234369999999" blue="0.88803640819999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99501991270000001" green="0.87115594880000002" blue="0.515517161" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Vak-bA-ctB" firstAttribute="top" secondItem="13F-5h-HI5" secondAttribute="bottom" constant="7" id="0gJ-3R-4u7"/>
-                            <constraint firstItem="SuA-Na-Tfz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="601" id="2Za-tW-UB3"/>
-                            <constraint firstAttribute="trailing" secondItem="13F-5h-HI5" secondAttribute="trailing" id="3Gz-QJ-Pn5"/>
+                            <constraint firstItem="Vak-bA-ctB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="51" id="0Xn-DV-ebC"/>
                             <constraint firstItem="06z-7R-g87" firstAttribute="bottom" secondItem="Vak-bA-ctB" secondAttribute="bottom" id="3Vv-W2-cbS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vak-bA-ctB" secondAttribute="trailing" constant="18" id="502-HN-fQh"/>
-                            <constraint firstItem="13F-5h-HI5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7SX-Pc-KOz"/>
                             <constraint firstItem="AI4-Zf-HV4" firstAttribute="top" secondItem="jVv-BO-TWl" secondAttribute="bottom" constant="15" id="GSj-nC-d0J"/>
-                            <constraint firstItem="omo-ZS-UqP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GTh-an-I4l"/>
-                            <constraint firstItem="13F-5h-HI5" firstAttribute="centerX" secondItem="wfX-oK-aLn" secondAttribute="centerX" id="JgM-ME-mta"/>
-                            <constraint firstItem="06z-7R-g87" firstAttribute="top" secondItem="13F-5h-HI5" secondAttribute="bottom" constant="84" id="Jxg-Q3-ZXF"/>
+                            <constraint firstItem="sV7-3I-NdO" firstAttribute="leading" secondItem="TR5-JG-b2v" secondAttribute="trailing" constant="16" id="GrR-XY-SB4"/>
                             <constraint firstItem="jVv-BO-TWl" firstAttribute="top" secondItem="06z-7R-g87" secondAttribute="bottom" constant="8" id="Lyy-fY-o0U"/>
-                            <constraint firstItem="wfX-oK-aLn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="RHl-wA-Zsa"/>
                             <constraint firstItem="TzC-KT-8Q9" firstAttribute="top" secondItem="Vpa-cG-QBj" secondAttribute="bottom" constant="15" id="Ty9-Ne-D94"/>
-                            <constraint firstItem="wfX-oK-aLn" firstAttribute="leading" secondItem="SuA-Na-Tfz" secondAttribute="leading" id="UyO-nD-vEc"/>
-                            <constraint firstItem="SuA-Na-Tfz" firstAttribute="top" secondItem="omo-ZS-UqP" secondAttribute="bottom" constant="8" id="WsE-3G-D7J"/>
-                            <constraint firstItem="wfX-oK-aLn" firstAttribute="top" secondItem="sV7-3I-NdO" secondAttribute="bottom" constant="33" id="Xgp-az-Jdg"/>
-                            <constraint firstItem="omo-ZS-UqP" firstAttribute="top" secondItem="wfX-oK-aLn" secondAttribute="bottom" constant="8" id="abz-f7-ERQ"/>
                             <constraint firstItem="TzC-KT-8Q9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="atD-eT-T4M"/>
                             <constraint firstItem="AI4-Zf-HV4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="68" id="bSJ-0d-aTx"/>
-                            <constraint firstItem="sV7-3I-NdO" firstAttribute="leading" secondItem="TzC-KT-8Q9" secondAttribute="trailing" constant="22" id="ihe-3E-5YB"/>
-                            <constraint firstItem="wfX-oK-aLn" firstAttribute="trailing" secondItem="SuA-Na-Tfz" secondAttribute="trailing" id="kUI-cc-sx7"/>
+                            <constraint firstItem="06z-7R-g87" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="128" id="lPk-dF-jdR"/>
                             <constraint firstItem="sV7-3I-NdO" firstAttribute="top" secondItem="AI4-Zf-HV4" secondAttribute="bottom" constant="15" id="opm-gK-Cq7"/>
                             <constraint firstItem="jVv-BO-TWl" firstAttribute="leading" secondItem="TzC-KT-8Q9" secondAttribute="leading" id="tyj-cu-fWl"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SuA-Na-Tfz" secondAttribute="bottom" constant="15" id="vEq-aS-NFc"/>
-                            <constraint firstItem="13F-5h-HI5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xwX-ho-GwC"/>
                             <constraint firstItem="06z-7R-g87" firstAttribute="leading" secondItem="jVv-BO-TWl" secondAttribute="leading" id="ySy-W9-gUR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="omo-ZS-UqP" secondAttribute="trailing" constant="69" id="zqW-I0-XIX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sBN-DW-SUh"/>
-                    <connections>
-                        <outlet property="segmentedControl" destination="plj-3r-bDC" id="cbb-bQ-FYO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +255,7 @@
         <scene sceneID="v9J-m7-bsc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xDQ-Wr-VkL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Demos" image="Close" id="u0K-z2-6cP"/>
+                    <tabBarItem key="tabBarItem" title="Demos" image="services-32" id="u0K-z2-6cP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vgZ-4B-b5x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -386,7 +366,7 @@
         <scene sceneID="bO1-1h-HNv">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="Eleventh" storyboardName="Eleventh" id="faO-D1-I0F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="oOV-Ee-Tnx"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="geography-32" id="oOV-Ee-Tnx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dz-tT-ag4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -428,11 +408,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Close" width="26" height="26"/>
         <image name="Icon-App-60x60" width="60" height="60"/>
         <image name="Men’s Journal" width="1290" height="1753"/>
         <image name="cardCircle" width="100" height="140"/>
         <image name="cardCross" width="100" height="140"/>
         <image name="cardStar" width="100" height="140"/>
+        <image name="geography-32" width="32" height="32"/>
+        <image name="services-32" width="32" height="32"/>
     </resources>
 </document>

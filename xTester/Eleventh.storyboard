@@ -9,7 +9,7 @@
         <scene sceneID="h61-5o-bU4">
             <objects>
                 <viewController id="9bB-cm-QKA" customClass="EleventhViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" image="Close" id="KLB-05-89j"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="geography-32" id="KLB-05-89j"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxB-D8-VZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -18,6 +18,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Close" width="26" height="26"/>
+        <image name="geography-32" width="32" height="32"/>
     </resources>
 </document>

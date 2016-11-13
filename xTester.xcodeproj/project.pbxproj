@@ -212,6 +212,8 @@
 		0FCE1C881DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C871DB6B04300242E09 /* ThirteenthViewControllerDestination.swift */; };
 		0FCE1C891DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C871DB6B04300242E09 /* ThirteenthViewControllerDestination.swift */; };
 		0FCE1C8A1DB6B04300242E09 /* ThirteenthViewControllerDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C871DB6B04300242E09 /* ThirteenthViewControllerDestination.swift */; };
+		0FD104D61DD80CAD00AF0AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */; };
+		0FD104D71DD80CAD00AF0AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */; };
 		0FD9707A1DA802480099BE54 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970711DA802480099BE54 /* ButtonView.swift */; };
 		0FD9707B1DA802480099BE54 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD970721DA802480099BE54 /* FirstViewController.swift */; };
 		0FD9707C1DA802480099BE54 /* Fourth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD970731DA802480099BE54 /* Fourth.storyboard */; };
@@ -813,6 +815,7 @@
 				0F8D22D41DB28CBA00227D6A /* Second.storyboard in Resources */,
 				0F8328D91DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9A1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
+				0FD104D61DD80CAD00AF0AB1 /* Assets.xcassets in Resources */,
 				0F8A85541DC4185400C405AC /* TwelfthA.storyboard in Resources */,
 				0F1923501DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
 				0F8D22DC1DB2D28000227D6A /* NestedNames.json in Resources */,
@@ -839,6 +842,7 @@
 				0F8D22D51DB28CBA00227D6A /* Second.storyboard in Resources */,
 				0F8328DA1DA9D158009804C2 /* Ninth.storyboard in Resources */,
 				0F24FD9B1DA9689E00DF8A29 /* Eighth.storyboard in Resources */,
+				0FD104D71DD80CAD00AF0AB1 /* Assets.xcassets in Resources */,
 				0F8A85551DC4185400C405AC /* TwelfthA.storyboard in Resources */,
 				0F1923511DA88FD500FF9E4D /* Seventh.storyboard in Resources */,
 				0F8D22DD1DB2D28000227D6A /* NestedNames.json in Resources */,
