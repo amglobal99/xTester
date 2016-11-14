@@ -27,13 +27,10 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     var sections:[String] = []
     var sectionItems: [String:[String]] = [:]
 
-
     enum Method: String {
         case RecentPhotos = "flickr.photos.getRecent"
     }
 
-    
-    
     fileprivate struct Storyboard     {
         static let CellIdentifier = "NinthPhotoCollectionViewCell"
         static let showWebView = "ShowNinthPhotoDetailView"
@@ -47,7 +44,6 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     // ======= How many Sections do we have ?  ==========
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         //return 1
-        //print("Number of sections: \(self.itemsKeyArray.count)  ")
         return self.sections.count
     }
 
@@ -58,18 +54,16 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         print("Current section: \(section)")
-        return 7
         
-        /*
         // Figure out how many Items in each section
         let sectionKey = sections[section]
+        print("section key : \(sectionKey) " )
         let sectionItemsArray = sectionItems[sectionKey]
+        print("Section Items : \(sectionItemsArray)")
         let sectionItemsCount = sectionItemsArray?.count
         print("Items for this section \(section) : \(sectionItemsCount!)")
         
         return sectionItemsCount!
-       */
-        
         
     }  // end func
     
@@ -78,13 +72,24 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
+    
+    
    
     // ======= get a Cell for our Collection View  ===========================
+    //
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         //print("           1. cellForItemAtIndex ...Starting")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
-        let photo  = photos[(indexPath as NSIndexPath).row]
         
+        
+        let  rowNumber = (indexPath as NSIndexPath).row
+        print( "Row is : \(rowNumber) ")
+        
+        
+        
+        let photo  = photos[rowNumber]
         
         cell.photoIDLabel.text = photo.photoID
         cell.photoServerLabel.text = photo.photoID
@@ -103,6 +108,10 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
+    
+    
+    
+    
     // ==================== get Section Header View ==========================================
     // This function wil give us the Title for each section
     //
@@ -111,9 +120,9 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "NinthPhotoSectionHeader", for: indexPath) as! NinthPhotoSectionHeaderView
         
-        let index  = indexPath.row
-        let  title  = sections[index]
-        headerView.sectionLabel.text =  title
+        let rowNumber  = (indexPath as NSIndexPath).row
+        let  sectionTitle  = sections[rowNumber]
+        headerView.sectionLabel.text =  sectionTitle
         return headerView
         
     }  // end method

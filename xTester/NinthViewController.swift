@@ -200,7 +200,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        var size = CGSize(width: 300, height: 300)
+        let size = CGSize(width: 300, height: 300)
         return size
         
         //return CGSizeMake(320, 350)

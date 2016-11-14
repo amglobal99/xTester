@@ -73,7 +73,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
                     { result in
                         self.jsonResultObject = result.value!
                         print("========= Items List ++++++++ ")
-                        if let jsObj = self.jsonResultObject {
+                        if self.jsonResultObject != nil {
                             // print(jsObj)
                         }
                 } // end closure
