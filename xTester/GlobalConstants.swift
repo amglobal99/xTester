@@ -6,6 +6,7 @@
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
+import Foundation
 
 
 struct Constants {
@@ -48,6 +49,21 @@ struct Constants {
             case gitHub = "https://api.github.com/users/amglobal99/repos"
         }
       
+        
+        static let dateFormatter: DateFormatter = {
+            let formatter  = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            return formatter
+        }()
+        
+
+        static let session: URLSession = {
+            let config = URLSessionConfiguration.default
+            return URLSession(configuration: config)
+        }()
+        
+        
+        
     } // end struct
     
   

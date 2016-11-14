@@ -32,17 +32,9 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     let params = Constants.FlickrApi.params
     
     
-    
     // ****** Data variables *********************
     var store: NinthPhotoStore!
     var photoDataSource: NinthPhotoCollectionViewDataSource!
-
-    
-    fileprivate static let dateFormatter: DateFormatter = {
-        let formatter  = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter
-    }()
     
     
     enum Method: String {
@@ -125,8 +117,8 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                         case let .success(photos):
                             // ====== Let's send the data over to our Data Source class =========
                             self?.photoDataSource.photos = photos
-                            self?.photoDataSource.itemsDictionary  = photoItemsDictionary  // populate the Items Dictionary
-                            self?.photoDataSource.itemsKeyArray = photoKeyArray   // populate key array
+                            self?.photoDataSource.sections =  photoKeyArray
+                            self?.photoDataSource.sectionItems = photoItemsDictionary  // populate the Items Dictionary
                         case .failure(let error):
                             self?.photoDataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
@@ -136,13 +128,10 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                     
                     
                     // ************* RELOAD *************************************************
-                    
-                    //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
-                     self?.photoCollectionView?.reloadData()
-                    
+                        //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
+                        self?.photoCollectionView?.reloadData()
                     // *********************************************************************
                     
-                
                 }  // end operation
                 
                 
@@ -182,7 +171,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                         let photoIndexPath = IndexPath(row: photoIndex, section: 0)
                         if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as? NinthPhotoCollectionViewCell {
                             cell.updateWithImage(photo.image)
-                        }  // end if
+                        }
                     } //end operation
             } // end closure
 

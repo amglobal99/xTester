@@ -24,33 +24,17 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     // ======== Data related variables =========
     var photos = [NinthPhoto]()
-    var itemsDictionary: [String:[String]] = [:]
-    var itemsKeyArray:[String] = []
-    
-    fileprivate var sections:[String] = []
+    var sections:[String] = []
+    var sectionItems: [String:[String]] = [:]
 
-    
-    
-    
-    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let APIKey = "a6d819499131071f158fd740860a5a88"
-    let method = "flickr.photos.getRecent"
-    
-    fileprivate static let dateFormatter: DateFormatter = {
-        let formatter  = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter
-    }()
-    
-    
+
     enum Method: String {
         case RecentPhotos = "flickr.photos.getRecent"
     }
 
     
     
-    fileprivate struct Storyboard
-    {
+    fileprivate struct Storyboard     {
         static let CellIdentifier = "NinthPhotoCollectionViewCell"
         static let showWebView = "ShowNinthPhotoDetailView"
     }
@@ -64,35 +48,27 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         //return 1
         //print("Number of sections: \(self.itemsKeyArray.count)  ")
-        return self.itemsKeyArray.count
-        //return ( (self.itemsKeyArray.count)/10  )
+        return self.sections.count
     }
 
-    
-    
-    
-   
     
     
   
     // ===== How many Items in each section ?  ==============
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
-        
         print("Current section: \(section)")
+        return 7
         
-        //return 7
-        
-        
+        /*
         // Figure out how many Items in each section
-        let sectionKey = itemsKeyArray[section]
-        let sectionItemsArray = itemsDictionary[sectionKey]
+        let sectionKey = sections[section]
+        let sectionItemsArray = sectionItems[sectionKey]
         let sectionItemsCount = sectionItemsArray?.count
-        print("Items for this section \(section) : \(sectionItemsCount)")
+        print("Items for this section \(section) : \(sectionItemsCount!)")
         
         return sectionItemsCount!
-       
-        
+       */
         
         
     }  // end func
@@ -106,15 +82,8 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     // ======= get a Cell for our Collection View  ===========================
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //print("           1. cellForItemAtIndex ...Starting")
-        
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
-        
-        
-        
         let photo  = photos[(indexPath as NSIndexPath).row]
-        //print("              2. cellForItemAtIndex : Calling updateWithImage ")
-        
         
         
         cell.photoIDLabel.text = photo.photoID
@@ -134,25 +103,16 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
-    // ==================== get Section Header View ============================================================
+    // ==================== get Section Header View ==========================================
+    // This function wil give us the Title for each section
+    //
     
      func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "NinthPhotoSectionHeader", for: indexPath) as! NinthPhotoSectionHeaderView
         
-        /*
-        if let publisher = publishers.publisherForItemAtIndexPath(indexPath) {
-            headerView.publisher = publisher
-        }
-        
-        */
-        
-        
-        
-        
-        
         let index  = indexPath.row
-        let  title  = itemsKeyArray[index]
+        let  title  = sections[index]
         headerView.sectionLabel.text =  title
         return headerView
         
@@ -160,6 +120,12 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
 
+    
+    
+    
+    
+    
+    
     
     
     /*
