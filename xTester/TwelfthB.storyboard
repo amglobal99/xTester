@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nrq-Mp-ygO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TwelfthB View Controller-->
+        <scene sceneID="ag6-fh-YDJ">
+            <objects>
+                <viewController id="nrq-Mp-ygO" customClass="TwelfthBViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Str-cW-TEp"/>
+                        <viewControllerLayoutGuide type="bottom" id="iFH-GN-4uj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8iE-rV-yl3">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="542"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="343" height="542"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BY9-72-7Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612" y="-366.11694152923542"/>
+        </scene>
+    </scenes>
+</document>
