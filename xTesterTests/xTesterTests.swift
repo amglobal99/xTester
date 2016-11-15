@@ -9,7 +9,14 @@
 import XCTest
 @testable import xTester
 
-class xTesterTests: XCTestCase, JsonConvertible {
+//class xTesterTests: XCTestCase, JsonConvertible {
+    
+    class xTesterTests: BaseTestCase  {
+        
+        
+    
+    
+    
     
     override func setUp() {
         super.setUp()
@@ -44,6 +51,10 @@ class xTesterTests: XCTestCase, JsonConvertible {
         let tst = Test()
         let theAge: Int  = tst.showAge(80)
         XCTAssert( theAge > 35 )
+        
+       
+        
+        
     }
     
     func testAge2() {

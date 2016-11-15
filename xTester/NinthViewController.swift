@@ -19,7 +19,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     @IBOutlet var photoCollectionView: UICollectionView!
     
     
-    var jsonResultObject:JSON?
+   // var jsonResultObject:JSON?
     var city:String!
     
     //  Get global constants values
@@ -47,7 +47,6 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
     override func viewDidLoad() {
         
-        print(" viewDidLoad.....Start")
         super.viewDidLoad()
         photoCollectionView.dataSource = photoDataSource
         photoCollectionView.delegate = self
@@ -55,22 +54,15 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         // ********************** This is our Completion Handler **********************************
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
-                //  print("NinthViewController: Executing completeon handler after getJSONObject" )
                 let jsonObj = result.value!
                 let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
                 
-                /*
-                 print("********************** JSON Object *********************")
-                print (jsonObj)
-                print("********************************************************")
                 
-                */
                 
                 // ======= lets' get some arrays and Dictionaryies from our JSON  ==========
                 
                 // get key array
-                //guard let photoKeyArray =  self?.getKeyArray(from: jsonObj, key: "server")   else {
-                    guard let photoKeyArray =  self?.getKeyArray(from: jsonObj, key: self?.key)   else {
+                guard let photoKeyArray =  self?.getKeyArray(from: jsonObj, key: self?.key)   else {
                     print("keyArray was null ...")
                     return
                 }
@@ -80,9 +72,9 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
                 // get Dictionary
-                //guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: "server", keyArray: photoKeyArray, dataKey:"id") else {
-                guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: self?.key, keyArray: photoKeyArray, dataKey:self?.dataKey) else {
-                    print("myDict was null..")
+                guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: self?.key, keyArray: photoKeyArray, dataKey:self?.dataKey)
+                else {
+                    print("Photo tems Dictionary is nil")
                     return
                 }
                 
@@ -90,27 +82,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 print(photoItemsDictionary)
                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
-                
-                
-                
-                /*   ================= Retrieve values for a particular data key =================================
-                var srvId = photoKeyArray[2]
- 
-                
-               // guard let dictValues = self?.getDictionaryValues(fromDictionary: myDict, for: "5672") else {
-                    guard let dictValues = self?.getDictionaryValues(fromDictionary: photoItemsDictionary, for: srvId) else {
-                    print("dictValues ws null....")
-                    return
-                }
- 
-                print(" ########  Values from Dict for item 5522 ##########")
-                print(dictValues)
-                print("####################  end Dict values ############")
-                
-                */
-                
-                
-                
+    
                 
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
@@ -123,15 +95,11 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                             self?.photoDataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
                     }  // end switch
-                    
-                    
-                    
-                    
+                
                     // ************* RELOAD *************************************************
                         //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
                         self?.photoCollectionView?.reloadData()
                     // *********************************************************************
-                    
                 }  // end operation
                 
                 
@@ -195,7 +163,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
 
     
     
-    
+    /*
     func collectionView(collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -208,7 +176,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     }
     
     
-    
+    */
     
     
     

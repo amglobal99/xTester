@@ -79,6 +79,9 @@
 		0F2E0DC01DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */; };
 		0F2E0DC11DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */; };
 		0F2E0DC21DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */; };
+		0F2F0A891DD9FB0B00756660 /* NinthViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2F0A881DD9FB0B00756660 /* NinthViewControllerTests.swift */; };
+		0F2F0A8B1DDA255900756660 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2F0A8A1DDA255900756660 /* BaseTestCase.swift */; };
+		0F2F0A8D1DDA3BFF00756660 /* FifthViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2F0A8C1DDA3BFF00756660 /* FifthViewControllerTests.swift */; };
 		0F3052CC1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
 		0F3052CD1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
 		0F3052CE1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */; };
@@ -273,6 +276,9 @@
 		0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoSectionHeaderView.swift; sourceTree = "<group>"; };
+		0F2F0A881DD9FB0B00756660 /* NinthViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthViewControllerTests.swift; sourceTree = "<group>"; };
+		0F2F0A8A1DDA255900756660 /* BaseTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		0F2F0A8C1DDA3BFF00756660 /* FifthViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewControllerTests.swift; sourceTree = "<group>"; };
 		0F3052CB1DAAD5A400F79778 /* PublishersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishersCollectionViewController.swift; sourceTree = "<group>"; };
 		0F3052CF1DAAD5AF00F79778 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		0F3052D31DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishersCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -489,7 +495,10 @@
 			isa = PBXGroup;
 			children = (
 				0F38F4F91DA7F8AF0086BAA8 /* xTesterTests.swift */,
+				0F2F0A8C1DDA3BFF00756660 /* FifthViewControllerTests.swift */,
+				0F2F0A881DD9FB0B00756660 /* NinthViewControllerTests.swift */,
 				0F38F4FB1DA7F8AF0086BAA8 /* Info.plist */,
+				0F2F0A8A1DDA255900756660 /* BaseTestCase.swift */,
 			);
 			path = xTesterTests;
 			sourceTree = "<group>";
@@ -1079,9 +1088,11 @@
 				0F22D81B1DCD6C0F0015C9F1 /* NinthPhotoStore.swift in Sources */,
 				0F3F990B1DA826CA002FBB8C /* SeventhViewController.swift in Sources */,
 				0FCE1C691DB6983700242E09 /* EleventhViewController.swift in Sources */,
+				0F2F0A8D1DDA3BFF00756660 /* FifthViewControllerTests.swift in Sources */,
 				0F9887E61DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F38F4FA1DA7F8AF0086BAA8 /* xTesterTests.swift in Sources */,
 				0FC797A41DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */,
+				0F2F0A8B1DDA255900756660 /* BaseTestCase.swift in Sources */,
 				0F8328C81DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F3052CD1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
 				0F2664021DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */,
@@ -1105,6 +1116,7 @@
 				0F2E0DC11DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */,
 				0FCE1C791DB6AC1F00242E09 /* ThirteenthViewController.swift in Sources */,
 				0F3052D71DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
+				0F2F0A891DD9FB0B00756660 /* NinthViewControllerTests.swift in Sources */,
 				0F19233F1DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,
 				0F2C0CF11DB5ACE000ECBA67 /* TenthViewController.swift in Sources */,
 				0F1923471DA8826A00FF9E4D /* SixthDetailVCView.swift in Sources */,
