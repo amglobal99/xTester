@@ -29,7 +29,8 @@ class NinthViewControllerTests: BaseTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let bundle = Bundle(for: type(of: self) )
+        //let bundle = Bundle(for: type(of: self) )
+        let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
         ninthVC = storyboard.instantiateViewController(withIdentifier: "Ninth")  as! NinthViewController
         
@@ -47,40 +48,38 @@ class NinthViewControllerTests: BaseTestCase {
     
     
     
-    func testAPIKeyIsAvailable() {
+    func testThatAPIKeyIsAvailable() {
         XCTAssertNotNil(ninthVC.APIKey )
         
     }
     
     
-    func testPhotoCollectionViewIsAvailable() {
+    func testThatPhotoCollectionViewIsAvailable() {
         XCTAssertNotNil(ninthVC.photoCollectionView)
     }
 
     
-    func testBaseUrlStringIsAvailable() {
+    func testThatBaseUrlStringIsAvailable() {
         XCTAssertNotNil(ninthVC.baseURLString)
     }
     
     
-    func testCityIsAvailable() {
+    func testThatCityIsAvailable() {
         XCTAssertNotNil(ninthVC.city == "Jack City")
     }
     
     
-    func testStoreIsAvailable() {
+    func testThatStoreIsAvailable() {
         XCTAssertNotNil(ninthVC.store )
     }
     
     
-
-    func testPhotoDataSourceIsAvailable() {
+    func testThatPhotoDataSourceIsAvailable() {
         XCTAssertNotNil(ninthVC.photoDataSource )
     }
     
     
-    
-    func testPhotoCollectionViewDataSourceIsAvailable() {
+    func testThatPhotoCollectionViewDataSourceIsAvailable() {
         XCTAssertNotNil(ninthVC.photoCollectionView.dataSource )
         
     }
@@ -91,15 +90,13 @@ class NinthViewControllerTests: BaseTestCase {
     // Let's check the methods
     
     
-    func testGetSiteURL() {
+    func testThatGetSiteURLReturnsSuccessResultWithValidData() {
         let url = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.APIKey)
         XCTAssertNotNil(url)
     }
     
     
-    
-    
-    func testViewDidLoad() {
+    func testThatViewDidLoadReturnsSuccessResultWithValidData() {
         ninthVC.viewDidLoad()
         let sections = ninthVC.photoDataSource.sections
         let photos = ninthVC.photoDataSource.photos
@@ -109,6 +106,12 @@ class NinthViewControllerTests: BaseTestCase {
         XCTAssertNotNil(items)
     }
     
+    
+    
+    func testThatViewDidLoadHasAccessToNinthViewController() {
+        XCTAssertNotNil(ninthVC)
+        
+    }
     
     
     
@@ -123,7 +126,6 @@ class NinthViewControllerTests: BaseTestCase {
         
         //let urlString = "https://httpbin.org/get"
         let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.APIKey)
-        
         var response: DefaultDataResponse?
         
         // Start your Async request
@@ -134,7 +136,6 @@ class NinthViewControllerTests: BaseTestCase {
                 // Step 2 ...... In the completion handler, call fulfill method
                 expectation.fulfill()
             }
-        
         
         // Step 3 .... At end of method, call waitForExpectations
         waitForExpectations(timeout: timeout, handler: nil)
@@ -159,7 +160,6 @@ class NinthViewControllerTests: BaseTestCase {
     func testThatGetJSONObjectMethodReturnsSuccessResultWithValidData() {
         
         var jsonObject:JSON?
-        
         //Step 1 ...... Create a expectation
         let expectation = self.expectation(description: "request should succeed")
         
@@ -169,12 +169,9 @@ class NinthViewControllerTests: BaseTestCase {
         
         let completionHandler: (Result<JSON>) -> Void  =
             {   resp in
-                    let jsonObj = resp.value!
                     jsonObject = resp.value!
-                
-                // Step 2 ...... In the completion handler, call fulfill method
-                expectation.fulfill()
-                
+                    // Step 2 ...... In the completion handler, call fulfill method
+                    expectation.fulfill()
             } // end closure
         
         
@@ -194,33 +191,29 @@ class NinthViewControllerTests: BaseTestCase {
         
          XCTAssertNotNil(jsonObject )
         
-        
-        
     } // end func
     
     
    
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func testPrepareForSegue() {
+        
+        // 1. Arrange
+        let controller = ninthVC
+        //controller.argumentToPass = "Argument to pass"
+        let otherController = NinthDetailViewController()
+        let segue = UIStoryboardSegue(identifier: "ShowNinthPhotoDetail",
+                                      source: ninthVC,
+                                      destination: otherController)
+        
+        // 2. Action
+        controller?.prepare(for: segue, sender: nil)
+        
+        // 3. Assert
+        XCTAssertNotNil(otherController.store)
+        
+    }
     
     
     

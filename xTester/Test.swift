@@ -14,9 +14,7 @@ import UIKit
 class Test {
 
         func doSomething(_ str: String) -> Bool {
-            
             var result:Bool
-            
             if str == "Pune" {
                 result = true
             } else {
