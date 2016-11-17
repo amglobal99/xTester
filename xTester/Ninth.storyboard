@@ -58,19 +58,38 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzi-ex-HSu">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzi-ex-HSu">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1o-Fn-DHL">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1o-Fn-DHL">
                                                         <frame key="frameInset" minX="51" minY="28" width="26" height="12"/>
-                                                        <color key="backgroundColor" red="0.87058823529999996" green="0.72156862749999995" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                        <state key="normal" title="$12.99"/>
+                                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal">
+                                                            <attributedString key="attributedTitle">
+                                                                <fragment content="BUY">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="10" name=".AppleSystemUIFont"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="buyPhotoItem:" destination="YfJ-Yh-0vf" eventType="touchUpInside" id="HNi-VH-mWd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="l1o-Fn-DHL" firstAttribute="bottom" secondItem="xzi-ex-HSu" secondAttribute="bottom" id="Ceu-vR-o7N"/>
                                                     <constraint firstItem="l1o-Fn-DHL" firstAttribute="top" secondItem="xzi-ex-HSu" secondAttribute="top" id="fSd-rw-a84"/>
                                                     <constraint firstItem="xzi-ex-HSu" firstAttribute="top" secondItem="Xyp-hZ-QAc" secondAttribute="bottom" constant="6" id="pHS-9K-Ykk"/>
                                                     <constraint firstAttribute="trailing" secondItem="l1o-Fn-DHL" secondAttribute="trailing" constant="4" id="yns-vz-ceH"/>
@@ -100,6 +119,11 @@
                                     <constraint firstItem="QS6-z3-jLd" firstAttribute="leading" secondItem="YfJ-Yh-0vf" secondAttribute="leadingMargin" constant="-15" id="l3g-aH-6L1"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="QS6-z3-jLd" secondAttribute="trailing" constant="-30" id="lCx-lT-ivo"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="imageView" destination="QS6-z3-jLd" id="ah7-6e-kPH"/>
                                     <outlet property="photoIDLabel" destination="Xyp-hZ-QAc" id="pVh-On-N69"/>

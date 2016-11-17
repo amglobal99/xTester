@@ -110,7 +110,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.99633461236953735" blue="0.94305843114852905" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92886529849999999" green="0.8236619288" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Kxq-ea-nHp" firstAttribute="leading" secondItem="tw2-LB-GhW" secondAttribute="leadingMargin" constant="27" id="XhC-UA-Ehv"/>
                             <constraint firstItem="Kxq-ea-nHp" firstAttribute="top" secondItem="oGB-Sz-cIe" secondAttribute="bottom" constant="73" id="qvx-A8-rO1"/>
@@ -130,7 +130,7 @@
         <scene sceneID="Q5G-8u-RSi">
             <objects>
                 <collectionViewController id="snA-d5-ibb" customClass="TwelfthA2ViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="t7C-Rd-cw2">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="t7C-Rd-cw2">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.90482551434897984" blue="0.98449282067962385" alpha="1" colorSpace="calibratedRGB"/>

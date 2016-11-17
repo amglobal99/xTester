@@ -5,6 +5,15 @@
 //  Created by Dad on 11/5/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
+//  This class provides the data used by the ViewController (NinthViewController.swift)
+//  What we need is first an aray of 'NinthPhoto' objects
+//  We also need an array of Section titles
+//  Once we have that, we just filter the photos array to suit our needs
+//
+//
+//
+
+
 
 import Foundation
 import UIKit
@@ -37,8 +46,9 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     // ======== Data related variables =========
     var photos = [NinthPhoto]()   // This is the list of all our Photos
     var sections:[String] = []  // This is the array of names for our  sections
-    var sectionItems: [String:[String]] = [:]   // This Dictionary uses section name as Key and an array of Photos for that section
+    //var sectionItems: [String:[String]] = [:]   // This Dictionary uses section name as Key and an array of Photos for that section
     var sectionPhotoItems:[String:[NinthPhoto]] = [:]
+    
     
     
    
@@ -56,15 +66,11 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         print("Current section: \(section)")
-        
         let sectionItemsArray = photos.filter {
             $0.datetakenUnknown == String(section)
         }
-        
         print("NUmber of Items in section \(section) : \(sectionItemsArray.count)")
-        
         return sectionItemsArray.count
-        
     }  // end func
     
     
@@ -77,31 +83,28 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         
         let photoTitleToDisplay: String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
-        let  rowNumber = indexPath.row
+        let rowNumber = indexPath.row
         let sectionNumber = indexPath.section
         print( "Row is : \(rowNumber) and Section is: \(sectionNumber) ")
         
-        
-        
-        let sectionStr = String(sectionNumber)
-        // Get photos for this section( Filter the photos array )
+        // Get photos for this section (Filter the photos array)
         let sectionPhotos = photos.filter{
-            $0.datetakenUnknown == sectionStr
+            $0.datetakenUnknown == String(sectionNumber)
         }
         
-        
+        // get the Photo to process
         let photo = sectionPhotos[rowNumber]
-        // let's get a truncated title for our Photo
+        
+        // Get a truncated title for our Photo
         let photoTitle = photo.title
        
-        // This can be chnaged later ... we're limiting length  to 10 char
-        if photoTitle.characters.count <= 10 {
-            photoTitleToDisplay = "-" + photoTitle
-        } else {
-            let index = photoTitle.index(photoTitle.startIndex, offsetBy: 8)
-            photoTitleToDisplay = photoTitle.substring(to: index)
-            
-        }
+            // This can be changed later ... we're limiting length to 8 char
+            if photoTitle.characters.count <= 10 {
+                photoTitleToDisplay = "-" + photoTitle
+            } else {
+                let index = photoTitle.index(photoTitle.startIndex, offsetBy: 8)
+                photoTitleToDisplay = photoTitle.substring(to: index)
+            }
         
         cell.photoIDLabel.text = photo.photoID
         cell.photoServerLabel.text = photoTitleToDisplay
@@ -113,14 +116,7 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     // Function to get Section Header View
@@ -134,11 +130,11 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
                                                                          withReuseIdentifier: "NinthPhotoSectionHeader",
                                                                          for: indexPath) as! NinthPhotoSectionHeaderView
         
-        let  rowNumber = indexPath.row
+        let rowNumber = indexPath.row
         let sectionNumber = indexPath.section
         print( "HEADER: Row is : \(rowNumber) and Section is: \(sectionNumber) ")
         
-        let sectionLabel = sections[sectionNumber]
+        let sectionLabel = sections[sectionNumber]  // Retrieve section title from our stored array
         print("Our section label is : \(sectionLabel) " )
         let title = "Section :: " + sectionLabel
         headerView.sectionLabel.text = title

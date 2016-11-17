@@ -71,7 +71,7 @@
         <scene sceneID="Dzz-nf-cZN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l9d-7c-RVa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Close" id="7Lv-on-QAo"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="information-32" id="7Lv-on-QAo"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PqN-0E-T9V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -104,6 +104,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Close" width="26" height="26"/>
+        <image name="information-32" width="32" height="32"/>
     </resources>
 </document>
