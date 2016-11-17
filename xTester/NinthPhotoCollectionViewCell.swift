@@ -41,12 +41,6 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     }  //end method
     
     
-    
-    
-    
-    
-    
-    
         
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,8 +48,7 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     }
     
     
-    
-    
+
     
     // called when cell is being reused
     override func prepareForReuse() {

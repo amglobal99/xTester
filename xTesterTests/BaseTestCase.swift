@@ -45,6 +45,7 @@ class BaseTestCase: XCTestCase, JsonConvertible {
     
     func url(forResource fileName: String, withExtension ext: String) -> URL {
         let bundle = Bundle(for: BaseTestCase.self)
+        // let bundle = Bundle.main
         return bundle.url(forResource: fileName, withExtension: ext)!
     }
  

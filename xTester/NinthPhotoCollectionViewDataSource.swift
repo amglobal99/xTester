@@ -22,48 +22,48 @@ import SwiftyJSON
 class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, Utils, JsonConvertible {
     
     
-    // ======== Data related variables =========
-    var photos = [NinthPhoto]()
-    var sections:[String] = []
-    var sectionItems: [String:[String]] = [:]
-
+    // MARK: - Local Variables
+    
     enum Method: String {
         case RecentPhotos = "flickr.photos.getRecent"
     }
-
+    
     fileprivate struct Storyboard     {
         static let CellIdentifier = "NinthPhotoCollectionViewCell"
         static let showWebView = "ShowNinthPhotoDetailView"
     }
     
     
+    // ======== Data related variables =========
+    var photos = [NinthPhoto]()   // This is the list of all our Photos
+    var sections:[String] = []  // This is the array of names for our  sections
+    var sectionItems: [String:[String]] = [:]   // This Dictionary uses section name as Key and an array of Photos for that section
+    var sectionPhotoItems:[String:[NinthPhoto]] = [:]
+    
+    
+   
+    // MARK: - CollectionView DataSource methods
     
     
     
-    
-    // ======= How many Sections do we have ?  ==========
+    // Function to tell us How many Sections do we have ?
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        //return 1
         return self.sections.count
     }
 
     
-    
-  
-    // ===== How many Items in each section ?  ==============
+    // Function to tell us How many Items in each section ?
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         print("Current section: \(section)")
         
-        // Figure out how many Items in each section
-        let sectionKey = sections[section]
-        print("section key : \(sectionKey) " )
-        let sectionItemsArray = sectionItems[sectionKey]
-        print("Section Items : \(sectionItemsArray)")
-        let sectionItemsCount = sectionItemsArray?.count
-        print("Items for this section \(section) : \(sectionItemsCount!)")
+        let sectionItemsArray = photos.filter {
+            $0.datetakenUnknown == String(section)
+        }
         
-        return sectionItemsCount!
+        print("NUmber of Items in section \(section) : \(sectionItemsArray.count)")
+        
+        return sectionItemsArray.count
         
     }  // end func
     
@@ -71,34 +71,46 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
-    
-    
-    
-   
-    // ======= get a Cell for our Collection View  ===========================
-    //
+    // Function to get a Cell
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        //print("           1. cellForItemAtIndex ...Starting")
+        let photoTitleToDisplay: String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
+        let  rowNumber = indexPath.row
+        let sectionNumber = indexPath.section
+        print( "Row is : \(rowNumber) and Section is: \(sectionNumber) ")
         
         
-        let  rowNumber = (indexPath as NSIndexPath).row
-        print( "Row is : \(rowNumber) ")
+        
+        let sectionStr = String(sectionNumber)
+        // Get photos for this section( Filter the photos array )
+        let sectionPhotos = photos.filter{
+            $0.datetakenUnknown == sectionStr
+        }
         
         
-        
-        let photo  = photos[rowNumber]
+        let photo = sectionPhotos[rowNumber]
+        // let's get a truncated title for our Photo
+        let photoTitle = photo.title
+       
+        // This can be chnaged later ... we're limiting length  to 10 char
+        if photoTitle.characters.count <= 10 {
+            photoTitleToDisplay = "-" + photoTitle
+        } else {
+            let index = photoTitle.index(photoTitle.startIndex, offsetBy: 8)
+            photoTitleToDisplay = photoTitle.substring(to: index)
+            
+        }
         
         cell.photoIDLabel.text = photo.photoID
-        cell.photoServerLabel.text = photo.photoID
+        cell.photoServerLabel.text = photoTitleToDisplay
         cell.updateWithImage(photo.image)
         
         return cell
     } //end method
     
- 
+
     
     
     
@@ -111,24 +123,40 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
-    
-    // ==================== get Section Header View ==========================================
-    // This function wil give us the Title for each section
+    // Function to get Section Header View
     //
     
-     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView{
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "NinthPhotoSectionHeader", for: indexPath) as! NinthPhotoSectionHeaderView
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                         withReuseIdentifier: "NinthPhotoSectionHeader",
+                                                                         for: indexPath) as! NinthPhotoSectionHeaderView
         
-        let rowNumber  = (indexPath as NSIndexPath).row
-        let  sectionTitle  = sections[rowNumber]
-        headerView.sectionLabel.text =  sectionTitle
+        let  rowNumber = indexPath.row
+        let sectionNumber = indexPath.section
+        print( "HEADER: Row is : \(rowNumber) and Section is: \(sectionNumber) ")
+        
+        let sectionLabel = sections[sectionNumber]
+        print("Our section label is : \(sectionLabel) " )
+        let title = "Section :: " + sectionLabel
+        headerView.sectionLabel.text = title
+        
         return headerView
         
     }  // end method
     
     
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -138,6 +166,8 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     /*
+    
+   
     
     // Let's figure out which  photos get listed in which section
     
@@ -161,76 +191,31 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     }
     
     
+    */
     
-
     
-    fileprivate func photosForSection(_ index: Int) -> [Publisher] {
+/*
+    
+    fileprivate func photosInSection(_ index: Int) -> [NinthPhoto] {
+     
         let section = sections[index]
-        let publishersInSection = publishers.filter {
-            (publisher: Publisher) -> Bool in return publisher.section == section
+     
+        /*
+        let photosInSection = publishers.filter {
+            (publisher: Publisher) -> Bool in
+            return publisher.section == section
         }
+        */
+        
+        let items = sectionItems[section]
+ 
         return publishersInSection
     }
 
-    */
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    
-    
-    // MARK: - UICollectionViewDataSource
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return publishers.numberOfSections
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return publishers.numberOfPublishersInSection(section)
-    }
-    
-    fileprivate struct Storyboard
-    {
-        static let CellIdentifier = "PublisherCell"
-        static let showWebView = "ShowWebView"
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! PublisherCollectionViewCell
-        
-        cell.publisher = publishers.publisherForItemAtIndexPath(indexPath)
-        cell.editing = isEditing
-        cell.delegate = self
-        
-        return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeaderView
-        
-        if let publisher = publishers.publisherForItemAtIndexPath(indexPath) {
-            headerView.publisher = publisher
-        }
-        
-        return headerView
-    }
-    
-    
-
     
     
     */
-    
-    
     
     
     

@@ -21,6 +21,9 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
    // var jsonResultObject:JSON?
     var city:String!
+    var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
+    
+    
     
     //  Get global constants values
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
@@ -30,6 +33,8 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     let rootPath = Constants.FlickrApi.rootPath
     let dataKey = Constants.FlickrApi.dataKey
     let params = Constants.FlickrApi.params
+    
+    
     
     
     // ****** Data variables *********************
@@ -55,8 +60,9 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
                 let jsonObj = result.value!
-                let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
                 
+                // get list of Photos  ( contains 'NinthPhoto' items )
+                let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
                 
                 
                 // ======= lets' get some arrays and Dictionaryies from our JSON  ==========
@@ -66,11 +72,15 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                     print("keyArray was null ...")
                     return
                 }
-                
-                print("+++++++++++++++++  Key Array ---> key is \"server\" +++++++++++++++++++++++")
+                print("+++++++++++++++++  Key Array ---> key is \"datetakenunknown\" +++++++++++++++++++++++")
                 print(photoKeyArray)
                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
+                 
+                 
+                 
+                 
+                 /*
                 // get Dictionary
                 guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: self?.key, keyArray: photoKeyArray, dataKey:self?.dataKey)
                 else {
@@ -82,15 +92,59 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 print(photoItemsDictionary)
                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
-    
+                */
+                
+                
+                
+                
+                // get Dictionary of Photo objects
+                
+                // get Dictionary
+                guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: self?.key, keyArray: photoKeyArray, dataKey:self?.dataKey)
+               // guard let photoItemsDictionary = self?.getDictionaryOfItems(from: jsonObj,  for: self?.key, keyArray: photoKeyArray, dataKey:self?.dataKey)
+                    else {
+                        print("Photo tems Dictionary is nil")
+                        return
+                }
+            
+                print("+++++++++++++++++  Dictonary +++++++++++++++++++++++")
+                print(photoItemsDictionary)
+                print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
+         
                 
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
                         case let .success(photos):
+                            
+                            
+                            
+                            /*
+                            // Let's create a Dictionary for Photos 
+                            for section in photoKeyArray {
+                                let sectionPhotos:[NinthPhoto] = photos.filter {
+                                    (photo) -> Bool in
+                                    return  == section
+                                    publisher.section == section
+                                    
+                                }
+                                sectionPhotoDictionary.updateValue(sectionPhotos, forKey: section)
+                                
+                                
+                                
+                            }
+                            
+                            
+                            */
+                            
+                            
+                            print(" We have total of \(photos.count)  photos ")
+                           
+                            
                             // ====== Let's send the data over to our Data Source class =========
                             self?.photoDataSource.photos = photos
                             self?.photoDataSource.sections =  photoKeyArray
-                            self?.photoDataSource.sectionItems = photoItemsDictionary  // populate the Items Dictionary
+                           //self?.photoDataSource.sectionItems = photoItemsDictionary  // populate the Items Dictionary
+                        
                         case .failure(let error):
                             self?.photoDataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
@@ -105,7 +159,6 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 
                 
         } // end closure
-        
   
         // ************************************* end Clsoure  ***********************************************
         
@@ -113,8 +166,6 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         // ====== Create a Async request to get jSON data =============================================================
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)
         getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-        
-        
         
         
     }  // end viewDidLoad
@@ -150,13 +201,40 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Starting prepareForSegue")
         if segue.identifier == "ShowNinthPhotoDetail" {
-            if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
+            
+            print("Id matches ....")
+            
+           if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
+                
+                
+                print("index is correct...")
+                
+                
                 let photo = photoDataSource.photos[(selectedIndexPath as NSIndexPath).row]
                 let destinationVC = segue.destination as! NinthDetailViewController
-                destinationVC.photo = photo
-                destinationVC.store = store
+            
+            
+            
+                
+                print("destination VC is ok .......")
+                
+                
+                    destinationVC.photo = photo
+                    destinationVC.store = store
+                
+              // ===== Remove AFTER TESTING
+                destinationVC.city = "Kennesaw"
+                
+                
+                
             } //end if
+            
+            
+            
+            
+            
         } //end if
     } //end method
     

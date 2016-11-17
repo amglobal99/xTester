@@ -25,31 +25,64 @@ class NinthViewControllerTests: BaseTestCase {
         var ninthVC: NinthViewController!
     
     
+    // MARK: - Setup
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        //let bundle = Bundle(for: type(of: self) )
+        
+        //let bundle = Bundle(for: type(of: self) )   // this gave me an error
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
         ninthVC = storyboard.instantiateViewController(withIdentifier: "Ninth")  as! NinthViewController
-        
+    
         // ====== In our app, we inject these properties during segue from Main Storyboard
         ninthVC.city = "Jack City"  // REMOVE THIS LATER
         ninthVC.store = NinthPhotoStore()  // give the VC a store object
         ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
         
-        let dummy  = ninthVC.view // force loading subviews and setting outlets
-        //ninthVC.viewDidLoad()
+        let _  = ninthVC.view // force loading subviews and setting outlets ( this executes viewDidLoad and other view events)
         
     }
     
     
     
+    // MARK: - Check for Values of properties
     
+    // Check availability of values for properties
+    
+    
+    func testThatBaseUrlStringIsAvailable() {
+        XCTAssertNotNil(ninthVC.baseURLString)
+    }
     
     func testThatAPIKeyIsAvailable() {
         XCTAssertNotNil(ninthVC.APIKey )
+        
+    }
+    
+    func testThatMethodIsAvailable() {
+        XCTAssertNotNil(ninthVC.method )
+        
+    }
+    
+    func testThatKeyIsAvailable() {
+        XCTAssertNotNil(ninthVC.key )
+        
+    }
+    
+    func testThatRootPathIsAvailable() {
+        XCTAssertNotNil(ninthVC.rootPath)
+        
+    }
+    
+    func testThatDataKeyIsAvailable() {
+        XCTAssertNotNil(ninthVC.dataKey)
+        
+    }
+
+    func testThatParamsIsAvailable() {
+        XCTAssertNotNil(ninthVC.params)
         
     }
     
@@ -58,17 +91,6 @@ class NinthViewControllerTests: BaseTestCase {
         XCTAssertNotNil(ninthVC.photoCollectionView)
     }
 
-    
-    func testThatBaseUrlStringIsAvailable() {
-        XCTAssertNotNil(ninthVC.baseURLString)
-    }
-    
-    
-    func testThatCityIsAvailable() {
-        XCTAssertNotNil(ninthVC.city == "Jack City")
-    }
-    
-    
     func testThatStoreIsAvailable() {
         XCTAssertNotNil(ninthVC.store )
     }
@@ -87,7 +109,16 @@ class NinthViewControllerTests: BaseTestCase {
     
     
     
-    // Let's check the methods
+    func testThatCityIsAvailable() {
+        XCTAssertNotNil(ninthVC.city == "Jack City")
+    }
+    
+    
+    
+    
+    
+    // MARK: - Check Methods
+    
     
     
     func testThatGetSiteURLReturnsSuccessResultWithValidData() {
@@ -97,7 +128,8 @@ class NinthViewControllerTests: BaseTestCase {
     
     
     func testThatViewDidLoadReturnsSuccessResultWithValidData() {
-        ninthVC.viewDidLoad()
+        //ninthVC.viewDidLoad() 
+        // View events get triggered in Setup for each test
         let sections = ninthVC.photoDataSource.sections
         let photos = ninthVC.photoDataSource.photos
         let items = ninthVC.photoDataSource.sectionItems
@@ -123,7 +155,6 @@ class NinthViewControllerTests: BaseTestCase {
         //Step 1 ...... Create a expectation
         let expectation = self.expectation(description: "request should succeed")
         
-        
         //let urlString = "https://httpbin.org/get"
         let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.APIKey)
         var response: DefaultDataResponse?
@@ -132,7 +163,6 @@ class NinthViewControllerTests: BaseTestCase {
         Alamofire.request(urlString, parameters: ["foo": "bar"]).response
             { resp in
                 response = resp
-                
                 // Step 2 ...... In the completion handler, call fulfill method
                 expectation.fulfill()
             }
@@ -160,35 +190,23 @@ class NinthViewControllerTests: BaseTestCase {
     func testThatGetJSONObjectMethodReturnsSuccessResultWithValidData() {
         
         var jsonObject:JSON?
-        //Step 1 ...... Create a expectation
-        let expectation = self.expectation(description: "request should succeed")
-        
-        let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.APIKey)
+        let expectation = self.expectation(description: "request should succeed")   //Step 1 ...... Create a expectation
+        let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString,
+                                           method: ninthVC.method,
+                                           parameters: ninthVC.params,
+                                           apiKey: ninthVC.APIKey)
         var response: DefaultDataResponse?
         weak var weakSelf = self
         
         let completionHandler: (Result<JSON>) -> Void  =
             {   resp in
                     jsonObject = resp.value!
-                    // Step 2 ...... In the completion handler, call fulfill method
-                    expectation.fulfill()
+                    expectation.fulfill()   // Step 2 ...... In the completion handler, call fulfill method
             } // end closure
         
-        
-        let url = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.APIKey)
+
         getJSONObject(for: urlString, rootPath: Constants.FlickrApi.rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-        
-        // Step 3 .... At end of method, call waitForExpectations
         waitForExpectations(timeout: timeout, handler: nil)
-        
-        // Then
-        /*
-        XCTAssertNotNil(response?.request)
-        XCTAssertNotNil(response?.response)
-        XCTAssertNotNil(response?.data)
-        XCTAssertNil(response?.error)
-        */
-        
          XCTAssertNotNil(jsonObject )
         
     } // end func
@@ -197,21 +215,33 @@ class NinthViewControllerTests: BaseTestCase {
    
     
     
-    func testPrepareForSegue() {
+    
+    
+    
+    
+    func testThatStoreIsAvailableInPrepareForSegue() {
         
-        // 1. Arrange
         let controller = ninthVC
-        //controller.argumentToPass = "Argument to pass"
         let otherController = NinthDetailViewController()
-        let segue = UIStoryboardSegue(identifier: "ShowNinthPhotoDetail",
-                                      source: ninthVC,
-                                      destination: otherController)
+        let segue = UIStoryboardSegue(identifier: "ShowNinthPhotoDetail",  source: ninthVC,    destination: otherController)
         
+        ninthVC.city = "Jack City"  // REMOVE THIS LATER
+        ninthVC.store = NinthPhotoStore()  // give the VC a store object
+        ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
+        
+        // set store property
+        otherController.store = ninthVC.store
+
         // 2. Action
         controller?.prepare(for: segue, sender: nil)
         
+        
+        
         // 3. Assert
-        XCTAssertNotNil(otherController.store)
+        XCTAssertNotNil(segue)
+        XCTAssertNotNil( otherController.store   )
+        
+        
         
     }
     

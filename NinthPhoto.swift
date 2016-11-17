@@ -17,17 +17,21 @@ class NinthPhoto {
     let photoID: String
     let dateTaken: Date
     var image: UIImage?
+    let datetakenUnknown:String
     
     
-    init(title: String, photoID: String, remoteURL: URL, dateTaken: Date) {
+    init(title: String, photoID: String, remoteURL: URL, dateTaken: Date, datetakenUnknown:String) {
         self.title = title
         self.photoID = photoID
         self.remoteURL = remoteURL
         self.dateTaken = dateTaken
         //self.image = image
+        self.datetakenUnknown = datetakenUnknown
+        
     }
     
 }  //end class
+
 
 
 

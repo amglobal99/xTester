@@ -25,6 +25,12 @@ class NinthDetailViewController: UIViewController {
     
     
     
+    // ====== This is for tetsing only
+    var city:String = ""
+    
+    
+    
+    
     override func viewDidLoad()  {
         super.viewDidLoad()
      

@@ -186,6 +186,73 @@ extension JsonConvertible  {
     
 
     
+    /*
+    
+    // This returns Dict wih values as array of Photos
+    
+    func getDictionaryOfItems(from obj:JSON?,  for key:String?,  keyArray:[String]?, dataKey:String? ) -> [String:JSON]? {
+        
+        print(" key : \(key!) "  )
+        print(" dataKey : \(dataKey!) " )
+        
+        //  print("getDictionary... Starting ******")
+        guard let obj = obj, let key = key, let keyArray = keyArray, let dataKey = dataKey else {
+            return nil
+        }
+        
+        print("There are : \(obj.count)  items in JSON object ")
+        
+        
+        // print(obj)
+        
+        
+        var keyItems:[JSON] = []
+        var myDict:[String:[JSON]] = [:]   // Create a Dictionary to hold our data
+        
+        
+        
+        // Now, for each key in keyArray, we need to get all elements and create a Dictinary item
+        
+        for i in keyArray {
+            for (_, things) in obj {
+                if things[key].string == i {
+                    
+                    keyItems += obj
+                    
+                    //keyItems.append(obj)
+                    
+                    
+                   // keyItems.append(things[dataKey].stringValue)
+                }
+            } // end for loop
+            
+            // Let's remove Duplicates .... may not be necessary
+            //keyItems = Array(Set(keyItems)).sorted()
+            
+            myDict.updateValue(keyItems, forKey: i)   // add entry into Dictionary
+            keyItems.removeAll()   // clear our holding array
+        } // for i in
+        
+        // Return value of Dictionary
+        return myDict
+        
+    } // end func
+    
+
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

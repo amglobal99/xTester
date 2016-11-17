@@ -22,7 +22,7 @@ class NinthPhotoSectionHeaderView: UICollectionReusableView  {
     
     */
     
-    
+    /*
     var photo: NinthPhoto? {
         didSet {
            // sectionLabel.text = publisher?.section.uppercased()
@@ -30,6 +30,8 @@ class NinthPhotoSectionHeaderView: UICollectionReusableView  {
 
         }
     }
+    
+    */
     
     
     
