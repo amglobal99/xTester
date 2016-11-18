@@ -47,8 +47,8 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     let session = Constants.Configuration.session
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let APIKey = Constants.FlickrApi.APIKey
-    let method  = Constants.FlickrApi.Method.RecentPhotos
+    let apiKey = Constants.Configuration.apiKey
+    let method  = Constants.Configuration.method
     var jsonResultObject:JSON?
     
     
@@ -60,7 +60,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
     // in the 'jsonResultObject' variable
     func fetchJsonObject() {
         let params = ["extras":"url_h,date_taken"]
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)  // Flickr
+        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
         
         
          // I think we need to use Operation here to insert any value son main THread

@@ -19,64 +19,50 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
 
     var jsonResultObject:JSON?
     
-    // Pull URl strings from an enum in GlobalConstants.swift
-    
-    //let baseURLString  = Constants.Configuration.jsonTestUrl.jsonPlaceholder2.rawValue
+    //  Enable one of these to test
+    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
+    //let baseURLString  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
     //let baseURLString  = Constants.Configuration.jsonTestUrl.google.rawValue
     //let baseURLString  = Constants.Configuration.jsonTestUrl.gitHub.rawValue
-    //let baseURLString  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
-    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-
-    let APIKey = "a6d819499131071f158fd740860a5a88"
-    let method = "flickr.photos.getRecent"
-    
-    fileprivate static let dateFormatter: DateFormatter = {
-        let formatter  = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return formatter
-    }()
-    
 
     
-    enum Method: String {
-        case RecentPhotos = "flickr.photos.getRecent"
-    }
+    let apiKey = Constants.Configuration.apiKey
+    let method = Constants.Configuration.method
+    let key  = Constants.Configuration.key
+    let rootPath = Constants.Configuration.rootPath
+    let dataKey = Constants.Configuration.dataKey
+    let params = Constants.Configuration.params
     
+
     
     
     @IBAction func getKeyArray(_ sender: AnyObject) {
         
-           // print("***** getKeyArray... starting *******")
-            //let rootPath = ["photos","photo"]
-           
-            guard let obj = self.jsonResultObject  else {
-                print("obj was null...")
+           //print("***** getKeyArray... starting *******")
+            guard let jsonObj = self.jsonResultObject  else {
+                print("getKeyAray: Objcect is nil.")
                 return
             }
         
-            // get key array
-            guard let myKeyArray =  getKeyArray(from: obj, key: "server")   else {
-                print("keyArray was null ...")
+            // get Section titles array ( key array)
+            guard let photoKeyArray =  getKeyArray(from: jsonObj, key: key)   else {
+                print("@IBAction getKeyArray: photoKeyArray is nil.")
                 return
             }
+        
+            print("+++++++++++++++++  @IBAction getKeyArray: Section Titles Array ---> key: \(key) +++++++++++++++++++++++")
+            print(photoKeyArray)
+            print("+++++++++++++++++  end @IBAction Section Titles +++++++++++++++++++++")
         
             // get Dictionary
-            guard let myDict = getDictionary(from: obj,  for: "server", keyArray: myKeyArray, dataKey:"id") else {
-            //    guard let myDict = getDictionary(from: obj,  for: "server", keyArray: myKeyArray, dataKey:"id") else {
-                print("myDict was null..")
+            guard let photoItemsDictionary = getDictionary(from: jsonObj,  for: key, keyArray: photoKeyArray, dataKey: dataKey)  else {
+                print("@IBAction getKeyArray: PhotoItemsDictionary is nil.")
                 return
             }
-        
-            print(myDict)
-        
-            guard let dictValues = getDictionaryValues(fromDictionary: myDict, for: "5694") else {
-                print("dictValues ws null....")
-                return
-            }
-        
-                            print(" ########  Values from Dict for item 5522 ##########")
-                            print(dictValues)
-                            print("####################  end Dict values ############")
+            
+            print("+++++++++++++++++  @IBAction Dictonary: Key: \(key)  DataKey: \(dataKey) +++++++++++++++++++++++")
+            print(photoItemsDictionary)
+            print("+++++++++++++++++  end @IBAction Dictionary +++++++++++++++++++++")
         
     } // end action
     
@@ -87,33 +73,19 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        // This is where we will play with our Asynchronous Requests
-            let params = ["extras":"url_h,date_taken"]
-            let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)  // Flickr
-           // let url = getSiteURL(baseURLString: baseURLString, method: nil, parameters: nil, apiKey: nil) // Google
-           //let url = getSiteURL(baseURLString: baseURLString, method: nil, parameters: nil, apiKey: nil) // jsonplaceholder
-
+            // ********  Completion Handler *************
+            let completionHandler: (Result<JSON>) -> Void  =
+                { [weak self] result in
+                    self?.jsonResultObject = result.value!   // set the value for local variable
+                    print(" ++++++++ Fifth VC: viewDidLoad: JSON Object +++++++++++ ")
+                     print(self?.jsonResultObject)
+                    print(" ++++++++ Items List end from viewDidLoad  +++++++++++ ")
+                } // end closure
+            // *******************************************
         
-         print("got url ....")
-      
-    
-        // ********  This is where the action happens **********************************
-        let completionHandler: (Result<JSON>) -> Void  =
-            { result in
-                self.jsonResultObject = result.value!
-    
-                print("========= Items List ++++++++ ")
-                if let jsObj = self.jsonResultObject {
-                   print(jsObj)
-                }
-            } // end closure
-        
-        //  Call the generic method to get a SwiftyJSON object
-        getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
-        //getJSONObject(for: url, rootPath: nil, completionHandler: completionHandler)
-    
-        
-        print("finished viewDidLoad")
+        // Create a Async (Alamofire) request to get SwiftyJSON data
+        let url = getSiteURL(baseURLString: baseURLString, method: method , parameters: params, apiKey: apiKey)
+        getJSONObject(for: url, rootPath: rootPath,   completionHandler: completionHandler)  // get a SwiftyJSON object
         
     }  // end viewDidLoad
     

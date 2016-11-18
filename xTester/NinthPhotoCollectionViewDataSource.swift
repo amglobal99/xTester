@@ -78,11 +78,15 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     // Function to get a Cell
+    //
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let photoTitleToDisplay: String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
+        
+        
+        /*
         let rowNumber = indexPath.row
         let sectionNumber = indexPath.section
         print( "Row is : \(rowNumber) and Section is: \(sectionNumber) ")
@@ -91,9 +95,19 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         let sectionPhotos = photos.filter{
             $0.datetakenUnknown == String(sectionNumber)
         }
+ 
+ 
+  
         
         // get the Photo to process
         let photo = sectionPhotos[rowNumber]
+        
+        */
+        
+        
+        
+        
+        let photo = photoForItemAtIndexPath(indexPath: indexPath)
         
         // Get a truncated title for our Photo
         let photoTitle = photo.title
@@ -114,6 +128,12 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     } //end method
     
 
+    
+    
+    
+    
+    
+    
     
     
 
@@ -145,6 +165,60 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
+    
+    
+    
+    
+    
+    
+   
+    
+    func photoForItemAtIndexPath(indexPath: IndexPath) -> NinthPhoto {
+     
+        
+        if (indexPath as IndexPath).section > 0 {
+            let rowNumber = (indexPath as IndexPath).row
+            let sectionNumber = (indexPath as IndexPath).section
+            print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
+            
+            // Get photos for this section (Filter the photos array)
+            let sectionPhotos = photos.filter{
+                $0.datetakenUnknown == String(sectionNumber)
+            }
+            // get the Photo to process
+            let photo = sectionPhotos[rowNumber]
+            return photo
+        } else {
+            return photos[(indexPath as IndexPath).row]
+        } // end if
+        
+        
+        
+        /*
+        let rowNumber = (indexPath as IndexPath).row
+        let sectionNumber = (indexPath as IndexPath).section
+        print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
+        
+        // Get photos for this section (Filter the photos array)
+        let sectionPhotos = photos.filter{
+            $0.datetakenUnknown == String(sectionNumber)
+        }
+        // get the Photo to process
+        let photo = sectionPhotos[rowNumber]
+        return photo
+        
+        */
+        
+        
+        
+        
+        
+        
+    } // end func
+    
+    
+    
+   
     
     
     

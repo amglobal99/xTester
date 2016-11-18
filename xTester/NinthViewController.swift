@@ -38,15 +38,14 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
     
     
-    
     //  Get global constants values
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let APIKey = Constants.FlickrApi.APIKey
-    let method = Constants.FlickrApi.method
-    let key  = Constants.FlickrApi.key
-    let rootPath = Constants.FlickrApi.rootPath
-    let dataKey = Constants.FlickrApi.dataKey
-    let params = Constants.FlickrApi.params
+    let apiKey = Constants.Configuration.apiKey
+    let method = Constants.Configuration.method
+    let key  = Constants.Configuration.key
+    let rootPath = Constants.Configuration.rootPath
+    let dataKey = Constants.Configuration.dataKey
+    let params = Constants.Configuration.params
     
     
     // ******************************** Data variables *********************
@@ -133,8 +132,9 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         // ************************************* end Clsoure  ***********************************************
         
         
+        
         // Create a Async (Alamofire) request to get jSON data
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: APIKey)
+        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
         getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
         
         
@@ -151,7 +151,50 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     //
     override func collectionView (_ collectionView: UICollectionView,  willDisplay cell: UICollectionViewCell,  forItemAt indexPath: IndexPath )  {
         // print("                   willDisplayCell ......Starting")
-        let photo = photoDataSource.photos[(indexPath as NSIndexPath).row]
+        
+        
+        
+        /*
+        
+        let rowNumber = (indexPath as IndexPath).row
+        let sectionNumber = (indexPath as IndexPath).section
+        print( " willDisplayCell  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
+        
+        // Get photos for this section (Filter the photos array)
+        let sectionPhotos = photoDataSource.photos.filter{
+            $0.datetakenUnknown == String(sectionNumber)
+        }
+        
+        // get the Photo to process
+        let photo = sectionPhotos[rowNumber]
+         
+         
+         
+         
+         
+         
+         //let photo = photoDataSource.photos[(indexPath as IndexPath).row]
+         
+         
+
+        
+*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        let photo = photoDataSource.photoForItemAtIndexPath(indexPath: indexPath)
+        
+        
+        
+        
+        
+        
         
         store.fetchImageForPhoto(photo)
             {    (result) -> Void in
@@ -169,46 +212,87 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Show Detail Screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Starting prepareForSegue")
         if segue.identifier == "ShowNinthPhotoDetail" {
-            
             print("Id matches ....")
             
+            
+            /*
+            
+            
            if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
-                
-                
                 print("index is correct...")
-                
-                
-                let photo = photoDataSource.photos[(selectedIndexPath as NSIndexPath).row]
-                let destinationVC = segue.destination as! NinthDetailViewController
+            
+            
+            let rowNumber = (selectedIndexPath as IndexPath).row
+            let sectionNumber = (selectedIndexPath as IndexPath).section
+            print( " segue Row is : \(rowNumber) and Section is: \(sectionNumber) ")
+            
+            // Get photos for this section (Filter the photos array)
+            let sectionPhotos = photoDataSource.photos.filter{
+                $0.datetakenUnknown == String(sectionNumber)
+            }
+            
+            // get the Photo to process
+            let photo = sectionPhotos[rowNumber]
             
             
             
-                
-                print("destination VC is ok .......")
-                
-                
-                    destinationVC.photo = photo
-                    destinationVC.store = store
-                
-              // ===== Remove AFTER TESTING
-                destinationVC.city = "Kennesaw"
-                
-                
-                
-            } //end if
+           
+            
+            
+            
+              //  let photo = photoDataSource.photos[(selectedIndexPath as IndexPath).row]
+            
+            */
             
             
             
             
+            if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
             
-        } //end if
+                     let photo = photoDataSource.photoForItemAtIndexPath(indexPath: selectedIndexPath)
+                
+                    let destinationVC = segue.destination as! NinthDetailViewController
+                    print("destination VC is ok .......")
+                
+                        destinationVC.photo = photo
+                        destinationVC.store = store
+                    
+                  // ===== Remove AFTER TESTING
+                    destinationVC.city = "Kennesaw"
+            
+            } // if let selectedIndexPath
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        } // if segue.identifier
     } //end method
     
 
+    
+    
+    
+    
+    
     
     
     /*

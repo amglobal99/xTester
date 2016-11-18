@@ -13,25 +13,27 @@ import Alamofire
 import SwiftyJSON
 
 
-
+// MARK: - Protocols
 
 // Define empty protocol
 protocol JsonConvertible {}
 
+
+// MARK: - Extensions
 
 // define an extension
 extension JsonConvertible  {
     
     
     
+    
+// MARK: - Methods
+    
     //  ******************  SwiftyJSON Section   **************************************
-    //
-    //
     
-    
-   
     // **************************************************************
     //  This function gives as a SwifyJSON  'JSON' object
+    //  The results are placed in the Result variable
     //  You just have to pass in a Url string
     //  param - rootPath: specify the levels as an array
     //  For example, if my data is under 'employees' rooot attribute
@@ -41,26 +43,22 @@ extension JsonConvertible  {
     // **************************************************************
     
 
-    //func getJSONObject(for url:String, completionHandler:  @escaping (Result<JSON>) ->
     func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
-        
-            //print("getJSONObject...  starting ")
-        
-        
         
             let urlRequest = URLRequest(url: url)
         
+                // Send Alamofire request
                 Alamofire.request(urlRequest).responseJSON
                     { (response) -> Void  in
                             guard response.result.error == nil else {   // got an error
                                 print(response.result.error!)
                                 return
                             }
-                            guard response.result.value != nil else {
+                            guard response.result.value != nil else {  // Data is nil
                                 return
                             }
                     
-                        let jsonObject:JSON  = JSON(response.result.value!)  // convert Response to JSON
+                        let jsonObject:JSON  = JSON(response.result.value!)  //convert Response to SwiftyJSON object
                    
                         if rootPath == nil {
                             completionHandler(Result.success(jsonObject))
@@ -86,8 +84,7 @@ extension JsonConvertible  {
                                 } else { // must be nil
                                     completionHandler(Result.success(jsonObject))
                                 }
-                        } // if rootPath =  nil
-                        
+                        }//if rootPath =  nil
                     }  // end Alamofire request
     } // end function
     
@@ -96,27 +93,27 @@ extension JsonConvertible  {
     
     
     // ***************************************************************************************
-    // This function gives us an array of values.
+    // This function gives us an array of key values.
     //  We can use this function with a basic json array
     // or an array whihc is 1 level deep
     // For example, let's say we have "employees" as root, and within that
     // we have {"id":2,"name":"john"}, ........
-    // That is an exmpple of 1 level deep. Without employees, it is flat
+    // That is an example of 1 level deep. Without employees, it is flat
     // NOTE: To acces an array thta is at say 3 level, use this format
     //  for object in  jsonObject["responseData","feed","entries"].array!
     // ****************************************************************************************
     
     func getKeyArray(from jsonObject:JSON?,  key:String?) -> [String]? {
         
-        // print("getKeyArray from Protool.... started")
         
-        
-        guard let jsonObject = jsonObject, let key = key  else {
-            return nil
-        }
+        /*
+            var arrayNames:[String] = []
+            // print("getKeyArray ...... started")
+            
+            guard let jsonObject = jsonObject, let key = key  else {
+                return nil
+            }
     
-        var arrayNames:[String] = []
-        
             for (_, object) in  jsonObject {
                 let name = object[key].stringValue
                 //let name = object[key2].rawValue
@@ -126,14 +123,22 @@ extension JsonConvertible  {
             // remove duplicates
             let  result  = Array(Set(arrayNames)).sorted()
         
-        /*
-            print(" +++++++++ Key Array +++++++++++++++++++++")
+            print(" +++++++++ Key Array for key : \(key) +++++++++++++++++++++")
             print(result)
             print("++++++++++++ end key array +++++++++++++++")
-        
         */
         
-            return result
+        
+        guard let jsonObject = jsonObject, let key = key  else {
+            return nil
+        }
+        
+        let arrayNames:[String]  =  jsonObject.arrayValue.map({$0[key].stringValue})
+        
+        //Remove Duplicates
+        let result   = Array(Set(arrayNames)).sorted()
+        
+        return result
         
     } // end func
     
@@ -153,107 +158,34 @@ extension JsonConvertible  {
     
     func getDictionary(from obj:JSON?,  for key:String?,  keyArray:[String]?, dataKey:String? ) -> [String:[String]]? {
         
-        //  print("getDictionary... Starting ******")
-        guard let obj = obj, let key = key, let keyArray = keyArray, let dataKey = dataKey else {
-            return nil
-        }
-        print(obj.count)
-        // print(obj)
         var keyItems:[String] = []
         var myDict:[String:[String]] = [:]   // Create a Dictionary to hold our data
         
-        // Now, for each key in keyArray, we need to get all elements and create a Dictinary item
-        
+        guard let obj = obj, let key = key, let keyArray = keyArray, let dataKey = dataKey else {
+            return nil
+        }
+        print("getDictionary: Processing \(obj.count) objects. Key: \(key)  dataKey: \(dataKey) ")
+    
+        // For each key in keyArray, get all elements and create a Dictinary item
         for i in keyArray {
             for (_, things) in obj {
-                if things[key].string == i {
+                // if things[key].string == i {
+                if String(describing: things[key].rawValue) == i  {
                     keyItems.append(things[dataKey].stringValue)
                 }
             } // end for loop
             
-            // Let's remove Duplicates .... may not be necessary
-            keyItems = Array(Set(keyItems)).sorted()
-            
+            keyItems = Array(Set(keyItems)).sorted()   // Remove Duplicates .... may not be necessary
             myDict.updateValue(keyItems, forKey: i)   // add entry into Dictionary
             keyItems.removeAll()   // clear our holding array
-        } // for i in
+        } // for i in keyArray
         
-        // Return value of Dictionary
-        return myDict
-        
+        return myDict   // Return value of Dictionary
+
     } // end func
     
     
 
-    
-    /*
-    
-    // This returns Dict wih values as array of Photos
-    
-    func getDictionaryOfItems(from obj:JSON?,  for key:String?,  keyArray:[String]?, dataKey:String? ) -> [String:JSON]? {
-        
-        print(" key : \(key!) "  )
-        print(" dataKey : \(dataKey!) " )
-        
-        //  print("getDictionary... Starting ******")
-        guard let obj = obj, let key = key, let keyArray = keyArray, let dataKey = dataKey else {
-            return nil
-        }
-        
-        print("There are : \(obj.count)  items in JSON object ")
-        
-        
-        // print(obj)
-        
-        
-        var keyItems:[JSON] = []
-        var myDict:[String:[JSON]] = [:]   // Create a Dictionary to hold our data
-        
-        
-        
-        // Now, for each key in keyArray, we need to get all elements and create a Dictinary item
-        
-        for i in keyArray {
-            for (_, things) in obj {
-                if things[key].string == i {
-                    
-                    keyItems += obj
-                    
-                    //keyItems.append(obj)
-                    
-                    
-                   // keyItems.append(things[dataKey].stringValue)
-                }
-            } // end for loop
-            
-            // Let's remove Duplicates .... may not be necessary
-            //keyItems = Array(Set(keyItems)).sorted()
-            
-            myDict.updateValue(keyItems, forKey: i)   // add entry into Dictionary
-            keyItems.removeAll()   // clear our holding array
-        } // for i in
-        
-        // Return value of Dictionary
-        return myDict
-        
-    } // end func
-    
-
-    
-    
-    
-    */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -279,10 +211,7 @@ extension JsonConvertible  {
     
     
     
-    
-    
-    
-    
+        
     
     
 }   // end extension
