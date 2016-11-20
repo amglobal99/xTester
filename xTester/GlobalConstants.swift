@@ -15,13 +15,7 @@ struct Constants {
     
     struct FlickrApi {
         
-        
-        
     }  // end struct
-    
-    
-    
-    
     
     
     
@@ -29,8 +23,7 @@ struct Constants {
         static let companyName = "Natsys International"
         static let companyAddress = "1808 Mountain Lake Dr GA 30339"
         
-        
-        // Use This section works for Flickr API
+        // Use This section for Flickr API
          static let apiKey = "a6d819499131071f158fd740860a5a88"
          static let method = "flickr.photos.getRecent"
          static let params = ["extras":"url_h,date_taken"]
@@ -41,8 +34,6 @@ struct Constants {
          enum Method: String {
             case RecentPhotos = "flickr.photos.getRecent"
          }
-        
-        
         
         
         /*
@@ -100,8 +91,6 @@ struct Constants {
             case gitHub = "https://api.github.com/users/amglobal99/repos"
         }
       
-        
-        
         
         
         

@@ -41,8 +41,6 @@ extension JsonConvertible  {
     //  Then your array will contain ["employees","users"]
     //
     // **************************************************************
-    
-
     func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
         
             let urlRequest = URLRequest(url: url)
@@ -104,11 +102,10 @@ extension JsonConvertible  {
     // ****************************************************************************************
     
     func getSectionTitlesArray(from jsonObject:JSON?,  key:String?) -> [String]? {
-        
         guard let jsonObject = jsonObject, let key = key  else {
             return nil
         }
-        let arrayNames:[String]  =  jsonObject.arrayValue.map({$0[key].stringValue})
+        let arrayNames:[String] = jsonObject.arrayValue.map({$0[key].stringValue})
         let result   = Array(Set(arrayNames)).sorted()   //Remove Duplicates
         return result
     } // end func
@@ -127,8 +124,7 @@ extension JsonConvertible  {
     // param  key:  This is the key we want to categorize on
     // param rootAtribute:  Thisis the root element
     
-    func getDictionary(from obj:JSON?,  for key:String?,  keyArray:[String]?, dataKey:String? ) -> [String:[String]]? {
-        
+    func getDictionary(from obj:JSON?, for key:String?, keyArray:[String]?, dataKey:String? ) -> [String:[String]]? {
         var keyItems:[String] = []
         var myDict:[String:[String]] = [:]   // Create a Dictionary to hold our data
         
@@ -158,16 +154,6 @@ extension JsonConvertible  {
     
     
     
-        
-    
-    
-    
-    
-    
-    
-
-    
-    
     
     // Thid function will give us the array of values associated with a key
     //  For example, my Tableview needs all values for a particular section, say "teams"
@@ -180,7 +166,6 @@ extension JsonConvertible  {
         guard let dict = dict, let key = key else{
             return nil
         }
-        
         guard let result:[String] =  dict[key] else {
             return nil
         }

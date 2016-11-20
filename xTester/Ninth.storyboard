@@ -59,7 +59,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzi-ex-HSu">
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -95,7 +94,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="l1o-Fn-DHL" secondAttribute="trailing" constant="4" id="yns-vz-ceH"/>
                                                 </constraints>
                                             </view>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="xzi-ex-HSu" firstAttribute="leading" secondItem="WX8-tb-IK3" secondAttribute="leading" constant="6" id="6VJ-iX-8Sj"/>
                                                 <constraint firstItem="Xyp-hZ-QAc" firstAttribute="leading" secondItem="WX8-tb-IK3" secondAttribute="leading" constant="6" id="Lt8-Py-Xfx"/>

@@ -127,52 +127,7 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
    
     // Function returns a Photo for the given indexpath
     func photoForItemAtIndexPath(indexPath: IndexPath) -> NinthPhoto {
-     
-        
-        /*
-        if (indexPath as IndexPath).section > 0 {
-            let rowNumber = (indexPath as IndexPath).row
-            let sectionNumber = (indexPath as IndexPath).section
-            print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
-            
-            // get the Photos in this particular section
-            let sectionPhotos = photosInSection(sectionNumber)
-            
-            // get the Photo to process
-            let photo = sectionPhotos[rowNumber]
-           
-            return photo
-            
-        } else {
-            
-            // ======= THIS IS NOT PULLING CORRECT DATA   ==================
-            
-            let rowNumber = (indexPath as IndexPath).row
-            let sectionNumber = (indexPath as IndexPath).section
-            print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
-            
-            // get the Photos in this particular section
-            let sectionPhotos = photosInSection(sectionNumber)
-            
-            // get the Photo to process
-            let photo = sectionPhotos[rowNumber]
-            
-            return photo
-
-            //=======================================================
-            
-            
-            
-            
-            
-        } // end if
-        
-        */
-        
-        
-        
-        
-        
+    
         let rowNumber = (indexPath as IndexPath).row
         let sectionNumber = (indexPath as IndexPath).section
         //print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
@@ -193,7 +148,6 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     // Function returns the number of Items in section
-    //
     //
     func photosInSection(_ sectionNumber: Int) -> [NinthPhoto] {
         // Get photos for this section (Filter the photos array)

@@ -42,7 +42,6 @@ class NinthPhotoStore: Utils, JsonConvertible {
     }
 
     
-    
     // MARK: - Local Variables
     
     let session = Constants.Configuration.session
@@ -56,12 +55,10 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     // MARK:- Methods
     
-    // This function will retrieve JSON object and place it
-    // in the 'jsonResultObject' variable
+    // This function will retrieve JSON object and place it in the 'jsonResultObject' variable
     func fetchJsonObject() {
         let params = ["extras":"url_h,date_taken"]
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
-        
         
          // I think we need to use Operation here to insert any value son main THread
         
@@ -80,30 +77,19 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     
     
-    
-    
-    
-    
-    
-   
-    
     // Function to retrieve array of NinthPhoto objects
-    //
     func photosFromJsonObject(_ json:JSON) -> NinthPhotosResult {
-        
             var finalPhotos:[NinthPhoto] = []
             var addCount = 0
-        
-                // print("      json object count is : \(json.count)   ")
+            // print("      json object count is : \(json.count)   ")
         
                     print("***************** JSON Object *********************")
                     print(json)
                     print("***************** end JSOn object *****************")
         
-        
                 for ( _, jsonItem) in json {
                     if let photo: NinthPhoto  = photoFromJSONObject(jsonItem) {
-                            finalPhotos.append(photo)
+                        finalPhotos.append(photo)
                         addCount += 1
                     }
                 }
@@ -116,7 +102,6 @@ class NinthPhotoStore: Utils, JsonConvertible {
                     print("       ++++++++++++  Final Photos +++++++++++++++++")
                     print("      Array contains \(finalPhotos.count)  photos" )
         
-        
                 return NinthPhotosResult.success(finalPhotos)
     }  // end func
     
@@ -127,9 +112,10 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     
     
+    
     // Function to get indiviaul Photo object
     // If any of the fields is unavailable, it returns a nil
-    //  Many entries do nit have a URL, so that Photo wil not be returned
+    // Many entries do nit have a URL, so that Photo wil not be returned
     //
     func photoFromJSONObject(_ json: JSON ) -> NinthPhoto? {
         guard
@@ -148,6 +134,10 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     
     
+    
+    
+    
+    
     // Function to fetch image for Photo
     func fetchImageForPhoto(_ photo: NinthPhoto, completion: @escaping (ImageResult) -> Void ) {
         
@@ -156,12 +146,10 @@ class NinthPhotoStore: Utils, JsonConvertible {
             completion(.success(image) )
             return
         }
-        
         let photoURL = photo.remoteURL
         let request = URLRequest(url: photoURL as URL)
         
-        
-        // ==================== Alamofire Way of MAking Calls ==========================
+        // Alamofire Call
             Alamofire.request(request).response
                 { (response) -> Void  in
                         guard response.error  == nil else {   // got an error
@@ -181,6 +169,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
                             photo.image = image
                             // print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
                         }
+                    
                         completion(result)
                 }  // end closure
             
@@ -194,40 +183,29 @@ class NinthPhotoStore: Utils, JsonConvertible {
     //  parameter:  data
     func processImageRequest(data: Data?, error: NSError?) -> ImageResult {
         
-        guard let  imageData = data,  let image = UIImage(data: imageData)
-        else {
+        guard let  imageData = data,  let image = UIImage(data: imageData)   else {
             //could not get image
-                if data == nil {
-                    return ImageResult.failure(error!)
-                } else {
-                    return ImageResult.failure(PhotoError.imageCreationError)
-                }
+            if data == nil {
+                 return ImageResult.failure(error!)
+            } else {
+                  return ImageResult.failure(PhotoError.imageCreationError)
+            }
         }
         return .success(image )
     } //end method
 
     
     
-    
-    
-    
-    
-    
-    
-    
     // Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
-   
      func sectionPhotosDictionary(from obj:JSON?, for key:String? ) -> [String:[NinthPhoto]]? {
-     
         var keyArray:[String] = []
         var photoItems:[NinthPhoto] = []
         var sectionPhotosDictionary:[String:[NinthPhoto]] = [:]   // Create a Dictionary to hold our data
         
         guard let obj = obj, let key = key else {
          return nil
-         }
-         print("getDictionary: Processing \(obj.count) objects. Key: \(key)  ")
-        
+        }
+         print("sectionPhotosDictionary: Processing \(obj.count) objects. Key: \(key)  ")
         
         // get array of section Titles
         keyArray = getSectionTitlesArray(from: obj, key: key)!
@@ -249,59 +227,33 @@ class NinthPhotoStore: Utils, JsonConvertible {
             photoItems.removeAll()   // clear our holding array
          } // for i in keyArray
         
-        
-        print(" +++++++++++ Section Photo Dictionary ++++++++++++++++")
-        print(sectionPhotosDictionary)
+        //print(" +++++++++++ Section Photo Dictionary ++++++++++++++++")
+        //print(sectionPhotosDictionary)
         
         return sectionPhotosDictionary   // Return value of Dictionary
      
      } // end func
      
-     
-
-
     
     
-
     
     
     // Function to return index section of photo
-    
     func indexForPhoto ( dict:[String:[NinthPhoto]]?, photo:NinthPhoto ) -> (Int?,Int?) {
-        
-        
-        var row:Int?
         var sectionStr:String?
-        
         for (key, value) in dict! {
             if  value.contains(photo) {
                 sectionStr = key
             }
         }
-        
         // get array of photos for our setion
-        var photoArray = dict?[sectionStr!]
-        row = photoArray?.index(of: photo)
-        
+        let  photoArray = dict?[sectionStr!]
+        let  row:Int?  = photoArray?.index(of: photo)
         
         return (row, Int(sectionStr!))
-        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
 } //end class

@@ -19,7 +19,7 @@ class TwelfthA1ViewController: UIViewController, Utils{
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        showBanner(title: "Banner Page", subtitle: "Welcome to Banner Page \n Plesase try later", image: nil, bkColor: UIColor.green)
+       // showBanner(title: "Banner Page", subtitle: "Welcome to Banner Page \n Plesase try later", image: nil, bkColor: UIColor.red)
         
         
     }

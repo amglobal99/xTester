@@ -22,7 +22,7 @@ class TwelfthBViewController: UIViewController, Utils{
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        showBanner(title: "Gist Manager", subtitle: "Welcome to our app", image: nil, bkColor: UIColor.red)
+       // showBanner(title: "Gist Manager", subtitle: "Welcome to our app", image: nil, bkColor: UIColor.red)
         
         
         

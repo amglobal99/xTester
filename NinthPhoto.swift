@@ -27,7 +27,6 @@ class NinthPhoto {
         self.dateTaken = dateTaken
         //self.image = image
         self.datetakenUnknown = datetakenUnknown
-        
     }
     
 }  //end class

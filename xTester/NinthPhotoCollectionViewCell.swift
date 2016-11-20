@@ -56,15 +56,12 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
     
     func updateWithImage(_ image: UIImage?) {
         if let imageToDisplay = image {
-           //print("       updateWithImage .... image is present")
             spinner .stopAnimating()
             imageView.image = imageToDisplay
         } else {
-           // print("       updateWithImage ..... no Image")
             spinner .startAnimating()
             imageView.image = nil
         }
-    
     }  //end method
     
     

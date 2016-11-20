@@ -14,20 +14,18 @@ class NinthDetailViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
+    var store: NinthPhotoStore!
+    // ====== This is for tetsing only
+    var city:String = ""
+    
+    
+
     // when photo loads show a title
     var photo: NinthPhoto! {
         didSet {
             navigationItem.title = photo.title
         }
     }
-    
-    var store: NinthPhotoStore!
-    
-    
-    
-    // ====== This is for tetsing only
-    var city:String = ""
-    
     
     
     

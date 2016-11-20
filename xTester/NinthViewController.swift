@@ -68,7 +68,6 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         photoCollectionView.dataSource = photoDataSource
         photoCollectionView.delegate = self
       
-        
         // ********************** This is our Completion Handler **********************************
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
@@ -108,7 +107,6 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 print(sectionPhotosDictionary)
                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
-                
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
                         case let .success(photos):
@@ -127,7 +125,6 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                         self?.photoCollectionView?.reloadData()
                     // *********************************************************************
                 }  // end operation
-                
                 
                 
         } // end closure
@@ -163,7 +160,7 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                         let photoRow = path.0
                         let photoSection = path.1
                         let photoIndexPath = IndexPath(row: photoRow! , section: photoSection!)
-                        print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
+                       // print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
                         if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as? NinthPhotoCollectionViewCell {
                             cell.updateWithImage(photo.image)     // Update cell photo
                         }
@@ -179,14 +176,14 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
     // Show Detail Screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Starting prepareForSegue")
+        // print("Starting prepareForSegue")
         if segue.identifier == "ShowNinthPhotoDetail" {
-            print("Id matches ....")
+            // print("Id matches ....")
             
             if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
                      let photo = photoDataSource.photoForItemAtIndexPath(indexPath: selectedIndexPath)  // get photo
                     let destinationVC = segue.destination as! NinthDetailViewController
-                    print("destination VC is ok .......")
+                    // print("destination VC is ok .......")
                         destinationVC.photo = photo
                         destinationVC.store = store
                     
