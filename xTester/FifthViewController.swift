@@ -45,7 +45,7 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
             }
         
             // get Section titles array ( key array)
-            guard let photoKeyArray =  getKeyArray(from: jsonObj, key: key)   else {
+            guard let photoKeyArray =  getSectionTitlesArray(from: jsonObj, key: key)   else {
                 print("@IBAction getKeyArray: photoKeyArray is nil.")
                 return
             }

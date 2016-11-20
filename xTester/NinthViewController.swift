@@ -78,15 +78,13 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
                 
                 // get array of Section titles
-                guard let photoKeyArray =  self?.getKeyArray(from: jsonObj, key: self?.key)   else {
+                guard let photoKeyArray =  self?.getSectionTitlesArray(from: jsonObj, key: self?.key)   else {
                     print("getKeyArray method returned a nil value.")
                     return
                 }
                 print("+++++++++++++++++  Section Titles Array  +++++++++++++++++++++++")
                 print(photoKeyArray)
                 print("+++++++++++++++++  end Section Titles +++++++++++++++++++++")
-                
-                
                 
                 // get Dictionary
                 guard let photoItemsDictionary = self?.getDictionary(from: jsonObj,  for: self?.key, keyArray: photoKeyArray, dataKey:self?.dataKey)
@@ -100,20 +98,25 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
                 
+                // get Section Title: Photos Dictionary
+                guard let sectionPhotosDictionary = self?.store.sectionPhotosDictionary(from: jsonObj, for: self?.key) else {
+                        print("Section Photo Items Dictionary is nil")
+                        return
+                }
+                
+                print("+++++++++++++++++  Section Photos Dictonary +++++++++++++++++++++++")
+                print(sectionPhotosDictionary)
+                print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
                 
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
                         case let .success(photos):
-                            
                             print(" We have total of \(photos.count)  photos ")
-                           
-                            
                             // ====== Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift) =========
                             self?.photoDataSource.photos = photos
                             self?.photoDataSource.sections =  photoKeyArray
-                           //self?.photoDataSource.sectionItems = photoItemsDictionary  // populate the Items Dictionary
-                        
+                            self?.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
                         case .failure(let error):
                             self?.photoDataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
@@ -130,92 +133,44 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         } // end closure
   
         // ************************************* end Clsoure  ***********************************************
-        
-        
-        
+    
         // Create a Async (Alamofire) request to get jSON data
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
         getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
         
-        
     }  // end viewDidLoad
     
     
-
     
     
-        
+    
     
     
     // Collection View .....WillDisplayCell
     //
-    override func collectionView (_ collectionView: UICollectionView,  willDisplay cell: UICollectionViewCell,  forItemAt indexPath: IndexPath )  {
+    override func collectionView (_ collectionView: UICollectionView,
+                                  willDisplay cell: UICollectionViewCell,
+                                  forItemAt indexPath: IndexPath )  {
+        
         // print("                   willDisplayCell ......Starting")
-        
-        
-        
-        /*
-        
-        let rowNumber = (indexPath as IndexPath).row
-        let sectionNumber = (indexPath as IndexPath).section
-        print( " willDisplayCell  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
-        
-        // Get photos for this section (Filter the photos array)
-        let sectionPhotos = photoDataSource.photos.filter{
-            $0.datetakenUnknown == String(sectionNumber)
-        }
-        
-        // get the Photo to process
-        let photo = sectionPhotos[rowNumber]
-         
-         
-         
-         
-         
-         
-         //let photo = photoDataSource.photos[(indexPath as IndexPath).row]
-         
-         
-
-        
-*/
-        
-        
-        
-        
-        
-        
-        
-        
-        
         let photo = photoDataSource.photoForItemAtIndexPath(indexPath: indexPath)
-        
-        
-        
-        
-        
-        
         
         store.fetchImageForPhoto(photo)
             {    (result) -> Void in
                     OperationQueue.main.addOperation() {
-                        let photoIndex = self.photoDataSource.photos.index(of: photo)!
-                        let photoIndexPath = IndexPath(row: photoIndex, section: 0)
+                        let sectionDict = self.photoDataSource.sectionPhotoItems // Dictionary with key and Photot items
+                        let path = self.store.indexForPhoto(dict: sectionDict, photo: photo)
+                        let photoRow = path.0
+                        let photoSection = path.1
+                        let photoIndexPath = IndexPath(row: photoRow! , section: photoSection!)
+                        print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
                         if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as? NinthPhotoCollectionViewCell {
-                            cell.updateWithImage(photo.image)
+                            cell.updateWithImage(photo.image)     // Update cell photo
                         }
                     } //end operation
             } // end closure
 
     } //end method
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -228,46 +183,10 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
         if segue.identifier == "ShowNinthPhotoDetail" {
             print("Id matches ....")
             
-            
-            /*
-            
-            
-           if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
-                print("index is correct...")
-            
-            
-            let rowNumber = (selectedIndexPath as IndexPath).row
-            let sectionNumber = (selectedIndexPath as IndexPath).section
-            print( " segue Row is : \(rowNumber) and Section is: \(sectionNumber) ")
-            
-            // Get photos for this section (Filter the photos array)
-            let sectionPhotos = photoDataSource.photos.filter{
-                $0.datetakenUnknown == String(sectionNumber)
-            }
-            
-            // get the Photo to process
-            let photo = sectionPhotos[rowNumber]
-            
-            
-            
-           
-            
-            
-            
-              //  let photo = photoDataSource.photos[(selectedIndexPath as IndexPath).row]
-            
-            */
-            
-            
-            
-            
             if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
-            
-                     let photo = photoDataSource.photoForItemAtIndexPath(indexPath: selectedIndexPath)
-                
+                     let photo = photoDataSource.photoForItemAtIndexPath(indexPath: selectedIndexPath)  // get photo
                     let destinationVC = segue.destination as! NinthDetailViewController
                     print("destination VC is ok .......")
-                
                         destinationVC.photo = photo
                         destinationVC.store = store
                     
@@ -275,14 +194,6 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
                     destinationVC.city = "Kennesaw"
             
             } // if let selectedIndexPath
-            
-        
-        
-        
-        
-        
-        
-        
         
         } // if segue.identifier
     } //end method

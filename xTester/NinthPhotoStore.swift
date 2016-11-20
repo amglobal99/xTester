@@ -78,6 +78,13 @@ class NinthPhotoStore: Utils, JsonConvertible {
         getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
     }
     
+    
+    
+    
+    
+    
+    
+    
    
     
     // Function to retrieve array of NinthPhoto objects
@@ -115,6 +122,11 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     
     
+    
+    
+    
+    
+    
     // Function to get indiviaul Photo object
     // If any of the fields is unavailable, it returns a nil
     //  Many entries do nit have a URL, so that Photo wil not be returned
@@ -148,24 +160,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
         let photoURL = photo.remoteURL
         let request = URLRequest(url: photoURL as URL)
         
-        /*
-         // ============ OLD way of MAking Calls ===================================
-        let task = session.dataTask(with: request, completionHandler:
-            {   (data, response, error ) -> Void in
-                print("          fetchImageForPhoto: Starting completion HAndler")
-                let result: ImageResult = (self.processImageRequest(data: data, error: error as NSError?))
-                
-                if case let ImageResult.success(image) = result {
-                    photo.image = image
-                    print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
-                }
-                completion(result)
-        } )
         
-         //print("               fetchImageForPhoto: start Task")
-        task.resume()
-       */
-             
         // ==================== Alamofire Way of MAking Calls ==========================
             Alamofire.request(request).response
                 { (response) -> Void  in
@@ -211,6 +206,101 @@ class NinthPhotoStore: Utils, JsonConvertible {
         return .success(image )
     } //end method
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
+   
+     func sectionPhotosDictionary(from obj:JSON?, for key:String? ) -> [String:[NinthPhoto]]? {
+     
+        var keyArray:[String] = []
+        var photoItems:[NinthPhoto] = []
+        var sectionPhotosDictionary:[String:[NinthPhoto]] = [:]   // Create a Dictionary to hold our data
+        
+        guard let obj = obj, let key = key else {
+         return nil
+         }
+         print("getDictionary: Processing \(obj.count) objects. Key: \(key)  ")
+        
+        
+        // get array of section Titles
+        keyArray = getSectionTitlesArray(from: obj, key: key)!
+        
+        
+         // For each key in keyArray ( these are the section Titles)
+         // get all elements and create a Dictinary item
+         for i in keyArray {
+                 for (_, things) in obj {
+                 // if things[key].string == i {
+                     if String(describing: things[key].rawValue) == i  {
+                        if  let photo = photoFromJSONObject(things) {
+                            photoItems.append(photo)
+                        }
+                     }
+                } // end for loop
+        
+            sectionPhotosDictionary.updateValue(photoItems, forKey: i)   // add entry into Dictionary
+            photoItems.removeAll()   // clear our holding array
+         } // for i in keyArray
+        
+        
+        print(" +++++++++++ Section Photo Dictionary ++++++++++++++++")
+        print(sectionPhotosDictionary)
+        
+        return sectionPhotosDictionary   // Return value of Dictionary
+     
+     } // end func
+     
+     
+
+
+    
+    
+
+    
+    
+    // Function to return index section of photo
+    
+    func indexForPhoto ( dict:[String:[NinthPhoto]]?, photo:NinthPhoto ) -> (Int?,Int?) {
+        
+        
+        var row:Int?
+        var sectionStr:String?
+        
+        for (key, value) in dict! {
+            if  value.contains(photo) {
+                sectionStr = key
+            }
+        }
+        
+        // get array of photos for our setion
+        var photoArray = dict?[sectionStr!]
+        row = photoArray?.index(of: photo)
+        
+        
+        return (row, Int(sectionStr!))
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

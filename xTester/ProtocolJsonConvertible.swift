@@ -103,43 +103,14 @@ extension JsonConvertible  {
     //  for object in  jsonObject["responseData","feed","entries"].array!
     // ****************************************************************************************
     
-    func getKeyArray(from jsonObject:JSON?,  key:String?) -> [String]? {
-        
-        
-        /*
-            var arrayNames:[String] = []
-            // print("getKeyArray ...... started")
-            
-            guard let jsonObject = jsonObject, let key = key  else {
-                return nil
-            }
-    
-            for (_, object) in  jsonObject {
-                let name = object[key].stringValue
-                //let name = object[key2].rawValue
-                arrayNames.append(name)
-            }
-            
-            // remove duplicates
-            let  result  = Array(Set(arrayNames)).sorted()
-        
-            print(" +++++++++ Key Array for key : \(key) +++++++++++++++++++++")
-            print(result)
-            print("++++++++++++ end key array +++++++++++++++")
-        */
-        
+    func getSectionTitlesArray(from jsonObject:JSON?,  key:String?) -> [String]? {
         
         guard let jsonObject = jsonObject, let key = key  else {
             return nil
         }
-        
         let arrayNames:[String]  =  jsonObject.arrayValue.map({$0[key].stringValue})
-        
-        //Remove Duplicates
-        let result   = Array(Set(arrayNames)).sorted()
-        
+        let result   = Array(Set(arrayNames)).sorted()   //Remove Duplicates
         return result
-        
     } // end func
     
     
@@ -183,6 +154,15 @@ extension JsonConvertible  {
         return myDict   // Return value of Dictionary
 
     } // end func
+    
+    
+    
+    
+        
+    
+    
+    
+    
     
     
 
