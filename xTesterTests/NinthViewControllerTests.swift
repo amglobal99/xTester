@@ -57,7 +57,7 @@ class NinthViewControllerTests: BaseTestCase {
     }
     
     func testThatAPIKeyIsAvailable() {
-        XCTAssertNotNil(ninthVC.APIKey )
+        XCTAssertNotNil(ninthVC.apiKey )
         
     }
     
@@ -122,7 +122,7 @@ class NinthViewControllerTests: BaseTestCase {
     
     
     func testThatGetSiteURLReturnsSuccessResultWithValidData() {
-        let url = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.APIKey)
+        let url = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.apiKey)
         XCTAssertNotNil(url)
     }
     
@@ -132,7 +132,7 @@ class NinthViewControllerTests: BaseTestCase {
         // View events get triggered in Setup for each test
         let sections = ninthVC.photoDataSource.sections
         let photos = ninthVC.photoDataSource.photos
-        let items = ninthVC.photoDataSource.sectionItems
+        let items = ninthVC.photoDataSource.sectionPhotoItems
         XCTAssertNotNil(sections)
         XCTAssertNotNil(photos)
         XCTAssertNotNil(items)
@@ -156,7 +156,7 @@ class NinthViewControllerTests: BaseTestCase {
         let expectation = self.expectation(description: "request should succeed")
         
         //let urlString = "https://httpbin.org/get"
-        let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.APIKey)
+        let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.apiKey)
         var response: DefaultDataResponse?
         
         // Start your Async request
@@ -194,7 +194,7 @@ class NinthViewControllerTests: BaseTestCase {
         let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString,
                                            method: ninthVC.method,
                                            parameters: ninthVC.params,
-                                           apiKey: ninthVC.APIKey)
+                                           apiKey: ninthVC.apiKey)
         var response: DefaultDataResponse?
         weak var weakSelf = self
         

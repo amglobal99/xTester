@@ -31,14 +31,15 @@ import SwiftyJSON
 
 class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewCellDelegate, Utils, JsonConvertible {
     
-    
+    // MARK: - IBOutlets
     @IBOutlet var photoCollectionView: UICollectionView!
     
+    
+    // MARK: - Local Variables
     var city:String!
     var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
     
-    
-    //  Get global constants values
+    // MARK: - Global Constants Variables
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
     let apiKey = Constants.Configuration.apiKey
     let method = Constants.Configuration.method
@@ -48,21 +49,23 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     let params = Constants.Configuration.params
     
     
-    // ******************************** Data variables *********************
-    // These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
+    // MARK:- Data Variables
+    /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
     var store: NinthPhotoStore!
     var photoDataSource: NinthPhotoCollectionViewDataSource!
     
-    
+    // MARK:- Enums
     enum Method: String {
         case RecentPhotos = "flickr.photos.getRecent"
     }
 
     
     
-    // Note how we populate Data variables in this section
+    // MARK: - ViewController Methods
     
     override func viewDidLoad() {
+        
+        /// NOTE: We populate data variables in our PhotoDataSource in the closure below
         
         super.viewDidLoad()
         photoCollectionView.dataSource = photoDataSource
@@ -141,26 +144,31 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
     
     
+    // MARK: - View Methods
     
+    /**
+        Function executed as Cell is getting ready to be displayed
+ 
+    */
     
-    // Collection View .....WillDisplayCell
-    //
     override func collectionView (_ collectionView: UICollectionView,
                                   willDisplay cell: UICollectionViewCell,
                                   forItemAt indexPath: IndexPath )  {
         
         // print("                   willDisplayCell ......Starting")
         let photo = photoDataSource.photoForItemAtIndexPath(indexPath: indexPath)
-        
         store.fetchImageForPhoto(photo)
             {    (result) -> Void in
                     OperationQueue.main.addOperation() {
-                        let sectionDict = self.photoDataSource.sectionPhotoItems // Dictionary with key and Photot items
-                        let path = self.store.indexForPhoto(dict: sectionDict, photo: photo)
+                        // get Dictionary for photo items
+                       let sectionDict = self.photoDataSource.sectionPhotoItems
+                        guard let path = self.store.indexForPhoto(dict: sectionDict, photo: photo)  else {
+                            return
+                        }
                         let photoRow = path.0
                         let photoSection = path.1
-                        let photoIndexPath = IndexPath(row: photoRow! , section: photoSection!)
-                       // print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
+                        let photoIndexPath = IndexPath(row: photoRow , section: photoSection)
+                        // print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
                         if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as? NinthPhotoCollectionViewCell {
                             cell.updateWithImage(photo.image)     // Update cell photo
                         }
@@ -174,7 +182,11 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
     
     
-    // Show Detail Screen
+    /**
+        Function called during the segue from NinthViewController to Detail View Controller
+    */
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // print("Starting prepareForSegue")
         if segue.identifier == "ShowNinthPhotoDetail" {

@@ -26,7 +26,7 @@ import AlamofireImage
 import SwiftyJSON
 
 
-// This class serves as the Data Source
+/// This class serves as the Data Source for the Photos collection view.
 
 class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, Utils, JsonConvertible {
     
@@ -43,7 +43,8 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     }
     
     
-    // ======== Data related variables =========
+    // MARK: - Data Variables
+    
     var photos = [NinthPhoto]()   // This is the list of all our Photos
     var sections:[String] = []  // This is the array of names for our  sections
     var sectionPhotoItems:[String:[NinthPhoto]] = [:]  // Dictionary holds Photos for each section
@@ -51,17 +52,28 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
 
    
-    // MARK: - CollectionView DataSource methods
+    // MARK: - DataSource methods
     
-    
-    
-    // Function to tell us How many Sections do we have ?
+
+    /**
+        Returns the number of sections to be used in the CollectionView
+        - Parameter collectionView:   The CollectionView being used
+        - Returns: An Integer showing how many sections
+    */
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.sections.count
     }
 
     
-    // Function to tell us How many Items in each section ?
+    /**
+        Returns the number of Items in each section
+        
+        - Parameter collectionView: The CollectionView being processed
+        - Parameter section: The section being worked on
+        - Returns: An integer showing the number of items to be displayed in each section
+    
+    */
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let itemsInSection = photosInSection(section)
         print("Number of Items in section \(section) : \(itemsInSection.count)")
@@ -79,6 +91,9 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         let photoTitleToDisplay: String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
         let photo = photoForItemAtIndexPath(indexPath: indexPath)
+        
+        
+
         
             // Get a truncated title for our Photo
             let photoTitle = photo.title
