@@ -188,33 +188,24 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // print("Starting prepareForSegue")
         if segue.identifier == "ShowNinthPhotoDetail" {
-            // print("Id matches ....")
-            
-            if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
-                     let photo = photoDataSource.photoForItemAtIndexPath(indexPath: selectedIndexPath)  // get photo
-                    let destinationVC = segue.destination as! NinthDetailViewController
-                    // print("destination VC is ok .......")
-                        destinationVC.photo = photo
-                        destinationVC.store = store
-                    
-                  // ===== Remove AFTER TESTING
-                    destinationVC.city = "Kennesaw"
-            
-            } // if let selectedIndexPath
-        
-        } // if segue.identifier
-    } //end method
+            let destinationVC = segue.destination as! NinthDetailViewController
+                updateDestinationData(destinationVC: destinationVC)
+        }
+    }
     
 
     
     
-    func updateDestinationData() {
-        
-        
-        
-        
+    func updateDestinationData(destinationVC: NinthDetailViewController) {
+        if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
+            let photo = photoDataSource.photoForItemAtIndexPath(indexPath: selectedIndexPath)
+            destinationVC.photo = photo
+            destinationVC.store = store
+            
+            // ===== Remove AFTER TESTING
+            destinationVC.city = "Kennesaw"
+        } // if let selectedIndexPath
     }
     
     
