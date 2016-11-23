@@ -210,7 +210,12 @@ class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewC
 
     
     
-    
+    func updateDestinationData() {
+        
+        
+        
+        
+    }
     
     
     

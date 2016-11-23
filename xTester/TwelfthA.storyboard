@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="urJ-FI-Ybd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tw2-LB-GhW">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-ea-nHp">
@@ -44,7 +44,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="snA-d5-ibb" kind="show" id="ae6-rT-4hk"/>
+                                            <segue destination="B4e-ht-98Z" kind="show" id="HPs-Qt-d34"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-Tn-GTT">
@@ -116,52 +116,10 @@
                             <constraint firstItem="Kxq-ea-nHp" firstAttribute="top" secondItem="oGB-Sz-cIe" secondAttribute="bottom" constant="73" id="qvx-A8-rO1"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
-                        <size key="portraitSize" width="343" height="498"/>
-                        <size key="landscapeSize" width="498" height="343"/>
-                    </fixedSimulatedSizeMetrics>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3O-r0-1w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-732" y="-1194"/>
-        </scene>
-        <!--TwelfthA2 View Controller-->
-        <scene sceneID="Q5G-8u-RSi">
-            <objects>
-                <collectionViewController id="snA-d5-ibb" customClass="TwelfthA2ViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="t7C-Rd-cw2">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.90482551434897984" blue="0.98449282067962385" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8ZC-tE-q7H">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionViewCell" id="xg6-SP-Nf4">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                                <connections>
-                                    <segue destination="Wyq-Fe-a6E" kind="show" id="fBT-QJ-OX9"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="snA-d5-ibb" id="lQl-vA-rkd"/>
-                            <outlet property="delegate" destination="snA-d5-ibb" id="y5m-tU-0d9"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1bn-F2-ra8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="47" y="-850"/>
         </scene>
         <!--TwelfthA1 View Controller-->
         <scene sceneID="hYG-l1-5Ht">
@@ -172,10 +130,10 @@
                         <viewControllerLayoutGuide type="bottom" id="5de-Le-FoH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3uW-C7-WNh">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twelfth A Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xog-4E-Pid">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twelfth A1 Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xog-4E-Pid">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -197,25 +155,138 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wwf-bW-R4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="-1437"/>
+            <point key="canvasLocation" x="183" y="-1441"/>
         </scene>
-        <!--TwelfthA2 Detail View Controller-->
-        <scene sceneID="1yY-Ea-45l">
+        <!--TwelfthA2 View Controller-->
+        <scene sceneID="tpF-Th-OKR">
             <objects>
-                <viewController storyboardIdentifier="TwelfthA2DetailViewController" id="Wyq-Fe-a6E" customClass="TwelfthA2DetailViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jD7-Ru-887"/>
-                        <viewControllerLayoutGuide type="bottom" id="59C-GH-xNK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1uK-Ke-rmj">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="498"/>
+                <tableViewController storyboardIdentifier="TwelfthA2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B4e-ht-98Z" customClass="TwelfthA2ViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="60" sectionFooterHeight="28" id="Qy9-4Y-fUc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jdq-00-HpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="separatorColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell1" rowHeight="193" id="1sn-WT-8Pm" customClass="TwelfthA2PhotoTableViewCell1" customModule="xTester" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="60" width="375" height="193"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1sn-WT-8Pm" id="fH5-uK-n6c">
+                                    <frame key="frameInset" width="375" height="192"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkC-gd-MRC" customClass="TwelfthA2PhotoCollectionView" customModule="xTester" customModuleProvider="target">
+                                            <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PfB-cq-Hev">
+                                                <size key="itemSize" width="68" height="68"/>
+                                                <size key="headerReferenceSize" width="50" height="50"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionViewCell1" id="O2M-67-bf4">
+                                                    <rect key="frame" x="60" y="12" width="100" height="160"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </view>
+                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.96078431369999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <size key="customSize" width="100" height="160"/>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2PhotoCollectionViewHeader" id="BXe-ak-8Ma">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="185"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <color key="backgroundColor" red="0.87244149869826537" green="1" blue="0.72264158114166843" alpha="1" colorSpace="calibratedRGB"/>
+                                            </collectionReusableView>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.87244149869999998" green="1" blue="0.72264158109999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="qkC-gd-MRC" firstAttribute="top" secondItem="fH5-uK-n6c" secondAttribute="topMargin" constant="-8" id="05P-x2-nJg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qkC-gd-MRC" secondAttribute="trailing" id="69b-XS-jaN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qkC-gd-MRC" secondAttribute="bottom" id="GjC-Y2-wG0"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="qkC-gd-MRC" secondAttribute="leading" id="VvZ-70-tVX"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="qkC-gd-MRC" firstAttribute="leading" secondItem="1sn-WT-8Pm" secondAttribute="leading" constant="8" id="HNs-sj-VQH"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="collectionView" destination="qkC-gd-MRC" id="9aJ-ZB-duY"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell2" id="B9o-aj-jUN" customClass="TwelfthA2PhotoTableViewCell2" customModule="xTester" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="253" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9o-aj-jUN" id="pAc-yr-Iu2">
+                                    <frame key="frameInset" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-bh-35e">
+                                            <color key="backgroundColor" red="0.92886529849999999" green="0.8236619288" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="jack  tst" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ra-vX-lvw">
+                                            <frame key="frameInset" minX="166" minY="49" width="60" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Kbc-bh-35e" firstAttribute="centerX" secondItem="pAc-yr-Iu2" secondAttribute="centerX" id="Ask-Ye-AVv"/>
+                                        <constraint firstItem="Kbc-bh-35e" firstAttribute="top" secondItem="pAc-yr-Iu2" secondAttribute="topMargin" id="SuZ-2f-wwW"/>
+                                        <constraint firstItem="Kbc-bh-35e" firstAttribute="leading" secondItem="pAc-yr-Iu2" secondAttribute="leadingMargin" constant="37" id="rUN-Dp-5ra"/>
+                                        <constraint firstItem="Kbc-bh-35e" firstAttribute="bottom" secondItem="pAc-yr-Iu2" secondAttribute="bottomMargin" id="zbx-lZ-SLL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell3" id="HW3-cq-1Ni" customClass="TwelfthA2PhotoTableViewCell3" customModule="xTester" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="373" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HW3-cq-1Ni" id="LNN-mq-jyB">
+                                    <frame key="frameInset" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell4" id="8ld-WL-byK" customClass="TwelfthA2PhotoTableViewCell4" customModule="xTester" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="493" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ld-WL-byK" id="ieO-EP-81t">
+                                    <frame key="frameInset" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="1" green="0.95714756680000002" blue="0.7622280656" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell5" id="d7o-lC-1yd" customClass="TwelfthA2PhotoTableViewCell5" customModule="xTester" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="613" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7o-lC-1yd" id="trV-Fn-4pr">
+                                    <frame key="frameInset" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="1" green="0.95714756680000002" blue="0.7622280656" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell6" id="mG8-0a-Ciz" customClass="TwelfthA2PhotoTableViewCell6" customModule="xTester" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="733" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mG8-0a-Ciz" id="qso-MN-3DV">
+                                    <frame key="frameInset" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="1" green="0.95714756680000002" blue="0.7622280656" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="delegate" destination="B4e-ht-98Z" id="XsS-Ax-qG3"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MNy-ez-pAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="-723"/>
+            <point key="canvasLocation" x="100" y="-725.48725637181417"/>
         </scene>
     </scenes>
 </document>

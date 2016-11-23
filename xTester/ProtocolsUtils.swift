@@ -37,20 +37,6 @@ extension Utils {
     
     
     
-    //MARK: - Date/ Time Section
-    
-    // ***********************************************
-    // Function computes difference between two Dates
-    //
-    // ************************************************
-    
-    func timeDiff(_ date1: Date) -> Double {
-        let  date2: Date = Date()
-        return date2.timeIntervalSince(date1)
-        
-    }
-    
-    
     
     //MARK: - Banner Related
     
@@ -61,15 +47,7 @@ extension Utils {
     }
     
     
-    
-    
-    
-    // MARK: - Array related
-    
-    func convertArray(toString arr:[String]) -> String? {
-        return arr.joined(separator: ",")
-    }
-    
+        
     
     
     // MARK:  URL Related

@@ -15,6 +15,10 @@ extension Array {
     
     
     
+    func convertArray(toString arr:[String]) -> String? {
+        return arr.joined(separator: ",")
+    }
+    
     
     
     

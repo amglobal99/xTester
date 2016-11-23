@@ -20,6 +20,7 @@ struct Constants {
     
     
     struct Configuration {
+        
         static let companyName = "Natsys International"
         static let companyAddress = "1808 Mountain Lake Dr GA 30339"
         
@@ -30,6 +31,9 @@ struct Constants {
          static let rootPath = ["photos","photo"]
          static let key = "datetakenunknown"
          static let dataKey = "id"
+        
+        
+        
         
          enum Method: String {
             case RecentPhotos = "flickr.photos.getRecent"
@@ -92,7 +96,7 @@ struct Constants {
         }
       
         
-        
+        // MARK: - Date/Time/Calendar
         
         // Date Formatter
         static let dateFormatter: DateFormatter = {
@@ -100,6 +104,15 @@ struct Constants {
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             return formatter
         }()
+        
+        
+        let filemgr = FileManager.default
+        var calendar: Calendar = Calendar(identifier: .gregorian )
+        var locale = Locale(identifier: "en_US")
+        
+        
+        
+        // MARK: - Session
         
         
         // Session

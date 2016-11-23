@@ -234,30 +234,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
      
      } // end func
      
-    
-    
-    /*
-    
-    // Function to return index section of photo
-    func indexForPhoto ( dict:[String:[NinthPhoto]]?, photo:NinthPhoto ) -> (Int?,Int?) {
-        var sectionStr:String?
-        for (key, value) in dict! {
-            if  value.contains(photo) {
-                sectionStr = key
-            }
-        }
-        // get array of photos for our setion
-        let  photoArray = dict?[sectionStr!]
-        let  row:Int?  = photoArray?.index(of: photo)
         
-        return (row, Int(sectionStr!))
-    }
-    
-    */
-    
-    
-    
-    
     
    
     /**
@@ -269,26 +246,26 @@ class NinthPhotoStore: Utils, JsonConvertible {
         - Returns: A tuple with the row number and section number
  
     */
-    
     func indexForPhoto ( dict:[String:[NinthPhoto]], photo:NinthPhoto ) -> (Int,Int)? {
-        //var row:Int?
         var section:String?
-        //var photoArray:[NinthPhoto]?
         var result:(Int,Int)?
-
+        
+        /*
         for (key, value) in dict {
             if  value.contains(photo) {
                 section = key
             }
         }
+        */
+        
+        // Filter the Dictionary. Retrieve key for entry which contains this photo in its values
+        section = dict.filter{$1.contains(photo)}.first?.key
+        
+        
         // get array of photos for our setion
-        if let section = section {
-            if let photoArray = dict[section], let row = photoArray.index(of: photo) {
+        if let section = section,  let photoArray = dict[section], let row = photoArray.index(of: photo) {
                 result =  (row, Int(section)!)
             }
-        }
-        
-        
         return result
     }
     

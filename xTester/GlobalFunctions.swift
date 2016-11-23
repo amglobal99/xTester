@@ -25,10 +25,8 @@ struct GlobalFunctions {
     }
 
 
-
     
-    
-    
+        
     
     
 }  // end struct

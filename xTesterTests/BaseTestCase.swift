@@ -16,29 +16,41 @@ import XCTest
 
 class BaseTestCase: XCTestCase, JsonConvertible {
     
-    let timeout: TimeInterval = 15.0
+    
+    let timeout: TimeInterval = 30.0
+    let filemgr = FileManager.default
+    var calendar: Calendar = Calendar(identifier: .gregorian )
+    var locale = Locale(identifier: "en_US")
+    
     
     static var testDirectoryURL: URL {
         return  URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("org.alamofire.tests") as URL
     }
     
-    var testDirectoryURL: URL { return BaseTestCase.testDirectoryURL }
+    
+    var testDirectoryURL: URL {
+        return BaseTestCase.testDirectoryURL
+    }
     
     
     
     override func setUp() {
         super.setUp()
         
+        //Delete directory
+        do {
+            try filemgr.removeItem(at: testDirectoryURL)
+        } catch let error as NSError {
+            print("Error: \(error.localizedDescription)")
+        }
         
-        /*
-        FileManager.removeItem(at: testDirectoryURL)
+        // Create new directory
+        do {
+            try  filemgr.createDirectory(at: testDirectoryURL, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            print("Error: \(error.localizedDescription)")
+        }
         
-        FileManager.createDirectory(at: testDirectoryURL, withIntermediateDirectories: true, attributes: nil)
- 
-        */
-        
-        
- 
     }
     
     

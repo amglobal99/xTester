@@ -13,8 +13,6 @@
 //
 //
 
-
-
 import Foundation
 import UIKit
 import Alamofire
@@ -29,25 +27,26 @@ import SwiftyJSON
 /// This class serves as the Data Source for the Photos collection view.
 
 class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, Utils, JsonConvertible {
+
     
     
-    // MARK: - Local Variables
-    
+    // MARK: - Enums
     enum Method: String {
         case RecentPhotos = "flickr.photos.getRecent"
     }
+
     
+    // MARK: - Structs
     fileprivate struct Storyboard     {
         static let CellIdentifier = "NinthPhotoCollectionViewCell"
         static let showWebView = "ShowNinthPhotoDetailView"
     }
-    
+
     
     // MARK: - Data Variables
-    
     var photos = [NinthPhoto]()   // This is the list of all our Photos
     var sections:[String] = []  // This is the array of names for our  sections
-    var sectionPhotoItems:[String:[NinthPhoto]] = [:]  // Dictionary holds Photos for each section
+    var sectionPhotoItems:[String:[NinthPhoto]] = [:]  // Dictionary holds Photos for each section title
     
     
 
@@ -75,11 +74,10 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     */
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let itemsInSection = photosInSection(section)
+        let itemsInSection = photosForSection(section)
         print("Number of Items in section \(section) : \(itemsInSection.count)")
         return itemsInSection.count
     }  // end func
-    
     
     
     
@@ -91,9 +89,6 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         let photoTitleToDisplay: String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
         let photo = photoForItemAtIndexPath(indexPath: indexPath)
-        
-        
-
         
             // Get a truncated title for our Photo
             let photoTitle = photo.title
@@ -139,46 +134,48 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
+    // MARK: - Index Related Methods
    
-    // Function returns a Photo for the given indexpath
-    func photoForItemAtIndexPath(indexPath: IndexPath) -> NinthPhoto {
-    
-        let rowNumber = (indexPath as IndexPath).row
-        let sectionNumber = (indexPath as IndexPath).section
-        //print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
-        
-        // get the Photos in this particular section
-        let sectionPhotos = photosInSection(sectionNumber)
-        
-        // get the Photo to process
-        let photo = sectionPhotos[rowNumber]
-        
-        return photo
-        
-    } // end func
-    
-    
-    
-   
-    
-    
     // Function returns the number of Items in section
     //
-    func photosInSection(_ sectionNumber: Int) -> [NinthPhoto] {
+    
+    func photosForSection(_ sectionNumber: Int) -> [NinthPhoto] {
         // Get photos for this section (Filter the photos array)
+        
+        
         let sectionPhotos = photos.filter{
             $0.datetakenUnknown == String(sectionNumber)
             
         }
         
+        
         /*
-        for i in sectionPhotos{
-            print("Section: \(sectionNumber) ----> Id: \(i.photoID)  ")
-        }
-            */
- 
+         for i in sectionPhotos{
+         print("Section: \(sectionNumber) ----> Id: \(i.photoID)  ")
+         }
+         */
         return sectionPhotos
     }
+    
+    
+
+    
+    
+    // Function returns a Photo for the given indexpath
+    func photoForItemAtIndexPath(indexPath: IndexPath) -> NinthPhoto {
+        let rowNumber = (indexPath as IndexPath).row
+        let sectionNumber = (indexPath as IndexPath).section
+        //print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
+        // get the Photos in this particular section
+        let sectionPhotos = photosForSection(sectionNumber)
+        // get the Photo to process
+        let photo = sectionPhotos[rowNumber]
+        return photo
+    } // end func
+    
+    
+    
+   
     
     
     

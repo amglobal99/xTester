@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xTester/NinthPhotoCollectionViewDataSource.swift"
-            timestampString = "501351465.578155"
+            timestampString = "501358956.748713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "NinthPhotoCollectionViewDataSource"
             landmarkType = "3">
          </BreakpointContent>
@@ -249,12 +249,26 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "xTesterTests/BaseTestCase.swift"
-            timestampString = "500866798.383786"
+            filePath = "xTester/TwelfthA2TableViewDataSource.swift"
+            timestampString = "501381922.190121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "13"
+            endingLineNumber = "13">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "xTesterTests/NinthViewControllerTests.swift"
+            timestampString = "501525898.496827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "setUp()"
             landmarkType = "7">
          </BreakpointContent>
