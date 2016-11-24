@@ -78,6 +78,8 @@
 		0F36D6681DE36B72002611FB /* TwelfthA2PhotoTableViewCell6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36D6661DE36B72002611FB /* TwelfthA2PhotoTableViewCell6.swift */; };
 		0F36D6691DE36B72002611FB /* TwelfthA2PhotoTableViewCell6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F36D6661DE36B72002611FB /* TwelfthA2PhotoTableViewCell6.swift */; };
 		0F38583F1DE4802400FBAD0C /* BaseUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38583E1DE4802400FBAD0C /* BaseUITestCase.swift */; };
+		0F3858411DE5339500FBAD0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3858401DE5339500FBAD0C /* MapKit.framework */; };
+		0F3858431DE533B800FBAD0C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3858421DE533B800FBAD0C /* StoreKit.framework */; };
 		0F38F4E21DA7F8AF0086BAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */; };
 		0F38F4EA1DA7F8AF0086BAA8 /* xTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E81DA7F8AF0086BAA8 /* xTester.xcdatamodeld */; };
 		0F38F4EC1DA7F8AF0086BAA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */; };
@@ -90,6 +92,9 @@
 		0F3F99061DA826A2002FBB8C /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F99051DA826A2002FBB8C /* SixthViewController.swift */; };
 		0F3F990A1DA826CA002FBB8C /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F99091DA826CA002FBB8C /* SeventhViewController.swift */; };
 		0F54BBDA1DB8ECF200FE1714 /* Fourteenth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F54BBD91DB8ECF200FE1714 /* Fourteenth.storyboard */; };
+		0F61D9871DE66F110006D544 /* TwelfthA2SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61D9861DE66F110006D544 /* TwelfthA2SectionHeaderView.swift */; };
+		0F61D9881DE66F110006D544 /* TwelfthA2SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61D9861DE66F110006D544 /* TwelfthA2SectionHeaderView.swift */; };
+		0F61D9891DE66F110006D544 /* TwelfthA2SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61D9861DE66F110006D544 /* TwelfthA2SectionHeaderView.swift */; };
 		0F8328C71DA99484009804C2 /* NinthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328C61DA99484009804C2 /* NinthViewController.swift */; };
 		0F8328CB1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */; };
 		0F8328D41DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */; };
@@ -209,6 +214,9 @@
 		0F36D6621DE36B27002611FB /* TwelfthA2PhotoTableViewCell5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2PhotoTableViewCell5.swift; sourceTree = "<group>"; };
 		0F36D6661DE36B72002611FB /* TwelfthA2PhotoTableViewCell6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2PhotoTableViewCell6.swift; sourceTree = "<group>"; };
 		0F38583E1DE4802400FBAD0C /* BaseUITestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUITestCase.swift; sourceTree = "<group>"; };
+		0F3858401DE5339500FBAD0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0F3858421DE533B800FBAD0C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		0F3858441DE533CB00FBAD0C /* xTester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xTester.entitlements; sourceTree = "<group>"; };
 		0F38F4DE1DA7F8AF0086BAA8 /* xTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F38F4E91DA7F8AF0086BAA8 /* xTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xTester.xcdatamodel; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 		0F3F99051DA826A2002FBB8C /* SixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		0F3F99091DA826CA002FBB8C /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
 		0F54BBD91DB8ECF200FE1714 /* Fourteenth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fourteenth.storyboard; sourceTree = "<group>"; };
+		0F61D9861DE66F110006D544 /* TwelfthA2SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2SectionHeaderView.swift; sourceTree = "<group>"; };
 		0F8328C61DA99484009804C2 /* NinthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthViewController.swift; sourceTree = "<group>"; };
 		0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EighthCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -283,8 +292,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3858411DE5339500FBAD0C /* MapKit.framework in Frameworks */,
 				0F3ABB711DB9AF4F0024BA89 /* SafariServices.framework in Frameworks */,
 				AE25101AA7E303C1A69975B9 /* Pods_xTester.framework in Frameworks */,
+				0F3858431DE533B800FBAD0C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +423,7 @@
 		0F38F4E01DA7F8AF0086BAA8 /* xTester */ = {
 			isa = PBXGroup;
 			children = (
+				0F3858441DE533CB00FBAD0C /* xTester.entitlements */,
 				0F945FD71DB59C3500FB4045 /* API_Routers */,
 				0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */,
 				0F3052C91DAAD49700F79778 /* CollectionView_DucTran */,
@@ -552,6 +564,7 @@
 				0F22D8081DCD1E770015C9F1 /* NinthPhoto.swift */,
 				0F22D8191DCD6C0F0015C9F1 /* NinthPhotoStore.swift */,
 				0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */,
+				0F61D9861DE66F110006D544 /* TwelfthA2SectionHeaderView.swift */,
 				0F322CD71DE27D33001796FC /* TwelfthA2PhotoCollectionViewCell.swift */,
 				0F322CDB1DE29A64001796FC /* TwelfthA2PhotoCollectionView.swift */,
 			);
@@ -596,6 +609,8 @@
 		C2ED8C28F07F25AD3F795727 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F3858421DE533B800FBAD0C /* StoreKit.framework */,
+				0F3858401DE5339500FBAD0C /* MapKit.framework */,
 				0F3ABB701DB9AF4F0024BA89 /* SafariServices.framework */,
 				911CA3B283D7F348CA1D7298 /* Pods_xTester.framework */,
 				8D7EC20A4117E604BDC3D466 /* Pods_xTesterTests.framework */,
@@ -683,6 +698,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7TC98CE9GK;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					0F38F4F41DA7F8AF0086BAA8 = {
 						CreatedOnToolsVersion = 8.0;
@@ -985,6 +1008,7 @@
 				0F3F99061DA826A2002FBB8C /* SixthViewController.swift in Sources */,
 				0F322CD41DE27A74001796FC /* TwelfthA2TableViewDataSource.swift in Sources */,
 				0F1923461DA8826A00FF9E4D /* SixthDetailVCView.swift in Sources */,
+				0F61D9871DE66F110006D544 /* TwelfthA2SectionHeaderView.swift in Sources */,
 				0F9887E11DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */,
 				0F2C0CF81DB5B0C600ECBA67 /* ExtensionArray.swift in Sources */,
 			);
@@ -998,6 +1022,7 @@
 				0F322CD51DE27A74001796FC /* TwelfthA2TableViewDataSource.swift in Sources */,
 				0F2D08A81DE1242D0039F98B /* ExtensionDictionary.swift in Sources */,
 				0F36D6501DE330E2002611FB /* ExtensionUIColor.swift in Sources */,
+				0F61D9881DE66F110006D544 /* TwelfthA2SectionHeaderView.swift in Sources */,
 				0F38F4FA1DA7F8AF0086BAA8 /* xTesterTests.swift in Sources */,
 				0F36D6681DE36B72002611FB /* TwelfthA2PhotoTableViewCell6.swift in Sources */,
 				0F2F0A8B1DDA255900756660 /* BaseTestCase.swift in Sources */,
@@ -1028,6 +1053,7 @@
 				0F36D65D1DE368C2002611FB /* TwelfthA2PhotoTableViewCell4.swift in Sources */,
 				0F36D6551DE36860002611FB /* TwelfthA2PhotoTableViewCell2.swift in Sources */,
 				0F36D6591DE36898002611FB /* TwelfthA2PhotoTableViewCell3.swift in Sources */,
+				0F61D9891DE66F110006D544 /* TwelfthA2SectionHeaderView.swift in Sources */,
 				0F38583F1DE4802400FBAD0C /* BaseUITestCase.swift in Sources */,
 				0F322CD61DE27A74001796FC /* TwelfthA2TableViewDataSource.swift in Sources */,
 			);
@@ -1150,6 +1176,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xTester/xTester.entitlements;
 				DEVELOPMENT_TEAM = 7TC98CE9GK;
 				INFOPLIST_FILE = xTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1165,6 +1192,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xTester/xTester.entitlements;
 				DEVELOPMENT_TEAM = 7TC98CE9GK;
 				INFOPLIST_FILE = xTester/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

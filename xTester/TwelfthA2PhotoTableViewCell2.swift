@@ -16,7 +16,7 @@ import UIKit
 class TwelfthA2PhotoTableViewCell2: UITableViewCell {
 
 
-
+    
 
 
 

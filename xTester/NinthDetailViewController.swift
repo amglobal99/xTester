@@ -10,14 +10,11 @@ import Foundation
 import UIKit
 
 
-class NinthDetailViewController: UIViewController {
+public class NinthDetailViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     
     var store: NinthPhotoStore!
-    // ====== This is for tetsing only
-    var city:String = ""
-    
     
 
     // when photo loads show a title
@@ -29,7 +26,7 @@ class NinthDetailViewController: UIViewController {
     
     
     
-    override func viewDidLoad()  {
+    override public func viewDidLoad()  {
         super.viewDidLoad()
      
             store.fetchImageForPhoto(photo)
@@ -50,3 +47,5 @@ class NinthDetailViewController: UIViewController {
     
     
 }  // end class
+
+

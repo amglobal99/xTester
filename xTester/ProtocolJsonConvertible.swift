@@ -31,16 +31,20 @@ extension JsonConvertible  {
     
     //  ******************  SwiftyJSON Section   **************************************
     
-    // **************************************************************
-    //  This function gives as a SwifyJSON  'JSON' object
-    //  The results are placed in the Result variable
-    //  You just have to pass in a Url string
-    //  param - rootPath: specify the levels as an array
-    //  For example, if my data is under 'employees' rooot attribute
-    //  and within that, it is under the 'users' attribute
-    //  Then your array will contain ["employees","users"]
-    //
-    // **************************************************************
+    /**
+        This function gives as a SwifyJSON  'JSON' object
+        The results are placed in the Result variable
+        
+        The rootpath is the path to your JSON entries.
+        For example, if my data is under 'employees' root attribute
+        and within that, it is under the 'users' attribute
+        Then your array will contain ["employees","users"]
+     
+        - Parameter: url:  A URL object for your REST API
+        - Parameter rootPath: The root path for your JSON object
+     
+        - Returns: Nothing
+    */
     func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
         
             let urlRequest = URLRequest(url: url)
@@ -90,16 +94,23 @@ extension JsonConvertible  {
     
     
     
-    // ***************************************************************************************
-    // This function gives us an array of key values.
-    //  We can use this function with a basic json array
-    // or an array whihc is 1 level deep
-    // For example, let's say we have "employees" as root, and within that
-    // we have {"id":2,"name":"john"}, ........
-    // That is an example of 1 level deep. Without employees, it is flat
-    // NOTE: To acces an array thta is at say 3 level, use this format
-    //  for object in  jsonObject["responseData","feed","entries"].array!
-    // ****************************************************************************************
+    /**
+         This function gives us an array of key values.
+         We can use this function with a basic json array
+         or an array which is 1 level deep
+         
+         For example, let's say we have "employees" as root, and within that
+         we have {"id":2,"name":"john"}, ........
+         That is an example of 1 level deep. Without employees, it is flat
+         
+         NOTE: To acces an array thta is at say 3 level, use this format
+          for object in  jsonObject["responseData","feed","entries"].array!
+         
+         - Parameter jsonObject: This is the SwiftyJSON object
+         - Parameter key:   The key that serves as the section title
+         
+         - Returns: An array of section title names
+    */
     
     func getSectionTitlesArray(from jsonObject:JSON?,  key:String?) -> [String]? {
         guard let jsonObject = jsonObject, let key = key  else {

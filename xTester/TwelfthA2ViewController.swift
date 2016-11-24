@@ -36,23 +36,30 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     
     // MARK: - TableView DataSource methods
     
-    
+    /// Number of Sections in our TableView
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
-    
+    /// Number of rows in Section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Number of rows in section: \(section) : 6")
         
-        print("nUmber of sections")
-        return model.count
+        //return model.count
+        return 6
+        
+        
     }
     
+    
+    
+    
+    /// Cell for each row
     override func tableView(_ tableView: UITableView,  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        print("cell for row at \(indexPath.row) ")
+        print("Generating cell for row  \(indexPath.row) in section: \(indexPath.section) ")
         
         
         
@@ -63,27 +70,27 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell1", for: indexPath)
                 return cell
             case 1:
-                print("Section is : \(indexPath.row)  and row : \(indexPath.section)   ")
+                print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell2", for: indexPath)
                 cell.backgroundColor = UIColor.blue
                 return cell
             case 2:
-                print("Section is : \(indexPath.row)  and row : \(indexPath.section)   ")
+                print("Row is : \(indexPath.row)  and section : \(indexPath.section)   ")
 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell3", for: indexPath)
                 return cell
             case 3:
-                print("Section is : \(indexPath.row)  and row : \(indexPath.section)   ")
+                print("Row is : \(indexPath.row)  and section : \(indexPath.section)   ")
 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell4", for: indexPath)
                 return cell
             case 4:
-                print("Section is : \(indexPath.row)  and row : \(indexPath.section)   ")
+                print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell5", for: indexPath)
                 return cell
             case 5:
-                print("Section is : \(indexPath.row)  and row : \(indexPath.section)   ")
+                print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell6", for: indexPath)
                 return cell
@@ -99,15 +106,14 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     }
     
     
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         
         if indexPath.row == 0 {
-        guard let tableViewCell = cell as? TwelfthA2PhotoTableViewCell1 else { return }
-        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-        
-        
+            guard let tableViewCell = cell as? TwelfthA2PhotoTableViewCell1 else { return }
+            tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+            tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
         }
         
         
@@ -140,6 +146,16 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
 
 
 
+
+
+
+
+
+
+
+
+
+
 // MARK: - CollectionView DataSource Methods
 
 
@@ -155,6 +171,37 @@ extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.backgroundColor = model[collectionView.tag][indexPath.item]
         return cell
     }
+    
+    
+    
+    
+    // Function to get Section Header View
+    //
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView{
+        
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                         withReuseIdentifier: "TwelfthA2PhotoCollectionView1Header",
+                                                                         for: indexPath) as! TwelfthA2SectionHeaderView
+        
+        
+        headerView.sectionLabel1.text = "Test CollView"
+        
+        return headerView
+        
+    }  // end method
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
     
     
 }  // end extension

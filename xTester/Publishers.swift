@@ -70,7 +70,7 @@ class Publishers  {
         let publisherToCopy = immutablePublishers[index]
         let newPublisher = Publisher(copies: publisherToCopy)
         publishers.append(newPublisher)
-        publishers.sorted { $0.section < $1.section }
+        publishers  = publishers.sorted { $0.section < $1.section }
         return indexPathForPublisher(newPublisher)
     }
     

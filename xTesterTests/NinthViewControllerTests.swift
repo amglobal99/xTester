@@ -23,47 +23,70 @@ class NinthViewControllerTests: BaseTestCase {
 
         var ninthVC: NinthViewController!
         var ninthDestinationVC: NinthDetailViewController!
+    var window: UIWindow!
+
+    
+    
     
     
     // MARK: - Setup
 
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        //let bundle = Bundle(for: type(of: self) )   // this gave me an error
-        let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
-        
-        // Create your ViewControllers
-        ninthVC = storyboard.instantiateViewController(withIdentifier: "Ninth")  as! NinthViewController
-        ninthDestinationVC = storyboard.instantiateViewController(withIdentifier: "NinthDetailViewController")  as! NinthDetailViewController
-        
-        
-        
-        
-        // ====== In our app, we inject these properties during segue from Main Storyboard
-        ninthVC.city = "Jack City"  // REMOVE THIS LATER
-        ninthVC.store = NinthPhotoStore()  // give the VC a store object
-        ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
-        
-        let _  = ninthVC.view // force loading subviews and setting outlets ( this executes viewDidLoad and other view events)
-        
-    
-        
-    
-    
+        window = UIWindow()
+        setupCreateNinthViewController()
     }  // end setup
     
     
     
+func setupCreateNinthViewController() {
+    
+    let tabBarController: UITabBarController
+    
+    let bundle = Bundle.main
+    let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
+    
+    
+     //if self.window!.rootViewController as? UITabBarController != nil {
+        tabBarController = self.window!.rootViewController as! UITabBarController
+        tabBarController.selectedIndex = 2
+     //}
+    
+    
+    
+    ninthVC = storyboard.instantiateViewController(withIdentifier: "Ninth")  as! NinthViewController
+    ninthDestinationVC = storyboard.instantiateViewController(withIdentifier: "NinthDetailViewController")  as! NinthDetailViewController
+    ninthVC.store = NinthPhotoStore()  // give the VC a store object
+    ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
+   // _ =  ninthVC.view
     
     
     
     
     
+    
+    addViewToWindow()
+}
+
+
+
+
+func addViewToWindow()   {
+    window.addSubview(ninthVC.view)
+    RunLoop.current.run(until: Date())
+}
+
+
+
+
+
+
+
+
+
+
     // MARK: - Check for Values of properties
-    
+
     // Check availability of values for properties
     
     
@@ -88,17 +111,14 @@ class NinthViewControllerTests: BaseTestCase {
     
     func testThatRootPathIsAvailable() {
         XCTAssertNotNil(ninthVC.rootPath)
-        
     }
     
     func testThatDataKeyIsAvailable() {
         XCTAssertNotNil(ninthVC.dataKey)
-        
     }
 
     func testThatParamsIsAvailable() {
         XCTAssertNotNil(ninthVC.params)
-        
     }
     
     
@@ -118,18 +138,9 @@ class NinthViewControllerTests: BaseTestCase {
     
     func testThatPhotoCollectionViewDataSourceIsAvailable() {
         XCTAssertNotNil(ninthVC.photoCollectionView.dataSource )
-        
     }
     
     
-    
-    
-    func testThatCityIsAvailable() {
-        XCTAssertNotNil(ninthVC.city == "Jack City")
-    }
-    
-    
-        
     
     
     // MARK: - Check Methods
@@ -162,14 +173,13 @@ class NinthViewControllerTests: BaseTestCase {
     
     
     
-    // Use this function as a template for testing Asynchronous requests
-    //
-    
+    /** 
+        Use this function as a template for testing Asynchronous requests.
+    */
     func testThatAlamofireResponseReturnsSuccessResultWithValidData() {
         
         //Step 1 ...... Create a expectation
         let expectation = self.expectation(description: "request should succeed")
-        
         //let urlString = "https://httpbin.org/get"
         let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.apiKey)
         var response: DefaultDataResponse?
@@ -203,27 +213,23 @@ class NinthViewControllerTests: BaseTestCase {
    
     
     func testThatGetJSONObjectMethodReturnsSuccessResultWithValidData() {
-        
         var jsonObject:JSON?
         let expectation = self.expectation(description: "request should succeed")   //Step 1 ...... Create a expectation
         let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString,
                                            method: ninthVC.method,
                                            parameters: ninthVC.params,
                                            apiKey: ninthVC.apiKey)
-        var response: DefaultDataResponse?
-        weak var weakSelf = self
-        
+        //var response: DefaultDataResponse?
+        //weak var weakSelf = self
         let completionHandler: (Result<JSON>) -> Void  =
             {   resp in
                     jsonObject = resp.value!
                     expectation.fulfill()   // Step 2 ...... In the completion handler, call fulfill method
             } // end closure
         
-
         getJSONObject(for: urlString, rootPath: Constants.Configuration.rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
         waitForExpectations(timeout: timeout, handler: nil)
-         XCTAssertNotNil(jsonObject )
-        
+        XCTAssertNotNil(jsonObject )
     } // end func
     
     
@@ -235,73 +241,63 @@ class NinthViewControllerTests: BaseTestCase {
     
     
     func testThatStoreIsAvailableInPrepareForSegue() {
-        
         let controller = ninthVC
-        let otherController = NinthDetailViewController()
-        let segue = UIStoryboardSegue(identifier: "ShowNinthPhotoDetail",  source: ninthVC,    destination: otherController)
-        
-        ninthVC.city = "Jack City"  // REMOVE THIS LATER
+        let otherController = ninthDestinationVC
+        let segue = UIStoryboardSegue(identifier: "ShowNinthPhotoDetail",  source: ninthVC,    destination: otherController!)
         ninthVC.store = NinthPhotoStore()  // give the VC a store object
         ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
         
         // set store property
-        otherController.store = ninthVC.store
+        otherController?.store = ninthVC.store
 
         // 2. Action
         controller?.prepare(for: segue, sender: nil)
         
-        
         // 3. Assert
         XCTAssertNotNil(segue)
-        XCTAssertNotNil( otherController.store   )
-        
-        
-        
+        XCTAssertNotNil( otherController?.store   )
     }
     
     
     
     
+    
+    
+    // Check if user clicks on a Photo in colection view
     func testThatPhotoIsSelected() {
         
         
         class mockUICollectionView: UICollectionView {
             
-            
         }
         
-        let controller = ninthVC
-        let otherController = ninthDestinationVC
+        //let controller = ninthVC
+        //_ = ninthDestinationVC
         let segue = UIStoryboardSegue(identifier: "ShowNinthPhotoDetail",  source: ninthVC,    destination: ninthDestinationVC)
-        var photoCollectionView: mockUICollectionView!
+        var photoCollectionView: UICollectionView!
         
-        ninthVC.city = "Jack City"  // REMOVE THIS LATER
-        ninthVC.store = NinthPhotoStore()  // give the VC a store object
-        //ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
-        
-        
-        let frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        let frame = CGRect(x: 0, y: 0, width: 300, height: 400)
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 90, height: 120)
         
-        photoCollectionView = mockUICollectionView(frame: frame, collectionViewLayout: layout)
+        photoCollectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
         photoCollectionView.dataSource = NinthPhotoCollectionViewDataSource()
 
     
         let index = IndexPath(row: 0, section: 0)
        // photoCollectionView.selectItem(at: index, animated: false, scrollPosition: UICollectionViewScrollPosition(rawValue: UInt(1)))
         
-       //let cell =  photoCollectionView.cellForItem(at: index)
+       let cell =  photoCollectionView.cellForItem(at: index)
        // photoCollectionView.selectItem(at: index, animated: false, scrollPosition: UICollectionViewScrollPosition.left  )
        // photoCollectionView.selectItem(at: index, animated: false, scrollPosition: UICollectionViewScrollPosition.top  )
         
         
-        // 2. Action
-       controller?.prepare(for: segue, sender: photoCollectionView)
-        //controller?.prepare(for: segue, sender: cell)
+        //photoCollectionView.select(cell)
         
-    
+        // 2. Action
+       ninthVC?.prepare(for: segue, sender: photoCollectionView)
+        
         // 3. Assert
         XCTAssertNotNil(segue)
         
@@ -321,7 +317,10 @@ class NinthViewControllerTests: BaseTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        window = nil
+
         super.tearDown()
+        
     }
     
     
