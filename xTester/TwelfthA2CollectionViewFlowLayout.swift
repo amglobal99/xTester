@@ -1,26 +1,25 @@
 //
-//  NinthC`ollectionViewLayout.swift
+//  TwelfthA2CollectionViewFlowLayout.swift
 //  xTester
 //
-//  Created by Dad on 10/8/16.
+//  Created by Dad on 11/24/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
-
-
 
 import Foundation
 import UIKit
 
-
-class NinthPhotoCollectionViewFlowLayout: UICollectionViewFlowLayout {
+class TwelfthA2CollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     
-   
+    
     // hold the index path of the item being inserted
     var appearingIndexPath: IndexPath?
     
     // holde the index paths of the items being deleted
     var disappearingIndexPaths: [IndexPath]?
+    
+    
     
     
     // this method provies the layout with the initial layout attributes for items being inserted into the collection view
@@ -50,8 +49,15 @@ class NinthPhotoCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     
     
+    
+    
+    
+    
+    
+    
     // change the final state of the deleted items' attributes
     override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        
         let attributes = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
         
         if let disappearingIndexPaths = disappearingIndexPaths {
@@ -71,15 +77,10 @@ class NinthPhotoCollectionViewFlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-    
-  
-    
-    
-    
-   
-    
-    
-    
-    
-    
-}   // end class
+}
+
+
+
+
+
+

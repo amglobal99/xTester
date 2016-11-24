@@ -148,7 +148,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
             case 1:
                 return 320
             case 2:
-                return 220
+                return 160
             case 3:
                 return 340
             case 4:

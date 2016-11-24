@@ -161,11 +161,12 @@
         <scene sceneID="tpF-Th-OKR">
             <objects>
                 <tableViewController storyboardIdentifier="TwelfthA2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B4e-ht-98Z" customClass="TwelfthA2ViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="60" sectionFooterHeight="28" id="Qy9-4Y-fUc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="120" sectionHeaderHeight="60" sectionFooterHeight="28" id="Qy9-4Y-fUc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell1" id="1sn-WT-8Pm" customClass="TwelfthA2PhotoTableViewCell1" customModule="xTester" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="60" width="375" height="120"/>
@@ -240,6 +241,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="Kbc-bh-35e" firstAttribute="centerX" secondItem="pAc-yr-Iu2" secondAttribute="centerX" id="Ask-Ye-AVv"/>
                                         <constraint firstItem="Kbc-bh-35e" firstAttribute="top" secondItem="pAc-yr-Iu2" secondAttribute="topMargin" id="SuZ-2f-wwW"/>
@@ -254,7 +257,39 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HW3-cq-1Ni" id="LNN-mq-jyB">
                                     <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-Yc-sYA">
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o81-Xm-Irs" customClass="TwelfthA2CollectionViewFlowLayout" customModule="xTester" customModuleProvider="target">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="50" height="50"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ppR-U8-aGO">
+                                                    <rect key="frame" x="50" y="27" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </view>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dZo-1T-fv3">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="104"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </collectionReusableView>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="9ec-Yc-sYA" firstAttribute="top" secondItem="LNN-mq-jyB" secondAttribute="topMargin" id="8M1-A9-gwj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9ec-Yc-sYA" secondAttribute="trailing" constant="11" id="FEc-c3-zs9"/>
+                                        <constraint firstItem="9ec-Yc-sYA" firstAttribute="leading" secondItem="LNN-mq-jyB" secondAttribute="leadingMargin" constant="17" id="ZaW-tF-KOY"/>
+                                        <constraint firstItem="9ec-Yc-sYA" firstAttribute="centerY" secondItem="LNN-mq-jyB" secondAttribute="centerY" id="wLA-89-fuT"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell4" id="8ld-WL-byK" customClass="TwelfthA2PhotoTableViewCell4" customModule="xTester" customModuleProvider="target">
@@ -263,7 +298,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ld-WL-byK" id="ieO-EP-81t">
                                     <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.97585903845007971" blue="0.85870013009796164" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell5" id="d7o-lC-1yd" customClass="TwelfthA2PhotoTableViewCell5" customModule="xTester" customModuleProvider="target">
@@ -272,7 +307,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7o-lC-1yd" id="trV-Fn-4pr">
                                     <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.93888117433716411" green="0.73920851071565052" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell6" id="mG8-0a-Ciz" customClass="TwelfthA2PhotoTableViewCell6" customModule="xTester" customModuleProvider="target">
@@ -281,7 +316,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mG8-0a-Ciz" id="qso-MN-3DV">
                                     <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.89258807748621516" green="1" blue="0.84175145591185274" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
