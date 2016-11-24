@@ -136,6 +136,44 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     }
     
     
+    
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat  {
+        
+        
+        switch indexPath.row {
+            case 0:
+                return 120
+            case 1:
+                return 320
+            case 2:
+                return 220
+            case 3:
+                return 340
+            case 4:
+                return 120
+            case 5:
+                return 220
+            default:
+                return 200
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }  // end class
 
 
