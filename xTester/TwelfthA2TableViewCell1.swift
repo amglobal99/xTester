@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 
-class TwelfthA2PhotoTableViewCell1: UITableViewCell {
+class TwelfthA2TableViewCell1: UITableViewCell {
     
     
-    @IBOutlet private weak var collectionView: TwelfthA2PhotoCollectionView!
+    @IBOutlet private weak var collectionView: TwelfthA2CollectionView1!
     
     var collectionViewOffset: CGFloat {
         get {

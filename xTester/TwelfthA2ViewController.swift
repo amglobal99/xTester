@@ -111,7 +111,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
         
         
         if indexPath.row == 0 {
-            guard let tableViewCell = cell as? TwelfthA2PhotoTableViewCell1 else { return }
+            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
             tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
             tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
         }
@@ -127,7 +127,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
         
           if indexPath.row == 0 {
 
-            guard let tableViewCell = cell as? TwelfthA2PhotoTableViewCell1 else { return }
+            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
             storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
         
         }
@@ -221,8 +221,8 @@ extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDat
                         at indexPath: IndexPath) -> UICollectionReusableView{
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: "TwelfthA2PhotoCollectionView1Header",
-                                                                         for: indexPath) as! TwelfthA2SectionHeaderView
+                                                                         withReuseIdentifier: "TwelfthA2CollectionView1SectionHeader",
+                                                                         for: indexPath) as! TwelfthA2CollectionView1SectionHeader
         
         
         headerView.sectionLabel1.text = "Test CollView"

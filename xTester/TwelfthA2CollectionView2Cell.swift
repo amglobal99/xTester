@@ -1,8 +1,8 @@
 //
-//  TwelfthA2PhotoTableViewCell5.swift
+//  TwelfthA2CollectionView2Cell.swift
 //  xTester
 //
-//  Created by Dad on 11/21/16.
+//  Created by Dad on 11/24/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
@@ -11,7 +11,10 @@ import Foundation
 import UIKit
 
 
-class TwelfthA2PhotoTableViewCell5: UITableViewCell {
+
+
+class TwelfthA2CollectionView2Cell: UICollectionViewCell {
+    
     
     
     

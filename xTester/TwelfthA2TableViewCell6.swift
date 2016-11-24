@@ -1,5 +1,5 @@
 //
-//  TwelfthA2PhotoTableViewCell2.swift
+//  TwelfthA2PhotoTableViewCell6.swift
 //  xTester
 //
 //  Created by Dad on 11/21/16.
@@ -8,16 +8,14 @@
 
 import Foundation
 
-
-import Foundation
 import UIKit
 
 
-class TwelfthA2PhotoTableViewCell2: UITableViewCell {
-
-
+class TwelfthA2TableViewCell6: UITableViewCell {
     
-
-
-
+    
+    
+    
+    
+    
 }

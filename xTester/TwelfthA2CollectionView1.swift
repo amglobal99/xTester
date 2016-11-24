@@ -1,5 +1,5 @@
 //
-//  TwelfthA2CollectionViewCell.swift
+//  TwelfthA2PhotoCollectionView.swift
 //  xTester
 //
 //  Created by Dad on 11/20/16.
@@ -12,12 +12,12 @@ import UIKit
 
 
 
-class TwelfthA2PhotoCollectionViewCell: UICollectionViewCell {
-
-
-
-        
-
-
-
+class TwelfthA2CollectionView1: UICollectionView {
+    
+    
+    
+    
+    
+    
+    
 }
