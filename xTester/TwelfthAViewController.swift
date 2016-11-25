@@ -51,8 +51,8 @@ class TwelfthAViewController: UIViewController, Utils{
         case .TwelfthA2Segue:
             print("A2")
             let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
-            //twelfthA2VC.store = TwelfthA2PhotoStore()  // give the VC a store object
-            //twelfthA2VC.photoDataSource = TwelfthA2PhotoCollectionViewDataSource()
+            //twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
+            //twelfthA2VC.photoDataSource = TwelfthA2CollectionView3DataSource()
         }
     
     }

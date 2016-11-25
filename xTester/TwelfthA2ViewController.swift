@@ -18,7 +18,34 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     var storedOffsets = [Int: CGFloat]()
     
     
+    // MARK: - Local Variables
+    var city:String!
+    var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
     
+    // MARK: - Global Constants Variables
+    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
+    let apiKey = Constants.Configuration.apiKey
+    let method = Constants.Configuration.method
+    let key  = Constants.Configuration.key
+    let rootPath = Constants.Configuration.rootPath
+    let dataKey = Constants.Configuration.dataKey
+    let params = Constants.Configuration.params
+    
+    
+    // MARK:- Data Variables
+    /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
+    var store: TwelfthA2CollectionView3PhotoStore!
+    var photoDataSource: TwelfthA2CollectionView3DataSource!
+    
+    // MARK:- Enums
+    enum Method: String {
+        case RecentPhotos = "flickr.photos.getRecent"
+    }
+    
+    
+    
+    
+
     
     
     
