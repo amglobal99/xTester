@@ -1,25 +1,23 @@
 //
-//  TwelfthA2CollectionViewSectionHeader.swift
+//  TwelfthA2SectionHeaderView2.swift
 //  xTester
 //
-//  Created by Dad on 11/23/16.
+//  Created by Dad on 11/24/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
-import Foundation
 
 import Foundation
 import UIKit
 
 
-class TwelfthA2CollectionView1SectionHeader: UICollectionReusableView  {
+class TwelfthA2SectionHeaderView2: UICollectionReusableView  {
     
     
-    // @IBOutlet weak var sectionLabel1: UILabel!
+    @IBOutlet weak var sectionLabel2: UILabel!
     
     
     
-    @IBOutlet weak var sectionLabel1: UILabel!
     
     /*
      var publisher: Publisher? {
@@ -46,4 +44,5 @@ class TwelfthA2CollectionView1SectionHeader: UICollectionReusableView  {
     
     
 } // end class
+
 

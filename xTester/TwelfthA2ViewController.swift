@@ -59,33 +59,32 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
         print("Generating cell for row  \(indexPath.row) in section: \(indexPath.section) ")
         
         switch indexPath.row {
-            
             case 0:
+               print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
+               
+                
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell1", for: indexPath)
+               
                 return cell
             case 1:
                 print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell2", for: indexPath)
-                cell.backgroundColor = UIColor.blue
+                // cell.backgroundColor = UIColor.blue
                 return cell
             case 2:
                 print("Row is : \(indexPath.row)  and section : \(indexPath.section)   ")
-
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell3", for: indexPath)
                 return cell
             case 3:
                 print("Row is : \(indexPath.row)  and section : \(indexPath.section)   ")
-
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell4", for: indexPath)
                 return cell
             case 4:
                 print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
-
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell5", for: indexPath)
                 return cell
             case 5:
                 print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
-
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell6", for: indexPath)
                 return cell
             default:
@@ -95,9 +94,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
         } // end switch
         
         
-        
-        
-    }
+    }  // end func
     
     
     
@@ -195,7 +192,7 @@ extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionViewCell1", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
         cell.backgroundColor = model[collectionView.tag][indexPath.item]
         return cell
     }

@@ -6,20 +6,18 @@
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
-import Foundation
 
 import Foundation
 import UIKit
 
 
-class TwelfthA2CollectionView1SectionHeader: UICollectionReusableView  {
-    
-    
-    // @IBOutlet weak var sectionLabel1: UILabel!
-    
+class TwelfthA2SectionHeaderView1: UICollectionReusableView  {
     
     
     @IBOutlet weak var sectionLabel1: UILabel!
+    
+    
+    
     
     /*
      var publisher: Publisher? {

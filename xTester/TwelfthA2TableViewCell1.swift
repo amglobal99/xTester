@@ -13,25 +13,29 @@ import UIKit
 class TwelfthA2TableViewCell1: UITableViewCell {
     
     
-    @IBOutlet private weak var collectionView: TwelfthA2CollectionView1!
+     // @IBOutlet private weak var collectionView: TwelfthA2CollectionView1!
+    
+    
+    @IBOutlet weak var collectionView1: TwelfthA2CollectionView1!
+    
     
     var collectionViewOffset: CGFloat {
         get {
-            return collectionView.contentOffset.x
+            return collectionView1.contentOffset.x
         }
         
         set {
-            collectionView.contentOffset.x = newValue
+            collectionView1.contentOffset.x = newValue
         }
     }
     
     
     
     func setCollectionViewDataSourceDelegate  <D: UICollectionViewDataSource & UICollectionViewDelegate> (dataSourceDelegate: D, forRow row: Int) {
-        collectionView.delegate = dataSourceDelegate
-        collectionView.dataSource = dataSourceDelegate
-        collectionView.tag = row
-        collectionView.reloadData()
+        collectionView1.delegate = dataSourceDelegate
+        collectionView1.dataSource = dataSourceDelegate
+        collectionView1.tag = row
+        collectionView1.reloadData()
     }
     
     
