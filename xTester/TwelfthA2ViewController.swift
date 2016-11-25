@@ -10,7 +10,23 @@ import Foundation
 import UIKit
 
 
-class TwelfthA2ViewController: UITableViewController,  Utils {
+//class TwelfthA2ViewController: UITableViewController,  UICollectionViewController, NinthPhotoCollectionViewCellDelegate, Utils, JsonConvertible {
+    
+    
+    class TwelfthA2ViewController: UITableViewController,   Utils {
+        
+
+    
+    
+    
+    
+    // MARK: - IBOutlets
+    @IBOutlet var photoCollectionView: UICollectionView!
+    
+    
+    
+    
+    
     
     
     // MARK: - Local Variables
@@ -20,7 +36,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     
     // MARK: - Local Variables
     var city:String!
-    var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
+    var sectionPhotoDictionary:[String:[TwelfthA2Photo]] = [:]
     
     // MARK: - Global Constants Variables
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
@@ -56,9 +72,106 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     // MARK: - ViewController events
     
     override func viewDidLoad() {
+        
+        
+        /// NOTE: We populate data variables in our PhotoDataSource in the closure below
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        
+        
+        /*
+        
+        photoCollectionView.dataSource = photoDataSource
+        photoCollectionView.delegate = self
+        
+        
+        
+        
+        // Completion Handler
+        let completionHandler: (Result<JSON>) -> Void  =
+            {  [weak self] result in
+                let jsonObj = result.value!
+                // get list of Photos(returns array of 'NinthPhoto' items)
+                let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
+                
+                // get array of Section titles
+                guard let photoKeyArray =  self?.getSectionTitlesArray(from: jsonObj, key: self?.key)   else {
+                    //print("getKeyArray method returned a nil value.")
+                    return
+                }
+                /*
+                 print("+++++++++++++++++  Section Titles Array  +++++++++++++++++++++++")
+                 print(photoKeyArray)
+                 print("+++++++++++++++++  end Section Titles +++++++++++++++++++++")
+                 */
+                
+                // get Section Title: Photos Dictionary
+                guard let sectionPhotosDictionary = self?.store.sectionPhotosDictionary(from: jsonObj, for: self?.key) else {
+                    print("Section Photo Items Dictionary is nil")
+                    return
+                }
+                /*
+                 print("+++++++++++++++++  Section Photos Dictonary +++++++++++++++++++++++")
+                 print(sectionPhotosDictionary)
+                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
+                 */
+                
+                
+                OperationQueue.main.addOperation() {
+                    switch itemsResult {
+                    case let .success(photos):
+                        // print(" We have total of \(photos.count)  photos ")
+                        // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
+                        self?.photoDataSource.photos = photos
+                        self?.photoDataSource.sections =  photoKeyArray
+                        self?.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
+                    case .failure(let error):
+                        self?.photoDataSource.photos.removeAll()
+                        //print("     Error fetching recent photos \(error)")
+                    }  // end switch
+                    
+                    // Reload Data
+                    //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
+                    self?.photoCollectionView?.reloadData()
+                }  // end operation
+                
+                
+        } // end closure
+        
+        // Create a Async(Alamofire) request to get jSON data
+        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
+        getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+        
+
+        
+        */
+        
+        
+        
+        
+        
+        
+        
+        
+    }  // end viewDidLoad
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     override func didReceiveMemoryWarning() {
