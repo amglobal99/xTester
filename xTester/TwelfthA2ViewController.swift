@@ -34,6 +34,8 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     
     
     
+    
+    
     // MARK: - TableView DataSource methods
     
     /// Number of Sections in our TableView
@@ -45,11 +47,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     /// Number of rows in Section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("Number of rows in section: \(section) : 6")
-        
-        //return model.count
         return 6
-        
-        
     }
     
     
@@ -58,11 +56,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     /// Cell for each row
     override func tableView(_ tableView: UITableView,  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         print("Generating cell for row  \(indexPath.row) in section: \(indexPath.section) ")
-        
-        
-        
         
         switch indexPath.row {
             
@@ -141,7 +135,6 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat  {
         
-        
         switch indexPath.row {
             case 0:
                 return 120
@@ -158,9 +151,6 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
             default:
                 return 200
         }
-        
-        
-        
     }
     
     

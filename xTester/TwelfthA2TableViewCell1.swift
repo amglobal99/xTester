@@ -1,5 +1,5 @@
 //
-//  TwelfthA2PhotoTableViewCell1.swift
+//  TwelfthA2TableViewCell1.swift
 //  xTester
 //
 //  Created by Dad on 11/21/16.

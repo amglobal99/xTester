@@ -1,5 +1,5 @@
 //
-//  TwelfthA2PhotoCollectionView.swift
+//  TwelfthA2CollectionView1.swift
 //  xTester
 //
 //  Created by Dad on 11/20/16.
