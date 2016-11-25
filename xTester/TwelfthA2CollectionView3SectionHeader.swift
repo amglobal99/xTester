@@ -13,7 +13,7 @@ import Foundation
 import UIKit
 
 
-class TwelfthA2CollectionView2SectionHeader: UICollectionReusableView  {
+class TwelfthA2CollectionView3SectionHeader: UICollectionReusableView  {
     
     
     @IBOutlet weak var sectionLabel2: UILabel!

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TwelfthA2CollectionView2FlowLayout: UICollectionViewFlowLayout {
+class TwelfthA2CollectionView3FlowLayout: UICollectionViewFlowLayout {
     
     
     

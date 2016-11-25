@@ -13,7 +13,7 @@ import UIKit
 
 
 
-class TwelfthA2CollectionView2: UICollectionView {
+class TwelfthA2CollectionView3: UICollectionView {
     
     
     
