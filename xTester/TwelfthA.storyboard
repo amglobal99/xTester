@@ -157,6 +157,33 @@
             </objects>
             <point key="canvasLocation" x="183" y="-1441"/>
         </scene>
+        <!--TwelfthA2 Detail View Controller-->
+        <scene sceneID="zkm-ZE-HkQ">
+            <objects>
+                <viewController id="plw-bU-Dq4" customClass="TwelfthA2DetailViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4o5-cI-UaG"/>
+                        <viewControllerLayoutGuide type="bottom" id="nXY-tS-e3w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nf1-a3-ND1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PyK-3l-bsF"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PyK-3l-bsF" firstAttribute="top" secondItem="4o5-cI-UaG" secondAttribute="bottom" constant="36" id="3NN-bJ-gNj"/>
+                            <constraint firstItem="nXY-tS-e3w" firstAttribute="top" secondItem="PyK-3l-bsF" secondAttribute="bottom" constant="60" id="X04-SR-GSp"/>
+                            <constraint firstItem="PyK-3l-bsF" firstAttribute="leading" secondItem="Nf1-a3-ND1" secondAttribute="leadingMargin" constant="25" id="YNX-tg-5gQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PyK-3l-bsF" secondAttribute="trailing" constant="27" id="hqN-uR-HbJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sG-2e-mGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.79999999999995" y="-400.74962518740631"/>
+        </scene>
         <!--TwelfthA2 View Controller-->
         <scene sceneID="tpF-Th-OKR">
             <objects>
@@ -276,6 +303,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </view>
+                                                    <connections>
+                                                        <segue destination="plw-bU-Dq4" kind="show" identifier="ShowTwelfthA2PhotoDetail" id="uy4-fM-trd"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                             <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3SectionHeader" id="dZo-1T-fv3" customClass="TwelfthA2CollectionView3SectionHeader" customModule="xTester" customModuleProvider="target">

@@ -22,10 +22,6 @@ import UIKit
     var storedOffsets = [Int: CGFloat]()
     
     
-       
-    
-    
-    
     
     
     // MARK: - ViewController events

@@ -42,20 +42,15 @@ class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDe
     
     // MARK:- Data Variables
     /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
-    var store: NinthPhotoStore!
-    var photoDataSource: NinthPhotoCollectionViewDataSource!
+    var store: TwelfthA2CollectionView3PhotoStore!
+    var photoDataSource: TwelfthA2CollectionView3DataSource!
+    
+    
     
     // MARK:- Enums
     enum Method: String {
         case RecentPhotos = "flickr.photos.getRecent"
     }
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -104,8 +99,8 @@ class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDe
     
     
      public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowNinthPhotoDetail" {
-            let destinationVC = segue.destination as! NinthDetailViewController
+        if segue.identifier == "ShowTwelfthA2PhotoDetail" {
+            let destinationVC = segue.destination as! TwelfthA2DetailViewController
             if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
                 updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
             }
@@ -115,26 +110,16 @@ class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDe
     
     
     
-    func updateDestinationData(destinationVC: NinthDetailViewController, indexPath: IndexPath) {
-        let photo = photoDataSource.photoForItemAtIndexPath(indexPath: indexPath)
-        destinationVC.photo = photo
-        destinationVC.store = store
+    
+    func updateDestinationData(destinationVC: TwelfthA2DetailViewController, indexPath: IndexPath) {
+        //let photo = photoDataSource.photoForItemAtIndexPath(indexPath: indexPath)
+        //destinationVC.photo = photo
+        //destinationVC.store = store
     }
     
     
-
+ 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     
     
     
