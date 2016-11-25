@@ -6,15 +6,23 @@
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
+
 
 class TwelfthA2ViewController: UITableViewController,  Utils {
     
     
+    // MARK: - Local Variables
     let model: [[UIColor]] = generateRandomData()
     var storedOffsets = [Int: CGFloat]()
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -61,10 +69,7 @@ class TwelfthA2ViewController: UITableViewController,  Utils {
         switch indexPath.row {
             case 0:
                print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
-               
-                
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell1", for: indexPath)
-               
                 return cell
             case 1:
                 print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")

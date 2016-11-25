@@ -100,7 +100,6 @@ class FirstViewController: UIViewController, Utils {
         case .NinthSegue:
             // We will use this section to inject Propery values in NinthViewController
             let ninthVC = segue.destination  as! NinthViewController
-            ninthVC.city = "Jack City"  // REMOVE THIS LATER
             ninthVC.store = NinthPhotoStore()  // give the VC a store object
             ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
             

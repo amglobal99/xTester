@@ -13,6 +13,22 @@ class TwelfthAViewController: UIViewController, Utils{
     
     
     
+    enum SegueIdentifier:String  {
+        case TwelfthA1Segue
+        case TwelfthA2Segue
+    }
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +39,23 @@ class TwelfthAViewController: UIViewController, Utils{
     
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let  identifier = segue.identifier
+        let segIdentifier = SegueIdentifier(rawValue: identifier!)
+        
+        switch segIdentifier! {
+        case .TwelfthA1Segue:
+            print("A1")
+        case .TwelfthA2Segue:
+            print("A2")
+            let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
+            //twelfthA2VC.store = TwelfthA2PhotoStore()  // give the VC a store object
+            //twelfthA2VC.photoDataSource = TwelfthA2PhotoCollectionViewDataSource()
+        }
+    
+    }
     
     
     

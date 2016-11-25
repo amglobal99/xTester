@@ -31,7 +31,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="MTO-8s-MEq" kind="show" id="ExQ-uG-ASv"/>
+                                            <segue destination="MTO-8s-MEq" kind="show" identifier="TwelfthA1Segue" id="ExQ-uG-ASv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYy-gS-DGp">
@@ -44,7 +44,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="B4e-ht-98Z" kind="show" id="HPs-Qt-d34"/>
+                                            <segue destination="B4e-ht-98Z" kind="show" identifier="TwelfthA2Segue" id="HPs-Qt-d34"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-Tn-GTT">
