@@ -269,7 +269,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView2Cell" id="ppR-U8-aGO" customClass="TwelfthA2CollectionView3Cell" customModule="xTester" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3Cell" id="ppR-U8-aGO" customClass="TwelfthA2CollectionView3Cell" customModule="xTester" customModuleProvider="target">
                                                     <rect key="frame" x="50" y="27" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -278,7 +278,7 @@
                                                     </view>
                                                 </collectionViewCell>
                                             </cells>
-                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView2SectionHeader" id="dZo-1T-fv3" customClass="TwelfthA2CollectionView3SectionHeader" customModule="xTester" customModuleProvider="target">
+                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3SectionHeader" id="dZo-1T-fv3" customClass="TwelfthA2CollectionView3SectionHeader" customModule="xTester" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="104"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
