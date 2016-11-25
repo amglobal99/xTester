@@ -15,18 +15,6 @@ import UIKit
     
     class TwelfthA2ViewController: UITableViewController,   Utils {
         
-
-    
-    
-    
-    
-    // MARK: - IBOutlets
-    @IBOutlet var photoCollectionView: UICollectionView!
-    
-    
-    
-    
-    
     
     
     // MARK: - Local Variables
@@ -34,36 +22,7 @@ import UIKit
     var storedOffsets = [Int: CGFloat]()
     
     
-    // MARK: - Local Variables
-    var city:String!
-    var sectionPhotoDictionary:[String:[TwelfthA2Photo]] = [:]
-    
-    // MARK: - Global Constants Variables
-    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let apiKey = Constants.Configuration.apiKey
-    let method = Constants.Configuration.method
-    let key  = Constants.Configuration.key
-    let rootPath = Constants.Configuration.rootPath
-    let dataKey = Constants.Configuration.dataKey
-    let params = Constants.Configuration.params
-    
-    
-    // MARK:- Data Variables
-    /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
-    var store: TwelfthA2CollectionView3PhotoStore!
-    var photoDataSource: TwelfthA2CollectionView3DataSource!
-    
-    // MARK:- Enums
-    enum Method: String {
-        case RecentPhotos = "flickr.photos.getRecent"
-    }
-    
-    
-    
-    
-
-    
-    
+       
     
     
     
@@ -72,104 +31,9 @@ import UIKit
     // MARK: - ViewController events
     
     override func viewDidLoad() {
-        
-        
-        /// NOTE: We populate data variables in our PhotoDataSource in the closure below
-        
         super.viewDidLoad()
         
-        
-        
-        /*
-        
-        photoCollectionView.dataSource = photoDataSource
-        photoCollectionView.delegate = self
-        
-        
-        
-        
-        // Completion Handler
-        let completionHandler: (Result<JSON>) -> Void  =
-            {  [weak self] result in
-                let jsonObj = result.value!
-                // get list of Photos(returns array of 'NinthPhoto' items)
-                let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
-                
-                // get array of Section titles
-                guard let photoKeyArray =  self?.getSectionTitlesArray(from: jsonObj, key: self?.key)   else {
-                    //print("getKeyArray method returned a nil value.")
-                    return
-                }
-                /*
-                 print("+++++++++++++++++  Section Titles Array  +++++++++++++++++++++++")
-                 print(photoKeyArray)
-                 print("+++++++++++++++++  end Section Titles +++++++++++++++++++++")
-                 */
-                
-                // get Section Title: Photos Dictionary
-                guard let sectionPhotosDictionary = self?.store.sectionPhotosDictionary(from: jsonObj, for: self?.key) else {
-                    print("Section Photo Items Dictionary is nil")
-                    return
-                }
-                /*
-                 print("+++++++++++++++++  Section Photos Dictonary +++++++++++++++++++++++")
-                 print(sectionPhotosDictionary)
-                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
-                 */
-                
-                
-                OperationQueue.main.addOperation() {
-                    switch itemsResult {
-                    case let .success(photos):
-                        // print(" We have total of \(photos.count)  photos ")
-                        // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
-                        self?.photoDataSource.photos = photos
-                        self?.photoDataSource.sections =  photoKeyArray
-                        self?.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
-                    case .failure(let error):
-                        self?.photoDataSource.photos.removeAll()
-                        //print("     Error fetching recent photos \(error)")
-                    }  // end switch
-                    
-                    // Reload Data
-                    //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
-                    self?.photoCollectionView?.reloadData()
-                }  // end operation
-                
-                
-        } // end closure
-        
-        // Create a Async(Alamofire) request to get jSON data
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
-        getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-        
-
-        
-        */
-        
-        
-        
-        
-        
-        
-        
-        
     }  // end viewDidLoad
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -203,9 +67,7 @@ import UIKit
     
     /// Cell for each row
     override func tableView(_ tableView: UITableView,  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         print("Generating cell for row  \(indexPath.row) in section: \(indexPath.section) ")
-        
         switch indexPath.row {
             case 0:
                print("Row is : \(indexPath.row)  and Section : \(indexPath.section)   ")
@@ -244,16 +106,11 @@ import UIKit
     
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        
         if indexPath.row == 0 {
             guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
             tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
             tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
         }
-        
-        
-       
     }
     
     
@@ -262,21 +119,14 @@ import UIKit
                             forRowAt indexPath: IndexPath) {
         
           if indexPath.row == 0 {
-
             guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
             storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
-        
         }
-        
-        
     }
     
-    
-    
-    
+        
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat  {
-        
         switch indexPath.row {
             case 0:
                 return 120
@@ -296,15 +146,7 @@ import UIKit
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
     
 }  // end class
 
