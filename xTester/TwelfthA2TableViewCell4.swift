@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class TwelfthA2PhotoTableViewCell4: UITableViewCell {
+class TwelfthA2TableViewCell4: UITableViewCell {
     
     
     

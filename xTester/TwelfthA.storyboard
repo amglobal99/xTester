@@ -224,7 +224,7 @@
                                     <outlet property="collectionView1" destination="qkC-gd-MRC" id="nXv-cT-Fkr"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell2" id="B9o-aj-jUN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell2" id="B9o-aj-jUN" customClass="TwelfthA2TableViewCell2" customModule="xTester" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="180" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9o-aj-jUN" id="pAc-yr-Iu2">
@@ -253,7 +253,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell3" id="HW3-cq-1Ni">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell3" id="HW3-cq-1Ni" customClass="TwelfthA2TableViewCell3" customModule="xTester" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="300" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HW3-cq-1Ni" id="LNN-mq-jyB">
@@ -294,7 +294,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell4" id="8ld-WL-byK">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell4" id="8ld-WL-byK" customClass="TwelfthA2TableViewCell4" customModule="xTester" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="420" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ld-WL-byK" id="ieO-EP-81t">
@@ -303,7 +303,7 @@
                                     <color key="backgroundColor" red="1" green="0.97585903845007971" blue="0.85870013009796164" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell5" id="d7o-lC-1yd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell5" id="d7o-lC-1yd" customClass="TwelfthA2TableViewCell5" customModule="xTester" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="540" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7o-lC-1yd" id="trV-Fn-4pr">
@@ -312,7 +312,7 @@
                                     <color key="backgroundColor" red="0.93888117433716411" green="0.73920851071565052" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell6" id="mG8-0a-Ciz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell6" id="mG8-0a-Ciz" customClass="TwelfthA2TableViewCell6" customModule="xTester" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="660" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mG8-0a-Ciz" id="qso-MN-3DV">
