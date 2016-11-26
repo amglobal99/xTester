@@ -22,6 +22,11 @@ import SwiftyJSON
 class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDelegate, Utils, JsonConvertible {
     
     
+    
+    
+    
+    /*
+    
     // MARK: - IBOutlets
     @IBOutlet var photoCollectionView: UICollectionView!
     
@@ -63,7 +68,7 @@ class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDe
      
      */
     
-    public func collectionView (_ collectionView: UICollectionView,
+    override public func collectionView (_ collectionView: UICollectionView,
                                          willDisplay cell: UICollectionViewCell,
                                          forItemAt indexPath: IndexPath )  {
         
@@ -98,7 +103,7 @@ class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDe
      */
     
     
-     public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowTwelfthA2PhotoDetail" {
             let destinationVC = segue.destination as! TwelfthA2DetailViewController
             if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
@@ -119,7 +124,7 @@ class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDe
     
     
  
-    
+    */
     
     
     

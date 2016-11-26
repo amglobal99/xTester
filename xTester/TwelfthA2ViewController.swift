@@ -22,6 +22,18 @@ import UIKit
     var storedOffsets = [Int: CGFloat]()
     
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
     
     // MARK: - ViewController events
@@ -102,11 +114,47 @@ import UIKit
     
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        /*
         if indexPath.row == 0 {
             guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
             tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
             tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
         }
+        */
+        
+        switch indexPath.row {
+        case 0:
+            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
+            tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+            tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+        case 1:
+            print("case 1")
+        case 2:
+            print("case 2")
+            guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
+            tableViewCell3.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+            tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+        case 3:
+            print("case 3")
+
+        case 4:
+            print("case 4")
+
+        case 5:
+            print("case 5")
+
+        default:
+            print("case 1")
+
+        }
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -170,6 +218,7 @@ import UIKit
 extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,  numberOfItemsInSection section: Int) -> Int {
+        
         return model[collectionView.tag].count
     }
     

@@ -12,30 +12,50 @@ import UIKit
 
 class TwelfthA2DetailViewController: UIViewController, Utils{
     
+        
+    @IBOutlet weak var imageView: UIImageView!
+    
+
+    var store: TwelfthA2CollectionView3PhotoStore!
     
     
-    override func viewDidLoad() {
+
+    // when photo loads show a title
+    var photo: TwelfthA2Photo! {
+        didSet {
+            navigationItem.title = photo.title
+        }
+    }
+    
+    
+     
+    
+    
+    override public func viewDidLoad()  {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         
-        showBanner(title: "Banner Page", subtitle: "Welcome to Banner Page \n Plesase try later", image: nil, bkColor: UIColor.red)
+        /*
+        store.fetchImageForPhoto(photo)
+        { (result) -> Void in
+            switch result {
+            case let .success(image):
+                OperationQueue.main.addOperation() {
+                    self.imageView.image = image
+                }
+            case let .failure(error):
+                print("Error fetching image for photo : \(error) " )
+            } //end swith
+            
+        } //end closure
+ 
+ */
+ 
+ 
         
-        
-    }
+    }  //end viewDidLoad
     
-    
-    
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
+
     
     
     
