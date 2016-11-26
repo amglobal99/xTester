@@ -205,7 +205,7 @@
                                     <frame key="frameInset" width="375" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkC-gd-MRC" customClass="TwelfthA2CollectionView1" customModule="xTester" customModuleProvider="target">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkC-gd-MRC" customClass="TwelfthA2CollectionView1" customModule="xTester" customModuleProvider="target">
                                             <frame key="frameInset" minX="8" minY="3" width="359" height="112"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -290,7 +290,7 @@
                                     <frame key="frameInset" width="375" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-Yc-sYA" customClass="TwelfthA2CollectionView3" customModule="xTester" customModuleProvider="target">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-Yc-sYA" customClass="TwelfthA2CollectionView3" customModule="xTester" customModuleProvider="target">
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o81-Xm-Irs" customClass="TwelfthA2CollectionView3FlowLayout" customModule="xTester" customModuleProvider="target">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -312,7 +312,7 @@
                                                 </collectionViewCell>
                                             </cells>
                                             <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3SectionHeader" id="dZo-1T-fv3" customClass="TwelfthA2CollectionView3SectionHeader" customModule="xTester" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="103.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="104"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </collectionReusableView>

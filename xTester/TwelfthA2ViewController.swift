@@ -18,43 +18,23 @@ import UIKit
     
     
     // MARK: - Local Variables
-    let model: [[UIColor]] = generateRandomData()
-    var storedOffsets = [Int: CGFloat]()
     
-    
+        //let model:[[Any]]?
+        //model[0] = generateRandomData()
+        let model: [[UIColor]] = generateRandomData()
+        var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
     
     // MARK: - ViewController events
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }  // end viewDidLoad
     
     
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    
-    
+        
     
     // MARK: - TableView DataSource methods
     
@@ -63,17 +43,13 @@ import UIKit
         return 1
     }
     
-    
     /// Number of rows in Section
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Number of rows in section: \(section) : 6")
         return 6
     }
     
-    
-    
-    
-    /// Cell for each row
+
+    /// Cell for each row within the TableView
     override func tableView(_ tableView: UITableView,  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("Generating cell for row  \(indexPath.row) in section: \(indexPath.section) ")
         switch indexPath.row {
@@ -105,71 +81,74 @@ import UIKit
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TwelfthA2TableViewCell1", for: indexPath)
                 return cell
-        
         } // end switch
-        
-        
     }  // end func
     
     
-    
+        
+    /// Function called before TableView cell is to be displayed
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        /*
-        if indexPath.row == 0 {
-            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
-            tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-            tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-        }
-        */
-        
-        switch indexPath.row {
-        case 0:
-            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
-            tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-            tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-        case 1:
-            print("case 1")
-        case 2:
-            print("case 2")
-            guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
-            tableViewCell3.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-            tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-        case 3:
-            print("case 3")
+            switch indexPath.row {
+                    case 0:
+                        guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
+                        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+                        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+                    case 1:
+                        print("case 1")
+                    case 2:
+                        print("case 2")
+                        /*
+                        guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
+                        tableViewCell3.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+                        tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+                        */
+                        
+                    case 3:
+                        print("case 3")
 
-        case 4:
-            print("case 4")
+                    case 4:
+                        print("case 4")
 
-        case 5:
-            print("case 5")
+                    case 5:
+                        print("case 5")
 
-        default:
-            print("case 1")
-
-        }
-        
-        
-        
-        
-        
-        
-        
-    }
-    
-    
-    override func tableView(_ tableView: UITableView,
-                            didEndDisplaying cell: UITableViewCell,
-                            forRowAt indexPath: IndexPath) {
-        
-          if indexPath.row == 0 {
-            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
-            storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
-        }
-    }
+                    default:
+                        print("case 1")
+            } // end switch
+    } // end func
     
         
+    /// Function called before cell stops displaying
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell,  forRowAt indexPath: IndexPath) {
+        
+            switch indexPath.row {
+                    case 0:
+                        guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
+                        storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
+                    case 1:
+                        print("case 11")
+                    case 2:
+                        print("case 22")
+                
+                    case 3:
+                        print("case 33")
+                        
+                    case 4:
+                        print("case 44")
+                        
+                    case 5:
+                        print("case 55")
+                        
+                    default:
+                        print("case 11")
+            } // end switch
+        
+    } // end func
     
+        
+        
+    /// Function determines the height of each cell within the TabelView
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat  {
         switch indexPath.row {
             case 0:
@@ -177,13 +156,13 @@ import UIKit
             case 1:
                 return 320
             case 2:
-                return 160
+                return 180
             case 3:
                 return 340
             case 4:
-                return 120
+                return 240
             case 5:
-                return 220
+                return 240
             default:
                 return 200
         }
@@ -214,22 +193,64 @@ import UIKit
 
 // MARK: - CollectionView DataSource Methods
 
-
+/// Extension for TableViewController
 extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     
     func collectionView(_ collectionView: UICollectionView,  numberOfItemsInSection section: Int) -> Int {
         
-        return model[collectionView.tag].count
+        //return model[collectionView.tag].count
+        
+        //return model[0].count
+        
+        return 8
     }
     
     
+    
+    
+    
+    
+    /// Function give sus indivisula cell within Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-        cell.backgroundColor = model[collectionView.tag][indexPath.item]
-        return cell
+        
+        
+        switch indexPath.row {
+                case 0:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
+                    cell.backgroundColor = model[collectionView.tag][indexPath.item]
+                    return cell
+                case 1:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
+                    cell.backgroundColor = UIColor.brown
+                    return cell
+                case 2:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
+                    cell.backgroundColor = UIColor.darkGray
+                    return cell
+                case 3:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
+                    cell.backgroundColor = UIColor.green
+                    return cell
+                case 4:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
+                    cell.backgroundColor = UIColor.cyan
+                    return cell
+                case 5:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
+                    cell.backgroundColor = UIColor.orange
+                    return cell
+                default:
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
+                    cell.backgroundColor = model[collectionView.tag][indexPath.item]
+                    return cell
+        }
+
     }
     
     
+    
+        
     
     
     // Function to get Section Header View
@@ -243,22 +264,12 @@ extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDat
                                                                          withReuseIdentifier: "TwelfthA2CollectionView1SectionHeader",
                                                                          for: indexPath) as! TwelfthA2CollectionView1SectionHeader
         
-        
         headerView.sectionLabel1.text = "Test CollView"
-        
         return headerView
-        
     }  // end method
     
     
 
-    
-    
-    
-    
-    
-    
-    
     
     
 }  // end extension
