@@ -311,10 +311,9 @@
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
-                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3SectionHeader" id="dZo-1T-fv3" customClass="TwelfthA2CollectionView3SectionHeader" customModule="xTester" customModuleProvider="target">
+                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9en-Xk-ly8">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="104"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </collectionReusableView>
                                         </collectionView>
                                     </subviews>

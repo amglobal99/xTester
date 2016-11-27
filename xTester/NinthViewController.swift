@@ -120,7 +120,7 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
                             self?.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
                         case .failure(let error):
                             self?.photoDataSource.photos.removeAll()
-                            //print("     Error fetching recent photos \(error)")
+                            print("     Error fetching recent photos \(error)")
                     }  // end switch
                 
                     // Reload Data

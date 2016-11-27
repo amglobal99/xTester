@@ -13,7 +13,6 @@ import UIKit
 class TwelfthA2TableViewCell3: UITableViewCell {
     
     
-    
     @IBOutlet weak var collectionView3: TwelfthA2CollectionView3!
     
     
