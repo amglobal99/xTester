@@ -31,8 +31,8 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     }
     
     
-    enum NinthPhotosResult {
-        case success([NinthPhoto] )
+    enum TwelfthA2PhotosResult {
+        case success([TwelfthA2Photo] )
         case failure(Error)
     }
     
@@ -77,8 +77,8 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     // Function to retrieve array of NinthPhoto objects
-    func photosFromJsonObject(_ json:JSON) -> NinthPhotosResult {
-        var finalPhotos:[NinthPhoto] = []
+    func photosFromJsonObject(_ json:JSON) -> TwelfthA2PhotosResult {
+        var finalPhotos:[TwelfthA2Photo] = []
         var addCount = 0
         // print("      json object count is : \(json.count)   ")
         
@@ -87,7 +87,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         print("***************** end JSOn object *****************")
         
         for ( _, jsonItem) in json {
-            if let photo: NinthPhoto  = photoFromJSONObject(jsonItem) {
+            if let photo: TwelfthA2Photo  = photoFromJSONObject(jsonItem) {
                 finalPhotos.append(photo)
                 addCount += 1
             }
@@ -95,13 +95,13 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         
         if finalPhotos.count == 0 && json.count > 0 {
             print("Sorry...No photos were retrieved")
-            return  NinthPhotosResult.failure(FlickrError.invalidJSONData)
+            return  TwelfthA2PhotosResult.failure(FlickrError.invalidJSONData)
         }
         
         print("       ++++++++++++  Final Photos +++++++++++++++++")
         print("      Array contains \(finalPhotos.count)  photos" )
         
-        return NinthPhotosResult.success(finalPhotos)
+        return TwelfthA2PhotosResult.success(finalPhotos)
     }  // end func
     
     
@@ -116,7 +116,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     // If any of the fields is unavailable, it returns a nil
     // Many entries do nit have a URL, so that Photo wil not be returned
     //
-    func photoFromJSONObject(_ json: JSON ) -> NinthPhoto? {
+    func photoFromJSONObject(_ json: JSON ) -> TwelfthA2Photo? {
         guard
             let photoID = json["id"].string,
             let title = json["title"].string,
@@ -128,7 +128,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
             else {
                 return nil    // don't have enough info, print("returing nil here" )
         }
-        return NinthPhoto(title: title, photoID: photoID, remoteURL: url, dateTaken: datetaken, datetakenUnknown: datetakenunknown)
+        return TwelfthA2Photo(title: title, photoID: photoID, remoteURL: url, dateTaken: datetaken, datetakenUnknown: datetakenunknown)
     }  //end method
     
     
@@ -138,7 +138,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     // Function to fetch image for Photo
-    func fetchImageForPhoto(_ photo: NinthPhoto, completion: @escaping (ImageResult) -> Void ) {
+    func fetchImageForPhoto(_ photo: TwelfthA2Photo, completion: @escaping (ImageResult) -> Void ) {
         
         //print("          fetchImageForPhoto: Started for \(photo.photoID) ")
         if let image = photo.image {
@@ -196,10 +196,10 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     // Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
-    func sectionPhotosDictionary(from obj:JSON?, for key:String? ) -> [String:[NinthPhoto]]? {
+    func sectionPhotosDictionary(from obj:JSON?, for key:String? ) -> [String:[TwelfthA2Photo]]? {
         var keyArray:[String] = []
-        var photoItems:[NinthPhoto] = []
-        var sectionPhotosDictionary:[String:[NinthPhoto]] = [:]   // Create a Dictionary to hold our data
+        var photoItems:[TwelfthA2Photo] = []
+        var sectionPhotosDictionary:[String:[TwelfthA2Photo]] = [:]   // Create a Dictionary to hold our data
         
         guard let obj = obj, let key = key else {
             return nil

@@ -32,15 +32,15 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     // MARK: - Structs
     fileprivate struct Storyboard     {
-        static let CellIdentifier = "NinthPhotoCollectionViewCell"
-        static let showWebView = "ShowNinthPhotoDetailView"
+        static let CellIdentifier = "TwelfthA2CollectionView3Cell"
+        static let showWebView = "ShowTwelfthA2PhotoDetailView"
     }
     
     
     // MARK: - Data Variables
-    var photos = [NinthPhoto]()   // This is the list of all our Photos
+    var photos = [TwelfthA2Photo]()   // This is the list of all our Photos
     var sections:[String] = []  // This is the array of names for our  sections
-    var sectionPhotoItems:[String:[NinthPhoto]] = [:]  // Dictionary holds Photos for each section title
+    var sectionPhotoItems:[String:[TwelfthA2Photo]] = [:]  // Dictionary holds Photos for each section title
     
     
     
@@ -81,7 +81,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let photoTitleToDisplay: String
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! NinthPhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView3Cell
         let photo = photoForItemAtIndexPath(indexPath: indexPath)
         
         // Get a truncated title for our Photo
@@ -133,7 +133,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     // Function returns the number of Items in section
     //
     
-    func photosForSection(_ sectionNumber: Int) -> [NinthPhoto] {
+    func photosForSection(_ sectionNumber: Int) -> [TwelfthA2Photo] {
         // Get photos for this section (Filter the photos array)
         
         
@@ -156,7 +156,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     
     // Function returns a Photo for the given indexpath
-    func photoForItemAtIndexPath(indexPath: IndexPath) -> NinthPhoto {
+    func photoForItemAtIndexPath(indexPath: IndexPath) -> TwelfthA2Photo {
         let rowNumber = (indexPath as IndexPath).row
         let sectionNumber = (indexPath as IndexPath).section
         //print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")

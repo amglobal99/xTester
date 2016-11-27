@@ -16,7 +16,6 @@ import UIKit
     class TwelfthA2ViewController: UITableViewController,   Utils {
         
     
-    
     // MARK: - Local Variables
     
        // let model:[[Any]] = generateRandomData()
@@ -30,6 +29,8 @@ import UIKit
         var store: TwelfthA2CollectionView3PhotoStore!
         var photoDataSource: TwelfthA2CollectionView3DataSource!
         
+        var city:String!
+        
         
         
         
@@ -38,6 +39,15 @@ import UIKit
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("city is  \(city) " )
+        
+        
+        
+        
+        
+        
+        
     }  // end viewDidLoad
     
     

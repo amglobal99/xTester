@@ -38,7 +38,6 @@ class TwelfthA2TableViewCell3: UITableViewCell {
     
     
 
-    
-    
-    
-}
+}  // end class
+
+
