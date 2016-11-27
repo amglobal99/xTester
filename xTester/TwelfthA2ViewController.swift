@@ -187,7 +187,7 @@ import UIKit
             case 1:
                 return 320
             case 2:
-                return 180
+                return 200
             case 3:
                 return 340
             case 4:

@@ -111,8 +111,8 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
                         at indexPath: IndexPath) -> UICollectionReusableView{
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: "NinthPhotoSectionHeader",
-                                                                         for: indexPath) as! NinthPhotoSectionHeaderView
+                                                                         withReuseIdentifier: "TwelfthA2CollectionView3SectionHeader",
+                                                                         for: indexPath) as! TwelfthA2CollectionView3SectionHeader
         
         let rowNumber = (indexPath as IndexPath).row
         let sectionNumber = (indexPath as IndexPath).section
@@ -120,11 +120,19 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         let sectionLabel = sections[sectionNumber]  // Retrieve section title from our stored array
         print("Our section label is : \(sectionLabel) " )
         let title = "Section :: " + sectionLabel
-        headerView.sectionLabel.text = title
+        headerView.section3Label.text = title
         
         return headerView
         
     }  // end method
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

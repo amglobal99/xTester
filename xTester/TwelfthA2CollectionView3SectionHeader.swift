@@ -16,9 +16,8 @@ import UIKit
 class TwelfthA2CollectionView3SectionHeader: UICollectionReusableView  {
     
     
-    @IBOutlet weak var sectionLabel2: UILabel!
     
-    
+    @IBOutlet weak var section3Label: UILabel!
     
     
     /*
