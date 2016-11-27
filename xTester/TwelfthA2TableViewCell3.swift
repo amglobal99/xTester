@@ -28,9 +28,14 @@ class TwelfthA2TableViewCell3: UITableViewCell {
     
     
     
-    func setCollectionViewDataSourceDelegate  <D: UICollectionViewDataSource & UICollectionViewDelegate> (dataSourceDelegate: D, forRow row: Int) {
+   // func setCollectionViewDataSourceDelegate  <D: UICollectionViewDataSource & UICollectionViewDelegate> (dataSourceDelegate: D, forRow row: Int) {
+        
+        
+    func setCollectionViewDataSourceDelegate  <D: UICollectionViewDataSource,E: UICollectionViewDelegate> (dataSource: D,
+                                               dataSourceDelegate: E, forRow row: Int) {
+        
+        collectionView3.dataSource = dataSource
         collectionView3.delegate = dataSourceDelegate
-        collectionView3.dataSource = dataSourceDelegate
         collectionView3.tag = row
         collectionView3.reloadData()
     }

@@ -42,7 +42,10 @@ import UIKit
         
         print("city is  \(city) " )
         
+        //photoCollectionView.dataSource = photoDataSource
+        //photoCollectionView.delegate = self
         
+
         
         
         
@@ -118,22 +121,14 @@ import UIKit
                         print("case 2 ...willDisplayCell")
                         
                         
-                        /*
+                        
                         guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
-                        tableViewCell3.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+                        //tableViewCell3.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+                        tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: photoDataSource, dataSourceDelegate: self, forRow: indexPath.row)
                         tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
                         print("case 2 .... setup complete for delegate")
                 
-                */
-                
-                
-                
-                
-                
-                
-                
-                
-                
+              
                 
                     case 3:
                         print("case 3")
