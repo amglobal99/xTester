@@ -16,7 +16,7 @@ import SwiftyJSON
 // MARK: - Protocols
 
 // Define empty protocol
-protocol JsonConvertible {}
+protocol JsonConvertible: Utils {}
 
 
 // MARK: - Extensions
@@ -49,16 +49,50 @@ extension JsonConvertible  {
         
             let urlRequest = URLRequest(url: url)
         
+        
+        /*
+        // Check for Internet Connection before sending Request
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            showBanner(title: "No Connection", subtitle: "Please try again when Internet connection \n is available !!", image: nil, bkColor: UIColor.red)
+             return
+            
+        }
+        */
+        
+        
+        
+        
                 // Send Alamofire request
-                Alamofire.request(urlRequest).responseJSON
+               //Alamofire.request(urlRequest).responseJSON
+                    
+                    Alamofire.request(urlRequest).validate().responseJSON
+                    
                     { (response) -> Void  in
-                            guard response.result.error == nil else {   // got an error
+                        
+                        
+                        // First check if user Authenticated
+                        //..........
+                        
+                        
+                        // Check if an Error is present
+                        guard response.result.error == nil else {   // got an error
+                                print("Printing ERROR ")
                                 print(response.result.error!)
+                                completionHandler(Result.failure(response.result.error!) )
                                 return
-                            }
+                        }
+                        
+                        
                             guard response.result.value != nil else {  // Data is nil
+                                print("Request did not return any data")
                                 return
                             }
+                        
+                        
+                        
                     
                         let jsonObject:JSON  = JSON(response.result.value!)  //convert Response to SwiftyJSON object
                    
@@ -88,9 +122,28 @@ extension JsonConvertible  {
                                 }
                         }//if rootPath =  nil
                     }  // end Alamofire request
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     } // end function
     
 
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
