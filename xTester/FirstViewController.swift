@@ -63,7 +63,22 @@ class FirstViewController: UIViewController, Utils {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        // Let's check if Internet connection is available
+        
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            
+            displayAlert( "Action Required", message: "No Internet Connetion. \nClick home button to quit app.", buttonText: "OK")
+            
+            return
+            
+        }
+        
+        
         
         
     }

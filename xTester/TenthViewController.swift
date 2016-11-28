@@ -17,7 +17,7 @@ class TenthViewController: UIViewController, Utils {
     @IBAction func showGenericAlert(_ sender: AnyObject) {
        // print("will print ..")
         
-        displayAlert( "Action Required", error: "No Internet Connetion. \nClick home button to quit app.", buttonText: "OK")
+        displayAlert( "Action Required", message: "No Internet Connetion. \nClick home button to quit app.", buttonText: "OK")
         
     }
     

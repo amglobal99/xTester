@@ -16,10 +16,16 @@ class TwelfthA1ViewController: UIViewController, Utils{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         
-       // showBanner(title: "Banner Page", subtitle: "Welcome to Banner Page \n Plesase try later", image: nil, bkColor: UIColor.red)
+        // Let's check if Internet CONNECTION is available
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            displayAlert( "Action Required", message: "No Internet Connetion. \nClick home button to quit app.", buttonText: "OK")
+            //return
+        }
         
         
     }
@@ -34,11 +40,6 @@ class TwelfthA1ViewController: UIViewController, Utils{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
-    
     
     
     

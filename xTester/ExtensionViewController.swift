@@ -14,9 +14,9 @@ extension UIViewController {
     
     
         // Generic function to display an alert from any ViewControlller
-        func displayAlert(_ title:String, error:String, buttonText: String) {
+        func displayAlert(_ title:String, message:String, buttonText: String) {
                 // Create the alert
-                let alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
                 // Add an action
                 alert.addAction(UIAlertAction(title: buttonText, style: .default, handler:
                     { action in
@@ -26,6 +26,11 @@ extension UIViewController {
                 // Add it to viewController
                 self.present(alert, animated: true, completion: nil)
         } // end function
+    
+    
+    
+    
+    
     
     
     

@@ -24,10 +24,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyV-7O-Wyk">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="cfZ-94-z4Z"/>
+                                            <constraint firstAttribute="width" constant="230" id="Bx6-6w-Dve"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" title="16: Banners">
+                                        <state key="normal" title="12A1: INTERNET CONNECTION">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -36,11 +37,8 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYy-gS-DGp">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="uqe-px-huX"/>
-                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                        <state key="normal" title="17: CollView Custom">
+                                        <state key="normal" title="12A2: CollView Custom">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -49,9 +47,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne9-Tn-GTT">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Sjc-Bj-mBa"/>
-                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,9 +54,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-TW-ws6">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="4Ue-0Q-gDe"/>
-                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,9 +61,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbP-RY-ZY0">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="7rN-yv-Cza"/>
-                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,9 +68,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snW-zx-uKg">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="vZc-Af-U3w"/>
-                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,9 +75,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ie-Yw-AIe">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="hzD-q1-f2U"/>
-                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,21 +82,28 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OO-IF-cN1">
                                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="Q7v-c7-Q09"/>
-                                        </constraints>
                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Ie-Yw-AIe" firstAttribute="trailing" secondItem="8OO-IF-cN1" secondAttribute="trailing" id="BI3-Hl-uoY"/>
+                                    <constraint firstItem="Ne9-Tn-GTT" firstAttribute="trailing" secondItem="IrB-TW-ws6" secondAttribute="trailing" id="E0V-Lf-7QK"/>
+                                    <constraint firstItem="JbP-RY-ZY0" firstAttribute="trailing" secondItem="snW-zx-uKg" secondAttribute="trailing" id="OIF-VT-QPW"/>
+                                    <constraint firstItem="snW-zx-uKg" firstAttribute="trailing" secondItem="0Ie-Yw-AIe" secondAttribute="trailing" id="Qww-eI-0xP"/>
+                                    <constraint firstItem="gyV-7O-Wyk" firstAttribute="trailing" secondItem="pYy-gS-DGp" secondAttribute="trailing" id="Yg1-z1-RdT"/>
+                                    <constraint firstItem="pYy-gS-DGp" firstAttribute="trailing" secondItem="Ne9-Tn-GTT" secondAttribute="trailing" id="eoA-ze-pUw"/>
+                                    <constraint firstItem="IrB-TW-ws6" firstAttribute="trailing" secondItem="JbP-RY-ZY0" secondAttribute="trailing" id="hhx-nM-YVJ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.92886529849999999" green="0.8236619288" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Kxq-ea-nHp" firstAttribute="leading" secondItem="tw2-LB-GhW" secondAttribute="leadingMargin" constant="27" id="XhC-UA-Ehv"/>
-                            <constraint firstItem="Kxq-ea-nHp" firstAttribute="top" secondItem="oGB-Sz-cIe" secondAttribute="bottom" constant="73" id="qvx-A8-rO1"/>
+                            <constraint firstItem="Kxq-ea-nHp" firstAttribute="leading" secondItem="tw2-LB-GhW" secondAttribute="leadingMargin" constant="27" id="Iq1-tV-jAI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kxq-ea-nHp" secondAttribute="trailing" constant="66" id="MIa-VV-vRe"/>
+                            <constraint firstItem="Kxq-ea-nHp" firstAttribute="top" secondItem="oGB-Sz-cIe" secondAttribute="bottom" constant="73" id="OBg-Pm-ojg"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -202,7 +192,7 @@
                                 <rect key="frame" x="0.0" y="60" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1sn-WT-8Pm" id="fH5-uK-n6c">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkC-gd-MRC" customClass="TwelfthA2CollectionView1" customModule="xTester" customModuleProvider="target">
@@ -258,7 +248,7 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9o-aj-jUN" id="pAc-yr-Iu2">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-bh-35e">
@@ -287,7 +277,7 @@
                                 <rect key="frame" x="0.0" y="300" width="375" height="181"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HW3-cq-1Ni" id="LNN-mq-jyB">
-                                    <frame key="frameInset" width="375" height="180"/>
+                                    <frame key="frameInset" width="375" height="181"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-Yc-sYA" customClass="TwelfthA2CollectionView3" customModule="xTester" customModuleProvider="target">
@@ -300,7 +290,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3Cell" id="ppR-U8-aGO" customClass="TwelfthA2CollectionView3Cell" customModule="xTester" customModuleProvider="target">
-                                                    <rect key="frame" x="109" y="2" width="100" height="160"/>
+                                                    <rect key="frame" x="109" y="0.0" width="100" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
@@ -367,6 +357,11 @@
                                                         <constraint firstItem="gKt-wx-Uzt" firstAttribute="leading" secondItem="ppR-U8-aGO" secondAttribute="leadingMargin" constant="32" id="s9I-ZR-FmF"/>
                                                     </constraints>
                                                     <size key="customSize" width="100" height="160"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <outlet property="imageView" destination="oaZ-WN-Ybj" id="4N8-ga-lni"/>
                                                         <outlet property="photoIDLabel" destination="ede-k6-lk3" id="N6i-Bz-X5B"/>
@@ -377,7 +372,7 @@
                                                 </collectionViewCell>
                                             </cells>
                                             <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3SectionHeader" id="9en-Xk-ly8" customClass="TwelfthA2CollectionView3SectionHeader" customModule="xTester" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="109" height="164"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="1000"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9d-NX-RpX">
@@ -418,7 +413,7 @@
                                 <rect key="frame" x="0.0" y="481" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ld-WL-byK" id="ieO-EP-81t">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" red="1" green="0.97585903845007971" blue="0.85870013009796164" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
@@ -427,7 +422,7 @@
                                 <rect key="frame" x="0.0" y="601" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7o-lC-1yd" id="trV-Fn-4pr">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" red="0.93888117433716411" green="0.73920851071565052" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
@@ -436,7 +431,7 @@
                                 <rect key="frame" x="0.0" y="721" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mG8-0a-Ciz" id="qso-MN-3DV">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" red="0.89258807748621516" green="1" blue="0.84175145591185274" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
