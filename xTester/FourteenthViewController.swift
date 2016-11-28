@@ -73,8 +73,8 @@ class FourteenthViewController: UIViewController {
             
             
             let urlString = "https://jsonplaceholder.typicode.com/todos"
-            //let urlString = "https://api.flickr.com/services/rest"
-            //let urlString = "http://citibikenyc.com/stations/json"
+            //let urlString2 = "https://api.flickr.com/services/rest"
+            let urlString2 = "http://citibikenyc.com/stations/json"
             
             
             // Request #1
@@ -84,32 +84,48 @@ class FourteenthViewController: UIViewController {
                 response in
                     //debugPrint(response)   // This prints output for data, response, result  values
                 
-                        print("++++++++++++++++++ Response Data +++++++++++++++++++++")
+                        print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
                         print(response.data)
-                        print("++++++++++++++++++ Response Response +++++++++++++++++++++")
+                        print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
                         print(response.response) // HTTP URL response
-                        print("++++++++++++++++++ Response Result +++++++++++++++++++++")
+                        print("\n\n++++++++++++++++++ Response Result +++++++++++++++++++++")
                         print(response.result)   // result of response serialization
-                    
+                
+                
+                
                     if let JSON = response.result.value {
-                        print(" +++++++++++++++++ JSON +++++++++++++++++++++++++++++++")
+                        print("\n\n +++++++++++++++++ Response Value (JSON) +++++++++++++++++++++++++++++++")
                         print("JSON: \(JSON)")
+                        print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
                     }
                 
                 }  // end closure
            
             
             
+            
+            
+            
+            
+            
             // Request # 2
             
-            Alamofire.request(urlString).response {
+            Alamofire.request(urlString2).response {
                 response in
+                print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
                     debugPrint(response)   // This prints output for data, response, result  value
+                print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
             }  // end closure
             
             
         } // end func
         
+    
+    
+    
+    
+    
+    
     
     
     
