@@ -59,6 +59,26 @@ func responsePropertyList(
 
 
 
+/**
+ 
+ COMMENTS:
+    As far a sI understand, we will need to do three checks to make sure
+    we are handling our web requests correctly.
+ 
+    1. Validate that statusCode is between 200 to 299
+    2. Make sure error is nil
+    3. Make sure response.result.error is NOT NIL
+ 
+    NOTE: Each Alamofire response result ( response.result) give sus either of these 2 values
+        SUCCESS
+        FAILURE
+ 
+    From that, we either pull 'response.result.value' or ' response.result.error'
+ */
+
+
+
+
 
 
 
@@ -74,11 +94,15 @@ class FourteenthViewController: UIViewController {
             
             let urlString = "https://jsonplaceholder.typicode.com/todos"
             //let urlString2 = "https://api.flickr.com/services/rest"
-            let urlString2 = "http://citibikenyc.com/stations/json"
+            //let urlString2 = "http://citibikenyc.com/stations/json"
+            let urlString2 = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
+            
+            
             
             
             // Request #1
             
+            // ====== original code ============
             Alamofire.request(urlString).responseJSON {
                 
                 response in
@@ -101,54 +125,50 @@ class FourteenthViewController: UIViewController {
                 
                 }  // end closure
            
-            
-            
+           
             
             
             
             
             
             // Request # 2
+            /**
+                Here, I will show you ow to do 3 checks to make sure youa re handling 
+                the response correctly.
+                1. We validate that statusCode is between 200 to 299 ( these are HTTP success codes)
+                2. Check that response.result.error IS NIL
+                3. check that response.result.value is NOT NIL
+            */
             
-            Alamofire.request(urlString2).response {
-                response in
-                print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+            Alamofire.request(urlString2)
+                .validate()  // this is check #1
+                .responseJSON
+                { response in
+                
+                        // check #2
+                        guard response.result.error == nil else {
+                            print("+++++++ Response RESULT ++++++++")
+                            print("Our Result: \(response.result) ")
+                            print("+++++++++++++++++++++++++++++++++")
+                            print("Our Error: \(response.result.error!) ")
+                            return
+                        }
+                    
+                        // check #3
+                        guard response.result.value !=  nil else {
+                            print("Looks like we have no data." )
+                            return
+                         }
+                    
+                    print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
                     debugPrint(response)   // This prints output for data, response, result  value
-                print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+                    print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+    
             }  // end closure
-            
+
             
         } // end func
         
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
-        }
-        
-
-        
-        
-        
-        
-
     
     
     

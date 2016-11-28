@@ -13,6 +13,25 @@ struct Constants {
 
     
     
+    
+    struct AlamofireNatsysApi {
+        
+        enum AlamofireNatsysAPIError: Error {
+            case network(error: Error)
+            case apiProvidedError(reason: String)
+            case authCouldNot(reason: String)
+            case authLost(reason: String)
+            case objectSerialization(reason: String)
+            case other(reason:String)
+        }
+        
+        
+    }  // end struct
+    
+    
+    
+    
+    
     struct FlickrApi {
         
     }  // end struct
