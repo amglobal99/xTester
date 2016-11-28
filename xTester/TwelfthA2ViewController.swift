@@ -112,7 +112,7 @@ import SwiftyJSON
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
                     case let .success(photos):
-                        // print(" We have total of \(photos.count)  photos ")
+                        print(" We have total of \(photos.count)  photos ")
                         // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
                         self?.photoDataSource.photos = photos
                         self?.photoDataSource.sections =  photoKeyArray
@@ -124,7 +124,8 @@ import SwiftyJSON
                     
                     // Reload Data
                     //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
-                   // self?.photoCollectionView?.reloadData()
+                   //self?.photoCollectionView?.reloadData()
+                    
                 }  // end operation
                 
                 
@@ -288,7 +289,7 @@ import SwiftyJSON
             case 1:
                 return 320
             case 2:
-                return 200
+                return 220
             case 3:
                 return 340
             case 4:

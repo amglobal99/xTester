@@ -22,12 +22,12 @@ protocol TwelfthA2CollectionView3CellDelegate
 class TwelfthA2CollectionView3Cell: UICollectionViewCell {
     
     
-    
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var photoIDLabel: UILabel!
     @IBOutlet weak var photoServerLabel: UILabel!
     
+   
     
     
     @IBAction func buyPhotoItem(_ sender: AnyObject) {
