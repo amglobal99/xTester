@@ -108,6 +108,7 @@ class FourteenthViewController: UIViewController {
              response in
              //debugPrint(response)   // This prints output for data, response, result  values
              
+                
              print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
              print(response.data)
              print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
@@ -121,6 +122,7 @@ class FourteenthViewController: UIViewController {
              print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
              }
          
+                
          }  // end closure
         
         
@@ -144,7 +146,8 @@ class FourteenthViewController: UIViewController {
     
          Alamofire.request(urlString2)
          .validate()  // this is check #1
-         .responseJSON
+         .responseString
+            
          { response in
          
              // check #2
@@ -170,7 +173,9 @@ class FourteenthViewController: UIViewController {
         
         
     }
-    
+
+
+
     
     
     @IBAction func getWithParams(_ sender: AnyObject) {
@@ -226,6 +231,83 @@ class FourteenthViewController: UIViewController {
         
         
     } // end IBAction
+    
+    
+    
+    
+    
+    @IBAction func getWithErrorCodeCheck(_ sender: AnyObject) {
+        
+        // This example shows us how to retrieve and check the status code 
+        // for a request
+        // We are not using validate here.
+        
+        let urlStr = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
+        
+        
+        
+        Alamofire.request(urlStr)
+            .responseString
+    
+            { response in
+                print("Success: \(response.result.isSuccess)")
+                print("Response String: \(response.result.value)")
+                var statusCode = response.response?.statusCode
+                
+                if let error = response.result.error as? AFError {
+                    statusCode = error._code // statusCode private
+                    switch error {
+                    case .invalidURL(let url):
+                        print("Invalid URL: \(url) - \(error.localizedDescription)")
+                    case .parameterEncodingFailed(let reason):
+                        print("Parameter encoding failed: \(error.localizedDescription)")
+                        print("Failure Reason: \(reason)")
+                    case .multipartEncodingFailed(let reason):
+                        print("Multipart encoding failed: \(error.localizedDescription)")
+                        print("Failure Reason: \(reason)")
+                    case .responseValidationFailed(let reason):
+                        print("Response validation failed: \(error.localizedDescription)")
+                        print("Failure Reason: \(reason)")
+                        
+                        switch reason {
+                        case .dataFileNil, .dataFileReadFailed:
+                            print("Downloaded file could not be read")
+                        case .missingContentType(let acceptableContentTypes):
+                            print("Content Type Missing: \(acceptableContentTypes)")
+                        case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                            print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                        case .unacceptableStatusCode(let code):
+                            print("Response status code was unacceptable: \(code)")
+                            statusCode = code
+                        }
+                    case .responseSerializationFailed(let reason):
+                        print("Response serialization failed: \(error.localizedDescription)")
+                        print("Failure Reason: \(reason)")
+                        // statusCode = 3840 ???? maybe..
+                    }
+                    
+                    print("Underlying error: \(error.underlyingError)")
+                } else if let error = response.result.error as? URLError {
+                    print("URLError occurred: \(error)")
+                } else {
+                    print("Unknown error: \(response.result.error)")
+                }
+                
+                print(statusCode) // the status code
+        } // end closure
+        
+        
+        
+    } // end IBAction
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

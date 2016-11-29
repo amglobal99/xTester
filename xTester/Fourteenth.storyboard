@@ -78,9 +78,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="ocS-dL-yVu"/>
                                         </constraints>
-                                        <state key="normal" title="??">
+                                        <state key="normal" title="GET with Error Code check">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getWithErrorCodeCheck:" destination="mYb-mc-cwN" eventType="touchUpInside" id="zXE-Km-dlb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr9-pZ-Jxh">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
