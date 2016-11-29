@@ -87,6 +87,31 @@ func responsePropertyList(
 class FourteenthViewController: UIViewController {
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
@@ -94,12 +119,12 @@ class FourteenthViewController: UIViewController {
             
             let urlString = "https://jsonplaceholder.typicode.com/todos"
             //let urlString2 = "https://api.flickr.com/services/rest"
-            //let urlString2 = "http://citibikenyc.com/stations/json"
-            let urlString2 = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
+            let urlString2 = "http://citibikenyc.com/stations/json"
+            //let urlString2 = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
             
             
             
-            
+            /*
             // Request #1
             
             // ====== original code ============
@@ -125,8 +150,10 @@ class FourteenthViewController: UIViewController {
                 
                 }  // end closure
            
-           
+           */
             
+            
+                        
             
             
             
@@ -140,6 +167,8 @@ class FourteenthViewController: UIViewController {
                 3. check that response.result.value is NOT NIL
             */
             
+            
+            /*
             Alamofire.request(urlString2)
                 .validate()  // this is check #1
                 .responseJSON
@@ -166,12 +195,76 @@ class FourteenthViewController: UIViewController {
     
             }  // end closure
 
-            
-        } // end func
+            */
+ 
         
     
     
     
     
+    
+        // Request # 3  ..... Create simple HTTP request with custom headers and Parameters
+    
+        // This is a minor variaton of Request #2
+        // What we have done here is to create a HTTpRequest with custom headers and parameters
+        // we can also do a POST request
+        //
+
+            if let url = URL(string: urlString2) {
+                let encodedURLRequest: URLRequest?
+                var urlRequest = URLRequest(url: url)
+                urlRequest.httpMethod = HTTPMethod.get.rawValue
+                urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+                let parameters: Parameters = ["foo": "bar"]
+                
+                do {
+                    encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: parameters)
+                } catch {
+                    return
+                }
+            
+                
+                Alamofire.request(encodedURLRequest!)
+                    .validate()  //check #1. This confirms statusCode is between 200 -299 and content is JSON. Otherwise error
+                    .responseJSON
+                    { response in
+                        
+                        // check #2
+                        guard response.result.error == nil else {
+                            print("+++++++ Response RESULT ++++++++")
+                            print("Our Result: \(response.result) ")
+                            print("+++++++++++++++++++++++++++++++++")
+                            print("Our Error: \(response.result.error!) ")
+                            return
+                        }
+                        
+                        // check #3
+                        guard response.result.value !=  nil else {
+                            print("Looks like we have no data." )
+                            return
+                        }
+                        
+                        print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+                        debugPrint(response)   // This prints output for data, response, result  value
+                        print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+                
+                    } // end closure
+                
+            } // end if
+
+            
+            
+            
+            
+            
+
+} // end func viewDidLoad
+
+
+
+
+
+
+
 }  // end class
 

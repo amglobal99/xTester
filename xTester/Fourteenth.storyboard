@@ -19,51 +19,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fourteenth View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjV-hd-BPd">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjV-hd-BPd">
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Fourteenth View Controller">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name=".AppleSystemUIFont"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AFs-yP-B4I">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-42-Gs6">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="MB5-4V-no3"/>
+                                        </constraints>
+                                        <state key="normal" title="GET Request">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-JY-Cke">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="AKf-zd-5e0"/>
+                                        </constraints>
+                                        <state key="normal" title="GET with validate,ErrorHandling">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-Ek-Aa8">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="59v-8e-Oaw"/>
+                                        </constraints>
+                                        <state key="normal" title="GET with Params,Headers">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhE-lL-TGb">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="ocS-dL-yVu"/>
+                                        </constraints>
+                                        <state key="normal" title="??">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr9-pZ-Jxh">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="fU5-F5-Z45"/>
+                                        </constraints>
+                                        <state key="normal" title="Simple POST">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULD-Ak-Ap8">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="pSa-xj-XK5"/>
+                                        </constraints>
+                                        <state key="normal" title="Complex POST">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1j-BN-mOB">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Gaf-6g-x9q"/>
+                                        </constraints>
+                                        <state key="normal" title="Download REquest">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUo-dP-MGx">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Bfg-x0-e6w"/>
+                                        </constraints>
+                                        <state key="normal" title="Upload REquest">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="nfg-HS-2mp"/>
+                                </constraints>
+                            </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-Om-rOs">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Please check the console log to see what is happening with these requests. Check code in viewDidLoad to see how errors are handled.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-42-Gs6">
-                                <state key="normal" title="Get from Typicode"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-JY-Cke">
-                                <state key="normal" title="Get from xxx"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-Ek-Aa8">
-                                <state key="normal" title="POST Request"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhE-lL-TGb">
-                                <state key="normal" title="Download Request"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr9-pZ-Jxh">
-                                <state key="normal" title="Upload Request"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Tr9-pZ-Jxh" firstAttribute="top" secondItem="WhE-lL-TGb" secondAttribute="bottom" constant="18" id="1rS-8F-aiQ"/>
-                            <constraint firstItem="0qp-42-Gs6" firstAttribute="top" secondItem="8wq-Om-rOs" secondAttribute="bottom" constant="25" id="4Xn-qR-Fg3"/>
-                            <constraint firstItem="cjV-hd-BPd" firstAttribute="top" secondItem="LNN-wm-XC3" secondAttribute="bottom" constant="54" id="Ep9-3j-yuk"/>
-                            <constraint firstItem="8wq-Om-rOs" firstAttribute="top" secondItem="cjV-hd-BPd" secondAttribute="bottom" constant="32" id="Fas-UV-pl0"/>
-                            <constraint firstItem="rYi-wH-OOT" firstAttribute="top" secondItem="Tr9-pZ-Jxh" secondAttribute="bottom" constant="59" id="FtJ-Vg-oMA"/>
-                            <constraint firstItem="8wq-Om-rOs" firstAttribute="leading" secondItem="76t-1g-PCW" secondAttribute="leadingMargin" constant="63" id="LIP-qb-PK9"/>
-                            <constraint firstItem="dPp-JY-Cke" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="WyQ-AB-wf8"/>
-                            <constraint firstItem="0qp-42-Gs6" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="X0A-gy-nRO"/>
-                            <constraint firstItem="Tr9-pZ-Jxh" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="kDR-vI-xFH"/>
-                            <constraint firstItem="dPp-JY-Cke" firstAttribute="top" secondItem="0qp-42-Gs6" secondAttribute="bottom" constant="24" id="l3t-oP-nnk"/>
-                            <constraint firstItem="WhE-lL-TGb" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="p4T-HY-w0E"/>
-                            <constraint firstItem="Uaf-Ek-Aa8" firstAttribute="top" secondItem="dPp-JY-Cke" secondAttribute="bottom" constant="24" id="s8S-2z-PMi"/>
-                            <constraint firstItem="8wq-Om-rOs" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="ub8-52-PGQ"/>
-                            <constraint firstItem="cjV-hd-BPd" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="uvi-yr-dpj"/>
-                            <constraint firstItem="WhE-lL-TGb" firstAttribute="top" secondItem="Uaf-Ek-Aa8" secondAttribute="bottom" constant="19" id="x7C-dE-lPg"/>
-                            <constraint firstItem="Uaf-Ek-Aa8" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="zeT-Ml-mC2"/>
+                            <constraint firstItem="rYi-wH-OOT" firstAttribute="top" secondItem="AFs-yP-B4I" secondAttribute="bottom" constant="42" id="3O9-Q2-Qhe"/>
+                            <constraint firstItem="cjV-hd-BPd" firstAttribute="top" secondItem="LNN-wm-XC3" secondAttribute="bottom" constant="30" id="9LK-Om-WYc"/>
+                            <constraint firstItem="cjV-hd-BPd" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="JmC-4m-2dg"/>
+                            <constraint firstItem="AFs-yP-B4I" firstAttribute="top" secondItem="8wq-Om-rOs" secondAttribute="bottom" constant="61" id="Zr8-Zh-4kA"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="top" secondItem="cjV-hd-BPd" secondAttribute="bottom" constant="31" id="fY0-Sk-i6E"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="ggT-J1-qFY"/>
+                            <constraint firstItem="AFs-yP-B4I" firstAttribute="leading" secondItem="76t-1g-PCW" secondAttribute="leadingMargin" constant="34" id="kS9-EV-y0a"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="leading" secondItem="76t-1g-PCW" secondAttribute="leadingMargin" constant="52" id="nT7-jU-dZe"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -71,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9o-4B-jVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431" y="-933"/>
+            <point key="canvasLocation" x="1429.5999999999999" y="-933.28335832083962"/>
         </scene>
     </scenes>
 </document>
