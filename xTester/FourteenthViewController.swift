@@ -88,6 +88,215 @@ class FourteenthViewController: UIViewController {
     
     
     
+    let urlString = "https://jsonplaceholder.typicode.com/todos"
+    //let urlString2 = "https://api.flickr.com/services/rest"
+    let urlString2 = "http://citibikenyc.com/stations/json"
+    //let urlString2 = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
+    
+    
+    
+    
+    
+    
+    @IBAction func getSimple(_ sender: AnyObject) {
+        
+        
+         // Request #1
+        
+         Alamofire.request(urlString).responseJSON
+            {
+             response in
+             //debugPrint(response)   // This prints output for data, response, result  values
+             
+             print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
+             print(response.data)
+             print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
+             print(response.response) // HTTP URL response
+             print("\n\n++++++++++++++++++ Response Result +++++++++++++++++++++")
+             print(response.result)   // result of response serialization
+            
+             if let JSON = response.result.value {
+             print("\n\n +++++++++++++++++ Response Value (JSON) +++++++++++++++++++++++++++++++")
+             print("JSON: \(JSON)")
+             print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
+             }
+         
+         }  // end closure
+        
+        
+    } // end IBAction
+    
+    
+    
+    
+    
+    @IBAction func getWithValidate(_ sender: AnyObject) {
+        
+        
+        // Request # 2
+        /**
+         Here, I will show you ow to do 3 checks to make sure you are handling
+         the response correctly.
+         1. We validate that statusCode is between 200 to 299 ( these are HTTP success codes)
+         2. Check that response.result.error IS NIL
+         3. check that response.result.value is NOT NIL
+         */
+    
+         Alamofire.request(urlString2)
+         .validate()  // this is check #1
+         .responseJSON
+         { response in
+         
+             // check #2
+             guard response.result.error == nil else {
+                 print("+++++++ Response RESULT ++++++++")
+                 print("Our Result: \(response.result) ")
+                 print("+++++++++++++++++++++++++++++++++")
+                 print("Our Error: \(response.result.error!) ")
+                 return
+             }
+             
+             // check #3
+             guard response.result.value !=  nil else {
+                 print("Looks like we have no data." )
+                 return
+             }
+             
+             print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+             debugPrint(response)   // This prints output for data, response, result  value
+             print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+             
+         }  // end closure
+        
+        
+    }
+    
+    
+    
+    @IBAction func getWithParams(_ sender: AnyObject) {
+        
+        // Request # 3  ..... Create simple HTTP request with custom headers and Parameters
+        
+        // This is a minor variaton of Request #2
+        // What we have done here is to create a HTTPRequest with custom headers and parameters
+        // we can also do a POST request
+        //
+        
+        if let url = URL(string: urlString2) {
+            let encodedURLRequest: URLRequest?
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = HTTPMethod.get.rawValue
+            //urlRequest.httpMethod = HTTPMethod.post.rawValue
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+            let parameters: Parameters = ["foo": "bar"]
+            
+            do {
+                encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: parameters)
+            } catch {
+                return
+            }
+            
+            Alamofire.request(encodedURLRequest!)
+                .validate()  //check #1. This confirms statusCode is between 200 -299 and content is JSON. Otherwise error
+                .responseJSON
+                { response in
+                    
+                    // check #2
+                    guard response.result.error == nil else {
+                        print("+++++++ Response RESULT ++++++++")
+                        print("Our Result: \(response.result) ")
+                        print("+++++++++++++++++++++++++++++++++")
+                        print("Our Error: \(response.result.error!) ")
+                        return
+                    }
+                    
+                    // check #3
+                    guard response.result.value !=  nil else {
+                        print("Looks like we have no data." )
+                        return
+                    }
+                    
+                    print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+                    debugPrint(response)   // This prints output for data, response, result  value
+                    print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+                    
+            } // end closure
+            
+        } // end if
+        
+        
+    } // end IBAction
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func postSimple(_ sender: AnyObject) {
+        
+        /**
+         Let's create a simple POST request
+         NOTE:  A POST request should return a status code of 201 for successful request.
+         Let's validate that we are getting 201 back
+ 
+        */
+        
+        print("Starting POST request")
+        let todosEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+        guard let todosURL = URL(string: todosEndpoint) else {
+            print("Error: cannot create URL")
+            return
+        }
+        
+        var todosUrlRequest = URLRequest(url: todosURL)
+        todosUrlRequest.httpMethod = "POST"
+        
+        // Create a ToDo object
+        //let newTodo: [String: Any] = ["title": "My First todo", "completed": false, "userId": 1]
+        
+        // Let's create 2 objects
+        let newTodo: [[String: Any]] = [["title": "My First todo", "completed": false, "userId": 1],[ "title": "My Second todo", "completed": false, "userId": 1]   ]
+        
+        
+        let jsonTodo: Data
+        do {
+            jsonTodo = try JSONSerialization.data(withJSONObject: newTodo, options: [])
+            todosUrlRequest.httpBody = jsonTodo
+        } catch {
+            print("Error: cannot create JSON from todo")
+            return
+        }
+        print("Sending Alamofire request")
+        Alamofire.request(todosUrlRequest)
+            .validate(statusCode: [201] )  // this is check #1
+            .responseString
+            { response in
+                
+               
+                // check #2
+                guard response.result.error == nil else {
+                    print("+++++++ We did not get status Code of 201 back ++++++++++++++++++++++++++")
+                    print("Our Error: \(response.result.error!) ")
+                    return
+                }
+                
+                print("Success: \(response.result.isSuccess)")
+                print("+++++++++++++++ Response Value +++++++++++++++")
+                print("Response String: \(response.result.value!)")
+                var statusCode = response.response?.statusCode
+                
+                print("++++++++++++++ Status Code ++++++++++++++")
+                print("Our Status Code: \(statusCode!)")
+                
+                print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+                debugPrint(response)   // This prints output for data, response, result  value
+                print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+                
+        }  // end closure
+       
+        
+    }  // end IBAction
     
     
     
@@ -97,6 +306,18 @@ class FourteenthViewController: UIViewController {
     
     
     
+    
+    
+    
+    @IBAction func postComplex(_ sender: AnyObject) {
+        
+        
+        
+        
+        
+        
+        
+    }
     
     
     
@@ -115,150 +336,9 @@ class FourteenthViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
-            
-            
-            let urlString = "https://jsonplaceholder.typicode.com/todos"
-            //let urlString2 = "https://api.flickr.com/services/rest"
-            let urlString2 = "http://citibikenyc.com/stations/json"
-            //let urlString2 = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
-            
-            
-            
-            /*
-            // Request #1
-            
-            // ====== original code ============
-            Alamofire.request(urlString).responseJSON {
-                
-                response in
-                    //debugPrint(response)   // This prints output for data, response, result  values
-                
-                        print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
-                        print(response.data)
-                        print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
-                        print(response.response) // HTTP URL response
-                        print("\n\n++++++++++++++++++ Response Result +++++++++++++++++++++")
-                        print(response.result)   // result of response serialization
-                
-                
-                
-                    if let JSON = response.result.value {
-                        print("\n\n +++++++++++++++++ Response Value (JSON) +++++++++++++++++++++++++++++++")
-                        print("JSON: \(JSON)")
-                        print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
-                    }
-                
-                }  // end closure
-           
-           */
-            
-            
-                        
-            
-            
-            
-            
-            // Request # 2
-            /**
-                Here, I will show you ow to do 3 checks to make sure youa re handling 
-                the response correctly.
-                1. We validate that statusCode is between 200 to 299 ( these are HTTP success codes)
-                2. Check that response.result.error IS NIL
-                3. check that response.result.value is NOT NIL
-            */
-            
-            
-            /*
-            Alamofire.request(urlString2)
-                .validate()  // this is check #1
-                .responseJSON
-                { response in
-                
-                        // check #2
-                        guard response.result.error == nil else {
-                            print("+++++++ Response RESULT ++++++++")
-                            print("Our Result: \(response.result) ")
-                            print("+++++++++++++++++++++++++++++++++")
-                            print("Our Error: \(response.result.error!) ")
-                            return
-                        }
-                    
-                        // check #3
-                        guard response.result.value !=  nil else {
-                            print("Looks like we have no data." )
-                            return
-                         }
-                    
-                    print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
-                    debugPrint(response)   // This prints output for data, response, result  value
-                    print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
-    
-            }  // end closure
-
-            */
- 
         
-    
-    
-    
-    
-    
-        // Request # 3  ..... Create simple HTTP request with custom headers and Parameters
-    
-        // This is a minor variaton of Request #2
-        // What we have done here is to create a HTTpRequest with custom headers and parameters
-        // we can also do a POST request
-        //
 
-            if let url = URL(string: urlString2) {
-                let encodedURLRequest: URLRequest?
-                var urlRequest = URLRequest(url: url)
-                urlRequest.httpMethod = HTTPMethod.get.rawValue
-                urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
-                let parameters: Parameters = ["foo": "bar"]
-                
-                do {
-                    encodedURLRequest = try URLEncoding.queryString.encode(urlRequest, with: parameters)
-                } catch {
-                    return
-                }
-            
-                
-                Alamofire.request(encodedURLRequest!)
-                    .validate()  //check #1. This confirms statusCode is between 200 -299 and content is JSON. Otherwise error
-                    .responseJSON
-                    { response in
-                        
-                        // check #2
-                        guard response.result.error == nil else {
-                            print("+++++++ Response RESULT ++++++++")
-                            print("Our Result: \(response.result) ")
-                            print("+++++++++++++++++++++++++++++++++")
-                            print("Our Error: \(response.result.error!) ")
-                            return
-                        }
-                        
-                        // check #3
-                        guard response.result.value !=  nil else {
-                            print("Looks like we have no data." )
-                            return
-                        }
-                        
-                        print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
-                        debugPrint(response)   // This prints output for data, response, result  value
-                        print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
-                
-                    } // end closure
-                
-            } // end if
-
-            
-            
-            
-            
-            
-
-} // end func viewDidLoad
+        } // end func viewDidLoad
 
 
 
