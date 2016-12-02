@@ -12,25 +12,21 @@ import UIKit
 
 class TwelfthA2TableViewCell3: UITableViewCell {
     
-    
+    // Define an ourlet for our CollectionView
     @IBOutlet weak var collectionView3: TwelfthA2CollectionView3!
     
-    
+    // This property controls the scrolled position for CollectinView
     var collectionViewOffset: CGFloat {
         get {
             return collectionView3.contentOffset.x
         }
-        
         set {
             collectionView3.contentOffset.x = newValue
         }
     }
     
     
-    
-   // func setCollectionViewDataSourceDelegate  <D: UICollectionViewDataSource & UICollectionViewDelegate> (dataSourceDelegate: D, forRow row: Int) {
-        
-        
+  // Set the DataSource and Delegate
     func setCollectionViewDataSourceDelegate  <D: UICollectionViewDataSource,E: UICollectionViewDelegate> (dataSource: D,
                                                dataSourceDelegate: E, forRow row: Int) {
         
@@ -41,8 +37,6 @@ class TwelfthA2TableViewCell3: UITableViewCell {
     }
     
     
-    
-
 }  // end class
 
 

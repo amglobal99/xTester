@@ -18,7 +18,7 @@ import SwiftyJSON
 //class TwelfthA2ViewController: UITableViewController,  UICollectionViewController, NinthPhotoCollectionViewCellDelegate, Utils, JsonConvertible {
     
     
-    class TwelfthA2ViewController: UITableViewController, Utils, JsonConvertible {
+    class TwelfthA2ViewController: UITableViewController, UICollectionViewDelegate ,TwelfthA2CollectionView3CellDelegate, Utils, JsonConvertible {
         
     
     // MARK: - Local Variables
@@ -91,8 +91,6 @@ import SwiftyJSON
                  print("+++++++++++++++++  Section Titles Array  +++++++++++++++++++++++")
                  print(photoKeyArray)
                  print("+++++++++++++++++  end Section Titles +++++++++++++++++++++")
-                 
-                
                 
                 
                 
@@ -117,6 +115,13 @@ import SwiftyJSON
                         self?.photoDataSource.photos = photos
                         self?.photoDataSource.sections =  photoKeyArray
                         self?.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
+                        
+                        
+                        // ========== ?????????? Let's populate the store  .... NOT SURE IF THIS IS RIGHT WAY TO DO IT
+                        self?.photoDataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
+                         // =========================================================
+                        
+                        
                     case .failure(let error):
                         self?.photoDataSource.photos.removeAll()
                         print("     Error fetching recent photos \(error)")
@@ -136,12 +141,6 @@ import SwiftyJSON
         getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
         
 
-        
-        
-        
-        
-        
-        
         
     }  // end viewDidLoad
     
@@ -213,6 +212,7 @@ import SwiftyJSON
     
     
         
+        
     /// Function called before TableView cell is to be displayed
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
@@ -223,20 +223,16 @@ import SwiftyJSON
                         tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
                     case 1:
                         print("case 1")
+                
                     case 2:
-                        // =========  This controls the Collection View in row 3  ==========
-                        print("case 2 ...willDisplayCell")
-                        
-                        
-                        
+                        // ======== This controls the Collection View in row 3  ==========
                         guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
                         //tableViewCell3.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-                        tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: photoDataSource, dataSourceDelegate: self, forRow: indexPath.row)
+                        //tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: photoDataSource, dataSourceDelegate: self, forRow: indexPath.row)
+                        tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: photoDataSource, dataSourceDelegate: photoDataSource, forRow: indexPath.row)
                         tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-                        print("case 2 .... setup complete for delegate")
                 
-              
-                
+            
                     case 3:
                         print("case 3")
 
@@ -251,6 +247,7 @@ import SwiftyJSON
             } // end switch
     } // end func
     
+        
         
     /// Function called before cell stops displaying
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell,  forRowAt indexPath: IndexPath) {
@@ -301,7 +298,7 @@ import SwiftyJSON
         }
     }
     
-    
+        
         
     
 }  // end class
@@ -327,7 +324,7 @@ import SwiftyJSON
 // MARK: - CollectionView DataSource Methods
 
 /// Extension for TableViewController
-extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TwelfthA2ViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView,  numberOfItemsInSection section: Int) -> Int {
@@ -344,7 +341,7 @@ extension TwelfthA2ViewController: UICollectionViewDelegate, UICollectionViewDat
     
     
     
-    /// Function give sus indivisula cell within Collection View
+    /// Function gives us individual cell within Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)

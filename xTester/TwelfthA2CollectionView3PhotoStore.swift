@@ -76,7 +76,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     
-    // Function to retrieve array of NinthPhoto objects
+    // Function to retrieve array of TwelfthA2Photo objects
     func photosFromJsonObject(_ json:JSON) -> TwelfthA2PhotosResult {
         var finalPhotos:[TwelfthA2Photo] = []
         var addCount = 0
@@ -148,8 +148,10 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         let photoURL = photo.remoteURL
         let request = URLRequest(url: photoURL as URL)
         
+        // MARK : - TODO
+        
         // Alamofire Call
-        Alamofire.request(request).response
+        Alamofire.request(request).response  // DO I NEEED [weal self] in closure ??? ======= TODO
             { (response) -> Void  in
                 guard response.error  == nil else {   // got an error
                     print(response.error!)
@@ -245,7 +247,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
      - Returns: A tuple with the row number and section number
      
      */
-    func indexForPhoto ( dict:[String:[NinthPhoto]], photo:NinthPhoto ) -> (Int,Int)? {
+    func indexForPhoto ( dict:[String:[TwelfthA2Photo]], photo:TwelfthA2Photo ) -> (Int,Int)? {
         var section:String?
         var result:(Int,Int)?
         
@@ -267,8 +269,6 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         }
         return result
     }
-    
-    
     
     
     

@@ -18,10 +18,21 @@ import AlamofireImage
 import SwiftyJSON
 
 
-/// This class serves as the Data Source for the Photos collection view.
+/** 
+ This class serves as the Data Source & Delegate for the Photos collection view.
+ 
+ 
+ 
+ */
 
-class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, Utils, JsonConvertible {
+class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, Utils, JsonConvertible {
     
+    
+    // MARK: - Data Variables
+    var photos = [TwelfthA2Photo]()   // This is the list of all our Photos
+    var sections:[String] = []  // This is the array of names for our  sections
+    var sectionPhotoItems:[String:[TwelfthA2Photo]] = [:]  // Dictionary holds Photos for each section title
+    var photoStore: TwelfthA2CollectionView3PhotoStore!
     
     
     // MARK: - Enums
@@ -37,15 +48,8 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     }
     
     
-    // MARK: - Data Variables
-    var photos = [TwelfthA2Photo]()   // This is the list of all our Photos
-    var sections:[String] = []  // This is the array of names for our  sections
-    var sectionPhotoItems:[String:[TwelfthA2Photo]] = [:]  // Dictionary holds Photos for each section title
     
-    
-    
-    
-    // MARK: - DataSource methods
+    // MARK: - CollectionView DataSource methods
     
     
     /**
@@ -72,7 +76,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         print("Number of Items in section \(section) : \(itemsInSection.count)")
         return itemsInSection.count
     }  // end func
-    
     
     
     
@@ -129,6 +132,46 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     
     
+    // MARK: - CollectionView DELEGATE Methods
+
+    /**
+     Function executed as Cell is getting ready to be displayed
+     
+     */
+    
+
+     public func collectionView (_ collectionView: UICollectionView,
+                                         willDisplay cell: UICollectionViewCell,
+                                         forItemAt indexPath: IndexPath )  {
+        
+        let photo = photoForItemAtIndexPath(indexPath: indexPath)
+        photoStore.fetchImageForPhoto(photo)
+        {    (result) -> Void in
+            OperationQueue.main.addOperation() {
+                // get Dictionary for photo items
+               // let sectionDict = self.photoDataSource.sectionPhotoItems
+                let sectionDict = self.sectionPhotoItems
+                guard let path = self.photoStore.indexForPhoto(dict: sectionDict, photo: photo)  else {
+                    return
+                }
+                let photoRow = path.0
+                let photoSection = path.1
+                let photoIndexPath = IndexPath(row: photoRow , section: photoSection)
+                // print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
+                //if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as?   NinthPhotoCollectionViewCell {
+                    if let cell = collectionView.cellForItem(at: photoIndexPath) as?  TwelfthA2CollectionView3Cell {
+                    cell.updateWithImage(photo.image)     // Update cell photo
+                }
+            } //end operation
+        } // end closure
+        
+    } //end method
+    
+
+    
+    
+    
+    
     
     
     
@@ -143,11 +186,8 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     func photosForSection(_ sectionNumber: Int) -> [TwelfthA2Photo] {
         // Get photos for this section (Filter the photos array)
-        
-        
         let sectionPhotos = photos.filter{
             $0.datetakenUnknown == String(sectionNumber)
-            
         }
         
         
@@ -174,10 +214,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         let photo = sectionPhotos[rowNumber]
         return photo
     } // end func
-    
-    
-    
-    
     
     
     

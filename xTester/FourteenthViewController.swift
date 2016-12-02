@@ -147,7 +147,6 @@ class FourteenthViewController: UIViewController {
          Alamofire.request(urlString2)
          .validate()  // this is check #1
          .responseString
-            
          { response in
          
              // check #2
@@ -248,7 +247,6 @@ class FourteenthViewController: UIViewController {
         
         Alamofire.request(urlStr)
             .responseString
-    
             { response in
                 print("Success: \(response.result.isSuccess)")
                 print("Response String: \(response.result.value)")
@@ -366,7 +364,7 @@ class FourteenthViewController: UIViewController {
                 print("Success: \(response.result.isSuccess)")
                 print("+++++++++++++++ Response Value +++++++++++++++")
                 print("Response String: \(response.result.value!)")
-                var statusCode = response.response?.statusCode
+                let statusCode = response.response?.statusCode
                 
                 print("++++++++++++++ Status Code ++++++++++++++")
                 print("Our Status Code: \(statusCode!)")

@@ -25,6 +25,8 @@ class ThirteenthViewControllerDestination: UIViewController {
     // Now we want a property which tells us "Who is the delegate for this Controller ?"
     // We will call our property 'delegate' and it conforms to DestinationViewDelegate protocol
     // This 'delegate' property will be set from the other View Controller during segue ( prepareForSegue method )
+    
+    
     var delegate: DestinationViewDelegate! = nil
     
     
@@ -38,7 +40,6 @@ class ThirteenthViewControllerDestination: UIViewController {
             delegate.setColor(title)
            // self.navigationController?.popToRootViewController(animated: true)
             _ = self.navigationController?.popViewController(animated: true)   // Remove from Navigation array
-            
         } else {
             print("title is nil")
         }
@@ -57,15 +58,6 @@ class ThirteenthViewControllerDestination: UIViewController {
     
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    
-
     
     
 }   // end class
