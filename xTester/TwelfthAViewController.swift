@@ -9,65 +9,35 @@
 import Foundation
 import UIKit
 
-class TwelfthAViewController: UIViewController, Utils{
+class TwelfthAViewController: UIViewController, Utils {
     
-    
-    
+
     enum SegueIdentifier:String  {
         case TwelfthA1Segue
         case TwelfthA2Segue
     }
     
     
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
-                
     }
     
     
-    
-    
+    // THis is our segue to the TwelfthA1 and TwelfthA2 controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let  identifier = segue.identifier
         let segIdentifier = SegueIdentifier(rawValue: identifier!)
-        
         switch segIdentifier! {
-        case .TwelfthA1Segue:
-            print("A1")
-        case .TwelfthA2Segue:
-            print("A2")
-            //let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
-            //twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
-            //twelfthA2VC.photoDataSource = TwelfthA2CollectionView3DataSource()
-       
-           let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
-           twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
-           twelfthA2VC.photoDataSource = TwelfthA2CollectionView3DataSource()
-            twelfthA2VC.city = "Sangli"
-            
-            
-        
-        
-        
-        
+            case .TwelfthA1Segue:
+                print("Selecte TwelfthA1ViewController")
+            case .TwelfthA2Segue:
+                let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
+                twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
+                twelfthA2VC.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+                twelfthA2VC.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
         }  // end switch
-    
     }
-    
     
     
     
@@ -76,11 +46,6 @@ class TwelfthAViewController: UIViewController, Utils{
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
-    
-    
-    
+
     
 }  // end class

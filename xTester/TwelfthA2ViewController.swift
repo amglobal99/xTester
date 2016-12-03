@@ -14,33 +14,27 @@ import AlamofireImage
 import SwiftyJSON
 
 
-
-//class TwelfthA2ViewController: UITableViewController,  UICollectionViewController, NinthPhotoCollectionViewCellDelegate, Utils, JsonConvertible {
-    
-
-// TwelfthA2CollectionView3CellDelegate,
+/**
+ 
+  This is the main class for our TwelfthA2ViewController
+  You arrive at this ViewController thru a segue from 'TwelfthAViewController'
+ 
+  DataSource variables are set in the prepareForSegue method in TwelfthAViewController
+ 
+ 
+ */
 
     class TwelfthA2ViewController: UITableViewController, UICollectionViewDelegate , Utils, JsonConvertible {
         
     
-    // MARK: - Local Variables
-    
-       // let model:[[Any]] = generateRandomData()
-        //model[0] = generateRandomData()
-        let model: [[UIColor]] = generateRandomData()
-        var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
-        
-        
-        // MARK:- Data Variables
-        /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
-        var store: TwelfthA2CollectionView3PhotoStore!
-        var photoDataSource: TwelfthA2CollectionView3DataSource!
-        
-        
-        
         // MARK: - Local Variables
-        var city:String!
+        var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
+    
+        // MARK:- Data Variables
+        var store: TwelfthA2CollectionView3PhotoStore!
+        var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
+        var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
         
         // MARK: - Global Constants Variables
         let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
@@ -62,13 +56,6 @@ import SwiftyJSON
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("city is  \(city) " )
-        
-        //photoCollectionView.dataSource = photoDataSource
-        //photoCollectionView.delegate = self
-        
-        
-        
         // Completion Handler
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
@@ -78,16 +65,13 @@ import SwiftyJSON
                 
                 // get array of Section titles
                 guard let photoKeyArray =  self?.getSectionTitlesArray(from: jsonObj, key: self?.key)   else {
-                    //print("getKeyArray method returned a nil value.")
+                    print("getKeyArray method returned a nil value.")
                     return
                 }
-                
                 
                  print("+++++++++++++++++  Section Titles Array  +++++++++++++++++++++++")
                  print(photoKeyArray)
                  print("+++++++++++++++++  end Section Titles +++++++++++++++++++++")
-                
-                
                 
                 // get Section Title: Photos Dictionary
                 guard let sectionPhotosDictionary = self?.store.sectionPhotosDictionary(from: jsonObj, for: self?.key) else {
@@ -95,37 +79,25 @@ import SwiftyJSON
                     return
                 }
                 
-
                  print("+++++++++++++++++  Section Photos Dictonary +++++++++++++++++++++++")
                  print(sectionPhotosDictionary)
                  print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
-                 
-                 
- 
+                
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
                     case let .success(photos):
                         print(" We have total of \(photos.count)  photos ")
                         // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
-                        self?.photoDataSource.photos = photos
-                        self?.photoDataSource.sections =  photoKeyArray
-                        self?.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
-                        
-                        
+                        self?.collectionView3DataSource.photos = photos
+                        self?.collectionView3DataSource.sections =  photoKeyArray
+                        self?.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
                         // ========== ?????????? Let's populate the store  .... NOT SURE IF THIS IS RIGHT WAY TO DO IT
-                        self?.photoDataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
+                        self?.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
                          // =========================================================
-                        
-                        
                     case .failure(let error):
-                        self?.photoDataSource.photos.removeAll()
+                        self?.collectionView3DataSource.photos.removeAll()
                         print("     Error fetching recent photos \(error)")
                     }  // end switch
-                    
-                    // Reload Data
-                    //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
-                   //self?.photoCollectionView?.reloadData()
-                    
                 }  // end operation
                 
                 
@@ -202,34 +174,21 @@ import SwiftyJSON
             switch indexPath.row {
                     case 0:
                         guard let tableViewCell1 = cell as? TwelfthA2TableViewCell1 else { return }
-                        //tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-                        
-                        
-                        tableViewCell1.setCollectionViewDataSourceDelegate(dataSource: self, dataSourceDelegate: self, forRow: indexPath.row)
-                        
-                        
+                        tableViewCell1.setCollectionViewDataSourceDelegate(dataSource: collectionView1DataSource, dataSourceDelegate: collectionView1DataSource, forRow: indexPath.row)
                         tableViewCell1.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
                     case 1:
                         print("case 1")
-                
                     case 2:
                         // ======== This controls the Collection View in row 3  ==========
                         guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
-                        //tableViewCell3.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-                        //tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: photoDataSource, dataSourceDelegate: self, forRow: indexPath.row)
-                        tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: photoDataSource, dataSourceDelegate: photoDataSource, forRow: indexPath.row)
+                        tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: collectionView3DataSource, dataSourceDelegate: collectionView3DataSource, forRow: indexPath.row)
                         tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-                
-            
                     case 3:
                         print("case 3")
-
                     case 4:
                         print("case 4")
-
                     case 5:
                         print("case 5")
-
                     default:
                         print("case 1")
             } // end switch
@@ -239,7 +198,6 @@ import SwiftyJSON
         
     /// Function called before cell stops displaying
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell,  forRowAt indexPath: IndexPath) {
-        
             switch indexPath.row {
                     case 0:
                         guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
@@ -261,7 +219,6 @@ import SwiftyJSON
                     default:
                         print("case 11")
             } // end switch
-        
     } // end func
     
         
@@ -292,60 +249,3 @@ import SwiftyJSON
 }  // end class
 
 
-
-
-
-
-
-
-// MARK: - CollectionView DataSource Methods
-
-/// Extension for TableViewController
-
-extension TwelfthA2ViewController: UICollectionViewDataSource {
-    
-    
-    func collectionView(_ collectionView: UICollectionView,  numberOfItemsInSection section: Int) -> Int {
-        
-        //return model[collectionView.tag].count
-        
-        //return model[0].count
-        
-        return 8
-    }
-    
-    
-    
-    
-    /// Function gives us individual cell within Collection View
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-        cell.backgroundColor = model[collectionView.tag][indexPath.item]
-        return cell
-    
-    }
-    
-    
-
-    
-    // Function to get Section Header View
-    //
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView{
-        
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: "TwelfthA2CollectionView1SectionHeader",
-                                                                         for: indexPath) as! TwelfthA2CollectionView1SectionHeader
-        
-        headerView.sectionLabel1.text = "Test CollView"
-        return headerView
-    }  // end method
-    
-    
-
-    
-    
-}  // end extension
