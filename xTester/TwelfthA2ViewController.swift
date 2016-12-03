@@ -17,8 +17,10 @@ import SwiftyJSON
 
 //class TwelfthA2ViewController: UITableViewController,  UICollectionViewController, NinthPhotoCollectionViewCellDelegate, Utils, JsonConvertible {
     
-    
-    class TwelfthA2ViewController: UITableViewController, UICollectionViewDelegate ,TwelfthA2CollectionView3CellDelegate, Utils, JsonConvertible {
+
+// TwelfthA2CollectionView3CellDelegate,
+
+    class TwelfthA2ViewController: UITableViewController, UICollectionViewDelegate , Utils, JsonConvertible {
         
     
     // MARK: - Local Variables
@@ -50,13 +52,6 @@ import SwiftyJSON
         let params = Constants.Configuration.params
         
 
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -150,17 +145,6 @@ import SwiftyJSON
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     
     // MARK: - TableView DataSource methods
     
@@ -212,15 +196,19 @@ import SwiftyJSON
     
     
         
-        
     /// Function called before TableView cell is to be displayed
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
             switch indexPath.row {
                     case 0:
-                        guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
-                        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-                        tableViewCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+                        guard let tableViewCell1 = cell as? TwelfthA2TableViewCell1 else { return }
+                        //tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+                        
+                        
+                        tableViewCell1.setCollectionViewDataSourceDelegate(dataSource: self, dataSourceDelegate: self, forRow: indexPath.row)
+                        
+                        
+                        tableViewCell1.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
                     case 1:
                         print("case 1")
                 
@@ -310,20 +298,10 @@ import SwiftyJSON
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // MARK: - CollectionView DataSource Methods
 
 /// Extension for TableViewController
+
 extension TwelfthA2ViewController: UICollectionViewDataSource {
     
     
@@ -339,61 +317,17 @@ extension TwelfthA2ViewController: UICollectionViewDataSource {
     
     
     
-    
-    
     /// Function gives us individual cell within Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
         cell.backgroundColor = model[collectionView.tag][indexPath.item]
         return cell
-        
-        /*
-        switch indexPath.row {
-                case 0:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-                    cell.backgroundColor = model[collectionView.tag][indexPath.item]
-                    return cell
-                case 1:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-                    cell.backgroundColor = UIColor.brown
-                    return cell
-                case 2:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-                    cell.backgroundColor = UIColor.darkGray
-                    return cell
-                case 3:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-                    cell.backgroundColor = UIColor.green
-                    return cell
-                case 4:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-                    cell.backgroundColor = UIColor.cyan
-                    return cell
-                case 5:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-                    cell.backgroundColor = UIColor.orange
-                    return cell
-                default:
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-                    cell.backgroundColor = model[collectionView.tag][indexPath.item]
-                    return cell
-        }
-        
-        
-        */
-        
-        
-        
-        
-        
-
+    
     }
     
     
-    
-    
-    
+
     
     // Function to get Section Header View
     //
