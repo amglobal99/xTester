@@ -171,9 +171,39 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     
     
+   /*
+    
+    // Function runs when a Cell is selected
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("didselect .......")
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            print("didselect 2 .......")
+           // performSegueWithIdentifier("showDetail", sender: cell)
+            
+            /*
+            let destinationVC = segue.destination as! NinthDetailViewController
+            if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
+                updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
+            }
+
+            */
+            
+            
+            
+            
+            cell.parentViewController?.performSegue(withIdentifier: "ShowTwelfthA2PhotoDetail", sender: cell)
+            
+        } else {
+            // Error indexPath is not on screen: this should never happen.
+        }
+    }
+    
+    */
     
     
     
+    
+ 
     
     
     

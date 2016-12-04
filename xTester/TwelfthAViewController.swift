@@ -36,6 +36,12 @@ class TwelfthAViewController: UIViewController, Utils {
                 twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
                 twelfthA2VC.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
                 twelfthA2VC.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+            
+                twelfthA2VC.tableviewDataSource = TwelfthA2TableViewDataSource()
+                twelfthA2VC.tableviewDelegate = TwelfthA2TableViewDataSource()
+            
+            
+            
         }  // end switch
     }
     

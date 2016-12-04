@@ -24,9 +24,13 @@ import SwiftyJSON
  
  */
 
-    class TwelfthA2ViewController: UITableViewController, UICollectionViewDelegate , Utils, JsonConvertible {
-        
-    
+
+// UICollectionViewDelegate
+
+    class TwelfthA2ViewController: UITableViewController, JsonConvertible {
+            
+            
+
         // MARK: - Local Variables
         var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
@@ -35,6 +39,11 @@ import SwiftyJSON
         var store: TwelfthA2CollectionView3PhotoStore!
         var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
         var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
+        var tableviewDataSource: TwelfthA2TableViewDataSource!
+        var tableviewDelegate: TwelfthA2TableViewDataSource!
+        
+        
+        
         
         // MARK: - Global Constants Variables
         let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
@@ -55,6 +64,15 @@ import SwiftyJSON
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        /*
+        self.tableView.dataSource = tableviewDataSource
+        self.tableView.delegate = tableviewDelegate
+        */
+        
+        
+        
         
         // Completion Handler
         let completionHandler: (Result<JSON>) -> Void  =
@@ -84,24 +102,29 @@ import SwiftyJSON
                  print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
                 OperationQueue.main.addOperation() {
-                    switch itemsResult {
-                    case let .success(photos):
-                        print(" We have total of \(photos.count)  photos ")
-                        // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
-                        self?.collectionView3DataSource.photos = photos
-                        self?.collectionView3DataSource.sections =  photoKeyArray
-                        self?.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
-                        // ========== ?????????? Let's populate the store  .... NOT SURE IF THIS IS RIGHT WAY TO DO IT
-                        self?.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
-                         // =========================================================
-                    case .failure(let error):
-                        self?.collectionView3DataSource.photos.removeAll()
-                        print("     Error fetching recent photos \(error)")
-                    }  // end switch
+                        switch itemsResult {
+                        case let .success(photos):
+                            print(" We have total of \(photos.count)  photos ")
+                            // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
+                            self?.collectionView3DataSource.photos = photos
+                            self?.collectionView3DataSource.sections =  photoKeyArray
+                            self?.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
+                            // ========== ?????????? Let's populate the store  .... NOT SURE IF THIS IS RIGHT WAY TO DO IT
+                            self?.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
+                             // =========================================================
+                        case .failure(let error):
+                            self?.collectionView3DataSource.photos.removeAll()
+                            print("     Error fetching recent photos \(error)")
+                        }  // end switch
                 }  // end operation
                 
                 
         } // end closure
+        
+        
+        
+        
+        
         
         // Create a Async(Alamofire) request to get jSON data
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
@@ -112,11 +135,75 @@ import SwiftyJSON
     }  // end viewDidLoad
     
     
+       
+      
+        
+            
+    // MARK: - Segue to Detail View Controller
+        
+        /**
+         Function called during the segue from NinthViewController to Detail View Controller
+         */
+        
+        
+        // public func prepare(for segue: UIStoryboardSegue, sender: UICollectionViewCell) {
+            
+          override   public func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
+                
+            let segueIdentifier = segue.identifier!
+            
+            switch segueIdentifier  {
+                case "ShowTwelfthA2PhotoDetail":
+                    print("in the right segue ")
+                    let destinationVC = segue.destination as! TwelfthA2DetailViewController
+                    //let cell = sender as! TwelfthA2TableViewCell3
+                     let cell = sender as! TwelfthA2CollectionView3Cell
+                    let collViewDataSource = self.collectionView3DataSource
+                    
+                    
+                    /*
+                    if let selectedIndexPath = cell.collectionView3.indexPathsForSelectedItems?.first {
+                        updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
+                    }
+                    */
+                
+                
+                
+                default:
+                    print("test")
+            }  // end switch
+         
+         
+        }  // end func
+        
+
         
         
         
         
         
+        func updateDestinationData(destinationVC: TwelfthA2DetailViewController, indexPath: IndexPath) {
+            
+            let photo = collectionView3DataSource.photoForItemAtIndexPath(indexPath: indexPath)
+           // let photo = dataSource.photoForItemAtIndexPath(indexPath: indexPath)
+            destinationVC.photo = photo
+            destinationVC.store = store
+        }
+    
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+      
     
     // MARK: - TableView DataSource methods
     
@@ -243,7 +330,13 @@ import SwiftyJSON
         }
     }
     
-        
+     
+            
+            
+            
+            
+            
+            
         
     
 }  // end class

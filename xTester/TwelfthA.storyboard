@@ -161,7 +161,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PyK-3l-bsF"/>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.96078431369999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PyK-3l-bsF" firstAttribute="top" secondItem="4o5-cI-UaG" secondAttribute="bottom" constant="36" id="3NN-bJ-gNj"/>
                             <constraint firstItem="nXY-tS-e3w" firstAttribute="top" secondItem="PyK-3l-bsF" secondAttribute="bottom" constant="60" id="X04-SR-GSp"/>
@@ -367,7 +367,7 @@
                                                         <outlet property="photoIDLabel" destination="ede-k6-lk3" id="N6i-Bz-X5B"/>
                                                         <outlet property="photoServerLabel" destination="rOO-2O-Ax9" id="t0v-kJ-ZAw"/>
                                                         <outlet property="spinner" destination="gKt-wx-Uzt" id="zsj-zW-I7B"/>
-                                                        <segue destination="plw-bU-Dq4" kind="show" identifier="ShowTwelfthA2PhotoDetail" id="uy4-fM-trd"/>
+                                                        <segue destination="plw-bU-Dq4" kind="show" identifier="ShowTwelfthA2PhotoDetail" id="aJV-Ym-tIm"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>

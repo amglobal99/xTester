@@ -57,7 +57,7 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
     
     
     func updateWithImage(_ image: UIImage?) {
-        print("....updateWithImage starting ")
+       // print("....updateWithImage starting ")
         
         if let imageToDisplay = image {
             spinner .stopAnimating()

@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 import UIKit
 
-class TwelfthA2DetailViewController: UIViewController, Utils{
+class TwelfthA2DetailViewController: UIViewController, Utils {
     
         
     @IBOutlet weak var imageView: UIImageView!
@@ -34,7 +34,6 @@ class TwelfthA2DetailViewController: UIViewController, Utils{
     override public func viewDidLoad()  {
         super.viewDidLoad()
         
-        
         /*
         store.fetchImageForPhoto(photo)
         { (result) -> Void in
@@ -49,8 +48,8 @@ class TwelfthA2DetailViewController: UIViewController, Utils{
             
         } //end closure
  
- */
  
+ */
  
         
     }  //end viewDidLoad
