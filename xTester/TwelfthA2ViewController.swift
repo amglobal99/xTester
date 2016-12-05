@@ -28,7 +28,7 @@ import SwiftyJSON
         
         
         // MARK: - IBOutlets
-        @IBOutlet weak var table: UITableView!
+        @IBOutlet weak var table: UITableView!   // Refernce to main TableView
         
         
         // MARK: - Local Variables

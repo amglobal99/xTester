@@ -18,7 +18,7 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
    
     
     // These are populated from TwelfthA2ViewController.swift ( closure section)
-   var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
+    var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
     var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
     
     
@@ -133,7 +133,9 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     
     
     
-    /// Function called before cell stops displaying
+    /// Function called before cell stops displaying.
+    /// The offset position for collection views is saved here
+    
      func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell,  forRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
@@ -142,7 +144,9 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
         case 1:
             print("case 11")
         case 2:
-            print("case 22")
+            //print("case 22")
+            guard let tableViewCell = cell as? TwelfthA2TableViewCell3 else { return }
+            storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
             
         case 3:
             print("case 33")
