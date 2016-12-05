@@ -437,10 +437,10 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="delegate" destination="B4e-ht-98Z" id="XsS-Ax-qG3"/>
-                        </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="table" destination="Qy9-4Y-fUc" id="frW-jz-grD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNy-ez-pAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

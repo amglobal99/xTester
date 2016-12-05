@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 
-//class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource,  UICollectionViewDataSource, Utils, JsonConvertible {
-class TwelfthA2TableViewDataSource: UITableViewController {
+class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     
     // MARK: - Local Variables
@@ -32,18 +31,18 @@ class TwelfthA2TableViewDataSource: UITableViewController {
     // MARK: - TableView DataSource methods
     
     /// Number of Sections in our TableView
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     /// Number of rows in Section
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 6
     }
     
     
     /// Cell for each row within the TableView
-    override func tableView(_ tableView: UITableView,  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView,  cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("Generating cell for row  \(indexPath.row) in section: \(indexPath.section) ")
         switch indexPath.row {
         case 0:
@@ -79,83 +78,7 @@ class TwelfthA2TableViewDataSource: UITableViewController {
     
     
     
-    /// Function called before TableView cell is to be displayed
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    
         
-        switch indexPath.row {
-        case 0:
-            guard let tableViewCell1 = cell as? TwelfthA2TableViewCell1 else { return }
-            tableViewCell1.setCollectionViewDataSourceDelegate(dataSource: collectionView1DataSource, dataSourceDelegate: collectionView1DataSource, forRow: indexPath.row)
-            tableViewCell1.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-        case 1:
-            print("case 1")
-        case 2:
-            // ======== This controls the Collection View in row 3  ==========
-            guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
-            tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: collectionView3DataSource, dataSourceDelegate: collectionView3DataSource, forRow: indexPath.row)
-            tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-        case 3:
-            print("case 3")
-        case 4:
-            print("case 4")
-        case 5:
-            print("case 5")
-        default:
-            print("case 1")
-        } // end switch
-    } // end func
-    
-    
-    
-    /// Function called before cell stops displaying
-    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell,  forRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
-            storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
-        case 1:
-            print("case 11")
-        case 2:
-            print("case 22")
-            
-        case 3:
-            print("case 33")
-            
-        case 4:
-            print("case 44")
-            
-        case 5:
-            print("case 55")
-            
-        default:
-            print("case 11")
-        } // end switch
-    } // end func
-    
-    
-    
-    /// Function determines the height of each cell within the TabelView
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat  {
-        switch indexPath.row {
-        case 0:
-            return 120
-        case 1:
-            return 320
-        case 2:
-            return 220
-        case 3:
-            return 340
-        case 4:
-            return 240
-        case 5:
-            return 240
-        default:
-            return 200
-        }
-    }
-    
-
-   
-    
     
 }  // end class
