@@ -21,16 +21,25 @@ class TwelfthA2CollectionView1DataSource: NSObject, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView,  numberOfItemsInSection section: Int) -> Int {
         //return model[collectionView.tag].count
         //return model[0].count
-        return 8
+        return 7
     }
     
     
     /// Function gives us individual cell within Collection View
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       // print("Row is \(indexPath.row)   Section is : \(indexPath.section)  ")
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TwelfthA2CollectionView1Cell", for: indexPath)
-        cell.backgroundColor = model[collectionView.tag][indexPath.item]
+       // cell.backgroundColor = model[collectionView.tag][indexPath.item]
+        cell.backgroundColor = model[0][indexPath.item]
+        
+        
         return cell
     }
+    
+    
+    
+    
+    
     
     
     // Function to get Section Header View

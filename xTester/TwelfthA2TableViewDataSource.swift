@@ -15,8 +15,22 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     
     // MARK: - Local Variables
     var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
-    var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
+   
+    
+    // These are populated from TwelfthA2ViewController.swift ( closure section)
+   var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
     var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
+    
+    
+    // MARK: - TODO
+    
+    // ================= THIS MAY NEED CHNAGING ================================
+    
+    //var collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+    //var collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+    
+    
+    
     
     // MARK: - Structs
     fileprivate struct Storyboard     {
@@ -79,6 +93,99 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     
     
     
+    
+    
+   
+    
+    
+    
+    
+    
+    // MARK: - TableView DELEGATE Methods
+    
+    
+    
+    /// Function called before TableView cell is to be displayed
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
+        switch indexPath.row {
+        case 0:
+            guard let tableViewCell1 = cell as? TwelfthA2TableViewCell1 else { return }
+            tableViewCell1.setCollectionViewDataSourceDelegate(dataSource: collectionView1DataSource, dataSourceDelegate: collectionView1DataSource, forRow: indexPath.row)
+            tableViewCell1.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+        case 1:
+            print("case 1")
+        case 2:
+            // ======== This controls the Collection View in row 3  ==========
+            guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
+            tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: collectionView3DataSource, dataSourceDelegate: collectionView3DataSource, forRow: indexPath.row)
+            tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+        case 3:
+            print("case 3")
+        case 4:
+            print("case 4")
+        case 5:
+            print("case 5")
+        default:
+            print("case 1")
+        } // end switch
+    } // end func
+    
+    
+    
+    /// Function called before cell stops displaying
+     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell,  forRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
+            storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
+        case 1:
+            print("case 11")
+        case 2:
+            print("case 22")
+            
+        case 3:
+            print("case 33")
+            
+        case 4:
+            print("case 44")
+            
+        case 5:
+            print("case 55")
+            
+        default:
+            print("case 11")
+        } // end switch
+    } // end func
+    
+    
+    
+    
+    /// Function determines the height of each cell within the TabelView
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat  {
+        switch indexPath.row {
+        case 0:
+            return 120
+        case 1:
+            return 320
+        case 2:
+            return 220
+        case 3:
+            return 340
+        case 4:
+            return 240
+        case 5:
+            return 240
+        default:
+            return 200
+        }
+    }
+    
+    
+    
+    
+
+    
+    
     
 }  // end class

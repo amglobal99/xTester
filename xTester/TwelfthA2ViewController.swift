@@ -37,8 +37,13 @@ import SwiftyJSON
     
         // MARK:- Data Variables
         var store: TwelfthA2CollectionView3PhotoStore!
+        
+        
         var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
         var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
+        
+        
+        
         var tableviewDataSource: TwelfthA2TableViewDataSource!   // This defines the DataSource for the TableView
         var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
         
@@ -62,8 +67,17 @@ import SwiftyJSON
     
         // Set the Delegate and DataSource for the TableView
         table.dataSource = tableviewDataSource
-        // table.delegate = tableviewDelegate
-        table.delegate = self
+          table.delegate = tableviewDelegate
+        //table.delegate = self
+        
+        
+        
+        
+        (table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
+        (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
+        
+        
+        
         
         
         
@@ -102,13 +116,28 @@ import SwiftyJSON
                         switch itemsResult {
                         case let .success(photos):
                             print(" We have total of \(photos.count)  photos ")
-                            // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
+                            // Send values over to DataSource class (TwelfthA2CollectionView3DataSource.swift)
+                            
                             self?.collectionView3DataSource.photos = photos
                             self?.collectionView3DataSource.sections =  photoKeyArray
                             self?.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
+                            
+                            
+                            // MARK:- TODO
+                            
+                            
                             // ========== ?????????? Let's populate the store  .... NOT SURE IF THIS IS RIGHT WAY TO DO IT
                             self?.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
                              // =========================================================
+                            
+                            
+                            
+                            // =========== NOT SURE IF THIS IS PROPER WAY TO DO IT ======= CHECK RETAIN CYCLE ========
+                            //self?.tableviewDelegate.collectionView3DataSource = (self?.collectionView3DataSource)!
+                            
+                            // =============================================================================
+                            
+                            
                         case .failure(let error):
                             self?.collectionView3DataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
@@ -163,6 +192,16 @@ import SwiftyJSON
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
         
         // MARK: - TableView DELEGATE Methods
         
@@ -247,7 +286,7 @@ import SwiftyJSON
         
         
 
-        
+      */
         
         
         

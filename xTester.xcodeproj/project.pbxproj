@@ -90,9 +90,6 @@
 		0F3CBFF71DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFF61DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift */; };
 		0F3CBFF81DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFF61DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift */; };
 		0F3CBFF91DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFF61DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift */; };
-		0F3CBFFB1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFFA1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift */; };
-		0F3CBFFC1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFFA1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift */; };
-		0F3CBFFD1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFFA1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift */; };
 		0F3CBFFF1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFFE1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift */; };
 		0F3CC0001DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFFE1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift */; };
 		0F3CC0011DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3CBFFE1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift */; };
@@ -261,7 +258,6 @@
 		0F3ABB701DB9AF4F0024BA89 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		0F3CBFDC1DE739C6005CEFBB /* TwelfthA2CollectionView3FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView3FlowLayout.swift; sourceTree = "<group>"; };
 		0F3CBFF61DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView3.swift; sourceTree = "<group>"; };
-		0F3CBFFA1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView1Cell.swift; sourceTree = "<group>"; };
 		0F3CBFFE1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView3Cell.swift; sourceTree = "<group>"; };
 		0F3CC0021DE7ACF2005CEFBB /* TwelfthA2CollectionView3SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView3SectionHeader.swift; sourceTree = "<group>"; };
 		0F3CC0061DE7AD9D005CEFBB /* TwelfthA2CollectionView1FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView1FlowLayout.swift; sourceTree = "<group>"; };
@@ -531,7 +527,6 @@
 			children = (
 				0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */,
 				0F8328DB1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift */,
-				0F3CBFFA1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift */,
 				0F3CBFFE1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift */,
 			);
 			name = Cells;
@@ -1078,7 +1073,6 @@
 				0F3052D61DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F3052D91DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
-				0F3CBFFB1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift in Sources */,
 				0FC797A31DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */,
 				0F36D6631DE36B27002611FB /* TwelfthA2TableViewCell5.swift in Sources */,
 				0F36D65B1DE368C2002611FB /* TwelfthA2TableViewCell4.swift in Sources */,
@@ -1149,7 +1143,6 @@
 				0F36D65C1DE368C2002611FB /* TwelfthA2TableViewCell4.swift in Sources */,
 				0F36D6581DE36898002611FB /* TwelfthA2TableViewCell3.swift in Sources */,
 				0F3CBFDE1DE739C6005CEFBB /* TwelfthA2CollectionView3FlowLayout.swift in Sources */,
-				0F3CBFFC1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift in Sources */,
 				0F3CC0101DE7B439005CEFBB /* TwelfthA2Photo.swift in Sources */,
 				0F36D6541DE36860002611FB /* TwelfthA2TableViewCell2.swift in Sources */,
 				0F3CC0181DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift in Sources */,
@@ -1173,7 +1166,6 @@
 				0F3CBFDF1DE739C6005CEFBB /* TwelfthA2CollectionView3FlowLayout.swift in Sources */,
 				0F38F5051DA7F8AF0086BAA8 /* xTesterUITests.swift in Sources */,
 				0F3CC0011DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift in Sources */,
-				0F3CBFFD1DE7AB14005CEFBB /* TwelfthA2CollectionView1Cell.swift in Sources */,
 				0F4BCBEF1DEC7CD50059D58C /* Reachability.swift in Sources */,
 				0F36D65D1DE368C2002611FB /* TwelfthA2TableViewCell4.swift in Sources */,
 				0F3CC0051DE7ACF2005CEFBB /* TwelfthA2CollectionView3SectionHeader.swift in Sources */,
