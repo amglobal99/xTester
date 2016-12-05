@@ -12,7 +12,6 @@ import UIKit
 class TwelfthA2CollectionView3FlowLayout: UICollectionViewFlowLayout {
     
     
-    
     // hold the index path of the item being inserted
     var appearingIndexPath: IndexPath?
     
@@ -50,11 +49,6 @@ class TwelfthA2CollectionView3FlowLayout: UICollectionViewFlowLayout {
     
     
     
-    
-    
-    
-    
-    
     // change the final state of the deleted items' attributes
     override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
@@ -77,7 +71,10 @@ class TwelfthA2CollectionView3FlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-}
+    
+    
+    
+}  // end class
 
 
 

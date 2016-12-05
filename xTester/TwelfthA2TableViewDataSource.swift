@@ -11,10 +11,6 @@ import UIKit
 
 
 //class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource,  UICollectionViewDataSource, Utils, JsonConvertible {
-
-
-
- 
 class TwelfthA2TableViewDataSource: UITableViewController {
     
     
@@ -23,20 +19,15 @@ class TwelfthA2TableViewDataSource: UITableViewController {
     var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
     var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
     
-    
-    
-    
     // MARK: - Structs
     fileprivate struct Storyboard     {
-        static let tableviewCellIdentifier = "TwelfthA2TableViewCell1"
-        static let collviewCellIdentifier = "TwelfthA2CollectionViewCell1"
-        static let showWebView = "ShowTwelfthA2PhotoDetailView"
+        //static let tableviewCellIdentifier = "TwelfthA2TableViewCell1"
+        //static let collviewCellIdentifier = "TwelfthA2CollectionViewCell1"
+        //static let showWebView = "ShowTwelfthA2PhotoDetailView"
     }
     
     
-    
-    /*
-    
+   
     
     // MARK: - TableView DataSource methods
     
@@ -164,11 +155,7 @@ class TwelfthA2TableViewDataSource: UITableViewController {
     }
     
 
-    
-  
-    */
-  
-    
+   
     
     
 }  // end class

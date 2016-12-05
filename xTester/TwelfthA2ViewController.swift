@@ -15,22 +15,18 @@ import SwiftyJSON
 
 
 /**
- 
   This is the main class for our TwelfthA2ViewController
   You arrive at this ViewController thru a segue from 'TwelfthAViewController'
  
   DataSource variables are set in the prepareForSegue method in TwelfthAViewController
- 
- 
+
  */
 
 
 // UICollectionViewDelegate
 
     class TwelfthA2ViewController: UITableViewController, JsonConvertible {
-            
-            
-
+        
         // MARK: - Local Variables
         var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
@@ -43,8 +39,6 @@ import SwiftyJSON
         var tableviewDelegate: TwelfthA2TableViewDataSource!
         
         
-        
-        
         // MARK: - Global Constants Variables
         let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
         let apiKey = Constants.Configuration.apiKey
@@ -54,28 +48,20 @@ import SwiftyJSON
         let dataKey = Constants.Configuration.dataKey
         let params = Constants.Configuration.params
         
-
-        
-        
-        
         
     
     // MARK: - ViewController events
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        /*
-        self.tableView.dataSource = tableviewDataSource
-        self.tableView.delegate = tableviewDelegate
-        */
-        
-        
-        
+    
         
         // Completion Handler
-        let completionHandler: (Result<JSON>) -> Void  =
+       // let completionHandler: (Result<JSON>) -> Void  =
+        
+            // We will use a typealias ( defined in GlobalConstants.swift file)  in line below
+             let completionHandler: ClosureJSON<Result<JSON> >  =
+            
             {  [weak self] result in
                 let jsonObj = result.value!
                 // get list of Photos(returns array of 'TwelfthA2Photo' items)
@@ -122,70 +108,38 @@ import SwiftyJSON
         } // end closure
         
         
-        
-        
-        
-        
         // Create a Async(Alamofire) request to get jSON data
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
         getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-        
 
-        
     }  // end viewDidLoad
     
     
        
-      
-        
-            
-    // MARK: - Segue to Detail View Controller
-        
         /**
-         Function called during the segue from NinthViewController to Detail View Controller
+         Function called during the segue from TwelfthA2ViewController to Detail View Controller
          */
         
-        
-        // public func prepare(for segue: UIStoryboardSegue, sender: UICollectionViewCell) {
-            
           override   public func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
-                
             let segueIdentifier = segue.identifier!
-            
             switch segueIdentifier  {
                 case "ShowTwelfthA2PhotoDetail":
                     print("in the right segue ")
                     let destinationVC = segue.destination as! TwelfthA2DetailViewController
-                    //let cell = sender as! TwelfthA2TableViewCell3
-                     let cell = sender as! TwelfthA2CollectionView3Cell
-                    let collViewDataSource = self.collectionView3DataSource
-                    
-                    
-                    /*
-                    if let selectedIndexPath = cell.collectionView3.indexPathsForSelectedItems?.first {
+                    let tableIdx = IndexPath(row: 2, section: 0)
+                    let tabCell = self.tableView.cellForRow(at: tableIdx) as! TwelfthA2TableViewCell3
+                    if let selectedIndexPath = tabCell.collectionView3.indexPathsForSelectedItems?.first {
                         updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
                     }
-                    */
-                
-                
-                
                 default:
                     print("test")
             }  // end switch
-         
-         
         }  // end func
         
 
         
-        
-        
-        
-        
-        func updateDestinationData(destinationVC: TwelfthA2DetailViewController, indexPath: IndexPath) {
-            
+        func updateDestinationData(destinationVC: TwelfthA2DetailViewController, indexPath: IndexPath)  {
             let photo = collectionView3DataSource.photoForItemAtIndexPath(indexPath: indexPath)
-           // let photo = dataSource.photoForItemAtIndexPath(indexPath: indexPath)
             destinationVC.photo = photo
             destinationVC.store = store
         }
@@ -266,10 +220,11 @@ import SwiftyJSON
                     case 1:
                         print("case 1")
                     case 2:
-                        // ======== This controls the Collection View in row 3  ==========
+                        // ======== This controls the Collection View in row 3  =====================
                         guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
                         tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: collectionView3DataSource, dataSourceDelegate: collectionView3DataSource, forRow: indexPath.row)
                         tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+                        // ==========================================================================
                     case 3:
                         print("case 3")
                     case 4:
@@ -293,16 +248,12 @@ import SwiftyJSON
                         print("case 11")
                     case 2:
                         print("case 22")
-                
                     case 3:
                         print("case 33")
-                        
                     case 4:
                         print("case 44")
-                        
                     case 5:
                         print("case 55")
-                        
                     default:
                         print("case 11")
             } // end switch
@@ -331,11 +282,6 @@ import SwiftyJSON
     }
     
      
-            
-            
-            
-            
-            
             
         
     

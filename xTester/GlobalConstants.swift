@@ -7,6 +7,14 @@
 //
 
 import Foundation
+import Alamofire
+
+
+
+    
+    typealias ClosureJSON<T> = (T) -> Void
+
+
 
 
 struct Constants {

@@ -20,7 +20,6 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     // MARK: - Enums
-    
     enum ImageResult {
         case success(UIImage)
         case failure(Error)
@@ -42,7 +41,6 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     // MARK: - Local Variables
-    
     let session = Constants.Configuration.session
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
     let apiKey = Constants.Configuration.apiKey

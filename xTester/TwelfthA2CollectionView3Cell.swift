@@ -17,10 +17,7 @@ protocol TwelfthA2CollectionView3CellDelegate
 }
 
 
-
-
 class TwelfthA2CollectionView3Cell: UICollectionViewCell {
-    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -28,8 +25,6 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
     @IBOutlet weak var photoServerLabel: UILabel!
     
    
-    
-    
     @IBAction func buyPhotoItem(_ sender: AnyObject) {
         
         let optionMenu = UIAlertController(title: nil, message: "Purchase Confirmaton Required ", preferredStyle: .actionSheet)
@@ -58,7 +53,6 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
     
     func updateWithImage(_ image: UIImage?) {
        // print("....updateWithImage starting ")
-        
         if let imageToDisplay = image {
             spinner .stopAnimating()
             imageView.image = imageToDisplay
@@ -85,10 +79,6 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
         updateWithImage(nil )
     }
     
+      
     
-
-    
-    
-    
-    
-}
+} // end class

@@ -12,9 +12,9 @@ import UIKit
 
 class TwelfthA2TableViewCell3: UITableViewCell {
     
+    
     // Define an ourlet for our CollectionView
     @IBOutlet weak var collectionView3: TwelfthA2CollectionView3!
-    
     
     
     // This property controls the scrolled position for CollectinView

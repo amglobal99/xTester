@@ -139,7 +139,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
      
      */
     
-
      public func collectionView (_ collectionView: UICollectionView,
                                          willDisplay cell: UICollectionViewCell,
                                          forItemAt indexPath: IndexPath )  {
@@ -149,7 +148,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         {    (result) -> Void in
             OperationQueue.main.addOperation() {
                 // get Dictionary for photo items
-               // let sectionDict = self.photoDataSource.sectionPhotoItems
                 let sectionDict = self.sectionPhotoItems
                 guard let path = self.photoStore.indexForPhoto(dict: sectionDict, photo: photo)  else {
                     return
@@ -159,7 +157,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
                 let photoIndexPath = IndexPath(row: photoRow , section: photoSection)
                 // print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
                 //if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as?   NinthPhotoCollectionViewCell {
-                    if let cell = collectionView.cellForItem(at: photoIndexPath) as?  TwelfthA2CollectionView3Cell {
+                if let cell = collectionView.cellForItem(at: photoIndexPath) as?  TwelfthA2CollectionView3Cell {
                     cell.updateWithImage(photo.image)     // Update cell photo
                 }
             } //end operation
@@ -171,34 +169,16 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     
     
-   /*
+   
     
     // Function runs when a Cell is selected
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didselect .......")
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            print("didselect 2 .......")
-           // performSegueWithIdentifier("showDetail", sender: cell)
-            
-            /*
-            let destinationVC = segue.destination as! NinthDetailViewController
-            if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
-                updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
-            }
-
-            */
-            
-            
-            
-            
-            cell.parentViewController?.performSegue(withIdentifier: "ShowTwelfthA2PhotoDetail", sender: cell)
-            
-        } else {
-            // Error indexPath is not on screen: this should never happen.
-        }
+        
+        
     }
     
-    */
+   
     
     
     

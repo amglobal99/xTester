@@ -34,7 +34,7 @@ class TwelfthA2DetailViewController: UIViewController, Utils {
     override public func viewDidLoad()  {
         super.viewDidLoad()
         
-        /*
+       
         store.fetchImageForPhoto(photo)
         { (result) -> Void in
             switch result {
@@ -49,7 +49,7 @@ class TwelfthA2DetailViewController: UIViewController, Utils {
         } //end closure
  
  
- */
+ 
  
         
     }  //end viewDidLoad
