@@ -73,7 +73,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let itemsInSection = photosForSection(section)
-        print("Number of Items in section \(section) : \(itemsInSection.count)")
+        print("Coll View 3: Number of Items in section \(section) : \(itemsInSection.count)")
         return itemsInSection.count
     }  // end func
     

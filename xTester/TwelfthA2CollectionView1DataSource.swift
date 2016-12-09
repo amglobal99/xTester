@@ -32,7 +32,6 @@ class TwelfthA2CollectionView1DataSource: NSObject, UICollectionViewDataSource, 
        // cell.backgroundColor = model[collectionView.tag][indexPath.item]
         cell.backgroundColor = model[0][indexPath.item]
         
-        
         return cell
     }
     

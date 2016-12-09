@@ -100,29 +100,25 @@ class FourteenthViewController: UIViewController {
     
     @IBAction func getSimple(_ sender: AnyObject) {
         
-        
          // Request #1
-        
-         Alamofire.request(urlString).responseJSON
-            {
-             response in
-             //debugPrint(response)   // This prints output for data, response, result  values
-             
+         Alamofire.request(urlString)
+            .responseJSON
+            { response in
+                 //debugPrint(response)   // This prints output for data, response, result  values
                 
-             print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
-             print(response.data)
-             print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
-             print(response.response) // HTTP URL response
-             print("\n\n++++++++++++++++++ Response Result +++++++++++++++++++++")
-             print(response.result)   // result of response serialization
-            
-             if let JSON = response.result.value {
-             print("\n\n +++++++++++++++++ Response Value (JSON) +++++++++++++++++++++++++++++++")
-             print("JSON: \(JSON)")
-             print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
+                 print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
+                 print(response.data)
+                 print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
+                 print(response.response) // HTTP URL response
+                 print("\n\n++++++++++++++++++ Response Result +++++++++++++++++++++")
+                 print(response.result)   // result of response serialization
+                
+                 if let JSON = response.result.value {
+                 print("\n\n +++++++++++++++++ Response Value (JSON) +++++++++++++++++++++++++++++++")
+                 print("JSON: \(JSON)")
+                 print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
              }
-         
-                
+        
          }  // end closure
         
         
@@ -133,7 +129,6 @@ class FourteenthViewController: UIViewController {
     
     
     @IBAction func getWithValidate(_ sender: AnyObject) {
-        
         
         // Request # 2
         /**
@@ -243,8 +238,7 @@ class FourteenthViewController: UIViewController {
         
         let urlStr = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
         
-        
-        
+    
         Alamofire.request(urlStr)
             .responseString
             { response in
@@ -255,33 +249,33 @@ class FourteenthViewController: UIViewController {
                 if let error = response.result.error as? AFError {
                     statusCode = error._code // statusCode private
                     switch error {
-                    case .invalidURL(let url):
-                        print("Invalid URL: \(url) - \(error.localizedDescription)")
-                    case .parameterEncodingFailed(let reason):
-                        print("Parameter encoding failed: \(error.localizedDescription)")
-                        print("Failure Reason: \(reason)")
-                    case .multipartEncodingFailed(let reason):
-                        print("Multipart encoding failed: \(error.localizedDescription)")
-                        print("Failure Reason: \(reason)")
-                    case .responseValidationFailed(let reason):
-                        print("Response validation failed: \(error.localizedDescription)")
-                        print("Failure Reason: \(reason)")
-                        
-                        switch reason {
-                        case .dataFileNil, .dataFileReadFailed:
-                            print("Downloaded file could not be read")
-                        case .missingContentType(let acceptableContentTypes):
-                            print("Content Type Missing: \(acceptableContentTypes)")
-                        case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
-                            print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
-                        case .unacceptableStatusCode(let code):
-                            print("Response status code was unacceptable: \(code)")
-                            statusCode = code
-                        }
-                    case .responseSerializationFailed(let reason):
-                        print("Response serialization failed: \(error.localizedDescription)")
-                        print("Failure Reason: \(reason)")
-                        // statusCode = 3840 ???? maybe..
+                            case .invalidURL(let url):
+                                print("Invalid URL: \(url) - \(error.localizedDescription)")
+                            case .parameterEncodingFailed(let reason):
+                                print("Parameter encoding failed: \(error.localizedDescription)")
+                                print("Failure Reason: \(reason)")
+                            case .multipartEncodingFailed(let reason):
+                                print("Multipart encoding failed: \(error.localizedDescription)")
+                                print("Failure Reason: \(reason)")
+                            case .responseValidationFailed(let reason):
+                                print("Response validation failed: \(error.localizedDescription)")
+                                print("Failure Reason: \(reason)")
+                                
+                                switch reason {
+                                case .dataFileNil, .dataFileReadFailed:
+                                    print("Downloaded file could not be read")
+                                case .missingContentType(let acceptableContentTypes):
+                                    print("Content Type Missing: \(acceptableContentTypes)")
+                                case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                                    print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                                case .unacceptableStatusCode(let code):
+                                    print("Response status code was unacceptable: \(code)")
+                                    statusCode = code
+                                }
+                            case .responseSerializationFailed(let reason):
+                                print("Response serialization failed: \(error.localizedDescription)")
+                                print("Failure Reason: \(reason)")
+                                // statusCode = 3840 ???? maybe..
                     }
                     
                     print("Underlying error: \(error.underlyingError)")
@@ -332,9 +326,6 @@ class FourteenthViewController: UIViewController {
         var todosUrlRequest = URLRequest(url: todosURL)
         todosUrlRequest.httpMethod = "POST"
         
-        // Create a ToDo object
-        //let newTodo: [String: Any] = ["title": "My First todo", "completed": false, "userId": 1]
-        
         // Let's create 2 objects
         let newTodo: [[String: Any]] = [["title": "My First todo", "completed": false, "userId": 1],[ "title": "My Second todo", "completed": false, "userId": 1]   ]
         
@@ -347,13 +338,12 @@ class FourteenthViewController: UIViewController {
             print("Error: cannot create JSON from todo")
             return
         }
+        
         print("Sending Alamofire request")
         Alamofire.request(todosUrlRequest)
-            .validate(statusCode: [201] )  // this is check #1
+            .validate(statusCode: [201] )  // this is check #1 ... Code 201 indicates that Resource was created by POST
             .responseString
             { response in
-                
-               
                 // check #2
                 guard response.result.error == nil else {
                     print("+++++++ We did not get status Code of 201 back ++++++++++++++++++++++++++")
@@ -361,15 +351,18 @@ class FourteenthViewController: UIViewController {
                     return
                 }
                 
-                print("Success: \(response.result.isSuccess)")
-                print("+++++++++++++++ Response Value +++++++++++++++")
+                print("Result.IsSuccess: \(response.result.isSuccess)")
+                print("\n\n+++++++++++++++ Response Result Value +++++++++++++++")
                 print("Response String: \(response.result.value!)")
+                                print("+++++++++++++++++++++++++++++++++++++++++++++++++++++")
+                
+                print("\n\n++++++++++++++ Status Code ++++++++++++++")
                 let statusCode = response.response?.statusCode
-                
-                print("++++++++++++++ Status Code ++++++++++++++")
                 print("Our Status Code: \(statusCode!)")
+                print("+++++++++++++++++++++++++++++++++++++++++++++++++++++")
                 
-                print(" +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+                
+                print("\n\n +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
                 debugPrint(response)   // This prints output for data, response, result  value
                 print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
                 
@@ -406,6 +399,38 @@ class FourteenthViewController: UIViewController {
     
     
     
+    @IBAction func postAuthenticateSimple(_ sender: AnyObject) {
+    
+        let user = "user"
+        //let user = "jack"
+        let password = "password"
+        let credential = URLCredential(user: user, password: password, persistence: .forSession)
+        let loginString = String(format: "%@:%@", user, password)
+        let loginData = loginString.data(using: String.Encoding.utf8)!
+        let base64LoginString = loginData.base64EncodedString()
+        
+        let urlString: String = "https://httpbin.org/basic-auth/\(user)/\(password)"
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+        
+        Alamofire.request(request)
+            .responseString  { response in
+                debugPrint(response)
+        }
+        
+    } // end func
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -416,8 +441,7 @@ class FourteenthViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
-        
-
+    
         } // end func viewDidLoad
 
 

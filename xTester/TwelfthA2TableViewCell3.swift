@@ -18,6 +18,10 @@ class TwelfthA2TableViewCell3: UITableViewCell {
     
     
     // This property controls the scrolled position for CollectinView
+    // This property is set in the method
+    //  tableView: UITableView, didEndDisplaying cell:
+    // Look for that method in TwelfthA2TableViewDataSource.swift
+    
     var collectionViewOffset: CGFloat {
         get {
             return collectionView3.contentOffset.x

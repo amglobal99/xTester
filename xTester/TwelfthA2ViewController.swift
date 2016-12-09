@@ -22,8 +22,6 @@ import SwiftyJSON
 
  */
 
-
-
     class TwelfthA2ViewController: UITableViewController, JsonConvertible {
         
         
@@ -37,13 +35,8 @@ import SwiftyJSON
     
         // MARK:- Data Variables
         var store: TwelfthA2CollectionView3PhotoStore!
-        
-        
         var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
         var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
-        
-        
-        
         var tableviewDataSource: TwelfthA2TableViewDataSource!   // This defines the DataSource for the TableView
         var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
         
@@ -66,12 +59,12 @@ import SwiftyJSON
         super.viewDidLoad()
     
         // Set the Delegate and DataSource for the TableView
-        table.dataSource = tableviewDataSource
-          table.delegate = tableviewDelegate
-        //table.delegate = self
+            table.dataSource = tableviewDataSource
+            table.delegate = tableviewDelegate
+            //table.delegate = self
         
         
-        
+        // TODO: CHECK IF THIS IS BEST APPROACH
         
         (table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
         (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
@@ -123,7 +116,7 @@ import SwiftyJSON
                             self?.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
                             
                             
-                            // MARK:- TODO
+                            //TODO: Check Retain Cycles
                             
                             
                             // ========== ?????????? Let's populate the store  .... NOT SURE IF THIS IS RIGHT WAY TO DO IT
@@ -131,6 +124,8 @@ import SwiftyJSON
                              // =========================================================
                             
                             
+                            
+                            //FIXME: Check Memory LEAKS
                             
                             // =========== NOT SURE IF THIS IS PROPER WAY TO DO IT ======= CHECK RETAIN CYCLE ========
                             //self?.tableviewDelegate.collectionView3DataSource = (self?.collectionView3DataSource)!

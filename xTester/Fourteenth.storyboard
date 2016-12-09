@@ -30,9 +30,17 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AFs-yP-B4I">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-Om-rOs">
+                                <frame key="frameInset" minX="68" minY="147" width="278" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Please check the console log to see what is happening with these requests. Check code in viewDidLoad to see how errors are handled.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AFs-yP-B4I">
+                                <frame key="frameInset" minX="62" minY="277" width="240" height="302"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-42-Gs6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qp-42-Gs6">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="MB5-4V-no3"/>
@@ -49,7 +57,7 @@
                                             <action selector="getSimple:" destination="mYb-mc-cwN" eventType="touchUpInside" id="bPU-y6-Fpa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-JY-Cke">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPp-JY-Cke">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="AKf-zd-5e0"/>
@@ -61,7 +69,7 @@
                                             <action selector="getWithValidate:" destination="mYb-mc-cwN" eventType="touchUpInside" id="I75-Iw-ja4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-Ek-Aa8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-Ek-Aa8">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="59v-8e-Oaw"/>
@@ -73,7 +81,7 @@
                                             <action selector="getWithParams:" destination="mYb-mc-cwN" eventType="touchUpInside" id="Bh4-Hf-Hkc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhE-lL-TGb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhE-lL-TGb">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="ocS-dL-yVu"/>
@@ -85,67 +93,74 @@
                                             <action selector="getWithErrorCodeCheck:" destination="mYb-mc-cwN" eventType="touchUpInside" id="zXE-Km-dlb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr9-pZ-Jxh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tr9-pZ-Jxh">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="fU5-F5-Z45"/>
                                         </constraints>
-                                        <state key="normal" title="Simple POST">
+                                        <state key="normal" title="POST - Simple">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="postSimple:" destination="mYb-mc-cwN" eventType="touchUpInside" id="8l6-Ff-oxM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULD-Ak-Ap8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULD-Ak-Ap8">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="pSa-xj-XK5"/>
                                         </constraints>
-                                        <state key="normal" title="Complex POST">
+                                        <state key="normal" title="POST - Complex">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1j-BN-mOB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1j-BN-mOB">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="Gaf-6g-x9q"/>
                                         </constraints>
-                                        <state key="normal" title="Download REquest">
+                                        <state key="normal" title="Download Request">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUo-dP-MGx">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUo-dP-MGx">
                                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="Bfg-x0-e6w"/>
                                         </constraints>
-                                        <state key="normal" title="Upload REquest">
+                                        <state key="normal" title="Upload Request">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0A-Ti-wq1">
+                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="z0V-qD-jFR"/>
+                                        </constraints>
+                                        <state key="normal" title="Authentication - Basic">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postAuthenticateSimple:" destination="mYb-mc-cwN" eventType="touchUpInside" id="0Ib-SR-zFA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="nfg-HS-2mp"/>
+                                    <constraint firstAttribute="width" constant="240" id="nfg-HS-2mp"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-Om-rOs">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Please check the console log to see what is happening with these requests. Check code in viewDidLoad to see how errors are handled.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.99528405870000003" green="1" blue="0.94962795680000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rYi-wH-OOT" firstAttribute="top" secondItem="AFs-yP-B4I" secondAttribute="bottom" constant="42" id="3O9-Q2-Qhe"/>
                             <constraint firstItem="cjV-hd-BPd" firstAttribute="top" secondItem="LNN-wm-XC3" secondAttribute="bottom" constant="30" id="9LK-Om-WYc"/>
+                            <constraint firstItem="AFs-yP-B4I" firstAttribute="top" secondItem="8wq-Om-rOs" secondAttribute="bottom" constant="40" id="Eih-wY-vBM"/>
                             <constraint firstItem="cjV-hd-BPd" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="JmC-4m-2dg"/>
-                            <constraint firstItem="AFs-yP-B4I" firstAttribute="top" secondItem="8wq-Om-rOs" secondAttribute="bottom" constant="61" id="Zr8-Zh-4kA"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="V4j-9T-ZnP"/>
+                            <constraint firstItem="8wq-Om-rOs" firstAttribute="leading" secondItem="76t-1g-PCW" secondAttribute="leadingMargin" constant="52" id="biX-7h-EUu"/>
                             <constraint firstItem="8wq-Om-rOs" firstAttribute="top" secondItem="cjV-hd-BPd" secondAttribute="bottom" constant="31" id="fY0-Sk-i6E"/>
                             <constraint firstItem="8wq-Om-rOs" firstAttribute="centerX" secondItem="76t-1g-PCW" secondAttribute="centerX" id="ggT-J1-qFY"/>
                             <constraint firstItem="AFs-yP-B4I" firstAttribute="leading" secondItem="76t-1g-PCW" secondAttribute="leadingMargin" constant="34" id="kS9-EV-y0a"/>
-                            <constraint firstItem="8wq-Om-rOs" firstAttribute="leading" secondItem="76t-1g-PCW" secondAttribute="leadingMargin" constant="52" id="nT7-jU-dZe"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
