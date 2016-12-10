@@ -25,114 +25,75 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     @IBOutlet weak var salesLabel: UITextField!
     @IBOutlet weak var estDateLabel: UITextField!
     @IBOutlet weak var sicCodeLabel: UITextField!
-    
-    
-    
-    
-    @IBAction func validateForm(_ sender: AnyObject)  {
-        
-        print("I am validating .....")
-        
-        
-        
-        if !isValidEmail(testStr: emailLabel.text!)  {
-            print("Looks like email is NOT Valid")
-            
-            self.emailLabel.layer.borderColor = UIColor.red.cgColor
-            self.emailLabel.layer.borderWidth = 2
-            self.emailLabel.layer.cornerRadius = 5
-            self.emailLabel.backgroundColor = UIColor.lightGray
-            
-            return
-        }
-        
-
-        
-        
-        
-        
-        
-        
-    } // end func
-    
-    
-    
+    @IBOutlet weak var validateLabel: UILabel!
     
     
     /**
         IBAction to submit Form data to server.
- 
      */
-    
     
     @IBAction func submitForm(_ sender: AnyObject) {
         
-        
-        if !isValidEmail(testStr: emailLabel.text!)  {
-             return
-        }
- 
-        
-        
-        
-        let jsonTodo: Data   // variable to hold Data created from JSON object
+        if formIsValidated() {   // All fields have been validated
+            
+            let jsonTodo: Data   // variable to hold Data created from JSON object
 
-        // Get values for fields on Form
-        let id = Int(idLabel.text!)
-        let title = nameLabel.text
-        var json:[String:Any] = [:]  // create Dictionary
-        
-        // Set values in Dictionary using Form data entry values
-        json["userId"] = 1
-        json["completed"] = false
-        json["title"] = title
-        
-        // Use a do-catch block since JSONSerialiation.data method can throw an error
-        do {
-            jsonTodo = try JSONSerialization.data(withJSONObject: json, options: [])
-        } catch {
-            print("Error: cannot create JSON")
-            return
-        }
-        
-        // Create Alamofire POST request
-        let endPoint: String = "https://jsonplaceholder.typicode.com/todos"
-        guard let url = URL(string: endPoint) else {
-            print("Error: cannot create URL")
-            return
-        }
-        
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-        print("Sending Alamofire request")
-        Alamofire.request(urlRequest)
-            .validate(statusCode: [201] )  // this is check #1 ... Code 201 indicates that Resource was created by POST
-            .responseString
-            { response in
-                // check #2
-                guard response.result.error == nil else {
-                    print("+++++++ We did not get status Code of 201 back ++++++++++++++++++++++++++")
-                    print("Our Error: \(response.result.error!) ")
-                    return
-                }
-                
-                print("IsSuccess: \(response.result.isSuccess)")
-                
-                print("\n\n+++++++++++++++ Response Result Value +++++++++++++++")
-                print("Response String: \(response.result.value!)")
-                print("+++++++++++++++++++++++++++++++++++++++++")
-                
-                print("\n++++++++++++++ Response Status Code ++++++++++++++")
-                let statusCode = response.response?.statusCode
-                print("Status Code: \(statusCode!)")
-                print("+++++++++++++++++++++++++++++++++++++++++")
-                
-                print("\n\n +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
-                debugPrint(response)   // This prints output for data, response, result  value
-                print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
-                
-        }  // end closure
-        
+            // Get values for fields on Form
+            let id = Int(idLabel.text!)
+            let title = nameLabel.text
+            var json:[String:Any] = [:]  // create Dictionary
+            
+            // Set values in Dictionary using Form data entry values
+            json["userId"] = 1
+            json["completed"] = false
+            json["title"] = title
+            
+            // Use a do-catch block since JSONSerialiation.data method can throw an error
+            do {
+                jsonTodo = try JSONSerialization.data(withJSONObject: json, options: [])
+            } catch {
+                print("Error: cannot create JSON")
+                return
+            }
+            
+            // Create Alamofire POST request
+            let endPoint: String = "https://jsonplaceholder.typicode.com/todos"
+            guard let url = URL(string: endPoint) else {
+                print("Error: cannot create URL")
+                return
+            }
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "POST"
+            print("Sending Alamofire request")
+            Alamofire.request(urlRequest)
+                .validate(statusCode: [201] )  // this is check #1 ... Code 201 indicates that Resource was created by POST
+                .responseString
+                { response in
+                    // check #2
+                    guard response.result.error == nil else {
+                        print("+++++++ We did not get status Code of 201 back ++++++++++++++++++++++++++")
+                        print("Our Error: \(response.result.error!) ")
+                        return
+                    }
+            
+                    print("IsSuccess: \(response.result.isSuccess)")
+                    
+                    print("\n\n+++++++++++++++ Response Result Value +++++++++++++++")
+                    print("Response String: \(response.result.value!)")
+                    print("+++++++++++++++++++++++++++++++++++++++++")
+                    
+                    print("\n++++++++++++++ Response Status Code ++++++++++++++")
+                    let statusCode = response.response?.statusCode
+                    print("Status Code: \(statusCode!)")
+                    print("+++++++++++++++++++++++++++++++++++++++++")
+                    
+                    print("\n\n +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+                    debugPrint(response)   // This prints output for data, response, result  value
+                    print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+                    
+            }  // end closure
+            
+        }  // end if
         
     } // end func
     
@@ -154,23 +115,15 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
         
         self.hideKeyboardWhenTappedAround()
         
+        
+        validateLabel.isHidden = true
+        
+        
     }  // end method
     
     
     
    
-    
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
     
     
     
@@ -190,20 +143,65 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     
     
     
-    func formIsValid() -> Bool {
-        var formIsValidated:Bool = false
+    func formIsValidated() -> Bool {
+        
+        print("formIsValidated .....starting")
+        var idIsValid: Bool = false
+        var nameIsValid:Bool = false
+        var emailIsValid:Bool = false
+        var zipIsValid:Bool = false
+        var salesIsValid:Bool =  false
+        var dateIsValid:Bool = false
+        var siccodeIsValid:Bool =  false
+        
+        // ID Validation
+        if (idLabel.text?.contains("5"))!{
+            self.idLabel.layer.borderColor = UIColor.red.cgColor
+            self.idLabel.layer.borderWidth = 1
+            self.idLabel.layer.cornerRadius = 4
+            self.idLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+        }
         
         
         
+        // Name Validation
+        if (nameLabel.text?.contains("j"))! {
+            self.nameLabel.layer.borderColor = UIColor.red.cgColor
+            self.nameLabel.layer.borderWidth = 1
+            self.nameLabel.layer.cornerRadius = 4
+            self.nameLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+        }
+        
+        // Email Validation
+        // Validate the Email address
+        if !isValidEmail(testStr: emailLabel.text!)  {
+            print("Looks like email is NOT Valid")
+            self.emailLabel.layer.borderColor = UIColor.red.cgColor
+            self.emailLabel.layer.borderWidth = 1
+            self.emailLabel.layer.cornerRadius = 4
+            self.emailLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+        }
         
         
+        // Zip Validation
+        if zipLabel.text == "99999" {
+            self.zipLabel.layer.borderColor = UIColor.red.cgColor
+            self.zipLabel.layer.borderWidth = 1
+            self.zipLabel.layer.cornerRadius = 4
+            self.zipLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+        }
         
         
+        if idIsValid && nameIsValid && emailIsValid && zipIsValid   {
+            return true
+        } else {
+            validateLabel.isHidden = false
+            return false
+        }
         
+    } // end func
         
-        return formIsValidated
-        
-    }
+    
     
     
    
@@ -214,14 +212,17 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
                     replacementString string: String) -> Bool {
         
         if textField == idLabel {
+            
+            // Rule: Allow max length of 4 and block certain characers
+            
             let characterCountLimit = 4
             // We need to figure out how many characters would be in the string after the change happens
             let startingLength = textField.text?.characters.count ?? 0
             let lengthToAdd = string.characters.count
             let lengthToReplace = range.length
-            
             let newLength = startingLength + lengthToAdd - lengthToReplace
             return newLength <= characterCountLimit
+                        
         } else if textField == nameLabel {
             let characterCountLimit = 4
             // We need to figure out how many characters would be in the string after the change happens
@@ -229,8 +230,11 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             let lengthToAdd = string.characters.count
             let lengthToReplace = range.length
             let newLength = startingLength + lengthToAdd - lengthToReplace
-            print (newLength)
-            return newLength <= characterCountLimit
+            //print (newLength)
+            // Let's block certain characters
+            let blockedChars = "@#$%&*(){}!~|\\/<>^+=?,:\"'"
+            return newLength <= characterCountLimit  && !blockedChars.contains(string)
+           
         }  else if textField == nameLabel {
             let characterCountLimit = 4
             // We need to figure out how many characters would be in the string after the change happens
