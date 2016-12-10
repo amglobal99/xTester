@@ -77,6 +77,12 @@
 		0F38583F1DE4802400FBAD0C /* BaseUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38583E1DE4802400FBAD0C /* BaseUITestCase.swift */; };
 		0F3858411DE5339500FBAD0C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3858401DE5339500FBAD0C /* MapKit.framework */; };
 		0F3858431DE533B800FBAD0C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3858421DE533B800FBAD0C /* StoreKit.framework */; };
+		0F38A81F1DFB5EE900E17CFE /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38A81E1DFB5EE900E17CFE /* ExtensionTextField.swift */; };
+		0F38A8201DFB5EE900E17CFE /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38A81E1DFB5EE900E17CFE /* ExtensionTextField.swift */; };
+		0F38A8211DFB5EE900E17CFE /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38A81E1DFB5EE900E17CFE /* ExtensionTextField.swift */; };
+		0F38A8231DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38A8221DFB9DF000E17CFE /* ProtocolValidator.swift */; };
+		0F38A8241DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38A8221DFB9DF000E17CFE /* ProtocolValidator.swift */; };
+		0F38A8251DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38A8221DFB9DF000E17CFE /* ProtocolValidator.swift */; };
 		0F38F4E21DA7F8AF0086BAA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */; };
 		0F38F4EA1DA7F8AF0086BAA8 /* xTester.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F38F4E81DA7F8AF0086BAA8 /* xTester.xcdatamodeld */; };
 		0F38F4EC1DA7F8AF0086BAA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F38F4EB1DA7F8AF0086BAA8 /* Assets.xcassets */; };
@@ -243,6 +249,8 @@
 		0F3858401DE5339500FBAD0C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0F3858421DE533B800FBAD0C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		0F3858441DE533CB00FBAD0C /* xTester.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xTester.entitlements; sourceTree = "<group>"; };
+		0F38A81E1DFB5EE900E17CFE /* ExtensionTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionTextField.swift; sourceTree = "<group>"; };
+		0F38A8221DFB9DF000E17CFE /* ProtocolValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolValidator.swift; sourceTree = "<group>"; };
 		0F38F4DE1DA7F8AF0086BAA8 /* xTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F38F4E11DA7F8AF0086BAA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F38F4E91DA7F8AF0086BAA8 /* xTester.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = xTester.xcdatamodel; sourceTree = "<group>"; };
@@ -403,18 +411,20 @@
 		0F3052EB1DABF1C900F79778 /* Globals_and_Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0F3052EC1DABF1EF00F79778 /* ProtocolsUtils.swift */,
-				0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */,
-				0FF54A181DE3CF0000002866 /* ProtocolDateTimeConvertible.swift */,
-				0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */,
-				0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */,
-				0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */,
-				0F945FCF1DB59AB700FB4045 /* ExtensionViewController.swift */,
-				0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */,
 				0F2C0CF71DB5B0C600ECBA67 /* ExtensionArray.swift */,
 				0F2D08A61DE1242D0039F98B /* ExtensionDictionary.swift */,
+				0F38A81E1DFB5EE900E17CFE /* ExtensionTextField.swift */,
 				0F36D64E1DE330E2002611FB /* ExtensionUIColor.swift */,
+				0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */,
+				0F945FCF1DB59AB700FB4045 /* ExtensionViewController.swift */,
+				0F2D7ECB1DB1A244007A6F4A /* GlobalConstants.swift */,
 				0F2D7ECF1DB1A283007A6F4A /* GlobalFunctions.swift */,
+				0FF54A181DE3CF0000002866 /* ProtocolDateTimeConvertible.swift */,
+				0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */,
+				0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */,
+				0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */,
+				0F3052EC1DABF1EF00F79778 /* ProtocolsUtils.swift */,
+				0F38A8221DFB9DF000E17CFE /* ProtocolValidator.swift */,
 				0F3979921DDF4F3B00F95B0A /* ReleasePrint.swift */,
 			);
 			name = Globals_and_Protocols;
@@ -1051,6 +1061,7 @@
 				0F2E0DC01DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */,
 				0F945FD41DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F22D81A1DCD6C0F0015C9F1 /* NinthPhotoStore.swift in Sources */,
+				0F38A8231DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */,
 				0F3052D01DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F8328C71DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F22D8161DCD6BD10015C9F1 /* PhotoStore.swift in Sources */,
@@ -1075,6 +1086,7 @@
 				0F3052D91DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
 				0FC797A31DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */,
 				0F36D6631DE36B27002611FB /* TwelfthA2TableViewCell5.swift in Sources */,
+				0F38A81F1DFB5EE900E17CFE /* ExtensionTextField.swift in Sources */,
 				0F36D65B1DE368C2002611FB /* TwelfthA2TableViewCell4.swift in Sources */,
 				0FECD9D01DB462BE00DDDCFE /* Test.swift in Sources */,
 				0FD970811DA802480099BE54 /* SecondViewController.swift in Sources */,
@@ -1127,6 +1139,7 @@
 				0F36D6501DE330E2002611FB /* ExtensionUIColor.swift in Sources */,
 				0F4BCBEE1DEC7CD50059D58C /* Reachability.swift in Sources */,
 				0F436EEA1DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift in Sources */,
+				0F38A8201DFB5EE900E17CFE /* ExtensionTextField.swift in Sources */,
 				0F61D9881DE66F110006D544 /* TwelfthA2CollectionView1SectionHeader.swift in Sources */,
 				0F38F4FA1DA7F8AF0086BAA8 /* xTesterTests.swift in Sources */,
 				0F3CBFF81DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift in Sources */,
@@ -1145,6 +1158,7 @@
 				0F3CBFDE1DE739C6005CEFBB /* TwelfthA2CollectionView3FlowLayout.swift in Sources */,
 				0F3CC0101DE7B439005CEFBB /* TwelfthA2Photo.swift in Sources */,
 				0F36D6541DE36860002611FB /* TwelfthA2TableViewCell2.swift in Sources */,
+				0F38A8241DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */,
 				0F3CC0181DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1154,8 +1168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F322CDE1DE29A64001796FC /* TwelfthA2CollectionView1.swift in Sources */,
+				0F38A8211DFB5EE900E17CFE /* ExtensionTextField.swift in Sources */,
 				0F36D6691DE36B72002611FB /* TwelfthA2TableViewCell6.swift in Sources */,
 				0F36D6651DE36B27002611FB /* TwelfthA2TableViewCell5.swift in Sources */,
+				0F38A8251DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */,
 				0F3CBFF91DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift in Sources */,
 				0F36D6511DE330E2002611FB /* ExtensionUIColor.swift in Sources */,
 				0FF54A1B1DE3CF0000002866 /* ProtocolDateTimeConvertible.swift in Sources */,

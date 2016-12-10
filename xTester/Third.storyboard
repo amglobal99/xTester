@@ -168,12 +168,29 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3TD-Hs-Mq8">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Misc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eor-NU-kCr">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="GXE-gn-4hO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Evy-LA-vt8">
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bJr-ov-z2q" firstAttribute="width" secondItem="ZoR-XZ-JOo" secondAttribute="width" id="H8o-un-nlW"/>
                                     <constraint firstItem="Py6-SB-ieu" firstAttribute="width" secondItem="ZoR-XZ-JOo" secondAttribute="width" id="JsG-9F-c7k"/>
                                     <constraint firstAttribute="width" constant="300" id="L0j-dk-h1W"/>
-                                    <constraint firstAttribute="height" constant="350" id="VfM-7p-MBR"/>
+                                    <constraint firstAttribute="height" constant="270" id="VfM-7p-MBR"/>
                                     <constraint firstItem="dEc-Fp-MON" firstAttribute="height" secondItem="BVd-zv-2Si" secondAttribute="height" id="b2l-E1-6HK"/>
                                     <constraint firstItem="e5T-fT-dOz" firstAttribute="height" secondItem="BVd-zv-2Si" secondAttribute="height" id="cID-3l-aLR"/>
                                     <constraint firstItem="nRr-cL-jWt" firstAttribute="width" secondItem="ZoR-XZ-JOo" secondAttribute="width" id="cqG-u0-lhG"/>
@@ -204,16 +221,26 @@
                                     <constraint firstItem="BxR-9i-tSP" firstAttribute="width" secondItem="5pO-0T-jF5" secondAttribute="width" id="ze4-Mi-Kxj"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please correct field values and try again." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-cj-55h">
+                                <frame key="frameInset" minX="31" minY="482" width="294" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9952840586543531" green="1" blue="0.94962795683137269" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="zFw-cj-55h" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="1s5-Rq-Cqd"/>
                             <constraint firstItem="QM7-lH-7gZ" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="6Kz-eW-4d1"/>
                             <constraint firstItem="QM7-lH-7gZ" firstAttribute="top" secondItem="ilB-ZR-DhL" secondAttribute="bottom" constant="15" id="6L5-H0-0hn"/>
                             <constraint firstItem="BVd-zv-2Si" firstAttribute="top" secondItem="QJ0-05-7qE" secondAttribute="bottom" constant="26.5" id="Bz6-k8-fGS"/>
                             <constraint firstItem="Ced-Vf-tms" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="F8R-sA-fiU"/>
+                            <constraint firstItem="zFw-cj-55h" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="HyH-Ul-cr3"/>
                             <constraint firstItem="QJ0-05-7qE" firstAttribute="top" secondItem="QM7-lH-7gZ" secondAttribute="bottom" constant="22" id="I9F-gX-aIs"/>
                             <constraint firstItem="QJ0-05-7qE" firstAttribute="centerX" secondItem="rXt-Ak-Mlf" secondAttribute="centerX" id="NpH-VA-aaK"/>
                             <constraint firstItem="4Ih-Ul-gP2" firstAttribute="top" secondItem="Ced-Vf-tms" secondAttribute="bottom" constant="25" id="RFY-bh-i1l"/>
+                            <constraint firstItem="5pO-0T-jF5" firstAttribute="top" secondItem="zFw-cj-55h" secondAttribute="bottom" constant="65" id="Xcm-40-xn2"/>
                             <constraint firstItem="JFa-q8-3QB" firstAttribute="leading" secondItem="rXt-Ak-Mlf" secondAttribute="leadingMargin" constant="15" id="kiH-Pc-ibc"/>
                         </constraints>
                     </view>

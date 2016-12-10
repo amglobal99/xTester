@@ -15,7 +15,7 @@ import Alamofire
 
 
 // Make the class confirm to Utils protocol
-class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
+class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Validator {
     
     
     @IBOutlet weak var idLabel: UITextField!
@@ -29,13 +29,26 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
     
     
     
-    @IBAction func validateForm(_ sender: AnyObject) {
+    @IBAction func validateForm(_ sender: AnyObject)  {
         
         print("I am validating .....")
         
-        if idLabel.text == "" {
-            print("id is empty")
+        
+        
+        if !isValidEmail(testStr: emailLabel.text!)  {
+            print("Looks like email is NOT Valid")
+            
+            self.emailLabel.layer.borderColor = UIColor.red.cgColor
+            self.emailLabel.layer.borderWidth = 2
+            self.emailLabel.layer.cornerRadius = 5
+            self.emailLabel.backgroundColor = UIColor.lightGray
+            
+            return
         }
+        
+
+        
+        
         
         
         
@@ -53,6 +66,14 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
     
     
     @IBAction func submitForm(_ sender: AnyObject) {
+        
+        
+        if !isValidEmail(testStr: emailLabel.text!)  {
+             return
+        }
+ 
+        
+        
         
         let jsonTodo: Data   // variable to hold Data created from JSON object
 
@@ -152,6 +173,10 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
     
     
     
+    
+    // MARK: - Validation Related
+    
+    
     // Form Related Functions .... Validation etc
     
     
@@ -165,11 +190,132 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils {
     
     
     
+    func formIsValid() -> Bool {
+        var formIsValidated:Bool = false
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        return formIsValidated
+        
+    }
     
     
+   
+    
+    // this is the delegate method. Is called after every character is entered in Text field
+    func textField( _ textField: UITextField,
+                    shouldChangeCharactersIn range: NSRange,
+                    replacementString string: String) -> Bool {
+        
+        if textField == idLabel {
+            let characterCountLimit = 4
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            return newLength <= characterCountLimit
+        } else if textField == nameLabel {
+            let characterCountLimit = 4
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            print (newLength)
+            return newLength <= characterCountLimit
+        }  else if textField == nameLabel {
+            let characterCountLimit = 4
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            print (newLength)
+            return newLength <= characterCountLimit
+        }  else if   textField == emailLabel  {
+            
+        
+            
+            
+        }  else if   textField == zipLabel  {
+            let characterCountLimit = 5
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            print (newLength)
+            return newLength <= characterCountLimit
+        }  else if   textField == salesLabel  {
+            /*
+             let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+             let replaceTextHasDecimalSeparator = string.range(of: ".")
+             if existingTextHasDecimalSeparator != nil  && replaceTextHasDecimalSeparator != nil {
+             return false
+             } else {
+             return true
+             }
+            
+            */
+            
+            switch string {
+                case "0","1","2","3","4","5","6","7","8","9":
+                    // Check if there is an existing decimal char
+                    let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+                    if existingTextHasDecimalSeparator != nil {
+                        let array = textField.text?.characters.map{String($0) }
+                        let decimalIndex = array?.index(of: ".")
+                        let newcharIndex = array?.endIndex
+                        if (newcharIndex! - decimalIndex! ) > 2 {
+                            return false
+                        }
+                    }
+                    return true
+                case ".":
+                    let array = textField.text?.characters.map{String($0) }
+                    var decimalCount = 0
+                    for character in array! {
+                        if character == "." {
+                            decimalCount += 1
+                        }
+                    }
+                    
+                    if decimalCount == 1 {
+                        return false
+                    } else {
+                        return true
+                    }
+                default:
+                    let array = string.characters.map{String($0)}
+                    if array.count == 0 {
+                        return true
+                    }
+                    return false
+            }
+            
+        } // end if
+
+        
+        // default
+        
+        return true
+        
+        
+    }  //end function
     
     
+   
     
+    
+
     
     
 }  // end class
