@@ -6,12 +6,9 @@
 //  Copyright © 2016 Dad. All rights reserved.
 //  test Comment
 
-
-
 import Foundation
 import UIKit
 import Alamofire
-
 
 
 // Make the class confirm to Utils protocol
@@ -25,9 +22,9 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     @IBOutlet weak var salesLabel: UITextField!
     @IBOutlet weak var estDateLabel: UITextField!
     @IBOutlet weak var sicCodeLabel: UITextField!
+    @IBOutlet weak var statusSwitch: UISwitch!
     @IBOutlet weak var validateLabel: UILabel!
     
-   // @IBOutlet weak var myDatePicker: UIDatePicker!
     
     //MARK: - IBActions
     @IBAction func estDateFieldEditing(_ sender: UITextField) {
@@ -40,10 +37,6 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     }
     
     
-    
-    
-    
-    
     /**
         IBAction to submit Form data to server.
      */
@@ -51,6 +44,21 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     @IBAction func submitForm(_ sender: AnyObject) {
         
         if formIsValidated() {   // All fields have been validated
+            
+            
+            // Our form has been validated. Proceed with next actions.
+            
+            let status = statusSwitch.isOn ? "Active" : "Inactive"
+            
+            print("Status: \(status) " )
+            
+            
+            
+            
+            
+            
+            
+            
             
             let jsonTodo: Data   // variable to hold Data created from JSON object
 
@@ -123,12 +131,13 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Use method from protocol
+        // Use method from ProtocolUtils.swift
         self.climb()
         
         // Call method from GlobalFunctions.swift
         GlobalFunctions.printCompanyName()
         
+        // We want to hide then keyboard wen user clicks anywhere on screen
         self.hideKeyboardWhenTappedAround()
         validateLabel.isHidden = true
         
@@ -149,7 +158,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     
     
     
-    
+    // Executes when you pick a date from DatePicker
     func datePickerValueChanged(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy"
@@ -162,13 +171,15 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     func formIsValidated() -> Bool {
         
         print("formIsValidated .....starting")
-        let idIsValid: Bool = false
-        let nameIsValid:Bool = false
-        let emailIsValid:Bool = false
-        let zipIsValid:Bool = false
+        var idIsValid: Bool = false
+        var nameIsValid:Bool = false
+        var emailIsValid:Bool = false
+        var zipIsValid:Bool = false
         let salesIsValid:Bool =  false
         var dateIsValid:Bool = false
         var siccodeIsValid:Bool =  false
+        
+        
         
         // ID Validation
         if (idLabel.text?.contains("5"))!{
@@ -178,7 +189,10 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             self.idLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
             self.idLabel.text = ""
             self.idLabel.placeholder  = "ID cannot contain 5 character."
-            
+            print("Id is NOT valid.")
+        } else {
+            idIsValid = true
+            print("Id is valid.")
         }
     
         // Name Validation
@@ -189,8 +203,12 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             self.nameLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
             self.nameLabel.text = ""
             self.nameLabel.placeholder  = "Name cannot contain j character."
-            
+            print("NAme is not valid.")
+        } else {
+            nameIsValid = true
+            print("NAme is valid.")
         }
+
         
         // Email Validation
         if !isValidEmail(testStr: emailLabel.text!)  {
@@ -201,7 +219,12 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             self.emailLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
             self.emailLabel.text = ""
             self.emailLabel.placeholder  = "Enter valid email address."
+        } else {
+            emailIsValid = true
+            print("Email is  valid.")
         }
+        
+
         
         
         // Zip Validation
@@ -212,15 +235,24 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             self.zipLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
             self.zipLabel.text = ""
             self.zipLabel.placeholder  = "Zip cannot be 99999"
+            print("Zip is NOT valid.")
+
+        } else {
+            zipIsValid = true
+            print("Zip is valid.")
         }
+        
+
         
         
         if idIsValid && nameIsValid && emailIsValid && zipIsValid   {
+            print("Form is valid .... SUCCESS")
             return true
         } else {
+            print("Form did not pass Validation")
             validateLabel.isHidden = false
             return false
-        }
+        }  
         
     } // end func
         
@@ -323,14 +355,10 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             
             return true
             
-            
-            
-            
+        
         } // end if
             
-            
-            
-            
+        
         
         // default
         return true

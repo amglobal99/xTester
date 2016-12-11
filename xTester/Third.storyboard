@@ -51,7 +51,7 @@
                                     <constraint firstAttribute="width" constant="200" id="Z4y-q6-9oC"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please correct field values and try again." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-cj-55h">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please correct field values and try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFw-cj-55h">
                                 <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ROh-fK-NkN"/>
@@ -210,7 +210,7 @@
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3TD-Hs-Mq8">
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Misc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eor-NU-kCr">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active? :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eor-NU-kCr">
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="GXE-gn-4hO"/>
                                                         </constraints>
@@ -218,14 +218,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Evy-LA-vt8">
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="ISI-4M-8EU" id="ChM-bl-Zka"/>
-                                                        </connections>
-                                                    </textField>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yb9-A3-Skw"/>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -282,6 +275,7 @@
                         <outlet property="nameLabel" destination="xGc-PK-UoH" id="diZ-TW-zRc"/>
                         <outlet property="salesLabel" destination="heh-uU-EZD" id="8cB-Qs-928"/>
                         <outlet property="sicCodeLabel" destination="But-3N-euS" id="bRH-zK-iyJ"/>
+                        <outlet property="statusSwitch" destination="yb9-A3-Skw" id="Iil-pa-wbv"/>
                         <outlet property="validateLabel" destination="zFw-cj-55h" id="wGD-kb-ve6"/>
                         <outlet property="zipLabel" destination="6PK-hb-keh" id="X6Z-mF-ocy"/>
                     </connections>
