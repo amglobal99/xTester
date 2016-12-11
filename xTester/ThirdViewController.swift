@@ -17,7 +17,7 @@ import Alamofire
 // Make the class confirm to Utils protocol
 class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Validator {
     
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var idLabel: UITextField!
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
@@ -26,6 +26,22 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     @IBOutlet weak var estDateLabel: UITextField!
     @IBOutlet weak var sicCodeLabel: UITextField!
     @IBOutlet weak var validateLabel: UILabel!
+    
+   // @IBOutlet weak var myDatePicker: UIDatePicker!
+    
+    //MARK: - IBActions
+    @IBAction func estDateFieldEditing(_ sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        // datePickerView.backgroundColor = UIColor.lightGray
+        datePickerView.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(ThirdViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    
+    
+    
     
     
     /**
@@ -102,7 +118,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     
     
     
-    
+    // MARK: -  View Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,10 +130,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
         GlobalFunctions.printCompanyName()
         
         self.hideKeyboardWhenTappedAround()
-        
-        
         validateLabel.isHidden = true
-        
         
     }  // end method
     
@@ -130,9 +143,6 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     // MARK: - Validation Related
     
     
-    // Form Related Functions .... Validation etc
-    
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print("I just began editing ..")
     }
@@ -140,17 +150,23 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     
     
     
+    func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        estDateLabel.text  = dateFormatter.string(from: sender.date)
+    }
+    
     
     
     
     func formIsValidated() -> Bool {
         
         print("formIsValidated .....starting")
-        var idIsValid: Bool = false
-        var nameIsValid:Bool = false
-        var emailIsValid:Bool = false
-        var zipIsValid:Bool = false
-        var salesIsValid:Bool =  false
+        let idIsValid: Bool = false
+        let nameIsValid:Bool = false
+        let emailIsValid:Bool = false
+        let zipIsValid:Bool = false
+        let salesIsValid:Bool =  false
         var dateIsValid:Bool = false
         var siccodeIsValid:Bool =  false
         
@@ -160,26 +176,31 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             self.idLabel.layer.borderWidth = 1
             self.idLabel.layer.cornerRadius = 4
             self.idLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.idLabel.text = ""
+            self.idLabel.placeholder  = "ID cannot contain 5 character."
+            
         }
-        
-        
-        
+    
         // Name Validation
         if (nameLabel.text?.contains("j"))! {
             self.nameLabel.layer.borderColor = UIColor.red.cgColor
             self.nameLabel.layer.borderWidth = 1
             self.nameLabel.layer.cornerRadius = 4
             self.nameLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.nameLabel.text = ""
+            self.nameLabel.placeholder  = "Name cannot contain j character."
+            
         }
         
         // Email Validation
-        // Validate the Email address
         if !isValidEmail(testStr: emailLabel.text!)  {
             print("Looks like email is NOT Valid")
             self.emailLabel.layer.borderColor = UIColor.red.cgColor
             self.emailLabel.layer.borderWidth = 1
             self.emailLabel.layer.cornerRadius = 4
             self.emailLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.emailLabel.text = ""
+            self.emailLabel.placeholder  = "Enter valid email address."
         }
         
         
@@ -189,6 +210,8 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             self.zipLabel.layer.borderWidth = 1
             self.zipLabel.layer.cornerRadius = 4
             self.zipLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.zipLabel.text = ""
+            self.zipLabel.placeholder  = "Zip cannot be 99999"
         }
         
         
@@ -212,9 +235,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
                     replacementString string: String) -> Bool {
         
         if textField == idLabel {
-            
             // Rule: Allow max length of 4 and block certain characers
-            
             let characterCountLimit = 4
             // We need to figure out how many characters would be in the string after the change happens
             let startingLength = textField.text?.characters.count ?? 0
@@ -245,7 +266,7 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             print (newLength)
             return newLength <= characterCountLimit
         }  else if   textField == emailLabel  {
-            
+            //TODO: - Add code
         
             
             
@@ -259,18 +280,8 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
             print (newLength)
             return newLength <= characterCountLimit
         }  else if   textField == salesLabel  {
-            /*
-             let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-             let replaceTextHasDecimalSeparator = string.range(of: ".")
-             if existingTextHasDecimalSeparator != nil  && replaceTextHasDecimalSeparator != nil {
-             return false
-             } else {
-             return true
-             }
             
-            */
-            
-            switch string {
+            switch string {  // string is the character just entered by user
                 case "0","1","2","3","4","5","6","7","8","9":
                     // Check if there is an existing decimal char
                     let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
@@ -302,14 +313,26 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
                     if array.count == 0 {
                         return true
                     }
-                    return false
-            }
+            
+            } // end switch
+ 
+            
+            return false
+         
+        }  else if   textField == sicCodeLabel  {
+            
+            return true
+            
+            
+            
             
         } // end if
-
+            
+            
+            
+            
         
         // default
-        
         return true
         
         
