@@ -131,11 +131,6 @@ class ThirdViewController: UIViewController, UITextFieldDelegate,   Utils, Valid
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Use method from ProtocolUtils.swift
-        self.climb()
-        
-        // Call method from GlobalFunctions.swift
-        GlobalFunctions.printCompanyName()
         
         // We want to hide then keyboard wen user clicks anywhere on screen
         self.hideKeyboardWhenTappedAround()
