@@ -55,6 +55,12 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
        // print("....updateWithImage starting ")
         if let imageToDisplay = image {
             spinner .stopAnimating()
+            
+            
+            //imageView.contentMode = .scaleAspectFit  // Fit entire image
+            imageView.contentMode = .scaleToFill
+            
+            
             imageView.image = imageToDisplay
         } else {
             spinner .startAnimating()

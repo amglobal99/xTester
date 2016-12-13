@@ -73,6 +73,9 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        
+        /*
+        
             // ********  Completion Handler *************
             let completionHandler: (Result<JSON>) -> Void  =
                 { [weak self] result in
@@ -86,6 +89,86 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
         // Create a Async (Alamofire) request to get SwiftyJSON data
         let url = getSiteURL(baseURLString: baseURLString, method: method , parameters: params, apiKey: apiKey)
         getJSONObject(for: url, rootPath: rootPath,   completionHandler: completionHandler)  // get a SwiftyJSON object
+        
+        */
+        
+        
+        
+       // if let path = Bundle.main.path(forResource: "names2", ofType: "json") {
+            
+             // if let path = Bundle.main.path(forResource: "NestedNames", ofType: "json") {
+                if let path = Bundle.main.path(forResource: "productList", ofType: "json") {
+                    
+                
+            
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let jsonObj = JSON(data: data)
+                if jsonObj != JSON.null {
+                    print("jsonData:\(jsonObj)")
+                    
+                    
+                    /*
+                   // let userArray = jsonObj["employees"]["people"]["users"].array
+                    
+                    
+                    
+                    print("++++++++++++++++++++++++++++")
+                    //print(userArray!)
+                    
+                   // let newJsonObj  = JSON(userArray!)
+                    
+                    print("***************** ")
+                   // print(newJsonObj)
+                    */
+                    
+                    
+                    
+                    let arr:[String] = [""]
+                    
+                    
+                    print(arr.count)
+                    
+                    
+                    print("++++++++++++++++++++++ filter+++++++++")
+                    let prodObj = jsonObj["results"][0]["products"]
+                    print(prodObj)
+                    print("Length is : \(prodObj.count)  ")
+                    
+                        
+                        
+                    print("+++++++++++++++++++++++++++++++++++++")
+                    let salePrice = prodObj[0]["prices"]["sale"]
+                    print(salePrice)
+                    
+                    let imageType = prodObj[0]["images"][1]["type"]
+                    print(imageType)
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                } else {
+                    print("Could not get json from file, make sure that file contains valid json.")
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
+        
+        
+        
+        
+        
+        
+        
         
     }  // end viewDidLoad
     
