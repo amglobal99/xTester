@@ -17,7 +17,7 @@ protocol DestinationViewDelegate {
 
 
 
-class ThirteenthViewControllerDestination: UIViewController {
+class ThirteenthViewControllerDestination: UIViewController, ThirteenthMasterDelegate {
     
     
     @IBOutlet weak var destinationOutletLabel: UILabel!
@@ -52,9 +52,21 @@ class ThirteenthViewControllerDestination: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
+        
         // Set the color text to the value passed in from the segue
         destinationOutletLabel.text = colorLabelText
     }
+    
+    
+    
+    
+    func submit() {
+        print("test")
+    }
+    
     
     
     

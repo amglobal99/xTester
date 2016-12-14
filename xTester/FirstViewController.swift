@@ -126,6 +126,12 @@ class FirstViewController: UIViewController, Utils {
             print("12😈")
         case .ThirteenthSegue:
             print("13😈")
+            // Set the delegate value in ViewController
+             let thirteenthVC = segue.destination  as! ThirteenthViewController
+            thirteenthVC.masterDelegate = ThirteenthViewControllerDestination()
+            
+            
+            
         case .FourteenthSegue:
             print("14😈")
         case .FifteenthSegue:

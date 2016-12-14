@@ -12,14 +12,6 @@ import Alamofire
 
 
 
-protocol ThirdVCTableViewDelegate {
-    
-    
-}
-
-
-
-
 
 
 // Make the class confirm to Utils protocol
@@ -33,6 +25,10 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
     @IBOutlet weak var estDateLabel: UITextField!
     @IBOutlet weak var sicCodeLabel: UITextField!
     @IBOutlet weak var statusSwitch: UISwitch!
+    
+    
+    
+    
     
     
     //MARK: - IBActions
@@ -126,10 +122,109 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
     
     
     
+    /*
+    
+    func submitMyForm() {
+        
+        print("in submitMyForm")
+        
+        
+        
+        if formIsValidated() {   // All fields have been validated
+            
+            // Our form has been validated. Proceed with next actions.
+            let status = statusSwitch.isOn ? "Active" : "Inactive"
+            print("Status: \(status) " )
+            let jsonTodo: Data   // variable to hold Data created from JSON object
+            
+            // Get values for fields on Form
+            let id = Int(idLabel.text!)
+            let title = nameLabel.text
+            var json:[String:Any] = [:]  // create Dictionary
+            
+            // Set values in Dictionary using Form data entry values
+            json["userId"] = 1
+            json["completed"] = false
+            json["title"] = title
+            
+            // Use a do-catch block since JSONSerialiation.data method can throw an error
+            do {
+                jsonTodo = try JSONSerialization.data(withJSONObject: json, options: [])
+            } catch {
+                print("Error: cannot create JSON")
+                return
+            }
+            
+            // Create Alamofire POST request
+            let endPoint: String = "https://jsonplaceholder.typicode.com/todos"
+            guard let url = URL(string: endPoint) else {
+                print("Error: cannot create URL")
+                return
+            }
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "POST"
+            print("Sending Alamofire request")
+            Alamofire.request(urlRequest)
+                .validate(statusCode: [201] )  // this is check #1 ... Code 201 indicates that Resource was created by POST
+                .responseString
+                { response in
+                    // check #2
+                    guard response.result.error == nil else {
+                        print("+++++++ We did not get status Code of 201 back ++++++++++++++++++++++++++")
+                        print("Our Error: \(response.result.error!) ")
+                        return
+                    }
+                    
+                    print("IsSuccess: \(response.result.isSuccess)")
+                    
+                    print("\n\n+++++++++++++++ Response Result Value +++++++++++++++")
+                    print("Response String: \(response.result.value!)")
+                    print("+++++++++++++++++++++++++++++++++++++++++")
+                    
+                    print("\n++++++++++++++ Response Status Code ++++++++++++++")
+                    let statusCode = response.response?.statusCode
+                    print("Status Code: \(statusCode!)")
+                    print("+++++++++++++++++++++++++++++++++++++++++")
+                    
+                    print("\n\n +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
+                    debugPrint(response)   // This prints output for data, response, result  value
+                    print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
+                    
+            }  // end closure
+            
+        }  // end if
+
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: -  View Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }  // end method
     
     
@@ -350,6 +445,23 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
     
     
    
+    
+    
+    
+    
+    
+    
+    
+    
+    func test() {
+        
+    }
+    
+    
+    
+    
+    
+    
     
     
 

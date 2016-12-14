@@ -11,10 +11,36 @@ import Foundation
 
 import UIKit
 
+
+
+protocol  ThirteenthMasterDelegate {
+    func submit()
+}
+
+
+
+
 class ThirteenthViewController: UIViewController, DestinationViewDelegate {
     
     
     @IBOutlet weak var  colorView: UIView!
+    
+    
+    // We specify that the delegate for this VC is our Destination VC
+    // The value for this va is set during segue from FirstViewController.swift
+    var masterDelegate: ThirteenthMasterDelegate! = nil
+    
+    
+    
+    @IBAction func executeSubmit(_ sender: AnyObject) {
+        if masterDelegate != nil{
+            masterDelegate.submit()
+        }else {
+            print("value not set yet")
+        }
+    }
+    
+    
     
     
     override func viewDidLoad() {
@@ -32,6 +58,8 @@ class ThirteenthViewController: UIViewController, DestinationViewDelegate {
             
             // Now set the delegate for that other Controller to this class (ThitreenthViewController )
             destination.delegate = self
+            
+            //self.masterDelegate = destination
             
             if (colorView.backgroundColor!.isEqual(UIColor.red)) {
                 print("was red")
