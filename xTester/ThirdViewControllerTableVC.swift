@@ -11,10 +11,19 @@ import UIKit
 import Alamofire
 
 
+
+protocol ThirdVCTableViewDelegate {
+    
+    
+}
+
+
+
+
+
+
 // Make the class confirm to Utils protocol
 class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   Utils, Validator {
-    
-    
     
     @IBOutlet weak var idLabel: UITextField!
     @IBOutlet weak var nameLabel: UITextField!
@@ -48,13 +57,9 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
         
         if formIsValidated() {   // All fields have been validated
             
-            
             // Our form has been validated. Proceed with next actions.
-            
             let status = statusSwitch.isOn ? "Active" : "Inactive"
-            
             print("Status: \(status) " )
-            
             let jsonTodo: Data   // variable to hold Data created from JSON object
 
             // Get values for fields on Form
@@ -125,8 +130,7 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-            }  // end method
+    }  // end method
     
     
     
@@ -163,8 +167,6 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
         let salesIsValid:Bool =  false
         var dateIsValid:Bool = false
         var siccodeIsValid:Bool =  false
-        
-        
         
         // ID Validation
         if (idLabel.text?.contains("5"))!{
@@ -209,9 +211,6 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
             print("Email is  valid.")
         }
         
-
-        
-        
         // Zip Validation
         if zipLabel.text == "99999" {
             self.zipLabel.layer.borderColor = UIColor.red.cgColor
@@ -228,8 +227,6 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
         }
         
 
-        
-        
         if idIsValid && nameIsValid && emailIsValid && zipIsValid   {
             print("Form is valid .... SUCCESS")
             return true

@@ -11,11 +11,17 @@ import UIKit
 
 
 
+
+
+
 class ThirdViewController: UIViewController, UITextFieldDelegate  {
     
     
     
     @IBOutlet weak var validateLabel: UILabel!
+    
+    
+    weak var companyController: ThirdViewControllerTableVC?
     
     
     
@@ -31,7 +37,18 @@ class ThirdViewController: UIViewController, UITextFieldDelegate  {
     
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == "containerViewSegue" {
+            //containerViewController = segue.destinationViewController as? ThirdViewControllerTableVC
+            //containerViewController!.containerToMaster = self
+        }
+        
+        
+        
+        
+    }
     
     
-    
-}
+} // end class

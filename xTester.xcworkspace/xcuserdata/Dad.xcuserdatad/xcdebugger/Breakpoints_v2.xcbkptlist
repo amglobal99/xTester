@@ -458,13 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xTester/ThirdViewController.swift"
-            timestampString = "503358486.02223"
+            timestampString = "503360573.745244"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "ThirdViewController"
-            landmarkType = "3">
+            startingLineNumber = "103"
+            endingLineNumber = "103">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,13 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xTester/ThirdViewController.swift"
-            timestampString = "503358486.02223"
+            timestampString = "503360573.745244"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
-            landmarkName = "ThirdViewController"
-            landmarkType = "3">
+            startingLineNumber = "388"
+            endingLineNumber = "388">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -490,13 +486,104 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "xTester/ThirdViewController.swift"
-            timestampString = "503358486.02223"
+            timestampString = "503360573.745244"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "91"
+            endingLineNumber = "91">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "xTester/ThirdViewController.swift"
+            timestampString = "503415964.447894"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "ThirdViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "xTester.ThirdViewController.__deallocating_deinit"
+                  moduleName = "xTester"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/ThirdViewController.swift"
+                  timestampString = "503415971.615114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "xTester.ThirdViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; xTester.ThirdViewController"
+                  moduleName = "xTester"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/ThirdViewController.swift"
+                  timestampString = "503415971.620622"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "xTester.ThirdViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; xTester.ThirdViewController"
+                  moduleName = "xTester"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/ThirdViewController.swift"
+                  timestampString = "503415971.624102"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "xTester.ThirdViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;xTester.ThirdViewController&gt;"
+                  moduleName = "xTester"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/ThirdViewController.swift"
+                  timestampString = "503415971.626214"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "xTester.ThirdViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;xTester.ThirdViewController&gt;"
+                  moduleName = "xTester"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/ThirdViewController.swift"
+                  timestampString = "503415971.628254"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
