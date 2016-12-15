@@ -36,25 +36,29 @@ class ThirdViewController: UIViewController {
         // We want to hide then keyboard wen user clicks anywhere on screen
         self.hideKeyboardWhenTappedAround()
         validateLabel.isHidden = true
+    
     }
     
     
     
-    /*
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CompanyFormSegue" {
-           // destinationViewController = segue.destinationViewController as? ThirdViewControllerTableVC
             let destinationViewController = segue.destination as? ThirdViewControllerTableVC
-            destinationViewController?.delegate = self
+           
+            
+            // UNCOMMENT THIS IF YOU NEED DELEAGTE FOR OTHER CONTROLLER
+            // destinationViewController?.delegate = self
+            
+            
+            
+            // Assign the delegate for this Controller
+            self.delegateForMaster =  destinationViewController
+            
         }
     }
     
-    */
-    
-    
-    
-    
-    
+   
     
     
     

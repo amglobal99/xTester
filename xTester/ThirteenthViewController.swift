@@ -28,13 +28,15 @@ class ThirteenthViewController: UIViewController, DestinationViewDelegate {
     
     // We specify that the delegate for this VC is our Destination VC
     // The value for this va is set during segue from FirstViewController.swift
-    var masterDelegate: ThirteenthMasterDelegate! = nil
+    // PROBLEM: This instance is not the same as you get when you go thru prepareForSegue
+    // SO NO ACCESS TO VARIABLE VALUES ....... FIGURE IT OUT LATER
+    var delegateForMaster: ThirteenthMasterDelegate! = nil
     
     
     
     @IBAction func executeSubmit(_ sender: AnyObject) {
-        if masterDelegate != nil{
-            masterDelegate.submit()
+        if delegateForMaster != nil{
+            delegateForMaster.submit()
         }else {
             print("value not set yet")
         }
@@ -59,7 +61,9 @@ class ThirteenthViewController: UIViewController, DestinationViewDelegate {
             // Now set the delegate for that other Controller to this class (ThitreenthViewController )
             destination.delegate = self
             
-            //self.masterDelegate = destination
+            
+           // self.delegateForMaster = destination
+            
             
             if (colorView.backgroundColor!.isEqual(UIColor.red)) {
                 print("was red")

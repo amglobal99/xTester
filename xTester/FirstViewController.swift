@@ -106,8 +106,20 @@ class FirstViewController: UIViewController, Utils {
             // Whihc means this controller will serve as the MAin controller's delegate.
             // This allows us to execute function within the ThirdViewControllerTableVC.swift class
             print("Segue 3👼")
-            let thirdVC = segue.destination  as! ThirdViewController
-            thirdVC.delegateForMaster = ThirdViewControllerTableVC()
+            // ++++++++THIS DOE NOT WORK ++++++++++++++++++++++++
+            // THIS INSTANCE IS DIFFERENT THAN ONE CREATE DAFTER SEGUE. SO NO ACCES TO FIELD VALUES
+            //let thirdVC = segue.destination  as! ThirdViewController
+            // thirdVC.delegateForMaster = ThirdViewControllerTableVC()
+            
+            /*
+             // THIS DID NOT WORK
+            let source  = ThirdViewController() as? UIViewController
+            let dest = ThirdViewControllerTableVC() as? UIViewController
+            let segue = UIStoryboardSegue(identifier: "CompanyFormSegue", source: source!, destination: dest!)
+            thirdVC.delegateForMaster = segue.destination as? ThirdViewControllerTableVC
+            */
+            
+            
             
             
         case .FourthSegue:
@@ -136,7 +148,7 @@ class FirstViewController: UIViewController, Utils {
             print("13😈")
             // Set the delegate value in ViewController
              let thirteenthVC = segue.destination  as! ThirteenthViewController
-            thirteenthVC.masterDelegate = ThirteenthViewControllerDestination()
+            thirteenthVC.delegateForMaster = ThirteenthViewControllerDestination()
             
             
             
