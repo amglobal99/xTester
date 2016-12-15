@@ -27,11 +27,9 @@ class ThirdViewController: UIViewController {
     
     
     
-    @IBAction func processFormSubmission() {
-        delegateForMaster.submitMyForm()
+    @IBAction func processForm(_ sender: AnyObject) {
+         delegateForMaster.submitMyForm()
     }
-    
-    
     
     
     override func viewDidLoad() {

@@ -38,7 +38,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnF-ra-Sua">
                                         <state key="normal" title="Submit"/>
                                         <connections>
-                                            <action selector="processFormSubmission:" destination="ArI-p3-ITH" eventType="touchUpInside" id="XQD-L8-Oez"/>
+                                            <action selector="processForm:" destination="ArI-p3-ITH" eventType="touchUpInside" id="Vw2-2H-KZf"/>
                                         </connections>
                                     </button>
                                 </subviews>

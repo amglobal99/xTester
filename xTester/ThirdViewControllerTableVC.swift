@@ -12,10 +12,6 @@ import Alamofire
 
 
 
-
-
-
-
 // Make the class confirm to Utils protocol
 class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   Utils, Validator, ThirdVCDelegate {
     
