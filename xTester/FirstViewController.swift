@@ -101,7 +101,15 @@ class FirstViewController: UIViewController, Utils {
         case .SecondSegue:
             print("2😈")
         case .ThirdSegue:
-            print("👼")
+            // As you enter ThirdViewController, set its delegateForMaster property
+            // to be an insnace of  ThirdViewControllerTableVC.swift
+            // Whihc means this controller will serve as the MAin controller's delegate.
+            // This allows us to execute function within the ThirdViewControllerTableVC.swift class
+            print("Segue 3👼")
+            let thirdVC = segue.destination  as! ThirdViewController
+            thirdVC.delegateForMaster = ThirdViewControllerTableVC()
+            
+            
         case .FourthSegue:
             print("4😈")
         case .FifthSegue:

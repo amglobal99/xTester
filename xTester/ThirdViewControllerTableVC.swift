@@ -14,8 +14,10 @@ import Alamofire
 
 
 
+
+
 // Make the class confirm to Utils protocol
-class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   Utils, Validator {
+class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   Utils, Validator, ThirdVCDelegate {
     
     @IBOutlet weak var idLabel: UITextField!
     @IBOutlet weak var nameLabel: UITextField!
@@ -119,18 +121,275 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
     
     
     
+    func formIsValidated() -> Bool {
+        
+        print("formIsValidated .....starting")
+        var idIsValid: Bool = false
+        var nameIsValid:Bool = false
+        var emailIsValid:Bool = false
+        var zipIsValid:Bool = false
+        let salesIsValid:Bool =  false
+        var dateIsValid:Bool = false
+        var siccodeIsValid:Bool =  false
+        
+        // ID Validation
+        if (idLabel.text?.contains("5"))!{
+            self.idLabel.layer.borderColor = UIColor.red.cgColor
+            self.idLabel.layer.borderWidth = 1
+            self.idLabel.layer.cornerRadius = 4
+            self.idLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.idLabel.text = ""
+            self.idLabel.placeholder  = "ID cannot contain 5 character."
+            print("Id is NOT valid.")
+        } else {
+            idIsValid = true
+            print("Id is valid.")
+        }
+        
+        // Name Validation
+        if (nameLabel.text?.contains("j"))! {
+            self.nameLabel.layer.borderColor = UIColor.red.cgColor
+            self.nameLabel.layer.borderWidth = 1
+            self.nameLabel.layer.cornerRadius = 4
+            self.nameLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.nameLabel.text = ""
+            self.nameLabel.placeholder  = "Name cannot contain j character."
+            print("NAme is not valid.")
+        } else {
+            nameIsValid = true
+            print("NAme is valid.")
+        }
+        
+        
+        // Email Validation
+        if !isValidEmail(testStr: emailLabel.text!)  {
+            print("Looks like email is NOT Valid")
+            self.emailLabel.layer.borderColor = UIColor.red.cgColor
+            self.emailLabel.layer.borderWidth = 1
+            self.emailLabel.layer.cornerRadius = 4
+            self.emailLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.emailLabel.text = ""
+            self.emailLabel.placeholder  = "Enter valid email address."
+        } else {
+            emailIsValid = true
+            print("Email is  valid.")
+        }
+        
+        // Zip Validation
+        if zipLabel.text == "99999" {
+            self.zipLabel.layer.borderColor = UIColor.red.cgColor
+            self.zipLabel.layer.borderWidth = 1
+            self.zipLabel.layer.cornerRadius = 4
+            self.zipLabel.backgroundColor = UIColor(red: 1, green: 0.9608, blue: 0.8196, alpha: 1.0)
+            self.zipLabel.text = ""
+            self.zipLabel.placeholder  = "Zip cannot be 99999"
+            print("Zip is NOT valid.")
+            
+        } else {
+            zipIsValid = true
+            print("Zip is valid.")
+        }
+        
+        
+        if idIsValid && nameIsValid && emailIsValid && zipIsValid   {
+            print("Form is valid .... SUCCESS")
+            return true
+        } else {
+            print("Form did not pass Validation")
+            // validateLabel.isHidden = false
+            return false
+        }
+        
+    } // end func
     
     
     
-    /*
+    
+    
+    
+    // this is the delegate method. Is called after every character is entered in Text field
+    func textField( _ textField: UITextField,
+                    shouldChangeCharactersIn range: NSRange,
+                    replacementString string: String) -> Bool {
+        
+        if textField == idLabel {
+            // Rule: Allow max length of 4 and block certain characers
+            let characterCountLimit = 4
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            return newLength <= characterCountLimit
+            
+        } else if textField == nameLabel {
+            let characterCountLimit = 4
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            //print (newLength)
+            // Let's block certain characters
+            let blockedChars = "@#$%&*(){}!~|\\/<>^+=?,:\"'"
+            return newLength <= characterCountLimit  && !blockedChars.contains(string)
+            
+        }  else if textField == nameLabel {
+            let characterCountLimit = 4
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            print (newLength)
+            return newLength <= characterCountLimit
+        }  else if   textField == emailLabel  {
+            //TODO: - Add code
+            
+            
+            
+        }  else if   textField == zipLabel  {
+            let characterCountLimit = 5
+            // We need to figure out how many characters would be in the string after the change happens
+            let startingLength = textField.text?.characters.count ?? 0
+            let lengthToAdd = string.characters.count
+            let lengthToReplace = range.length
+            let newLength = startingLength + lengthToAdd - lengthToReplace
+            print (newLength)
+            return newLength <= characterCountLimit
+        }  else if   textField == salesLabel  {
+            
+            switch string {  // string is the character just entered by user
+            case "0","1","2","3","4","5","6","7","8","9":
+                // Check if there is an existing decimal char
+                let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+                if existingTextHasDecimalSeparator != nil {
+                    let array = textField.text?.characters.map{String($0) }
+                    let decimalIndex = array?.index(of: ".")
+                    let newcharIndex = array?.endIndex
+                    if (newcharIndex! - decimalIndex! ) > 2 {
+                        return false
+                    }
+                }
+                return true
+            case ".":
+                let array = textField.text?.characters.map{String($0) }
+                var decimalCount = 0
+                for character in array! {
+                    if character == "." {
+                        decimalCount += 1
+                    }
+                }
+                
+                if decimalCount == 1 {
+                    return false
+                } else {
+                    return true
+                }
+            default:
+                let array = string.characters.map{String($0)}
+                if array.count == 0 {
+                    return true
+                }
+                
+            } // end switch
+            
+            
+            return false
+            
+        }  else if   textField == sicCodeLabel  {
+            
+            return true
+            
+            
+        } // end if
+        
+        
+        
+        // default
+        return true
+        
+        
+    }  //end function
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // MARK: -  View Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }  // end method
+    
+    
+    
+   
+    
+    
+    
+    // MARK: - Validation Related
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("I just began editing ..")
+    }
+    
+    
+    
+    // Executes when you pick a date from DatePicker
+    func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        estDateLabel.text  = dateFormatter.string(from: sender.date)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // ++++++++++++++++++++++++++++++++  FOR DELEGATE +++++++++++++++++++++++++++++++++++++++
+    
+    
+    
+    
+    // MARK: - Functions used by Master using this controller as Delegate
+    
+    
+    
     
     func submitMyForm() {
         
-        print("in submitMyForm")
+        print("in submitMyForm method ...... ThirdViewControllerTableVC")
         
         
         
-        if formIsValidated() {   // All fields have been validated
+        if formSeemsToBeValid() {   // All fields have been validated
+            
+            print("Hooray ... Form is validated")
+            
             
             // Our form has been validated. Proceed with next actions.
             let status = statusSwitch.isOn ? "Active" : "Inactive"
@@ -193,68 +452,29 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
             }  // end closure
             
         }  // end if
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
 
-        
-        
-        
-        
-    }
     
-    
-    
-    
-    
-    */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // MARK: -  View Functions
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }  // end method
-    
-    
-    
-   
-    
-    
-    
-    // MARK: - Validation Related
-    
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("I just began editing ..")
-    }
-    
-    
-    
-    // Executes when you pick a date from DatePicker
-    func datePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy"
-        estDateLabel.text  = dateFormatter.string(from: sender.date)
-    }
-    
-    
-    
-    
-    func formIsValidated() -> Bool {
+    func formSeemsToBeValid() -> Bool {
         
         print("formIsValidated .....starting")
+        
+        if (self.idLabel.text) != nil {
+            print("has value")
+        } else {
+            print("no value")
+        }
+        
         var idIsValid: Bool = false
         var nameIsValid:Bool = false
         var emailIsValid:Bool = false
@@ -336,115 +556,6 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
     
     
     
-   
-    
-    // this is the delegate method. Is called after every character is entered in Text field
-    func textField( _ textField: UITextField,
-                    shouldChangeCharactersIn range: NSRange,
-                    replacementString string: String) -> Bool {
-        
-        if textField == idLabel {
-            // Rule: Allow max length of 4 and block certain characers
-            let characterCountLimit = 4
-            // We need to figure out how many characters would be in the string after the change happens
-            let startingLength = textField.text?.characters.count ?? 0
-            let lengthToAdd = string.characters.count
-            let lengthToReplace = range.length
-            let newLength = startingLength + lengthToAdd - lengthToReplace
-            return newLength <= characterCountLimit
-                        
-        } else if textField == nameLabel {
-            let characterCountLimit = 4
-            // We need to figure out how many characters would be in the string after the change happens
-            let startingLength = textField.text?.characters.count ?? 0
-            let lengthToAdd = string.characters.count
-            let lengthToReplace = range.length
-            let newLength = startingLength + lengthToAdd - lengthToReplace
-            //print (newLength)
-            // Let's block certain characters
-            let blockedChars = "@#$%&*(){}!~|\\/<>^+=?,:\"'"
-            return newLength <= characterCountLimit  && !blockedChars.contains(string)
-           
-        }  else if textField == nameLabel {
-            let characterCountLimit = 4
-            // We need to figure out how many characters would be in the string after the change happens
-            let startingLength = textField.text?.characters.count ?? 0
-            let lengthToAdd = string.characters.count
-            let lengthToReplace = range.length
-            let newLength = startingLength + lengthToAdd - lengthToReplace
-            print (newLength)
-            return newLength <= characterCountLimit
-        }  else if   textField == emailLabel  {
-            //TODO: - Add code
-        
-            
-            
-        }  else if   textField == zipLabel  {
-            let characterCountLimit = 5
-            // We need to figure out how many characters would be in the string after the change happens
-            let startingLength = textField.text?.characters.count ?? 0
-            let lengthToAdd = string.characters.count
-            let lengthToReplace = range.length
-            let newLength = startingLength + lengthToAdd - lengthToReplace
-            print (newLength)
-            return newLength <= characterCountLimit
-        }  else if   textField == salesLabel  {
-            
-            switch string {  // string is the character just entered by user
-                case "0","1","2","3","4","5","6","7","8","9":
-                    // Check if there is an existing decimal char
-                    let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-                    if existingTextHasDecimalSeparator != nil {
-                        let array = textField.text?.characters.map{String($0) }
-                        let decimalIndex = array?.index(of: ".")
-                        let newcharIndex = array?.endIndex
-                        if (newcharIndex! - decimalIndex! ) > 2 {
-                            return false
-                        }
-                    }
-                    return true
-                case ".":
-                    let array = textField.text?.characters.map{String($0) }
-                    var decimalCount = 0
-                    for character in array! {
-                        if character == "." {
-                            decimalCount += 1
-                        }
-                    }
-                    
-                    if decimalCount == 1 {
-                        return false
-                    } else {
-                        return true
-                    }
-                default:
-                    let array = string.characters.map{String($0)}
-                    if array.count == 0 {
-                        return true
-                    }
-            
-            } // end switch
- 
-            
-            return false
-         
-        }  else if   textField == sicCodeLabel  {
-            
-            return true
-            
-        
-        } // end if
-            
-        
-        
-        // default
-        return true
-        
-        
-    }  //end function
-    
-    
-   
     
     
     

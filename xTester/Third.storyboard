@@ -37,6 +37,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnF-ra-Sua">
                                         <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="processFormSubmission:" destination="ArI-p3-ITH" eventType="touchUpInside" id="XQD-L8-Oez"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -370,6 +373,28 @@
                                             <constraints>
                                                 <constraint firstItem="2Gl-fA-X2x" firstAttribute="centerX" secondItem="tQU-m9-Oto" secondAttribute="centerX" id="Ti1-jb-vPb"/>
                                                 <constraint firstItem="2Gl-fA-X2x" firstAttribute="centerY" secondItem="tQU-m9-Oto" secondAttribute="centerY" id="xh1-Ol-aXA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Epo-9O-r0n">
+                                        <rect key="frame" x="0.0" y="552" width="333" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Epo-9O-r0n" id="ion-XO-f5k">
+                                            <frame key="frameInset" width="333" height="55"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YT0-6q-Wwb">
+                                                    <frame key="frameInset" minX="143" minY="12" width="107" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="PROCESS"/>
+                                                    <connections>
+                                                        <action selector="submitForm:" destination="EW7-AY-bg3" eventType="touchUpInside" id="qda-4o-VyO"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YT0-6q-Wwb" firstAttribute="centerY" secondItem="ion-XO-f5k" secondAttribute="centerY" id="iQo-KS-pMl"/>
+                                                <constraint firstItem="YT0-6q-Wwb" firstAttribute="centerX" secondItem="ion-XO-f5k" secondAttribute="centerX" id="k5R-Xk-g5f"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

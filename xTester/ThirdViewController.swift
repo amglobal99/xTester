@@ -10,12 +10,27 @@ import Foundation
 import UIKit
 
 
-
+protocol ThirdVCDelegate {
+    func submitMyForm()
+}
 
 
 class ThirdViewController: UIViewController {
     
     @IBOutlet weak var validateLabel: UILabel!
+    
+    // define a Delegate for this controller
+    // Using the segue from FirstViewController.swift,
+    // we will assign the Destinaton Controller as the value for this var
+    var delegateForMaster: ThirdVCDelegate! = nil
+    
+    
+    
+    
+    @IBAction func processFormSubmission() {
+        delegateForMaster.submitMyForm()
+    }
+    
     
     
     
