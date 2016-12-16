@@ -175,7 +175,7 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
         case 0:
             return 120
         case 1:
-            return 240
+            return 160
         case 2:
             return 220
         case 3:

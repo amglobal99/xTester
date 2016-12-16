@@ -12,43 +12,50 @@ import UIKit
 
 class FifteenthViewController: UIViewController {
     
+    // Specify name of the property we want to observe
     let currentBalanceKeyPath = "currentBalance"
+    
+    // craete an instnace of the other class thta we wnat to observe
     var account = Account()
+    
     
     @IBOutlet weak var currentBalanceLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
     
+    
     @IBAction func submitAction(sender: UIButton) {
         print("executing submit action......")
+        // Get value from Field on form
         let amount = Double(amountTextField.text!)
+        
+        // Update the balance in Account object
         account.update(amount: amount!)
+        
+        // Clear field on form
         amountTextField.text = nil
-      //  print("finished submitAction...")
     }
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         currentBalanceLabel.text = "Current balance: \(account.currentBalance)"
+        // This is how you add an observer. In our case, our 'account' var refers to insance of Account
         account.addObserver(self, forKeyPath: currentBalanceKeyPath, options: NSKeyValueObservingOptions.new, context: nil)
         print("completing viewDidlLoad")
-       
     }
     
     
-   
+    
+    // Always remove observer when object goes away
     deinit {
         account.removeObserver(self, forKeyPath: currentBalanceKeyPath)
     }
     
     
-    
-   //  func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutableRawPointer) {
-   
+  
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-       // print("executing observer ...")
+        print("executing observer ...")
         if keyPath == currentBalanceKeyPath {
             if (account.currentBalance < 0) {
                 currentBalanceLabel.textColor = UIColor.red
@@ -61,13 +68,6 @@ class FifteenthViewController: UIViewController {
 
     
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
     
 }  // end class
 
@@ -82,7 +82,7 @@ class Account: NSObject {
     
     let currentBalanceKeyPath = "currentBalance"
     let startingBalance = 100.0
-    var currentBalance = 0.0
+     var currentBalance = 0.0
     
     override init() {
         super.init()
@@ -92,9 +92,8 @@ class Account: NSObject {
     func update(amount: Double) {
         print("starting update .....")
         currentBalance += amount
-       // print("setting balance ..")
-        setValue(currentBalance, forKeyPath: currentBalanceKeyPath)
-       // print("finishing udate ..")
+        setValue(currentBalance, forKeyPath: currentBalanceKeyPath)  // Thisis  a method for NSObject
+        print("finishing udate ..")
         
     }
 }
