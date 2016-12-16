@@ -45,7 +45,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="240" id="MB5-4V-no3"/>
                                         </constraints>
-                                        <state key="normal" title="GET Request">
+                                        <state key="normal" title="GET Request, Parse SwiftyJSON">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

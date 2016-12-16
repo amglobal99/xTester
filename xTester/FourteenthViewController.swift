@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 /*
  
@@ -104,8 +105,15 @@ class FourteenthViewController: UIViewController {
          Alamofire.request(urlString)
             .responseJSON
             { response in
-                 //debugPrint(response)   // This prints output for data, response, result  values
                 
+                
+                /*
+                 
+                 // THis is Working code. Uncomment for testing
+                 
+                 //debugPrint(response)   // This prints output for data, response, result  values
+                 
+                 
                  print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
                  print(response.data)
                  print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
@@ -113,16 +121,55 @@ class FourteenthViewController: UIViewController {
                  print("\n\n++++++++++++++++++ Response Result +++++++++++++++++++++")
                  print(response.result)   // result of response serialization
                 
-                 if let JSON = response.result.value {
-                 print("\n\n +++++++++++++++++ Response Value (JSON) +++++++++++++++++++++++++++++++")
-                 print("JSON: \(JSON)")
-                 print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
-             }
+                 if let json = response.result.value {
+                     print("\n\n +++++++++++++++++ Response Value (JSON) +++++++++++++++++++++++++++++++")
+                     print("JSON: \(json)")
+                     print(" +++++++++++++++++ end JSON ++++++++++++++++++++++++++++")
+                        
+                }
+                */
+                
+                
+                
+                    // Another way of processing the response
+                     switch response.result {
+                         case .success(let value):
+                             let jsonObject = JSON(value)
+                             print("+++++++++++++++++++++++++++++++++++++++")
+                             print("JSON Object: \(jsonObject)")
+                        
+                        
+                            // Each JSON object can be accessed using a for loop
+                            // Format is for(index, subJSON) in JSON object
+                            // Therefore, first index will be 0, next 1, 2, 3 etc ...
+                            // subjson gives us the object at that index
+                        
+                             for (_, json) in jsonObject {
+                                 print("\n-------------- Json Record ---------------")
+                                print(json)
+                            }
+                        
+                         case .failure(let error):
+                             print(error)
+                     }
+                    
+                    
+                
+                
+                
+                
+                
+             
         
          }  // end closure
         
         
     } // end IBAction
+    
+    
+    
+    
+    
     
     
     
