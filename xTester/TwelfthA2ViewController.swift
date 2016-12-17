@@ -58,7 +58,7 @@ import SwiftyJSON
         
         super.viewDidLoad()
     
-        // Set the Delegate and DataSource for the TableView
+            // Set the Delegate and DataSource for the TableView
             table.dataSource = tableviewDataSource
             table.delegate = tableviewDelegate
             //table.delegate = self
@@ -71,11 +71,8 @@ import SwiftyJSON
         
         
         
-        
-        
-        
         // Completion Handler
-       // let completionHandler: (Result<JSON>) -> Void  =
+            // let completionHandler: (Result<JSON>) -> Void  =
         
             // We will use a typealias ( defined in GlobalConstants.swift file)  in line below
              let completionHandler: ClosureJSON<Result<JSON> >  =
@@ -143,7 +140,7 @@ import SwiftyJSON
         } // end closure
         
         
-        // Create a Async(Alamofire) request to get jSON data
+        // Create a Async(Alamofire) request to get Json.
         let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
         getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
 

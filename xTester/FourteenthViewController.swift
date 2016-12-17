@@ -128,9 +128,7 @@ class FourteenthViewController: UIViewController {
                         
                 }
                 */
-                
-                
-                
+                                
                     // Another way of processing the response
                      switch response.result {
                          case .success(let value):
@@ -151,16 +149,8 @@ class FourteenthViewController: UIViewController {
                         
                          case .failure(let error):
                              print(error)
-                     }
-                    
-                    
+                     }  // end switch
                 
-                
-                
-                
-                
-             
-        
          }  // end closure
         
         
