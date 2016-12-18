@@ -61,7 +61,7 @@ import SwiftyJSON
             // Set the Delegate and DataSource for the TableView
             table.dataSource = tableviewDataSource
             table.delegate = tableviewDelegate
-            //table.delegate = self
+        
         
         
         // TODO: CHECK IF THIS IS BEST APPROACH
@@ -72,10 +72,10 @@ import SwiftyJSON
         
         
         // Completion Handler
-            // let completionHandler: (Result<JSON>) -> Void  =
+             let completionHandler: (Result<JSON>) -> Void  =
         
             // We will use a typealias ( defined in GlobalConstants.swift file)  in line below
-             let completionHandler: ClosureJSON<Result<JSON> >  =
+            // let completionHandler: ClosureJSON<Result<JSON> >  =
             
             {  [weak self] result in
                 let jsonObj = result.value!
