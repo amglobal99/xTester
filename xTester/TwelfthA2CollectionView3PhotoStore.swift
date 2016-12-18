@@ -52,10 +52,10 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     func fetchJsonObject() {
         
         let completionHandler: (Result<JSON>) -> Void  =
-            { result in
-                self.jsonResultObject = result.value!
+            { [weak self] result in
+                self?.jsonResultObject = result.value!
                 print("========= Items List from fetchJsonObject method ++++++++ ")
-                if self.jsonResultObject != nil {
+                if self?.jsonResultObject != nil {
                     // print(jsObj)
                 }
         } //end closure
@@ -79,9 +79,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     func photosFromJsonObject(_ json:JSON) -> TwelfthA2PhotosResult {
         var finalPhotos:[TwelfthA2Photo] = []
         var addCount = 0
-        print("***************** JSON Object *********************")
-        print(json)
-        print("***************** end JSOn object *****************")
+        print("************* JSON Object *************** \n\n \(json) ")
         
         for ( _, jsonItem) in json {
             if let photo: TwelfthA2Photo = photoFromJSONObject(jsonItem) {
@@ -94,8 +92,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
             return  TwelfthA2PhotosResult.failure(FlickrError.invalidJSONData)
         }
         print("   ++++++++++++  Final Photos +++++++++++++++++")
-        print("      Array contains \(finalPhotos.count)  photos" )
-        print("   ++++++++++++++++++++++++++++++++++++++++++++++++")
+        print("   Array contains \(finalPhotos.count)  photos" )
         return TwelfthA2PhotosResult.success(finalPhotos)
     } // end func
     
@@ -119,11 +116,9 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
             let url = URL(string: photoURLString),
             let datetaken = Constants.Configuration.dateFormatter.date(from: dateString),
             let datetakenunknown = json["datetakenunknown"].string
-            else {
-                return nil    // don't have enough info, print("returing nil here" )
-        }
+        else { return nil  }
         return TwelfthA2Photo(title: title, photoID: photoID, remoteURL: url, dateTaken: datetaken, datetakenUnknown: datetakenunknown)
-    } //end method
+    }
     
     
     
@@ -161,12 +156,11 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
                 }
                 completion(result)
         }  // end closure
-    } //end method
+    } //end func
     
     
     
-    // Function to retrieve a single Photo image
-    //
+    /// Function to retrieve a single Photo image
     func processImageRequest(data: Data?, error: NSError?) -> ImageResult {
         guard let  imageData = data,  let image = UIImage(data: imageData)   else {
             //could not get image
@@ -188,7 +182,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     
-    // Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
+    /// Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
     func sectionPhotosDictionary(from obj:JSON?, for key:String? ) -> [String:[TwelfthA2Photo]]? {
         var keyArray:[String] = []
         var photoItems:[TwelfthA2Photo] = []

@@ -68,7 +68,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
      - Returns: An integer showing the number of items to be displayed in each section
      
      */
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let itemsInSection = photosForSection(section)
         print("Coll View 3: Number of Items in section \(section) : \(itemsInSection.count)")
@@ -77,8 +76,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     
     
-    // Function to get a Cell
-    
+    /// Function to get a Cell for a given IndexPath
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let photoTitleToDisplay: String
@@ -98,15 +96,13 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         cell.photoServerLabel.text = photoTitleToDisplay
         cell.updateWithImage(photo.image)
         return cell
-    } //end method
+    } //end func
     
     
     
     
     
-    // Function to get Section Header View
-    //
-    
+    /// Function to get Section Header View
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView{
@@ -123,7 +119,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         let title = "Section :: " + sectionLabel
         headerView.section3Label.text = title
         return headerView
-    }  // end method
+    }  // end func
     
     
     
@@ -132,9 +128,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
 
     /**
      Function executed as Cell is getting ready to be displayed
-     
      */
-    
      public func collectionView (_ collectionView: UICollectionView,
                                          willDisplay cell: UICollectionViewCell,
                                          forItemAt indexPath: IndexPath )  {
@@ -187,41 +181,25 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     // MARK: - Index Related Methods
     
-    // Function returns the number of Items in section
-    //
-    
+    /// Function returns the number of Items in given section.
     func photosForSection(_ sectionNumber: Int) -> [TwelfthA2Photo] {
-        // Get photos for this section (Filter the photos array)
-        let sectionPhotos = photos.filter{
+        let sectionPhotos = photos.filter {
             $0.datetakenUnknown == String(sectionNumber)
         }
-        
-        
-        /*
-         for i in sectionPhotos{
-         print("Section: \(sectionNumber) ----> Id: \(i.photoID)  ")
-         }
-         */
         return sectionPhotos
     }
     
     
-    
-    
-    
-    // Function returns a Photo for the given indexpath
+    /// Function returns a Photo for the given indexpath
     func photoForItemAtIndexPath(indexPath: IndexPath) -> TwelfthA2Photo {
         let rowNumber = (indexPath as IndexPath).row
         let sectionNumber = (indexPath as IndexPath).section
-        //print( "Func  Row is : \(rowNumber) and Section is: \(sectionNumber) ")
         // get the Photos in this particular section
         let sectionPhotos = photosForSection(sectionNumber)
         // get the Photo to process
         let photo = sectionPhotos[rowNumber]
         return photo
-    } // end func
-    
-    
+    }
     
     
     

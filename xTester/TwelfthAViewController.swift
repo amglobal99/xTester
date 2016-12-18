@@ -32,23 +32,18 @@ class TwelfthAViewController: UIViewController, Utils {
             case .TwelfthA1Segue:
                 print("Selecte TwelfthA1ViewController")
             case .TwelfthA2Segue:
+                
                 let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
                 twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
                 
-               
-                
-                // ============ UNCOMMENT IF NEEDED ========================================
                 twelfthA2VC.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
                 twelfthA2VC.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
            
-                
-                
-                
+            
                 twelfthA2VC.tableviewDataSource = TwelfthA2TableViewDataSource()
                 twelfthA2VC.tableviewDelegate = TwelfthA2TableViewDataSource()
             
-            
-            
+        
         }  // end switch
     }
     
