@@ -93,9 +93,9 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
             print("Sorry...No photos were retrieved")
             return  TwelfthA2PhotosResult.failure(FlickrError.invalidJSONData)
         }
-        print("       ++++++++++++  Final Photos +++++++++++++++++")
+        print("   ++++++++++++  Final Photos +++++++++++++++++")
         print("      Array contains \(finalPhotos.count)  photos" )
-        
+        print("   ++++++++++++++++++++++++++++++++++++++++++++++++")
         return TwelfthA2PhotosResult.success(finalPhotos)
     } // end func
     

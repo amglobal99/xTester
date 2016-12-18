@@ -24,7 +24,7 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     
     // MARK: - TODO
     
-    // ================= THIS MAY NEED CHNAGING ================================
+    // ================= THIS MAY NEED CHANGING ================================
     
     //var collectionView1DataSource = TwelfthA2CollectionView1DataSource()
     //var collectionView3DataSource = TwelfthA2CollectionView3DataSource()
@@ -177,15 +177,15 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
         case 1:
             return 160
         case 2:
-            return 220
+            return 160
         case 3:
-            return 340
+            return 160
         case 4:
-            return 240
+            return 160
         case 5:
-            return 240
+            return 160
         default:
-            return 200
+            return 160
         }
     }
     

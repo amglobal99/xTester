@@ -21,8 +21,6 @@ import SwiftyJSON
 /** 
  This class serves as the Data Source & Delegate for the Photos collection view.
  
- 
- 
  */
 
 class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, Utils, JsonConvertible {
@@ -124,9 +122,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         print("Our section label is : \(sectionLabel) " )
         let title = "Section :: " + sectionLabel
         headerView.section3Label.text = title
-        
         return headerView
-        
     }  // end method
     
     
@@ -145,7 +141,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         
         let photo = photoForItemAtIndexPath(indexPath: indexPath)
         photoStore.fetchImageForPhoto(photo)
-        {    (result) -> Void in
+        {    result in
             OperationQueue.main.addOperation() {
                 // get Dictionary for photo items
                 let sectionDict = self.sectionPhotoItems

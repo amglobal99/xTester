@@ -12,14 +12,12 @@ import UIKit
 
 class TwelfthA2DetailViewController: UIViewController, Utils {
     
-        
+     // Create an outlet to the ImageView
     @IBOutlet weak var imageView: UIImageView!
     
-
     var store: TwelfthA2CollectionView3PhotoStore!
     
     
-
     // when photo loads show a title
     var photo: TwelfthA2Photo! {
         didSet {
@@ -28,24 +26,20 @@ class TwelfthA2DetailViewController: UIViewController, Utils {
     }
     
     
-     
-    
     
     override public func viewDidLoad()  {
         super.viewDidLoad()
-        
-       
+       // The value of photo var is set during segue. Now all we do is fetch that photo
         store.fetchImageForPhoto(photo)
-        { (result) -> Void in
+        { [weak self] result in
             switch result {
             case let .success(image):
                 OperationQueue.main.addOperation() {
-                    self.imageView.image = image
+                    self?.imageView.image = image
                 }
             case let .failure(error):
                 print("Error fetching image for photo : \(error) " )
-            } //end swith
-            
+            } //end switch
         } //end closure
  
  
@@ -53,11 +47,6 @@ class TwelfthA2DetailViewController: UIViewController, Utils {
  
         
     }  //end viewDidLoad
-    
-
-    
-    
-    
     
     
     

@@ -107,7 +107,6 @@ import SwiftyJSON
                         case let .success(photos):
                             print(" We have total of \(photos.count)  photos ")
                             // Send values over to DataSource class (TwelfthA2CollectionView3DataSource.swift)
-                            
                             self?.collectionView3DataSource.photos = photos
                             self?.collectionView3DataSource.sections =  photoKeyArray
                             self?.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
@@ -153,12 +152,10 @@ import SwiftyJSON
         /**
          Function called during the segue from TwelfthA2ViewController to Detail View Controller
          */
-        
           override   public func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
             let segueIdentifier = segue.identifier!
             switch segueIdentifier  {
                 case "ShowTwelfthA2PhotoDetail":
-                    print("in the right segue ")
                     let destinationVC = segue.destination as! TwelfthA2DetailViewController
                     let tableIdx = IndexPath(row: 2, section: 0)
                     let tabCell = self.tableView.cellForRow(at: tableIdx) as! TwelfthA2TableViewCell3
@@ -166,7 +163,8 @@ import SwiftyJSON
                         updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
                     }
                 default:
-                    print("test")
+                    // do nothing
+                    break
             }  // end switch
         }  // end func
         
@@ -178,107 +176,6 @@ import SwiftyJSON
             destinationVC.store = store
         }
     
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*
-        
-        // MARK: - TableView DELEGATE Methods
-        
-        
-        
-        /// Function called before TableView cell is to be displayed
-        override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            
-            switch indexPath.row {
-            case 0:
-                guard let tableViewCell1 = cell as? TwelfthA2TableViewCell1 else { return }
-                tableViewCell1.setCollectionViewDataSourceDelegate(dataSource: collectionView1DataSource, dataSourceDelegate: collectionView1DataSource, forRow: indexPath.row)
-                tableViewCell1.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-            case 1:
-                print("case 1")
-            case 2:
-                // ======== This controls the Collection View in row 3  ==========
-                guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
-                tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: collectionView3DataSource, dataSourceDelegate: collectionView3DataSource, forRow: indexPath.row)
-                tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-            case 3:
-                print("case 3")
-            case 4:
-                print("case 4")
-            case 5:
-                print("case 5")
-            default:
-                print("case 1")
-            } // end switch
-        } // end func
-        
-        
-        
-        /// Function called before cell stops displaying
-        override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell,  forRowAt indexPath: IndexPath) {
-            switch indexPath.row {
-            case 0:
-                guard let tableViewCell = cell as? TwelfthA2TableViewCell1 else { return }
-                storedOffsets[indexPath.row] = tableViewCell.collectionViewOffset
-            case 1:
-                print("case 11")
-            case 2:
-                print("case 22")
-                
-            case 3:
-                print("case 33")
-                
-            case 4:
-                print("case 44")
-                
-            case 5:
-                print("case 55")
-                
-            default:
-                print("case 11")
-            } // end switch
-        } // end func
-        
-        
-        
-        
-        /// Function determines the height of each cell within the TabelView
-        override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat  {
-            switch indexPath.row {
-            case 0:
-                return 120
-            case 1:
-                return 320
-            case 2:
-                return 220
-            case 3:
-                return 340
-            case 4:
-                return 240
-            case 5:
-                return 240
-            default:
-                return 200
-            }
-        }
-        
-        
-        
-
-      */
         
         
         
