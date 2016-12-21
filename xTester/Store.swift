@@ -1,10 +1,11 @@
 //
-//  TwelfthA2CollectionView3PhotoStore.swift
+//  Store.swift
 //  xTester
 //
-//  Created by Dad on 11/25/16.
+//  Created by Dad on 12/20/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
+
 
 import Foundation
 import UIKit
@@ -13,7 +14,20 @@ import SwiftyJSON
 
 
 
-class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
+
+
+class Store: StoreService, Utils, JsonConvertible {
+    
+    typealias TA2JSON = JSON
+    typealias TA2PhotosResult = TwelfthA2PhotosResult
+    typealias TA2Photo = TwelfthA2Photo
+    typealias TA2ImageResult = ImageResult
+    typealias TA2Data = Data
+    typealias TA2NSError = NSError
+    typealias TA2String = String
+    
+    
+    
     
     
     // MARK: - Enums
@@ -71,11 +85,14 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     
-    /** 
+    
+    
+    
+    /**
      Function retrieves an array of TwelfthA2Photo objects.
      - Parameter json:  a SwiftyJSON object
      - Returns:         an array of TwelfthA2Photo objects
-    */
+     */
     func photosFromJsonObject(_ json:JSON) -> TwelfthA2PhotosResult {
         var finalPhotos:[TwelfthA2Photo] = []
         var addCount = 0
@@ -99,17 +116,17 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     
-   
     
     
-    /**
-        Function to get individual Photo object.
-        If any of the fields are unavailable, it returns a nil.
-        Many entries do not have a URL, so that Photo wil not be returned.
+    
+   /**
+     Function to get individual Photo object.
+     If any of the fields are unavailable, it returns a nil.
+     Many entries do not have a URL, so that Photo wil not be returned.
      
-        - Parameter json:   a SwiftyJSON object
-        - Returns:          An instance of TwelfthA2Photo
-    */
+     - Parameter json:   a SwiftyJSON object
+     - Returns:          An instance of TwelfthA2Photo
+     */
     func photoFromJSONObject(_ json: JSON ) -> TwelfthA2Photo? {
         guard
             let photoID = json["id"].string,
@@ -119,25 +136,31 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
             let url = URL(string: photoURLString),
             let datetaken = Constants.Configuration.dateFormatter.date(from: dateString),
             let datetakenunknown = json["datetakenunknown"].string
-        else { return nil  }
+            else { return nil  }
         return TwelfthA2Photo(title: title, photoID: photoID, remoteURL: url, dateTaken: datetaken, datetakenUnknown: datetakenunknown)
     }
+    
     
     
     
    
     
     
+   
+    
+    
+    
     // MARK: - Fetch Image
     
     
     
-    /** 
-        Function to fetch image for Photo using URL for photo.
-        - Parameter photo:  a TwelfthA2Photo object
-    
+    /**
+     Function to fetch image for Photo using URL for photo.
+     - Parameter photo:  a TwelfthA2Photo object
+     
      */
     func fetchImageForPhoto(_ photo: TwelfthA2Photo, completion: @escaping (ImageResult) -> Void ) {
+        
         if let image = photo.image {
             completion(.success(image) )
             return
@@ -152,6 +175,8 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
                 guard response.data != nil else {
                     return
                 }
+                
+                
                 let result: ImageResult = self.processImageRequest(data: response.data, error: response.error as NSError?)
                 
                 //  Use 'if case' to see if 'result' var contaisn .success as its value
@@ -161,6 +186,11 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
                 completion(result)
         }  // end closure
     } //end func
+    
+    
+    
+    
+    
     
     
     
@@ -176,6 +206,9 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         }
         return .success(image )
     }
+    
+    
+        
     
     
     
@@ -256,6 +289,10 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     
+ 
+
     
     
-} //end class
+    
+    
+}

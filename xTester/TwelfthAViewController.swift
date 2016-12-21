@@ -34,14 +34,25 @@ class TwelfthAViewController: UIViewController, Utils {
             case .TwelfthA2Segue:
                 
                 let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
-                twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
                 
-                twelfthA2VC.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
-                twelfthA2VC.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+                
+                /*
+                 Instaed of setting store value here, we will do it in the Class Constructor /Initializer.
+                 If needed, UNCOMMENT lines below and thta will work too.
+ 
+                //twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
+                //twelfthA2VC.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+                //twelfthA2VC.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
            
             
-                twelfthA2VC.tableviewDataSource = TwelfthA2TableViewDataSource()
-                twelfthA2VC.tableviewDelegate = TwelfthA2TableViewDataSource()
+                // twelfthA2VC.tableviewDataSource = TwelfthA2TableViewDataSource()
+                // twelfthA2VC.tableviewDelegate = TwelfthA2TableViewDataSource()
+             
+                */
+            
+            
+            
+            
             
         
         }  // end switch

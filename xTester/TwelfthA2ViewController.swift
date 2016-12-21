@@ -14,6 +14,31 @@ import AlamofireImage
 import SwiftyJSON
 
 
+
+
+protocol StoreService {
+    
+    associatedtype TA2JSON
+    associatedtype TA2PhotosResult
+    associatedtype TA2Photo
+    associatedtype TA2ImageResult
+    associatedtype TA2Data
+    associatedtype TA2NSError
+    associatedtype TA2String
+   
+    func fetchJsonObject()
+    func photosFromJsonObject(_ json: TA2JSON)  -> TA2PhotosResult
+    func photoFromJSONObject( _ json: TA2JSON ) -> TA2Photo?
+    func fetchImageForPhoto( _ photo: TA2Photo, completion: @escaping (TA2ImageResult) -> Void )
+    func processImageRequest( data: TA2Data?, error: TA2NSError?  )  -> TA2ImageResult
+    func sectionPhotosDictionary( from obj:TA2JSON?, for key:TA2String? )  -> [String:[TA2Photo]]?
+    func indexForPhoto( dict:[String:[TA2Photo]], photo:TA2Photo )  -> (Int,Int)?
+    
+} // end protocol
+
+
+
+
 /**
   This is the main class for our TwelfthA2ViewController
   You arrive at this ViewController thru a segue from 'TwelfthAViewController'
@@ -33,6 +58,7 @@ import SwiftyJSON
         var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
     
+        
         // MARK:- Data Variables
         var store: TwelfthA2CollectionView3PhotoStore!
         var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
@@ -51,6 +77,44 @@ import SwiftyJSON
         let params = Constants.Configuration.params
         
         
+        
+        // MARK: - Initializers
+        
+        /// The initializers were addded by me later.
+        /// Here, we will inject property values in constructor instead of
+        /// in the 'prepareForSegue' method in TwelfthAViewController.swift
+        ///
+        
+        init(_ coder: NSCoder? = nil) {
+            
+            print("Executing Init for TwelfthA2ViewController.swift")
+            
+            // Assign property values
+            self.store = TwelfthA2CollectionView3PhotoStore()
+            self.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+            self.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+            self.tableviewDataSource = TwelfthA2TableViewDataSource()
+            self.tableviewDelegate =  TwelfthA2TableViewDataSource()
+            
+            // Let's assign a property in the CollectionView store
+            self.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
+            
+            if let coder = coder {
+                super.init(coder: coder)!
+            } else {
+                super.init(nibName: nil, bundle:nil)
+            }
+        }
+        
+    
+        convenience required init(coder: NSCoder) {
+            print("Executing CONVENINECE init for TwelfthA2ViewController.swift")
+            self.init(coder)
+        }
+        
+        
+        
+        
     
     // MARK: - ViewController events
     
@@ -62,13 +126,10 @@ import SwiftyJSON
             table.dataSource = tableviewDataSource
             table.delegate = tableviewDelegate
         
-        
-        
-        // TODO: CHECK IF THIS IS BEST APPROACH
-        
-        (table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
-        (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
-        
+            // TODO: CHECK IF THIS IS BEST APPROACH
+            (table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
+            (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
+            
         
         
         // Completion Handler
@@ -78,7 +139,10 @@ import SwiftyJSON
             // let completionHandler: ClosureJSON<Result<JSON> >  =
             
             {  [weak self] result in
+                
+                // Get the result from Alamofire request
                 let jsonObj = result.value!
+                
                 // get list of Photos(returns array of 'TwelfthA2Photo' items)
                 let itemsResult: TwelfthA2CollectionView3PhotoStore.TwelfthA2PhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
                 
@@ -88,9 +152,8 @@ import SwiftyJSON
                     return
                 }
                 
-                 print("+++++++++++++++++  Section Titles Array  +++++++++++++++++++++++")
+                 print("\n\n+++++++++  Section Titles Array  ++++++++++++++")
                  print(photoKeyArray)
-                 print("+++++++++++++++++  end Section Titles +++++++++++++++++++++")
                 
                 // get Section Title: Photos Dictionary
                 guard let sectionPhotosDictionary = self?.store.sectionPhotosDictionary(from: jsonObj, for: self?.key) else {
@@ -98,37 +161,16 @@ import SwiftyJSON
                     return
                 }
                 
-                 print("+++++++++++++++++  Section Photos Dictonary +++++++++++++++++++++++")
+                 print("\n\n+++++++++  Section Photos Dictionary +++++++++++")
                  print(sectionPhotosDictionary)
-                 print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
                 
                 OperationQueue.main.addOperation() {
                         switch itemsResult {
                         case let .success(photos):
                             print(" We have total of \(photos.count)  photos ")
-                            // Send values over to DataSource class (TwelfthA2CollectionView3DataSource.swift)
                             self?.collectionView3DataSource.photos = photos
                             self?.collectionView3DataSource.sections =  photoKeyArray
                             self?.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
-                            
-                            
-                            //TODO: Check Retain Cycles
-                            
-                            
-                            // ========== ?????????? Let's populate the store  .... NOT SURE IF THIS IS RIGHT WAY TO DO IT
-                            self?.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
-                             // =========================================================
-                            
-                            
-                            
-                            //FIXME: Check Memory LEAKS
-                            
-                            // =========== NOT SURE IF THIS IS PROPER WAY TO DO IT ======= CHECK RETAIN CYCLE ========
-                            //self?.tableviewDelegate.collectionView3DataSource = (self?.collectionView3DataSource)!
-                            
-                            // =============================================================================
-                            
-                            
                         case .failure(let error):
                             self?.collectionView3DataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
@@ -150,7 +192,10 @@ import SwiftyJSON
         
        
         /**
-         Function called during the segue from TwelfthA2ViewController to Detail View Controller
+         Function called during the segue from TwelfthA2ViewController to Detail View Controller.
+         
+         TODO: - Instead of switch, use 'if case' below
+         
          */
           override   public func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
             let segueIdentifier = segue.identifier!
@@ -166,6 +211,7 @@ import SwiftyJSON
                     // do nothing
                     break
             }  // end switch
+            
         }  // end func
         
 
@@ -176,10 +222,6 @@ import SwiftyJSON
             destinationVC.store = store
         }
     
-        
-        
-        
-        
         
         
     
