@@ -175,6 +175,19 @@ protocol StoreService {
                             self?.collectionView3DataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
                         }  // end switch
+                    
+                    
+                    /*
+                    // Reload data for Third row in Table
+                    let tableIndex = IndexPath(row: 2, section: 0)
+                    let tableCell = self?.tableView.cellForRow(at: tableIndex) as! TwelfthA2TableViewCell3
+                    print("Reloading data 1. ....")
+                    tableCell.collectionView3.reloadData()
+                    */
+                    
+                    // Reload data for Table
+                    self?.tableView.reloadData()
+                    
                 }  // end operation
                 
                 

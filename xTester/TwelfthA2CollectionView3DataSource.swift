@@ -95,6 +95,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         cell.photoIDLabel.text = photo.photoID
         cell.photoServerLabel.text = photoTitleToDisplay
         cell.updateWithImage(photo.image)
+        
         return cell
     } //end func
     
@@ -146,7 +147,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
                 let photoSection = path.1
                 let photoIndexPath = IndexPath(row: photoRow , section: photoSection)
                 // print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
-                //if let cell = self.photoCollectionView?.cellForItem(at: photoIndexPath) as?   NinthPhotoCollectionViewCell {
                 if let cell = collectionView.cellForItem(at: photoIndexPath) as?  TwelfthA2CollectionView3Cell {
                     cell.updateWithImage(photo.image)     // Update cell photo
                 }
