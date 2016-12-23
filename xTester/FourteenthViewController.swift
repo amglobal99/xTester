@@ -79,41 +79,25 @@ func responsePropertyList(
 
 
 
-
-
-
-
-
-
 class FourteenthViewController: UIViewController {
-    
-    
-    
+  
     let urlString = "https://jsonplaceholder.typicode.com/todos"
     //let urlString2 = "https://api.flickr.com/services/rest"
     let urlString2 = "http://citibikenyc.com/stations/json"
     //let urlString2 = "http://citibikenyc.com/stations/jack"    // This is just to produce an error
     
-    
-    
-    
-    
+  
     
     @IBAction func getSimple(_ sender: AnyObject) {
-        
-         // Request #1
+      
          Alamofire.request(urlString)
             .responseJSON
             { response in
-                
-                
                 /*
                  
                  // THis is Working code. Uncomment for testing
                  
                  //debugPrint(response)   // This prints output for data, response, result  values
-                 
-                 
                  print("\n\n++++++++++++++++++ Response Data +++++++++++++++++++++")
                  print(response.data)
                  print("\n\n++++++++++++++++++ Response Response +++++++++++++++++++++")
@@ -136,7 +120,6 @@ class FourteenthViewController: UIViewController {
                              print("+++++++++++++++++++++++++++++++++++++++")
                              print("JSON Object: \(jsonObject)")
                         
-                        
                             // Each JSON object can be accessed using a for loop
                             // Format is for(index, subJSON) in JSON object
                             // Therefore, first index will be 0, next 1, 2, 3 etc ...
@@ -146,28 +129,18 @@ class FourteenthViewController: UIViewController {
                                  print("\n-------------- Json Record ---------------")
                                 print(json)
                             }
-                        
                          case .failure(let error):
                              print(error)
                      }  // end switch
                 
          }  // end closure
-        
-        
+      
     } // end IBAction
     
-    
-    
-    
-    
-    
-    
-    
-    
+  
     
     @IBAction func getWithValidate(_ sender: AnyObject) {
-        
-        // Request # 2
+      
         /**
          Here, I will show you ow to do 3 checks to make sure you are handling
          the response correctly.
@@ -259,8 +232,7 @@ class FourteenthViewController: UIViewController {
             } // end closure
             
         } // end if
-        
-        
+      
     } // end IBAction
     
     
@@ -325,24 +297,11 @@ class FourteenthViewController: UIViewController {
                 print(statusCode) // the status code
         } // end closure
         
-        
-        
+
     } // end IBAction
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     
     @IBAction func postSimple(_ sender: AnyObject) {
         
@@ -355,6 +314,8 @@ class FourteenthViewController: UIViewController {
         
         print("Starting POST request")
         let todosEndpoint: String = "https://jsonplaceholder.typicode.com/todos"
+        let jsonTodo: Data
+
         guard let todosURL = URL(string: todosEndpoint) else {
             print("Error: cannot create URL")
             return
@@ -365,9 +326,7 @@ class FourteenthViewController: UIViewController {
         
         // Let's create 2 objects
         let newTodo: [[String: Any]] = [["title": "My First todo", "completed": false, "userId": 1],[ "title": "My Second todo", "completed": false, "userId": 1]   ]
-        
-        
-        let jsonTodo: Data
+      
         do {
             jsonTodo = try JSONSerialization.data(withJSONObject: newTodo, options: [])
             todosUrlRequest.httpBody = jsonTodo
@@ -391,21 +350,19 @@ class FourteenthViewController: UIViewController {
                 print("Result.IsSuccess: \(response.result.isSuccess)")
                 print("\n\n+++++++++++++++ Response Result Value +++++++++++++++")
                 print("Response String: \(response.result.value!)")
-                                print("+++++++++++++++++++++++++++++++++++++++++++++++++++++")
+                print("+++++++++++++++++++++++++++++++++++++++++++++++++++++")
                 
                 print("\n\n++++++++++++++ Status Code ++++++++++++++")
                 let statusCode = response.response?.statusCode
                 print("Our Status Code: \(statusCode!)")
                 print("+++++++++++++++++++++++++++++++++++++++++++++++++++++")
-                
-                
+              
                 print("\n\n +++++++++++++++++++ Entire RESPONSE ++++++++++++++++++++++++++++++")
                 debugPrint(response)   // This prints output for data, response, result  value
                 print("\n\n+++++++++++++++++++  end Entire Response +++++++++++++++++++++++++")
                 
         }  // end closure
-       
-        
+      
     }  // end IBAction
     
     
@@ -431,10 +388,7 @@ class FourteenthViewController: UIViewController {
     
     
     
-    
-    
-    
-    
+  
     
     @IBAction func postAuthenticateSimple(_ sender: AnyObject) {
     
@@ -445,7 +399,6 @@ class FourteenthViewController: UIViewController {
         let loginString = String(format: "%@:%@", user, password)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()
-        
         let urlString: String = "https://httpbin.org/basic-auth/\(user)/\(password)"
         
         guard let url = URL(string: urlString) else {
@@ -464,16 +417,7 @@ class FourteenthViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     
         override func viewDidLoad() {
             super.viewDidLoad()

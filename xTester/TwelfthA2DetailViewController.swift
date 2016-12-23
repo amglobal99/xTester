@@ -46,12 +46,7 @@ class TwelfthA2DetailViewController: UIViewController, Utils {
             } //end switch
         } //end closure
  
- 
- 
- 
-        
     }  //end viewDidLoad
     
-    
-    
+  
 }  // end class
