@@ -9,14 +9,12 @@
 import Foundation
 import UIKit
 import Alamofire
-import PINCache
-import PINRemoteImage
 import AlamofireImage
 import SwiftyJSON
 
 
 /**
- This class serves as the Data Source & Delegate for the Photos collection view.
+ This class serves as the Data Source & Delegate for the Items collection view.
  
  */
 

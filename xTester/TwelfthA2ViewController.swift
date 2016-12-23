@@ -53,9 +53,15 @@ protocol StoreService {
         // MARK:- Data Variables
         var store: TwelfthA2CollectionView3PhotoStore!
         var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
+        var collectionView2DataSource: TwelfthA2CollectionView2DataSource!
         var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
         var tableviewDataSource: TwelfthA2TableViewDataSource!   // This defines the DataSource for the TableView
         var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
+      
+      
+      
+      
+      
       
         // MARK: - Global Constants Variables
         let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
@@ -78,6 +84,7 @@ protocol StoreService {
             // Assign property values
             self.store = TwelfthA2CollectionView3PhotoStore()
             self.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+            self.collectionView2DataSource = TwelfthA2CollectionView2DataSource()
             self.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
             self.tableviewDataSource = TwelfthA2TableViewDataSource()
             self.tableviewDelegate =  TwelfthA2TableViewDataSource()
@@ -108,6 +115,7 @@ protocol StoreService {
         
             // TODO: CHECK IF THIS IS BEST APPROACH
             (table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
+            (table.delegate as! TwelfthA2TableViewDataSource ).collectionView2DataSource = (self.collectionView2DataSource)!
             (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
           
             // Completion Handler

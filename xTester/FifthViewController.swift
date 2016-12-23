@@ -18,8 +18,8 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
     var jsonResultObject:JSON?
     
     //  Enable one of these to test
-    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    //let baseURLString  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
+    //let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
+    let baseURLString  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
     //let baseURLString  = Constants.Configuration.jsonTestUrl.google.rawValue
     //let baseURLString  = Constants.Configuration.jsonTestUrl.gitHub.rawValue
 
@@ -27,16 +27,19 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
   
   // UNCOMMent appropriate section as needed
   
+  
+  /*
   let apiKey = Constants.FlickrApi.apiKey
   let method = Constants.FlickrApi.method
   let key  = Constants.FlickrApi.key
   let rootPath = Constants.FlickrApi.rootPath
   let dataKey = Constants.FlickrApi.dataKey
   let params = Constants.FlickrApi.params
+  */
   
   
   
-  /*
+  
   let apiKey = Constants.BikeNycApi.apiKey
   let method = Constants.BikeNycApi.method
   let key  = Constants.BikeNycApi.key
@@ -44,7 +47,7 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
   let dataKey = Constants.BikeNycApi.dataKey
   let params = Constants.BikeNycApi.params
   
-  */
+ 
   
   
     

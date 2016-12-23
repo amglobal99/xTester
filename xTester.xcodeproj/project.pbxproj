@@ -116,6 +116,9 @@
 		0FB7A58C1DFF774C0004BEC6 /* productList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FB7A58B1DFF774C0004BEC6 /* productList.json */; };
 		0FC797A31DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */; };
 		0FCA28341E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */; };
+		0FCA28361E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28351E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift */; };
+		0FCA28381E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift */; };
+		0FCA283A1E0DAC390018FFC7 /* TwelfthA2Item3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28391E0DAC390018FFC7 /* TwelfthA2Item3.swift */; };
 		0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
 		0FCE1C6C1DB6988200242E09 /* TwelfthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */; };
 		0FCE1C701DB6994300242E09 /* Eleventh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */; };
@@ -267,6 +270,9 @@
 		0FB7A58B1DFF774C0004BEC6 /* productList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = productList.json; path = dump/productList.json; sourceTree = "<group>"; };
 		0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2ViewController.swift; sourceTree = "<group>"; };
 		0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2DataSource.swift; sourceTree = "<group>"; };
+		0FCA28351E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2.swift; sourceTree = "<group>"; };
+		0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2ItemStore.swift; sourceTree = "<group>"; };
+		0FCA28391E0DAC390018FFC7 /* TwelfthA2Item3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2Item3.swift; sourceTree = "<group>"; };
 		0FCE1C671DB6983700242E09 /* EleventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleventhViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eleventh.storyboard; sourceTree = "<group>"; };
@@ -491,6 +497,7 @@
 			children = (
 				0F22D8081DCD1E770015C9F1 /* NinthPhoto.swift */,
 				0F3CC00E1DE7B439005CEFBB /* TwelfthA2Photo.swift */,
+				0FCA28391E0DAC390018FFC7 /* TwelfthA2Item3.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -505,6 +512,7 @@
 				0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */,
 				0F3CC0161DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift */,
 				0F436EE81DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift */,
+				0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift */,
 				0F322CD31DE27A74001796FC /* TwelfthA2TableViewDataSource.swift */,
 			);
 			name = DataSourcesDelegates;
@@ -515,6 +523,7 @@
 			children = (
 				0F322CDB1DE29A64001796FC /* TwelfthA2CollectionView1.swift */,
 				0F3CBFF61DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift */,
+				0FCA28351E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift */,
 			);
 			name = CollectionViews;
 			sourceTree = "<group>";
@@ -995,6 +1004,7 @@
 				0F945FD41DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F22D81A1DCD6C0F0015C9F1 /* NinthPhotoStore.swift in Sources */,
 				0F38A8231DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */,
+				0FCA283A1E0DAC390018FFC7 /* TwelfthA2Item3.swift in Sources */,
 				0F3052D01DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F8328C71DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F22D8161DCD6BD10015C9F1 /* PhotoStore.swift in Sources */,
@@ -1030,6 +1040,7 @@
 				0F2D08A71DE1242D0039F98B /* ExtensionDictionary.swift in Sources */,
 				0F2D7ECC1DB1A244007A6F4A /* GlobalConstants.swift in Sources */,
 				0F36D64F1DE330E2002611FB /* ExtensionUIColor.swift in Sources */,
+				0FCA28361E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift in Sources */,
 				0F2C0CF01DB5ACE000ECBA67 /* TenthViewController.swift in Sources */,
 				0F36D6671DE36B72002611FB /* TwelfthA2TableViewCell6.swift in Sources */,
 				0FD9707B1DA802480099BE54 /* FirstViewController.swift in Sources */,
@@ -1053,6 +1064,7 @@
 				0F2D7ED01DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F36D65F1DE368EC002611FB /* TwelfthA2TableViewCell1.swift in Sources */,
 				0F3CBFFF1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift in Sources */,
+				0FCA28381E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift in Sources */,
 				0F3F990A1DA826CA002FBB8C /* SeventhViewController.swift in Sources */,
 				0FD9707D1DA802480099BE54 /* FourthView.swift in Sources */,
 				0F3F99061DA826A2002FBB8C /* SixthViewController.swift in Sources */,

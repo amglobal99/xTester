@@ -19,8 +19,10 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     
     // These are populated from TwelfthA2ViewController.swift ( closure section)
     var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
+    var collectionView2DataSource: TwelfthA2CollectionView2DataSource!
     var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
-    
+  
+  
     
     // MARK: - TODO
     
@@ -175,7 +177,7 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
         case 0:
             return 120
         case 1:
-            return 160
+            return 200
         case 2:
             return 160
         case 3:
