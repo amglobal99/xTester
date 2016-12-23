@@ -11,8 +11,6 @@ import Foundation
 import UIKit
 import Alamofire
 import PINCache
-import BRYXBanner
-import Locksmith
 import PINRemoteImage
 import AlamofireImage
 import SwiftyJSON
@@ -100,9 +98,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     } //end func
     
     
-    
-    
-    
+  
     /// Function to get Section Header View
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,

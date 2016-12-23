@@ -120,9 +120,12 @@ protocol StoreService {
                 guard let strongSelf = self else {
                   return
                 }
-
+              
+                             
                 // Get the result from Alamofire request
                 let jsonObj = result.value!
+          
+              
                 // get list of Photos(returns array of 'TwelfthA2Photo' items)
                 let itemsResult: TwelfthA2CollectionView3PhotoStore.TwelfthA2PhotosResult   = (strongSelf.store.photosFromJsonObject(jsonObj))
                 // get array of Section titles
@@ -164,6 +167,15 @@ protocol StoreService {
 
     }  // end viewDidLoad
     
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       // MARK: - View Transition
       

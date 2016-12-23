@@ -70,22 +70,32 @@ CHECK LOG FOR RESULTS</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1V-Gd-EOk">
+                                <frame key="frameInset" minX="33" minY="575" width="309" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Parse JSON from a Local File"/>
+                                <connections>
+                                    <action selector="parseLocalJson:" destination="fDj-0L-Ed4" eventType="touchUpInside" id="5Id-Ow-6rT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90616988369999996" green="0.90616988369999996" blue="0.90616988369999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3Wc-DL-wWZ" firstAttribute="top" secondItem="Enh-vH-xFn" secondAttribute="bottom" constant="27" id="3ZB-rG-B5s"/>
-                            <constraint firstItem="OOD-Xe-TFx" firstAttribute="top" secondItem="5ge-Kv-XQT" secondAttribute="bottom" constant="116" id="SyT-pU-bDv"/>
                             <constraint firstItem="5ge-Kv-XQT" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="T8A-Yb-e3P"/>
                             <constraint firstItem="mJo-8J-Xyq" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="U4A-SA-Tba"/>
                             <constraint firstItem="3Wc-DL-wWZ" firstAttribute="leading" secondItem="0e6-6I-c9s" secondAttribute="leadingMargin" constant="37" id="VHo-3N-s2P"/>
                             <constraint firstItem="mJo-8J-Xyq" firstAttribute="top" secondItem="plz-n6-GfI" secondAttribute="bottom" constant="35" id="Zmj-Rd-KPP"/>
                             <constraint firstItem="5ge-Kv-XQT" firstAttribute="leading" secondItem="0e6-6I-c9s" secondAttribute="leadingMargin" constant="17" id="fOT-Lr-IBE"/>
                             <constraint firstItem="3Wc-DL-wWZ" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="jnr-Je-1wu"/>
+                            <constraint firstItem="OOD-Xe-TFx" firstAttribute="top" secondItem="x1V-Gd-EOk" secondAttribute="bottom" constant="62" id="kcs-O2-2bl"/>
                             <constraint firstItem="Enh-vH-xFn" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="m1y-fq-hJo"/>
                             <constraint firstItem="5ge-Kv-XQT" firstAttribute="top" secondItem="3Wc-DL-wWZ" secondAttribute="bottom" constant="32" id="n45-BF-1RL"/>
                             <constraint firstItem="plz-n6-GfI" firstAttribute="top" secondItem="jJQ-yL-RoA" secondAttribute="bottom" constant="27" id="qll-uO-jin"/>
+                            <constraint firstItem="x1V-Gd-EOk" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="qwJ-bO-k2o"/>
                             <constraint firstItem="Enh-vH-xFn" firstAttribute="top" secondItem="mJo-8J-Xyq" secondAttribute="bottom" constant="20" id="rbz-Qz-5c4"/>
                             <constraint firstItem="plz-n6-GfI" firstAttribute="centerX" secondItem="0e6-6I-c9s" secondAttribute="centerX" id="vec-Bv-NNk"/>
+                            <constraint firstItem="x1V-Gd-EOk" firstAttribute="top" secondItem="5ge-Kv-XQT" secondAttribute="bottom" constant="24" id="yud-Ev-SgJ"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

@@ -69,7 +69,7 @@ extension JsonConvertible  {
                //Alamofire.request(urlRequest).responseJSON
                     
                     Alamofire.request(urlRequest).validate().responseJSON
-                    { (response) -> Void  in
+                    { response  in
                         
                         
                         // First check if user Authenticated

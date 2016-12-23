@@ -115,6 +115,7 @@
 		0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
 		0FB7A58C1DFF774C0004BEC6 /* productList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FB7A58B1DFF774C0004BEC6 /* productList.json */; };
 		0FC797A31DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */; };
+		0FCA28341E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */; };
 		0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
 		0FCE1C6C1DB6988200242E09 /* TwelfthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */; };
 		0FCE1C701DB6994300242E09 /* Eleventh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */; };
@@ -265,6 +266,7 @@
 		0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolJsonConvertible.swift; sourceTree = "<group>"; };
 		0FB7A58B1DFF774C0004BEC6 /* productList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = productList.json; path = dump/productList.json; sourceTree = "<group>"; };
 		0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2ViewController.swift; sourceTree = "<group>"; };
+		0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2DataSource.swift; sourceTree = "<group>"; };
 		0FCE1C671DB6983700242E09 /* EleventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleventhViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eleventh.storyboard; sourceTree = "<group>"; };
@@ -498,10 +500,11 @@
 			children = (
 				0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */,
 				0F22D8191DCD6C0F0015C9F1 /* NinthPhotoStore.swift */,
+				0F571F3E1E099FEF00E501E8 /* Store.swift */,
 				0F3CC0121DE7C47A005CEFBB /* TwelfthA2CollectionView1DataSource.swift */,
+				0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */,
 				0F3CC0161DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift */,
 				0F436EE81DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift */,
-				0F571F3E1E099FEF00E501E8 /* Store.swift */,
 				0F322CD31DE27A74001796FC /* TwelfthA2TableViewDataSource.swift */,
 			);
 			name = DataSourcesDelegates;
@@ -1038,6 +1041,7 @@
 				0F3CBFDD1DE739C6005CEFBB /* TwelfthA2CollectionView3FlowLayout.swift in Sources */,
 				0F8A854F1DC3D5B200C405AC /* TwelfthA1ViewController.swift in Sources */,
 				0F571F3F1E099FEF00E501E8 /* Store.swift in Sources */,
+				0FCA28341E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift in Sources */,
 				0F3052CC1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
 				0F3979931DDF4F3B00F95B0A /* ReleasePrint.swift in Sources */,
 				0F2664011DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */,

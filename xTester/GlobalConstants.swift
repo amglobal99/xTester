@@ -41,16 +41,50 @@ struct Constants {
     
     
     struct FlickrApi {
-        
+      
+      // Use This section for Flickr API
+      static let apiKey = "a6d819499131071f158fd740860a5a88"
+      static let method = "flickr.photos.getRecent"
+      static let params = ["extras":"url_h,date_taken"]
+      static let rootPath = ["photos","photo"]
+      static let key = "datetakenunknown"
+      static let dataKey = "id"
+      
+      enum Method: String {
+        case RecentPhotos = "flickr.photos.getRecent"
+      }
+
     }  // end struct
     
+  
+  
+  
+  
+  struct BikeNycApi {
     
+    // Use this for bikeNYC API
+    static let apiKey:String? = nil
+    static let method:String? = nil
+    static let params:[String:String]? = nil
+    static let rootPath:[String]? = ["stationBeanList"]    // BikeNYC
+    static let key = "id"
+    static let dataKey = "statusValue"
+    
+  }
+  
+  
+  
+  
+  
     
     struct Configuration {
         
         static let companyName = "Natsys International"
         static let companyAddress = "1808 Mountain Lake Dr GA 30339"
-        
+      
+      
+      
+      
         // Use This section for Flickr API
          static let apiKey = "a6d819499131071f158fd740860a5a88"
          static let method = "flickr.photos.getRecent"
@@ -66,6 +100,8 @@ struct Constants {
             case RecentPhotos = "flickr.photos.getRecent"
          }
         
+      
+ 
         
         /*
         // Use this for Github API
@@ -77,9 +113,11 @@ struct Constants {
         static let dataKey = "clone_url"
         */
         
-        
-        /*
-        // Use this for bikeNYC API
+      
+      
+      /*
+      
+               // Use this for bikeNYC API
         static let apiKey:String? = nil
         static let method:String? = nil
         static let params:[String:String]? = nil
@@ -88,6 +126,10 @@ struct Constants {
         static let dataKey = "statusValue"
         
         */
+      
+      
+      
+      
 
         /*
         // Use this for Google API

@@ -39,7 +39,7 @@ class NinthViewControllerTests: BaseTestCase {
     
     func setupCreateNinthViewController() {
         
-        let tabBarController: UITabBarController
+        //let tabBarController: UITabBarController
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
         

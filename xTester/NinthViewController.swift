@@ -21,20 +21,16 @@
 
 import UIKit
 import Alamofire
-import PINCache
-import BRYXBanner
-import Locksmith
 import PINRemoteImage
 import AlamofireImage
 import SwiftyJSON
 
 
-public class NinthViewController: UICollectionViewController, NinthPhotoCollectionViewCellDelegate, Utils, JsonConvertible {
+public class NinthViewController: UICollectionViewController,  JsonConvertible {
     
     // MARK: - IBOutlets
     @IBOutlet var photoCollectionView: UICollectionView!
-    
-    
+  
     // MARK: - Local Variables
     var city:String!
     var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
@@ -47,8 +43,7 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
     let rootPath = Constants.Configuration.rootPath
     let dataKey = Constants.Configuration.dataKey
     let params = Constants.Configuration.params
-    
-    
+  
     // MARK:- Data Variables
     /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
     var store: NinthPhotoStore!
@@ -59,16 +54,7 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
         case RecentPhotos = "flickr.photos.getRecent"
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     // MARK: - ViewController Methods
     
     override public func viewDidLoad() {
@@ -79,16 +65,20 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
         photoCollectionView.dataSource = photoDataSource
         photoCollectionView.delegate = self
       
-        
         // Completion Handler
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
+              
+              guard let strongSelf = self else {
+                return
+              }
+              
                 let jsonObj = result.value!
                 // get list of Photos(returns array of 'NinthPhoto' items)
-                let itemsResult: NinthPhotoStore.NinthPhotosResult   = (self?.store.photosFromJsonObject(jsonObj))!
+                let itemsResult: NinthPhotoStore.NinthPhotosResult   = strongSelf.store.photosFromJsonObject(jsonObj)
                 
                 // get array of Section titles
-                guard let photoKeyArray =  self?.getSectionTitlesArray(from: jsonObj, key: self?.key)   else {
+                guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: strongSelf.key)   else {
                     //print("getKeyArray method returned a nil value.")
                     return
                 }
@@ -99,33 +89,29 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
                 */
                 
                 // get Section Title: Photos Dictionary
-                guard let sectionPhotosDictionary = self?.store.sectionPhotosDictionary(from: jsonObj, for: self?.key) else {
+                guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: strongSelf.key) else {
                         print("Section Photo Items Dictionary is nil")
                         return
                 }
-                /*
+              
                 print("+++++++++++++++++  Section Photos Dictonary +++++++++++++++++++++++")
                 print(sectionPhotosDictionary)
-                print("+++++++++++++++++  end Dictionary +++++++++++++++++++++")
-                */
-                
-                
+ 
                 OperationQueue.main.addOperation() {
                     switch itemsResult {
                         case let .success(photos):
-                           // print(" We have total of \(photos.count)  photos ")
+                            print(" We have total of \(photos.count)  photos ")
                             // Send values over to DataSource class (NinthPhotoCollectionViewDataSource.swift)
-                            self?.photoDataSource.photos = photos
-                            self?.photoDataSource.sections =  photoKeyArray
-                            self?.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
+                            strongSelf.photoDataSource.photos = photos
+                            strongSelf.photoDataSource.sections =  photoKeyArray
+                            strongSelf.photoDataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
                         case .failure(let error):
-                            self?.photoDataSource.photos.removeAll()
+                            strongSelf.photoDataSource.photos.removeAll()
                             print("     Error fetching recent photos \(error)")
                     }  // end switch
                 
                     // Reload Data
-                        //self?.photoCollectionView?.reloadSections(IndexSet(integer: 0) ) // WHAT IS THIS  ?????
-                        self?.photoCollectionView?.reloadData()
+                    strongSelf.photoCollectionView?.reloadData()
                 }  // end operation
                 
                 
@@ -138,36 +124,44 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
     }  // end viewDidLoad
     
     
-    
-    
-    
-    /*
-    func processJsonObject(jsonObj: JSON)-> ( photoKeyArray, photoItemsDictionary, sectionPhotosDictionary )   {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }
-    
-    */
-    
-    
-    
-    
-    
-    
-    // MARK: - CollectionView Methods
-    
-    /**
-        Function executed as Cell is getting ready to be displayed
- 
-    */
-    
+  
+  /// Function called during the segue from NinthViewController to Detail View Controller
+
+  override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "ShowNinthPhotoDetail" {
+      let destinationVC = segue.destination as! NinthDetailViewController
+      if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
+        updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
+      }
+    } // if segue
+  }
+  
+  /// Function updates photo in Detail screen
+  func updateDestinationData(destinationVC: NinthDetailViewController, indexPath: IndexPath) {
+    let photo = photoDataSource.photoForItemAtIndexPath(indexPath: indexPath)
+    destinationVC.photo = photo
+    destinationVC.store = store
+  }
+  
+
+  
+}  // end class
+
+
+
+
+
+    // MARK: - CollectionView
+
+
+extension NinthViewController:  NinthPhotoCollectionViewCellDelegate  {
+  
+  
+  /**
+   Function executed as Cell is getting ready to be displayed
+   
+   */
+
     override public func collectionView (_ collectionView: UICollectionView,
                                   willDisplay cell: UICollectionViewCell,
                                   forItemAt indexPath: IndexPath )  {
@@ -194,35 +188,7 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
     } //end method
     
     
-    
-    
-    
-    
-    /**
-        Function called during the segue from NinthViewController to Detail View Controller
-    */
-    
-    
-    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowNinthPhotoDetail" {
-            let destinationVC = segue.destination as! NinthDetailViewController
-            if let selectedIndexPath = photoCollectionView?.indexPathsForSelectedItems?.first {
-                updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
-            }
-        } // if segue
-    }
-    
-
-    
-    
-    func updateDestinationData(destinationVC: NinthDetailViewController, indexPath: IndexPath) {
-            let photo = photoDataSource.photoForItemAtIndexPath(indexPath: indexPath)
-            destinationVC.photo = photo
-            destinationVC.store = store
-    }
-    
-    
-    
+  
     
     /*
     func collectionView(collectionView: UICollectionView,
@@ -238,13 +204,7 @@ public class NinthViewController: UICollectionViewController, NinthPhotoCollecti
     
     
     */
-    
-    
-    
-    
-    
-    
-    
+  
     
     
 }  // end class
