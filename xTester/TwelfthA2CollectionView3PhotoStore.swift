@@ -62,9 +62,18 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         
         //  Call the generic method to get a SwiftyJSON object
         let params = ["extras":"url_h,date_taken"]
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
+        // let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
+        
+        let url = getSiteURL(baseURLString: baseURLString, method: method, parameters: params, apiKey: apiKey)  // Flickr
+        
+        
         getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
     }
+    
+    
+    
+    
+    
     
     
     

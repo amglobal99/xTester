@@ -441,7 +441,7 @@ class FourteenthViewController: UIViewController {
         let user = "user"
         //let user = "jack"
         let password = "password"
-        let credential = URLCredential(user: user, password: password, persistence: .forSession)
+        _ = URLCredential(user: user, password: password, persistence: .forSession)
         let loginString = String(format: "%@:%@", user, password)
         let loginData = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString()

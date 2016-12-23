@@ -1,21 +1,18 @@
 //
-//  xTesterTests.swift
-//  xTesterTests
+//  TwelfthA2ViewControllerTests.swift
+//  xTester
 //
-//  Created by Dad on 10/7/16.
+//  Created by Dad on 12/22/16.
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
 import XCTest
 @testable import xTester
 
-//class xTesterTests: XCTestCase, JsonConvertible {
-    
-    class xTesterTests: BaseTestCase  {
-        
-        
-    
-    
+
+
+
+class TwelfthA2ViewControllerTests: BaseTestCase {
     
     
     override func setUp() {
@@ -28,11 +25,11 @@ import XCTest
         super.tearDown()
     }
     
+    func testExample() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
     
-        
-        
-        
-        
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
@@ -40,7 +37,4 @@ import XCTest
         }
     }
     
-    
-    
-        
-}  // end class
+}

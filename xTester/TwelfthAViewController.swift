@@ -33,7 +33,7 @@ class TwelfthAViewController: UIViewController, Utils {
                 print("Selecte TwelfthA1ViewController")
             case .TwelfthA2Segue:
                 
-                let twelfthA2VC = segue.destination  as! TwelfthA2ViewController
+                _ = segue.destination  as! TwelfthA2ViewController
                 
                 
                 /*

@@ -27,8 +27,7 @@ class Store: StoreService, Utils, JsonConvertible {
     typealias TA2String = String
     
     
-    
-    
+       
     
     // MARK: - Enums
     enum ImageResult {

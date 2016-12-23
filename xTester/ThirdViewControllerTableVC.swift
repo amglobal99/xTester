@@ -54,10 +54,10 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
             // Our form has been validated. Proceed with next actions.
             let status = statusSwitch.isOn ? "Active" : "Inactive"
             print("Status: \(status) " )
-            let jsonTodo: Data   // variable to hold Data created from JSON object
+            var jsonTodo: Data   // variable to hold Data created from JSON object
 
             // Get values for fields on Form
-            let id = Int(idLabel.text!)
+            _ = Int(idLabel.text!)
             let title = nameLabel.text
             var json:[String:Any] = [:]  // create Dictionary
             
@@ -81,6 +81,7 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
                 return
             }
             var urlRequest = URLRequest(url: url)
+            urlRequest.httpBody = jsonTodo   //  Attach Form data here
             urlRequest.httpMethod = "POST"
             print("Sending Alamofire request")
             Alamofire.request(urlRequest)
@@ -124,9 +125,9 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
         var nameIsValid:Bool = false
         var emailIsValid:Bool = false
         var zipIsValid:Bool = false
-        let salesIsValid:Bool =  false
-        var dateIsValid:Bool = false
-        var siccodeIsValid:Bool =  false
+        // var salesIsValid:Bool =  false
+        // var estDateIsValid:Bool = false
+        // var siccodeIsValid:Bool =  false
         
         // ID Validation
         if (idLabel.text?.contains("5"))!{
@@ -185,6 +186,14 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
             zipIsValid = true
             print("Zip is valid.")
         }
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         if idIsValid && nameIsValid && emailIsValid && zipIsValid   {
@@ -393,9 +402,13 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
             let jsonTodo: Data   // variable to hold Data created from JSON object
             
             // Get values for fields on Form
-            let id = Int(idLabel.text!)
+            var id = Int(idLabel.text!)
             let title = nameLabel.text
             var json:[String:Any] = [:]  // create Dictionary
+            
+            // ====== Remove this later
+            id = id! + 5
+            // ==========================
             
             // Set values in Dictionary using Form data entry values
             json["userId"] = 1
@@ -417,6 +430,7 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
                 return
             }
             var urlRequest = URLRequest(url: url)
+            urlRequest.httpBody = jsonTodo  // attach Form data here
             urlRequest.httpMethod = "POST"
             print("Sending Alamofire request")
             Alamofire.request(urlRequest)
@@ -475,9 +489,9 @@ class ThirdViewControllerTableVC: UITableViewController, UITextFieldDelegate,   
         var nameIsValid:Bool = false
         var emailIsValid:Bool = false
         var zipIsValid:Bool = false
-        let salesIsValid:Bool =  false
-        var dateIsValid:Bool = false
-        var siccodeIsValid:Bool =  false
+        // let salesIsValid:Bool =  false
+        // var dateIsValid:Bool = false
+        // var siccodeIsValid:Bool =  false
         
         // ID Validation
         if (idLabel.text?.contains("5"))!{

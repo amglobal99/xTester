@@ -16,14 +16,12 @@ import SwiftyJSON
 @testable import xTester
 
 
-
-
 class NinthViewControllerTests: BaseTestCase {
 
 
         var ninthVC: NinthViewController!
         var ninthDestinationVC: NinthDetailViewController!
-    var window: UIWindow!
+        var window: UIWindow!
 
     
     
@@ -39,42 +37,35 @@ class NinthViewControllerTests: BaseTestCase {
     
     
     
-func setupCreateNinthViewController() {
-    
-    let tabBarController: UITabBarController
-    
-    let bundle = Bundle.main
-    let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
-    
-    
-     //if self.window!.rootViewController as? UITabBarController != nil {
-        tabBarController = self.window!.rootViewController as! UITabBarController
-        tabBarController.selectedIndex = 2
-     //}
-    
-    
-    
-    ninthVC = storyboard.instantiateViewController(withIdentifier: "Ninth")  as! NinthViewController
-    ninthDestinationVC = storyboard.instantiateViewController(withIdentifier: "NinthDetailViewController")  as! NinthDetailViewController
-    ninthVC.store = NinthPhotoStore()  // give the VC a store object
-    ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
-   // _ =  ninthVC.view
-    
-    
-    
-    
-    
-    
-    addViewToWindow()
-}
+    func setupCreateNinthViewController() {
+        
+        let tabBarController: UITabBarController
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
+        
+        /*
+         if self.window!.rootViewController as? UITabBarController != nil {
+            tabBarController = self.window!.rootViewController as! UITabBarController
+            tabBarController.selectedIndex = 2
+         }
+        */
+        
+        
+        ninthVC = storyboard.instantiateViewController(withIdentifier: "Ninth")  as! NinthViewController
+        ninthDestinationVC = storyboard.instantiateViewController(withIdentifier: "NinthDetailViewController")  as! NinthDetailViewController
+        ninthVC.store = NinthPhotoStore()  // give the VC a store object
+        ninthVC.photoDataSource = NinthPhotoCollectionViewDataSource()
+       // _ =  ninthVC.view
+        addViewToWindow()
+    }
 
 
 
 
-func addViewToWindow()   {
-    window.addSubview(ninthVC.view)
-    RunLoop.current.run(until: Date())
-}
+    func addViewToWindow()   {
+            window.addSubview(ninthVC.view)
+            RunLoop.current.run(until: Date())
+    }
 
 
 
@@ -117,9 +108,11 @@ func addViewToWindow()   {
         XCTAssertNotNil(ninthVC.dataKey)
     }
 
+    /*
     func testThatParamsIsAvailable() {
         XCTAssertNotNil(ninthVC.params)
     }
+    */
     
     
     func testThatPhotoCollectionViewIsAvailable() {
@@ -288,7 +281,7 @@ func addViewToWindow()   {
         let index = IndexPath(row: 0, section: 0)
        // photoCollectionView.selectItem(at: index, animated: false, scrollPosition: UICollectionViewScrollPosition(rawValue: UInt(1)))
         
-       let cell =  photoCollectionView.cellForItem(at: index)
+       _ =  photoCollectionView.cellForItem(at: index)
        // photoCollectionView.selectItem(at: index, animated: false, scrollPosition: UICollectionViewScrollPosition.left  )
        // photoCollectionView.selectItem(at: index, animated: false, scrollPosition: UICollectionViewScrollPosition.top  )
         
@@ -307,6 +300,10 @@ func addViewToWindow()   {
     
     
     
+    
+    func testThatNothing() {
+        XCTAssertTrue(true, "True should be true")
+    }
     
     
     

@@ -9,13 +9,11 @@
 import Foundation
 import Alamofire
 import XCTest
-
 @testable import xTester
 
 
 
 class BaseTestCase: XCTestCase, JsonConvertible {
-    
     
     let timeout: TimeInterval = 30.0
     let filemgr = FileManager.default
@@ -51,7 +49,7 @@ class BaseTestCase: XCTestCase, JsonConvertible {
             print("Error: \(error.localizedDescription)")
         }
         
-    }
+    } // end func
     
     
     
@@ -61,9 +59,7 @@ class BaseTestCase: XCTestCase, JsonConvertible {
         return bundle.url(forResource: fileName, withExtension: ext)!
     }
  
- 
-    
-    
+
     
  
  

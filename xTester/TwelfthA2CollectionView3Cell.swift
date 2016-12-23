@@ -43,6 +43,11 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
         optionMenu.addAction(cancelAction)
         
         self.parentViewController?.present(optionMenu, animated: true, completion: {
+            
+            
+            
+            
+            
             print("completed presenting alert.....")
             }
         )
