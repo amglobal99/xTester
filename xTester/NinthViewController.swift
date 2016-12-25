@@ -34,7 +34,8 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
     // MARK: - Local Variables
     var city:String!
     var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
-    
+  
+  /*
     // MARK: - Global Constants Variables
     let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
     let apiKey = Constants.Configuration.apiKey
@@ -43,6 +44,19 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
     let rootPath = Constants.Configuration.rootPath
     let dataKey = Constants.Configuration.dataKey
     let params = Constants.Configuration.params
+  
+  
+  */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
     // MARK:- Data Variables
     /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
@@ -65,6 +79,16 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
         photoCollectionView.dataSource = photoDataSource
         photoCollectionView.delegate = self
       
+        // get details for web site used for testing
+      // Get access to test site details for Row #2
+      guard let testSite = Constants.Configuration.TestSite(rawValue: "FLICKR") else {
+        return
+      }
+      
+      
+      
+      
+      
         // Completion Handler
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
@@ -78,7 +102,7 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
                 let itemsResult: NinthPhotoStore.NinthPhotosResult   = strongSelf.store.photosFromJsonObject(jsonObj)
                 
                 // get array of Section titles
-                guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: strongSelf.key)   else {
+                guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: testSite.key)   else {
                     //print("getKeyArray method returned a nil value.")
                     return
                 }
@@ -89,7 +113,11 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
                 */
                 
                 // get Section Title: Photos Dictionary
-                guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: strongSelf.key) else {
+               // guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: strongSelf.key) else {
+                  
+                  guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: testSite.key) else {
+                    
+                  
                         print("Section Photo Items Dictionary is nil")
                         return
                 }
@@ -117,13 +145,30 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
                 
         } // end closure
   
+      
+      /*
         // Create a Async(Alamofire) request to get jSON data
       guard   let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else {
         return
       }
       
       getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-        
+      
+      */
+      
+      
+      guard   let url = getSiteURL(baseURLString: testSite.urlString, method: testSite.method, parameters: testSite.params, apiKey: testSite.apiKey) else {
+        return
+      }
+      
+      getJSONObject(for: url, rootPath: testSite.rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+      
+      
+      
+      
+      
+      
+      
     }  // end viewDidLoad
     
     

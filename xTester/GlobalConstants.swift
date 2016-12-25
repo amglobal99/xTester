@@ -313,7 +313,7 @@ struct Constants {
 
 
       
-        
+        /*
         
         // Enum store sthe various URLs we use for testing
         enum jsonTestUrl:String {
@@ -333,6 +333,10 @@ struct Constants {
             // GitHub: root is [] .... objects start at root
             case gitHub = "https://api.github.com/users/amglobal99/repos"
         }
+      
+      
+      */
+      
       
       
       

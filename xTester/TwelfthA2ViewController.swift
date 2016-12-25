@@ -61,32 +61,9 @@ protocol StoreService {
         var tableviewDataSource: TwelfthA2TableViewDataSource!   // This defines the DataSource for the TableView
         var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
       
-      
-      
-      
-      
-        // MARK: - Global Constants Variables
-        let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-        let apiKey = Constants.Configuration.apiKey
-        let method = Constants.Configuration.method
-        let key  = Constants.Configuration.key
-        var rootPath = Constants.Configuration.rootPath
-        let dataKey = Constants.Configuration.dataKey
-        let params = Constants.Configuration.params
-      
-      
-        let baseURLString2  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
-        let apiKey2:String? = nil
-        let method2:String? = nil
-        let key2 = "statusKey"
-        let rootPath2 = ["stationBeanList"]
-        let dataKey2:String? = nil
-        let params2: [String: String]?  = nil
-
-      
-      
-      
-      
+        // Specify your test site here
+        let testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
+        let testSite3Name = "FLICKR"
    
       
         // MARK: - Initializers
@@ -141,19 +118,15 @@ protocol StoreService {
             (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
           
           
-          
-          
-          guard let testSite2 = Constants.Configuration.TestSite(rawValue: "BIKENYC") else {
-            return
-          }
-        
-          guard let testSite3 = Constants.Configuration.TestSite(rawValue: "FLICKR") else {
-            return
-          }
-          
-          
-        
-          
+            // Get access to test site details for Row #2
+            guard let testSite2 = Constants.Configuration.TestSite(rawValue: testSite2Name) else {
+              return
+            }
+            // get access to test site details for Row #3
+            guard let testSite3 = Constants.Configuration.TestSite(rawValue: testSite3Name) else {
+              return
+            }
+            
           
           
           // This is the request for Table Row #2
@@ -169,14 +142,14 @@ protocol StoreService {
                   // get list of Photos(returns array of 'TwelfthA2Photo' items)
                   let itemsResult2  = strongSelf.store2.photosFromJsonObject(jsonObj2)
                   // get array of Section titles
-                  guard let photoKeyArray2 =  strongSelf.getSectionTitlesArray(from: jsonObj2, key: strongSelf.key2)   else {
+                    guard let photoKeyArray2 =  strongSelf.getSectionTitlesArray(from: jsonObj2, key: testSite2.key )   else {
                     print("Coll View 2: getKeyArray method returned a nil value.")
                     return
                   }
                   print("\n\n+++++++++ Coll View 2: Section Titles Array  ++++++++++++++")
                   print(photoKeyArray2)
                   // get Section Title: Photos Dictionary
-                  guard let sectionPhotosDictionary2 = strongSelf.store2.sectionPhotosDictionary(from: jsonObj2, for: strongSelf.key2) else {
+                 guard let sectionPhotosDictionary2 = strongSelf.store2.sectionPhotosDictionary(from: jsonObj2, for: testSite2.key) else {
                     print("Coll View 2: Section Photo Items Dictionary is nil")
                     return
                   }
@@ -201,17 +174,16 @@ protocol StoreService {
               
           } // end closure
           
-          // Create a Async(Alamofire) request to get Json data for Table Row #2.
-          guard let url2 = getSiteURL(baseURLString: baseURLString2, method: method2, parameters: params2, apiKey: apiKey2) else {
+          // Create a Async(Alamofire) request to get Json data for Table Row #2
+          guard let url2 = getSiteURL(baseURLString: testSite2.urlString, method: testSite2.method, parameters: testSite2.params, apiKey: testSite2.apiKey) else {
             return
           }
-          getJSONObject(for: url2, rootPath: rootPath2, completionHandler: completionHandler2)  // get a SwiftyJSON object
-          
+          getJSONObject(for: url2, rootPath: testSite2.rootPath, completionHandler: completionHandler2)  // get a SwiftyJSON object
           
           
           
           // This is the request for Table Row # 3
-          let completionHandler: (Result<JSON>) -> Void  =
+          let completionHandler3: (Result<JSON>) -> Void  =
             // Shown below is an example of using a typealias
             // We will use a typealias ( defined in GlobalConstants.swift file)  in line below
             // let completionHandler: ClosureJSON<Result<JSON> >  =
@@ -227,14 +199,14 @@ protocol StoreService {
               // get list of Photos(returns array of 'TwelfthA2Photo' items)
               let itemsResult: TwelfthA2CollectionView3PhotoStore.TwelfthA2PhotosResult   = strongSelf.store.photosFromJsonObject(jsonObj)
               // get array of Section titles
-              guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: strongSelf.key)   else {
-                print("Coll View 3: getKeyArray method returned a nil value.")
+               guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: testSite3.key)   else {
+               print("Coll View 3: getKeyArray method returned a nil value.")
                 return
               }
               print("\n\n+++++++++  Coll View 3: Section Titles Array  ++++++++++++++")
               print(photoKeyArray)
               // get Section Title: Photos Dictionary
-              guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: strongSelf.key) else {
+              guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: testSite3.key) else {
                 print("Coll View 3: Section Photo Items Dictionary is nil")
                 return
               }
@@ -259,13 +231,14 @@ protocol StoreService {
               
           } // end closure
           
-          // Create a Async(Alamofire) request to get Json data for Table Row #1
-          guard let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else {
+          
+          // Create a Async(Alamofire) request to get Json data for Table Row #3
+          guard let url3 = getSiteURL(baseURLString: testSite3.urlString, method: testSite3.method, parameters: testSite3.params, apiKey: testSite3.apiKey) else {
             return
           }
-          getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+          getJSONObject(for: url3, rootPath: testSite3.rootPath, completionHandler: completionHandler3)  // get a SwiftyJSON object
           
-
+          
           
     }  // end viewDidLoad
     

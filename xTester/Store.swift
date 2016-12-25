@@ -51,9 +51,9 @@ class Store: StoreService, Utils, JsonConvertible {
     
     // MARK: - Local Variables
     let session = Constants.Configuration.session
-    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let apiKey = Constants.Configuration.apiKey
-    let method  = Constants.Configuration.method
+    //let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
+    //let apiKey = Constants.Configuration.apiKey
+    //let method  = Constants.Configuration.method
     var jsonResultObject:JSON?
     
     
@@ -63,6 +63,12 @@ class Store: StoreService, Utils, JsonConvertible {
     
     // This function will retrieve JSON object and place it in the 'jsonResultObject' variable
     func fetchJsonObject() {
+      
+      // Get access to test site details for Row #2
+      guard let testSite = Constants.Configuration.TestSite(rawValue: "FLICKR") else {
+        return
+      }
+      
         
         let completionHandler: (Result<JSON>) -> Void  =
             { [weak self] result in
@@ -75,11 +81,26 @@ class Store: StoreService, Utils, JsonConvertible {
         
         //  Call the generic method to get a SwiftyJSON object
         let params = ["extras":"url_h,date_taken"]
+      
+      /*
       guard let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  else {
         return
       }
       getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
-    }
+    
+  */
+      
+      guard let url = getSiteURL(baseURLString: testSite.urlString, method: testSite.method, parameters: testSite.params, apiKey: testSite.apiKey) else {
+        return
+      }
+      getJSONObject(for: url, rootPath: testSite.rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+      
+      
+      
+      
+      
+  
+  }
     
     
     

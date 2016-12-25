@@ -45,42 +45,16 @@ class NinthPhotoStore: Utils, JsonConvertible {
     // MARK: - Local Variables
     
     let session = Constants.Configuration.session
-    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let apiKey = Constants.Configuration.apiKey
-    let method  = Constants.Configuration.method
     var jsonResultObject:JSON?
-    
-    
-    
+  
+    let testSite = Constants.Configuration.TestSite(rawValue: "FLICKR")
+  
+  
+  
     
     // MARK:- Methods
-    
-    // This function will retrieve JSON object and place it in the 'jsonResultObject' variable
-    func fetchJsonObject() {
-        let params = ["extras":"url_h,date_taken"]
-      
-         // I think we need to use Operation here to insert any value son main THread
-        
-                let completionHandler: (Result<JSON>) -> Void  =
-                    { result in
-                        self.jsonResultObject = result.value!
-                        print("========= Items List from fetchJsonObject method ++++++++ ")
-                        if self.jsonResultObject != nil {
-                            // print(jsObj)
-                        }
-                } // end closure
-        
-        //  Call the generic method to get a SwiftyJSON object
-      
-      guard  let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else  {
-        return
-      }
-      
-      getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
-    }
-    
-    
-    
+  
+  
     // Function to retrieve array of NinthPhoto objects
     func photosFromJsonObject(_ json:JSON) -> NinthPhotosResult {
             var finalPhotos:[NinthPhoto] = []

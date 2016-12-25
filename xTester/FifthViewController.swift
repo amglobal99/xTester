@@ -19,10 +19,13 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
     
     //  Enable one of these to test
     //let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let baseURLString  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
+    //let baseURLString  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
     //let baseURLString  = Constants.Configuration.jsonTestUrl.google.rawValue
     //let baseURLString  = Constants.Configuration.jsonTestUrl.gitHub.rawValue
 
+  
+  
+  
   
   
   // UNCOMMent appropriate section as needed
@@ -133,6 +136,17 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+      
+      
+      guard let testSite = Constants.Configuration.TestSite(rawValue: "BIKENYC") else {
+        return
+      }
+      
+      
+
+      
+      
+      
             // ********  Completion Handler *************
             let completionHandler: (Result<JSON>) -> Void  =
                 { [weak self] result in
@@ -147,13 +161,25 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
       
         
         // Create a Async (Alamofire) request to get SwiftyJSON data
-      // If you change URL to test, also make required chnage for constants in GlobalConstants.swift file
+      /*
       guard let url = getSiteURL(baseURLString: baseURLString, method: method , parameters: params, apiKey: apiKey) else {
         return
       }
       
         getJSONObject(for: url, rootPath: rootPath,   completionHandler: completionHandler)  // get a SwiftyJSON object
-    }  // end viewDidLoad
+    
+  */
+      
+      guard let url = getSiteURL(baseURLString: testSite.urlString, method: testSite.method , parameters: testSite.params, apiKey: testSite.apiKey) else {
+        return
+      }
+      
+      getJSONObject(for: url, rootPath: testSite.rootPath,   completionHandler: completionHandler)  // get a SwiftyJSON object
+      
+      
+  
+  
+  }  // end viewDidLoad
     
     
         

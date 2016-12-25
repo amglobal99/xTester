@@ -38,48 +38,13 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     // MARK: - Local Variables
     let session = Constants.Configuration.session
-    let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
-    let apiKey = Constants.Configuration.apiKey
-    let method  = Constants.Configuration.method
     var jsonResultObject:JSON?
     
-    
-    
-    
-    // MARK:- JSON Methods
-    
-    // This function will retrieve JSON object and place it in the 'jsonResultObject' variable
-    func fetchJsonObject() {
-        
-        let completionHandler: (Result<JSON>) -> Void  =
-            { [weak self] result in
-                self?.jsonResultObject = result.value!
-                print("========= Items List from fetchJsonObject method ++++++++ ")
-                if self?.jsonResultObject != nil {
-                    // print(jsObj)
-                }
-        } //end closure
-        
-        //  Call the generic method to get a SwiftyJSON object
-        let params = ["extras":"url_h,date_taken"]
-        // let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
-        
-      guard let url = getSiteURL(baseURLString: baseURLString, method: method, parameters: params, apiKey: apiKey)  else {
-        return
-      }
-        
-        getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
-    }
-    
-    
   
-    
-    
-    
-    
-    
-    
-    
+  
+    // MARK:- JSON Methods
+  
+  
     
     /** 
      Function retrieves an array of TwelfthA2Photo objects.
