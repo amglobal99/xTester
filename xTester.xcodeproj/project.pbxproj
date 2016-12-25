@@ -406,12 +406,12 @@
 		0F38F4D51DA7F8AF0086BAA8 = {
 			isa = PBXGroup;
 			children = (
+				C2ED8C28F07F25AD3F795727 /* Frameworks */,
+				BFBB24E469F6E39C37B30E79 /* Pods */,
 				0F38F4DF1DA7F8AF0086BAA8 /* Products */,
 				0F38F4E01DA7F8AF0086BAA8 /* xTester */,
 				0F38F4F81DA7F8AF0086BAA8 /* xTesterTests */,
 				0F38F5031DA7F8AF0086BAA8 /* xTesterUITests */,
-				BFBB24E469F6E39C37B30E79 /* Pods */,
-				C2ED8C28F07F25AD3F795727 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -484,8 +484,8 @@
 			children = (
 				0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */,
 				0F61D9861DE66F110006D544 /* TwelfthA2CollectionView1SectionHeader.swift */,
-				0F3CC0021DE7ACF2005CEFBB /* TwelfthA2CollectionView3SectionHeader.swift */,
 				0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */,
+				0F3CC0021DE7ACF2005CEFBB /* TwelfthA2CollectionView3SectionHeader.swift */,
 			);
 			name = HeaderViews;
 			sourceTree = "<group>";

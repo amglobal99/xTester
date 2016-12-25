@@ -53,8 +53,8 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
    - Returns: An Integer showing how many sections
    */
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    //return self.sections.count
-    return 1
+    return self.sections.count
+    //return 2
   }
   
   
@@ -69,9 +69,9 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     let itemsInSection = photosForSection(section)
     print("Coll View 2: Number of Items in section \(section) : \(itemsInSection.count)")
-    //return itemsInSection.count
+    return itemsInSection.count
     
-    return 10
+    //return 10
     
   }  // end func
   
@@ -79,27 +79,36 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   
   /// Function to get a Cell for a given IndexPath
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-   
-    
-    
-    
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView2Cell
     
-    //let photo = photoForItemAtIndexPath(indexPath: indexPath)
+    let photo = photoForItemAtIndexPath(indexPath: indexPath)
     
-    /*
-    cell.photoIDLabel.text = photo.photoID
-    cell.photoServerLabel.text = photoTitleToDisplay
-    cell.updateWithImage(photo.image)
-    */
     
-    cell.idLabel.text = "jack"
-    cell.staddressLabel.text = "1808 Mountain"
+    
+    
+    
+    cell.idLabel.text = photo.bikeID
+    cell.staddressLabel.text  = photo.stAddress1
+    
+    //cell.idLabel.text = "jack"
+    //cell.staddressLabel.text = "1808 Mountain"
     
     
     return cell
   } //end func
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -115,9 +124,9 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
     let rowNumber = (indexPath as IndexPath).row
     let sectionNumber = (indexPath as IndexPath).section
     print( "HEADER: Row is : \(rowNumber) and Section is: \(sectionNumber) ")
-    //let sectionLabel = sections[sectionNumber]  // Retrieve section title from our stored array
+    let sectionLabel = sections[sectionNumber]  // Retrieve section title from our stored array
     
-    let sectionLabel = "Jack'"
+   // let sectionLabel = "Jack'"
     
     print("Our section label is : \(sectionLabel) " )
     let title = "Section :: " + sectionLabel
