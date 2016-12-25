@@ -20,18 +20,11 @@ protocol TwelfthA2CollectionView2CellDelegate
 class TwelfthA2CollectionView2Cell: UICollectionViewCell {
 
 
-
-
   @IBOutlet weak var idLabel: UILabel!
-
-
 
   @IBOutlet weak var staddressLabel: UILabel!
 
 
-  
-  
-  
   
   
   

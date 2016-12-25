@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F10A5911E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */; };
 		0F11D35C1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */; };
 		0F19233A1DA87A9100FF9E4D /* Sixth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1923391DA87A9100FF9E4D /* Sixth.storyboard */; };
 		0F19233E1DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F19233D1DA87FF400FF9E4D /* SixthDetailViewController.swift */; };
@@ -166,6 +167,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2SectionHeader.swift; sourceTree = "<group>"; };
 		0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		0F1923391DA87A9100FF9E4D /* Sixth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sixth.storyboard; sourceTree = "<group>"; };
 		0F19233D1DA87FF400FF9E4D /* SixthDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthDetailViewController.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 				0F2E0DBF1DD6528C001620FF /* NinthPhotoSectionHeaderView.swift */,
 				0F61D9861DE66F110006D544 /* TwelfthA2CollectionView1SectionHeader.swift */,
 				0F3CC0021DE7ACF2005CEFBB /* TwelfthA2CollectionView3SectionHeader.swift */,
+				0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */,
 			);
 			name = HeaderViews;
 			sourceTree = "<group>";
@@ -1027,6 +1030,7 @@
 				0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */,
 				0F24FD9D1DA968D900DF8A29 /* EighthViewController.swift in Sources */,
 				0F19233E1DA87FF400FF9E4D /* SixthDetailViewController.swift in Sources */,
+				0F10A5911E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift in Sources */,
 				0F9887DD1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */,
 				0FD9707A1DA802480099BE54 /* ButtonView.swift in Sources */,
 				0F3CC0071DE7AD9D005CEFBB /* TwelfthA2CollectionView1FlowLayout.swift in Sources */,

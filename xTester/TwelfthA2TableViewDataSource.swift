@@ -117,6 +117,13 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
                 tableViewCell1.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
             case 1:
                 print("TableView willDisplayCell for row #2")
+          
+                guard let tableViewCell2 = cell as? TwelfthA2TableViewCell2 else { return }
+                tableViewCell2.setCollectionViewDataSourceDelegate(dataSource: collectionView2DataSource,
+                                                                   dataSourceDelegate: collectionView2DataSource, forRow: indexPath.row)
+                tableViewCell2.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+          
+          
             case 2:
                 print("TableView willDisplayCell for row #3")
                 // ======== This controls the Collection View in row 3  ==========

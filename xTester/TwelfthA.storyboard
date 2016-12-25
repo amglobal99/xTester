@@ -255,13 +255,13 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="pNt-Dt-vvz" customClass="TwelfthA2CollectionView2FlowLayout" customModule="xTester" customModuleProvider="target">
                                                 <size key="itemSize" width="90" height="90"/>
-                                                <size key="headerReferenceSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="72" height="50"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="5" minY="2" maxX="0.0" maxY="2"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JXu-uh-7sj" customClass="TwelfthA2CollectionView2Cell" customModule="xTester" customModuleProvider="target">
-                                                    <rect key="frame" x="55" y="5" width="90" height="90"/>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView2Cell" id="JXu-uh-7sj" customClass="TwelfthA2CollectionView2Cell" customModule="xTester" customModuleProvider="target">
+                                                    <rect key="frame" x="77" y="5" width="90" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -292,9 +292,24 @@
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
-                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CCZ-5r-LSk">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
+                                            <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView2SectionHeader" id="CCZ-5r-LSk" customClass="TwelfthA2CollectionView2SectionHeader" customModule="xTester" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vg-nN-EIi">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="7vg-nN-EIi" firstAttribute="centerX" secondItem="CCZ-5r-LSk" secondAttribute="centerX" id="Z5s-rR-Oj6"/>
+                                                    <constraint firstItem="7vg-nN-EIi" firstAttribute="centerY" secondItem="CCZ-5r-LSk" secondAttribute="centerY" id="eQu-F8-R6Z"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="section2Label" destination="7vg-nN-EIi" id="9mW-gk-GEA"/>
+                                                </connections>
                                             </collectionReusableView>
                                         </collectionView>
                                     </subviews>

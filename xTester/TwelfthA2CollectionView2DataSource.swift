@@ -109,16 +109,19 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
                       at indexPath: IndexPath) -> UICollectionReusableView{
     
     let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                     withReuseIdentifier: "TwelfthA2CollectionView3SectionHeader",
-                                                                     for: indexPath) as! TwelfthA2CollectionView3SectionHeader
+                                                                     withReuseIdentifier: "TwelfthA2CollectionView2SectionHeader",
+                                                                     for: indexPath) as! TwelfthA2CollectionView2SectionHeader
     
     let rowNumber = (indexPath as IndexPath).row
     let sectionNumber = (indexPath as IndexPath).section
     print( "HEADER: Row is : \(rowNumber) and Section is: \(sectionNumber) ")
-    let sectionLabel = sections[sectionNumber]  // Retrieve section title from our stored array
+    //let sectionLabel = sections[sectionNumber]  // Retrieve section title from our stored array
+    
+    let sectionLabel = "Jack'"
+    
     print("Our section label is : \(sectionLabel) " )
     let title = "Section :: " + sectionLabel
-    headerView.section3Label.text = title
+    headerView.section2Label.text = title
     return headerView
   }  // end func
   
