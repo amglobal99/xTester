@@ -112,9 +112,6 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   
   
   
-  
-  
-  
   /// Function runs when a Cell is selected
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print("didselect .......")
@@ -123,9 +120,7 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   }
   
   
-  
-  
-  
+
   
   // MARK: - Index Related Methods
   

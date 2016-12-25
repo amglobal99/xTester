@@ -46,25 +46,22 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     let session = Constants.Configuration.session
     var jsonResultObject:JSON?
-  
     let testSite = Constants.Configuration.TestSite(rawValue: "FLICKR")
-  
-  
   
     
     // MARK:- Methods
   
   
-    // Function to retrieve array of NinthPhoto objects
+    /// Function to retrieve array of NinthPhoto objects
     func photosFromJsonObject(_ json:JSON) -> NinthPhotosResult {
             var finalPhotos:[NinthPhoto] = []
             var addCount = 0
             // print("      json object count is : \(json.count)   ")
         
-                    print("***************** JSON Object *********************")
-                    print(json)
-                    print("***************** end JSOn object *****************")
-        
+                print("***************** JSON Object *********************")
+                print(json)
+                print("***************** end JSOn object *****************")
+    
                 for ( _, jsonItem) in json {
                     if let photo: NinthPhoto  = photoFromJSONObject(jsonItem) {
                         finalPhotos.append(photo)
@@ -77,9 +74,9 @@ class NinthPhotoStore: Utils, JsonConvertible {
                     return  NinthPhotosResult.failure(FlickrError.invalidJSONData)
                 }
         
-                    print("       ++++++++++++  Final Photos +++++++++++++++++")
-                    print("      Array contains \(finalPhotos.count)  photos" )
-        
+                print("       ++++++++++++  Final Photos +++++++++++++++++")
+                print("      Array contains \(finalPhotos.count)  photos" )
+    
                 return NinthPhotosResult.success(finalPhotos)
     }  // end func
     
@@ -91,10 +88,10 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     
     
-    // Function to get indiviaul Photo object
-    // If any of the fields is unavailable, it returns a nil
-    // Many entries do nit have a URL, so that Photo wil not be returned
-    //
+    /// Function to get indiviaul Photo object
+    /// If any of the fields is unavailable, it returns a nil
+    /// Many entries do nit have a URL, so that Photo wil not be returned
+  
     func photoFromJSONObject(_ json: JSON ) -> NinthPhoto? {
         guard
             let photoID = json["id"].string,
@@ -116,7 +113,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     
     
-    // Function to fetch image for Photo
+    /// Function to fetch image for Photo
     func fetchImageForPhoto(_ photo: NinthPhoto, completion: @escaping (ImageResult) -> Void ) {
         
         //print("          fetchImageForPhoto: Started for \(photo.photoID) ")
@@ -129,26 +126,29 @@ class NinthPhotoStore: Utils, JsonConvertible {
         
         // Alamofire Call
             Alamofire.request(request).response
-                { (response) -> Void  in
-                        guard response.error  == nil else {   // got an error
-                            print(response.error!)
-                            return
-                        }
-                        guard response.data != nil else {
-                            return
-                        }
-                        let result: ImageResult = (self.processImageRequest(data: response.data, error: response.error as NSError?))
-    
-                    
-                        // ********** DO I NEED TO USE OPERATION HERE ????
-                    
-                    
-                        if case let ImageResult.success(image) = result {
-                            photo.image = image
-                            // print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
-                        }
-                    
-                        completion(result)
+                { [weak self] response in
+                    guard let strongSelf =  self else {
+                      return
+                    }
+                    guard response.error  == nil else {   // got an error
+                        print(response.error!)
+                        return
+                    }
+                    guard response.data != nil else {
+                        return
+                    }
+                    let result: ImageResult = strongSelf.processImageRequest(data: response.data, error: response.error as NSError?)
+
+                
+                    // ********** DO I NEED TO USE OPERATION HERE ????
+                
+                
+                    if case let ImageResult.success(image) = result {
+                        photo.image = image
+                        // print("          fetchImageForPhoto: image obtained successfully for \(photo.photoID)" )
+                    }
+                
+                    completion(result)
                 }  // end closure
             
         
@@ -157,8 +157,8 @@ class NinthPhotoStore: Utils, JsonConvertible {
 
     
     
-    // Function to retrieve a single Photo image
-    //  parameter:  data
+    /// Function to retrieve a single Photo image
+    ///  parameter data:  Data passed in
     func processImageRequest(data: Data?, error: NSError?) -> ImageResult {
         
         guard let  imageData = data,  let image = UIImage(data: imageData)   else {
@@ -170,12 +170,13 @@ class NinthPhotoStore: Utils, JsonConvertible {
             }
         }
         return .success(image )
-    } //end method
+    } //end func
 
     
     
     // Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
      func sectionPhotosDictionary(from obj:JSON?, for key:String? ) -> [String:[NinthPhoto]]? {
+      
         var keyArray:[String] = []
         var photoItems:[NinthPhoto] = []
         var sectionPhotosDictionary:[String:[NinthPhoto]] = [:]   // Create a Dictionary to hold our data
@@ -215,15 +216,13 @@ class NinthPhotoStore: Utils, JsonConvertible {
         
     
    
-    /**
-        Returns the Row and Section for a particular photo
+  
+    ///    Returns the Row and Section for a particular phot
+    ///   - Parameter dict:  A Dcitionary with the section title as the key and array of photos as values
+    ///    - Parameter photo: The photo for which we want to identify the row number and section number
+    ///
+    ///  - Returns: A tuple with the row number and section number
  
-        - Parameter dict:  A Dcitionary with the section title as the key and array of photos as values
-        - Parameter photo: The photo for which we want to identify the row number and section number
-    
-        - Returns: A tuple with the row number and section number
- 
-    */
     func indexForPhoto ( dict:[String:[NinthPhoto]], photo:NinthPhoto ) -> (Int,Int)? {
         var section:String?
         var result:(Int,Int)?

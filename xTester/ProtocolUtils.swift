@@ -26,20 +26,13 @@ protocol Utils {}   // This protocol contains common utility functions
 
 extension Utils {
     
-    
-    
-    
+  
     // This is a simple test method
     func climb() -> Void {
         print("I am climbing .....")
     }
     
-    
-    
-    
-    
-    
-    
+  
     //MARK: - Banner Related
     
     func showBanner(title:String, subtitle:String, image: UIImage?, bkColor: UIColor) {
@@ -53,15 +46,12 @@ extension Utils {
     
     
     // MARK:  URL Related
-    
-    
+  
     func getSiteURL(baseURLString:String, method: String?, parameters: [String:String]?, apiKey:String? ) -> URL? {
       
-        //var components = URLComponents(string: baseURLString )!
-      
-      guard  var components = URLComponents(string: baseURLString ) else {
-        return nil
-      }
+        guard  var components = URLComponents(string: baseURLString ) else {
+          return nil
+        }
       
       // check if we need to use method and apiKey
         if method != nil && apiKey != nil {
@@ -92,11 +82,8 @@ extension Utils {
         return nil
       }
       
-      //  return components.url!
-      
       return url
       
-        
     } //end method
 
     

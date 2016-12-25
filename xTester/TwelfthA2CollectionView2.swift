@@ -10,23 +10,12 @@ import Foundation
 
 
 import UIKit
-import Alamofire
-import AlamofireImage
-import SwiftyJSON
-
-
 
 
 
 class TwelfthA2CollectionView2: UICollectionView {
   
-  
-  
-  
-  
-  
-  
-  
+    
   
 } // end class
 

@@ -99,14 +99,7 @@ class TwelfthA2CollectionView2PhotoStore: Utils, JsonConvertible {
   }
   
   
-  
-  
-  
-  
-  // MARK: - Fetch Image
-  
     
-  
   // MARK: Section Dictionary
   
   

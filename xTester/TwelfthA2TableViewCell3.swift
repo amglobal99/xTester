@@ -32,7 +32,7 @@ class TwelfthA2TableViewCell3: UITableViewCell {
     }
     
     
-  // Set the DataSource and Delegate
+  /// Set the DataSource and Delegate
     func setCollectionViewDataSourceDelegate  <D: UICollectionViewDataSource,E: UICollectionViewDelegate> (dataSource: D,
                                                dataSourceDelegate: E, forRow row: Int) {
         
@@ -41,12 +41,6 @@ class TwelfthA2TableViewCell3: UITableViewCell {
         collectionView3.tag = row
         collectionView3.reloadData()
     }
-    
-    
-    
-    
-
-    
     
     
     

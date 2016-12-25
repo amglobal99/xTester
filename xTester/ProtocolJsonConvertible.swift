@@ -44,10 +44,6 @@ extension JsonConvertible  {
   
     func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
       
-        guard url != nil else {
-          return
-        }
-      
         let urlRequest = URLRequest(url: url)
       
           // Check for Internet Connection before sending Request

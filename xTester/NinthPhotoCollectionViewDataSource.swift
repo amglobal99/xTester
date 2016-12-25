@@ -16,11 +16,6 @@
 import Foundation
 import UIKit
 import Alamofire
-import PINCache
-import BRYXBanner
-import Locksmith
-import PINRemoteImage
-import AlamofireImage
 import SwiftyJSON
 
 
@@ -54,24 +49,22 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     // MARK: - DataSource methods
     
 
-    /**
-        Returns the number of sections to be used in the CollectionView
-        - Parameter collectionView:   The CollectionView being used
-        - Returns: An Integer showing how many sections
-    */
+  
+    ///    Returns the number of sections to be used in the CollectionView
+    ///    - Parameter collectionView:   The CollectionView being used
+    ///    - Returns: An Integer showing how many sections
+  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.sections.count
     }
 
     
-    /**
-        Returns the number of Items in each section
-        
-        - Parameter collectionView: The CollectionView being processed
-        - Parameter section: The section being worked on
-        - Returns: An integer showing the number of items to be displayed in each section
-    
-    */
+  
+    ///    Returns the number of Items in each section
+    ///   - Parameter collectionView: The CollectionView being processed
+    ///   - Parameter section: The section being worked on
+    ///   - Returns: An integer showing the number of items to be displayed in each section
+  
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let itemsInSection = photosForSection(section)
@@ -82,8 +75,7 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
-    // Function to get a Cell
-    
+    /// Function to get a Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let photoTitleToDisplay: String
@@ -109,9 +101,7 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
     
     
     
-    // Function to get Section Header View
-    //
-    
+    /// Function to get Section Header View
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView{
@@ -130,19 +120,16 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
         
         return headerView
         
-    }  // end method
+    } // end func
     
     
     
     // MARK: - Index Related Methods
    
-    // Function returns the number of Items in section
-    //
-    
+    /// Function returns the number of Items in section
     func photosForSection(_ sectionNumber: Int) -> [NinthPhoto] {
         // Get photos for this section (Filter the photos array)
-        
-        
+      
         let sectionPhotos = photos.filter{
             $0.datetakenUnknown == String(sectionNumber)
             

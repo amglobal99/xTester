@@ -15,24 +15,13 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     
     // MARK: - Local Variables
     var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
-   
-    
+  
+  
     // These are populated from TwelfthA2ViewController.swift ( closure section)
     var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
     var collectionView2DataSource: TwelfthA2CollectionView2DataSource!
     var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
-  
-  
-    
-    // MARK: - TODO
-    
-    // ================= THIS MAY NEED CHANGING ================================
-    
-    //var collectionView1DataSource = TwelfthA2CollectionView1DataSource()
-    //var collectionView3DataSource = TwelfthA2CollectionView3DataSource()
-    
-    
-    
+
     
     // MARK: - Structs
     fileprivate struct Storyboard     {
@@ -93,14 +82,7 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     
     
     
-    
-    
-    
-   
-    
-    
-    
-    
+  
     
     // MARK: - TableView DELEGATE Methods
     
@@ -122,8 +104,6 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
                 tableViewCell2.setCollectionViewDataSourceDelegate(dataSource: collectionView2DataSource,
                                                                    dataSourceDelegate: collectionView2DataSource, forRow: indexPath.row)
                 tableViewCell2.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-          
-          
             case 2:
                 print("TableView willDisplayCell for row #3")
                 // ======== This controls the Collection View in row 3  ==========
@@ -199,9 +179,6 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
     }
     
     
-    
-    
-
     
     
     

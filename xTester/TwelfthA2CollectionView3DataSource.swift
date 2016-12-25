@@ -6,12 +6,9 @@
 //  Copyright © 2016 Natsys. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
 import Alamofire
-import PINCache
-import PINRemoteImage
 import AlamofireImage
 import SwiftyJSON
 
@@ -46,26 +43,21 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     
     // MARK: - CollectionView DataSource methods
-    
-    
-    /**
-     Returns the number of sections to be used in the CollectionView
-     - Parameter collectionView:   The CollectionView being used
-     - Returns: An Integer showing how many sections
-     */
+  
+    /// Returns the number of sections to be used in the CollectionView
+    /// - Parameter collectionView:   The CollectionView being used
+    /// - Returns: An Integer showing how many sections
+  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.sections.count
     }
     
     
-    /**
-     Returns the number of Items in each section
-     
-     - Parameter collectionView: The CollectionView being processed
-     - Parameter section: The section being worked on
-     - Returns: An integer showing the number of items to be displayed in each section
-     
-     */
+  
+   ///  Returns the number of Items in each section
+   ///  - Parameter collectionView: The CollectionView being processed
+   ///  - Parameter section: The section being worked on
+   ///  - Returns: An integer showing the number of items to be displayed in each section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let itemsInSection = photosForSection(section)
         print("Coll View 3: Number of Items in section \(section) : \(itemsInSection.count)")
@@ -93,7 +85,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         cell.photoIDLabel.text = photo.photoID
         cell.photoServerLabel.text = photoTitleToDisplay
         cell.updateWithImage(photo.image)
-        
         return cell
     } //end func
     
@@ -123,20 +114,24 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     // MARK: - CollectionView DELEGATE Methods
 
-    /**
-     Function executed as Cell is getting ready to be displayed
-     */
+  
+    /// Function executed as Cell is getting ready to be displayed
      public func collectionView (_ collectionView: UICollectionView,
                                          willDisplay cell: UICollectionViewCell,
                                          forItemAt indexPath: IndexPath )  {
         
         let photo = photoForItemAtIndexPath(indexPath: indexPath)
+      
         photoStore.fetchImageForPhoto(photo)
-        {    result in
+          {  [weak self] result in
+              guard let strongSelf = self else {
+                return
+              }
+
             OperationQueue.main.addOperation() {
                 // get Dictionary for photo items
-                let sectionDict = self.sectionPhotoItems
-                guard let path = self.photoStore.indexForPhoto(dict: sectionDict, photo: photo)  else {
+                let sectionDict = strongSelf.sectionPhotoItems
+                guard let path = strongSelf.photoStore.indexForPhoto(dict: sectionDict, photo: photo)  else {
                     return
                 }
                 let photoRow = path.0
@@ -157,7 +152,7 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
    
     
-    // Function runs when a Cell is selected
+    ///Function runs when a Cell is selected
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didselect .......")
         
@@ -165,11 +160,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     }
     
    
-    
-    
-    
-    
- 
     
     
     
