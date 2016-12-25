@@ -307,6 +307,9 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="lZA-IJ-Usg" secondAttribute="bottom" constant="2" id="vZQ-Y6-jx6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView2" destination="lZA-IJ-Usg" id="m2r-di-8KF"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwelfthA2TableViewCell3" rowHeight="181" id="HW3-cq-1Ni" customClass="TwelfthA2TableViewCell3" customModule="xTester" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="300" width="375" height="181"/>

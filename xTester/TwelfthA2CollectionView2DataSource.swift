@@ -53,7 +53,8 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
    - Returns: An Integer showing how many sections
    */
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return self.sections.count
+    //return self.sections.count
+    return 1
   }
   
   
@@ -67,8 +68,11 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
    */
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     let itemsInSection = photosForSection(section)
-    print("Coll View 3: Number of Items in section \(section) : \(itemsInSection.count)")
-    return itemsInSection.count
+    print("Coll View 2: Number of Items in section \(section) : \(itemsInSection.count)")
+    //return itemsInSection.count
+    
+    return 10
+    
   }  // end func
   
   
@@ -76,8 +80,13 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   /// Function to get a Cell for a given IndexPath
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
    
+    
+    
+    
+    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView2Cell
-    let photo = photoForItemAtIndexPath(indexPath: indexPath)
+    
+    //let photo = photoForItemAtIndexPath(indexPath: indexPath)
     
     /*
     cell.photoIDLabel.text = photo.photoID
