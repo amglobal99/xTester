@@ -26,15 +26,7 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   var sections:[String] = []  // This is the array of names for our  sections
   var sectionPhotoItems:[String:[TwelfthA2Item2]] = [:]  // Dictionary holds Photos for each section title
   var photoStore: TwelfthA2CollectionView3PhotoStore!
-  
-  /*
-  // MARK: - Enums
-  enum Method: String {
-    case RecentPhotos = "flickr.photos.getRecent"
-  }
-  
-  */
-  
+
   
   // MARK: - Structs
   fileprivate struct Storyboard     {
@@ -47,68 +39,39 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   // MARK: - CollectionView DataSource methods
   
   
-  /**
-   Returns the number of sections to be used in the CollectionView
-   - Parameter collectionView:   The CollectionView being used
-   - Returns: An Integer showing how many sections
-   */
+  
+  /// Returns the number of sections to be used in the CollectionView
+  /// - Parameter collectionView:   The CollectionView being used
+  /// - Returns: An Integer showing how many sections
+  
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return self.sections.count
-    //return 2
   }
   
   
-  /**
-   Returns the number of Items in each section
-   
-   - Parameter collectionView: The CollectionView being processed
-   - Parameter section: The section being worked on
-   - Returns: An integer showing the number of items to be displayed in each section
-   
-   */
+  
+  /// Returns the number of Items in each section
+  /// - Parameter collectionView: The CollectionView being processed
+  /// - Parameter section: The section being worked on
+  /// - Returns: An integer showing the number of items to be displayed in each section
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     let itemsInSection = photosForSection(section)
     print("Coll View 2: Number of Items in section \(section) : \(itemsInSection.count)")
     return itemsInSection.count
-    
-    //return 10
-    
-  }  // end func
+  } // end func
   
   
   
   /// Function to get a Cell for a given IndexPath
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView2Cell
     
     let photo = photoForItemAtIndexPath(indexPath: indexPath)
-    
-    
-    
-    
-    
     cell.idLabel.text = photo.bikeID
     cell.staddressLabel.text  = photo.stAddress1
-    
-    //cell.idLabel.text = "jack"
-    //cell.staddressLabel.text = "1808 Mountain"
-    
-    
     return cell
   } //end func
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -125,23 +88,19 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
     let sectionNumber = (indexPath as IndexPath).section
     print( "HEADER: Row is : \(rowNumber) and Section is: \(sectionNumber) ")
     let sectionLabel = sections[sectionNumber]  // Retrieve section title from our stored array
-    
-   // let sectionLabel = "Jack'"
-    
     print("Our section label is : \(sectionLabel) " )
-    let title = "Section :: " + sectionLabel
+    let title = "Section:: " + sectionLabel
     headerView.section2Label.text = title
     return headerView
-  }  // end func
+  }
   
   
   
   
   // MARK: - CollectionView DELEGATE Methods
   
-  /**
-   Function executed as Cell is getting ready to be displayed
-   */
+  
+  /// Function executed as Cell is getting ready to be displayed
   public func collectionView (_ collectionView: UICollectionView,
                               willDisplay cell: UICollectionViewCell,
                               forItemAt indexPath: IndexPath )  {
@@ -156,18 +115,12 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   
   
   
-  // Function runs when a Cell is selected
+  /// Function runs when a Cell is selected
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print("didselect .......")
     
     
   }
-  
-  
-  
-  
-  
-  
   
   
   

@@ -531,8 +531,8 @@
 			isa = PBXGroup;
 			children = (
 				0F322CDB1DE29A64001796FC /* TwelfthA2CollectionView1.swift */,
-				0F3CBFF61DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift */,
 				0FCA28351E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift */,
+				0F3CBFF61DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift */,
 			);
 			name = CollectionViews;
 			sourceTree = "<group>";

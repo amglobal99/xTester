@@ -49,20 +49,12 @@ protocol StoreService {
         // MARK: - Local Variables
         var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
+        var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
     
-      
-      var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
-      
-      
-
-      
-      
-      
       
         // MARK:- Data Variables
         var store: TwelfthA2CollectionView3PhotoStore!
         var store2: TwelfthA2CollectionView2PhotoStore!
-
         var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
         var collectionView2DataSource: TwelfthA2CollectionView2DataSource!
         var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
@@ -70,30 +62,23 @@ protocol StoreService {
         var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
       
       
-      
-      
-      
-      
         // MARK: - Global Constants Variables
         let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
         let apiKey = Constants.Configuration.apiKey
         let method = Constants.Configuration.method
         let key  = Constants.Configuration.key
-        var  rootPath = Constants.Configuration.rootPath
+        var rootPath = Constants.Configuration.rootPath
         let dataKey = Constants.Configuration.dataKey
         let params = Constants.Configuration.params
       
       
         let baseURLString2  = Constants.Configuration.jsonTestUrl.bikeNYC.rawValue
-      let apiKey2:String? = nil
-      let method2:String? = nil
-      //let key2:String? = nil
-      let key2 = "statusKey"
-
-      let  rootPath2 = ["stationBeanList"]
-      //let  rootPath2:[String]? = nil
-      let dataKey2:String? = nil
-      let params2: [String: String]?  = nil
+        let apiKey2:String? = nil
+        let method2:String? = nil
+        let key2 = "statusKey"
+        let rootPath2 = ["stationBeanList"]
+        let dataKey2:String? = nil
+        let params2: [String: String]?  = nil
 
       
       
@@ -131,6 +116,10 @@ protocol StoreService {
             self.init(coder)
         }
       
+      
+      
+      
+      
         // MARK: - ViewController events
     
         override func viewDidLoad() {
@@ -146,32 +135,19 @@ protocol StoreService {
             (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
           
           
-          
-          
-          
-          
             // Completion Handler
              let completionHandler: (Result<JSON>) -> Void  =
             // We will use a typealias ( defined in GlobalConstants.swift file)  in line below
             // let completionHandler: ClosureJSON<Result<JSON> >  =
             
             {  [weak self] result in
-              
-              
-              print("++++++++++++++ Executing FIRST handler")
-              
-              
-              
+                print("++++++++++++++ Executing FIRST handler")
                 // Let's make sure we still have access to self i.e. it has not been deallocated
                 guard let strongSelf = self else {
                   return
                 }
-              
-                             
                 // Get the result from Alamofire request
                 let jsonObj = result.value!
-          
-              
                 // get list of Photos(returns array of 'TwelfthA2Photo' items)
                 let itemsResult: TwelfthA2CollectionView3PhotoStore.TwelfthA2PhotosResult   = (strongSelf.store.photosFromJsonObject(jsonObj))
                 // get array of Section titles
@@ -207,114 +183,71 @@ protocol StoreService {
               
         } // end closure
         
-        // Create a Async(Alamofire) request to get Json.
+        // Create a Async(Alamofire) request to get Json data for Table Row #1
           guard let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else {
             return
           }
-          
-          
-          
-          
-        getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+          getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
 
           
-        
           
+          // This is the request for Table Row #2
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          // This is Request #2 .... provides data for Row #2
-          
-          
-          
-          
-          // Completion Handler
+          // Completion Handler 2
           let completionHandler2: (Result<JSON>) -> Void  =
-           
             {  [weak self] result in
-              print("Executing SECOND handler ........")
-              guard let strongSelf = self else {
-                return
-              }
-              
-              // Get the result from Alamofire request
-              let jsonObj2 = result.value!
-              
-              print(jsonObj2)
-              
-              // get list of Photos(returns array of 'TwelfthA2Photo' items)
-              let itemsResult2  = strongSelf.store2.photosFromJsonObject(jsonObj2)
-              // get array of Section titles
-              guard let photoKeyArray2 =  strongSelf.getSectionTitlesArray(from: jsonObj2, key: strongSelf.key2)   else {
-                print("getKeyArray method returned a nil value.")
-                return
-              }
-              print("\n\n+++++++++  Section Titles Array  ++++++++++++++")
-              print(photoKeyArray2)
-              // get Section Title: Photos Dictionary
-              guard let sectionPhotosDictionary2 = strongSelf.store2.sectionPhotosDictionary(from: jsonObj2, for: strongSelf.key2) else {
-                print("Section Photo Items Dictionary is nil")
-                return
-              }
-              print("\n\n+++++++++  Section Photos Dictionary +++++++++++")
-              print(sectionPhotosDictionary2)
-              
-              OperationQueue.main.addOperation() {
-                switch itemsResult2 {
-                case let .success(photos):
-                  print(" We have total of \(photos.count)  photos ")
-                  strongSelf.collectionView2DataSource.photos = photos
-                  strongSelf.collectionView2DataSource.sections =  photoKeyArray2
-                  strongSelf.collectionView2DataSource.sectionPhotoItems = sectionPhotosDictionary2  // populate the Items Dictionary
-                case .failure(let error):
-                  strongSelf.collectionView2DataSource.photos.removeAll()
-                  print("     Error fetching recent photos \(error)")
-                }  // end switch
-                
-                // Reload data for Table
-                strongSelf.tableView.reloadData()
-              }  // end operation
+                  print("Executing SECOND handler ........")
+                  guard let strongSelf = self else {
+                    return
+                  }
+                  // Get the result from Alamofire request
+                  let jsonObj2 = result.value!
+                  //print(jsonObj2)
+                  // get list of Photos(returns array of 'TwelfthA2Photo' items)
+                  let itemsResult2  = strongSelf.store2.photosFromJsonObject(jsonObj2)
+                  // get array of Section titles
+                  guard let photoKeyArray2 =  strongSelf.getSectionTitlesArray(from: jsonObj2, key: strongSelf.key2)   else {
+                    print("getKeyArray method returned a nil value.")
+                    return
+                  }
+                  print("\n\n+++++++++  Section Titles Array  ++++++++++++++")
+                  print(photoKeyArray2)
+                  // get Section Title: Photos Dictionary
+                  guard let sectionPhotosDictionary2 = strongSelf.store2.sectionPhotosDictionary(from: jsonObj2, for: strongSelf.key2) else {
+                    print("Section Photo Items Dictionary is nil")
+                    return
+                  }
+                  print("\n\n+++++++++  Section Photos Dictionary +++++++++++")
+                  print(sectionPhotosDictionary2)
+                  
+                  OperationQueue.main.addOperation() {
+                    switch itemsResult2 {
+                    case let .success(photos):
+                      print(" We have total of \(photos.count)  photos ")
+                      strongSelf.collectionView2DataSource.photos = photos
+                      strongSelf.collectionView2DataSource.sections =  photoKeyArray2
+                      strongSelf.collectionView2DataSource.sectionPhotoItems = sectionPhotosDictionary2  // populate the Items Dictionary
+                    case .failure(let error):
+                      strongSelf.collectionView2DataSource.photos.removeAll()
+                      print("     Error fetching recent photos \(error)")
+                    }  // end switch
+                    
+                    // Reload data for Table
+                    strongSelf.tableView.reloadData()
+                  }  // end operation
               
           } // end closure
           
-          
-          // Create a Async(Alamofire) request to get Json.
+          // Create a Async(Alamofire) request to get Json data for Table Row #2.
           guard let url2 = getSiteURL(baseURLString: baseURLString2, method: method2, parameters: params2, apiKey: apiKey2) else {
             return
           }
-          print("++++++++++++++++++++++++++ SECOND REQUEST +++++++++++++++++++++++++")
           getJSONObject(for: url2, rootPath: rootPath2, completionHandler: completionHandler2)  // get a SwiftyJSON object
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
           
           
           
     }  // end viewDidLoad
     
-      
-      
-      
-      
-      
-      
-      
       
       
       
