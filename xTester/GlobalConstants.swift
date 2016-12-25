@@ -19,9 +19,7 @@ import Alamofire
 
 struct Constants {
 
-    
-    
-    
+  
     struct AlamofireNatsysApi {
         
         enum AlamofireNatsysAPIError: Error {
@@ -88,7 +86,7 @@ struct Constants {
         static let companyName = "Natsys International"
         static let companyAddress = "1808 Mountain Lake Dr GA 30339"
       
-      
+      /*
       struct SiteParamaters {
         let apiKey: String
         let method: String
@@ -106,7 +104,7 @@ struct Constants {
         case Google
       }
       
-      
+      */
       
       
       
@@ -176,9 +174,7 @@ struct Constants {
       
       
       
-      
-      
-      enum jsonTestSite {
+      enum TestSite {
         
         init?(rawValue: String){
             switch rawValue{
@@ -190,8 +186,10 @@ struct Constants {
                   self = .bikenyc
                   case "GOOGLE":
                   self = .google
+                case "TYPICODE":
+                  self = .typicode
                 default:
-                  self = .flickr
+                  return nil
             }
         }
         
@@ -199,7 +197,24 @@ struct Constants {
         case github
         case bikenyc
         case google
+        case typicode
         
+        
+        
+        var urlString:String {
+          switch self {
+              case .flickr:
+                return "https://api.flickr.com/services/rest"
+              case .github:
+                return  "https://api.github.com/users/amglobal99/repos"
+              case .bikenyc:
+                return "http://citibikenyc.com/stations/json"
+              case .google:
+                return "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=8&q=http%3A%2F%2Fnews.google.com%2Fnews%3Foutput%3Drss"
+              case .typicode:
+                  return "https://jsonplaceholder.typicode.com/todos"
+          }
+        }
         
         var apiKey: String?  {
           switch self {
@@ -211,8 +226,8 @@ struct Constants {
                 return nil
               case .google:
                  return nil
-              default:
-                  return nil
+              case .typicode:
+                return nil
           }
         }
         
@@ -226,7 +241,7 @@ struct Constants {
                 return nil
               case .google:
                 return nil
-              default:
+              case .typicode:
                 return nil
           }
         }
@@ -241,7 +256,7 @@ struct Constants {
                 return nil
               case .google:
                 return nil
-              default:
+              case .typicode:
                 return nil
               }
         }
@@ -256,7 +271,7 @@ struct Constants {
                 return ["stationBeanList"]
               case .google:
                 return ["responseData","feed","entries"]
-              default:
+              case .typicode:
                 return nil
           }
         }
@@ -271,9 +286,9 @@ struct Constants {
                 return "id"
               case .google:
                 return "author"
-              default:
+              case .typicode:
                 return nil
-          }
+             }
         }
         
         var dataKey: String?  {
@@ -286,7 +301,7 @@ struct Constants {
                 return "statusValue"
               case .google:
                 return "title"
-              default:
+              case .typicode:
                 return nil
           }
         }
@@ -319,7 +334,10 @@ struct Constants {
             case gitHub = "https://api.github.com/users/amglobal99/repos"
         }
       
-        
+      
+      
+      
+      
         // MARK: - Date/Time/Calendar
         
         // Date Formatter

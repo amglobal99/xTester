@@ -36,8 +36,8 @@ protocol StoreService {
 } // end protocol
 
 
-///  This is the main class for our TwelfthA2ViewController
-///  You arrive at this ViewController thru a segue from 'TwelfthAViewController'
+///   This is the main class for our TwelfthA2ViewController
+///   You arrive at this ViewController thru a segue from 'TwelfthAViewController'
 ///   DISREGARD: DataSource variables are set in the prepareForSegue method in TwelfthAViewController.
 ///   DataSource variables are now set inside Initializers
 
@@ -62,6 +62,9 @@ protocol StoreService {
         var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
       
       
+      
+      
+      
         // MARK: - Global Constants Variables
         let baseURLString  = Constants.Configuration.jsonTestUrl.flickr.rawValue
         let apiKey = Constants.Configuration.apiKey
@@ -82,6 +85,9 @@ protocol StoreService {
 
       
       
+      
+      
+   
       
         // MARK: - Initializers
         
@@ -135,68 +141,25 @@ protocol StoreService {
             (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
           
           
-            // Completion Handler
-             let completionHandler: (Result<JSON>) -> Void  =
-            // We will use a typealias ( defined in GlobalConstants.swift file)  in line below
-            // let completionHandler: ClosureJSON<Result<JSON> >  =
-            
-            {  [weak self] result in
-                print("++++++++++++++ Executing FIRST handler")
-                // Let's make sure we still have access to self i.e. it has not been deallocated
-                guard let strongSelf = self else {
-                  return
-                }
-                // Get the result from Alamofire request
-                let jsonObj = result.value!
-                // get list of Photos(returns array of 'TwelfthA2Photo' items)
-                let itemsResult: TwelfthA2CollectionView3PhotoStore.TwelfthA2PhotosResult   = (strongSelf.store.photosFromJsonObject(jsonObj))
-                // get array of Section titles
-                guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: strongSelf.key)   else {
-                    print("Coll View 3: getKeyArray method returned a nil value.")
-                    return
-                }
-                 print("\n\n+++++++++  Section Titles Array  ++++++++++++++")
-                 print(photoKeyArray)
-                // get Section Title: Photos Dictionary
-                guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: strongSelf.key) else {
-                    print("Coll View 3: Section Photo Items Dictionary is nil")
-                    return
-                }
-                 print("\n\n+++++++++  Section Photos Dictionary +++++++++++")
-                 print(sectionPhotosDictionary)
-                
-                OperationQueue.main.addOperation() {
-                        switch itemsResult {
-                        case let .success(photos):
-                            print(" Coll View 3: We have total of \(photos.count)  photos ")
-                            strongSelf.collectionView3DataSource.photos = photos
-                            strongSelf.collectionView3DataSource.sections =  photoKeyArray
-                            strongSelf.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
-                        case .failure(let error):
-                            strongSelf.collectionView3DataSource.photos.removeAll()
-                            print("     Error fetching recent photos \(error)")
-                        }  // end switch
-                  
-                    // Reload data for Table
-                    strongSelf.tableView.reloadData()
-                }  // end operation
-              
-        } // end closure
-        
-        // Create a Async(Alamofire) request to get Json data for Table Row #1
-          guard let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else {
+          
+          
+          guard let testSite2 = Constants.Configuration.TestSite(rawValue: "BIKENYC") else {
             return
           }
-          getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-
+        
+          guard let testSite3 = Constants.Configuration.TestSite(rawValue: "FLICKR") else {
+            return
+          }
+          
+          
+        
+          
           
           
           // This is the request for Table Row #2
           
-          // Completion Handler 2
           let completionHandler2: (Result<JSON>) -> Void  =
             {  [weak self] result in
-                  print("Executing SECOND handler ........")
                   guard let strongSelf = self else {
                     return
                   }
@@ -207,29 +170,29 @@ protocol StoreService {
                   let itemsResult2  = strongSelf.store2.photosFromJsonObject(jsonObj2)
                   // get array of Section titles
                   guard let photoKeyArray2 =  strongSelf.getSectionTitlesArray(from: jsonObj2, key: strongSelf.key2)   else {
-                    print("getKeyArray method returned a nil value.")
+                    print("Coll View 2: getKeyArray method returned a nil value.")
                     return
                   }
-                  print("\n\n+++++++++  Section Titles Array  ++++++++++++++")
+                  print("\n\n+++++++++ Coll View 2: Section Titles Array  ++++++++++++++")
                   print(photoKeyArray2)
                   // get Section Title: Photos Dictionary
                   guard let sectionPhotosDictionary2 = strongSelf.store2.sectionPhotosDictionary(from: jsonObj2, for: strongSelf.key2) else {
-                    print("Section Photo Items Dictionary is nil")
+                    print("Coll View 2: Section Photo Items Dictionary is nil")
                     return
                   }
-                  print("\n\n+++++++++  Section Photos Dictionary +++++++++++")
+                  print("\n\n+++++++++ Coll View 2: Section Photos Dictionary +++++++++++")
                   print(sectionPhotosDictionary2)
                   
                   OperationQueue.main.addOperation() {
                     switch itemsResult2 {
                     case let .success(photos):
-                      print(" We have total of \(photos.count)  photos ")
+                      print(" Coll View 2: We have total of \(photos.count)  photos ")
                       strongSelf.collectionView2DataSource.photos = photos
                       strongSelf.collectionView2DataSource.sections =  photoKeyArray2
                       strongSelf.collectionView2DataSource.sectionPhotoItems = sectionPhotosDictionary2  // populate the Items Dictionary
                     case .failure(let error):
                       strongSelf.collectionView2DataSource.photos.removeAll()
-                      print("     Error fetching recent photos \(error)")
+                      print("    Coll View 2:  Error fetching recent photos \(error)")
                     }  // end switch
                     
                     // Reload data for Table
@@ -245,6 +208,64 @@ protocol StoreService {
           getJSONObject(for: url2, rootPath: rootPath2, completionHandler: completionHandler2)  // get a SwiftyJSON object
           
           
+          
+          
+          // This is the request for Table Row # 3
+          let completionHandler: (Result<JSON>) -> Void  =
+            // Shown below is an example of using a typealias
+            // We will use a typealias ( defined in GlobalConstants.swift file)  in line below
+            // let completionHandler: ClosureJSON<Result<JSON> >  =
+            
+            {  [weak self] result in
+              print("++++++++++++++ Executing FIRST handler")
+              // Let's make sure we still have access to self i.e. it has not been deallocated
+              guard let strongSelf = self else {
+                return
+              }
+              // get the result from Alamofire request
+              let jsonObj = result.value!
+              // get list of Photos(returns array of 'TwelfthA2Photo' items)
+              let itemsResult: TwelfthA2CollectionView3PhotoStore.TwelfthA2PhotosResult   = strongSelf.store.photosFromJsonObject(jsonObj)
+              // get array of Section titles
+              guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: strongSelf.key)   else {
+                print("Coll View 3: getKeyArray method returned a nil value.")
+                return
+              }
+              print("\n\n+++++++++  Coll View 3: Section Titles Array  ++++++++++++++")
+              print(photoKeyArray)
+              // get Section Title: Photos Dictionary
+              guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: strongSelf.key) else {
+                print("Coll View 3: Section Photo Items Dictionary is nil")
+                return
+              }
+              print("\n\n+++++++++  Coll View 3: Section Photos Dictionary +++++++++++")
+              print(sectionPhotosDictionary)
+              
+              OperationQueue.main.addOperation() {
+                switch itemsResult {
+                case let .success(photos):
+                  print(" Coll View 3: We have total of \(photos.count)  photos ")
+                  strongSelf.collectionView3DataSource.photos = photos
+                  strongSelf.collectionView3DataSource.sections =  photoKeyArray
+                  strongSelf.collectionView3DataSource.sectionPhotoItems = sectionPhotosDictionary  // populate the Items Dictionary
+                case .failure(let error):
+                  strongSelf.collectionView3DataSource.photos.removeAll()
+                  print("   Coll View 3:  Error fetching recent photos \(error)")
+                }  // end switch
+                
+                // Reload data for Table
+                strongSelf.tableView.reloadData()
+              }  // end operation
+              
+          } // end closure
+          
+          // Create a Async(Alamofire) request to get Json data for Table Row #1
+          guard let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else {
+            return
+          }
+          getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+          
+
           
     }  // end viewDidLoad
     
