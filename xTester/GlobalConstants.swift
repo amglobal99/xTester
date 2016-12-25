@@ -74,6 +74,12 @@ struct Constants {
   
   
   
+  struct GistApi  {
+    static let baseUrl = "https://github.com"
+  }
+  
+  
+
   
   
     
@@ -81,6 +87,31 @@ struct Constants {
         
         static let companyName = "Natsys International"
         static let companyAddress = "1808 Mountain Lake Dr GA 30339"
+      
+      
+      struct SiteParamaters {
+        let apiKey: String
+        let method: String
+        let params: [String:String]
+        let rootPath: [String]
+        let key: String
+        let dateKey: String
+      }
+      
+      
+      enum testWebSite {
+        case Flickr
+        case BikeNyc
+        case Gist
+        case Google
+      }
+      
+      
+      
+      
+      
+      
+      
       
       
       
@@ -142,7 +173,131 @@ struct Constants {
         
         */
         
+      
+      
+      
+      
+      
+      enum jsonTestSite {
         
+        init?(rawValue: String){
+            switch rawValue{
+                case "FLICKR":
+                  self = .flickr
+                case "GITHUB":
+                  self = .github
+                case "BIKENYC":
+                  self = .bikenyc
+                  case "GOOGLE":
+                  self = .google
+                default:
+                  self = .flickr
+            }
+        }
+        
+        case flickr
+        case github
+        case bikenyc
+        case google
+        
+        
+        var apiKey: String?  {
+          switch self {
+              case .flickr:
+                  return "a6d819499131071f158fd740860a5a88"
+              case .github:
+                return nil
+              case .bikenyc:
+                return nil
+              case .google:
+                 return nil
+              default:
+                  return nil
+          }
+        }
+        
+        var method: String?  {
+          switch self {
+              case .flickr:
+                return "flickr.photos.getRecent"
+              case .github:
+                return nil
+              case .bikenyc:
+                return nil
+              case .google:
+                return nil
+              default:
+                return nil
+          }
+        }
+
+        var params: [String:String]?  {
+          switch self {
+              case .flickr:
+                return ["extras":"url_h,date_taken"]
+              case .github:
+                return nil
+              case .bikenyc:
+                return nil
+              case .google:
+                return nil
+              default:
+                return nil
+              }
+        }
+        
+        var rootPath: [String]?  {
+          switch self {
+              case .flickr:
+                return ["photos","photo"]
+              case .github:
+                return nil
+              case .bikenyc:
+                return ["stationBeanList"]
+              case .google:
+                return ["responseData","feed","entries"]
+              default:
+                return nil
+          }
+        }
+        
+        var key: String?  {
+          switch self {
+              case .flickr:
+                return "datetakenunknown"
+              case .github:
+                return "id"
+              case .bikenyc:
+                return "id"
+              case .google:
+                return "author"
+              default:
+                return nil
+          }
+        }
+        
+        var dataKey: String?  {
+          switch self {
+              case .flickr:
+                return "id"
+              case .github:
+                return "clone_url"
+              case .bikenyc:
+                return "statusValue"
+              case .google:
+                return "title"
+              default:
+                return nil
+          }
+        }
+        
+      
+      } // end enum
+      
+      
+
+
+      
         
         
         // Enum store sthe various URLs we use for testing
@@ -198,13 +353,7 @@ struct Constants {
     
     
     
-    
-    struct GistApi  {
-        static let baseUrl = "https://github.com"
-    }
-
-
-
+  
 
 
 }  // end struct

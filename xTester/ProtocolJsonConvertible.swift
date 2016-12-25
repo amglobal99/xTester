@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import BRYXBanner
 import Alamofire
 import SwiftyJSON
 
@@ -29,108 +28,86 @@ extension JsonConvertible  {
     
 // MARK: - Methods
     
-    //  ******************  SwiftyJSON Section   **************************************
-    
-    /**
-        This function gives as a SwifyJSON  'JSON' object
-        The results are placed in the Result variable
-        
-        The rootpath is the path to your JSON entries.
-        For example, if my data is under 'employees' root attribute
-        and within that, it is under the 'users' attribute
-        Then your array will contain ["employees","users"]
-     
-        - Parameter: url:  A URL object for your REST API
-        - Parameter rootPath: The root path for your JSON object
-     
-        - Returns: Nothing
-    */
+  
+    ///   This function gives as a SwifyJSON  'JSON' object
+    ///    The results are placed in the Result variable
+    ///
+    ///   The rootpath is the path to your JSON entries.
+    ///   For example, if my data is under 'employees' root attribute
+    ///   and within that, it is under the 'users' attribute
+    ///   Then your array will contain ["employees","users"]
+    ///
+    ///     - Parameter: url:  A URL object for your REST API
+    ///     - Parameter rootPath: The root path for your JSON object
+    ///
+    ///     - Returns: Nothing
+  
     func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
-        
-            let urlRequest = URLRequest(url: url)
-        
-        
-        /*
-        // Check for Internet Connection before sending Request
-        if Reachability.isConnectedToNetwork() == true {
-            print("Internet connection OK")
-        } else {
-            print("Internet connection FAILED")
-            showBanner(title: "No Connection", subtitle: "Please try again when Internet connection \n is available !!", image: nil, bkColor: UIColor.red)
-             return
-            
+      
+        guard url != nil else {
+          return
         }
-        */
-        
-        
-        
-        
-                // Send Alamofire request
-               //Alamofire.request(urlRequest).responseJSON
+      
+        let urlRequest = URLRequest(url: url)
+      
+          // Check for Internet Connection before sending Request
+          if Reachability.isConnectedToNetwork() == true {
+              print("Internet connection OK")
+          } else {
+              print("Internet connection FAILED")
+              showBanner(title: "No Connection", subtitle: "Please try again when Internet connection \n is available !!", image: nil, bkColor: UIColor.red)
+               return
+          }
+      
+          // Send Alamofire request
+          Alamofire.request(urlRequest)
+                      .validate()
+                      .responseJSON
+          { response  in
+              // First check if user Authenticated
+              //..........
+            
+              // Check if an Error is present
+              guard response.result.error == nil else {   // got an error
+                  print("Printing ERROR ")
+                  print(response.result.error!)
+                  completionHandler(Result.failure(response.result.error!) )
+                  return
+              }
+              guard response.result.value != nil else {  // Data is nil
+                  print("Request did not return any data")
+                  return
+              }
+              //convert Response to SwiftyJSON object
+              let jsonObject:JSON  = JSON(response.result.value!)
+         
+              if rootPath == nil {
+                  completionHandler(Result.success(jsonObject))
+              } else {
+                  if let pathCount  = rootPath?.count  {
+                      switch pathCount  {
+                          case 1:
+                              let result = jsonObject[ (rootPath?[0])! ]
+                              completionHandler(Result.success(result))
+                          case 2:
+                              let result = jsonObject[ (rootPath?[0])!,(rootPath?[1])! ]
+                              completionHandler(Result.success(result))
+                          case 3:
+                              let result =  jsonObject[ (rootPath?[0])!,(rootPath?[1])!,(rootPath?[2])!    ]
+                              completionHandler(Result.success(result))
+                          case 4:
+                              let result =  jsonObject[ (rootPath?[0])!,(rootPath?[1])!,(rootPath?[2])!, (rootPath?[3])!    ]
+                              completionHandler(Result.success(result))
+                          default:
+                              completionHandler(Result.success(jsonObject))
+                      }
                     
-                    Alamofire.request(urlRequest).validate().responseJSON
-                    { response  in
-                        
-                        
-                        // First check if user Authenticated
-                        //..........
-                        
-                        
-                        // Check if an Error is present
-                        guard response.result.error == nil else {   // got an error
-                                print("Printing ERROR ")
-                                print(response.result.error!)
-                                completionHandler(Result.failure(response.result.error!) )
-                                return
-                        }
-                        
-                        
-                            guard response.result.value != nil else {  // Data is nil
-                                print("Request did not return any data")
-                                return
-                            }
-                        
-                        
-                        
-                    
-                        let jsonObject:JSON  = JSON(response.result.value!)  //convert Response to SwiftyJSON object
-                   
-                        if rootPath == nil {
-                            completionHandler(Result.success(jsonObject))
-                        } else {
-                                if let pathCount  = rootPath?.count  {
-                                        switch pathCount  {
-                                            case 1:
-                                                let result = jsonObject[ (rootPath?[0])! ]
-                                                completionHandler(Result.success(result))
-                                            case 2:
-                                                let result = jsonObject[ (rootPath?[0])!,(rootPath?[1])! ]
-                                                completionHandler(Result.success(result))
-                                            case 3:
-                                                let result =  jsonObject[ (rootPath?[0])!,(rootPath?[1])!,(rootPath?[2])!    ]
-                                                completionHandler(Result.success(result))
-                                            case 4:
-                                                let result =  jsonObject[ (rootPath?[0])!,(rootPath?[1])!,(rootPath?[2])!, (rootPath?[3])!    ]
-                                                completionHandler(Result.success(result))
-                                            default:
-                                                completionHandler(Result.success(jsonObject))
-                                        }
-                                    
-                                } else { // must be nil
-                                    completionHandler(Result.success(jsonObject))
-                                }
-                        }//if rootPath =  nil
-                    }  // end Alamofire request
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+                  } else { // must be nil
+                      completionHandler(Result.success(jsonObject))
+                  }
+              }//if rootPath =  nil
+            }  // end Alamofire request
+      
         
     } // end function
     

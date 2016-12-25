@@ -7,19 +7,10 @@
 //
 
 import UIKit
-import Alamofire
-import PINCache
-import BRYXBanner
-import Locksmith
-import PINRemoteImage
-import AlamofireImage
-import SwiftyJSON
 
 
 
-
-
-class TwelfthA2CollectionView3: UICollectionView, TwelfthA2CollectionView3CellDelegate, Utils, JsonConvertible {
+class TwelfthA2CollectionView3: UICollectionView {
     
     
     

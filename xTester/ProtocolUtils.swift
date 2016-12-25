@@ -55,9 +55,15 @@ extension Utils {
     // MARK:  URL Related
     
     
-    func getSiteURL(baseURLString:String, method: String?, parameters: [String:String]?, apiKey:String? ) -> URL {
-        var components = URLComponents(string: baseURLString )!
-        // check if we need to use mehod and apiKey
+    func getSiteURL(baseURLString:String, method: String?, parameters: [String:String]?, apiKey:String? ) -> URL? {
+      
+        //var components = URLComponents(string: baseURLString )!
+      
+      guard  var components = URLComponents(string: baseURLString ) else {
+        return nil
+      }
+      
+      // check if we need to use method and apiKey
         if method != nil && apiKey != nil {
             var queryItems = [URLQueryItem]()
             let baseParams  = [
@@ -80,8 +86,16 @@ extension Utils {
             
             components.queryItems = queryItems
         } // if method != nil
-        
-        return components.url!
+      
+      
+      guard let url = components.url else {
+        return nil
+      }
+      
+      //  return components.url!
+      
+      return url
+      
         
     } //end method
 

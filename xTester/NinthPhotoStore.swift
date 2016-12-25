@@ -58,8 +58,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
     // This function will retrieve JSON object and place it in the 'jsonResultObject' variable
     func fetchJsonObject() {
         let params = ["extras":"url_h,date_taken"]
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
-        
+      
          // I think we need to use Operation here to insert any value son main THread
         
                 let completionHandler: (Result<JSON>) -> Void  =
@@ -72,7 +71,12 @@ class NinthPhotoStore: Utils, JsonConvertible {
                 } // end closure
         
         //  Call the generic method to get a SwiftyJSON object
-        getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
+      
+      guard  let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else  {
+        return
+      }
+      
+      getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
     }
     
     

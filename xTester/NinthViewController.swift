@@ -118,8 +118,11 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
         } // end closure
   
         // Create a Async(Alamofire) request to get jSON data
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)
-        getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+      guard   let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else {
+        return
+      }
+      
+      getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
         
     }  // end viewDidLoad
     

@@ -75,8 +75,10 @@ class Store: StoreService, Utils, JsonConvertible {
         
         //  Call the generic method to get a SwiftyJSON object
         let params = ["extras":"url_h,date_taken"]
-        let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
-        getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
+      guard let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  else {
+        return
+      }
+      getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
     }
     
     

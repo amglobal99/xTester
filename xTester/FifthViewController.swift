@@ -148,7 +148,9 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
         
         // Create a Async (Alamofire) request to get SwiftyJSON data
       // If you change URL to test, also make required chnage for constants in GlobalConstants.swift file
-        let url = getSiteURL(baseURLString: baseURLString, method: method , parameters: params, apiKey: apiKey)
+      guard let url = getSiteURL(baseURLString: baseURLString, method: method , parameters: params, apiKey: apiKey) else {
+        return
+      }
       
         getJSONObject(for: url, rootPath: rootPath,   completionHandler: completionHandler)  // get a SwiftyJSON object
     }  // end viewDidLoad

@@ -113,12 +113,14 @@
 		0F9887DD1DC5125400BE3D7E /* ProtocolShakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */; };
 		0F9887E11DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */; };
 		0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */; };
+		0FB32BFF1E0EE577004E6370 /* TwelfthA2CollectionView2FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB32BFE1E0EE577004E6370 /* TwelfthA2CollectionView2FlowLayout.swift */; };
 		0FB7A58C1DFF774C0004BEC6 /* productList.json in Resources */ = {isa = PBXBuildFile; fileRef = 0FB7A58B1DFF774C0004BEC6 /* productList.json */; };
 		0FC797A31DD56E63000E0D2A /* TwelfthA2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */; };
 		0FCA28341E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */; };
 		0FCA28361E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28351E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift */; };
-		0FCA28381E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift */; };
-		0FCA283A1E0DAC390018FFC7 /* TwelfthA2Item3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28391E0DAC390018FFC7 /* TwelfthA2Item3.swift */; };
+		0FCA28381E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift */; };
+		0FCA283A1E0DAC390018FFC7 /* TwelfthA2Item2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA28391E0DAC390018FFC7 /* TwelfthA2Item2.swift */; };
+		0FCA283C1E0DFADA0018FFC7 /* TwelfthA2CollectionView2Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA283B1E0DFADA0018FFC7 /* TwelfthA2CollectionView2Cell.swift */; };
 		0FCE1C681DB6983700242E09 /* EleventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C671DB6983700242E09 /* EleventhViewController.swift */; };
 		0FCE1C6C1DB6988200242E09 /* TwelfthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */; };
 		0FCE1C701DB6994300242E09 /* Eleventh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */; };
@@ -267,12 +269,14 @@
 		0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolShakeable.swift; sourceTree = "<group>"; };
 		0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolDimmable.swift; sourceTree = "<group>"; };
 		0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolJsonConvertible.swift; sourceTree = "<group>"; };
+		0FB32BFE1E0EE577004E6370 /* TwelfthA2CollectionView2FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2FlowLayout.swift; sourceTree = "<group>"; };
 		0FB7A58B1DFF774C0004BEC6 /* productList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = productList.json; path = dump/productList.json; sourceTree = "<group>"; };
 		0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2ViewController.swift; sourceTree = "<group>"; };
 		0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2DataSource.swift; sourceTree = "<group>"; };
 		0FCA28351E0DA9D70018FFC7 /* TwelfthA2CollectionView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2.swift; sourceTree = "<group>"; };
-		0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2ItemStore.swift; sourceTree = "<group>"; };
-		0FCA28391E0DAC390018FFC7 /* TwelfthA2Item3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2Item3.swift; sourceTree = "<group>"; };
+		0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2PhotoStore.swift; sourceTree = "<group>"; };
+		0FCA28391E0DAC390018FFC7 /* TwelfthA2Item2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2Item2.swift; sourceTree = "<group>"; };
+		0FCA283B1E0DFADA0018FFC7 /* TwelfthA2CollectionView2Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2Cell.swift; sourceTree = "<group>"; };
 		0FCE1C671DB6983700242E09 /* EleventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EleventhViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6B1DB6988200242E09 /* TwelfthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthViewController.swift; sourceTree = "<group>"; };
 		0FCE1C6F1DB6994300242E09 /* Eleventh.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Eleventh.storyboard; sourceTree = "<group>"; };
@@ -468,6 +472,7 @@
 				0F8328D31DA9CF0B009804C2 /* NinthPhotoCollectionViewFlowLayout.swift */,
 				0F3CC0061DE7AD9D005CEFBB /* TwelfthA2CollectionView1FlowLayout.swift */,
 				0F3CBFDC1DE739C6005CEFBB /* TwelfthA2CollectionView3FlowLayout.swift */,
+				0FB32BFE1E0EE577004E6370 /* TwelfthA2CollectionView2FlowLayout.swift */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 			children = (
 				0F8328CA1DA996D7009804C2 /* EighthCollectionViewCell.swift */,
 				0F8328DB1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift */,
+				0FCA283B1E0DFADA0018FFC7 /* TwelfthA2CollectionView2Cell.swift */,
 				0F3CBFFE1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift */,
 			);
 			name = Cells;
@@ -497,7 +503,7 @@
 			children = (
 				0F22D8081DCD1E770015C9F1 /* NinthPhoto.swift */,
 				0F3CC00E1DE7B439005CEFBB /* TwelfthA2Photo.swift */,
-				0FCA28391E0DAC390018FFC7 /* TwelfthA2Item3.swift */,
+				0FCA28391E0DAC390018FFC7 /* TwelfthA2Item2.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -510,9 +516,9 @@
 				0F571F3E1E099FEF00E501E8 /* Store.swift */,
 				0F3CC0121DE7C47A005CEFBB /* TwelfthA2CollectionView1DataSource.swift */,
 				0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */,
+				0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift */,
 				0F3CC0161DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift */,
 				0F436EE81DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift */,
-				0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift */,
 				0F322CD31DE27A74001796FC /* TwelfthA2TableViewDataSource.swift */,
 			);
 			name = DataSourcesDelegates;
@@ -1001,10 +1007,11 @@
 				0F3052E11DAAD5CF00F79778 /* Publisher.swift in Sources */,
 				0F22D81E1DCD6D520015C9F1 /* FlickrAPI.swift in Sources */,
 				0F2E0DC01DD6528C001620FF /* NinthPhotoSectionHeaderView.swift in Sources */,
+				0FB32BFF1E0EE577004E6370 /* TwelfthA2CollectionView2FlowLayout.swift in Sources */,
 				0F945FD41DB59BDC00FB4045 /* ExtensionView.swift in Sources */,
 				0F22D81A1DCD6C0F0015C9F1 /* NinthPhotoStore.swift in Sources */,
 				0F38A8231DFB9DF000E17CFE /* ProtocolValidator.swift in Sources */,
-				0FCA283A1E0DAC390018FFC7 /* TwelfthA2Item3.swift in Sources */,
+				0FCA283A1E0DAC390018FFC7 /* TwelfthA2Item2.swift in Sources */,
 				0F3052D01DAAD5AF00F79778 /* WebViewController.swift in Sources */,
 				0F8328C71DA99484009804C2 /* NinthViewController.swift in Sources */,
 				0F22D8161DCD6BD10015C9F1 /* PhotoStore.swift in Sources */,
@@ -1025,6 +1032,7 @@
 				0F3CC0071DE7AD9D005CEFBB /* TwelfthA2CollectionView1FlowLayout.swift in Sources */,
 				0F322CDC1DE29A64001796FC /* TwelfthA2CollectionView1.swift in Sources */,
 				0F22D8091DCD1E770015C9F1 /* NinthPhoto.swift in Sources */,
+				0FCA283C1E0DFADA0018FFC7 /* TwelfthA2CollectionView2Cell.swift in Sources */,
 				0F3052D61DAAD5C100F79778 /* PublishersCollectionViewFlowLayout.swift in Sources */,
 				0F9887E51DC515AF00BE3D7E /* ProtocolJsonConvertible.swift in Sources */,
 				0F3052D91DAAD5C100F79778 /* PublisherCollectionViewCell.swift in Sources */,
@@ -1064,7 +1072,7 @@
 				0F2D7ED01DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F36D65F1DE368EC002611FB /* TwelfthA2TableViewCell1.swift in Sources */,
 				0F3CBFFF1DE7AC4F005CEFBB /* TwelfthA2CollectionView3Cell.swift in Sources */,
-				0FCA28381E0DAB0A0018FFC7 /* TwelfthA2CollectionView2ItemStore.swift in Sources */,
+				0FCA28381E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift in Sources */,
 				0F3F990A1DA826CA002FBB8C /* SeventhViewController.swift in Sources */,
 				0FD9707D1DA802480099BE54 /* FourthView.swift in Sources */,
 				0F3F99061DA826A2002FBB8C /* SixthViewController.swift in Sources */,

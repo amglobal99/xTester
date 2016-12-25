@@ -64,14 +64,15 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         let params = ["extras":"url_h,date_taken"]
         // let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey)  // Flickr
         
-        let url = getSiteURL(baseURLString: baseURLString, method: method, parameters: params, apiKey: apiKey)  // Flickr
-        
+      guard let url = getSiteURL(baseURLString: baseURLString, method: method, parameters: params, apiKey: apiKey)  else {
+        return
+      }
         
         getJSONObject(for: url, rootPath: ["photos","photo"], completionHandler: completionHandler)  // Flickr
     }
     
     
-    
+  
     
     
     
@@ -88,7 +89,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     func photosFromJsonObject(_ json:JSON) -> TwelfthA2PhotosResult {
         var finalPhotos:[TwelfthA2Photo] = []
         var addCount = 0
-        print("************* JSON Object *************** \n\n \(json) ")
+        print("COLL VIEW 3 ************* JSON Object *************** \n\n \(json) ")
         
         for ( _, jsonItem) in json {
             if let photo: TwelfthA2Photo = photoFromJSONObject(jsonItem) {

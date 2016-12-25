@@ -22,22 +22,24 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   
   
   // MARK: - Data Variables
-  var photos = [TwelfthA2Photo]()   // This is the list of all our Photos
+  var photos: [TwelfthA2Item2] = []   // This is the list of all our Photos
   var sections:[String] = []  // This is the array of names for our  sections
-  var sectionPhotoItems:[String:[TwelfthA2Photo]] = [:]  // Dictionary holds Photos for each section title
+  var sectionPhotoItems:[String:[TwelfthA2Item2]] = [:]  // Dictionary holds Photos for each section title
   var photoStore: TwelfthA2CollectionView3PhotoStore!
   
-  
+  /*
   // MARK: - Enums
   enum Method: String {
     case RecentPhotos = "flickr.photos.getRecent"
   }
   
+  */
+  
   
   // MARK: - Structs
   fileprivate struct Storyboard     {
-    static let CellIdentifier = "TwelfthA2CollectionView3Cell"
-    static let showWebView = "ShowTwelfthA2PhotoDetailView"
+    static let CellIdentifier = "TwelfthA2CollectionView2Cell"
+    static let showWebView = "ShowTwelfthA2Item2DetailView"
   }
   
   
@@ -73,23 +75,19 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   
   /// Function to get a Cell for a given IndexPath
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
-    let photoTitleToDisplay: String
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView3Cell
+   
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView2Cell
     let photo = photoForItemAtIndexPath(indexPath: indexPath)
     
-    // Get a truncated title for our Photo
-    let photoTitle = photo.title
-    // This can be changed later ... we're limiting length to 8 char
-    if photoTitle.characters.count <= 10 {
-      photoTitleToDisplay = "-" + photoTitle
-    } else {
-      let index = photoTitle.index(photoTitle.startIndex, offsetBy: 8)
-      photoTitleToDisplay = photoTitle.substring(to: index)
-    }
+    /*
     cell.photoIDLabel.text = photo.photoID
     cell.photoServerLabel.text = photoTitleToDisplay
     cell.updateWithImage(photo.image)
+    */
+    
+    cell.idLabel.text = "jack"
+    cell.staddressLabel.text = "1808 Mountain"
+    
     
     return cell
   } //end func
@@ -127,24 +125,7 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
                               willDisplay cell: UICollectionViewCell,
                               forItemAt indexPath: IndexPath )  {
     
-    let photo = photoForItemAtIndexPath(indexPath: indexPath)
-    photoStore.fetchImageForPhoto(photo)
-    {    result in
-      OperationQueue.main.addOperation() {
-        // get Dictionary for photo items
-        let sectionDict = self.sectionPhotoItems
-        guard let path = self.photoStore.indexForPhoto(dict: sectionDict, photo: photo)  else {
-          return
-        }
-        let photoRow = path.0
-        let photoSection = path.1
-        let photoIndexPath = IndexPath(row: photoRow , section: photoSection)
-        // print("Indexpath (willDisplayCell) :   Section: \(photoSection!)   Row: \(photoRow!)")
-        if let cell = collectionView.cellForItem(at: photoIndexPath) as?  TwelfthA2CollectionView3Cell {
-          cell.updateWithImage(photo.image)     // Update cell photo
-        }
-      } //end operation
-    } // end closure
+   // let photo = photoForItemAtIndexPath(indexPath: indexPath)
     
   } //end method
   
@@ -175,16 +156,16 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   // MARK: - Index Related Methods
   
   /// Function returns the number of Items in given section.
-  func photosForSection(_ sectionNumber: Int) -> [TwelfthA2Photo] {
+  func photosForSection(_ sectionNumber: Int) -> [TwelfthA2Item2] {
     let sectionPhotos = photos.filter {
-      $0.datetakenUnknown == String(sectionNumber)
+      $0.statusKey == String(sectionNumber)
     }
     return sectionPhotos
   }
   
   
   /// Function returns a Photo for the given indexpath
-  func photoForItemAtIndexPath(indexPath: IndexPath) -> TwelfthA2Photo {
+  func photoForItemAtIndexPath(indexPath: IndexPath) -> TwelfthA2Item2 {
     let rowNumber = (indexPath as IndexPath).row
     let sectionNumber = (indexPath as IndexPath).section
     // get the Photos in this particular section
