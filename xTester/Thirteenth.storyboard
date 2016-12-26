@@ -10,7 +10,7 @@
         <!--Thirteenth View Controller-->
         <scene sceneID="2RS-HW-M0u">
             <objects>
-                <viewController id="d0V-gZ-0bS" customClass="ThirteenthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Thirteenth" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d0V-gZ-0bS" customClass="ThirteenthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d8v-0f-ONK"/>
                         <viewControllerLayoutGuide type="bottom" id="qGV-hs-PkD"/>

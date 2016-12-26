@@ -50,8 +50,15 @@ protocol StoreService {
         var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
         var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
-    
       
+        // Test site names
+        let testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
+        let testSite3Name = "FLICKR"
+        
+        // Operation queues
+        var queue2 = OperationQueue()
+        var queue3 = OperationQueue()
+        
         // MARK:- Data Variables
         var store: TwelfthA2CollectionView3PhotoStore!
         var store2: TwelfthA2CollectionView2PhotoStore!
@@ -61,10 +68,9 @@ protocol StoreService {
         var tableviewDataSource: TwelfthA2TableViewDataSource!   // This defines the DataSource for the TableView
         var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
       
-        // Specify your test site here
-        let testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
-        let testSite3Name = "FLICKR"
-   
+      
+      
+      
       
         // MARK: - Initializers
         
@@ -84,9 +90,11 @@ protocol StoreService {
             self.tableviewDataSource = TwelfthA2TableViewDataSource()
             self.tableviewDelegate =  TwelfthA2TableViewDataSource()
             
-            // Let's assign a property in the CollectionView store
+            // Inject value for store property in the CollectionView data sources
+            self.collectionView2DataSource.photoStore = TwelfthA2CollectionView2PhotoStore()
             self.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
-            
+          
+          
             if let coder = coder {
                 super.init(coder: coder)!
             } else {
@@ -108,6 +116,11 @@ protocol StoreService {
         override func viewDidLoad() {
         
             super.viewDidLoad()
+          
+          
+          print("first line")
+          
+          
             // Set the Delegate and DataSource for the TableView
             table.dataSource = tableviewDataSource
             table.delegate = tableviewDelegate
@@ -127,9 +140,18 @@ protocol StoreService {
               return
             }
             
+            // create a wesk reference to self
+            weak var weakSelf = self
+          
+
           
           
           // This is the request for Table Row #2
+          
+          
+          let operation2 = BlockOperation(block: {
+            
+          
           
           let completionHandler2: (Result<JSON>) -> Void  =
             {  [weak self] result in
@@ -157,6 +179,7 @@ protocol StoreService {
                   print(sectionPhotosDictionary2)
                   
                   OperationQueue.main.addOperation() {
+                    
                     switch itemsResult2 {
                     case let .success(photos):
                       print(" Coll View 2: We have total of \(photos.count)  photos ")
@@ -174,13 +197,32 @@ protocol StoreService {
               
           } // end closure
           
+            
           // Create a Async(Alamofire) request to get Json data for Table Row #2
-          guard let url2 = getSiteURL(baseURLString: testSite2.urlString, method: testSite2.method, parameters: testSite2.params, apiKey: testSite2.apiKey) else {
+          
+         
+          guard let url2 = weakSelf?.getSiteURL(baseURLString: testSite2.urlString, method: testSite2.method, parameters: testSite2.params, apiKey: testSite2.apiKey) else {
             return
           }
-          getJSONObject(for: url2, rootPath: testSite2.rootPath, completionHandler: completionHandler2)  // get a SwiftyJSON object
+          weakSelf?.getJSONObject(for: url2, rootPath: testSite2.rootPath, completionHandler: completionHandler2)  // get a SwiftyJSON object
+         
+           
+          })
           
           
+          // ADD OPERATION TO QUEUE
+         queue2.addOperation(operation2)
+          
+          
+            
+            
+          
+          
+          
+          
+          let operation3 = BlockOperation(block: {
+            
+
           
           // This is the request for Table Row # 3
           let completionHandler3: (Result<JSON>) -> Void  =
@@ -233,11 +275,19 @@ protocol StoreService {
           
           
           // Create a Async(Alamofire) request to get Json data for Table Row #3
-          guard let url3 = getSiteURL(baseURLString: testSite3.urlString, method: testSite3.method, parameters: testSite3.params, apiKey: testSite3.apiKey) else {
+          guard let url3 = self.getSiteURL(baseURLString: testSite3.urlString, method: testSite3.method, parameters: testSite3.params, apiKey: testSite3.apiKey) else {
             return
           }
-          getJSONObject(for: url3, rootPath: testSite3.rootPath, completionHandler: completionHandler3)  // get a SwiftyJSON object
+          self.getJSONObject(for: url3, rootPath: testSite3.rootPath, completionHandler: completionHandler3)  // get a SwiftyJSON object
           
+          
+            
+            
+          })
+          
+          // ADD OPERATION TO QUEUE
+          queue3.addOperation(operation3)
+
           
           
     }  // end viewDidLoad

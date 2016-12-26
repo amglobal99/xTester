@@ -10,7 +10,7 @@
         <!--Seventh View Controller-->
         <scene sceneID="ieC-R6-QfA">
             <objects>
-                <viewController id="sZs-9x-Nou" customClass="SeventhViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Seventh" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sZs-9x-Nou" customClass="SeventhViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="87n-vC-dSi"/>
                         <viewControllerLayoutGuide type="bottom" id="zqX-A8-xh1"/>

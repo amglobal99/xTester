@@ -25,8 +25,9 @@ class TwelfthA2CollectionView2DataSource: NSObject, UICollectionViewDataSource, 
   var photos: [TwelfthA2Item2] = []   // This is the list of all our Photos
   var sections:[String] = []  // This is the array of names for our  sections
   var sectionPhotoItems:[String:[TwelfthA2Item2]] = [:]  // Dictionary holds Photos for each section title
-  var photoStore: TwelfthA2CollectionView3PhotoStore!
+  var photoStore: TwelfthA2CollectionView2PhotoStore!
 
+  
   
   // MARK: - Structs
   fileprivate struct Storyboard     {

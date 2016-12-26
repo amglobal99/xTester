@@ -15,16 +15,21 @@ import UIKit
 let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg",
                  "http://adriatic-lines.com/wp-content/uploads/2015/04/canal-of-Venice.jpg",
                  "http://algoos.com/wp-content/uploads/2015/08/ireland-02.jpg",
-                 "http://bdo.se/wp-content/uploads/2014/01/Stockholm1.jpg"]
-
+                 "http://www.fujifilm.com/products/digital_cameras/x/fujifilm_x_t1/sample_images/img/index/ff_x_t1_003.JPG"
+]
 
 
 class Downloader {
     
-    class func downloadImageWithURL(_ url:String) -> UIImage! {
-        let data = try? Data(contentsOf: URL(string: url)!)
-        return UIImage(data: data!)
-    }
+    class func downloadImageWithURL(_ url:String) -> UIImage? {
+      if let data = try? Data(contentsOf: URL(string: url)!)   {
+        return UIImage(data: data)
+      } else {
+        return nil
+      }
+      
+    } // end func
+  
 }
 
 
@@ -46,34 +51,20 @@ class SeventhViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
+  
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    //   This function uses OperationBlock ( subclass of Operation)
-    //
-    //
-    //
-    
-    
+    ///   This function uses BlockOperation ( subclass of Operation)
+  
     @IBAction func didClickOnStart(_ sender: AnyObject) {
         
         
         // To make this a serial queue, enable line below
         //queue.maxConcurrentOperationCount = 1
-        
-        
+      
         print("executing didClickOnstart method ...")
-        
-        
-        
+      
         let operation1 = BlockOperation(block: {
             let img1 = Downloader.downloadImageWithURL(imageURLs[0])
             OperationQueue.main.addOperation({

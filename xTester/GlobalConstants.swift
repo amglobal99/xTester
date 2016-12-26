@@ -157,7 +157,7 @@ struct Constants {
               case .github:
                 return "id"
               case .bikenyc:
-                return "id"
+                return "statusKey"
               case .google:
                 return "author"
               case .typicode:
@@ -186,16 +186,18 @@ struct Constants {
       
       
       
-        // MARK: - Date/Time/Calendar
-        
-        // Date Formatter
-        static let dateFormatter: DateFormatter = {
-            let formatter  = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            return formatter
-        }()
-        
-        
+      // MARK: - Date/Time/Calendar
+      
+      // Date Formatter
+      static let dateFormatter: DateFormatter = {
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter
+      }()
+      
+
+      
+      
         let filemgr = FileManager.default
         var calendar: Calendar = Calendar(identifier: .gregorian )
         var locale = Locale(identifier: "en_US")

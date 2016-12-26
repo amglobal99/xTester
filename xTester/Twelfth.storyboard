@@ -10,7 +10,7 @@
         <!--Twelfth View Controller-->
         <scene sceneID="E03-yW-VjJ">
             <objects>
-                <viewController id="AUS-Tr-e3L" customClass="TwelfthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Twelfth" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AUS-Tr-e3L" customClass="TwelfthViewController" customModule="xTester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rpE-xb-WCu"/>
                         <viewControllerLayoutGuide type="bottom" id="MwP-tg-1Ho"/>

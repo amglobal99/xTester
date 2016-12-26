@@ -79,7 +79,9 @@ class NinthViewControllerTests: BaseTestCase {
     // MARK: - Check for Values of properties
 
     // Check availability of values for properties
-    
+  
+  
+  /*
     
     func testThatBaseUrlStringIsAvailable() {
         XCTAssertNotNil(ninthVC.baseURLString)
@@ -108,7 +110,7 @@ class NinthViewControllerTests: BaseTestCase {
         XCTAssertNotNil(ninthVC.dataKey)
     }
 
-    /*
+   
     func testThatParamsIsAvailable() {
         XCTAssertNotNil(ninthVC.params)
     }
@@ -139,12 +141,13 @@ class NinthViewControllerTests: BaseTestCase {
     // MARK: - Check Methods
     
     
-    
+    /*
     func testThatGetSiteURLReturnsSuccessResultWithValidData() {
         let url = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.apiKey)
         XCTAssertNotNil(url)
     }
-    
+    */
+  
     
     func testThatViewDidLoadReturnsSuccessResultWithValidData() {
         //ninthVC.viewDidLoad() 
@@ -165,7 +168,7 @@ class NinthViewControllerTests: BaseTestCase {
     }
     
     
-    
+    /*
     /** 
         Use this function as a template for testing Asynchronous requests.
     */
@@ -199,11 +202,11 @@ class NinthViewControllerTests: BaseTestCase {
         }
     }
     
+    */
     
     
     
-    
-   
+   /*
     
     func testThatGetJSONObjectMethodReturnsSuccessResultWithValidData() {
         var jsonObject:JSON?
@@ -225,7 +228,7 @@ class NinthViewControllerTests: BaseTestCase {
         XCTAssertNotNil(jsonObject )
     } // end func
     
-    
+    */
    
     
     

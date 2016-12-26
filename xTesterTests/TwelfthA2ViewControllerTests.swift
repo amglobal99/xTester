@@ -14,27 +14,92 @@ import XCTest
 
 class TwelfthA2ViewControllerTests: BaseTestCase {
     
+  
+  var twelfthA2VC: TwelfthA2ViewController!
+  var twelfthA2DetailVC:  TwelfthA2DetailViewController!
+  var window: UIWindow!
+  
+
+  // MARK: - Setup
+  
+  override func setUp() {
+    super.setUp()
+    window = UIWindow()
+    setupCreateTwelfthA2ViewController()
+  }
+  
+
+  func setupCreateTwelfthA2ViewController() {
+    let bundle = Bundle.main
+    let storyboard = UIStoryboard(name: "TwelfthA", bundle: bundle)
+    twelfthA2VC = storyboard.instantiateViewController(withIdentifier: "TwelfthA2")  as! TwelfthA2ViewController
+    twelfthA2DetailVC = storyboard.instantiateViewController(withIdentifier: "TwelfthA2Detail")  as! TwelfthA2DetailViewController
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    addViewToWindow()
+  }
+  
+  
+  func addViewToWindow()   {
+    window.addSubview(twelfthA2VC.view)
+    RunLoop.current.run(until: Date())
+  }
+  
+  
+  
+  // MARK: - Availability Tests
+  
+  func testThatTwelfthA2ViewControllerIsAvailable() {
+    XCTAssertNotNil(twelfthA2VC )
+  }
+  
+  
+  
+  func testThatCollectionView1DataSourceIsAvailable() {
+    XCTAssertNotNil(twelfthA2VC.collectionView1DataSource )
+  }
+  
+  
+  func testThatCollectionView2DataSourceIsAvailable() {
+    XCTAssertNotNil(twelfthA2VC.collectionView2DataSource )
+  }
+  
+  
+  func testThatCollectionView3DataSourceIsAvailable() {
+    XCTAssertNotNil(twelfthA2VC.collectionView3DataSource )
+  }
+  
+  func testThatQueue2IsAvailable() {
+    XCTAssertNotNil(twelfthA2VC.queue2 )
+  }
+  
+  func testThatQueue3IsAvailable() {
+    XCTAssertNotNil(twelfthA2VC.queue3 )
+  }
+  
+  
+  
+  
+  
+  
+ /*
+
+  func testThatUpdateDestinationDataIsAvailable() {
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    let index = IndexPath(row: 1 , section: 1)
+    twelfthA2VC.updateDestinationData(destinationVC: twelfthA2DetailVC, indexPath: index)
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    //XCTAssertNotNil( twelfthA2DetailVC.photo)
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    XCTAssertNotNil( twelfthA2VC.collectionView3DataSource )
     
-}
+    
+    
+    
+  }
+  
+  */
+  
+  
+  
+  
+}  // end class
