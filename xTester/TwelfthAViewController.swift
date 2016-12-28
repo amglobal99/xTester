@@ -22,7 +22,57 @@ class TwelfthAViewController: UIViewController, Utils {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+  
+  
+  
+  
+  
+  @IBAction func displayTwelfthA2VC(_ sender: AnyObject) {
     
+    
+    // TwelfthA2ViewController.doSomething()
+    //let vc =  self.storyboard?.instantiateViewController(withIdentifier: "TwelfthA2")
+    
+    
+    let store2 = TwelfthA2CollectionView2PhotoStore()
+    let store3 = TwelfthA2CollectionView3PhotoStore()
+    /*
+    let   collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+    var collectionView2DataSource = TwelfthA2CollectionView2DataSource()
+    var collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+    let tableviewDataSource = TwelfthA2TableViewDataSource()
+    let tableviewDelegate =   TwelfthA2TableViewDataSource()
+    let collview2PhotoStore = TwelfthA2CollectionView2PhotoStore()
+    let collview3PhotoStore = TwelfthA2CollectionView3PhotoStore()
+
+    */
+    
+    
+    let vc = TwelfthA2ViewController(store2: store2, store3: store3, collectionView1DataSource: TwelfthA2CollectionView1DataSource(),
+                                     collectionView2DataSource: TwelfthA2CollectionView2DataSource(),
+                                     collectionView3DataSource: TwelfthA2CollectionView3DataSource(),
+                                     tableviewDataSource: TwelfthA2TableViewDataSource(),
+                                     tableviewDelegate:   TwelfthA2TableViewDataSource(),
+                                     collview2PhotoStore: TwelfthA2CollectionView2PhotoStore(),
+                                     collview3PhotoStore: TwelfthA2CollectionView3PhotoStore()
+        )
+    
+    
+    
+    
+    // present VC
+    self.navigationController?.pushViewController(vc, animated: true)
+    
+    
+    
+  }  // end IBAction
+  
+  
+  
+  
+  
+  
+  
     
     // THis is our segue to the TwelfthA1 and TwelfthA2 controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,12 +80,22 @@ class TwelfthAViewController: UIViewController, Utils {
         let segIdentifier = SegueIdentifier(rawValue: identifier!)
         switch segIdentifier! {
             case .TwelfthA1Segue:
-                print("Selecte TwelfthA1ViewController")
+                print("Selected TwelfthA1ViewController")
             case .TwelfthA2Segue:
+                 print("prepareForsegue: TwelfthAViewController : Selected TwelfthA2ViewController segue.")
+                 
+                 TwelfthA2ViewController.doSomething()
+                 
+
+  
+              //  _ = segue.destination  as! TwelfthA2ViewController
                 
-                _ = segue.destination  as! TwelfthA2ViewController
-                
-                
+          
+                let destVC = segue.destination  as! TwelfthA2ViewController
+          
+          
+          
+          
                 /*
                  Instaed of setting store value here, we will do it in the Class Constructor /Initializer.
                  If needed, UNCOMMENT lines below and thta will work too.

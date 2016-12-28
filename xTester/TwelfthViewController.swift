@@ -35,7 +35,7 @@ class TwelfthViewController: UIViewController {
             containerViewA.isHidden = false
             containerViewB.isHidden = true
         case 1:
-            NSLog("Second selected")
+            NSLog("Second TAB selected in TwelfthViewController. SEGMENTED CONTROL")
             containerViewA.isHidden = true
             containerViewB.isHidden = false
             

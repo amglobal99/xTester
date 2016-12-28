@@ -26,6 +26,11 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
     super.setUp()
     window = UIWindow()
     setupCreateTwelfthA2ViewController()
+    
+    
+    self.twelfthA2VC.loadView()
+    self.twelfthA2VC.viewDidLoad()
+    
   }
   
 
