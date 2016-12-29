@@ -42,7 +42,15 @@ extension JsonConvertible  {
     ///
     ///     - Returns: Nothing
   
-    func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping (Result<JSON>) ->  Void ) {
+    func getJSONObject(for url:URL, rootPath:[String]?, completionHandler:  @escaping  (Result<JSON>) ->  Void    ) {
+      
+      
+      print("getJSONObejct .......1")
+      
+      
+
+      
+      
       
         let urlRequest = URLRequest(url: url)
       

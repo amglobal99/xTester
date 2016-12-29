@@ -48,6 +48,8 @@ class TwelfthAViewController: UIViewController, Utils {
     */
     
     
+    
+    /*
     let vc = TwelfthA2ViewController(store2: store2, store3: store3, collectionView1DataSource: TwelfthA2CollectionView1DataSource(),
                                      collectionView2DataSource: TwelfthA2CollectionView2DataSource(),
                                      collectionView3DataSource: TwelfthA2CollectionView3DataSource(),
@@ -62,6 +64,8 @@ class TwelfthAViewController: UIViewController, Utils {
     
     // present VC
     self.navigationController?.pushViewController(vc, animated: true)
+    */
+    
     
     
     

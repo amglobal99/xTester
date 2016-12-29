@@ -24,9 +24,13 @@ class NinthViewControllerTests: BaseTestCase {
         var window: UIWindow!
 
     
-    
-    
-    
+      // Test site names
+      var  testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
+      let testSite3Name = "FLICKR"
+
+  
+  
+  
     // MARK: - Setup
 
     override func setUp() {
@@ -42,15 +46,7 @@ class NinthViewControllerTests: BaseTestCase {
         //let tabBarController: UITabBarController
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Ninth", bundle: bundle)
-        
-        /*
-         if self.window!.rootViewController as? UITabBarController != nil {
-            tabBarController = self.window!.rootViewController as! UITabBarController
-            tabBarController.selectedIndex = 2
-         }
-        */
-        
-        
+      
         ninthVC = storyboard.instantiateViewController(withIdentifier: "Ninth")  as! NinthViewController
         ninthDestinationVC = storyboard.instantiateViewController(withIdentifier: "NinthDetailViewController")  as! NinthDetailViewController
         ninthVC.store = NinthPhotoStore()  // give the VC a store object
@@ -58,7 +54,6 @@ class NinthViewControllerTests: BaseTestCase {
        // _ =  ninthVC.view
         addViewToWindow()
     }
-
 
 
 
@@ -81,42 +76,6 @@ class NinthViewControllerTests: BaseTestCase {
     // Check availability of values for properties
   
   
-  /*
-    
-    func testThatBaseUrlStringIsAvailable() {
-        XCTAssertNotNil(ninthVC.baseURLString)
-    }
-    
-    func testThatAPIKeyIsAvailable() {
-        XCTAssertNotNil(ninthVC.apiKey )
-        
-    }
-    
-    func testThatMethodIsAvailable() {
-        XCTAssertNotNil(ninthVC.method )
-        
-    }
-    
-    func testThatKeyIsAvailable() {
-        XCTAssertNotNil(ninthVC.key )
-        
-    }
-    
-    func testThatRootPathIsAvailable() {
-        XCTAssertNotNil(ninthVC.rootPath)
-    }
-    
-    func testThatDataKeyIsAvailable() {
-        XCTAssertNotNil(ninthVC.dataKey)
-    }
-
-   
-    func testThatParamsIsAvailable() {
-        XCTAssertNotNil(ninthVC.params)
-    }
-    */
-    
-    
     func testThatPhotoCollectionViewIsAvailable() {
         XCTAssertNotNil(ninthVC.photoCollectionView)
     }
@@ -168,20 +127,27 @@ class NinthViewControllerTests: BaseTestCase {
     }
     
     
-    /*
+  
     /** 
         Use this function as a template for testing Asynchronous requests.
     */
     func testThatAlamofireResponseReturnsSuccessResultWithValidData() {
-        
+      
+      let siteName = "BIKENYC"
+      let site =  Constants.Configuration.TestSite(rawValue: siteName)
+      
         //Step 1 ...... Create a expectation
         let expectation = self.expectation(description: "request should succeed")
         //let urlString = "https://httpbin.org/get"
-        let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.apiKey)
+        //let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString, method: ninthVC.method, parameters: ninthVC.params, apiKey: ninthVC.apiKey)
+        let urlString = self.getSiteURL(baseURLString: (site?.urlString)!, method: site?.method, parameters: site?.params, apiKey: site?.apiKey)
+  
         var response: DefaultDataResponse?
         
         // Start your Async request
-        Alamofire.request(urlString, parameters: ["foo": "bar"]).response
+        //Alamofire.request(urlString, parameters: ["foo": "bar"]).response
+        Alamofire.request(urlString!).response
+        
             { resp in
                 response = resp
                 // Step 2 ...... In the completion handler, call fulfill method
@@ -202,19 +168,29 @@ class NinthViewControllerTests: BaseTestCase {
         }
     }
     
-    */
+   
     
     
     
-   /*
+  
     
     func testThatGetJSONObjectMethodReturnsSuccessResultWithValidData() {
+    
+         let siteName = "BIKENYC"
+         let site =  Constants.Configuration.TestSite(rawValue: siteName)
+      
         var jsonObject:JSON?
         let expectation = self.expectation(description: "request should succeed")   //Step 1 ...... Create a expectation
-        let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString,
+      /*
+      let urlString = ninthVC.getSiteURL(baseURLString: ninthVC.baseURLString,
                                            method: ninthVC.method,
                                            parameters: ninthVC.params,
                                            apiKey: ninthVC.apiKey)
+       */
+      
+      
+      let urlString = self.getSiteURL(baseURLString: (site?.urlString)!, method: site?.method, parameters: site?.params, apiKey: site?.apiKey)
+      
         //var response: DefaultDataResponse?
         //weak var weakSelf = self
         let completionHandler: (Result<JSON>) -> Void  =
@@ -223,15 +199,22 @@ class NinthViewControllerTests: BaseTestCase {
                     expectation.fulfill()   // Step 2 ...... In the completion handler, call fulfill method
             } // end closure
         
-        getJSONObject(for: urlString, rootPath: Constants.Configuration.rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-        waitForExpectations(timeout: timeout, handler: nil)
+        getJSONObject(for: urlString!, rootPath: site?.rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
+      
+      waitForExpectations(timeout: timeout, handler: nil)
         XCTAssertNotNil(jsonObject )
     } // end func
     
-    */
+  
    
     
-    
+  
+  
+  
+  
+  
+  
+  
     
     
     

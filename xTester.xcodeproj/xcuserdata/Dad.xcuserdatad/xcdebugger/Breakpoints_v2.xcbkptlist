@@ -72,7 +72,7 @@
                   moduleName = "xTester"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/Test.swift"
-                  timestampString = "504579845.914188"
+                  timestampString = "504629403.602662"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -87,12 +87,12 @@
                   moduleName = "xTester"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/Test.swift"
-                  timestampString = "504579845.915896"
+                  timestampString = "504629403.605101"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "4">
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "8">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -102,12 +102,12 @@
                   moduleName = "xTester"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/Test.swift"
-                  timestampString = "504579845.917795"
+                  timestampString = "504629403.608548"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
                   endingLineNumber = "14"
-                  offsetFromSymbolStart = "4">
+                  offsetFromSymbolStart = "22">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -117,7 +117,7 @@
                   moduleName = "xTester"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Dad/XCodeProjects/xTester/xTester/Test.swift"
-                  timestampString = "504579845.919409"
+                  timestampString = "504629403.612338"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"

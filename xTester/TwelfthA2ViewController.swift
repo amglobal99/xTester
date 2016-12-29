@@ -52,7 +52,7 @@ protocol StoreService {
         var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
       
         // Test site names
-        let testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
+        var  testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
         let testSite3Name = "FLICKR"
         
         // Operation queues
@@ -115,6 +115,8 @@ protocol StoreService {
         }
       
       
+      /*
+      
       // ++++++++++++ CUSTOM INITIALIZER ++++++++++++++++++++++++
       init(store2: TwelfthA2CollectionView2PhotoStore,
            store3: TwelfthA2CollectionView3PhotoStore,
@@ -145,6 +147,7 @@ protocol StoreService {
       
       
       
+      */
       
       
       
@@ -178,6 +181,11 @@ protocol StoreService {
             (table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
           
           
+          
+          print("viewDidLoad: TwelfthA2VC .....2 first line")
+
+          
+          
             // Get access to test site details for Row #2
             guard let testSite2 = Constants.Configuration.TestSite(rawValue: testSite2Name) else {
               return
@@ -190,6 +198,9 @@ protocol StoreService {
             // create a wesk reference to self
             weak var weakSelf = self
           
+          
+          
+          print("viewDidLoad: TwelfthA2VC .....3 first line")
 
           
           
@@ -245,13 +256,20 @@ protocol StoreService {
           // Create a Async(Alamofire) request to get Json data for Table Row #2
           
          
+            print("viewDidLoad: TwelfthA2VC .....4 first line")
+
+            
           guard let url2 = weakSelf?.getSiteURL(baseURLString: testSite2.urlString, method: testSite2.method, parameters: testSite2.params, apiKey: testSite2.apiKey) else {
             return
           }
           weakSelf?.getJSONObject(for: url2, rootPath: testSite2.rootPath, completionHandler: completionHandler2)  // get a SwiftyJSON object
          
            
-          })
+            print("viewDidLoad: TwelfthA2VC .....5 first line")
+
+            
+            
+          })  // end Operation
           
           
           // ADD OPERATION TO QUEUE
@@ -341,9 +359,20 @@ protocol StoreService {
       
       ///Function called during the segue from TwelfthA2ViewController to Detail View Controller.
       override   public func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
+        
+        print("Starting prepareForSegue in TwelfthA2VC.")
+        
+        
+        
             let segueIdentifier = segue.identifier!
             switch segueIdentifier  {
+                case "ShowView1ItemDetail":
+                  print("view 1")
+                case "ShowView2ItemDetail":
+                    print("test")
                 case "ShowTwelfthA2PhotoDetail":
+                  print("printing from prepareForSegue ..... Case section")
+                  
                     let destinationVC = segue.destination as! TwelfthA2DetailViewController
                     let tableIdx = IndexPath(row: 2, section: 0)
                     let tabCell = self.tableView.cellForRow(at: tableIdx) as! TwelfthA2TableViewCell3
