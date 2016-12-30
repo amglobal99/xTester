@@ -63,7 +63,7 @@ class TwelfthAViewController: UIViewController, Utils {
     
     
     
-    
+    /*
    
      let   collectionView1DataSource = TwelfthA2CollectionView1DataSource()
      var collectionView2DataSource = TwelfthA2CollectionView2DataSource()
@@ -90,6 +90,14 @@ class TwelfthAViewController: UIViewController, Utils {
     
     // present VC
     self.navigationController?.pushViewController(vc, animated: true)
+    
+    
+    */
+    
+    
+    
+    
+    
     
     
   }  // end IBAction

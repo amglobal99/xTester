@@ -108,7 +108,7 @@ protocol StoreService {
       
       
       
-      
+      /*
       
       // ++++++++++++ CUSTOM INITIALIZER ++++++++++++++++++++++++
       init(store2: TwelfthA2CollectionView2PhotoStore,
@@ -138,7 +138,7 @@ protocol StoreService {
 
       }
       
-      
+      */
       
     
       

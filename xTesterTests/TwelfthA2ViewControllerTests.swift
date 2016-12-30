@@ -214,8 +214,11 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
       }
       
       override init( _ coder: NSCoder? = nil  ) {
-        //super.init()
+        super.init()
       }
+      
+      
+      
       
     } // end Mock
     
