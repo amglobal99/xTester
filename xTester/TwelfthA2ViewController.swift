@@ -51,7 +51,7 @@ protocol StoreService {
         var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
         var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
         var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
-        var  testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
+        var testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
         let testSite3Name = "FLICKR"
         
         // Operation queues
@@ -77,36 +77,21 @@ protocol StoreService {
         /// in the 'prepareForSegue' method in TwelfthAViewController.swift
         ///
         
-      init(_ coder: NSCoder? = nil, service: NatDataService?  ) {
-        
+      init(_ coder: NSCoder? = nil  ) {
             print("executing Main INIT")
         
-        
-        if service == nil {
-          // Assign property values
-          self.store2 = TwelfthA2CollectionView2PhotoStore()
-          self.store3 = TwelfthA2CollectionView3PhotoStore()
-          self.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
-          self.collectionView2DataSource = TwelfthA2CollectionView2DataSource()
-          self.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
-          self.tableviewDataSource = TwelfthA2TableViewDataSource()
-          self.tableviewDelegate =  TwelfthA2TableViewDataSource()
-          // Inject value for store property in the CollectionView data sources
-          self.collectionView2DataSource.photoStore = TwelfthA2CollectionView2PhotoStore()
-          self.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
-        } else {
-          self.store2 = service?.store2
-          self.store3 = service?.store3
-          self.collectionView1DataSource = service?.collectionView1DataSource
-          self.collectionView2DataSource = service?.collectionView2DataSource
-          self.collectionView3DataSource = service?.collectionView3DataSource
-          self.tableviewDataSource = service?.tableviewDataSource
-          self.tableviewDelegate = service?.tableviewDelegate
-          self.collectionView2DataSource.photoStore = service?.collectionView2DataSourcePhotoStore
-          self.collectionView3DataSource.photoStore = service?.collectionView3DataSourcePhotoStore
-          
-        } //end if
-        
+            // Assign property values
+            self.store2 = TwelfthA2CollectionView2PhotoStore()
+            self.store3 = TwelfthA2CollectionView3PhotoStore()
+            self.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+            self.collectionView2DataSource = TwelfthA2CollectionView2DataSource()
+            self.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+            self.tableviewDataSource = TwelfthA2TableViewDataSource()
+            self.tableviewDelegate =  TwelfthA2TableViewDataSource()
+            
+            // Inject value for store property in the CollectionView data sources
+            self.collectionView2DataSource.photoStore = TwelfthA2CollectionView2PhotoStore()
+            self.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
         
             if let coder = coder {
                 super.init(coder: coder)!
@@ -116,28 +101,12 @@ protocol StoreService {
         } // end init
       
       
-      
-      
       convenience required init(coder: NSCoder) {
           print("Executing conveninec....INIT")
-          // create Service struct here
-          let service = NatDataService(store2: TwelfthA2CollectionView2PhotoStore(),
-                                  store3: TwelfthA2CollectionView3PhotoStore(),
-                                  collectionView1DataSource: TwelfthA2CollectionView1DataSource(),
-                                  collectionView2DataSource: TwelfthA2CollectionView2DataSource(),
-                                  collectionView3DataSource: TwelfthA2CollectionView3DataSource(),
-                                  tableviewDataSource:  TwelfthA2TableViewDataSource(),
-                                  tableviewDelegate: TwelfthA2TableViewDataSource(),
-                                  collectionView2DataSourcePhotoStore: TwelfthA2CollectionView2PhotoStore(),
-                                  collectionView3DataSourcePhotoStore:  TwelfthA2CollectionView3PhotoStore()
-              )
-          self.init(coder, service: service)
+          self.init(coder)
         }
       
       
-      
-      
-      /*
       
       
       
@@ -162,7 +131,7 @@ protocol StoreService {
         self.tableviewDataSource = tableviewDataSource
         self.tableviewDelegate = tableviewDelegate
         self.collectionView2DataSource.photoStore = collview2PhotoStore
-        self.collectionView3DataSource.photoStore =  collview3PhotoStore
+        self.collectionView3DataSource.photoStore = collview3PhotoStore
         
         
         super.init(nibName: nil, bundle:nil)
@@ -170,7 +139,7 @@ protocol StoreService {
       }
       
       
-      */
+      
     
       
       
@@ -195,6 +164,9 @@ protocol StoreService {
           
       }  // end viewDidLoad
     
+      
+      
+      
       
       
       // MARK: - Data for Table Rows
@@ -259,6 +231,8 @@ protocol StoreService {
         queue2.addOperation(operation2)
         
       } // end func
+      
+      
       
       
       /// Function updates data sources for the third row for TAbleView

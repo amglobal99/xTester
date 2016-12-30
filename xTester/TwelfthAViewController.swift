@@ -30,26 +30,52 @@ class TwelfthAViewController: UIViewController, Utils {
   @IBAction func displayTwelfthA2VC(_ sender: AnyObject) {
     
     
-    // TwelfthA2ViewController.doSomething()
-    //let vc =  self.storyboard?.instantiateViewController(withIdentifier: "TwelfthA2")
+    // +++++++++++++++ THIS IS NOT WORKING .  NEEDS TO BE FIXED ++++++++++++++++++++++++
+    
     
     
     let store2 = TwelfthA2CollectionView2PhotoStore()
     let store3 = TwelfthA2CollectionView3PhotoStore()
+    
     /*
-    let   collectionView1DataSource = TwelfthA2CollectionView1DataSource()
-    var collectionView2DataSource = TwelfthA2CollectionView2DataSource()
-    var collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+    let collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+    let collectionView2DataSource = TwelfthA2CollectionView2DataSource()
+    let collectionView3DataSource = TwelfthA2CollectionView3DataSource()
     let tableviewDataSource = TwelfthA2TableViewDataSource()
     let tableviewDelegate =   TwelfthA2TableViewDataSource()
     let collview2PhotoStore = TwelfthA2CollectionView2PhotoStore()
     let collview3PhotoStore = TwelfthA2CollectionView3PhotoStore()
-
+ 
+    
+   
+    let vc = TwelfthA2ViewController(store2: store2,
+                                     store3: store3,
+                                     collectionView1DataSource: collectionView1DataSource,
+                                     collectionView2DataSource: collectionView2DataSource,
+                                     collectionView3DataSource: collectionView3DataSource,
+                                     tableviewDataSource: tableviewDataSource,
+                                     tableviewDelegate:   tableviewDelegate,
+                                     collview2PhotoStore: collview2PhotoStore,
+                                     collview3PhotoStore: collview3PhotoStore )
+    
     */
     
     
     
-    /*
+    
+    
+   
+     let   collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+     var collectionView2DataSource = TwelfthA2CollectionView2DataSource()
+     var collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+     let tableviewDataSource = TwelfthA2TableViewDataSource()
+     let tableviewDelegate =   TwelfthA2TableViewDataSource()
+     let collview2PhotoStore = TwelfthA2CollectionView2PhotoStore()
+     let collview3PhotoStore = TwelfthA2CollectionView3PhotoStore()
+     
+    
+    
+    
     let vc = TwelfthA2ViewController(store2: store2, store3: store3, collectionView1DataSource: TwelfthA2CollectionView1DataSource(),
                                      collectionView2DataSource: TwelfthA2CollectionView2DataSource(),
                                      collectionView3DataSource: TwelfthA2CollectionView3DataSource(),
@@ -57,16 +83,13 @@ class TwelfthAViewController: UIViewController, Utils {
                                      tableviewDelegate:   TwelfthA2TableViewDataSource(),
                                      collview2PhotoStore: TwelfthA2CollectionView2PhotoStore(),
                                      collview3PhotoStore: TwelfthA2CollectionView3PhotoStore()
-        )
+    )
     
     
-    
+      
     
     // present VC
     self.navigationController?.pushViewController(vc, animated: true)
-    */
-    
-    
     
     
   }  // end IBAction
@@ -87,39 +110,20 @@ class TwelfthAViewController: UIViewController, Utils {
                 print("Selected TwelfthA1ViewController")
             case .TwelfthA2Segue:
                  print("prepareForsegue: TwelfthAViewController : Selected TwelfthA2ViewController segue.")
-                 
-                 TwelfthA2ViewController.doSomething()
-                 
-
-  
-              //  _ = segue.destination  as! TwelfthA2ViewController
-                
-          
+                 // TwelfthA2ViewController.doSomething()   // used juts for testing
                 let destVC = segue.destination  as! TwelfthA2ViewController
           
-          
-          
-          
-                /*
+              /*
                  Instaed of setting store value here, we will do it in the Class Constructor /Initializer.
                  If needed, UNCOMMENT lines below and thta will work too.
- 
                 //twelfthA2VC.store = TwelfthA2CollectionView3PhotoStore()  // give the VC a store object
                 //twelfthA2VC.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
-                //twelfthA2VC.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
-           
-            
+                //twelfthA2VC.collectionView3DataSource = TwelfthA2CollectionView3DataSource(
                 // twelfthA2VC.tableviewDataSource = TwelfthA2TableViewDataSource()
                 // twelfthA2VC.tableviewDelegate = TwelfthA2TableViewDataSource()
              
                 */
-            
-            
-            
-            
-            
-        
-        }  // end switch
+            }  // end switch
     }
     
     
