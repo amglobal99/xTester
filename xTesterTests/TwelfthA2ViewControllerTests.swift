@@ -96,7 +96,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
 
     
   
-    let controller = MockController(nil, "jack")
+    let controller = MockController(nil)
     
     // 2. Act
     controller.performSegueWithIdentifier(identifier: "ShowTwelfthA2PhotoDetail", sender: nil)
@@ -130,7 +130,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
     
 
     
-     let controller = MockController(nil, "jack")
+     let controller = MockController(nil)
      let destVC: TwelfthA2DetailViewController = TwelfthA2DetailViewController()
       let segue = UIStoryboardSegue(identifier: "ShowTwelfthA2PhotoDetail", source: controller, destination: destVC)
      controller.prepare(for: segue, sender: nil)
@@ -166,7 +166,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   
   // MARK: - Method Tests
   
-  func testThatGetSiteURLWorks () {
+  func testThatGetSiteURLMethodReturnsValidUrl () {
     let siteName = "BIKENYC"
     let site =  Constants.Configuration.TestSite(rawValue: siteName)
     let url = self.getSiteURL(baseURLString: (site?.urlString)!, method: site?.method, parameters: site?.params, apiKey: site?.apiKey)
@@ -174,26 +174,12 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   }
   
   
-  /*
-  func testThatGetJSOnObjectMethodReturnsValidObject () {
-    let siteName = "BIKENYC"
-    let site =  Constants.Configuration.TestSite(rawValue: siteName)
-    let url = self.getSiteURL(baseURLString: (site?.urlString)!, method: site?.method, parameters: site?.params, apiKey: site?.apiKey)
-    let jsonObj = self.getJSONObject(for: url!, rootPath: site?.rootPath, completionHandler: nil)  // get a SwiftyJSON object
-  
-    XCTAssertNotNil(jsonObj)
-  }
-  
-  */
   
   
   
   
   
-  
-  
-  
-  func testThatGetJSONObjectMethodReturnsSuccessResultWithValidData() {
+  func testThatGetJSONObjectMethodReturnsSuccessResultWithValidJSONObject() {
     
     var jsonObject:JSON?
     let siteName = "BIKENYC"
@@ -210,6 +196,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
     let completionHandler: (Result<JSON>) -> Void  =
       {   resp in
         jsonObject = resp.value!
+        print("Result JSON from Completion Handler: \n \(jsonObject) ")
         expectation.fulfill()   // Step 2 ...... In the completion handler, call fulfill method
     } // end closure
     
@@ -226,7 +213,37 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
 
   
   
-  
+  func testThatTestSite2IsInvalid() {
+    
+    
+    class Mock: TwelfthA2ViewController {
+    
+      var testSite2: Constants.Configuration.TestSite?
+      
+      private override func viewDidLoad() {
+        print("FROM OVERRIDDEN viewDidLoad")
+        testSite2Name = "jack"
+        testSite2 = Constants.Configuration.TestSite(rawValue: testSite2Name)
+        
+      }
+      
+      override init( _ coder: NSCoder? = nil  ) {
+        //super.init()
+      }
+      
+    } // end Mock
+    
+    
+    
+    let mock = Mock(nil)
+    _ = mock.view
+    
+    XCTAssertNil(mock.testSite2)
+    
+    
+    
+    
+  } // end func
   
   
   
