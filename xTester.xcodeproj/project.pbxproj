@@ -85,6 +85,7 @@
 		0F3F99061DA826A2002FBB8C /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F99051DA826A2002FBB8C /* SixthViewController.swift */; };
 		0F3F990A1DA826CA002FBB8C /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F99091DA826CA002FBB8C /* SeventhViewController.swift */; };
 		0F436EE91DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F436EE81DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift */; };
+		0F441B841E16C86B0089C8D9 /* NatDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F441B831E16C86B0089C8D9 /* NatDataService.swift */; };
 		0F4BCBED1DEC7CD50059D58C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4BCBEC1DEC7CD50059D58C /* Reachability.swift */; };
 		0F54BBDA1DB8ECF200FE1714 /* Fourteenth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F54BBD91DB8ECF200FE1714 /* Fourteenth.storyboard */; };
 		0F571F3F1E099FEF00E501E8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F571F3E1E099FEF00E501E8 /* Store.swift */; };
@@ -248,6 +249,7 @@
 		0F3F99051DA826A2002FBB8C /* SixthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
 		0F3F99091DA826CA002FBB8C /* SeventhViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
 		0F436EE81DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView3PhotoStore.swift; sourceTree = "<group>"; };
+		0F441B831E16C86B0089C8D9 /* NatDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NatDataService.swift; sourceTree = "<group>"; };
 		0F4BCBEC1DEC7CD50059D58C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0F54BBD91DB8ECF200FE1714 /* Fourteenth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Fourteenth.storyboard; sourceTree = "<group>"; };
 		0F571F3E1E099FEF00E501E8 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 		0F3CBFE31DE73BD9005CEFBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F441B831E16C86B0089C8D9 /* NatDataService.swift */,
 				0F22D8081DCD1E770015C9F1 /* NinthPhoto.swift */,
 				0F3CC00E1DE7B439005CEFBB /* TwelfthA2Photo.swift */,
 				0FCA28391E0DAC390018FFC7 /* TwelfthA2Item2.swift */,
@@ -1046,6 +1049,7 @@
 				0F36D65B1DE368C2002611FB /* TwelfthA2TableViewCell4.swift in Sources */,
 				0FECD9D01DB462BE00DDDCFE /* Test.swift in Sources */,
 				0FD970811DA802480099BE54 /* SecondViewController.swift in Sources */,
+				0F441B841E16C86B0089C8D9 /* NatDataService.swift in Sources */,
 				0F22D8221DCD6EEB0015C9F1 /* NinthDetailViewController.swift in Sources */,
 				0F24ABC61E0072E3007E255A /* ThirdViewController.swift in Sources */,
 				0F3CC0171DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift in Sources */,
