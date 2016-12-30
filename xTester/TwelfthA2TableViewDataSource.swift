@@ -99,7 +99,6 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
                 tableViewCell1.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
             case 1:
                 print("TableView willDisplayCell for row #2")
-          
                 guard let tableViewCell2 = cell as? TwelfthA2TableViewCell2 else { return }
                 tableViewCell2.setCollectionViewDataSourceDelegate(dataSource: collectionView2DataSource,
                                                                    dataSourceDelegate: collectionView2DataSource, forRow: indexPath.row)
@@ -110,8 +109,6 @@ class TwelfthA2TableViewDataSource: NSObject, UITableViewDataSource, UITableView
                 guard let tableViewCell3 = cell as? TwelfthA2TableViewCell3 else { return }
                 tableViewCell3.setCollectionViewDataSourceDelegate(dataSource: collectionView3DataSource, dataSourceDelegate: collectionView3DataSource, forRow: indexPath.row)
                 tableViewCell3.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
-                print("=================================================================")
-                
             case 3:
                 print("TableView willDisplayCell for row #4")
             case 4:

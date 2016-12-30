@@ -16,42 +16,28 @@ import Alamofire
 
 class TwelfthA2ViewControllerTests: BaseTestCase {
     
-  
+  var navigationController: UINavigationController!
   var viewControllerUnderTest: TwelfthA2ViewController!
   var viewControllerUnderTestDetailVC:  TwelfthA2DetailViewController!
-  //var window: UIWindow!
   
-
   // MARK: - Setup
   
   override func setUp() {
+      super.setUp()
+      let storyboard = UIStoryboard(name: "TwelfthA", bundle: Bundle.main)
     
-        super.setUp()
-        //window = UIWindow()
+      //TODO: - Work on NAvigationController piece
+    
+      // navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+      viewControllerUnderTest = storyboard.instantiateViewController(withIdentifier: "TwelfthA2")  as! TwelfthA2ViewController
+      viewControllerUnderTestDetailVC = storyboard.instantiateViewController(withIdentifier: "TwelfthA2Detail")  as! TwelfthA2DetailViewController
   
-        //get the storyboard the ViewController under test is inside
-        let storyboard = UIStoryboard(name: "TwelfthA", bundle: Bundle.main)
+      let _ = viewControllerUnderTest.view
     
-        //get the ViewController we want to test from the storyboard (note the identifier is the id explicitly set in the identity inspector)
-        viewControllerUnderTest = storyboard.instantiateViewController(withIdentifier: "TwelfthA2")  as! TwelfthA2ViewController
-        viewControllerUnderTestDetailVC = storyboard.instantiateViewController(withIdentifier: "TwelfthA2Detail")  as! TwelfthA2DetailViewController
-    
-    
-        //window.addSubview(viewControllerUnderTest.view)
-        //RunLoop.current.run(until: Date())
-    
-    
-        //load view hierarchy
-        _ = viewControllerUnderTest.view
-        
   } // end setup
   
-
   
-  
-  
-  
-  
+    
   // Mark: - Helper Methods
   
   func segues(ofViewController viewController: UIViewController) -> [String] {
