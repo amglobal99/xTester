@@ -11,6 +11,9 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import PINRemoteImage
+import PINCache
+
 
 
 /** 
@@ -72,7 +75,6 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         let photoTitleToDisplay: String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView3Cell
         let photo = photoForItemAtIndexPath(indexPath: indexPath)
-        
         // Get a truncated title for our Photo
         let photoTitle = photo.title
         // This can be changed later ... we're limiting length to 8 char
@@ -84,11 +86,47 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         }
         cell.photoIDLabel.text = photo.photoID
         cell.photoServerLabel.text = photoTitleToDisplay
-        cell.updateWithImage(photo.image)
+      
+      let url = photo.remoteURL
+      
+      let rowNumber = indexPath.row
+      print("Setting image for row: \(rowNumber + 1) ")
+      
+      
+      
+      cell.imageView?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"))
+      { result in
+        
+        print("REFRESH row : \(rowNumber + 1) ")
+        
+        // if let cell = self.photoCollectionView?.cellForItem(at: indexPath) as? NinthPhotoCollectionViewCell {
+        // if let cellToUpdate = self.collView.cellForItem(at: indexPath)    {
+        cell.setNeedsLayout()
+        //}
+      }
+
+      
+      
+      // ++++++++++++ Old code..... uses Spinner Activity Control
+      //cell.updateWithImage(photo.image)
+      
+      
+      
+      
         return cell
     } //end func
     
-    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
     /// Function to get Section Header View
     func collectionView(_ collectionView: UICollectionView,
@@ -114,6 +152,8 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     // MARK: - CollectionView DELEGATE Methods
 
+  
+  /*
   
     /// Function executed as Cell is getting ready to be displayed
      public func collectionView (_ collectionView: UICollectionView,
@@ -147,7 +187,12 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     } //end method
     
 
-    
+    */
+  
+  
+  
+  
+  
     
     
    

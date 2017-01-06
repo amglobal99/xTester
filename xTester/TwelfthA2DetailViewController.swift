@@ -30,6 +30,10 @@ class TwelfthA2DetailViewController: UIViewController, Utils {
   
     override public func viewDidLoad()  {
         super.viewDidLoad()
+      
+      
+      /*
+      
        // The value of photo var is set during segue. Now all we do is fetch that photo
         store.fetchImageForPhoto(photo)
         { [weak self] result in
@@ -46,6 +50,24 @@ class TwelfthA2DetailViewController: UIViewController, Utils {
             } //end switch
         } //end closure
  
+      */
+      
+      
+      
+      
+      
+      let url = photo.remoteURL
+      self.imageView?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"))  { _ in   }
+      //self.imageViewDetail?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"), completion: nil)
+      
+      
+      
+      
+      
+      
+      
+      
+      
     }  //end viewDidLoad
     
   

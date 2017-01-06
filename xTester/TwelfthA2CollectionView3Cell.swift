@@ -69,7 +69,9 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
         }
     }
     
-    
+  
+  
+  /*
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -86,6 +88,10 @@ class TwelfthA2CollectionView3Cell: UICollectionViewCell {
         updateWithImage(nil )
     }
     
-      
+      */
+  
+  
+  
+  
     
 } // end class

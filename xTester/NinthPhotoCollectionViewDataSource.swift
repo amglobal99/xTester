@@ -110,7 +110,7 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
       
       
         // ++++++++++++ Old code..... uses Spinner Activity Control
-      //cell.updateWithImage(photo.image
+      //cell.updateWithImage(photo.image)
       
         return cell
     } //end method
