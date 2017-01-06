@@ -29,6 +29,7 @@ public class NinthDetailViewController: UIViewController {
     override public func viewDidLoad()  {
         super.viewDidLoad()
      
+      /*
             store.fetchImageForPhoto(photo)
             { (result) -> Void in
                 switch result {
@@ -41,6 +42,19 @@ public class NinthDetailViewController: UIViewController {
                 } //end swith
                 
             } //end closure
+      
+      */
+      
+      
+      let url = photo.remoteURL
+      self.imageView?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"))  { _ in   }
+      //self.imageViewDetail?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"), completion: nil)
+      
+      
+      
+      
+      
+      
       
     }  //end viewDidLoad
     

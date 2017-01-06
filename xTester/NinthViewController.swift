@@ -22,6 +22,7 @@
 import UIKit
 import Alamofire
 import PINRemoteImage
+import PINCache
 import AlamofireImage
 import SwiftyJSON
 
@@ -62,7 +63,8 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
     /// These are populated during segue by the 'prepareForSegue' method  ( in FirstViewController.swift )
     var store: NinthPhotoStore!
     var photoDataSource: NinthPhotoCollectionViewDataSource!
-    
+  
+  
     // MARK:- Enums
     enum Method: String {
         case RecentPhotos = "flickr.photos.getRecent"
@@ -80,23 +82,19 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
         photoCollectionView.delegate = self
       
         // get details for web site used for testing
-      // Get access to test site details for Row #2
-      guard let testSite = Constants.Configuration.TestSite(rawValue: "FLICKR") else {
-        return
-      }
-      
-      
-      
-      
+        // Get access to test site details for Row #2
+        guard let testSite = Constants.Configuration.TestSite(rawValue: "FLICKR") else {
+          return
+        }
+        
       
         // Completion Handler
         let completionHandler: (Result<JSON>) -> Void  =
             {  [weak self] result in
               
-              guard let strongSelf = self else {
-                return
-              }
-              
+                guard let strongSelf = self else {
+                  return
+                }
                 let jsonObj = result.value!
                 // get list of Photos(returns array of 'NinthPhoto' items)
                 let itemsResult: NinthPhotoStore.NinthPhotosResult   = strongSelf.store.photosFromJsonObject(jsonObj)
@@ -113,13 +111,9 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
                 */
                 
                 // get Section Title: Photos Dictionary
-               // guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: strongSelf.key) else {
-                  
                   guard let sectionPhotosDictionary = strongSelf.store.sectionPhotosDictionary(from: jsonObj, for: testSite.key) else {
-                    
-                  
-                        print("Section Photo Items Dictionary is nil")
-                        return
+                      print("Section Photo Items Dictionary is nil")
+                      return
                 }
               
                 print("+++++++++++++++++  Section Photos Dictonary +++++++++++++++++++++++")
@@ -146,28 +140,11 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
         } // end closure
   
       
-      /*
-        // Create a Async(Alamofire) request to get jSON data
-      guard   let url = getSiteURL(baseURLString: baseURLString, method: Method.RecentPhotos.rawValue, parameters: params, apiKey: apiKey) else {
-        return
-      }
-      
-      getJSONObject(for: url, rootPath: rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-      
-      */
-      
-      
-      guard   let url = getSiteURL(baseURLString: testSite.urlString, method: testSite.method, parameters: testSite.params, apiKey: testSite.apiKey) else {
+      guard let url = getSiteURL(baseURLString: testSite.urlString, method: testSite.method, parameters: testSite.params, apiKey: testSite.apiKey) else {
         return
       }
       
       getJSONObject(for: url, rootPath: testSite.rootPath, completionHandler: completionHandler)  // get a SwiftyJSON object
-      
-      
-      
-      
-      
-      
       
     }  // end viewDidLoad
     
@@ -205,6 +182,8 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
 extension NinthViewController:  NinthPhotoCollectionViewCellDelegate  {
   
   
+  /*
+  
   /**
    Function executed as Cell is getting ready to be displayed
    
@@ -235,7 +214,13 @@ extension NinthViewController:  NinthPhotoCollectionViewCellDelegate  {
 
     } //end method
     
-    
+    */
+  
+  
+  
+  
+  
+  
   
     
     /*

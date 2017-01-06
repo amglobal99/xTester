@@ -17,6 +17,9 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import PINRemoteImage
+import PINCache
+
 
 
 /// This class serves as the Data Source for the Photos collection view.
@@ -93,12 +96,29 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
                 }
         cell.photoIDLabel.text = photo.photoID
         cell.photoServerLabel.text = photoTitleToDisplay
-        cell.updateWithImage(photo.image)
+      
+      
+        let url = photo.remoteURL
+        cell.imageView?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"))
+        { result in
+         // if let cell = self.photoCollectionView?.cellForItem(at: indexPath) as? NinthPhotoCollectionViewCell {
+         // if let cellToUpdate = self.collView.cellForItem(at: indexPath)    {
+           // print("Cell upating at row: \(rowNumber + 1) ")
+            cell.setNeedsLayout()
+          //}
+      }
+      
+      
+        // ++++++++++++ Old code..... uses Spinner Activity Control
+      //cell.updateWithImage(photo.image
+      
         return cell
     } //end method
     
 
-    
+  
+  
+  
     
     
     /// Function to get Section Header View

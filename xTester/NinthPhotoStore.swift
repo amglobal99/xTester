@@ -137,7 +137,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
                     guard response.data != nil else {
                         return
                     }
-                    let result: ImageResult = strongSelf.processImageRequest(data: response.data, error: response.error as NSError?)
+                    let result: ImageResult = strongSelf.processImageRequest(data: response.data, error: response.error as Error?)
 
                 
                     // ********** DO I NEED TO USE OPERATION HERE ????
@@ -159,7 +159,7 @@ class NinthPhotoStore: Utils, JsonConvertible {
     
     /// Function to retrieve a single Photo image
     ///  parameter data:  Data passed in
-    func processImageRequest(data: Data?, error: NSError?) -> ImageResult {
+    func processImageRequest(data: Data?, error: Error?) -> ImageResult {
         
         guard let  imageData = data,  let image = UIImage(data: imageData)   else {
             //could not get image

@@ -82,7 +82,7 @@ class Account: NSObject {
     
     let currentBalanceKeyPath = "currentBalance"
     let startingBalance = 100.0
-     var currentBalance = 0.0
+    var currentBalance = 0.0
     
     override init() {
         super.init()

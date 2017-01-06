@@ -64,8 +64,13 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
         }
     }  //end method
     
-    
-        
+  
+  
+  
+  
+  
+  /*
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         updateWithImage(nil )
@@ -81,7 +86,12 @@ class NinthPhotoCollectionViewCell: UICollectionViewCell {
         updateWithImage(nil )
     }
 
-    
+    */
+  
+  
+  
+  
+  
   
     
 }  // end class
