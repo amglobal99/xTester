@@ -37,7 +37,7 @@ class SixthViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("ViewController A    - viewWillAppear")
+        print("ViewController A    - viewWillAppear: Starting execution.")
         eventsArray.append("ViewController A    - viewWillAppear \n " )
         
     }

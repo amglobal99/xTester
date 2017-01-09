@@ -18,8 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sixth VIew Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fE-Er-S8A">
-                                <frame key="frameInset" minX="94" minY="89" width="173" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sixth VIew Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fE-Er-S8A">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -35,15 +34,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLc-pY-H0Z" customClass="ButtonView" customModule="xTester" customModuleProvider="target">
-                                <frame key="frameInset" minX="136" minY="245" width="88" height="30"/>
-                                <state key="normal" title="Open View B"/>
+                                <frame key="frameInset" minX="90" minY="281" width="184" height="30"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Open View B">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="SeY-CD-LKC" kind="show" id="7PW-zn-d9X"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ViewController A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH4-cS-oEg">
-                                <frame key="frameInset" minX="87" minY="200" width="186" height="28"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ViewController A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PH4-cS-oEg">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,12 +53,11 @@
                         <color key="backgroundColor" red="1" green="0.99035301099999995" blue="0.71162162839999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="4fE-Er-S8A" firstAttribute="top" secondItem="Qe2-4B-8ed" secondAttribute="bottom" constant="25" id="0Lh-6K-ag0"/>
-                            <constraint firstItem="pSu-zW-NLx" firstAttribute="top" secondItem="GLc-pY-H0Z" secondAttribute="bottom" constant="43" id="10P-GJ-kKQ"/>
                             <constraint firstItem="4fE-Er-S8A" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="9xd-SO-hTJ"/>
-                            <constraint firstItem="PH4-cS-oEg" firstAttribute="top" secondItem="srk-y3-CfU" secondAttribute="bottom" constant="16" id="Fe1-mJ-jxu"/>
                             <constraint firstItem="PH4-cS-oEg" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="NfI-mw-RMd"/>
+                            <constraint firstItem="PH4-cS-oEg" firstAttribute="top" secondItem="srk-y3-CfU" secondAttribute="bottom" constant="28" id="Ooi-HE-LvS"/>
                             <constraint firstItem="srk-y3-CfU" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="YZM-h3-lKI"/>
-                            <constraint firstItem="GLc-pY-H0Z" firstAttribute="top" secondItem="PH4-cS-oEg" secondAttribute="bottom" constant="17" id="dNH-CZ-hca"/>
+                            <constraint firstItem="GLc-pY-H0Z" firstAttribute="top" secondItem="PH4-cS-oEg" secondAttribute="bottom" constant="37.5" id="Zla-fU-1Xw"/>
                             <constraint firstItem="XYx-7z-I4U" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="eFN-ES-8pX"/>
                             <constraint firstItem="XYx-7z-I4U" firstAttribute="top" secondItem="4fE-Er-S8A" secondAttribute="bottom" constant="13.5" id="eIm-NH-ML8"/>
                             <constraint firstItem="PH4-cS-oEg" firstAttribute="centerX" secondItem="jFp-Dj-ar8" secondAttribute="centerX" id="f7D-a7-EMl"/>
@@ -68,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83r-Wi-T0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343.19999999999999" y="-278.41079460269867"/>
+            <point key="canvasLocation" x="-343.5" y="-278.5"/>
         </scene>
         <!--Sixth Detail View Controller-->
         <scene sceneID="qke-1F-SHr">
@@ -95,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nz-rl-ZgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="-278"/>
+            <point key="canvasLocation" x="190" y="-279"/>
         </scene>
     </scenes>
 </document>

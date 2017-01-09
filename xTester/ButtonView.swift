@@ -12,30 +12,39 @@ import UIKit
 
 
 class ButtonView: UIButton{
-    
-    
+  
+  //OK
+    override func awakeFromNib() {
+        print("        Button(Open ViewB) - awakeFromNib ......")
+    }
+  
+  // OK
     override func willMove(toSuperview newSuperview: UIView?) {
         print("        Button(Open ViewB) - willMoveToSuperview" )
     }
-    
+  
+  
+  //OK
     override func didMoveToSuperview() {
         print("        Button(Open ViewB) - didMoveToSuperview")
     }
     
-    override func awakeFromNib() {
-        print("        Button(Open ViewB) - awakeFromNib ......")
-    }
-    
+  
+    // OK
     override func willMove(toWindow newWindow: UIWindow?) {
         print("        Button(Open ViewB) - willMoveToWindow")
     }
-    
+  
+  
+  
+  //Ok
     override func didMoveToWindow() {
         print("        Button(Open ViewB) - didMoveToWindow")
     }
     
 
-    
-    
+  
+  
+  
     
 }  // end class

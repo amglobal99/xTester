@@ -15,7 +15,7 @@ class SixthVCView: UIView {
     
     
     override func awakeFromNib() {
-        print("  ViewController A has just finished its loadView method")
+        //print("  ViewController A has just finished its loadView method")
         print("     View A    - awakeFromNib.   Main View is avail with its outlets and connections.")
     }
     
