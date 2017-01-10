@@ -8,6 +8,7 @@ pod 'PINRemoteImage'
 pod 'PINCache'
 pod 'Locksmith'
 pod 'BRYXBanner'
+pod 'PSOperations'
 pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
 end
 target 'xTesterTests' do
@@ -18,6 +19,7 @@ pod 'PINRemoteImage'
 pod 'PINCache'
 pod 'Locksmith'
 pod 'BRYXBanner'
+pod 'PSOperations'
 pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
 end
 target 'xTesterUITests' do
@@ -28,5 +30,6 @@ pod 'PINRemoteImage'
 pod 'PINCache'
 pod 'Locksmith'
 pod 'BRYXBanner'
+pod 'PSOperations'
 pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
 end

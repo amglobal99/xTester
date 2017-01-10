@@ -13,6 +13,15 @@ PODS:
   - PINRemoteImage/FLAnimatedImage (2.1.4):
     - FLAnimatedImage (>= 1.0)
     - PINRemoteImage/Core
+  - PSOperations (3.0.0):
+    - PSOperations/Core (= 3.0.0)
+    - PSOperations/Health (= 3.0.0)
+    - PSOperations/Passbook (= 3.0.0)
+  - PSOperations/Core (3.0.0)
+  - PSOperations/Health (3.0.0):
+    - PSOperations/Core
+  - PSOperations/Passbook (3.0.0):
+    - PSOperations/Core
   - SwiftyJSON (3.0.0)
 
 DEPENDENCIES:
@@ -22,6 +31,7 @@ DEPENDENCIES:
   - Locksmith
   - PINCache
   - PINRemoteImage
+  - PSOperations
   - SwiftyJSON (from `https://github.com/appsailor/SwiftyJSON.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
@@ -42,8 +52,9 @@ SPEC CHECKSUMS:
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
+  PSOperations: 6bc00aac233d9d19b60caced190e6cb8fbcb1dcd
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
 
-PODFILE CHECKSUM: 387f28625e96b24dfed3a6b07b452546026b16d6
+PODFILE CHECKSUM: 6b59656331a1854155f8a7d0ee5adee6810f3fd5
 
 COCOAPODS: 1.1.0.rc.2

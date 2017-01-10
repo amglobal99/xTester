@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PSOperations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-xTester.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4C0BE4699DAC1A8CDDDB073FAA50AA13</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5922F047B4A7957BC568CFBD8FDFD545</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78CE8DF8744EB21C2FF4EE96A690A47B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,17 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C0791807A066B453B42D76BB590D535</key>
+		<key>82669AD1E9D2AB46A9AB396DA6541243</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D35DE686D52585BC4DE7046370159D8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8BCF6DCA1CB38582055450F1C1984ECB</key>
+		<key>8D0C8266CCA6C5320589D98B6D9478A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +112,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ABFEC77412C663BD2C1A7F25BDF4326A</key>
+		<key>CDB08C07D47BCDB5C433A0880B4EE4C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDB08C07D47BCDB5C433A0880B4EE4C4</key>
+		<key>E88ABC788402847C17A2C64C811BC56E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

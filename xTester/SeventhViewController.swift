@@ -10,6 +10,7 @@
 
 
 import UIKit
+//import PSOperations
 
 
 let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg",
@@ -19,6 +20,7 @@ let imageURLs = ["http://www.planetware.com/photos-large/F/france-paris-eiffel-t
 ]
 
 
+/// Class used to download Image from URL
 class Downloader {
     
     class func downloadImageWithURL(_ url:String) -> UIImage? {
@@ -34,6 +36,7 @@ class Downloader {
 
 
 
+
 class SeventhViewController: UIViewController {
     
     
@@ -43,12 +46,11 @@ class SeventhViewController: UIViewController {
     @IBOutlet weak var imageView4: UIImageView!
     @IBOutlet weak var sliderValueLabel: UILabel!
     
-    
+    // Create a new queue
     var queue = OperationQueue()
+    var queue2 = OperationQueue()
     
-    
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -58,74 +60,104 @@ class SeventhViewController: UIViewController {
     ///   This function uses BlockOperation ( subclass of Operation)
   
     @IBAction func didClickOnStart(_ sender: AnyObject) {
-        
-        
+      
+      self.imageView1.image = nil
+      self.imageView2.image = nil
+      self.imageView3.image = nil
+      self.imageView4.image = nil
+      
+      
         // To make this a serial queue, enable line below
         //queue.maxConcurrentOperationCount = 1
       
-        print("executing didClickOnstart method ...")
+              
+      // Second Operation
+      let operation2 = BlockOperation() {
+        print("Started operation 2. Executing on: \(Thread.current)")
+        let img2 = Downloader.downloadImageWithURL(imageURLs[1])
+        OperationQueue.main.addOperation(){
+          self.imageView2.image = img2
+        }
+        //print("Operation 2. Finished operation tasks.")
+      }
       
-        let operation1 = BlockOperation(block: {
-            let img1 = Downloader.downloadImageWithURL(imageURLs[0])
-            OperationQueue.main.addOperation({
-                self.imageView1.image = img1
-            })
-        })
-        
-        operation1.completionBlock = {
-            print("Operation 1 completed, isCancelled:\(operation1.isCancelled) ")
+      operation2.completionBlock = {
+        print("     Operation 2 completion handler. Thread: \(Thread.current) ")
+      }
+      queue.addOperation(operation2)
+      
+      
+      
+    
+      // Create First operation
+      let operation1 = BlockOperation() {
+        print("Started operation 1. Executing on: \(Thread.current)")
+        GlobalFunctions.printCompanyName(str: "        Running a function outside this file.")
+        let img1 = Downloader.downloadImageWithURL(imageURLs[0])
+        OperationQueue.main.addOperation(){
+          self.imageView1.image = img1
         }
-        
-        queue.addOperation(operation1)
-        
-        
-        
-        
-        let operation2 = BlockOperation(block: {
-            let img2 = Downloader.downloadImageWithURL(imageURLs[1])
-            OperationQueue.main.addOperation({
-                self.imageView2.image = img2
-            })
-        })
-        // ***** Add a dependency
-        //operation2.addDependency(operation1)
-        operation2.completionBlock = {
-            //print("Operation 2 completed")
-            print("Operation 2 completed, isCancelled:\(operation2.isCancelled) ")
-        }
-        queue.addOperation(operation2)
-        
-        
-        
-        
-        let operation3 = BlockOperation(block: {
+        //print("Operation 1. Finished operation tasks.")
+      }
+      
+      operation1.completionBlock = {
+        print("     Operation 1  completion handler. Thread: \(Thread.current) ")
+      }
+      // Operation 1 is dependent on Opaeration 2
+      operation1.addDependency(operation2)
+      queue.addOperation(operation1)
+      
+      
+      
+      
+      // Third Operation
+        let operation3 = BlockOperation() {
+            print("Started operation 3. Executing on: \(Thread.current)")
             let img3 = Downloader.downloadImageWithURL(imageURLs[2])
-            OperationQueue.main.addOperation({
+            OperationQueue.main.addOperation(){
                 self.imageView3.image = img3
-            })
-        })
-        // **** Add a dependency
-        // operation3.addDependency(operation2)
-        
-        operation3.completionBlock = {
-            print("Operation 3 completed, isCancelled:\(operation3.isCancelled) ")
+            }
         }
-        queue.addOperation(operation3)
+        operation3.completionBlock = {
+            print("     Operation 3 completion handler. Thread: \(Thread.current)  ")
+        }
+      queue.addOperation(operation3)
         
     
-        
-        let operation4 = BlockOperation(block: {
+      
+      // Fourth Operation
+        let operation4 = BlockOperation() {
+          print("Started operation 4. Executing on: \(Thread.current)")
             let img4 = Downloader.downloadImageWithURL(imageURLs[3])
-            OperationQueue.main.addOperation({
+            OperationQueue.main.addOperation(){
                 self.imageView4.image = img4
-            })
-        })
-        
-        operation4.completionBlock = {
-            print("Operation 4 completed, isCancelled:\(operation4.isCancelled) ")
+            }
         }
-        queue.addOperation(operation4)
-        
+        operation4.completionBlock = {
+            print("     Operation 4 completion handler. Thread: \(Thread.current) ")
+        }
+      queue.addOperation(operation4)
+      
+      
+      
+      
+      
+      
+      // Final Operation
+      let operation5 = BlockOperation(){
+        print("Started operation 5. Executing on: \(Thread.current)")
+      
+      }
+      operation5.addDependency(operation1)
+      operation5.addDependency(operation3)
+      operation5.addDependency(operation4)
+      operation5.completionBlock = {
+        print("     Operation 5 completion handler. Thread: \(Thread.current) ")
+      }
+      queue2.addOperation(operation5)
+      
+      
+      
         
     }  // end function
     
@@ -134,8 +166,9 @@ class SeventhViewController: UIViewController {
     
     
     
-    @IBAction func sliderValueChanged(_ sender: UISlider) {
-        self.sliderValueLabel.text = "\(sender.value * 100.0)"
+  @IBAction func sliderValueChanged(_ sender: UISlider) {
+      //print("is main thread :  \(Thread.isMainThread)  ");
+        self.sliderValueLabel.text = "Slider: \(sender.value * 100.0)"
     }
     
     

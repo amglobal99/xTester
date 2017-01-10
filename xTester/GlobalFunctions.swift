@@ -21,7 +21,7 @@ import UIKit
 struct GlobalFunctions {
 
   static func printCompanyName(str:String) {
-        print("Company Name is : \(str) ")
+        print("\(str)")
     }
 
 
