@@ -26,7 +26,7 @@ import PINCache
 
 class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, Utils, JsonConvertible {
 
-    
+  
     
     // MARK: - Enums
     enum Method: String {
@@ -99,14 +99,21 @@ class NinthPhotoCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
       
       
         let url = photo.remoteURL
-        cell.imageView?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"))
-        { result in
-         // if let cell = self.photoCollectionView?.cellForItem(at: indexPath) as? NinthPhotoCollectionViewCell {
-         // if let cellToUpdate = self.collView.cellForItem(at: indexPath)    {
-           // print("Cell upating at row: \(rowNumber + 1) ")
-            cell.setNeedsLayout()
-          //}
+       // cell.imageView?.pin_setImage(from: url, placeholderImage: UIImage(named: "placeholder.png"))
+        cell.imageView?.pin_setImage(from: url, placeholderImage:  nil)
+        {  result in
+          if let cellToUpdate = collectionView.cellForItem(at: indexPath) as? NinthPhotoCollectionViewCell {
+            let rowNumber = (indexPath as IndexPath).row
+            print("Cell upating at row: \(rowNumber + 1) ")
+            cellToUpdate.setNeedsLayout()
+          }
       }
+      
+      
+      
+      
+      
+      
       
       
         // ++++++++++++ Old code..... uses Spinner Activity Control

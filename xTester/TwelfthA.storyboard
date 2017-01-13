@@ -196,7 +196,7 @@
                                 <rect key="frame" x="0.0" y="60" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1sn-WT-8Pm" id="fH5-uK-n6c">
-                                    <frame key="frameInset" width="375" height="180"/>
+                                    <frame key="frameInset" width="375" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qkC-gd-MRC" customClass="TwelfthA2CollectionView1" customModule="xTester" customModuleProvider="target">
@@ -252,7 +252,7 @@
                                 <rect key="frame" x="0.0" y="240" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9o-aj-jUN" id="pAc-yr-Iu2">
-                                    <frame key="frameInset" width="375" height="180"/>
+                                    <frame key="frameInset" width="375" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lZA-IJ-Usg" customClass="TwelfthA2CollectionView2" customModule="xTester" customModuleProvider="target">
@@ -265,7 +265,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView2Cell" id="JXu-uh-7sj" customClass="TwelfthA2CollectionView2Cell" customModule="xTester" customModuleProvider="target">
-                                                    <rect key="frame" x="117" y="2" width="139" height="138"/>
+                                                    <rect key="frame" x="117" y="7" width="139" height="138"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="139" height="138"/>
@@ -302,7 +302,7 @@
                                                 </collectionViewCell>
                                             </cells>
                                             <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView2SectionHeader" id="CCZ-5r-LSk" customClass="TwelfthA2CollectionView2SectionHeader" customModule="xTester" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="112" height="1000"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="112" height="153"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vg-nN-EIi">
@@ -339,7 +339,7 @@
                                 <rect key="frame" x="0.0" y="420" width="375" height="181"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HW3-cq-1Ni" id="LNN-mq-jyB">
-                                    <frame key="frameInset" width="375" height="181"/>
+                                    <frame key="frameInset" width="375" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9ec-Yc-sYA" customClass="TwelfthA2CollectionView3" customModule="xTester" customModuleProvider="target">
@@ -352,7 +352,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3Cell" id="ppR-U8-aGO" customClass="TwelfthA2CollectionView3Cell" customModule="xTester" customModuleProvider="target">
-                                                    <rect key="frame" x="109" y="0.0" width="100" height="160"/>
+                                                    <rect key="frame" x="109" y="2" width="100" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
@@ -434,7 +434,7 @@
                                                 </collectionViewCell>
                                             </cells>
                                             <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwelfthA2CollectionView3SectionHeader" id="9en-Xk-ly8" customClass="TwelfthA2CollectionView3SectionHeader" customModule="xTester" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="109" height="1000"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="165"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9d-NX-RpX">
@@ -475,7 +475,7 @@
                                 <rect key="frame" x="0.0" y="601" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ld-WL-byK" id="ieO-EP-81t">
-                                    <frame key="frameInset" width="375" height="180"/>
+                                    <frame key="frameInset" width="375" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" red="1" green="0.97585903845007971" blue="0.85870013009796164" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
@@ -484,7 +484,7 @@
                                 <rect key="frame" x="0.0" y="781" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7o-lC-1yd" id="trV-Fn-4pr">
-                                    <frame key="frameInset" width="375" height="180"/>
+                                    <frame key="frameInset" width="375" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" red="0.93888117433716411" green="0.73920851071565052" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
@@ -493,7 +493,7 @@
                                 <rect key="frame" x="0.0" y="961" width="375" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mG8-0a-Ciz" id="qso-MN-3DV">
-                                    <frame key="frameInset" width="375" height="180"/>
+                                    <frame key="frameInset" width="375" height="179"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" red="0.89258807748621516" green="1" blue="0.84175145591185274" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>

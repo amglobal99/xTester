@@ -146,7 +146,6 @@ class SeventhViewController: UIViewController {
       // Final Operation
       let operation5 = BlockOperation(){
         print("Started operation 5. Executing on: \(Thread.current)")
-      
       }
       operation5.addDependency(operation1)
       operation5.addDependency(operation3)
@@ -167,8 +166,7 @@ class SeventhViewController: UIViewController {
     
     
   @IBAction func sliderValueChanged(_ sender: UISlider) {
-      //print("is main thread :  \(Thread.isMainThread)  ");
-        self.sliderValueLabel.text = "Slider: \(sender.value * 100.0)"
+             self.sliderValueLabel.text = "Slider: \(sender.value * 100.0)"
     }
     
     
