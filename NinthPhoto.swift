@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// CLASS MODELS THE PHOT OBJECT
 
 class NinthPhoto {
     
@@ -30,6 +31,8 @@ class NinthPhoto {
     }
     
 }  //end class
+
+
 
 
 
