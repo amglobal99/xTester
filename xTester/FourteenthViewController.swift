@@ -322,10 +322,14 @@ class FourteenthViewController: UIViewController {
         }
         
         var todosUrlRequest = URLRequest(url: todosURL)
-        todosUrlRequest.httpMethod = "POST"
-        
+        // todosUrlRequest.httpMethod = "POST"
+        todosUrlRequest.httpMethod = HTTPMethod.post.rawValue
+      
+      
         // Let's create 2 objects
-        let newTodo: [[String: Any]] = [["title": "My First todo", "completed": false, "userId": 1],[ "title": "My Second todo", "completed": false, "userId": 1]   ]
+        let newTodo: [[String: Any]] = [["title": "My First todo", "completed": false, "userId": 1],[ "title": "My Second todo", "completed": false, "userId": 1]]
+      
+      
       
         do {
             jsonTodo = try JSONSerialization.data(withJSONObject: newTodo, options: [])
