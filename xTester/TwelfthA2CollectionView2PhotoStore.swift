@@ -87,15 +87,15 @@ class TwelfthA2CollectionView2PhotoStore: Utils, JsonConvertible {
    */
   func photoFromJSONObject(_ json: JSON ) -> TwelfthA2Item2? {
     guard
-      let bikeID:String? = json["id"].stringValue,
+      let bikeID:String = json["id"].stringValue,
       let statusValue = json["statusValue"].string,
       let stAddress1 = json["stAddress1"].string,
       let stationName = json["stationName"].string,
-      let availableBikes:String? = json["availableBikes"].stringValue,
-      let statusKey:String? = json["statusKey"].stringValue
+      let availableBikes:String = json["availableBikes"].stringValue,
+      let statusKey:String = json["statusKey"].stringValue
     else { return nil  }
     
-    return TwelfthA2Item2(bikeID: bikeID!, statusValue: statusValue, stAddress1: stAddress1, stationName: stationName, availableBikes: availableBikes!, statusKey: statusKey!)
+    return TwelfthA2Item2(bikeID: bikeID, statusValue: statusValue, stAddress1: stAddress1, stationName: stationName, availableBikes: availableBikes, statusKey: statusKey)
   }
   
   

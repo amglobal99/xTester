@@ -15,6 +15,9 @@ class TwelfthAViewController: UIViewController, Utils {
     enum SegueIdentifier:String  {
         case TwelfthA1Segue
         case TwelfthA2Segue
+        case TwelfthA3Segue
+        case TwelfthA4Segue
+      
     }
     
     
@@ -119,7 +122,14 @@ class TwelfthAViewController: UIViewController, Utils {
             case .TwelfthA2Segue:
                  print("prepareForsegue: TwelfthAViewController : Selected TwelfthA2ViewController segue.")
                  // TwelfthA2ViewController.doSomething()   // used juts for testing
-                let destVC = segue.destination  as! TwelfthA2ViewController
+                // let destVC = segue.destination  as! TwelfthA2ViewController
+                 let _ = segue.destination  as! TwelfthA2ViewController
+        case .TwelfthA3Segue:
+              print("prepareForsegue: TwelfthAViewController : Selected TwelfthA3ViewController segue.")
+                    //let _ = segue.destination  as! TwelfthA3ViewController
+        case .TwelfthA4Segue:
+          print("prepareForsegue: TwelfthAViewController : Selected TwelfthA4ViewController segue.")
+          let _ = segue.destination  as! TwelfthA4ViewController
           
               /*
                  Instaed of setting store value here, we will do it in the Class Constructor /Initializer.

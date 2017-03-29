@@ -238,7 +238,7 @@ protocol StoreService {
       /// Function updates data sources for the third row for TAbleView
       func updateDataForThirdTableRow() {
         // Create a weak reference to self
-        weak var weakSelf = self
+        //weak var weakSelf = self
         
         // get access to test site details for Row #3
         guard let testSite3 = Constants.Configuration.TestSite(rawValue: testSite3Name) else {

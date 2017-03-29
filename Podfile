@@ -9,7 +9,8 @@ pod 'PINCache'
 pod 'Locksmith'
 pod 'BRYXBanner'
 pod 'PSOperations'
-pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
+pod 'SwiftyJSON'
+pod 'Eureka', '~> 2.0.1'
 end
 target 'xTesterTests' do
 use_frameworks!
@@ -20,7 +21,8 @@ pod 'PINCache'
 pod 'Locksmith'
 pod 'BRYXBanner'
 pod 'PSOperations'
-pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
+pod 'SwiftyJSON'
+pod 'Eureka', '~> 2.0.1'
 end
 target 'xTesterUITests' do
 use_frameworks!
@@ -31,5 +33,6 @@ pod 'PINCache'
 pod 'Locksmith'
 pod 'BRYXBanner'
 pod 'PSOperations'
-pod 'SwiftyJSON', :git => 'https://github.com/appsailor/SwiftyJSON.git', :branch => 'swift3'
+pod 'SwiftyJSON'
+pod 'Eureka', '~> 2.0.1'
 end

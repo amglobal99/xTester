@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		042D47AC1E3921A000470CCD /* NinthPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D47AB1E3921A000470CCD /* NinthPhoto.swift */; };
+		0471B2201E8C60530084DC12 /* ExtensionEurekaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */; };
+		04F0EE741E8C359200253AC5 /* TwelfthA4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */; };
 		0F10A5911E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */; };
 		0F11D35C1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */; };
 		0F19233A1DA87A9100FF9E4D /* Sixth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F1923391DA87A9100FF9E4D /* Sixth.storyboard */; };
@@ -172,6 +174,8 @@
 
 /* Begin PBXFileReference section */
 		042D47AB1E3921A000470CCD /* NinthPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhoto.swift; sourceTree = "<group>"; };
+		0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionEurekaRow.swift; sourceTree = "<group>"; };
+		04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA4ViewController.swift; sourceTree = "<group>"; };
 		0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2SectionHeader.swift; sourceTree = "<group>"; };
 		0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		0F1923391DA87A9100FF9E4D /* Sixth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sixth.storyboard; sourceTree = "<group>"; };
@@ -349,6 +353,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0471B21E1E8C42B90084DC12 /* Eureka_Forms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Eureka_Forms;
+			sourceTree = "<group>";
+		};
 		0F2D7EC61DB13BFD007A6F4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +407,7 @@
 				0F38A8221DFB9DF000E17CFE /* ProtocolValidator.swift */,
 				0F4BCBEC1DEC7CD50059D58C /* Reachability.swift */,
 				0F3979921DDF4F3B00F95B0A /* ReleasePrint.swift */,
+				0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */,
 			);
 			name = Globals_and_Protocols;
 			sourceTree = "<group>";
@@ -453,6 +465,7 @@
 				0F322CCE1DE26F8C001796FC /* TableViewRelated */,
 				0FECD9D31DB462E100DDDCFE /* TestClass */,
 				0F3F98FD1DA81D79002FBB8C /* Views */,
+				0471B21E1E8C42B90084DC12 /* Eureka_Forms */,
 			);
 			path = xTester;
 			sourceTree = "<group>";
@@ -596,6 +609,7 @@
 				0F8A85421DC3C72900C405AC /* TwelfthAViewController.swift */,
 				0F8A854E1DC3D5B200C405AC /* TwelfthA1ViewController.swift */,
 				0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */,
+				04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */,
 				0F2664001DD570B40012051F /* TwelfthA2DetailViewController.swift */,
 				0F8A85461DC3C89700C405AC /* TwelfthBViewController.swift */,
 				0FCE1C771DB6AC1F00242E09 /* ThirteenthViewController.swift */,
@@ -756,7 +770,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Natsys;
 				TargetAttributes = {
 					0F38F4DD1DA7F8AF0086BAA8 = {
@@ -1013,6 +1027,7 @@
 				0F3CC00F1DE7B439005CEFBB /* TwelfthA2Photo.swift in Sources */,
 				0F36D6531DE36860002611FB /* TwelfthA2TableViewCell2.swift in Sources */,
 				0F3CBFF71DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift in Sources */,
+				0471B2201E8C60530084DC12 /* ExtensionEurekaRow.swift in Sources */,
 				0F3F99021DA8267D002FBB8C /* FifthViewController.swift in Sources */,
 				0FD9707E1DA802480099BE54 /* FourthViewController.swift in Sources */,
 				0F3052ED1DABF1EF00F79778 /* ProtocolUtils.swift in Sources */,
@@ -1080,6 +1095,7 @@
 				0F8A854F1DC3D5B200C405AC /* TwelfthA1ViewController.swift in Sources */,
 				0F571F3F1E099FEF00E501E8 /* Store.swift in Sources */,
 				0FCA28341E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift in Sources */,
+				04F0EE741E8C359200253AC5 /* TwelfthA4ViewController.swift in Sources */,
 				0F3052CC1DAAD5A400F79778 /* PublishersCollectionViewController.swift in Sources */,
 				0F3979931DDF4F3B00F95B0A /* ReleasePrint.swift in Sources */,
 				0F2664011DD570B40012051F /* TwelfthA2DetailViewController.swift in Sources */,
@@ -1192,6 +1208,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1235,6 +1252,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
