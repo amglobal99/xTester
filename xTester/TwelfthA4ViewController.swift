@@ -13,7 +13,7 @@ class TwelfthA4ViewController: FormViewController {
   
   
   var zip: TextRow!
-  
+  var mileage: IntRow!
   
   
   
@@ -68,8 +68,42 @@ class TwelfthA4ViewController: FormViewController {
     }
     
     
+    mileage = IntRow("mileage"){
+      $0.title = "Vehicle Mileage"
+      //$0.value = customer?.mileage
+      
+      $0.placeholder = "Required field"
+      $0.cell.textField.backgroundColor  = UIColor.yellow
+      $0.add(rule: RuleRequired())
+      }
+      .cellUpdate { cell, row in
+        //print("I updated ..")
+        
+        if !row.isValid {
+          print("value not valid")
+          cell.titleLabel?.textColor = .red
+          //cell.textField.backgroundColor  = UIColor.red
+          cell.textField.backgroundColor  = UIColor.yellow
+          cell.textField.placeholder =  "Enter valid amt."
+        } else {
+          if cell.textField.hasText   {
+            cell.textField.backgroundColor  = UIColor.clear
+          } else {
+            cell.textField.backgroundColor  = UIColor.yellow
+          }
+        }
+        
+        
+      }.onChange { r   in
+        print("I changed ..")
+    }
     
     
+    
+    
+    
+
+    /// THIS IS WHERE THE FORM BEGINS
     
     
     
@@ -95,6 +129,10 @@ class TwelfthA4ViewController: FormViewController {
     
     
     <<< zip
+    
+    <<< mileage
+    
+    
     
     
   } // end Form
