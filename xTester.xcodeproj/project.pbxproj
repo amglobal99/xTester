@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		042D47AC1E3921A000470CCD /* NinthPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D47AB1E3921A000470CCD /* NinthPhoto.swift */; };
+		045C96921EA14BA300EFD630 /* TwelfthA5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C96911EA14BA300EFD630 /* TwelfthA5ViewController.swift */; };
 		0471B2201E8C60530084DC12 /* ExtensionEurekaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */; };
 		04F0EE741E8C359200253AC5 /* TwelfthA4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */; };
 		0F10A5911E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */; };
@@ -174,6 +175,7 @@
 
 /* Begin PBXFileReference section */
 		042D47AB1E3921A000470CCD /* NinthPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhoto.swift; sourceTree = "<group>"; };
+		045C96911EA14BA300EFD630 /* TwelfthA5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA5ViewController.swift; sourceTree = "<group>"; };
 		0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionEurekaRow.swift; sourceTree = "<group>"; };
 		04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA4ViewController.swift; sourceTree = "<group>"; };
 		0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2SectionHeader.swift; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 				0F8A854E1DC3D5B200C405AC /* TwelfthA1ViewController.swift */,
 				0FC797A21DD56E62000E0D2A /* TwelfthA2ViewController.swift */,
 				04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */,
+				045C96911EA14BA300EFD630 /* TwelfthA5ViewController.swift */,
 				0F2664001DD570B40012051F /* TwelfthA2DetailViewController.swift */,
 				0F8A85461DC3C89700C405AC /* TwelfthBViewController.swift */,
 				0FCE1C771DB6AC1F00242E09 /* ThirteenthViewController.swift */,
@@ -1117,6 +1120,7 @@
 				0F61D9871DE66F110006D544 /* TwelfthA2CollectionView1SectionHeader.swift in Sources */,
 				0F9887E11DC512A400BE3D7E /* ProtocolDimmable.swift in Sources */,
 				0F4BCBED1DEC7CD50059D58C /* Reachability.swift in Sources */,
+				045C96921EA14BA300EFD630 /* TwelfthA5ViewController.swift in Sources */,
 				0F2C0CF81DB5B0C600ECBA67 /* ExtensionArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

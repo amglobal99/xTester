@@ -17,7 +17,7 @@ class TwelfthAViewController: UIViewController, Utils {
         case TwelfthA2Segue
         case TwelfthA3Segue
         case TwelfthA4Segue
-      
+         case TwelfthA5Segue
     }
     
     
@@ -141,6 +141,13 @@ class TwelfthAViewController: UIViewController, Utils {
                 // twelfthA2VC.tableviewDelegate = TwelfthA2TableViewDataSource()
              
                 */
+          
+          case .TwelfthA5Segue:
+               let _ =   (segue.destination as! UINavigationController).topViewController as! TwelfthA5ViewController
+          
+
+          
+          
             }  // end switch
     }
     

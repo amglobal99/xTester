@@ -9,7 +9,7 @@
 import Foundation
 
 
-// Sue these functions to disable print statements in Release mode
+// Use these functions to disable print statements in Release mode
 /// However, the below code is not working
 
 
@@ -17,10 +17,10 @@ import Foundation
 
 
 
-/*
-func debugPrint(items: Any..., separator: String = " ", terminator: String = "\n") {}
 
-func print(items: Any..., separator: String = " ", terminator: String = "\n") {}
+//func debugPrint(items: Any..., separator: String = " ", terminator: String = "\n") {}
+
+//func print(items: Any..., separator: String = " ", terminator: String = "\n") {}
 
 
-*/
+
