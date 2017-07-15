@@ -69,6 +69,31 @@ protocol StoreService {
       
       
       
+         // Enum for identifier foe Detail ViewController
+         enum DetailViewSegueIdentifier: String {
+         
+               init? (rawValue: String) {
+                  switch rawValue {
+                     case "ShowView1ItemDetail":
+                        self = .ShowView1ItemDetail
+                     case "ShowView2ItemDetail":
+                        self = .ShowView2ItemDetail
+                     case "ShowTwelfthA2PhotoDetail":
+                        self = .ShowTwelfthA2PhotoDetail
+                     default:
+                        return nil
+                  }
+               } // end init
+               
+               // define list of cases
+               case ShowView1ItemDetail
+               case ShowView2ItemDetail
+               case ShowTwelfthA2PhotoDetail
+         }
+         
+      
+      
+      
       
         // MARK: - Initializers
         
@@ -312,8 +337,13 @@ protocol StoreService {
       ///Function called during the segue from TwelfthA2ViewController to Detail View Controller.
       override   public func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
             print("Starting prepareForSegue in TwelfthA2VC.")
-            let segueIdentifier = segue.identifier!
-            switch segueIdentifier  {
+         
+         /*
+          let segueIdentifier = segue.identifier!
+         
+         
+         
+         switch segueIdentifier  {
                 case "ShowView1ItemDetail":
                   print("view 1")
                 case "ShowView2ItemDetail":
@@ -330,6 +360,37 @@ protocol StoreService {
                     // do nothing
                     break
             }  // end switch
+ 
+ */
+         
+         
+         
+         
+         if let segueIdentifier =  DetailViewSegueIdentifier(rawValue:  segue.identifier!)  {
+         
+               switch segueIdentifier {
+                     case .ShowView1ItemDetail:
+                           print("view 1")
+                     case .ShowView2ItemDetail:
+                        print("test")
+                     case .ShowTwelfthA2PhotoDetail:
+                        print("printing from prepareForSegue ..... Case section")
+                        let destinationVC = segue.destination as! TwelfthA2DetailViewController
+                        let tableIdx = IndexPath(row: 2, section: 0)
+                        let tabCell = self.tableView.cellForRow(at: tableIdx) as! TwelfthA2TableViewCell3
+                        if let selectedIndexPath = tabCell.collectionView3.indexPathsForSelectedItems?.first {
+                           updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
+                        }
+                     default:
+                        // do nothing
+                        break
+               } // end  switch
+         } // end if
+ 
+ 
+ 
+ 
+ 
         }  // end func
         
 

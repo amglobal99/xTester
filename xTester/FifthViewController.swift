@@ -16,10 +16,13 @@ import Alamofire
 class FifthViewController: UIViewController, JsonConvertible, Utils {
 
     var jsonResultObject:JSON?
-    let testSiteName = "BIKENYC"  // change to "FLICKR" or "GITHUB" if needed
-
+    let testSiteName = "BIKENYC"  // change to "FLICKR" or "GITHUB" or "TYPICODE" if needed
   
-    @IBAction func getKeyArray(_ sender: AnyObject) {
+  
+  
+  
+  
+  @IBAction func getKeyArray(_ sender: AnyObject) {
       
             // Get access to test site details for Row #2
             guard let testSite = Constants.Configuration.TestSite(rawValue: testSiteName) else {
@@ -28,7 +31,7 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
       
            //print("***** getKeyArray... starting *******")
             guard let jsonObj = self.jsonResultObject  else {
-                print("getKeyAray: Objcect is nil.")
+                print("getKeyAray: Object is nil.")
                 return
             }
         
@@ -38,9 +41,9 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
                 return
             }
         
-            print("+++++++++++++++++  @IBAction getKeyArray: Section Titles Array ---> key: \(testSite.key) +++++++++++++++++++++++")
+            print("\n\n++++++++  @IBAction getKeyArray: Section Titles Array ---> key: \(testSite.key) +++++++++++++++++++++++")
             print(photoKeyArray)
-            print("+++++++++++++++++  end @IBAction Section Titles +++++++++++++++++++++")
+            print("+++++++++++ end @IBAction Section Titles +++++++++++++++++++++\n\n\n")
         
             // get Dictionary
             guard let photoItemsDictionary = getDictionary(from: jsonObj,  for: testSite.key, keyArray: photoKeyArray, dataKey: testSite.dataKey)  else {
@@ -48,9 +51,9 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
                 return
             }
             
-            print("+++++++++++++++++  @IBAction Dictonary: Key: \(testSite.key)  DataKey: \(testSite.dataKey) +++++++++++++++++++++++")
+            print("\n\n+++++++++  @IBAction Dictonary: Key: \(testSite.key)  DataKey: \(testSite.dataKey) +++++++++++++++++++++++")
             print(photoItemsDictionary)
-            print("+++++++++++++++++  end @IBAction Dictionary +++++++++++++++++++++")
+            print("+++++++++++++++++  end @IBAction Dictionary +++++++++++++++++++++\n\n\n")
         
     } // end action
     
@@ -100,13 +103,17 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
   
   
   
-  
-  
-    override func viewDidLoad() {
+  override func viewDidLoad() {
+      
         super.viewDidLoad()
+      
         guard let testSite = Constants.Configuration.TestSite(rawValue: "BIKENYC") else {
-          return
+          //guard let testSite = Constants.Configuration.TestSite(rawValue: "GITHUB") else {
+            //guard let testSite = Constants.Configuration.TestSite(rawValue: "TYPICODE") else {
+           // guard let testSite = Constants.Configuration.TestSite(rawValue: "FLICKR") else {
+                  return
         }
+      
       
           // ********  Completion Handler *************
           let completionHandler: (Result<JSON>) -> Void  =
@@ -114,21 +121,31 @@ class FifthViewController: UIViewController, JsonConvertible, Utils {
                   guard let strongSelf = self else {
                     return
                   }
-                  strongSelf.jsonResultObject = result.value!   // set the value for local variable
-                  print(" ++++++++ Fifth VC: viewDidLoad: JSON Object +++++++++++ ")
-                   print(strongSelf.jsonResultObject)
-                  print(" ++++++++ Items List end from viewDidLoad  +++++++++++ ")
+                
+                 // strongSelf.jsonResultObject = result.value!    ( not sure if we need the force unwrapping)
+                strongSelf.jsonResultObject = result.value   // set the value for local variable
+                
+                  print("\n\n\n ++++++++ Fifth VC: viewDidLoad: JSON Object +++++++++++ ")
+                  print(strongSelf.jsonResultObject)
+                  print(" ++++++++ Items List end from viewDidLoad  +++++++++++ \n\n\n")
               } // end closure
     
+    
+    
+      // get the URL
       guard let url = getSiteURL(baseURLString: testSite.urlString, method: testSite.method , parameters: testSite.params, apiKey: testSite.apiKey) else {
         return
       }
-      getJSONObject(for: url, rootPath: testSite.rootPath,   completionHandler: completionHandler)  // get a SwiftyJSON object
-      
+    
+    
+      // Get the JSON object ( returns a SwiftyJSON object )
+      getJSONObject(for: url, rootPath: testSite.rootPath,   completionHandler: completionHandler)
+    
     }  // end viewDidLoad
-    
-    
-        
+  
+  
+  
+
      
 
 }  // end class

@@ -12,8 +12,16 @@ import BRYXBanner
 
 
 class FirstViewController: UIViewController, Utils {
-    
-    
+   
+   
+   
+   
+   deinit  {
+      print("FirstViewController: VC being deinitialized.")
+   }
+   
+   
+   
     enum SegueIdentifier:String  {
         case SecondSegue
         case ThirdSegue
@@ -64,7 +72,9 @@ class FirstViewController: UIViewController, Utils {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+      print("test")
+      
+      
         // Let's check if Internet connection is available
         
         if Reachability.isConnectedToNetwork() == true {
@@ -93,7 +103,9 @@ class FirstViewController: UIViewController, Utils {
     // ========================================================
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+      
+       print("FirstVC: executing segue.")
+      
         let  identifier = segue.identifier
         let segIdentifier = SegueIdentifier(rawValue: identifier!)
         

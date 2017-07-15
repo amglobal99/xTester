@@ -74,7 +74,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
         segueIdentifier = identifier
       }
   
-      private override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     public  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          print("From Mock classs .... prepareforsegue")
       }
       
@@ -108,7 +108,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
       
       var segueIdentifier: String?
   
-      private override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("From Mock classs .... prepareforsegue")
       }
       
@@ -159,11 +159,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
     XCTAssertNotNil(url)
   }
   
-  
-  
-  
-  
-  
+
   
   func testThatGetJSONObjectMethodReturnsSuccessResultWithValidJSONObject() {
     
@@ -194,11 +190,6 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   
   
   
-  
-  
-
-  
-  
   func testThatTestSite2IsInvalid() {
     
     
@@ -206,7 +197,7 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
     
       var testSite2: Constants.Configuration.TestSite?
       
-      private override func viewDidLoad() {
+      override func viewDidLoad() {
         print("FROM OVERRIDDEN viewDidLoad")
         testSite2Name = "jack"
         testSite2 = Constants.Configuration.TestSite(rawValue: testSite2Name)
@@ -296,7 +287,6 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   func testThatTwelfthA2ViewControllerIsAvailable() {
     XCTAssertNotNil(viewControllerUnderTest )
   }
-  
   
   
   func testThatCollectionView1DataSourceIsAvailable() {

@@ -10,7 +10,14 @@ import Foundation
 import UIKit
 
 class TwelfthAViewController: UIViewController, Utils {
-    
+   
+   
+   
+   deinit {
+      print("TwelfthAViewController: VC is being deinitialized")
+   }
+   
+   
 
     enum SegueIdentifier:String  {
         case TwelfthA1Segue
@@ -114,6 +121,10 @@ class TwelfthAViewController: UIViewController, Utils {
     
     // THis is our segue to the TwelfthA1 and TwelfthA2 controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+      
+      print("TwelfthAViewController: Executing segue")
+      
         let  identifier = segue.identifier
         let segIdentifier = SegueIdentifier(rawValue: identifier!)
         switch segIdentifier! {
@@ -124,6 +135,11 @@ class TwelfthAViewController: UIViewController, Utils {
                  // TwelfthA2ViewController.doSomething()   // used juts for testing
                 // let destVC = segue.destination  as! TwelfthA2ViewController
                  let _ = segue.destination  as! TwelfthA2ViewController
+         
+         
+         
+         
+         
         case .TwelfthA3Segue:
               print("prepareForsegue: TwelfthAViewController : Selected TwelfthA3ViewController segue.")
                     //let _ = segue.destination  as! TwelfthA3ViewController

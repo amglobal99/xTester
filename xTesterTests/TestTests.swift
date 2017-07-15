@@ -27,25 +27,23 @@ class TestTests: BaseTestCase {
     
     
     
-    
-    // Lets's write our tests in this section
-    
-    
+   
     // ==================  Tests for Test Class =======================
-    func testAge() {
+   
+      func testAge() {
         let tst = Test()
         let theAge: Int  = tst.showAge(80)
         XCTAssert( theAge > 35 )
          }
     
-    /*
+   
     func testAge2() {
         let tst = Test()
-        let theAge2: Int  = tst.showAge(40)
+        let theAge2: Int  = tst.showAge(20)
         XCTAssert( theAge2 > 35 )
         
     }
-    */
+   
     
     
     
