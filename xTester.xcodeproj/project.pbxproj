@@ -364,6 +364,16 @@
 			name = Eureka_Forms;
 			sourceTree = "<group>";
 		};
+		04B3426B1F1BFC2E00712CC2 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				04EB35D41F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift */,
+				0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift */,
+				0F436EE81DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift */,
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
 		0F2D7EC61DB13BFD007A6F4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,10 +403,11 @@
 			isa = PBXGroup;
 			children = (
 				0F2C0CF71DB5B0C600ECBA67 /* ExtensionArray.swift */,
-				0F2D08A61DE1242D0039F98B /* ExtensionDictionary.swift */,
-				0F32A3A11DFC8D82003A7E83 /* ExtensionString.swift */,
-				0F254D0F1E2A7D710010B5F0 /* ExtensionFloat.swift */,
 				0F254D111E2A81450010B5F0 /* ExtensionDecimalNumber.swift */,
+				0F2D08A61DE1242D0039F98B /* ExtensionDictionary.swift */,
+				0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */,
+				0F254D0F1E2A7D710010B5F0 /* ExtensionFloat.swift */,
+				0F32A3A11DFC8D82003A7E83 /* ExtensionString.swift */,
 				0F38A81E1DFB5EE900E17CFE /* ExtensionTextField.swift */,
 				0F36D64E1DE330E2002611FB /* ExtensionUIColor.swift */,
 				0F945FD31DB59BDC00FB4045 /* ExtensionView.swift */,
@@ -407,12 +418,11 @@
 				0F9887E01DC512A400BE3D7E /* ProtocolDimmable.swift */,
 				0F9887E41DC515AF00BE3D7E /* ProtocolJsonConvertible.swift */,
 				0F9887DC1DC5125400BE3D7E /* ProtocolShakeable.swift */,
+				04EB35D61F1BCFE5006459A0 /* ProtocolStoreService.swift */,
 				0F3052EC1DABF1EF00F79778 /* ProtocolUtils.swift */,
 				0F38A8221DFB9DF000E17CFE /* ProtocolValidator.swift */,
 				0F4BCBEC1DEC7CD50059D58C /* Reachability.swift */,
 				0F3979921DDF4F3B00F95B0A /* ReleasePrint.swift */,
-				0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */,
-				04EB35D61F1BCFE5006459A0 /* ProtocolStoreService.swift */,
 			);
 			name = Globals_and_Protocols;
 			sourceTree = "<group>";
@@ -548,11 +558,8 @@
 				0F22D8191DCD6C0F0015C9F1 /* NinthPhotoStore.swift */,
 				0F571F3E1E099FEF00E501E8 /* Store.swift */,
 				0F3CC0121DE7C47A005CEFBB /* TwelfthA2CollectionView1DataSource.swift */,
-				04EB35D41F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift */,
 				0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */,
-				0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift */,
 				0F3CC0161DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift */,
-				0F436EE81DE8B68B00DBD833 /* TwelfthA2CollectionView3PhotoStore.swift */,
 				0F322CD31DE27A74001796FC /* TwelfthA2TableViewDataSource.swift */,
 			);
 			name = DataSourcesDelegates;
@@ -661,6 +668,7 @@
 		0F8328CE1DA996F4009804C2 /* CollectionViewRelated */ = {
 			isa = PBXGroup;
 			children = (
+				04B3426B1F1BFC2E00712CC2 /* Stores */,
 				0F3CBFE51DE73E55005CEFBB /* CollectionViews */,
 				0F3CBFE41DE73CE3005CEFBB /* DataSourcesDelegates */,
 				0F3CBFE31DE73BD9005CEFBB /* Model */,

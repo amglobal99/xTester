@@ -57,25 +57,20 @@ import SwiftyJSON
             case ShowView2ItemDetail = "ShowView2ItemDetail"
             case ShowTwelfthA2PhotoDetail = "ShowTwelfthA2PhotoDetail"
          }
-         
-
-      
-         // create a Enum for REST site name
-      enum SiteName: String {
-         case bikeNyc = "BIKENYC"
-         case flickr = "FLICKR"
-         case typicode = "TYPICODE"
-         case github = "GITHUB"
-         
-      }
-      
-      
       
       
          // MARK:- Data Variables
          var store1: TwelfthA2CollectionView1PhotoStore!
          var store2: TwelfthA2CollectionView2PhotoStore!
-         var store3: TwelfthA2CollectionView3PhotoStore!
+          var store3: TwelfthA2CollectionView3PhotoStore!
+      
+         //var store1: StoreService!
+         //var store2: StoreService!
+         //var store3: StoreService!
+         
+         
+      
+      
          var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
          var collectionView2DataSource: TwelfthA2CollectionView2DataSource!
          var collectionView3DataSource: TwelfthA2CollectionView3DataSource!
@@ -89,7 +84,9 @@ import SwiftyJSON
            var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
            var testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
            let testSite3Name = "FLICKR"
-           
+      
+      
+      
            // Operation queues
            var queue2 = OperationQueue()
            var queue3 = OperationQueue()
@@ -228,6 +225,7 @@ import SwiftyJSON
                 
                    let completionHandler2: (Result<JSON>) -> Void  =
                         {  [weak self] result in
+                           
                           guard let strongSelf = self else {
                             return
                           }
@@ -388,7 +386,7 @@ import SwiftyJSON
                      case .ShowView1ItemDetail:
                            print("view 1")
                      case .ShowView2ItemDetail:
-                        print("test")
+                           print("view 2")
                      case .ShowTwelfthA2PhotoDetail:
                         print("printing from prepareForSegue ..... Case section")
                         let destinationVC = segue.destination as! TwelfthA2DetailViewController
@@ -417,15 +415,7 @@ import SwiftyJSON
             destinationVC.store = store3
         }
       
-      
-      /*
-      static func doSomething () {
-        print("Executing doSomethING ")
-      }
-      
-       */
-      
-      
+     
       
 }  // end class
 
