@@ -31,6 +31,20 @@ class xTesterUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+      
+     // XCUIApplication().buttons["CollView12A2"].tap()
+      
+      let app = XCUIApplication()
+      app.tabBars.buttons["Demos"].tap()
+      app.buttons["5: JSON Parsing Tests"].tap()
+      app.buttons["getSectionTitles&Dictionary"].tap()
+      
+      
+     XCTAssert(app.tabBars.buttons["Demos"].exists)
+      
+      
+      
+      
     }
     
 }

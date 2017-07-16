@@ -24,7 +24,7 @@ class TwelfthAViewController: UIViewController, Utils {
         case TwelfthA2Segue
         case TwelfthA3Segue
         case TwelfthA4Segue
-         case TwelfthA5Segue
+        case TwelfthA5Segue
     }
     
     
@@ -41,9 +41,12 @@ class TwelfthAViewController: UIViewController, Utils {
     
     
     // +++++++++++++++ THIS IS NOT WORKING .  NEEDS TO BE FIXED ++++++++++++++++++++++++
+   // Instead of using a segue, we can use a Button IBAction to open a new VController
+   // This allows us to run the custome initializer.
+   // We can initialize a lot of stuff in that Initializer
     
     
-    
+    let store1 = TwelfthA2CollectionView1PhotoStore()
     let store2 = TwelfthA2CollectionView2PhotoStore()
     let store3 = TwelfthA2CollectionView3PhotoStore()
     
@@ -106,10 +109,7 @@ class TwelfthAViewController: UIViewController, Utils {
     
     
     
-    
-    
-    
-    
+   
   }  // end IBAction
   
   
@@ -132,13 +132,24 @@ class TwelfthAViewController: UIViewController, Utils {
                 print("Selected TwelfthA1ViewController")
             case .TwelfthA2Segue:
                  print("prepareForsegue: TwelfthAViewController : Selected TwelfthA2ViewController segue.")
-                 // TwelfthA2ViewController.doSomething()   // used juts for testing
-                // let destVC = segue.destination  as! TwelfthA2ViewController
-                 let _ = segue.destination  as! TwelfthA2ViewController
+                 let destVC = segue.destination  as! TwelfthA2ViewController
+                 // set properties on destination VC here
+                 destVC.store1 = TwelfthA2CollectionView1PhotoStore()
+                 destVC.store2 = TwelfthA2CollectionView2PhotoStore()
+                 destVC.store3 = TwelfthA2CollectionView3PhotoStore()
+                 destVC.collectionView1DataSource = TwelfthA2CollectionView1DataSource()
+                 destVC.collectionView2DataSource = TwelfthA2CollectionView2DataSource()
+                 destVC.collectionView3DataSource = TwelfthA2CollectionView3DataSource()
+                 destVC.tableviewDataSource = TwelfthA2TableViewDataSource()
+                 destVC.tableviewDelegate =  TwelfthA2TableViewDataSource()
          
+                 // Inject value for store property in the CollectionView data sources
+                 destVC.collectionView2DataSource.photoStore = TwelfthA2CollectionView2PhotoStore()
+                 destVC.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
          
-         
-         
+                 //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
+                 //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView2DataSource = (self.collectionView2DataSource)!
+                 //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
          
         case .TwelfthA3Segue:
               print("prepareForsegue: TwelfthAViewController : Selected TwelfthA3ViewController segue.")
@@ -165,15 +176,10 @@ class TwelfthAViewController: UIViewController, Utils {
           
           
             }  // end switch
-    }
+    } // end func
     
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
 
     
 }  // end class

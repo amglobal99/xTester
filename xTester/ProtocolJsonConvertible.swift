@@ -205,19 +205,18 @@ extension JsonConvertible  {
   
     /**
          This function gives us an array of key values.
-         We can use this function with a basic json array
+         We can use this function with a basic JSON array
          or an array which is 1 level deep
    
          For example, let's say we have "employees" as root, and within that
          we have {"id":2,"name":"john"}, ........
          That is an example of 1 level deep. Without employees, it is flat
    
-         NOTE: To acces an array thta is at say 3 level, use this format
+         NOTE: To acces an array that is at say 3 level, use this format
           for object in  jsonObject["responseData","feed","entries"].array!
          
          - Parameter jsonObject: This is the SwiftyJSON object
-         - Parameter key:   The key that serves as the section title
-         
+         - Parameter key:   The key is the attribute that we use to search on
          - Returns: An array of section title names
     */
     

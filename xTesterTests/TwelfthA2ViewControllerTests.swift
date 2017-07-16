@@ -20,6 +20,8 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   var viewControllerUnderTest: TwelfthA2ViewController!
   var viewControllerUnderTestDetailVC:  TwelfthA2DetailViewController!
   
+   
+   
   // MARK: - Setup
   
   override func setUp() {
@@ -44,6 +46,9 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
     // NOTE: The value property is UNDOCUMENTED. App Store will REJECT. Change this later
     let identifiers = (viewController.value(forKey: "storyboardSegueTemplates") as? [AnyObject])?.flatMap({ $0.value(forKey: "identifier") as? String }) ?? []
     return identifiers
+   
+   
+   
   }
   
   
@@ -60,45 +65,41 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   
   
   
-  
-  
   func testThatButtonTransitionsToDetailViewController() {
     
-    // 1. Arrange
-    class MockController: TwelfthA2ViewController {
-      
-      var segueIdentifier: String?
-      
-      func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
-        print("performSegueWithIDentifier.....")
-        segueIdentifier = identifier
-      }
-  
-     public  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         print("From Mock classs .... prepareforsegue")
-      }
-      
-    }  // end Mock class
+       // 1. Arrange
+       class MockController: TwelfthA2ViewController {
+         
+         var segueIdentifier: String?
+         
+         func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
+           print("performSegueWithIDentifier.....")
+           segueIdentifier = identifier
+         }
+     
+        public  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            print("From Mock classs .... prepareforsegue")
+         }
+         
+       }  // end Mock class
 
-    
-  
-    let controller = MockController(nil)
-    
-    // 2. Act
-    controller.performSegueWithIdentifier(identifier: "ShowTwelfthA2PhotoDetail", sender: nil)
-    
-    // 3. Assert
-    if let identifier = controller.segueIdentifier {
-      XCTAssertEqual("ShowTwelfthA2PhotoDetail", identifier)
-    }
-    else {
-      XCTFail("Segue should be performed")
-    }
+       
+     
+       let controller = MockController(nil)
+       
+       // 2. Act
+       controller.performSegueWithIdentifier(identifier: "ShowTwelfthA2PhotoDetail", sender: nil)
+       
+       // 3. Assert
+       if let identifier = controller.segueIdentifier {
+         XCTAssertEqual("ShowTwelfthA2PhotoDetail", identifier)
+       }
+       else {
+         XCTFail("Segue should be performed")
+       }
     
     
   }  // end func
-  
-  
   
   
   
@@ -229,28 +230,6 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
    func testThatTestSite2IsNotNil () {
       let siteName = "BIKENYC"
       let site =  Constants.Configuration.TestSite(rawValue: siteName)
@@ -313,6 +292,14 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   
   
   
+   
+   // MARK: - Misc Functions
+   
+   func testThatDoSomethingPrints() {
+      
+   }
+   
+   
   
   
   
@@ -335,6 +322,21 @@ class TwelfthA2ViewControllerTests: BaseTestCase {
   */
   
   
+   
+   
+   
+   
+   
+   // MARK: -  UI Testing
+   
+   func testUI( {
+      
+      
+      
+   }
+   
+   
+   
   
   
 }  // end class

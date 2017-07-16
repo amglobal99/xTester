@@ -10,6 +10,8 @@
 		042D47AC1E3921A000470CCD /* NinthPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D47AB1E3921A000470CCD /* NinthPhoto.swift */; };
 		045C96921EA14BA300EFD630 /* TwelfthA5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C96911EA14BA300EFD630 /* TwelfthA5ViewController.swift */; };
 		0471B2201E8C60530084DC12 /* ExtensionEurekaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */; };
+		04EB35D51F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB35D41F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift */; };
+		04EB35D71F1BCFE5006459A0 /* ProtocolStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB35D61F1BCFE5006459A0 /* ProtocolStoreService.swift */; };
 		04F0EE741E8C359200253AC5 /* TwelfthA4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */; };
 		0F10A5911E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */; };
 		0F11D35C1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */; };
@@ -176,6 +178,8 @@
 		042D47AB1E3921A000470CCD /* NinthPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhoto.swift; sourceTree = "<group>"; };
 		045C96911EA14BA300EFD630 /* TwelfthA5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA5ViewController.swift; sourceTree = "<group>"; };
 		0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionEurekaRow.swift; sourceTree = "<group>"; };
+		04EB35D41F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView1PhotoStore.swift; sourceTree = "<group>"; };
+		04EB35D61F1BCFE5006459A0 /* ProtocolStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolStoreService.swift; sourceTree = "<group>"; };
 		04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA4ViewController.swift; sourceTree = "<group>"; };
 		0F10A5901E0F71560099DEF0 /* TwelfthA2CollectionView2SectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView2SectionHeader.swift; sourceTree = "<group>"; };
 		0F11D35B1DCEC1450055039C /* NinthPhotoCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhotoCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 				0F4BCBEC1DEC7CD50059D58C /* Reachability.swift */,
 				0F3979921DDF4F3B00F95B0A /* ReleasePrint.swift */,
 				0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */,
+				04EB35D61F1BCFE5006459A0 /* ProtocolStoreService.swift */,
 			);
 			name = Globals_and_Protocols;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 				0F22D8191DCD6C0F0015C9F1 /* NinthPhotoStore.swift */,
 				0F571F3E1E099FEF00E501E8 /* Store.swift */,
 				0F3CC0121DE7C47A005CEFBB /* TwelfthA2CollectionView1DataSource.swift */,
+				04EB35D41F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift */,
 				0FCA28331E0D9B770018FFC7 /* TwelfthA2CollectionView2DataSource.swift */,
 				0FCA28371E0DAB0A0018FFC7 /* TwelfthA2CollectionView2PhotoStore.swift */,
 				0F3CC0161DE7C4B1005CEFBB /* TwelfthA2CollectionView3DataSource.swift */,
@@ -1054,6 +1060,7 @@
 				0FCE1C6C1DB6988200242E09 /* TwelfthViewController.swift in Sources */,
 				0F32A3A21DFC8D82003A7E83 /* ExtensionString.swift in Sources */,
 				0F8328CB1DA996D7009804C2 /* EighthCollectionViewCell.swift in Sources */,
+				04EB35D51F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift in Sources */,
 				0FCE1C781DB6AC1F00242E09 /* ThirteenthViewController.swift in Sources */,
 				0F254D101E2A7D710010B5F0 /* ExtensionFloat.swift in Sources */,
 				0F8328DC1DA9D1EF009804C2 /* NinthPhotoCollectionViewCell.swift in Sources */,
@@ -1104,6 +1111,7 @@
 				0F3CC0131DE7C47A005CEFBB /* TwelfthA2CollectionView1DataSource.swift in Sources */,
 				0F3052E41DAAD5CF00F79778 /* Publishers.swift in Sources */,
 				0F8A85431DC3C72900C405AC /* TwelfthAViewController.swift in Sources */,
+				04EB35D71F1BCFE5006459A0 /* ProtocolStoreService.swift in Sources */,
 				0F3052DC1DAAD5C100F79778 /* SectionHeaderView.swift in Sources */,
 				0F2D7ED01DB1A283007A6F4A /* GlobalFunctions.swift in Sources */,
 				0F36D65F1DE368EC002611FB /* TwelfthA2TableViewCell1.swift in Sources */,

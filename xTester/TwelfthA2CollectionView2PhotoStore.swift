@@ -104,76 +104,110 @@ class TwelfthA2CollectionView2PhotoStore: Utils, JsonConvertible {
   
   
   
-  /// Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
+   /// Function that returns a Dictionary with SectionTitle as key and array of Photos as it values
+   /// For example, we may have a section titled "NFL TEams". 
+   /// In this section, we have photo for Falcons, Giants, Seahawks,etc.
+   /// So we are returning a Dictionary with Section name as NFLTeams and array of Photos as value
+   /// This result dictionary is depicted as [String: [TwelfthA2Item2] ]
+   ///
+   ///
   func sectionPhotosDictionary(from obj:JSON?, for key:String? ) -> [String:[TwelfthA2Item2]]? {
-    var keyArray:[String] = []
-    var photoItems:[TwelfthA2Item2] = []
-    var sectionPhotosDictionary:[String:[TwelfthA2Item2]] = [:]   // Create a Dictionary to hold our data
-    guard let obj = obj, let key = key else {
-      return nil
-    }
-    print("sectionPhotosDictionary: Processing \(obj.count) objects. Key: \(key)  ")
-    
-    // get array of section Titles
-    keyArray = getSectionTitlesArray(from: obj, key: key)!
-    
-    // For each key in keyArray ( these are the section Titles)
-    // get all elements and create a Dictinary item
-    for i in keyArray {
-      for (_, things) in obj {
-        if String(describing: things[key].rawValue) == i  {
-          if  let photo = photoFromJSONObject(things) {
-            photoItems.append(photo)
-          }
-        }
-      } //end for
-      sectionPhotosDictionary.updateValue(photoItems, forKey: i)   // add entry into Dictionary
-      photoItems.removeAll()   // clear our holding array
-    } // for i in
-    
-    //print(" +++++++++++ Section Photo Dictionary ++++++++++++++++")
-    //print(sectionPhotosDictionary)
-    
-    return sectionPhotosDictionary   // Return value of Dictionary
-    
+   
+            // create empty array to hold keyArray and array of Photo items
+            var keyArray:[String] = []
+            var photoItems:[TwelfthA2Item2] = []
+            
+            // create empty dictionary for result
+             var sectionPhotosDictionary:[String:[TwelfthA2Item2]] = [:]
+            
+            // make sure your JSON object as well as your key is not nil
+             guard let obj = obj, let key = key else {
+               return nil
+             }
+             print("sectionPhotosDictionary: Processing \(obj.count) objects. Key: \(key)  ")
+             
+             // get array of section Titles
+             keyArray = getSectionTitlesArray(from: obj, key: key)!
+   
+             // get Dictionary with Photos for each section Title
+             sectionPhotosDictionary  = getSectionPhotosDictionary(key: key, keyArray: keyArray, obj: obj)
+   
+             print(" +++++++++++ Section Photo Dictionary ++++++++++++++++")
+             print(sectionPhotosDictionary)
+             
+             return sectionPhotosDictionary   // Return value of Dictionary
+   
   } // end func
   
   
   
   
-  /**
-   Returns the Row and Section for a particular photo
+  
+   /// Returns the Row and Section for a particular photo
+   ///
+   /// - Parameter dict: A Dcitionary with the section title as the key and array of photos as values
+   /// - Parameter photo: The photo for which we want to identify the row number and section number
+   ///
+   /// - Returns: A tuple with the row number and section number
+   ///
    
-   - Parameter dict:  A Dcitionary with the section title as the key and array of photos as values
-   - Parameter photo: The photo for which we want to identify the row number and section number
-   
-   - Returns: A tuple with the row number and section number
-   
-   */
   func indexForPhoto ( dict:[String:[TwelfthA2Item2]], photo:TwelfthA2Item2 ) -> (Int,Int)? {
-    var section:String?
-    var result:(Int,Int)?
-    
-    /*
-     for (key, value) in dict {
-     if  value.contains(photo) {
-     section = key
-     }
-     }
-     */
-    
-    // Filter the Dictionary. Retrieve key for entry which contains this photo in its values
-    section = dict.filter{$1.contains(photo)}.first?.key
-    
-    // get array of photos for our setion
-    if let section = section,  let photoArray = dict[section], let row = photoArray.index(of: photo) {
-      result =  (row, Int(section)!)
-    }
-    return result
+   
+       var section:String?
+       var result:(Int,Int)?
+       
+       /*
+        for (key, value) in dict {
+           if  value.contains(photo) {
+              section = key
+           }
+        }
+        */
+       
+       // Filter the Dictionary. Retrieve key for entry which contains this photo in its values
+       section = dict.filter{$1.contains(photo)}.first?.key
+       
+       // get array of photos for our setion
+       if let section = section,  let photoArray = dict[section], let row = photoArray.index(of: photo) {
+         result =  (row, Int(section)!)
+       }
+       return result
   }
   
   
-  
+   
+   
+   func getSectionPhotosDictionary(key: String, keyArray: [String], obj:JSON) -> [String:[TwelfthA2Item2]] {
+      
+      // create empty dictionary to hold our result
+      var sectionPhotosDictionary:[String:[TwelfthA2Item2]] = [:]
+      
+      // create empty aray to hold our photos
+       var photoItems:[TwelfthA2Item2] = []
+      
+      // For each key in keyArray ( these are the section Titles)
+      // get all elements and create a Dictinary item
+      for i in keyArray {
+         for (_, things) in obj {
+            if String(describing: things[key].rawValue) == i  {
+               if  let photo = photoFromJSONObject(things) {
+                  photoItems.append(photo)
+               }
+            }
+         } //end for
+         
+         sectionPhotosDictionary.updateValue(photoItems, forKey: i)   // add entry into Dictionary
+         photoItems.removeAll()   // clear our holding array
+      } // for i in
+
+      
+      return sectionPhotosDictionary
+      
+      
+      
+      
+   } // end func
+   
 
 
 
