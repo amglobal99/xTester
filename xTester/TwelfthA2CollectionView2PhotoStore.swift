@@ -14,7 +14,7 @@ import SwiftyJSON
 
 
 
-class TwelfthA2CollectionView2PhotoStore: Utils, JsonConvertible, StoreService {
+class TwelfthA2CollectionView2PhotoStore: Utils, JsonConvertible {
 
 
   

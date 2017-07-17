@@ -47,6 +47,15 @@ extension Utils {
     
     // MARK:  URL Related
   
+   /// Function returns a URL object
+   ///
+   /// - Parameter baseUrlString: base string for our URL
+   /// - Parameter method: get or post etc
+   /// - Parameter parameters: Dictionary of values
+   /// - Parameter apiKey: a key if needed
+   ///
+   /// - Returns: a URL object
+   
     func getSiteURL(baseURLString:String, method: String?, parameters: [String:String]?, apiKey:String? ) -> URL? {
       
         guard  var components = URLComponents(string: baseURLString ) else {
@@ -67,6 +76,7 @@ extension Utils {
                 let item = URLQueryItem(name: key, value: value)
                 queryItems.append(item)
             }
+         
             if let additionalParams = parameters {   // make sure parameters is not nil
                 for (key, value) in additionalParams {
                     let item = URLQueryItem(name: key, value: value )

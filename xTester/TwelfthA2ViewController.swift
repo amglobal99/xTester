@@ -19,7 +19,7 @@ import SwiftyJSON
 ///   You arrive at this ViewController thru a segue from 'TwelfthAViewController'
 ///   DataSource variables are now set inside Initializers
 
-    class TwelfthA2ViewController: UITableViewController, JsonConvertible, StoreService {
+    class TwelfthA2ViewController: UITableViewController, JsonConvertible {
       
         // MARK: - IBOutlets
         @IBOutlet weak var table: UITableView!   // Refernce to main TableView
@@ -52,7 +52,6 @@ import SwiftyJSON
          
          
          enum DetailViewSegueIdentifier: String {
-            // define list of cases
             case ShowView1ItemDetail = "ShowView1ItemDetail"
             case ShowView2ItemDetail = "ShowView2ItemDetail"
             case ShowTwelfthA2PhotoDetail = "ShowTwelfthA2PhotoDetail"
@@ -253,7 +252,7 @@ import SwiftyJSON
                                case let .success(photos):
                                  strongSelf.collectionView2DataSource.photos = photos
                                  strongSelf.collectionView2DataSource.sections =  photoKeyArray2
-                                 strongSelf.collectionView2DataSource.sectionPhotoItems = sectionPhotosDictionary2  // populate the Items Dictionary
+                                 strongSelf.collectionView2DataSource.sectionPhotoItems = sectionPhotosDictionary2  // populate Items Dictionary
                                case .failure(let error):
                                  strongSelf.collectionView2DataSource.photos.removeAll()
                                  print("    Coll View 2:  Error fetching recent photos \(error)")
@@ -289,6 +288,8 @@ import SwiftyJSON
       /// Function updates data sources for the third row for TAbleView
       func updateDataForThirdTableRow() {
          
+         print("     Executing updateDataForThirdTableRow .......")
+         
         // Create a weak reference to self
         //weak var weakSelf = self
         
@@ -296,6 +297,14 @@ import SwiftyJSON
         guard let testSite3 = Constants.Configuration.TestSite(rawValue: testSite3Name) else {
           return
         }
+         
+         
+         print (testSite3)
+
+         
+         
+         
+         
         // create a Block Operation
         let operation3 = BlockOperation(block: {
           
@@ -395,9 +404,7 @@ import SwiftyJSON
                         if let selectedIndexPath = tabCell.collectionView3.indexPathsForSelectedItems?.first {
                            updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
                         }
-                     default:
-                        // do nothing
-                        break
+                  
                } // end  switch
          } // end if
        }  // end func

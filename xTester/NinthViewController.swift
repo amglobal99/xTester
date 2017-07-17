@@ -95,10 +95,24 @@ public class NinthViewController: UICollectionViewController,  JsonConvertible {
                 guard let strongSelf = self else {
                   return
                 }
+               
+               
+                             
                 let jsonObj = result.value!
-                // get list of Photos(returns array of 'NinthPhoto' items)
+               
+               
+               
+               
+               
+               
+               // get list of Photos(returns array of 'NinthPhoto' items)
                 let itemsResult: NinthPhotoStore.NinthPhotosResult   = strongSelf.store.photosFromJsonObject(jsonObj)
-                
+               
+               
+               
+               
+               
+               
                 // get array of Section titles
                 guard let photoKeyArray =  strongSelf.getSectionTitlesArray(from: jsonObj, key: testSite.key)   else {
                     //print("getKeyArray method returned a nil value.")

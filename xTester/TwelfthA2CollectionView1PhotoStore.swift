@@ -13,7 +13,7 @@ import SwiftyJSON
 
 
 
-class TwelfthA2CollectionView1PhotoStore: StoreService {
+class TwelfthA2CollectionView1PhotoStore {
    
    
    // MARK: - Enums
