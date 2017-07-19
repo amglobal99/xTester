@@ -25,32 +25,6 @@ import SwiftyJSON
         @IBOutlet weak var table: UITableView!   // Refernce to main TableView
       
       
-         /*
-          // Enum for identifier foe Detail ViewController
-          enum DetailViewSegueIdentifier: String {
-          
-          init? (rawValue: String) {
-          switch rawValue {
-          case "ShowView1ItemDetail":
-          self = .ShowView1ItemDetail
-          case "ShowView2ItemDetail":
-          self = .ShowView2ItemDetail
-          case "ShowTwelfthA2PhotoDetail":
-          self = .ShowTwelfthA2PhotoDetail
-          default:
-          return nil
-          }
-          } // end init
-          
-          // define list of cases
-          case ShowView1ItemDetail
-          case ShowView2ItemDetail
-          case ShowTwelfthA2PhotoDetail
-          }
-          
-          */
-         
-         
          enum DetailViewSegueIdentifier: String {
             case ShowView1ItemDetail = "ShowView1ItemDetail"
             case ShowView2ItemDetail = "ShowView2ItemDetail"
@@ -66,9 +40,6 @@ import SwiftyJSON
          //var store1: StoreService!
          //var store2: StoreService!
          //var store3: StoreService!
-         
-         
-      
       
          var collectionView1DataSource: TwelfthA2CollectionView1DataSource!
          var collectionView2DataSource: TwelfthA2CollectionView2DataSource!
@@ -83,7 +54,6 @@ import SwiftyJSON
            var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
            var testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
            let testSite3Name = "FLICKR"
-      
       
       
            // Operation queues

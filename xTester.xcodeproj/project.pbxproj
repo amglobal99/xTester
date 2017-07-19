@@ -10,6 +10,7 @@
 		042D47AC1E3921A000470CCD /* NinthPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D47AB1E3921A000470CCD /* NinthPhoto.swift */; };
 		045C96921EA14BA300EFD630 /* TwelfthA5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C96911EA14BA300EFD630 /* TwelfthA5ViewController.swift */; };
 		0471B2201E8C60530084DC12 /* ExtensionEurekaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */; };
+		04C3CB481F1EF148007D4DDA /* TwelfthA2PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3CB471F1EF148007D4DDA /* TwelfthA2PhotoViewModel.swift */; };
 		04EB35D51F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB35D41F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift */; };
 		04EB35D71F1BCFE5006459A0 /* ProtocolStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB35D61F1BCFE5006459A0 /* ProtocolStoreService.swift */; };
 		04F0EE741E8C359200253AC5 /* TwelfthA4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */; };
@@ -177,6 +178,7 @@
 		042D47AB1E3921A000470CCD /* NinthPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NinthPhoto.swift; sourceTree = "<group>"; };
 		045C96911EA14BA300EFD630 /* TwelfthA5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA5ViewController.swift; sourceTree = "<group>"; };
 		0471B21F1E8C60530084DC12 /* ExtensionEurekaRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionEurekaRow.swift; sourceTree = "<group>"; };
+		04C3CB471F1EF148007D4DDA /* TwelfthA2PhotoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2PhotoViewModel.swift; sourceTree = "<group>"; };
 		04EB35D41F1BCEE3006459A0 /* TwelfthA2CollectionView1PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA2CollectionView1PhotoStore.swift; sourceTree = "<group>"; };
 		04EB35D61F1BCFE5006459A0 /* ProtocolStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolStoreService.swift; sourceTree = "<group>"; };
 		04F0EE731E8C359200253AC5 /* TwelfthA4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwelfthA4ViewController.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				042D47AB1E3921A000470CCD /* NinthPhoto.swift */,
 				0F3CC00E1DE7B439005CEFBB /* TwelfthA2Photo.swift */,
 				0FCA28391E0DAC390018FFC7 /* TwelfthA2Item2.swift */,
+				04C3CB471F1EF148007D4DDA /* TwelfthA2PhotoViewModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1036,6 +1039,7 @@
 				0F22D8111DCD6B1E0015C9F1 /* Photo.swift in Sources */,
 				0FF54A191DE3CF0000002866 /* ProtocolDateTimeConvertible.swift in Sources */,
 				0F3CC00F1DE7B439005CEFBB /* TwelfthA2Photo.swift in Sources */,
+				04C3CB481F1EF148007D4DDA /* TwelfthA2PhotoViewModel.swift in Sources */,
 				0F36D6531DE36860002611FB /* TwelfthA2TableViewCell2.swift in Sources */,
 				0F3CBFF71DE7A9FA005CEFBB /* TwelfthA2CollectionView3.swift in Sources */,
 				0471B2201E8C60530084DC12 /* ExtensionEurekaRow.swift in Sources */,
