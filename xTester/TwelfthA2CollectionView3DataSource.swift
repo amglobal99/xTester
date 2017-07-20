@@ -26,6 +26,12 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     // MARK: - Data Variables
     var photos:[TwelfthA2Photo] = []   // This is the list of all our Photos
+   
+    // convert to MVVM
+   //var photos:[TwelfthA2PhotoViewModel] = []
+   
+   
+   
     var sections:[String] = []  // This is the array of names for our  sections
     var sectionPhotoItems:[String:[TwelfthA2Photo]] = [:]  // Dictionary holds Photos for each section title
     //var photoStore: TwelfthA2CollectionView3PhotoStore!
@@ -74,7 +80,9 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
         
         let photoTitleToDisplay: String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Storyboard.CellIdentifier, for: indexPath) as! TwelfthA2CollectionView3Cell
+      
         let photo = photoForItemAtIndexPath(indexPath: indexPath)
+      
         // Get a truncated title for our Photo
         let photoTitle = photo.title
         // This can be changed later ... we're limiting length to 8 char

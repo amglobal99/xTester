@@ -12,7 +12,6 @@ import Alamofire
 import SwiftyJSON
 
 
-
 class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
@@ -30,14 +29,20 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
         case success([TwelfthA2Photo] )
         case failure(Error)
     }
-    
-    enum FlickrError: Error {
-        case invalidJSONData
+   
+   
+    ///  for MVVM
+    enum TwelfthA2ModelPhotosResult {
+      case success([TwelfthA2PhotoViewModel] )
+      case failure(Error)
     }
-    
+
+   
+   
+   
     
     // MARK: - Local Variables
-    let session = Constants.Configuration.session
+   // let session = Constants.Configuration.session
     var jsonResultObject:JSON?
     
   
@@ -45,7 +50,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     // MARK:- JSON Methods
   
   
-    
+  
     /** 
      Function retrieves an array of TwelfthA2Photo objects.
      - Parameter json:  a SwiftyJSON object
@@ -54,8 +59,7 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     func photosFromJsonObject(_ json:JSON) -> TwelfthA2PhotosResult {
         var finalPhotos:[TwelfthA2Photo] = []
         var addCount = 0
-        print("COLL VIEW 3 ************* JSON Object *************** \n\n \(json) ")
-        
+      
         for ( _, jsonItem) in json {
             if let photo: TwelfthA2Photo = photoFromJSONObject(jsonItem) {
                 finalPhotos.append(photo)
@@ -73,10 +77,9 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     
     
     
-    
    
-    
-    
+   
+   
     /**
         Function to get individual Photo object.
         If any of the fields are unavailable, it returns a nil.
@@ -99,7 +102,73 @@ class TwelfthA2CollectionView3PhotoStore: Utils, JsonConvertible {
     }
     
     
+   
+   
+   
+   
+   
+   
+   /*
+   
+    /// use this for MVVM
+    func photosFromJsonObject(_ json:JSON) -> TwelfthA2ModelPhotosResult {
+          var finalPhotos:[TwelfthA2PhotoViewModel] = []
+          var addCount = 0
+          for ( _, jsonItem) in json {
+             if let photo: TwelfthA2Photo = photoFromJSONObject(jsonItem) {
+               let modelPhoto: TwelfthA2PhotoViewModel = TwelfthA2PhotoViewModel(photo: photo)
+               finalPhotos.append(modelPhoto)
+               addCount += 1
+             }
+          } // end for
+          if finalPhotos.count == 0 && json.count > 0 {
+            print("Sorry...No photos were retrieved")
+            return  TwelfthA2ModelPhotosResult.failure(FlickrError.invalidJSONData)
+          }
+          print("   ++++++++++++  Final Photos +++++++++++++++++")
+          print("   Array contains \(finalPhotos.count)  photos" )
+          return TwelfthA2ModelPhotosResult.success(finalPhotos)
+    } // end func
     
+    
+ 
+   
+    
+    func photoFromJSONObject(_ json: JSON ) -> TwelfthA2Photo? {
+    guard
+    let photoID = json["id"].string,
+    let title = json["title"].string,
+    let dateString = json["datetaken"].string,
+    let photoURLString = json["url_h"].string,
+    let url = URL(string: photoURLString),
+    let datetaken = Constants.Configuration.dateFormatter.date(from: dateString),
+    let datetakenunknown = json["datetakenunknown"].string
+    else { return nil  }
+    return TwelfthA2Photo(title: title, photoID: photoID, remoteURL: url, dateTaken: datetaken, datetakenUnknown: datetakenunknown)
+    }
+    
+    
+   
+    
+    */
+    
+    
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
     
     

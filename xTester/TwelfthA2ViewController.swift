@@ -9,10 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
-//import BRYXBanner
-//import AlamofireImage
 import SwiftyJSON
-
 
 
 ///   This is the main class for our TwelfthA2ViewController
@@ -23,7 +20,6 @@ import SwiftyJSON
       
         // MARK: - IBOutlets
         @IBOutlet weak var table: UITableView!   // Refernce to main TableView
-      
       
          enum DetailViewSegueIdentifier: String {
             case ShowView1ItemDetail = "ShowView1ItemDetail"
@@ -47,24 +43,20 @@ import SwiftyJSON
       
          var tableviewDataSource: TwelfthA2TableViewDataSource!   // This defines the DataSource for the TableView
          var tableviewDelegate: TwelfthA2TableViewDataSource!  // Delegate for TableView
-         
+      
+         var testSite2Name: String!
+         var testSite3Name: String!
          
           // MARK: - Local Variables
            var storedOffsets:[Int:CGFloat] = [:]      // stores offset for each element in array
            var sectionPhotoDictionary:[String:[NinthPhoto]] = [:]
            var sectionPhotoDictionary2:[String:[TwelfthA2Item2]] = [:]
-           var testSite2Name = "BIKENYC"  // other options "GITHUB","FLICKR","TYPICODE"
-           let testSite3Name = "FLICKR"
       
       
            // Operation queues
            var queue2 = OperationQueue()
            var queue3 = OperationQueue()
            
-      
-      
-
-      
       
       
       
@@ -119,7 +111,6 @@ import SwiftyJSON
     
         override func viewDidLoad() {
             super.viewDidLoad()
-            print("viewDidLoad: TwelfthA2VC .....first line")
          
             // Set the Delegate and DataSource for the TableView
             table.dataSource = tableviewDataSource
@@ -310,7 +301,6 @@ import SwiftyJSON
       
       ///Function called during the segue from TwelfthA2ViewController to Detail View Controller.
       override   public func prepare(for segue: UIStoryboardSegue, sender: Any? ) {
-         print("Starting prepareForSegue in TwelfthA2VC.")
          
          if let segueIdentifier =  DetailViewSegueIdentifier(rawValue:  segue.identifier!)  {
          
@@ -327,7 +317,6 @@ import SwiftyJSON
                         if let selectedIndexPath = tabCell.collectionView3.indexPathsForSelectedItems?.first {
                            updateDestinationData(destinationVC: destinationVC, indexPath: selectedIndexPath)
                         }
-                  
                } // end  switch
          } // end if
        }  // end func

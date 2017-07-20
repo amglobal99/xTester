@@ -147,9 +147,8 @@ class TwelfthAViewController: UIViewController, Utils {
                  destVC.collectionView2DataSource.photoStore = TwelfthA2CollectionView2PhotoStore()
                 // destVC.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
          
-                 //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
-                 //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView2DataSource = (self.collectionView2DataSource)!
-                 //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView3DataSource = (self.collectionView3DataSource)!
+                 destVC.testSite2Name = "BIKENYC"
+                 destVC.testSite3Name = "FLICKR"
          
         case .TwelfthA3Segue:
               print("prepareForsegue: TwelfthAViewController : Selected TwelfthA3ViewController segue.")
