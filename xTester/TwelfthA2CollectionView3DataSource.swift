@@ -25,10 +25,10 @@ class TwelfthA2CollectionView3DataSource: NSObject, UICollectionViewDataSource, 
     
     
     // MARK: - Data Variables
-    var photos = [TwelfthA2Photo]()   // This is the list of all our Photos
+    var photos:[TwelfthA2Photo] = []   // This is the list of all our Photos
     var sections:[String] = []  // This is the array of names for our  sections
     var sectionPhotoItems:[String:[TwelfthA2Photo]] = [:]  // Dictionary holds Photos for each section title
-    var photoStore: TwelfthA2CollectionView3PhotoStore!
+    //var photoStore: TwelfthA2CollectionView3PhotoStore!
     
     
     // MARK: - Enums

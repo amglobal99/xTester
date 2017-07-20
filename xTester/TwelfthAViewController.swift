@@ -145,7 +145,7 @@ class TwelfthAViewController: UIViewController, Utils {
          
                  // Inject value for store property in the CollectionView data sources
                  destVC.collectionView2DataSource.photoStore = TwelfthA2CollectionView2PhotoStore()
-                 destVC.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
+                // destVC.collectionView3DataSource.photoStore = TwelfthA2CollectionView3PhotoStore()
          
                  //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView1DataSource = (self.collectionView1DataSource)!
                  //(table.delegate as! TwelfthA2TableViewDataSource ).collectionView2DataSource = (self.collectionView2DataSource)!
